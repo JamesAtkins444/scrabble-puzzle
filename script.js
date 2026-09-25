@@ -185,54 +185,49 @@ function placeWord(word, row, col, direction) {
    GET WORDS FROM DICTIONARY
 -------------------------------- */
 
-/*
-   For now this is a small starter dictionary.
+let dictionary = [];
 
-   We'll replace this with a proper
-   Scrabble dictionary in the next step.
-*/
 
-const dictionary = [
+/* --------------------------------
+   LOAD SCRABBLE DICTIONARY
+-------------------------------- */
 
-    "CAT",
-    "DOG",
-    "HOUSE",
-    "TREE",
-    "STAR",
-    "CAR",
-    "ROAD",
-    "WATER",
-    "FIRE",
-    "STONE",
-    "LIGHT",
-    "DARK",
-    "GAME",
-    "WORD",
-    "PLAY",
-    "CARD",
-    "DICE",
-    "MOUSE",
-    "HORSE",
-    "BIRD",
-    "FISH",
-    "BOOK",
-    "TIME",
-    "SPACE",
-    "WORLD",
-    "GREEN",
-    "BLUE",
-    "RED",
-    "BLACK",
-    "WHITE",
-    "START",
-    "END",
-    "SCORE",
-    "POINT",
-    "PLAYER",
-    "BOARD",
-    "PUZZLE"
+async function loadDictionary() {
 
-];
+    try {
+
+        const response =
+            await fetch("dictionary.txt");
+
+        const text =
+            await response.text();
+
+
+        dictionary =
+            text
+                .split(/\r?\n/)
+                .map(word => word.trim().toUpperCase())
+                .filter(word => word.length > 1);
+
+
+        console.log(
+            `Loaded ${dictionary.length} words`
+        );
+
+
+        generateBoard();
+
+
+    } catch (error) {
+
+        console.error(
+            "Could not load dictionary:",
+            error
+        );
+
+    }
+
+}
 
 
 /* --------------------------------
