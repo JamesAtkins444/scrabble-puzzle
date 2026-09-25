@@ -3,7 +3,7 @@ const BOARD_SIZE = 10;
 const CENTRE_ROW = 4;
 const CENTRE_COL = 4;
 
-const TARGET_WORD_COUNT = 12;
+const TARGET_WORD_COUNT = 5;
 
 const MIN_WORD_LENGTH = 2;
 const MAX_WORD_LENGTH = 8;
@@ -1077,7 +1077,7 @@ function generateBoard() {
     */
 
     const firstWord =
-        "SCRABBLE";
+        "CAMEL";
 
 
     const firstRow =
