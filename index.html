@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -16,9 +15,7 @@
         rel="stylesheet"
         href="style.css"
     >
-
 </head>
-
 
 <body>
 
@@ -27,7 +24,7 @@
         <h1>Scrabble Puzzle</h1>
 
         <p class="description">
-            Generate a connected 15×15 Scrabble board.
+            Complete the board using your seven Scrabble tiles.
         </p>
 
 
@@ -41,6 +38,36 @@
             class="board"
         ></div>
 
+
+        <!-- PLAYER TILES -->
+
+        <section class="rack-section">
+
+            <h2>Your Tiles</h2>
+
+            <div
+                id="tileRack"
+                class="tile-rack"
+            ></div>
+
+            <button
+                id="newTilesButton"
+                class="secondary-button"
+            >
+                New Tiles
+            </button>
+
+            <p
+                id="tileMessage"
+                class="tile-message"
+            >
+                Select a tile, then click an empty square.
+            </p>
+
+        </section>
+
+
+        <!-- BOARD INFORMATION -->
 
         <section class="information">
 
