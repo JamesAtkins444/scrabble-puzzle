@@ -24,14 +24,12 @@
         <h1>Scrabble Puzzle</h1>
 
         <p class="description">
-            Complete the board using your seven Scrabble tiles.
+            Generate a connected 7×7 Scrabble board.
         </p>
-
 
         <button id="generateButton">
             Generate Board
         </button>
-
 
         <div
             id="board"
@@ -39,7 +37,7 @@
         ></div>
 
 
-        <!-- PLAYER TILES -->
+        <!-- PLAYER TILE RACK -->
 
         <section class="rack-section">
 
@@ -50,6 +48,13 @@
                 class="tile-rack"
             ></div>
 
+            <p
+                id="tileMessage"
+                class="tile-message"
+            >
+                Select a tile, then click anywhere on the board.
+            </p>
+
             <button
                 id="newTilesButton"
                 class="secondary-button"
@@ -57,17 +62,10 @@
                 New Tiles
             </button>
 
-            <p
-                id="tileMessage"
-                class="tile-message"
-            >
-                Select a tile, then click an empty square.
-            </p>
-
         </section>
 
 
-        <!-- BOARD INFORMATION -->
+        <!-- WORD INFORMATION -->
 
         <section class="information">
 
