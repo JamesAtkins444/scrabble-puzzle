@@ -1,7 +1,5 @@
 const BOARD_SIZE = 7;
 
-const CENTRE_ROW = 3;
-const CENTRE_COL = 3;
 
 /*
    Generate a random number of
@@ -16,17 +14,15 @@ const TARGET_WORD_COUNT =
 
 /*
    Crossword words must be
-   3-6 letters long.
+   3-5 letters long.
 */
 const MIN_WORD_LENGTH = 3;
-const MAX_WORD_LENGTH = 6;
+const MAX_WORD_LENGTH = 5;
+
 
 /*
    Starting word must be
-   5 letters or longer.
-
-   It must still fit on the
-   7x7 board.
+   5-7 letters long.
 */
 const STARTING_WORD_MIN_LENGTH = 5;
 
@@ -1249,9 +1245,9 @@ function getStartingWord() {
         dictionary.filter(
             word =>
                 word.length >=
-                STARTING_WORD_MIN_LENGTH &&
+                    STARTING_WORD_MIN_LENGTH &&
                 word.length <=
-                BOARD_SIZE
+                    BOARD_SIZE
         );
 
 
@@ -1288,35 +1284,79 @@ function getStartingWord() {
    PLACE FIRST WORD
 -------------------------------- */
 
+/*
+   The first word is now placed
+   at a random valid position.
+
+   It can be either horizontal
+   or vertical.
+*/
+
 function placeFirstWord(
     word
 ) {
 
-    const row =
-        CENTRE_ROW;
+    const directions = [
+        "horizontal",
+        "vertical"
+    ];
 
 
-    const col =
-        CENTRE_COL -
-        Math.floor(
-            word.length / 2
-        );
+    const direction =
+        directions[
+            Math.floor(
+                Math.random() *
+                directions.length
+            )
+        ];
+
+
+    let maxRow =
+        BOARD_SIZE - 1;
+
+    let maxCol =
+        BOARD_SIZE - 1;
 
 
     if (
-        col < 0 ||
-        col + word.length >
-            BOARD_SIZE
+        direction ===
+        "vertical"
     ) {
 
-        console.error(
-            "Starting word is too long:",
-            word
-        );
-
-        return false;
+        maxRow =
+            BOARD_SIZE -
+            word.length;
 
     }
+    else {
+
+        maxCol =
+            BOARD_SIZE -
+            word.length;
+
+    }
+
+
+    const row =
+        Math.floor(
+            Math.random() *
+            (maxRow + 1)
+        );
+
+
+    const col =
+        Math.floor(
+            Math.random() *
+            (maxCol + 1)
+        );
+
+
+    console.log(
+        "Starting word position:",
+        row,
+        col,
+        direction
+    );
 
 
     for (
@@ -1325,7 +1365,20 @@ function placeFirstWord(
         i++
     ) {
 
-        board[row][col + i] =
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+
+        board[
+            position.row
+        ][
+            position.col
+        ] =
             word[i];
 
     }
@@ -1340,7 +1393,7 @@ function placeFirstWord(
         col: col,
 
         direction:
-            "horizontal"
+            direction
 
     });
 
@@ -1405,7 +1458,7 @@ function generateBoard() {
 
 
     console.log(
-        "Target word count:",
+        "Target generated words:",
         TARGET_WORD_COUNT
     );
 
@@ -1430,6 +1483,14 @@ function generateBoard() {
 
 
     function addWord() {
+
+        /*
+           TARGET_WORD_COUNT is the
+           number of additional words.
+
+           +1 accounts for the
+           starting word.
+        */
 
         if (
             placedWords.length >=
@@ -1580,8 +1641,10 @@ async function loadDictionary() {
         const crosswordWords =
             dictionary.filter(
                 word =>
-                    word.length >= 3 &&
-                    word.length <= 6
+                    word.length >=
+                        MIN_WORD_LENGTH &&
+                    word.length <=
+                        MAX_WORD_LENGTH
             );
 
 
