@@ -1077,7 +1077,7 @@ function generateBoard() {
     */
 
     const firstWord =
-        "CAMEL";
+        "business";
 
 
     const firstRow =
