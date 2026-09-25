@@ -6,8 +6,8 @@ const CENTRE_COL = 7;
 const TARGET_WORD_COUNT = 12;
 
 /*
-   Crossword words must be
-   3-8 letters long.
+   Generated crossword words
+   must be 3-8 letters long.
 */
 const MIN_WORD_LENGTH = 3;
 const MAX_WORD_LENGTH = 8;
@@ -249,7 +249,7 @@ function copyBoard() {
 
 
 /* --------------------------------
-   PUT WORD ON TEST BOARD
+   PUT WORD ON BOARD
 -------------------------------- */
 
 function putWord(
@@ -462,11 +462,6 @@ function getAllBoardWords(
             }
 
 
-            /*
-               Only process the first
-               letter of a sequence.
-            */
-
             if (
                 col > 0 &&
                 testBoard[row][col - 1]
@@ -524,11 +519,6 @@ function getAllBoardWords(
             }
 
 
-            /*
-               Only process the first
-               letter of a sequence.
-            */
-
             if (
                 row > 0 &&
                 testBoard[row - 1][col]
@@ -585,8 +575,8 @@ function isBoardValid(
     ) {
 
         /*
-           Every connected sequence
-           must exist in dictionary.txt.
+           Every 2+ letter sequence
+           must exist in dictionary.
         */
 
         if (
@@ -730,54 +720,18 @@ function getExistingWordDirection(
 
 
 /* --------------------------------
-   TRY PLACE WORD
+   COUNT NEW TILES
 -------------------------------- */
 
-function tryPlaceWord(
+function countNewTiles(
     word,
     row,
     col,
     direction
 ) {
 
-    /*
-       Crossword words must be
-       3-8 letters long.
-    */
+    let count = 0;
 
-    if (
-        word.length <
-        MIN_WORD_LENGTH ||
-        word.length >
-        MAX_WORD_LENGTH
-    ) {
-
-        return false;
-
-    }
-
-
-    /*
-       Must exist in dictionary.
-    */
-
-    if (
-        !dictionarySet.has(word)
-    ) {
-
-        return false;
-
-    }
-
-
-    let overlaps = false;
-
-    let addsNewTile = false;
-
-
-    /*
-       Check every letter.
-    */
 
     for (
         let i = 0;
@@ -794,51 +748,584 @@ function tryPlaceWord(
             );
 
 
-        /*
-           Must remain on board.
-        */
-
         if (
-            !isInsideBoard(
-                position.row,
+            !board[
+                position.row
+            ][
                 position.col
-            )
+            ]
         ) {
 
-            return false;
+            count++;
 
         }
 
+    }
 
-        const existing =
+
+    return count;
+
+}
+
+
+/* --------------------------------
+   COUNT OVERLAPS
+-------------------------------- */
+
+function countOverlaps(
+    word,
+    row,
+    col,
+    direction
+) {
+
+    let count = 0;
+
+
+    for (
+        let i = 0;
+        i < word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+
+        if (
             board[
                 position.row
             ][
                 position.col
-            ];
+            ]
+        ) {
+
+            count++;
+
+        }
+
+    }
 
 
-        /*
-           Existing letter must match.
-        */
+    return count;
 
-        if (existing) {
+}
+
+
+/* --------------------------------
+   DISTANCE FROM CENTRE
+-------------------------------- */
+
+function distanceFromCentre(
+    row,
+    col,
+    word,
+    direction
+) {
+
+    const centreIndex =
+        Math.floor(
+            word.length / 2
+        );
+
+
+    const centrePosition =
+        getPosition(
+            row,
+            col,
+            direction,
+            centreIndex
+        );
+
+
+    const rowDistance =
+        Math.abs(
+            centrePosition.row -
+            CENTRE_ROW
+        );
+
+
+    const colDistance =
+        Math.abs(
+            centrePosition.col -
+            CENTRE_COL
+        );
+
+
+    return (
+        rowDistance +
+        colDistance
+    );
+
+}
+
+
+/* --------------------------------
+   COUNT NEARBY LETTERS
+-------------------------------- */
+
+function countNearbyLetters(
+    row,
+    col,
+    word,
+    direction
+) {
+
+    let count = 0;
+
+
+    for (
+        let i = 0;
+        i < word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+
+        const neighbours = [
+
+            {
+                row:
+                    position.row - 1,
+
+                col:
+                    position.col
+
+            },
+
+            {
+                row:
+                    position.row + 1,
+
+                col:
+                    position.col
+
+            },
+
+            {
+                row:
+                    position.row,
+
+                col:
+                    position.col - 1
+
+            },
+
+            {
+                row:
+                    position.row,
+
+                col:
+                    position.col + 1
+
+            }
+
+        ];
+
+
+        for (
+            const neighbour
+            of neighbours
+        ) {
 
             if (
-                existing !== word[i]
+                !isInsideBoard(
+                    neighbour.row,
+                    neighbour.col
+                )
             ) {
 
-                return false;
+                continue;
 
             }
 
 
-            overlaps = true;
+            /*
+               Don't count the word's
+               own letters.
+            */
+
+            if (
+                getPosition(
+                    row,
+                    col,
+                    direction,
+                    i
+                ).row ===
+                    neighbour.row &&
+                getPosition(
+                    row,
+                    col,
+                    direction,
+                    i
+                ).col ===
+                    neighbour.col
+            ) {
+
+                continue;
+
+            }
+
+
+            if (
+                board[
+                    neighbour.row
+                ][
+                    neighbour.col
+                ]
+            ) {
+
+                count++;
+
+            }
+
+        }
+
+    }
+
+
+    return count;
+
+}
+
+
+/* --------------------------------
+   COUNT BOARD TILES
+-------------------------------- */
+
+function countBoardTiles() {
+
+    let count = 0;
+
+
+    for (
+        let row = 0;
+        row < BOARD_SIZE;
+        row++
+    ) {
+
+        for (
+            let col = 0;
+            col < BOARD_SIZE;
+            col++
+        ) {
+
+            if (
+                board[row][col]
+            ) {
+
+                count++;
+
+            }
+
+        }
+
+    }
+
+
+    return count;
+
+}
+
+
+/* --------------------------------
+   GET BOARD BOUNDS
+-------------------------------- */
+
+function getBoardBounds() {
+
+    let minRow = BOARD_SIZE;
+    let maxRow = -1;
+    let minCol = BOARD_SIZE;
+    let maxCol = -1;
+
+
+    for (
+        let row = 0;
+        row < BOARD_SIZE;
+        row++
+    ) {
+
+        for (
+            let col = 0;
+            col < BOARD_SIZE;
+            col++
+        ) {
+
+            if (
+                board[row][col]
+            ) {
+
+                minRow =
+                    Math.min(
+                        minRow,
+                        row
+                    );
+
+                maxRow =
+                    Math.max(
+                        maxRow,
+                        row
+                    );
+
+                minCol =
+                    Math.min(
+                        minCol,
+                        col
+                    );
+
+                maxCol =
+                    Math.max(
+                        maxCol,
+                        col
+                    );
+
+            }
+
+        }
+
+    }
+
+
+    return {
+
+        minRow,
+        maxRow,
+        minCol,
+        maxCol
+
+    };
+
+}
+
+
+/* --------------------------------
+   CALCULATE PLACEMENT SCORE
+-------------------------------- */
+
+function scorePlacement(
+    word,
+    row,
+    col,
+    direction,
+    testBoard
+) {
+
+    let score = 0;
+
+
+    /*
+       --------------------------------
+       1. REWARD MULTIPLE OVERLAPS
+       --------------------------------
+
+       Real Scrabble positions often
+       have words interacting with
+       existing words.
+    */
+
+    const overlaps =
+        countOverlaps(
+            word,
+            row,
+            col,
+            direction
+        );
+
+
+    score +=
+        overlaps * 40;
+
+
+    /*
+       --------------------------------
+       2. REWARD CROSSING WITH
+          EXACTLY ONE MAIN LETTER
+       --------------------------------
+
+       One-letter crossings tend to
+       look more natural than simply
+       laying one word almost entirely
+       over another.
+    */
+
+    if (
+        overlaps === 1
+    ) {
+
+        score += 35;
+
+    }
+
+
+    /*
+       --------------------------------
+       3. PENALISE TOO MANY OVERLAPS
+       --------------------------------
+
+       If a new word overlaps many
+       letters it can start looking
+       artificial.
+    */
+
+    if (
+        overlaps >= 3
+    ) {
+
+        score -=
+            (overlaps - 2) * 20;
+
+    }
+
+
+    /*
+       --------------------------------
+       4. REWARD NEW TILES
+       --------------------------------
+
+       We want the board to grow.
+    */
+
+    const newTiles =
+        countNewTiles(
+            word,
+            row,
+            col,
+            direction
+        );
+
+
+    score +=
+        newTiles * 8;
+
+
+    /*
+       --------------------------------
+       5. KEEP BOARD AROUND CENTRE
+       --------------------------------
+    */
+
+    const centreDistance =
+        distanceFromCentre(
+            row,
+            col,
+            word,
+            direction
+        );
+
+
+    score -=
+        centreDistance * 3;
+
+
+    /*
+       --------------------------------
+       6. REWARD NATURAL LOCAL
+          CONNECTIONS
+       --------------------------------
+    */
+
+    const nearbyLetters =
+        countNearbyLetters(
+            row,
+            col,
+            word,
+            direction
+        );
+
+
+    score +=
+        nearbyLetters * 5;
+
+
+    /*
+       --------------------------------
+       7. LOOK AT RESULTING WORDS
+       --------------------------------
+    */
+
+    const resultingWords =
+        getAllBoardWords(
+            testBoard
+        );
+
+
+    /*
+       Reward positions that create
+       multiple words.
+    */
+
+    score +=
+        resultingWords.length * 15;
+
+
+    /*
+       --------------------------------
+       8. BALANCE DIRECTIONS
+       --------------------------------
+    */
+
+    let horizontalCount = 0;
+    let verticalCount = 0;
+
+
+    for (
+        const placed
+        of placedWords
+    ) {
+
+        if (
+            placed.direction ===
+            "horizontal"
+        ) {
+
+            horizontalCount++;
 
         }
         else {
 
-            addsNewTile = true;
+            verticalCount++;
+
+        }
+
+    }
+
+
+    if (
+        direction ===
+        "horizontal"
+    ) {
+
+        if (
+            horizontalCount >
+            verticalCount + 1
+        ) {
+
+            score -= 35;
+
+        }
+
+    }
+    else {
+
+        if (
+            verticalCount >
+            horizontalCount + 1
+        ) {
+
+            score -= 35;
 
         }
 
@@ -846,30 +1333,545 @@ function tryPlaceWord(
 
 
     /*
-       Must cross an existing letter.
+       --------------------------------
+       9. ENCOURAGE BOARD SPREAD
+       --------------------------------
     */
 
-    if (!overlaps) {
+    const bounds =
+        getBoardBounds();
 
-        return false;
+
+    const newMinRow =
+        Math.min(
+            bounds.minRow,
+            row
+        );
+
+
+    const newMaxRow =
+        Math.max(
+            bounds.maxRow,
+            direction === "vertical"
+                ? row + word.length - 1
+                : row
+        );
+
+
+    const newMinCol =
+        Math.min(
+            bounds.minCol,
+            col
+        );
+
+
+    const newMaxCol =
+        Math.max(
+            bounds.maxCol,
+            direction === "horizontal"
+                ? col + word.length - 1
+                : col
+        );
+
+
+    const boardWidth =
+        newMaxCol -
+        newMinCol +
+        1;
+
+
+    const boardHeight =
+        newMaxRow -
+        newMinRow +
+        1;
+
+
+    /*
+       Reward gradual expansion
+       rather than staying in one
+       tiny cluster.
+    */
+
+    score +=
+        (boardWidth + boardHeight) *
+        2;
+
+
+    /*
+       --------------------------------
+       10. SMALL RANDOM FACTOR
+       --------------------------------
+
+       Prevent every generated board
+       from looking identical.
+    */
+
+    score +=
+        Math.random() * 20;
+
+
+    return score;
+
+}
+
+
+/* --------------------------------
+   FIND ALL POSSIBLE PLACEMENTS
+-------------------------------- */
+
+function findPossiblePlacements() {
+
+    const placements = [];
+
+    const existingLetters =
+        getExistingLetters();
+
+
+    /*
+       Look at every existing letter.
+    */
+
+    for (
+        const existing
+        of existingLetters
+    ) {
+
+        const candidates =
+            dictionary.filter(
+                word => {
+
+                    return (
+                        word.length >=
+                            MIN_WORD_LENGTH &&
+
+                        word.length <=
+                            MAX_WORD_LENGTH &&
+
+                        word.includes(
+                            existing.letter
+                        )
+                    );
+
+                }
+            );
+
+
+        /*
+           Try every candidate.
+        */
+
+        for (
+            const word
+            of candidates
+        ) {
+
+            /*
+               Find every occurrence
+               of the matching letter.
+            */
+
+            for (
+                let i = 0;
+                i < word.length;
+                i++
+            ) {
+
+                if (
+                    word[i] !==
+                    existing.letter
+                ) {
+
+                    continue;
+
+                }
+
+
+                /*
+                   Find direction of
+                   existing word.
+                */
+
+                const existingDirection =
+                    getExistingWordDirection(
+                        existing.row,
+                        existing.col
+                    );
+
+
+                if (
+                    !existingDirection
+                ) {
+
+                    continue;
+
+                }
+
+
+                /*
+                   New word must cross
+                   perpendicular to it.
+                */
+
+                let newDirection;
+
+
+                if (
+                    existingDirection ===
+                    "horizontal"
+                ) {
+
+                    newDirection =
+                        "vertical";
+
+                }
+                else {
+
+                    newDirection =
+                        "horizontal";
+
+                }
+
+
+                /*
+                   Calculate starting
+                   position.
+                */
+
+                let newRow;
+                let newCol;
+
+
+                if (
+                    newDirection ===
+                    "horizontal"
+                ) {
+
+                    newRow =
+                        existing.row;
+
+                    newCol =
+                        existing.col - i;
+
+                }
+                else {
+
+                    newRow =
+                        existing.row - i;
+
+                    newCol =
+                        existing.col;
+
+                }
+
+
+                /*
+                   Check whether the
+                   placement fits.
+                */
+
+                if (
+                    !isInsideBoard(
+                        newRow,
+                        newCol
+                    )
+                ) {
+
+                    continue;
+
+                }
+
+
+                if (
+                    newDirection ===
+                    "horizontal"
+                ) {
+
+                    if (
+                        newCol +
+                        word.length >
+                        BOARD_SIZE
+                    ) {
+
+                        continue;
+
+                    }
+
+                }
+                else {
+
+                    if (
+                        newRow +
+                        word.length >
+                        BOARD_SIZE
+                    ) {
+
+                        continue;
+
+                    }
+
+                }
+
+
+                /*
+                   Check for conflicts
+                   with existing letters.
+                */
+
+                let valid =
+                    true;
+
+                let overlaps = 0;
+
+
+                for (
+                    let j = 0;
+                    j < word.length;
+                    j++
+                ) {
+
+                    const position =
+                        getPosition(
+                            newRow,
+                            newCol,
+                            newDirection,
+                            j
+                        );
+
+
+                    const existingLetter =
+                        board[
+                            position.row
+                        ][
+                            position.col
+                        ];
+
+
+                    if (
+                        existingLetter
+                    ) {
+
+                        if (
+                            existingLetter !==
+                            word[j]
+                        ) {
+
+                            valid = false;
+
+                            break;
+
+                        }
+
+
+                        overlaps++;
+
+                    }
+
+                }
+
+
+                if (!valid) {
+
+                    continue;
+
+                }
+
+
+                /*
+                   Must actually cross
+                   the existing board.
+                */
+
+                if (
+                    overlaps === 0
+                ) {
+
+                    continue;
+
+                }
+
+
+                /*
+                   Must add at least one
+                   new tile.
+                */
+
+                const newTiles =
+                    countNewTiles(
+                        word,
+                        newRow,
+                        newCol,
+                        newDirection
+                    );
+
+
+                if (
+                    newTiles === 0
+                ) {
+
+                    continue;
+
+                }
+
+
+                /*
+                   Create test board.
+                */
+
+                const testBoard =
+                    copyBoard();
+
+
+                putWord(
+                    testBoard,
+                    word,
+                    newRow,
+                    newCol,
+                    newDirection
+                );
+
+
+                /*
+                   Entire board must
+                   remain valid.
+                */
+
+                if (
+                    !isBoardValid(
+                        testBoard
+                    )
+                ) {
+
+                    continue;
+
+                }
+
+
+                /*
+                   Calculate quality
+                   score.
+                */
+
+                const score =
+                    scorePlacement(
+                        word,
+                        newRow,
+                        newCol,
+                        newDirection,
+                        testBoard
+                    );
+
+
+                placements.push({
+
+                    word: word,
+
+                    row: newRow,
+
+                    col: newCol,
+
+                    direction:
+                        newDirection,
+
+                    score: score
+
+                });
+
+            }
+
+        }
+
+    }
+
+
+    return placements;
+
+}
+
+
+/* --------------------------------
+   CHOOSE BEST PLACEMENT
+-------------------------------- */
+
+function findBestPlacement() {
+
+    const placements =
+        findPossiblePlacements();
+
+
+    if (
+        placements.length === 0
+    ) {
+
+        return null;
 
     }
 
 
     /*
-       Must add a new tile.
+       Sort from highest score
+       to lowest score.
     */
 
-    if (!addsNewTile) {
-
-        return false;
-
-    }
+    placements.sort(
+        (a, b) =>
+            b.score -
+            a.score
+    );
 
 
     /*
-       Create test board.
+       Don't always pick the exact
+       highest score.
+
+       Pick randomly from the top
+       few placements.
+
+       This gives us different
+       looking boards.
     */
+
+    const topCount =
+        Math.min(
+            5,
+            placements.length
+        );
+
+
+    const selectedIndex =
+        Math.floor(
+            Math.random() *
+            topCount
+        );
+
+
+    const selected =
+        placements[
+            selectedIndex
+        ];
+
+
+    console.log(
+        "Selected placement:",
+        selected.word,
+        "score:",
+        Math.round(
+            selected.score
+        )
+    );
+
+
+    return selected;
+
+}
+
+
+/* --------------------------------
+   PLACE WORD
+-------------------------------- */
+
+function placeSelectedWord(
+    placement
+) {
 
     const testBoard =
         copyBoard();
@@ -877,31 +1879,12 @@ function tryPlaceWord(
 
     putWord(
         testBoard,
-        word,
-        row,
-        col,
-        direction
+        placement.word,
+        placement.row,
+        placement.col,
+        placement.direction
     );
 
-
-    /*
-       Check entire board.
-    */
-
-    if (
-        !isBoardValid(
-            testBoard
-        )
-    ) {
-
-        return false;
-
-    }
-
-
-    /*
-       Success.
-    */
 
     board =
         testBoard;
@@ -909,18 +1892,19 @@ function tryPlaceWord(
 
     placedWords.push({
 
-        word: word,
+        word:
+            placement.word,
 
-        row: row,
+        row:
+            placement.row,
 
-        col: col,
+        col:
+            placement.col,
 
-        direction: direction
+        direction:
+            placement.direction
 
     });
-
-
-    return true;
 
 }
 
@@ -969,194 +1953,10 @@ function shuffle(
 
 
 /* --------------------------------
-   FIND CROSSING WORD
--------------------------------- */
-
-function findCrossingWord() {
-
-    const existingLetters =
-        shuffle(
-            getExistingLetters()
-        );
-
-
-    /*
-       Try each existing letter.
-    */
-
-    for (
-        const existing
-        of existingLetters
-    ) {
-
-        /*
-           Only consider words
-           between 3 and 8 letters.
-        */
-
-        const candidates =
-            dictionary.filter(
-                word => {
-
-                    return (
-                        word.length >=
-                            MIN_WORD_LENGTH &&
-                        word.length <=
-                            MAX_WORD_LENGTH &&
-                        word.includes(
-                            existing.letter
-                        )
-                    );
-
-                }
-            );
-
-
-        const shuffledCandidates =
-            shuffle(
-                candidates
-            );
-
-
-        /*
-           Try each candidate.
-        */
-
-        for (
-            const word
-            of shuffledCandidates
-        ) {
-
-            /*
-               Find every occurrence
-               of the matching letter.
-            */
-
-            for (
-                let i = 0;
-                i < word.length;
-                i++
-            ) {
-
-                if (
-                    word[i] !==
-                    existing.letter
-                ) {
-
-                    continue;
-
-                }
-
-
-                /*
-                   Find the direction
-                   of the existing word.
-                */
-
-                const existingDirection =
-                    getExistingWordDirection(
-                        existing.row,
-                        existing.col
-                    );
-
-
-                /*
-                   New word crosses
-                   perpendicular to it.
-                */
-
-                let newDirection;
-
-
-                if (
-                    existingDirection ===
-                    "horizontal"
-                ) {
-
-                    newDirection =
-                        "vertical";
-
-                }
-                else {
-
-                    newDirection =
-                        "horizontal";
-
-                }
-
-
-                /*
-                   Calculate starting
-                   position.
-                */
-
-                let newRow;
-
-                let newCol;
-
-
-                if (
-                    newDirection ===
-                    "horizontal"
-                ) {
-
-                    newRow =
-                        existing.row;
-
-                    newCol =
-                        existing.col - i;
-
-                }
-                else {
-
-                    newRow =
-                        existing.row - i;
-
-                    newCol =
-                        existing.col;
-
-                }
-
-
-                /*
-                   Try placement.
-                */
-
-                if (
-                    tryPlaceWord(
-                        word,
-                        newRow,
-                        newCol,
-                        newDirection
-                    )
-                ) {
-
-                    return true;
-
-                }
-
-            }
-
-        }
-
-    }
-
-
-    return false;
-
-}
-
-
-/* --------------------------------
    GET STARTING WORD
 -------------------------------- */
 
 function getStartingWord() {
-
-    /*
-       Starting words must be
-       at least 11 letters.
-    */
 
     const startingWords =
         dictionary.filter(
@@ -1180,10 +1980,6 @@ function getStartingWord() {
 
     }
 
-
-    /*
-       Pick random starting word.
-    */
 
     const randomIndex =
         Math.floor(
@@ -1211,21 +2007,12 @@ function placeFirstWord(
         CENTRE_ROW;
 
 
-    /*
-       Centre word around
-       the middle of board.
-    */
-
     const col =
         CENTRE_COL -
         Math.floor(
             word.length / 2
         );
 
-
-    /*
-       Make sure word fits.
-    */
 
     if (
         col < 0 ||
@@ -1243,10 +2030,6 @@ function placeFirstWord(
     }
 
 
-    /*
-       Place letters.
-    */
-
     for (
         let i = 0;
         i < word.length;
@@ -1258,10 +2041,6 @@ function placeFirstWord(
 
     }
 
-
-    /*
-       Record word.
-    */
 
     placedWords.push({
 
@@ -1384,22 +2163,34 @@ function generateBoard() {
                 "Board complete!"
             );
 
+            console.log(
+                "Final board words:",
+                placedWords
+            );
+
             return;
 
         }
 
 
         /*
-           Find a crossing word.
+           Find the best available
+           placement.
         */
 
-        const success =
-            findCrossingWord();
+        const placement =
+            findBestPlacement();
 
 
-        if (success) {
+        if (placement) {
 
             failedAttempts = 0;
+
+
+            placeSelectedWord(
+                placement
+            );
+
 
             displayBoard();
 
@@ -1415,7 +2206,7 @@ function generateBoard() {
 
         /*
            Stop if no more legal
-           words can be found.
+           placements can be found.
         */
 
         if (
@@ -1423,7 +2214,7 @@ function generateBoard() {
         ) {
 
             console.log(
-                "No more legal words found."
+                "No more legal placements found."
             );
 
 
@@ -1444,7 +2235,7 @@ function generateBoard() {
 
         setTimeout(
             addWord,
-            30
+            50
         );
 
     }
@@ -1490,9 +2281,9 @@ async function loadDictionary() {
         /*
            Load every dictionary word.
 
-           We don't limit the length here
-           because the starting word can
-           be longer than 8 letters.
+           We don't limit the length
+           because the starting word
+           can be longer than 8 letters.
         */
 
         dictionary =
@@ -1531,7 +2322,7 @@ async function loadDictionary() {
 
 
         /*
-           Show available starting words.
+           Starting words.
         */
 
         const startingWords =
@@ -1549,11 +2340,10 @@ async function loadDictionary() {
 
 
         /*
-           Show available crossword
-           words.
+           Generated crossword words.
 
-           This should NOT include
-           2-letter words.
+           2-letter words are deliberately
+           excluded from generation.
         */
 
         const crosswordWords =
