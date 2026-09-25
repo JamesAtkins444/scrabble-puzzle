@@ -22,9 +22,10 @@ const MAX_WORD_LENGTH = 5;
 
 /*
    Starting word must be
-   5-7 letters long.
+   5-6 letters long.
 */
 const STARTING_WORD_MIN_LENGTH = 5;
+const STARTING_WORD_MAX_LENGTH = 6;
 
 
 /* --------------------------------
@@ -1247,7 +1248,7 @@ function getStartingWord() {
                 word.length >=
                     STARTING_WORD_MIN_LENGTH &&
                 word.length <=
-                    BOARD_SIZE
+                    STARTING_WORD_MAX_LENGTH
         );
 
 
@@ -1285,11 +1286,10 @@ function getStartingWord() {
 -------------------------------- */
 
 /*
-   The first word is now placed
-   at a random valid position.
+   The first word is placed at a
+   completely random valid position.
 
-   It can be either horizontal
-   or vertical.
+   It can be horizontal or vertical.
 */
 
 function placeFirstWord(
@@ -1438,7 +1438,7 @@ function generateBoard() {
 
 
         message.textContent =
-            "dictionary.txt needs at least one word between 5 and 7 letters long.";
+            "dictionary.txt needs at least one word between 5 and 6 letters long.";
 
 
         wordListElement.appendChild(
@@ -1628,7 +1628,7 @@ async function loadDictionary() {
                     word.length >=
                         STARTING_WORD_MIN_LENGTH &&
                     word.length <=
-                        BOARD_SIZE
+                        STARTING_WORD_MAX_LENGTH
             );
 
 
