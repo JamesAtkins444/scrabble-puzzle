@@ -21,21 +21,9 @@ const TARGET_WORD_COUNT = 12;
    WORD LENGTH SETTINGS
    ========================================= */
 
-/*
-   Words deliberately generated after
-   the starting word must be between
-   3 and 8 letters.
-*/
-
 const MIN_WORD_LENGTH = 3;
 
 const MAX_WORD_LENGTH = 8;
-
-
-/*
-   The first word must be at least
-   11 letters long.
-*/
 
 const STARTING_WORD_MIN_LENGTH = 11;
 
@@ -111,9 +99,12 @@ function getTotalTileCount() {
 
     let total = 0;
 
-    for (const letter in SCRABBLE_TILES) {
+    for (
+        const letter in SCRABBLE_TILES
+    ) {
 
-        total += SCRABBLE_TILES[letter].count;
+        total +=
+            SCRABBLE_TILES[letter].count;
 
     }
 
@@ -127,7 +118,9 @@ function getLetterValue(letter) {
     const upperLetter =
         letter.toUpperCase();
 
-    if (SCRABBLE_TILES[upperLetter]) {
+    if (
+        SCRABBLE_TILES[upperLetter]
+    ) {
 
         return SCRABBLE_TILES[upperLetter].value;
 
@@ -142,9 +135,12 @@ function calculateWordScore(word) {
 
     let score = 0;
 
-    for (const letter of word) {
+    for (
+        const letter of word
+    ) {
 
-        score += getLetterValue(letter);
+        score +=
+            getLetterValue(letter);
 
     }
 
@@ -160,17 +156,20 @@ function calculateWordScore(word) {
 const boardElement =
     document.getElementById("board");
 
-
 const generateButton =
-    document.getElementById("generateButton");
-
+    document.getElementById(
+        "generateButton"
+    );
 
 const wordCountElement =
-    document.getElementById("wordCount");
-
+    document.getElementById(
+        "wordCount"
+    );
 
 const wordListElement =
-    document.getElementById("wordList");
+    document.getElementById(
+        "wordList"
+    );
 
 
 /* =========================================
@@ -239,16 +238,10 @@ function isInsideBoard(row, col) {
    GET BOARD POSITION
    ========================================= */
 
-function getPosition(
-    row,
-    col
-) {
+function getPosition(row, col) {
 
     if (
-        !isInsideBoard(
-            row,
-            col
-        )
+        !isInsideBoard(row, col)
     ) {
 
         return null;
@@ -295,7 +288,9 @@ function putWord(
         let currentCol = col;
 
 
-        if (direction === "horizontal") {
+        if (
+            direction === "horizontal"
+        ) {
 
             currentCol += i;
 
@@ -315,7 +310,7 @@ function putWord(
 
 
 /* =========================================
-   READ A WORD
+   READ WORD
    ========================================= */
 
 function readWord(
@@ -335,8 +330,7 @@ function readWord(
         isInsideBoard(
             currentRow,
             currentCol
-        )
-        &&
+        ) &&
         board[currentRow][currentCol]
     ) {
 
@@ -344,7 +338,9 @@ function readWord(
             board[currentRow][currentCol];
 
 
-        if (direction === "horizontal") {
+        if (
+            direction === "horizontal"
+        ) {
 
             currentCol++;
 
@@ -363,7 +359,7 @@ function readWord(
 
 
 /* =========================================
-   GET ALL WORDS ON BOARD
+   GET ALL BOARD WORDS
    ========================================= */
 
 function getAllBoardWords() {
@@ -391,7 +387,7 @@ function getAllBoardWords() {
                 board[row][col]
             ) {
 
-                let startCol = col;
+                const startCol = col;
 
                 let word = "";
 
@@ -409,13 +405,16 @@ function getAllBoardWords() {
                 }
 
 
-                if (word.length >= 2) {
+                if (
+                    word.length >= 2
+                ) {
 
                     words.push({
 
                         word: word,
 
-                        direction: "horizontal",
+                        direction:
+                            "horizontal",
 
                         row: row,
 
@@ -456,7 +455,7 @@ function getAllBoardWords() {
                 board[row][col]
             ) {
 
-                let startRow = row;
+                const startRow = row;
 
                 let word = "";
 
@@ -474,13 +473,16 @@ function getAllBoardWords() {
                 }
 
 
-                if (word.length >= 2) {
+                if (
+                    word.length >= 2
+                ) {
 
                     words.push({
 
                         word: word,
 
-                        direction: "vertical",
+                        direction:
+                            "vertical",
 
                         row: startRow,
 
@@ -516,13 +518,15 @@ function isBoardValid() {
         getAllBoardWords();
 
 
-    /*
-       Every connected sequence of
-       2 or more letters must exist
-       in the dictionary.
-    */
+    for (
+        const item of words
+    ) {
 
-    for (const item of words) {
+        /*
+           Every connected sequence
+           of 2+ letters must exist
+           in the dictionary.
+        */
 
         if (
             item.word.length >= 2 &&
@@ -592,63 +596,7 @@ function getExistingLetters() {
 
 
 /* =========================================
-   CHECK IF CELL IS PART OF WORD
-   ========================================= */
-
-function isCellInWord(
-    row,
-    col,
-    startRow,
-    startCol,
-    wordLength,
-    direction
-) {
-
-    for (
-        let i = 0;
-        i < wordLength;
-        i++
-    ) {
-
-        let checkRow =
-            startRow;
-
-        let checkCol =
-            startCol;
-
-
-        if (
-            direction === "horizontal"
-        ) {
-
-            checkCol += i;
-
-        } else {
-
-            checkRow += i;
-
-        }
-
-
-        if (
-            checkRow === row &&
-            checkCol === col
-        ) {
-
-            return true;
-
-        }
-
-    }
-
-
-    return false;
-
-}
-
-
-/* =========================================
-   GET DIRECTION OF EXISTING WORD
+   GET EXISTING WORD DIRECTION
    ========================================= */
 
 function getExistingWordDirection(
@@ -748,8 +696,8 @@ function tryPlaceWord(
 ) {
 
     /*
-       Candidate words must be
-       between 3 and 8 letters.
+       Generated words must be
+       3–8 letters long.
     */
 
     if (
@@ -765,7 +713,7 @@ function tryPlaceWord(
 
 
     /*
-       Word must be in dictionary.
+       Word must exist in dictionary.
     */
 
     if (
@@ -778,7 +726,7 @@ function tryPlaceWord(
 
 
     /*
-       Make sure word fits.
+       Make sure word fits on board.
     */
 
     if (
@@ -786,8 +734,9 @@ function tryPlaceWord(
     ) {
 
         if (
+            col < 0 ||
             col + word.length >
-            BOARD_SIZE
+                BOARD_SIZE
         ) {
 
             return false;
@@ -797,8 +746,9 @@ function tryPlaceWord(
     } else {
 
         if (
+            row < 0 ||
             row + word.length >
-            BOARD_SIZE
+                BOARD_SIZE
         ) {
 
             return false;
@@ -814,7 +764,7 @@ function tryPlaceWord(
 
 
     /*
-       Check every tile.
+       Check each position.
     */
 
     for (
@@ -842,7 +792,11 @@ function tryPlaceWord(
 
 
         const existingLetter =
-            board[currentRow][currentCol];
+            board[
+                currentRow
+            ][
+                currentCol
+            ];
 
 
         if (
@@ -850,8 +804,7 @@ function tryPlaceWord(
         ) {
 
             /*
-               Existing letter must
-               match the new letter.
+               Existing letters must match.
             */
 
             if (
@@ -880,7 +833,9 @@ function tryPlaceWord(
        existing word.
     */
 
-    if (!hasOverlap) {
+    if (
+        !hasOverlap
+    ) {
 
         return false;
 
@@ -888,10 +843,13 @@ function tryPlaceWord(
 
 
     /*
-       Must actually add letters.
+       Word must add at least
+       one new tile.
     */
 
-    if (!addsNewTile) {
+    if (
+        !addsNewTile
+    ) {
 
         return false;
 
@@ -899,7 +857,7 @@ function tryPlaceWord(
 
 
     /*
-       Save board before testing.
+       Make a backup of the board.
     */
 
     const oldBoard =
@@ -907,7 +865,7 @@ function tryPlaceWord(
 
 
     /*
-       Place the word.
+       Place the word temporarily.
     */
 
     putWord(
@@ -919,8 +877,8 @@ function tryPlaceWord(
 
 
     /*
-       Make sure every resulting
-       board word is valid.
+       Check that every resulting
+       word is valid.
     */
 
     if (
@@ -935,11 +893,13 @@ function tryPlaceWord(
 
 
     /*
-       Make sure we haven't already
-       added this word.
+       Don't place duplicate words.
     */
 
-    for (const existingWord of placedWords) {
+    for (
+        const existingWord
+        of placedWords
+    ) {
 
         if (
             existingWord.word === word
@@ -955,7 +915,7 @@ function tryPlaceWord(
 
 
     /*
-       Store word.
+       Store the word.
     */
 
     placedWords.push({
@@ -1012,7 +972,7 @@ function shuffle(array) {
 
 
 /* =========================================
-   FIND A CROSSING WORD
+   FIND CROSSING WORD
    ========================================= */
 
 function findCrossingWord() {
@@ -1030,12 +990,6 @@ function findCrossingWord() {
     }
 
 
-    /*
-       Randomise existing letters
-       so boards don't always grow
-       in exactly the same way.
-    */
-
     shuffle(existingLetters);
 
 
@@ -1049,7 +1003,7 @@ function findCrossingWord() {
 
 
         /*
-           Find dictionary words
+           Find 3–8 letter words
            containing this letter.
         */
 
@@ -1064,17 +1018,11 @@ function findCrossingWord() {
                         MAX_WORD_LENGTH &&
 
                     word.includes(letter)
-
             );
 
 
         shuffle(candidates);
 
-
-        /*
-           Try a limited number of
-           candidates at this letter.
-        */
 
         const maxCandidates =
             Math.min(
@@ -1094,9 +1042,8 @@ function findCrossingWord() {
 
 
             /*
-               Try every occurrence
-               of the crossing letter
-               in the candidate word.
+               Try every occurrence of
+               the crossing letter.
             */
 
             for (
@@ -1116,9 +1063,8 @@ function findCrossingWord() {
 
 
                 /*
-                   New word should preferably
-                   run perpendicular to the
-                   existing word.
+                   Prefer perpendicular
+                   crossings.
                 */
 
                 const existingDirection =
@@ -1228,10 +1174,10 @@ function getStartingWord() {
             word =>
 
                 word.length >=
-                STARTING_WORD_MIN_LENGTH &&
+                    STARTING_WORD_MIN_LENGTH &&
 
                 word.length <=
-                BOARD_SIZE
+                    BOARD_SIZE
         );
 
 
@@ -1243,10 +1189,6 @@ function getStartingWord() {
 
     }
 
-
-    /*
-       Pick a random starting word.
-    */
 
     const index =
         Math.floor(
@@ -1273,14 +1215,10 @@ function placeFirstWord(word) {
         );
 
 
-    /*
-       Make sure the word fits.
-    */
-
     if (
         startCol < 0 ||
         startCol + word.length >
-        BOARD_SIZE
+            BOARD_SIZE
     ) {
 
         return false;
@@ -1331,14 +1269,16 @@ function generateBoard() {
 
 
     /*
-       Find a valid starting word.
+       Pick starting word.
     */
 
     const startingWord =
         getStartingWord();
 
 
-    if (!startingWord) {
+    if (
+        !startingWord
+    ) {
 
         console.error(
             "No starting word of 11 letters or more was found."
@@ -1354,7 +1294,7 @@ function generateBoard() {
 
 
     /*
-       Place first word.
+       Place starting word.
     */
 
     if (
@@ -1388,7 +1328,7 @@ function generateBoard() {
             MAX_ATTEMPTS
     ) {
 
-        const before =
+        const wordCountBefore =
             placedWords.length;
 
 
@@ -1398,15 +1338,9 @@ function generateBoard() {
         attempts++;
 
 
-        /*
-           If nothing was added,
-           continue trying different
-           random combinations.
-        */
-
         if (
             placedWords.length ===
-            before
+            wordCountBefore
         ) {
 
             continue;
@@ -1475,7 +1409,9 @@ function displayBoard() {
                 board[row][col];
 
 
-            if (letter) {
+            if (
+                letter
+            ) {
 
                 cell.classList.add(
                     "letter"
@@ -1483,51 +1419,14 @@ function displayBoard() {
 
 
                 /*
-                   Large letter
+                   Just display the
+                   letter.
+
+                   No tile value number.
                 */
 
-                const letterElement =
-                    document.createElement(
-                        "span"
-                    );
-
-
-                letterElement.className =
-                    "tile-letter";
-
-
-                letterElement.textContent =
+                cell.textContent =
                     letter;
-
-
-                cell.appendChild(
-                    letterElement
-                );
-
-
-                /*
-                   Scrabble value
-                */
-
-                const valueElement =
-                    document.createElement(
-                        "span"
-                    );
-
-
-                valueElement.className =
-                    "tile-value";
-
-
-                valueElement.textContent =
-                    getLetterValue(
-                        letter
-                    );
-
-
-                cell.appendChild(
-                    valueElement
-                );
 
             }
 
@@ -1558,8 +1457,7 @@ function displayWordList() {
 
 
     /*
-       Sort words by length,
-       longest first.
+       Longest words first.
     */
 
     const sortedWords =
@@ -1584,6 +1482,11 @@ function displayWordList() {
         wordElement.className =
             "word";
 
+
+        /*
+           Keep the Scrabble score
+           in the word list.
+        */
 
         const score =
             calculateWordScore(
@@ -1637,8 +1540,8 @@ async function loadDictionary() {
 
 
         /*
-           Split dictionary into
-           individual lines.
+           Convert dictionary into
+           uppercase words.
         */
 
         const words =
@@ -1652,7 +1555,9 @@ async function loadDictionary() {
                 )
                 .filter(
                     word =>
-                        /^[A-Z]+$/.test(word)
+                        /^[A-Z]+$/.test(
+                            word
+                        )
                 )
                 .filter(
                     word =>
@@ -1680,17 +1585,16 @@ async function loadDictionary() {
 
 
         /*
-           Check that we have
-           suitable starting words.
+           Check starting words.
         */
 
         const startingWords =
             dictionary.filter(
                 word =>
                     word.length >=
-                    STARTING_WORD_MIN_LENGTH &&
+                        STARTING_WORD_MIN_LENGTH &&
                     word.length <=
-                    BOARD_SIZE
+                        BOARD_SIZE
             );
 
 
@@ -1714,7 +1618,7 @@ async function loadDictionary() {
 
 
         /*
-           Generate the first board.
+           Generate first board.
         */
 
         generateBoard();
@@ -1748,7 +1652,7 @@ generateButton.addEventListener(
 
 
 /* =========================================
-   START
+   START APPLICATION
    ========================================= */
 
 loadDictionary();
