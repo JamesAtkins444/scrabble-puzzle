@@ -80,7 +80,7 @@ button:hover {
 
 
 /* --------------------------------
-   10 × 10 BOARD
+   15 × 15 BOARD
 -------------------------------- */
 
 .board {
@@ -94,10 +94,10 @@ button:hover {
     display: grid;
 
     grid-template-columns:
-        repeat(10, 1fr);
+        repeat(15, 1fr);
 
     grid-template-rows:
-        repeat(10, 1fr);
+        repeat(15, 1fr);
 
     border: 3px solid #222;
 
@@ -119,9 +119,9 @@ button:hover {
     justify-content: center;
 
     font-size: clamp(
-        14px,
-        4vw,
-        30px
+        12px,
+        3vw,
+        28px
     );
 
     font-weight: bold;
