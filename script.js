@@ -2239,26 +2239,62 @@ function generateBoard() {
 
 async function loadDictionary() {
 
+    console.log("Starting dictionary load...");
+
     try {
+
+        const dictionaryURL =
+            new URL(
+                "dictionary.txt",
+                window.location.href
+            ).href;
+
+        console.log(
+            "Loading dictionary from:",
+            dictionaryURL
+        );
 
         const response =
             await fetch(
-                "dictionary.txt"
+                dictionaryURL,
+                {
+                    cache: "no-store"
+                }
             );
 
+        console.log(
+            "Dictionary response:",
+            response.status,
+            response.statusText
+        );
 
         if (!response.ok) {
 
             throw new Error(
-                "Could not load dictionary.txt"
+                `HTTP ${response.status} ${response.statusText}`
             );
 
         }
 
-
         const text =
             await response.text();
 
+        console.log(
+            "Dictionary file loaded."
+        );
+
+        console.log(
+            "Characters loaded:",
+            text.length
+        );
+
+        if (!text.trim()) {
+
+            throw new Error(
+                "dictionary.txt is empty"
+            );
+
+        }
 
         dictionary =
             text
@@ -2274,22 +2310,30 @@ async function loadDictionary() {
                         word.length >= 2
                 );
 
-
         dictionary =
             [
                 ...new Set(dictionary)
             ];
 
-
         dictionarySet =
             new Set(dictionary);
-
 
         console.log(
             "Total dictionary words:",
             dictionary.length
         );
 
+        if (dictionary.length === 0) {
+
+            throw new Error(
+                "No usable words were found in dictionary.txt"
+            );
+
+        }
+
+        console.log(
+            "Dictionary loaded successfully."
+        );
 
         generateBoard();
 
@@ -2297,10 +2341,9 @@ async function loadDictionary() {
     catch (error) {
 
         console.error(
-            "Dictionary error:",
+            "DICTIONARY ERROR:",
             error
         );
-
 
         createEmptyBoard();
 
@@ -2308,18 +2351,14 @@ async function loadDictionary() {
 
         displayBoard();
 
-
         wordCountElement.textContent =
             "Dictionary error";
 
-
         wordListElement.textContent =
-            "Could not load dictionary.txt";
+            `Could not load dictionary.txt — ${error.message}`;
 
     }
-
 }
-
 
 /* --------------------------------
    BUTTONS
