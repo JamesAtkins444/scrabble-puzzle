@@ -1,22 +1,34 @@
-const BOARD_SIZE = 15;
+const BOARD_SIZE = 7;
 
-const CENTRE_ROW = 7;
-const CENTRE_COL = 7;
+const CENTRE_ROW = 3;
+const CENTRE_COL = 3;
 
-const TARGET_WORD_COUNT = 12;
+/*
+   Generate a random number of
+   additional crossword words.
+
+   Minimum: 2
+   Maximum: 4
+*/
+const TARGET_WORD_COUNT =
+    1 + Math.floor(Math.random() * 3);
+
 
 /*
    Crossword words must be
-   3-8 letters long.
+   3-6 letters long.
 */
 const MIN_WORD_LENGTH = 3;
-const MAX_WORD_LENGTH = 8;
+const MAX_WORD_LENGTH = 6;
 
 /*
    Starting word must be
-   11 letters or longer.
+   5 letters or longer.
+
+   It must still fit on the
+   7x7 board.
 */
-const STARTING_WORD_MIN_LENGTH = 11;
+const STARTING_WORD_MIN_LENGTH = 5;
 
 
 /* --------------------------------
@@ -1237,7 +1249,9 @@ function getStartingWord() {
         dictionary.filter(
             word =>
                 word.length >=
-                STARTING_WORD_MIN_LENGTH
+                STARTING_WORD_MIN_LENGTH &&
+                word.length <=
+                BOARD_SIZE
         );
 
 
@@ -1371,7 +1385,7 @@ function generateBoard() {
 
 
         message.textContent =
-            "dictionary.txt needs at least one word longer than 10 letters.";
+            "dictionary.txt needs at least one word between 5 and 7 letters long.";
 
 
         wordListElement.appendChild(
@@ -1387,6 +1401,12 @@ function generateBoard() {
     console.log(
         "Starting word:",
         firstWord
+    );
+
+
+    console.log(
+        "Target word count:",
+        TARGET_WORD_COUNT
     );
 
 
@@ -1413,7 +1433,7 @@ function generateBoard() {
 
         if (
             placedWords.length >=
-            TARGET_WORD_COUNT
+            TARGET_WORD_COUNT + 1
         ) {
 
             console.log(
@@ -1545,7 +1565,9 @@ async function loadDictionary() {
             dictionary.filter(
                 word =>
                     word.length >=
-                    STARTING_WORD_MIN_LENGTH
+                        STARTING_WORD_MIN_LENGTH &&
+                    word.length <=
+                        BOARD_SIZE
             );
 
 
@@ -1559,7 +1581,7 @@ async function loadDictionary() {
             dictionary.filter(
                 word =>
                     word.length >= 3 &&
-                    word.length <= 8
+                    word.length <= 6
             );
 
 
