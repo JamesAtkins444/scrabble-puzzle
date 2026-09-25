@@ -5,46 +5,30 @@
 
 
 body {
-
     margin: 0;
-
     padding: 40px 20px;
-
     font-family: Arial, sans-serif;
-
     background: #f2f2f2;
-
     color: #222;
-
 }
 
 
 .container {
-
     width: 100%;
-
     max-width: 800px;
-
     margin: 0 auto;
-
     text-align: center;
-
 }
 
 
 h1 {
-
     margin-bottom: 5px;
-
 }
 
 
 .description {
-
     margin-top: 0;
-
     color: #666;
-
 }
 
 
@@ -53,30 +37,19 @@ h1 {
 -------------------------------- */
 
 button {
-
     border: none;
-
     border-radius: 6px;
-
     padding: 12px 20px;
-
     background: #222;
-
     color: white;
-
     font-size: 16px;
-
     cursor: pointer;
-
     margin: 20px 0;
-
 }
 
 
 button:hover {
-
     background: #444;
-
 }
 
 
@@ -85,44 +58,41 @@ button:hover {
 -------------------------------- */
 
 .board {
-
     width: min(90vw, 600px);
-
     aspect-ratio: 1 / 1;
-
     margin: 20px auto;
 
     display: grid;
 
     grid-template-columns: repeat(15, 1fr);
-
     grid-template-rows: repeat(15, 1fr);
 
-    gap: 2px;
+    gap: 1px;
 
-    background: #6f6048;
+    background: #8c7a5a;
 
-    border: 4px solid #6f6048;
+    border: 3px solid #6f6048;
 
+    padding: 1px;
 }
 
 
 /* --------------------------------
-   BOARD SQUARE
+   INDIVIDUAL BOARD SQUARE
 -------------------------------- */
 
 .cell {
-
     position: relative;
+
+    width: 100%;
+    height: 100%;
 
     background: #d8c69f;
 
-    border: none;
+    border: 1px solid #a9956b;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     font-size: clamp(
@@ -134,19 +104,17 @@ button:hover {
     font-weight: bold;
 
     user-select: none;
-
 }
 
 
 /* --------------------------------
-   SCRABBLE TILE
+   OCCUPIED SCRABBLE TILE
 -------------------------------- */
 
 .cell.letter {
-
     background: #f4dfad;
 
-    border: 1px solid #c5ae7b;
+    border: 1px solid #b99d62;
 
     border-radius: 2px;
 
@@ -157,7 +125,6 @@ button:hover {
             0,
             0.25
         );
-
 }
 
 
@@ -166,11 +133,9 @@ button:hover {
 -------------------------------- */
 
 .tile-letter {
-
     line-height: 1;
 
     transform: translateY(-1px);
-
 }
 
 
@@ -179,11 +144,9 @@ button:hover {
 -------------------------------- */
 
 .tile-value {
-
     position: absolute;
 
     right: 3px;
-
     bottom: 2px;
 
     font-size: clamp(
@@ -195,16 +158,14 @@ button:hover {
     font-weight: bold;
 
     line-height: 1;
-
 }
 
 
 /* --------------------------------
-   INFORMATION
+   WORD INFORMATION
 -------------------------------- */
 
 .information {
-
     margin-top: 30px;
 
     background: white;
@@ -214,30 +175,24 @@ button:hover {
     padding: 20px;
 
     text-align: left;
-
 }
 
 
 .information h2 {
-
     margin-top: 0;
-
 }
 
 
 #wordList {
-
     display: flex;
 
     flex-wrap: wrap;
 
     gap: 8px;
-
 }
 
 
 .word {
-
     background: #eee;
 
     padding: 5px 8px;
@@ -245,7 +200,6 @@ button:hover {
     border-radius: 4px;
 
     font-size: 14px;
-
 }
 
 
@@ -256,38 +210,30 @@ button:hover {
 @media (max-width: 600px) {
 
     body {
-
         padding: 20px 10px;
-
     }
 
 
     .board {
-
         width: 96vw;
 
-        gap: 2px;
+        gap: 1px;
 
-        border-width: 3px;
-
+        border-width: 2px;
     }
 
 
     .cell {
-
         font-size: clamp(
             9px,
             4vw,
             22px
         );
-
     }
 
 
     .tile-value {
-
         font-size: 7px;
-
     }
 
 }
