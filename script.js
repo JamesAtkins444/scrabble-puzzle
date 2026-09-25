@@ -28,14 +28,16 @@ const STARTING_WORD_MIN_LENGTH = 5;
 const STARTING_WORD_MAX_LENGTH = 6;
 
 
+/*
+   Player always receives
+   seven Scrabble tiles.
+*/
+const PLAYER_TILE_COUNT = 7;
+
+
 /* --------------------------------
    SCRABBLE TILE DATA
 -------------------------------- */
-
-/*
-   Standard English Scrabble
-   tile distribution and values.
-*/
 
 const SCRABBLE_TILES = {
 
@@ -69,6 +71,67 @@ const SCRABBLE_TILES = {
     BLANK: { value: 0, count: 2 }
 
 };
+
+
+/* --------------------------------
+   HTML ELEMENTS
+-------------------------------- */
+
+const boardElement =
+    document.getElementById("board");
+
+const generateButton =
+    document.getElementById("generateButton");
+
+const wordCountElement =
+    document.getElementById("wordCount");
+
+const wordListElement =
+    document.getElementById("wordList");
+
+const tileRackElement =
+    document.getElementById("tileRack");
+
+const newTilesButton =
+    document.getElementById("newTilesButton");
+
+const tileMessageElement =
+    document.getElementById("tileMessage");
+
+
+/* --------------------------------
+   GAME DATA
+-------------------------------- */
+
+let board = [];
+
+let placedWords = [];
+
+let dictionary = [];
+
+let dictionarySet = new Set();
+
+
+/*
+   The player's seven tiles.
+
+   Each entry looks like:
+
+   {
+       letter: "A",
+       value: 1
+   }
+*/
+let playerTiles = [];
+
+
+/*
+   Index of the currently
+   selected player tile.
+
+   null means nothing selected.
+*/
+let selectedTileIndex = null;
 
 
 /* --------------------------------
@@ -122,11 +185,6 @@ function getLetterValue(
     }
 
 
-    /*
-       Unknown characters have
-       no Scrabble value.
-    */
-
     return 0;
 
 }
@@ -161,42 +219,13 @@ function calculateWordScore(
 
 
 /* --------------------------------
-   HTML ELEMENTS
--------------------------------- */
-
-const boardElement =
-    document.getElementById("board");
-
-const generateButton =
-    document.getElementById("generateButton");
-
-const wordCountElement =
-    document.getElementById("wordCount");
-
-const wordListElement =
-    document.getElementById("wordList");
-
-
-/* --------------------------------
-   GAME DATA
--------------------------------- */
-
-let board = [];
-
-let placedWords = [];
-
-let dictionary = [];
-
-let dictionarySet = new Set();
-
-
-/* --------------------------------
    CREATE EMPTY BOARD
 -------------------------------- */
 
 function createEmptyBoard() {
 
     board = [];
+
 
     for (
         let row = 0;
@@ -205,6 +234,7 @@ function createEmptyBoard() {
     ) {
 
         board[row] = [];
+
 
         for (
             let col = 0;
@@ -252,6 +282,37 @@ function displayBoard() {
                 "cell";
 
 
+            /*
+               Remember the position
+               of this board cell.
+            */
+
+            cell.dataset.row =
+                row;
+
+            cell.dataset.col =
+                col;
+
+
+            /*
+               Clicking an empty
+               cell attempts to place
+               the selected tile.
+            */
+
+            cell.addEventListener(
+                "click",
+                function () {
+
+                    handleBoardClick(
+                        row,
+                        col
+                    );
+
+                }
+            );
+
+
             const letter =
                 board[row][col];
 
@@ -262,11 +323,6 @@ function displayBoard() {
                     "letter"
                 );
 
-
-                /*
-                   Create the main
-                   letter.
-                */
 
                 const letterElement =
                     document.createElement(
@@ -280,11 +336,6 @@ function displayBoard() {
                     letter;
 
 
-                /*
-                   Create the small
-                   Scrabble value.
-                */
-
                 const valueElement =
                     document.createElement(
                         "span"
@@ -296,11 +347,6 @@ function displayBoard() {
                 valueElement.textContent =
                     getLetterValue(letter);
 
-
-                /*
-                   Add both elements
-                   to the tile.
-                */
 
                 cell.appendChild(
                     letterElement
@@ -350,11 +396,6 @@ function displayWords() {
                 "word";
 
 
-            /*
-               Show word and
-               Scrabble value.
-            */
-
             element.textContent =
                 `${wordData.word} (${calculateWordScore(wordData.word)})`;
 
@@ -365,6 +406,293 @@ function displayWords() {
 
         }
     );
+
+}
+
+
+/* --------------------------------
+   DISPLAY PLAYER TILES
+-------------------------------- */
+
+function displayPlayerTiles() {
+
+    tileRackElement.innerHTML = "";
+
+
+    playerTiles.forEach(
+        (tile, index) => {
+
+            const element =
+                document.createElement(
+                    "div"
+                );
+
+
+            element.className =
+                "player-tile";
+
+
+            /*
+               Highlight the currently
+               selected tile.
+            */
+
+            if (
+                index ===
+                selectedTileIndex
+            ) {
+
+                element.classList.add(
+                    "selected"
+                );
+
+            }
+
+
+            /*
+               Main letter.
+            */
+
+            const letterElement =
+                document.createElement(
+                    "span"
+                );
+
+            letterElement.className =
+                "tile-letter";
+
+            letterElement.textContent =
+                tile.letter;
+
+
+            /*
+               Small Scrabble value.
+            */
+
+            const valueElement =
+                document.createElement(
+                    "span"
+                );
+
+            valueElement.className =
+                "tile-value";
+
+            valueElement.textContent =
+                tile.value;
+
+
+            element.appendChild(
+                letterElement
+            );
+
+            element.appendChild(
+                valueElement
+            );
+
+
+            /*
+               Selecting a tile.
+            */
+
+            element.addEventListener(
+                "click",
+                function () {
+
+                    selectPlayerTile(
+                        index
+                    );
+
+                }
+            );
+
+
+            tileRackElement.appendChild(
+                element
+            );
+
+        }
+    );
+
+}
+
+
+/* --------------------------------
+   CREATE RANDOM TILE
+-------------------------------- */
+
+function createRandomTile() {
+
+    /*
+       Create a complete list of
+       the 100 standard Scrabble
+       tiles.
+
+       This means common letters
+       appear more frequently than
+       rare letters.
+    */
+
+    const tileBag = [];
+
+
+    for (
+        const letter in SCRABBLE_TILES
+    ) {
+
+        const tileData =
+            SCRABBLE_TILES[
+                letter
+            ];
+
+
+        for (
+            let i = 0;
+            i < tileData.count;
+            i++
+        ) {
+
+            tileBag.push({
+                letter: letter,
+                value: tileData.value
+            });
+
+        }
+
+    }
+
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            tileBag.length
+        );
+
+
+    return tileBag[
+        randomIndex
+    ];
+
+}
+
+
+/* --------------------------------
+   GENERATE PLAYER TILES
+-------------------------------- */
+
+function generatePlayerTiles() {
+
+    playerTiles = [];
+
+    selectedTileIndex = null;
+
+
+    for (
+        let i = 0;
+        i < PLAYER_TILE_COUNT;
+        i++
+    ) {
+
+        playerTiles.push(
+            createRandomTile()
+        );
+
+    }
+
+
+    displayPlayerTiles();
+
+
+    showTileMessage(
+        "Select a tile, then click an empty square.",
+        ""
+    );
+
+}
+
+
+/* --------------------------------
+   SELECT PLAYER TILE
+-------------------------------- */
+
+function selectPlayerTile(
+    index
+) {
+
+    /*
+       If the player clicks the
+       currently selected tile,
+       deselect it.
+    */
+
+    if (
+        selectedTileIndex === index
+    ) {
+
+        selectedTileIndex = null;
+
+    }
+    else {
+
+        selectedTileIndex = index;
+
+    }
+
+
+    displayPlayerTiles();
+
+
+    if (
+        selectedTileIndex !== null
+    ) {
+
+        const tile =
+            playerTiles[
+                selectedTileIndex
+            ];
+
+
+        showTileMessage(
+            `Selected ${tile.letter}. Click an empty board square.`,
+            ""
+        );
+
+    }
+    else {
+
+        showTileMessage(
+            "Select a tile, then click an empty square.",
+            ""
+        );
+
+    }
+
+}
+
+
+/* --------------------------------
+   TILE MESSAGE
+-------------------------------- */
+
+function showTileMessage(
+    message,
+    type
+) {
+
+    tileMessageElement.textContent =
+        message;
+
+
+    tileMessageElement.className =
+        "tile-message";
+
+
+    if (type) {
+
+        tileMessageElement.classList.add(
+            type
+        );
+
+    }
 
 }
 
@@ -383,6 +711,19 @@ function isInsideBoard(
         row < BOARD_SIZE &&
         col >= 0 &&
         col < BOARD_SIZE
+    );
+
+}
+
+
+/* --------------------------------
+   COPY BOARD
+-------------------------------- */
+
+function copyBoard() {
+
+    return board.map(
+        row => [...row]
     );
 
 }
@@ -427,20 +768,7 @@ function getPosition(
 
 
 /* --------------------------------
-   COPY BOARD
--------------------------------- */
-
-function copyBoard() {
-
-    return board.map(
-        row => [...row]
-    );
-
-}
-
-
-/* --------------------------------
-   PUT WORD ON TEST BOARD
+   PUT WORD ON BOARD
 -------------------------------- */
 
 function putWord(
@@ -493,6 +821,12 @@ function readWord(
 
     let startCol = col;
 
+
+    /*
+       Move backwards until we
+       reach the beginning of
+       the word.
+    */
 
     while (true) {
 
@@ -551,6 +885,11 @@ function readWord(
 
     }
 
+
+    /*
+       Now read the entire
+       word forwards.
+    */
 
     let word = "";
 
@@ -620,7 +959,7 @@ function getAllBoardWords(
 
 
     /*
-       HORIZONTAL
+       Horizontal words.
     */
 
     for (
@@ -677,7 +1016,7 @@ function getAllBoardWords(
 
 
     /*
-       VERTICAL
+       Vertical words.
     */
 
     for (
@@ -768,6 +1107,279 @@ function isBoardValid(
 
 
     return true;
+
+}
+
+
+/* --------------------------------
+   CHECK IF PLACEMENT CONNECTS
+-------------------------------- */
+
+function placementConnects(
+    row,
+    col
+) {
+
+    const neighbours = [
+
+        {
+            row: row - 1,
+            col: col
+        },
+
+        {
+            row: row + 1,
+            col: col
+        },
+
+        {
+            row: row,
+            col: col - 1
+        },
+
+        {
+            row: row,
+            col: col + 1
+        }
+
+    ];
+
+
+    for (
+        const neighbour
+        of neighbours
+    ) {
+
+        if (
+            isInsideBoard(
+                neighbour.row,
+                neighbour.col
+            ) &&
+            board[
+                neighbour.row
+            ][
+                neighbour.col
+            ]
+        ) {
+
+            return true;
+
+        }
+
+    }
+
+
+    return false;
+
+}
+
+
+/* --------------------------------
+   TRY PLACE PLAYER TILE
+-------------------------------- */
+
+function tryPlacePlayerTile(
+    letter,
+    row,
+    col
+) {
+
+    /*
+       The square must be inside
+       the board.
+    */
+
+    if (
+        !isInsideBoard(
+            row,
+            col
+        )
+    ) {
+
+        return false;
+
+    }
+
+
+    /*
+       The square must be empty.
+    */
+
+    if (
+        board[row][col]
+    ) {
+
+        return false;
+
+    }
+
+
+    /*
+       A player's first tile must
+       connect to the existing
+       board.
+    */
+
+    if (
+        getExistingLetters().length > 0 &&
+        !placementConnects(
+            row,
+            col
+        )
+    ) {
+
+        return false;
+
+    }
+
+
+    /*
+       Create a temporary version
+       of the board.
+    */
+
+    const testBoard =
+        copyBoard();
+
+
+    testBoard[row][col] =
+        letter;
+
+
+    /*
+       The resulting board must
+       contain only valid words.
+    */
+
+    if (
+        !isBoardValid(
+            testBoard
+        )
+    ) {
+
+        return false;
+
+    }
+
+
+    /*
+       Placement is valid.
+    */
+
+    board =
+        testBoard;
+
+
+    return true;
+
+}
+
+
+/* --------------------------------
+   HANDLE BOARD CLICK
+-------------------------------- */
+
+function handleBoardClick(
+    row,
+    col
+) {
+
+    /*
+       Nothing selected.
+    */
+
+    if (
+        selectedTileIndex === null
+    ) {
+
+        showTileMessage(
+            "Select a tile first.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Cannot place onto an
+       existing tile.
+    */
+
+    if (
+        board[row][col]
+    ) {
+
+        showTileMessage(
+            "That square is already occupied.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const selectedTile =
+        playerTiles[
+            selectedTileIndex
+        ];
+
+
+    /*
+       Try placing the tile.
+    */
+
+    const success =
+        tryPlacePlayerTile(
+            selectedTile.letter,
+            row,
+            col
+        );
+
+
+    if (!success) {
+
+        showTileMessage(
+            "That tile cannot be placed there.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Remove the tile from
+       the player's rack.
+    */
+
+    playerTiles.splice(
+        selectedTileIndex,
+        1
+    );
+
+
+    selectedTileIndex = null;
+
+
+    /*
+       Refresh the board.
+    */
+
+    displayBoard();
+
+    displayPlayerTiles();
+
+    displayWords();
+
+
+    showTileMessage(
+        "Tile placed successfully.",
+        "success"
+    );
 
 }
 
@@ -897,7 +1509,7 @@ function getExistingWordDirection(
 
 
 /* --------------------------------
-   TRY PLACE WORD
+   TRY PLACE GENERATED WORD
 -------------------------------- */
 
 function tryPlaceWord(
@@ -1252,12 +1864,6 @@ function getStartingWord() {
         );
 
 
-    console.log(
-        "Possible starting words:",
-        startingWords
-    );
-
-
     if (
         startingWords.length === 0
     ) {
@@ -1285,20 +1891,16 @@ function getStartingWord() {
    PLACE FIRST WORD
 -------------------------------- */
 
-/*
-   The first word is placed at a
-   completely random valid position.
-
-   It can be horizontal or vertical.
-*/
-
 function placeFirstWord(
     word
 ) {
 
     const directions = [
+
         "horizontal",
+
         "vertical"
+
     ];
 
 
@@ -1349,14 +1951,6 @@ function placeFirstWord(
             Math.random() *
             (maxCol + 1)
         );
-
-
-    console.log(
-        "Starting word position:",
-        row,
-        col,
-        direction
-    );
 
 
     for (
@@ -1422,45 +2016,27 @@ function generateBoard() {
 
         displayBoard();
 
-
         wordCountElement.textContent =
             "No starting word";
 
-
         wordListElement.innerHTML =
             "";
-
 
         const message =
             document.createElement(
                 "p"
             );
 
-
         message.textContent =
             "dictionary.txt needs at least one word between 5 and 6 letters long.";
-
 
         wordListElement.appendChild(
             message
         );
 
-
         return;
 
     }
-
-
-    console.log(
-        "Starting word:",
-        firstWord
-    );
-
-
-    console.log(
-        "Target generated words:",
-        TARGET_WORD_COUNT
-    );
 
 
     if (
@@ -1479,27 +2055,24 @@ function generateBoard() {
     displayWords();
 
 
+    /*
+       Give the player a fresh
+       rack whenever a new board
+       is generated.
+    */
+
+    generatePlayerTiles();
+
+
     let failedAttempts = 0;
 
 
     function addWord() {
 
-        /*
-           TARGET_WORD_COUNT is the
-           number of additional words.
-
-           +1 accounts for the
-           starting word.
-        */
-
         if (
             placedWords.length >=
             TARGET_WORD_COUNT + 1
         ) {
-
-            console.log(
-                "Board complete!"
-            );
 
             return;
 
@@ -1530,17 +2103,6 @@ function generateBoard() {
             failedAttempts >= 10
         ) {
 
-            console.log(
-                "No more legal words found."
-            );
-
-
-            console.log(
-                "Final word count:",
-                placedWords.length
-            );
-
-
             return;
 
         }
@@ -1566,11 +2128,6 @@ function generateBoard() {
 async function loadDictionary() {
 
     try {
-
-        console.log(
-            "Loading dictionary..."
-        );
-
 
         const response =
             await fetch(
@@ -1622,52 +2179,11 @@ async function loadDictionary() {
         );
 
 
-        const startingWords =
-            dictionary.filter(
-                word =>
-                    word.length >=
-                        STARTING_WORD_MIN_LENGTH &&
-                    word.length <=
-                        STARTING_WORD_MAX_LENGTH
-            );
-
-
-        console.log(
-            "Starting words available:",
-            startingWords.length
-        );
-
-
-        const crosswordWords =
-            dictionary.filter(
-                word =>
-                    word.length >=
-                        MIN_WORD_LENGTH &&
-                    word.length <=
-                        MAX_WORD_LENGTH
-            );
-
-
-        console.log(
-            "Crossword words available:",
-            crosswordWords.length
-        );
-
-
-        /*
-           Confirm the Scrabble tile
-           data is correct.
-        */
-
         console.log(
             "Total Scrabble tiles:",
             getTotalTileCount()
         );
 
-
-        /*
-           Generate board.
-        */
 
         generateBoard();
 
@@ -1683,7 +2199,6 @@ async function loadDictionary() {
         createEmptyBoard();
 
         placedWords = [];
-
 
         displayBoard();
 
@@ -1701,12 +2216,26 @@ async function loadDictionary() {
 
 
 /* --------------------------------
-   GENERATE BUTTON
+   GENERATE BOARD BUTTON
 -------------------------------- */
 
 generateButton.addEventListener(
     "click",
     generateBoard
+);
+
+
+/* --------------------------------
+   NEW PLAYER TILES BUTTON
+-------------------------------- */
+
+newTilesButton.addEventListener(
+    "click",
+    function () {
+
+        generatePlayerTiles();
+
+    }
 );
 
 
