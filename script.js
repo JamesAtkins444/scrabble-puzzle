@@ -113,30 +113,21 @@ let dictionarySet = new Set();
 
 
 /*
-   Player tiles still sitting
-   in the rack.
+   Tiles still sitting in the
+   player's rack.
 */
 let playerTiles = [];
 
 
 /*
-   Player tiles currently
-   placed on the board.
-
-   Each entry looks like:
-
-   {
-       letter: "A",
-       value: 1,
-       row: 2,
-       col: 4
-   }
+   Tiles the player has placed
+   on the board.
 */
 let playerPlacedTiles = [];
 
 
 /*
-   Index of selected rack tile.
+   Currently selected rack tile.
 */
 let selectedTileIndex = null;
 
@@ -242,15 +233,12 @@ function displayBoard() {
 
 
     /*
-       Check the validity of the
-       current player position.
-
-       This is calculated once
-       for the whole board.
+       Calculate the status of
+       every player tile.
     */
 
-    const boardIsValid =
-        isBoardValid(board);
+    const tileStatuses =
+        getPlayerTileStatuses();
 
 
     for (
@@ -275,10 +263,6 @@ function displayBoard() {
                 "cell";
 
 
-            /*
-               Remember position.
-            */
-
             cell.dataset.row =
                 row;
 
@@ -287,9 +271,8 @@ function displayBoard() {
 
 
             /*
-               Clicking an empty
-               square places the
-               selected tile.
+               Clicking an empty cell
+               places the selected tile.
             */
 
             cell.addEventListener(
@@ -312,9 +295,8 @@ function displayBoard() {
             if (letter) {
 
                 /*
-                   Check whether this
-                   tile belongs to the
-                   player.
+                   Is this a tile that
+                   the player placed?
                 */
 
                 const playerTile =
@@ -331,8 +313,15 @@ function displayBoard() {
                     );
 
 
+                    const status =
+                        tileStatuses[
+                            `${row},${col}`
+                        ];
+
+
                     if (
-                        boardIsValid
+                        status ===
+                        "valid"
                     ) {
 
                         cell.classList.add(
@@ -340,16 +329,31 @@ function displayBoard() {
                         );
 
                     }
-                    else {
+                    else if (
+                        status ===
+                        "invalid"
+                    ) {
 
                         cell.classList.add(
                             "invalid"
                         );
 
                     }
+                    else {
+
+                        cell.classList.add(
+                            "isolated"
+                        );
+
+                    }
 
                 }
                 else {
+
+                    /*
+                       Original generated
+                       board tile.
+                    */
 
                     cell.classList.add(
                         "letter"
@@ -426,6 +430,272 @@ function getPlayerPlacedTile(
             tile.row === row &&
             tile.col === col
     );
+
+}
+
+
+/* --------------------------------
+   GET NEIGHBOURS
+-------------------------------- */
+
+function getNeighbours(
+    row,
+    col
+) {
+
+    return [
+
+        {
+            row: row - 1,
+            col: col
+        },
+
+        {
+            row: row + 1,
+            col: col
+        },
+
+        {
+            row: row,
+            col: col - 1
+        },
+
+        {
+            row: row,
+            col: col + 1
+        }
+
+    ];
+
+}
+
+
+/* --------------------------------
+   ISOLATED TILE CHECK
+-------------------------------- */
+
+function isTileIsolated(
+    row,
+    col
+) {
+
+    const neighbours =
+        getNeighbours(
+            row,
+            col
+        );
+
+
+    for (
+        const neighbour
+        of neighbours
+    ) {
+
+        if (
+            isInsideBoard(
+                neighbour.row,
+                neighbour.col
+            ) &&
+            board[
+                neighbour.row
+            ][
+                neighbour.col
+            ]
+        ) {
+
+            return false;
+
+        }
+
+    }
+
+
+    return true;
+
+}
+
+
+/* --------------------------------
+   GET WORD AT TILE
+-------------------------------- */
+
+function getWordAtTile(
+    row,
+    col,
+    direction
+) {
+
+    return readWord(
+        board,
+        row,
+        col,
+        direction
+    );
+
+}
+
+
+/* --------------------------------
+   GET PLAYER TILE STATUSES
+-------------------------------- */
+
+function getPlayerTileStatuses() {
+
+    const statuses = {};
+
+
+    /*
+       Check every player tile.
+    */
+
+    playerPlacedTiles.forEach(
+        tile => {
+
+            const key =
+                `${tile.row},${tile.col}`;
+
+
+            /*
+               First check whether
+               the tile is isolated.
+            */
+
+            if (
+                isTileIsolated(
+                    tile.row,
+                    tile.col
+                )
+            ) {
+
+                statuses[key] =
+                    "isolated";
+
+                return;
+
+            }
+
+
+            /*
+               Find every word that
+               passes through this tile.
+            */
+
+            const horizontalWord =
+                getWordAtTile(
+                    tile.row,
+                    tile.col,
+                    "horizontal"
+                );
+
+
+            const verticalWord =
+                getWordAtTile(
+                    tile.row,
+                    tile.col,
+                    "vertical"
+                );
+
+
+            const horizontalLength =
+                horizontalWord.length;
+
+            const verticalLength =
+                verticalWord.length;
+
+
+            /*
+               A single letter touching
+               another tile is not yet
+               a word.
+
+               Therefore we only care
+               about sequences of 2+.
+            */
+
+            const hasHorizontalWord =
+                horizontalLength >= 2;
+
+            const hasVerticalWord =
+                verticalLength >= 2;
+
+
+            /*
+               Check if any word touching
+               this tile is invalid.
+            */
+
+            let hasInvalidWord = false;
+
+
+            if (
+                hasHorizontalWord &&
+                !dictionarySet.has(
+                    horizontalWord
+                )
+            ) {
+
+                hasInvalidWord = true;
+
+            }
+
+
+            if (
+                hasVerticalWord &&
+                !dictionarySet.has(
+                    verticalWord
+                )
+            ) {
+
+                hasInvalidWord = true;
+
+            }
+
+
+            /*
+               Invalid always wins.
+            */
+
+            if (hasInvalidWord) {
+
+                statuses[key] =
+                    "invalid";
+
+                return;
+
+            }
+
+
+            /*
+               If it belongs to at least
+               one valid word, make it
+               green.
+            */
+
+            if (
+                hasHorizontalWord ||
+                hasVerticalWord
+            ) {
+
+                statuses[key] =
+                    "valid";
+
+                return;
+
+            }
+
+
+            /*
+               Fallback: isolated.
+            */
+
+            statuses[key] =
+                "isolated";
+
+        }
+    );
+
+
+    return statuses;
 
 }
 
@@ -650,6 +920,9 @@ function generatePlayerTiles() {
         ""
     );
 
+
+    displayBoard();
+
 }
 
 
@@ -754,57 +1027,6 @@ function isInsideBoard(
 
 
 /* --------------------------------
-   COPY BOARD
--------------------------------- */
-
-function copyBoard() {
-
-    return board.map(
-        row => [...row]
-    );
-
-}
-
-
-/* --------------------------------
-   GET POSITION
--------------------------------- */
-
-function getPosition(
-    row,
-    col,
-    direction,
-    index
-) {
-
-    if (
-        direction ===
-        "horizontal"
-    ) {
-
-        return {
-
-            row: row,
-
-            col: col + index
-
-        };
-
-    }
-
-
-    return {
-
-        row: row + index,
-
-        col: col
-
-    };
-
-}
-
-
-/* --------------------------------
    READ WORD
 -------------------------------- */
 
@@ -819,6 +1041,11 @@ function readWord(
 
     let startCol = col;
 
+
+    /*
+       Move backwards to the
+       beginning of the word.
+    */
 
     while (true) {
 
@@ -877,6 +1104,10 @@ function readWord(
 
     }
 
+
+    /*
+       Read forwards.
+    */
 
     let word = "";
 
@@ -946,7 +1177,7 @@ function getAllBoardWords(
 
 
     /*
-       Horizontal.
+       Horizontal words.
     */
 
     for (
@@ -1003,7 +1234,7 @@ function getAllBoardWords(
 
 
     /*
-       Vertical.
+       Vertical words.
     */
 
     for (
@@ -1014,7 +1245,7 @@ function getAllBoardWords(
 
         for (
             let row = 0;
-            row < BOARD_SIZE;
+        row < BOARD_SIZE;
             row++
         ) {
 
@@ -1079,7 +1310,8 @@ function isBoardValid(
 
 
     /*
-       Empty board is valid.
+       No words is still a
+       structurally valid board.
     */
 
     if (
@@ -1107,55 +1339,6 @@ function isBoardValid(
 
 
     return true;
-
-}
-
-
-/* --------------------------------
-   CHECK BOARD AFTER PLAYER MOVE
--------------------------------- */
-
-function updatePlayerTileValidity() {
-
-    /*
-       Check the entire board.
-
-       If every word is valid,
-       all player tiles become
-       green.
-
-       If any word is invalid,
-       all player tiles currently
-       on the board become red.
-    */
-
-    const valid =
-        isBoardValid(board);
-
-
-    /*
-       Update message.
-    */
-
-    if (valid) {
-
-        showTileMessage(
-            "Valid board!",
-            "success"
-        );
-
-    }
-    else {
-
-        showTileMessage(
-            "The board contains an invalid word.",
-            "error"
-        );
-
-    }
-
-
-    return valid;
 
 }
 
@@ -1213,12 +1396,9 @@ function handleBoardClick(
 
 
     /*
-       Place the tile.
-
-       We deliberately DO NOT
-       reject the placement if
-       the resulting board is
-       invalid.
+       Place the tile regardless
+       of whether the resulting
+       position is valid.
     */
 
     board[row][col] =
@@ -1226,8 +1406,8 @@ function handleBoardClick(
 
 
     /*
-       Remember that this tile
-       belongs to the player.
+       Remember that this is
+       a player-controlled tile.
     */
 
     playerPlacedTiles.push({
@@ -1246,7 +1426,7 @@ function handleBoardClick(
 
 
     /*
-       Remove it from the rack.
+       Remove it from rack.
     */
 
     playerTiles.splice(
@@ -1259,12 +1439,8 @@ function handleBoardClick(
 
 
     /*
-       Re-render the board.
-
-       displayBoard() checks
-       whether the current board
-       is valid and colours the
-       player's tiles accordingly.
+       Recalculate all tile
+       statuses.
     */
 
     displayBoard();
@@ -1274,7 +1450,52 @@ function handleBoardClick(
     displayWords();
 
 
-    updatePlayerTileValidity();
+    /*
+       Give the player a useful
+       message based on the new
+       position.
+    */
+
+    const tileStatuses =
+        getPlayerTileStatuses();
+
+
+    const placedTileStatus =
+        tileStatuses[
+            `${row},${col}`
+        ];
+
+
+    if (
+        placedTileStatus ===
+        "valid"
+    ) {
+
+        showTileMessage(
+            "Valid word!",
+            "success"
+        );
+
+    }
+    else if (
+        placedTileStatus ===
+        "invalid"
+    ) {
+
+        showTileMessage(
+            "This tile is part of an invalid word.",
+            "error"
+        );
+
+    }
+    else {
+
+        showTileMessage(
+            "This tile is currently isolated.",
+            ""
+        );
+
+    }
 
 }
 
@@ -1513,7 +1734,9 @@ function tryPlaceWord(
 
 
     const testBoard =
-        copyBoard();
+        board.map(
+            row => [...row]
+        );
 
 
     for (
@@ -1950,11 +2173,6 @@ function generateBoard() {
     displayWords();
 
 
-    /*
-       Give player seven fresh
-       tiles.
-    */
-
     generatePlayerTiles();
 
 
@@ -2070,12 +2288,6 @@ async function loadDictionary() {
         console.log(
             "Total dictionary words:",
             dictionary.length
-        );
-
-
-        console.log(
-            "Total Scrabble tiles:",
-            getTotalTileCount()
         );
 
 
