@@ -430,4 +430,4 @@ generateButton.addEventListener(
    START GAME
 -------------------------------- */
 
-generateBoard();
+loadDictionary();
