@@ -99,6 +99,8 @@ button:hover {
     grid-template-rows:
         repeat(15, 1fr);
 
+    gap: 2px;
+
     border: 3px solid #222;
 
     background: #222;
@@ -106,7 +108,13 @@ button:hover {
 }
 
 
+/* --------------------------------
+   SCRABBLE TILE
+-------------------------------- */
+
 .cell {
+
+    position: relative;
 
     background: #e8d8b5;
 
@@ -119,9 +127,9 @@ button:hover {
     justify-content: center;
 
     font-size: clamp(
-        12px,
+        10px,
         3vw,
-        28px
+        26px
     );
 
     font-weight: bold;
@@ -131,9 +139,66 @@ button:hover {
 }
 
 
+/*
+   Only occupied cells get
+   the Scrabble tile appearance.
+*/
+
 .cell.letter {
 
     background: #f4dfad;
+
+    border: 1px solid #c5ae7b;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 1px 2px rgba(
+            0,
+            0,
+            0,
+            0.2
+        );
+
+}
+
+
+/* --------------------------------
+   LETTER
+-------------------------------- */
+
+.tile-letter {
+
+    line-height: 1;
+
+    transform: translateY(
+        -1px
+    );
+
+}
+
+
+/* --------------------------------
+   TILE POINT VALUE
+-------------------------------- */
+
+.tile-value {
+
+    position: absolute;
+
+    right: 2px;
+
+    bottom: 1px;
+
+    font-size: clamp(
+        6px,
+        1.1vw,
+        10px
+    );
+
+    font-weight: bold;
+
+    line-height: 1;
 
 }
 
@@ -204,6 +269,26 @@ button:hover {
     .board {
 
         width: 96vw;
+
+        gap: 1px;
+
+    }
+
+
+    .cell {
+
+        font-size: clamp(
+            9px,
+            4vw,
+            22px
+        );
+
+    }
+
+
+    .tile-value {
+
+        font-size: 7px;
 
     }
 
