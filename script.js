@@ -5,9 +5,17 @@ const CENTRE_COL = 7;
 
 const TARGET_WORD_COUNT = 12;
 
-const MIN_WORD_LENGTH = 2;
+/*
+   Crossword words must be
+   3-8 letters long.
+*/
+const MIN_WORD_LENGTH = 3;
 const MAX_WORD_LENGTH = 8;
 
+/*
+   Starting word must be
+   11 letters or longer.
+*/
 const STARTING_WORD_MIN_LENGTH = 11;
 
 
@@ -576,6 +584,11 @@ function isBoardValid(
         const word of words
     ) {
 
+        /*
+           Every connected sequence
+           must exist in dictionary.txt.
+        */
+
         if (
             !dictionarySet.has(word)
         ) {
@@ -683,7 +696,7 @@ function isCellInWord(
 
 
 /* --------------------------------
-   FIND WORD DIRECTION
+   FIND EXISTING WORD DIRECTION
 -------------------------------- */
 
 function getExistingWordDirection(
@@ -728,11 +741,15 @@ function tryPlaceWord(
 ) {
 
     /*
-       Check dictionary.
+       Crossword words must be
+       3-8 letters long.
     */
 
     if (
-        !dictionarySet.has(word)
+        word.length <
+        MIN_WORD_LENGTH ||
+        word.length >
+        MAX_WORD_LENGTH
     ) {
 
         return false;
@@ -741,15 +758,11 @@ function tryPlaceWord(
 
 
     /*
-       Crossword words must be
-       within our chosen length.
+       Must exist in dictionary.
     */
 
     if (
-        word.length <
-        MIN_WORD_LENGTH ||
-        word.length >
-        MAX_WORD_LENGTH
+        !dictionarySet.has(word)
     ) {
 
         return false;
@@ -782,7 +795,7 @@ function tryPlaceWord(
 
 
         /*
-           Must fit on board.
+           Must remain on board.
         */
 
         if (
@@ -806,8 +819,7 @@ function tryPlaceWord(
 
 
         /*
-           Existing letter must
-           be identical.
+           Existing letter must match.
         */
 
         if (existing) {
@@ -834,8 +846,7 @@ function tryPlaceWord(
 
 
     /*
-       Must actually cross
-       an existing word.
+       Must cross an existing letter.
     */
 
     if (!overlaps) {
@@ -846,8 +857,7 @@ function tryPlaceWord(
 
 
     /*
-       Must add at least one
-       new tile.
+       Must add a new tile.
     */
 
     if (!addsNewTile) {
@@ -875,8 +885,7 @@ function tryPlaceWord(
 
 
     /*
-       Validate EVERY word on
-       the resulting board.
+       Check entire board.
     */
 
     if (
@@ -981,8 +990,8 @@ function findCrossingWord() {
     ) {
 
         /*
-           Find dictionary words
-           containing this letter.
+           Only consider words
+           between 3 and 8 letters.
         */
 
         const candidates =
@@ -1010,7 +1019,7 @@ function findCrossingWord() {
 
 
         /*
-           Try candidates.
+           Try each candidate.
         */
 
         for (
@@ -1019,7 +1028,7 @@ function findCrossingWord() {
         ) {
 
             /*
-               Find every position
+               Find every occurrence
                of the matching letter.
             */
 
@@ -1040,7 +1049,7 @@ function findCrossingWord() {
 
 
                 /*
-                   Determine the direction
+                   Find the direction
                    of the existing word.
                 */
 
@@ -1052,9 +1061,8 @@ function findCrossingWord() {
 
 
                 /*
-                   New word must cross
-                   perpendicular to the
-                   existing word.
+                   New word crosses
+                   perpendicular to it.
                 */
 
                 let newDirection;
@@ -1111,7 +1119,7 @@ function findCrossingWord() {
 
 
                 /*
-                   Try the placement.
+                   Try placement.
                 */
 
                 if (
@@ -1146,8 +1154,8 @@ function findCrossingWord() {
 function getStartingWord() {
 
     /*
-       Find all words longer
-       than 10 letters.
+       Starting words must be
+       at least 11 letters.
     */
 
     const startingWords =
@@ -1164,10 +1172,6 @@ function getStartingWord() {
     );
 
 
-    /*
-       No suitable word.
-    */
-
     if (
         startingWords.length === 0
     ) {
@@ -1178,7 +1182,7 @@ function getStartingWord() {
 
 
     /*
-       Pick a random word.
+       Pick random starting word.
     */
 
     const randomIndex =
@@ -1203,18 +1207,13 @@ function placeFirstWord(
     word
 ) {
 
-    /*
-       Put the word horizontally
-       through the centre row.
-    */
-
     const row =
         CENTRE_ROW;
 
 
     /*
-       Centre the word around
-       the centre of the board.
+       Centre word around
+       the middle of board.
     */
 
     const col =
@@ -1225,7 +1224,7 @@ function placeFirstWord(
 
 
     /*
-       Check it fits.
+       Make sure word fits.
     */
 
     if (
@@ -1261,7 +1260,7 @@ function placeFirstWord(
 
 
     /*
-       Record it.
+       Record word.
     */
 
     placedWords.push({
@@ -1289,10 +1288,6 @@ function placeFirstWord(
 
 function generateBoard() {
 
-    /*
-       Start completely fresh.
-    */
-
     createEmptyBoard();
 
     placedWords = [];
@@ -1306,19 +1301,17 @@ function generateBoard() {
         getStartingWord();
 
 
-    /*
-       No suitable word.
-    */
-
     if (!firstWord) {
 
         displayBoard();
+
 
         wordCountElement.textContent =
             "No starting word";
 
 
-        wordListElement.innerHTML = "";
+        wordListElement.innerHTML =
+            "";
 
 
         const message =
@@ -1362,10 +1355,6 @@ function generateBoard() {
     }
 
 
-    /*
-       Display immediately.
-    */
-
     displayBoard();
 
     displayWords();
@@ -1383,7 +1372,7 @@ function generateBoard() {
     function addWord() {
 
         /*
-           Finished.
+           Stop when target reached.
         */
 
         if (
@@ -1401,7 +1390,7 @@ function generateBoard() {
 
 
         /*
-           Try to find a crossing.
+           Find a crossing word.
         */
 
         const success =
@@ -1425,9 +1414,8 @@ function generateBoard() {
 
 
         /*
-           If we can't find anything
-           after several attempts,
-           stop.
+           Stop if no more legal
+           words can be found.
         */
 
         if (
@@ -1500,13 +1488,11 @@ async function loadDictionary() {
 
 
         /*
-           Load every word.
+           Load every dictionary word.
 
-           IMPORTANT:
-
-           We do NOT apply MAX_WORD_LENGTH
-           here because we need to keep
-           long words for the starting word.
+           We don't limit the length here
+           because the starting word can
+           be longer than 8 letters.
         */
 
         dictionary =
@@ -1520,8 +1506,7 @@ async function loadDictionary() {
                 )
                 .filter(
                     word =>
-                        word.length >=
-                        MIN_WORD_LENGTH
+                        word.length >= 2
                 );
 
 
@@ -1546,8 +1531,7 @@ async function loadDictionary() {
 
 
         /*
-           Show how many possible
-           starting words we have.
+           Show available starting words.
         */
 
         const startingWords =
@@ -1561,6 +1545,28 @@ async function loadDictionary() {
         console.log(
             "Starting words available:",
             startingWords.length
+        );
+
+
+        /*
+           Show available crossword
+           words.
+
+           This should NOT include
+           2-letter words.
+        */
+
+        const crosswordWords =
+            dictionary.filter(
+                word =>
+                    word.length >= 3 &&
+                    word.length <= 8
+            );
+
+
+        console.log(
+            "Crossword words available:",
+            crosswordWords.length
         );
 
 
@@ -1585,6 +1591,7 @@ async function loadDictionary() {
 
 
         displayBoard();
+
 
         wordCountElement.textContent =
             "Dictionary error";
