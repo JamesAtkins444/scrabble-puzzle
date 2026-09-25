@@ -13,17 +13,10 @@ const MAX_WORD_LENGTH = 8;
    HTML ELEMENTS
 -------------------------------- */
 
-const boardElement =
-    document.getElementById("board");
-
-const generateButton =
-    document.getElementById("generateButton");
-
-const wordCountElement =
-    document.getElementById("wordCount");
-
-const wordListElement =
-    document.getElementById("wordList");
+const boardElement = document.getElementById("board");
+const generateButton = document.getElementById("generateButton");
+const wordCountElement = document.getElementById("wordCount");
+const wordListElement = document.getElementById("wordList");
 
 
 /* --------------------------------
@@ -31,9 +24,7 @@ const wordListElement =
 -------------------------------- */
 
 let board = [];
-
 let placedWords = [];
-
 let dictionary = [];
 
 
@@ -45,19 +36,11 @@ function createEmptyBoard() {
 
     board = [];
 
-    for (
-        let row = 0;
-        row < BOARD_SIZE;
-        row++
-    ) {
+    for (let row = 0; row < BOARD_SIZE; row++) {
 
         board[row] = [];
 
-        for (
-            let col = 0;
-            col < BOARD_SIZE;
-            col++
-        ) {
+        for (let col = 0; col < BOARD_SIZE; col++) {
 
             board[row][col] = null;
 
@@ -76,45 +59,25 @@ function displayBoard() {
 
     boardElement.innerHTML = "";
 
+    for (let row = 0; row < BOARD_SIZE; row++) {
 
-    for (
-        let row = 0;
-        row < BOARD_SIZE;
-        row++
-    ) {
+        for (let col = 0; col < BOARD_SIZE; col++) {
 
-        for (
-            let col = 0;
-            col < BOARD_SIZE;
-            col++
-        ) {
+            const cell = document.createElement("div");
 
-            const cell =
-                document.createElement("div");
+            cell.className = "cell";
 
-
-            cell.classList.add("cell");
-
-
-            const letter =
-                board[row][col];
-
+            const letter = board[row][col];
 
             if (letter) {
 
-                cell.textContent =
-                    letter;
+                cell.textContent = letter;
 
-                cell.classList.add(
-                    "letter"
-                );
+                cell.classList.add("letter");
 
             }
 
-
-            boardElement.appendChild(
-                cell
-            );
+            boardElement.appendChild(cell);
 
         }
 
@@ -140,74 +103,24 @@ function isInsideBoard(row, col) {
 
 
 /* --------------------------------
-   GET CELL FROM BOARD
+   GET POSITION
 -------------------------------- */
 
-function getCell(row, col, boardToRead = board) {
-
-    if (
-        !isInsideBoard(row, col)
-    ) {
-
-        return null;
-
-    }
-
-    return boardToRead[row][col];
-
-}
-
-
-/* --------------------------------
-   GET WORD LETTER POSITION
--------------------------------- */
-
-function getPosition(
-    row,
-    col,
-    direction,
-    index
-) {
+function getPosition(row, col, direction, index) {
 
     if (direction === "horizontal") {
 
         return {
-
             row: row,
-
             col: col + index
-
         };
 
     }
 
-
     return {
-
         row: row + index,
-
         col: col
-
     };
-
-}
-
-
-/* --------------------------------
-   GET OPPOSITE DIRECTION
--------------------------------- */
-
-function getOppositeDirection(direction) {
-
-    if (
-        direction === "horizontal"
-    ) {
-
-        return "vertical";
-
-    }
-
-    return "horizontal";
 
 }
 
@@ -220,30 +133,29 @@ function getWordAtPosition(
     row,
     col,
     direction,
-    boardToRead = board
+    boardToRead
 ) {
 
     let startRow = row;
-
     let startCol = col;
 
 
-    /*
-       Move backwards until we find
-       the beginning of the word.
-    */
+    /* Move backwards to beginning */
 
     while (true) {
 
-        const previousRow =
-            direction === "vertical"
-                ? startRow - 1
-                : startRow;
+        let previousRow = startRow;
+        let previousCol = startCol;
 
-        const previousCol =
-            direction === "horizontal"
-                ? startCol - 1
-                : startCol;
+        if (direction === "horizontal") {
+
+            previousCol--;
+
+        } else {
+
+            previousRow--;
+
+        }
 
 
         if (
@@ -272,20 +184,16 @@ function getWordAtPosition(
 
 
         startRow = previousRow;
-
         startCol = previousCol;
 
     }
 
 
-    /*
-       Read the complete word forwards.
-    */
+    /* Read forwards */
 
     let word = "";
 
     let currentRow = startRow;
-
     let currentCol = startCol;
 
 
@@ -293,15 +201,10 @@ function getWordAtPosition(
         isInsideBoard(
             currentRow,
             currentCol
-        ) &&
-        boardToRead[
-            currentRow
-        ][
-            currentCol
-        ]
+        )
     ) {
 
-        word +=
+        const letter =
             boardToRead[
                 currentRow
             ][
@@ -309,9 +212,17 @@ function getWordAtPosition(
             ];
 
 
-        if (
-            direction === "horizontal"
-        ) {
+        if (!letter) {
+
+            break;
+
+        }
+
+
+        word += letter;
+
+
+        if (direction === "horizontal") {
 
             currentCol++;
 
@@ -330,28 +241,36 @@ function getWordAtPosition(
 
 
 /* --------------------------------
-   CREATE TEMPORARY BOARD
+   CHECK DICTIONARY
 -------------------------------- */
 
-function createTemporaryBoard(
+function isDictionaryWord(word) {
+
+    return dictionary.includes(
+        word.toUpperCase()
+    );
+
+}
+
+
+/* --------------------------------
+   MAKE TEST BOARD
+-------------------------------- */
+
+function makeTestBoard(
     word,
     row,
     col,
     direction
 ) {
 
-    const temporaryBoard =
+    const testBoard =
         board.map(
-            currentRow =>
-                [...currentRow]
+            rowArray => [...rowArray]
         );
 
 
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
+    for (let i = 0; i < word.length; i++) {
 
         const position =
             getPosition(
@@ -362,36 +281,22 @@ function createTemporaryBoard(
             );
 
 
-        temporaryBoard[
+        testBoard[
             position.row
         ][
             position.col
-        ] =
-            word[i];
+        ] = word[i];
 
     }
 
 
-    return temporaryBoard;
+    return testBoard;
 
 }
 
 
 /* --------------------------------
-   CHECK WORD IS IN DICTIONARY
--------------------------------- */
-
-function isValidDictionaryWord(word) {
-
-    return dictionary.includes(
-        word.toUpperCase()
-    );
-
-}
-
-
-/* --------------------------------
-   CHECK CANDIDATE WORD
+   CHECK IF WORD CAN BE PLACED
 -------------------------------- */
 
 function canPlaceWord(
@@ -401,17 +306,14 @@ function canPlaceWord(
     direction
 ) {
 
-    word =
-        word.toUpperCase();
+    word = word.toUpperCase();
 
 
-    /* ----------------------------
-       BASIC WORD CHECK
-    ---------------------------- */
+    /* Check word length */
 
     if (
-        word.length <
-        MIN_WORD_LENGTH
+        word.length < MIN_WORD_LENGTH ||
+        word.length > MAX_WORD_LENGTH
     ) {
 
         return false;
@@ -419,28 +321,16 @@ function canPlaceWord(
     }
 
 
-    if (
-        word.length >
-        MAX_WORD_LENGTH
-    ) {
+    /* Check dictionary */
+
+    if (!isDictionaryWord(word)) {
 
         return false;
 
     }
 
 
-    if (
-        !isValidDictionaryWord(word)
-    ) {
-
-        return false;
-
-    }
-
-
-    /* ----------------------------
-       CHECK BOUNDARIES
-    ---------------------------- */
+    /* Check position */
 
     const finalPosition =
         getPosition(
@@ -463,22 +353,13 @@ function canPlaceWord(
     }
 
 
-    /* ----------------------------
-       CHECK EACH TILE
-    ---------------------------- */
-
-    let overlapsExistingTile =
-        false;
-
-    let touchesExistingTile =
-        false;
+    let overlaps = false;
+    let touches = false;
 
 
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
+    /* Check every letter */
+
+    for (let i = 0; i < word.length; i++) {
 
         const position =
             getPosition(
@@ -490,17 +371,14 @@ function canPlaceWord(
 
 
         const existingLetter =
-            getCell(
-                position.row,
+            board[
+                position.row
+            ][
                 position.col
-            );
+            ];
 
 
-        /*
-           If a tile already exists,
-           it must contain the same
-           letter.
-        */
+        /* Existing letter must match */
 
         if (existingLetter) {
 
@@ -512,58 +390,42 @@ function canPlaceWord(
 
             }
 
-
-            overlapsExistingTile = true;
+            overlaps = true;
 
         }
 
 
         /*
-           Check the four neighbouring
-           squares.
-
-           This determines whether the
-           new word connects to the
-           existing board.
+           Look around the new tile
+           for existing tiles.
         */
 
         const neighbours = [
 
             {
-                row:
-                    position.row - 1,
-                col:
-                    position.col
+                row: position.row - 1,
+                col: position.col
             },
 
             {
-                row:
-                    position.row + 1,
-                col:
-                    position.col
+                row: position.row + 1,
+                col: position.col
             },
 
             {
-                row:
-                    position.row,
-                col:
-                    position.col - 1
+                row: position.row,
+                col: position.col - 1
             },
 
             {
-                row:
-                    position.row,
-                col:
-                    position.col + 1
+                row: position.row,
+                col: position.col + 1
             }
 
         ];
 
 
-        for (
-            const neighbour
-            of neighbours
-        ) {
+        for (const neighbour of neighbours) {
 
             if (
                 !isInsideBoard(
@@ -578,31 +440,41 @@ function canPlaceWord(
 
 
             /*
-               Don't count another tile
-               that is part of the candidate
-               word as a connection.
+               Ignore tiles that are already
+               part of the word we're placing.
             */
 
-            const isPartOfCandidate =
-
-                direction === "horizontal"
-                    ? (
-                        neighbour.row ===
-                            position.row &&
-                        neighbour.col >= col &&
-                        neighbour.col <
-                            col + word.length
-                    )
-                    : (
-                        neighbour.col ===
-                            position.col &&
-                        neighbour.row >= row &&
-                        neighbour.row <
-                            row + word.length
-                    );
+            let partOfCandidate = false;
 
 
-            if (isPartOfCandidate) {
+            if (direction === "horizontal") {
+
+                if (
+                    neighbour.row === position.row &&
+                    neighbour.col >= col &&
+                    neighbour.col < col + word.length
+                ) {
+
+                    partOfCandidate = true;
+
+                }
+
+            } else {
+
+                if (
+                    neighbour.col === position.col &&
+                    neighbour.row >= row &&
+                    neighbour.row < row + word.length
+                ) {
+
+                    partOfCandidate = true;
+
+                }
+
+            }
+
+
+            if (partOfCandidate) {
 
                 continue;
 
@@ -617,8 +489,7 @@ function canPlaceWord(
                 ]
             ) {
 
-                touchesExistingTile =
-                    true;
+                touches = true;
 
             }
 
@@ -627,27 +498,16 @@ function canPlaceWord(
     }
 
 
-    /* ----------------------------
+    /* --------------------------------
        FIRST WORD
-    ---------------------------- */
+    -------------------------------- */
 
-    if (
-        placedWords.length === 0
-    ) {
+    if (placedWords.length === 0) {
 
-        /*
-           The first word must cover
-           the centre square.
-        */
-
-        let coversCentre = false;
+        let crossesCentre = false;
 
 
-        for (
-            let i = 0;
-            i < word.length;
-            i++
-        ) {
+        for (let i = 0; i < word.length; i++) {
 
             const position =
                 getPosition(
@@ -659,46 +519,37 @@ function canPlaceWord(
 
 
             if (
-                position.row ===
-                    CENTRE_ROW &&
-                position.col ===
-                    CENTRE_COL
+                position.row === CENTRE_ROW &&
+                position.col === CENTRE_COL
             ) {
 
-                coversCentre = true;
-
-                break;
+                crossesCentre = true;
 
             }
 
         }
 
 
-        return coversCentre;
+        return crossesCentre;
 
     }
 
 
-    /* ----------------------------
-       MUST CONNECT
-    ---------------------------- */
+    /* Later words must connect */
 
-    if (
-        !overlapsExistingTile &&
-        !touchesExistingTile
-    ) {
+    if (!overlaps && !touches) {
 
         return false;
 
     }
 
 
-    /* ----------------------------
-       CREATE TEMP BOARD
-    ---------------------------- */
+    /* --------------------------------
+       TEST RESULTING WORDS
+    -------------------------------- */
 
-    const temporaryBoard =
-        createTemporaryBoard(
+    const testBoard =
+        makeTestBoard(
             word,
             row,
             col,
@@ -706,23 +557,19 @@ function canPlaceWord(
         );
 
 
-    /* ----------------------------
-       CHECK MAIN WORD
-    ---------------------------- */
+    /* Check main word */
 
     const mainWord =
         getWordAtPosition(
             row,
             col,
             direction,
-            temporaryBoard
+            testBoard
         );
 
 
     if (
-        !isValidDictionaryWord(
-            mainWord
-        )
+        !isDictionaryWord(mainWord)
     ) {
 
         return false;
@@ -730,21 +577,15 @@ function canPlaceWord(
     }
 
 
-    /* ----------------------------
-       CHECK CROSS WORDS
-    ---------------------------- */
+    /* Check crossing words */
 
-    const oppositeDirection =
-        getOppositeDirection(
-            direction
-        );
+    const crossDirection =
+        direction === "horizontal"
+            ? "vertical"
+            : "horizontal";
 
 
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
+    for (let i = 0; i < word.length; i++) {
 
         const position =
             getPosition(
@@ -756,9 +597,8 @@ function canPlaceWord(
 
 
         /*
-           If this position already had
-           a tile, it isn't creating a
-           brand new crossing word.
+           Existing tiles don't create
+           a new crossing word.
         */
 
         if (
@@ -778,22 +618,21 @@ function canPlaceWord(
             getWordAtPosition(
                 position.row,
                 position.col,
-                oppositeDirection,
-                temporaryBoard
+                crossDirection,
+                testBoard
             );
 
 
         /*
-           A single letter isn't a word
-           and doesn't need dictionary
-           validation.
+           A single letter is fine.
+
+           A longer word must exist
+           in the dictionary.
         */
 
         if (
             crossWord.length > 1 &&
-            !isValidDictionaryWord(
-                crossWord
-            )
+            !isDictionaryWord(crossWord)
         ) {
 
             return false;
@@ -819,15 +658,10 @@ function placeWord(
     direction
 ) {
 
-    word =
-        word.toUpperCase();
+    word = word.toUpperCase();
 
 
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
+    for (let i = 0; i < word.length; i++) {
 
         const position =
             getPosition(
@@ -842,8 +676,7 @@ function placeWord(
             position.row
         ][
             position.col
-        ] =
-            word[i];
+        ] = word[i];
 
     }
 
@@ -869,9 +702,7 @@ function placeWord(
 
 function getRandomWord() {
 
-    if (
-        dictionary.length === 0
-    ) {
+    if (dictionary.length === 0) {
 
         return null;
 
@@ -891,20 +722,12 @@ function getRandomWord() {
 
 
 /* --------------------------------
-   TRY TO ADD WORD
+   TRY ADD WORD
 -------------------------------- */
 
 function tryAddWord() {
 
-    /*
-       Try many random possibilities.
-    */
-
-    for (
-        let attempt = 0;
-        attempt < 1000;
-        attempt++
-    ) {
+    for (let attempt = 0; attempt < 1000; attempt++) {
 
         const word =
             getRandomWord();
@@ -917,18 +740,6 @@ function tryAddWord() {
         }
 
 
-        if (
-            word.length <
-            MIN_WORD_LENGTH ||
-            word.length >
-            MAX_WORD_LENGTH
-        ) {
-
-            continue;
-
-        }
-
-
         const direction =
             Math.random() < 0.5
                 ? "horizontal"
@@ -937,15 +748,13 @@ function tryAddWord() {
 
         const row =
             Math.floor(
-                Math.random() *
-                BOARD_SIZE
+                Math.random() * BOARD_SIZE
             );
 
 
         const col =
             Math.floor(
-                Math.random() *
-                BOARD_SIZE
+                Math.random() * BOARD_SIZE
             );
 
 
@@ -990,49 +799,33 @@ function generateBoard() {
 
 
     /*
-       --------------------------------
-       FIRST WORD
-       --------------------------------
+       First word.
 
-       SCRABBLE is deliberately used
-       as the starting word for now.
+       SCRABBLE is 8 letters long.
 
-       It is placed horizontally
-       across the centre square.
+       Starting at column 4 means
+       the word crosses the centre
+       column 7.
     */
 
-    const firstWord =
-        "SCRABBLE";
-
-
-    const firstWordStartRow =
-        CENTRE_ROW;
-
-
-    const firstWordStartCol =
-        CENTRE_COL - 3;
+    const firstWord = "SCRABBLE";
 
 
     placeWord(
         firstWord,
-        firstWordStartRow,
-        firstWordStartCol,
+        CENTRE_ROW,
+        4,
         "horizontal"
     );
 
 
-    /*
-       --------------------------------
-       ADD MORE WORDS
-       --------------------------------
-    */
+    /* Add additional words */
 
     let failedAttempts = 0;
 
 
     while (
-        placedWords.length <
-            TARGET_WORD_COUNT &&
+        placedWords.length < TARGET_WORD_COUNT &&
         failedAttempts < 3000
     ) {
 
@@ -1054,7 +847,7 @@ function generateBoard() {
 
 
     console.log(
-        "Generated board with",
+        "Board generated:",
         placedWords.length,
         "words"
     );
@@ -1068,7 +861,7 @@ function generateBoard() {
 
 
 /* --------------------------------
-   DISPLAY WORD LIST
+   DISPLAY WORDS
 -------------------------------- */
 
 function displayWords() {
@@ -1080,28 +873,24 @@ function displayWords() {
     wordListElement.innerHTML = "";
 
 
-    placedWords.forEach(
-        wordData => {
+    for (const wordData of placedWords) {
 
-            const element =
-                document.createElement("span");
-
-
-            element.classList.add(
-                "word"
-            );
+        const element =
+            document.createElement("span");
 
 
-            element.textContent =
-                wordData.word;
+        element.className = "word";
 
 
-            wordListElement.appendChild(
-                element
-            );
+        element.textContent =
+            wordData.word;
 
-        }
-    );
+
+        wordListElement.appendChild(
+            element
+        );
+
+    }
 
 }
 
@@ -1114,6 +903,11 @@ async function loadDictionary() {
 
     try {
 
+        console.log(
+            "Loading dictionary..."
+        );
+
+
         const response =
             await fetch(
                 "dictionary.txt"
@@ -1123,7 +917,7 @@ async function loadDictionary() {
         if (!response.ok) {
 
             throw new Error(
-                "Could not load dictionary.txt"
+                "dictionary.txt could not be loaded"
             );
 
         }
@@ -1155,7 +949,7 @@ async function loadDictionary() {
 
 
         /*
-           Remove duplicate words.
+           Remove duplicates.
         */
 
         dictionary =
@@ -1163,25 +957,20 @@ async function loadDictionary() {
 
 
         console.log(
-            `Loaded ${dictionary.length} dictionary words`
+            "Dictionary loaded:",
+            dictionary.length,
+            "words"
         );
 
 
-        if (
-            dictionary.length === 0
-        ) {
+        if (dictionary.length === 0) {
 
             throw new Error(
-                "Dictionary is empty"
+                "Dictionary contains no usable words"
             );
 
         }
 
-
-        /*
-           Generate the first board
-           automatically.
-        */
 
         generateBoard();
 
@@ -1189,17 +978,38 @@ async function loadDictionary() {
     catch (error) {
 
         console.error(
-            "Dictionary loading error:",
+            "ERROR:",
             error
         );
 
 
+        /*
+           Still show the board even if
+           the dictionary fails.
+
+           This makes it much easier to
+           diagnose the problem.
+        */
+
+        createEmptyBoard();
+
+        placeWord(
+            "SCRABBLE",
+            CENTRE_ROW,
+            4,
+            "horizontal"
+        );
+
+
+        displayBoard();
+
+
         wordCountElement.textContent =
-            "Could not load dictionary";
+            "Dictionary error";
 
 
         wordListElement.textContent =
-            "Make sure dictionary.txt is in the same folder as index.html.";
+            "Could not load dictionary.txt. Check that the file is in the GitHub repository.";
 
     }
 
@@ -1207,7 +1017,7 @@ async function loadDictionary() {
 
 
 /* --------------------------------
-   GENERATE BUTTON
+   BUTTON
 -------------------------------- */
 
 generateButton.addEventListener(
