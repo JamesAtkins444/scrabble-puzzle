@@ -94,25 +94,21 @@ button:hover {
 
     display: grid;
 
-    grid-template-columns:
-        repeat(15, 1fr);
+    grid-template-columns: repeat(15, 1fr);
 
-    grid-template-rows:
-        repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
 
     gap: 2px;
 
-    border: 3px solid #8c7a5a;
+    background: #6f6048;
 
-    background: #c8b68f;
-
-    padding: 2px;
+    border: 4px solid #6f6048;
 
 }
 
 
 /* --------------------------------
-   EMPTY BOARD SQUARE
+   BOARD SQUARE
 -------------------------------- */
 
 .cell {
@@ -121,7 +117,7 @@ button:hover {
 
     background: #d8c69f;
 
-    border: 1px solid #b9a77f;
+    border: none;
 
     display: flex;
 
@@ -143,5 +139,156 @@ button:hover {
 
 
 /* --------------------------------
-   OCC
+   SCRABBLE TILE
+-------------------------------- */
+
+.cell.letter {
+
+    background: #f4dfad;
+
+    border: 1px solid #c5ae7b;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 1px 2px rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+}
+
+
+/* --------------------------------
+   LETTER
+-------------------------------- */
+
+.tile-letter {
+
+    line-height: 1;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* --------------------------------
+   TILE POINT VALUE
+-------------------------------- */
+
+.tile-value {
+
+    position: absolute;
+
+    right: 3px;
+
+    bottom: 2px;
+
+    font-size: clamp(
+        6px,
+        1.1vw,
+        10px
+    );
+
+    font-weight: bold;
+
+    line-height: 1;
+
+}
+
+
+/* --------------------------------
+   INFORMATION
+-------------------------------- */
+
+.information {
+
+    margin-top: 30px;
+
+    background: white;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    text-align: left;
+
+}
+
+
+.information h2 {
+
+    margin-top: 0;
+
+}
+
+
+#wordList {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.word {
+
+    background: #eee;
+
+    padding: 5px 8px;
+
+    border-radius: 4px;
+
+    font-size: 14px;
+
+}
+
+
+/* --------------------------------
+   MOBILE
+-------------------------------- */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 20px 10px;
+
+    }
+
+
+    .board {
+
+        width: 96vw;
+
+        gap: 2px;
+
+        border-width: 3px;
+
+    }
+
+
+    .cell {
+
+        font-size: clamp(
+            9px,
+            4vw,
+            22px
+        );
+
+    }
+
+
+    .tile-value {
+
+        font-size: 7px;
+
+    }
+
+}
 ```
