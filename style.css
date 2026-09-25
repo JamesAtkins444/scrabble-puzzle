@@ -2,40 +2,59 @@
     box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
     padding: 40px 20px;
+
     font-family: Arial, sans-serif;
+
     background: #f2f2f2;
+
     color: #222;
 }
+
 
 .container {
     width: 100%;
     max-width: 800px;
+
     margin: 0 auto;
+
     text-align: center;
 }
+
 
 h1 {
     margin-bottom: 5px;
 }
 
+
 .description {
     margin-top: 0;
+
     color: #666;
 }
 
+
 button {
     border: none;
+
     border-radius: 6px;
+
     padding: 12px 20px;
+
     background: #222;
+
     color: white;
+
     font-size: 16px;
+
     cursor: pointer;
+
     margin: 20px 0;
 }
+
 
 button:hover {
     background: #444;
@@ -48,16 +67,23 @@ button:hover {
 
 .board {
     width: min(90vw, 600px);
+
     aspect-ratio: 1 / 1;
+
     margin: 20px auto;
+
     display: grid;
 
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    grid-template-rows:
+        repeat(7, 1fr);
 
     gap: 2px;
 
     border: 3px solid #222;
+
     background: #222;
 }
 
@@ -68,17 +94,25 @@ button:hover {
 
 .cell {
     position: relative;
+
     background: #e8d8b5;
+
     border: 1px solid #c4b38f;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    font-size: clamp(16px, 6vw, 42px);
+    font-size:
+        clamp(16px, 6vw, 42px);
+
     font-weight: bold;
 
     user-select: none;
+
+    cursor: pointer;
 }
 
 
@@ -88,11 +122,15 @@ button:hover {
 
 .cell.letter {
     background: #f4dfad;
+
     border: 1px solid #c5ae7b;
+
     border-radius: 2px;
 
     box-shadow:
         0 1px 2px rgba(0, 0, 0, 0.2);
+
+    cursor: default;
 }
 
 
@@ -102,6 +140,7 @@ button:hover {
 
 .tile-letter {
     position: relative;
+
     z-index: 1;
 }
 
@@ -114,11 +153,167 @@ button:hover {
     position: absolute;
 
     right: 8%;
+
     bottom: 5%;
 
     font-size: 0.35em;
+
     font-weight: bold;
+
     line-height: 1;
+}
+
+
+/* --------------------------------
+   PLAYER RACK
+-------------------------------- */
+
+.rack-section {
+    margin: 30px auto;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 8px;
+}
+
+
+.rack-section h2 {
+    margin-top: 0;
+}
+
+
+/* --------------------------------
+   TILE RACK
+-------------------------------- */
+
+.tile-rack {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-height: 70px;
+
+    flex-wrap: wrap;
+}
+
+
+/* --------------------------------
+   PLAYER TILE
+-------------------------------- */
+
+.player-tile {
+    position: relative;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f4dfad;
+
+    border: 2px solid #c5ae7b;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        transform 0.1s,
+        box-shadow 0.1s;
+}
+
+
+.player-tile:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 4px 7px rgba(0, 0, 0, 0.25);
+}
+
+
+/* --------------------------------
+   SELECTED PLAYER TILE
+-------------------------------- */
+
+.player-tile.selected {
+    transform: translateY(-8px);
+
+    border: 3px solid #222;
+
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* --------------------------------
+   PLAYER TILE VALUE
+-------------------------------- */
+
+.player-tile .tile-value {
+    font-size: 12px;
+
+    right: 5px;
+
+    bottom: 4px;
+}
+
+
+/* --------------------------------
+   NEW TILES BUTTON
+-------------------------------- */
+
+.secondary-button {
+    background: #666;
+
+    margin-top: 15px;
+}
+
+
+.secondary-button:hover {
+    background: #444;
+}
+
+
+/* --------------------------------
+   TILE MESSAGE
+-------------------------------- */
+
+.tile-message {
+    margin-bottom: 0;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+.tile-message.error {
+    color: #b00020;
+}
+
+
+.tile-message.success {
+    color: #247a35;
 }
 
 
@@ -128,11 +323,16 @@ button:hover {
 
 .information {
     margin-top: 30px;
+
     background: white;
+
     border-radius: 8px;
+
     padding: 20px;
+
     text-align: left;
 }
+
 
 .information h2 {
     margin-top: 0;
@@ -145,14 +345,20 @@ button:hover {
 
 #wordList {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 8px;
 }
 
+
 .word {
     background: #eee;
+
     padding: 5px 8px;
+
     border-radius: 4px;
+
     font-size: 14px;
 }
 
@@ -167,13 +373,26 @@ button:hover {
         padding: 20px 10px;
     }
 
+
     .board {
         width: 96vw;
+
         gap: 1px;
     }
 
+
     .cell {
-        font-size: clamp(14px, 7vw, 32px);
+        font-size:
+            clamp(14px, 7vw, 32px);
+    }
+
+
+    .player-tile {
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 26px;
     }
 
 }
