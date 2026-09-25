@@ -256,6 +256,21 @@ function tryAddWord() {
 
         const word = getRandomWord();
 
+
+        /*
+           Ignore words that are too short
+           or too long for this generator.
+        */
+
+        if (
+            word.length < 3 ||
+            word.length > 10
+        ) {
+
+            continue;
+
+        }
+
         const direction =
             Math.random() < 0.5
                 ? "horizontal"
