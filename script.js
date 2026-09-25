@@ -1,12 +1,12 @@
-const BOARD_SIZE = 15;
+const BOARD_SIZE = 10;
 
-const CENTRE_ROW = 7;
-const CENTRE_COL = 7;
+const CENTRE_ROW = 4;
+const CENTRE_COL = 4;
 
-const TARGET_WORD_COUNT = 20;
+const TARGET_WORD_COUNT = 12;
 
-const MIN_WORD_LENGTH = 4;
-const MAX_WORD_LENGTH = 8;
+const MIN_WORD_LENGTH = 3;
+const MAX_WORD_LENGTH = 6;
 
 
 /* --------------------------------
@@ -165,22 +165,15 @@ function getPosition(
     if (direction === "horizontal") {
 
         return {
-
             row: row,
-
             col: col + index
-
         };
 
     }
 
-
     return {
-
         row: row + index,
-
         col: col
-
     };
 
 }
@@ -197,11 +190,7 @@ function wordFits(
     direction
 ) {
 
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
+    for (let i = 0; i < word.length; i++) {
 
         const position =
             getPosition(
@@ -233,7 +222,7 @@ function wordFits(
 
 
         /*
-           If there is already a letter,
+           If a letter already exists,
            it must match.
         */
 
@@ -255,7 +244,7 @@ function wordFits(
 
 
 /* --------------------------------
-   CHECK WORD TOUCHES BOARD
+   CHECK WORD CONNECTS
 -------------------------------- */
 
 function wordTouchesBoard(
@@ -266,8 +255,8 @@ function wordTouchesBoard(
 ) {
 
     /*
-       The first word doesn't need
-       to touch anything.
+       First word doesn't need to
+       connect to anything.
     */
 
     if (placedWords.length === 0) {
@@ -277,11 +266,7 @@ function wordTouchesBoard(
     }
 
 
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
+    for (let i = 0; i < word.length; i++) {
 
         const position =
             getPosition(
@@ -293,8 +278,8 @@ function wordTouchesBoard(
 
 
         /*
-           Existing letter on the same
-           square = word crossing.
+           Existing letter means
+           the words cross.
         */
 
         if (
@@ -311,8 +296,7 @@ function wordTouchesBoard(
 
 
         /*
-           Check four neighbouring
-           squares.
+           Check neighbouring squares.
         */
 
         const neighbours = [
@@ -380,72 +364,6 @@ function wordTouchesBoard(
 
 
 /* --------------------------------
-   CHECK CROSSING WORDS
--------------------------------- */
-
-function checkCrossWords(
-    word,
-    row,
-    col,
-    direction
-) {
-
-    /*
-       Create a temporary copy of
-       the board.
-    */
-
-    const testBoard =
-        board.map(
-            rowArray => [...rowArray]
-        );
-
-
-    /*
-       Put the new word onto the
-       temporary board.
-    */
-
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
-
-        const position =
-            getPosition(
-                row,
-                col,
-                direction,
-                i
-            );
-
-
-        testBoard[
-            position.row
-        ][
-            position.col
-        ] = word[i];
-
-    }
-
-
-    /*
-       For this stage we're only
-       checking that the new word
-       itself doesn't conflict with
-       existing letters.
-
-       Cross-word validation will be
-       made stricter in the next step.
-    */
-
-    return true;
-
-}
-
-
-/* --------------------------------
    CAN PLACE WORD
 -------------------------------- */
 
@@ -460,6 +378,10 @@ function canPlaceWord(
         word.toUpperCase();
 
 
+    /*
+       Check length.
+    */
+
     if (
         word.length < MIN_WORD_LENGTH ||
         word.length > MAX_WORD_LENGTH
@@ -471,8 +393,7 @@ function canPlaceWord(
 
 
     /*
-       Make sure the word exists in
-       our dictionary.
+       Check dictionary.
     */
 
     if (
@@ -485,7 +406,8 @@ function canPlaceWord(
 
 
     /*
-       Make sure the word fits.
+       Check board boundaries
+       and existing letters.
     */
 
     if (
@@ -503,30 +425,12 @@ function canPlaceWord(
 
 
     /*
-       Make sure it connects to the
-       existing board.
+       Later words must connect
+       to the existing board.
     */
 
     if (
         !wordTouchesBoard(
-            word,
-            row,
-            col,
-            direction
-        )
-    ) {
-
-        return false;
-
-    }
-
-
-    /*
-       Basic crossing check.
-    */
-
-    if (
-        !checkCrossWords(
             word,
             row,
             col,
@@ -559,11 +463,7 @@ function placeWord(
         word.toUpperCase();
 
 
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
+    for (let i = 0; i < word.length; i++) {
 
         const position =
             getPosition(
@@ -632,16 +532,9 @@ function getRandomWord() {
 
 function tryAddWord() {
 
-    /*
-       Only try 100 possibilities.
-
-       This prevents the browser from
-       getting stuck.
-    */
-
     for (
         let attempt = 0;
-        attempt < 100;
+        attempt < 50;
         attempt++
     ) {
 
@@ -711,41 +604,29 @@ function tryAddWord() {
 
 function generateBoard() {
 
-    /*
-       Start with a completely empty
-       board.
-    */
-
     createEmptyBoard();
 
     placedWords = [];
 
 
     /*
-       --------------------------------
        FIRST WORD
-       --------------------------------
 
-       SCRABBLE goes across the centre.
+       On a 10×10 board the centre
+       is approximately row 4,
+       column 4.
+
+       We place SCRABBLE horizontally
+       starting at column 1.
     */
 
     placeWord(
         "SCRABBLE",
-        CENTRE_ROW,
         4,
+        1,
         "horizontal"
     );
 
-
-    /*
-       IMPORTANT:
-
-       Display the board immediately.
-
-       This means we will always see
-       something even if generation
-       takes a while.
-    */
 
     displayBoard();
 
@@ -753,17 +634,11 @@ function generateBoard() {
 
 
     /*
-       Add words one at a time.
-
-       A tiny delay between groups
-       prevents the browser from
-       freezing.
+       Add words gradually so the
+       browser doesn't freeze.
     */
 
-    let wordsAdded = 0;
-
-
-    function addNextWords() {
+    function addWords() {
 
         let attempts = 0;
 
@@ -774,35 +649,17 @@ function generateBoard() {
             attempts < 20
         ) {
 
-            const added =
-                tryAddWord();
-
-
-            if (added) {
-
-                wordsAdded++;
-
-            }
-
+            tryAddWord();
 
             attempts++;
 
         }
 
 
-        /*
-           Update the visible board.
-        */
-
         displayBoard();
 
         displayWords();
 
-
-        /*
-           Continue if we still want
-           more words.
-        */
 
         if (
             placedWords.length <
@@ -810,8 +667,8 @@ function generateBoard() {
         ) {
 
             setTimeout(
-                addNextWords,
-                10
+                addWords,
+                20
             );
 
         }
@@ -819,7 +676,7 @@ function generateBoard() {
     }
 
 
-    addNextWords();
+    addWords();
 
 }
 
@@ -831,11 +688,6 @@ function generateBoard() {
 async function loadDictionary() {
 
     try {
-
-        console.log(
-            "Loading dictionary..."
-        );
-
 
         const response =
             await fetch(
@@ -877,10 +729,6 @@ async function loadDictionary() {
                 );
 
 
-        /*
-           Remove duplicates.
-        */
-
         dictionary =
             [...new Set(dictionary)];
 
@@ -892,34 +740,28 @@ async function loadDictionary() {
         );
 
 
-        /*
-           Generate the board.
-        */
-
         generateBoard();
 
     }
     catch (error) {
 
-        console.error(
-            error
-        );
+        console.error(error);
 
-
-        /*
-           Even if the dictionary fails,
-           show SCRABBLE on the board.
-        */
 
         createEmptyBoard();
 
         placedWords = [];
 
 
+        /*
+           Still show the board if
+           dictionary.txt fails.
+        */
+
         placeWord(
             "SCRABBLE",
-            CENTRE_ROW,
             4,
+            1,
             "horizontal"
         );
 
@@ -929,12 +771,8 @@ async function loadDictionary() {
         displayWords();
 
 
-        wordCountElement.textContent =
-            "Dictionary could not be loaded";
-
-
         wordListElement.textContent =
-            "Check that dictionary.txt is in the same folder as index.html.";
+            "Could not load dictionary.txt";
 
     }
 
