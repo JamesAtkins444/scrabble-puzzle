@@ -1629,46 +1629,40 @@ function displayWords() {
         getPlayerScoringWords();
 
     if (scoringWords.length === 0) {
-        wordListElement.innerHTML =
-            "<p>No scoring words yet.</p>";
-
         updateScore();
         return;
     }
 
-    scoringWords.forEach(
-        wordData => {
-            const score =
-                calculateWordScoreAtPosition(
-                    wordData.word,
-                    wordData.row,
-                    wordData.col,
-                    wordData.direction
-                );
+    scoringWords.forEach(wordData => {
 
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-            item.className =
-                "word-item";
-
-            item.innerHTML = `
-                <span>
-                    ${wordData.word}
-                </span>
-
-                <strong>
-                    ${score}
-                </strong>
-            `;
-
-            wordListElement.appendChild(
-                item
+        const score =
+            calculateWordScoreAtPosition(
+                wordData.word,
+                wordData.row,
+                wordData.col,
+                wordData.direction
             );
-        }
-    );
+
+        const pill =
+            document.createElement("div");
+
+        pill.className =
+            "word-pill";
+
+        pill.innerHTML = `
+            <span class="word-pill-word">
+                ${wordData.word}
+            </span>
+
+            <span class="word-pill-score">
+                ${score}
+            </span>
+        `;
+
+        wordListElement.appendChild(
+            pill
+        );
+    });
 
     updateScore();
 }
