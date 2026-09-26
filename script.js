@@ -253,8 +253,6 @@ function generateBonusSquares() {
         };
     }
 
-    // Fallback if the spacing rule made it impossible to reach
-    // the desired number of bonus squares.
     if (Object.keys(bonusSquares).length < desiredCount) {
         const remainingCells = availableCells.filter(cell => {
             const key = `${cell.row},${cell.col}`;
@@ -384,11 +382,7 @@ function displayBoard() {
                     tile.addEventListener("click", event => {
                         event.stopPropagation();
 
-                        const tileKey = `${row},${col}`;
-
-                        if (
-                            playerPlacedTiles[tileKey]
-                        ) {
+                        if (playerPlacedTiles[key]) {
                             returnPlayerTileToRack(
                                 row,
                                 col
@@ -520,7 +514,6 @@ function getPlayerTileStatuses() {
 
                 if (!connected.has(key)) {
                     connected.add(key);
-
                     queue.push(neighbour);
                 }
             }
@@ -630,9 +623,7 @@ function readWord(
 }
 
 
-function getAllBoardWordsWithPositions(
-    testBoard
-) {
+function getAllBoardWordsWithPositions(testBoard) {
     const words = [];
 
     for (let row = 0; row < BOARD_SIZE; row++) {
@@ -648,20 +639,14 @@ function getAllBoardWordsWithPositions(
                         "horizontal"
                     );
 
-                if (
-                    wordData.word.length >= 2
-                ) {
+                if (wordData.word.length >= 2) {
                     if (
                         !words.some(
                             existing =>
-                                existing.word ===
-                                    wordData.word &&
-                                existing.row ===
-                                    wordData.row &&
-                                existing.col ===
-                                    wordData.col &&
-                                existing.direction ===
-                                    wordData.direction
+                                existing.word === wordData.word &&
+                                existing.row === wordData.row &&
+                                existing.col === wordData.col &&
+                                existing.direction === wordData.direction
                         )
                     ) {
                         words.push(wordData);
@@ -690,20 +675,14 @@ function getAllBoardWordsWithPositions(
                         "vertical"
                     );
 
-                if (
-                    wordData.word.length >= 2
-                ) {
+                if (wordData.word.length >= 2) {
                     if (
                         !words.some(
                             existing =>
-                                existing.word ===
-                                    wordData.word &&
-                                existing.row ===
-                                    wordData.row &&
-                                existing.col ===
-                                    wordData.col &&
-                                existing.direction ===
-                                    wordData.direction
+                                existing.word === wordData.word &&
+                                existing.row === wordData.row &&
+                                existing.col === wordData.col &&
+                                existing.direction === wordData.direction
                         )
                     ) {
                         words.push(wordData);
@@ -793,17 +772,71 @@ function wordContainsPlayerTile(wordData) {
 }
 
 
+/*
+    A word is only eligible for scoring if:
+
+    1. It contains at least one player tile.
+    2. EVERY player tile belonging to that word
+       is currently green/valid.
+
+    This means a word containing a red tile
+    contributes zero points until that tile
+    becomes valid.
+*/
+function isScoringWordValid(wordData, statuses) {
+    let containsPlayerTile = false;
+
+    for (
+        let i = 0;
+        i < wordData.word.length;
+        i++
+    ) {
+        const position =
+            getPosition(
+                wordData.row,
+                wordData.col,
+                wordData.direction,
+                i
+            );
+
+        const key =
+            `${position.row},${position.col}`;
+
+        const playerTile =
+            getPlayerPlacedTile(
+                position.row,
+                position.col
+            );
+
+        if (playerTile) {
+            containsPlayerTile = true;
+
+            // The player tile must specifically
+            // be green/valid.
+            if (statuses[key] !== "valid") {
+                return false;
+            }
+        }
+    }
+
+    return containsPlayerTile;
+}
+
+
 function getPlayerScoringWords() {
     const allWords =
         getAllBoardWordsWithPositions(
             board
         );
 
-    return allWords.filter(
-        wordData =>
-            wordContainsPlayerTile(
-                wordData
-            )
+    const statuses =
+        getPlayerTileStatuses();
+
+    return allWords.filter(wordData =>
+        isScoringWordValid(
+            wordData,
+            statuses
+        )
     );
 }
 
@@ -835,9 +868,7 @@ function calculatePlayerScore() {
 
 function ensureScoreElement() {
     let scoreBox =
-        document.getElementById(
-            "scoreBox"
-        );
+        document.getElementById("scoreBox");
 
     if (!scoreBox) {
         scoreBox =
@@ -1066,10 +1097,7 @@ function selectPlayerTile(index) {
 }
 
 
-function returnPlayerTileToRack(
-    row,
-    col
-) {
+function returnPlayerTileToRack(row, col) {
     const key = `${row},${col}`;
 
     const placedTile =
@@ -1095,10 +1123,6 @@ function returnPlayerTileToRack(
     displayWords();
 }
 
-
-// ============================================================
-// TILE MESSAGES
-// ============================================================
 
 function showTileMessage(message) {
     if (!tileMessageElement) {
@@ -1275,10 +1299,7 @@ function isCellInWord(
 }
 
 
-function getExistingWordDirection(
-    row,
-    col
-) {
+function getExistingWordDirection(row, col) {
     const horizontal =
         readWord(
             board,
@@ -1295,15 +1316,11 @@ function getExistingWordDirection(
             "vertical"
         );
 
-    if (
-        horizontal.word.length >= 2
-    ) {
+    if (horizontal.word.length >= 2) {
         return "horizontal";
     }
 
-    if (
-        vertical.word.length >= 2
-    ) {
+    if (vertical.word.length >= 2) {
         return "vertical";
     }
 
@@ -1356,9 +1373,6 @@ function tryPlaceWord(
         cells.push(position);
     }
 
-    // Check that the word is crossing
-    // an existing word rather than simply
-    // running alongside it.
     for (const position of cells) {
         const existing =
             board[
@@ -1707,9 +1721,6 @@ function generateBoard() {
         }
     }
 
-    // IMPORTANT:
-    // Bonuses are generated only after
-    // all puzzle words have been placed.
     generateBonusSquares();
 
     displayBoard();
@@ -1717,6 +1728,10 @@ function generateBoard() {
     generatePlayerTiles();
 }
 
+
+// ============================================================
+// DICTIONARY
+// ============================================================
 
 function loadDictionary() {
     fetch("dictionary.txt")
