@@ -4,239 +4,241 @@
 
 body {
     margin: 0;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
     color: #222;
+}
+
+button {
+    font-family: inherit;
 }
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 5px;
-}
-
-.description {
-    margin-top: 0;
-    color: #666;
 }
 
 
-/* --------------------------------
-   BUTTONS
--------------------------------- */
+/* ============================================================
+   CONTROLS
+   ============================================================ */
 
-button {
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.controls button,
+#generateButton,
+#newTilesButton {
     border: none;
     border-radius: 6px;
-    padding: 12px 20px;
+    padding: 10px 16px;
     background: #222;
     color: white;
-    font-size: 16px;
     cursor: pointer;
-    margin: 20px 0;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-button:hover {
+.controls button:hover,
+#generateButton:hover,
+#newTilesButton:hover {
     background: #444;
 }
 
 
-/* --------------------------------
-   7x7 BOARD
--------------------------------- */
+/* ============================================================
+   SCORE
+   ============================================================ */
 
-.board {
-    width: min(90vw, 600px);
-    aspect-ratio: 1 / 1;
+.score-box {
+    width: min(100%, 500px);
+    margin: 0 auto 16px auto;
+    padding: 14px 20px;
 
-    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
 
-    display: grid;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
 
-    gap: 2px;
+.score-label {
+    font-size: 17px;
+    color: #666;
+    font-weight: bold;
+}
 
-    border: 3px solid #222;
-
-    background: #222;
+#scoreValue {
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 800;
+    color: #222;
 }
 
 
-/* --------------------------------
-   BOARD CELLS
--------------------------------- */
+/* ============================================================
+   BOARD
+   ============================================================ */
+
+#board {
+    width: min(90vw, 560px);
+    aspect-ratio: 1 / 1;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+
+    gap: 3px;
+
+    background: #222;
+    padding: 3px;
+
+    border-radius: 8px;
+}
 
 .cell {
     position: relative;
 
-    background: #e8d8b5;
-
-    border: 1px solid #c4b38f;
-
     display: flex;
-
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    font-size: clamp(16px, 6vw, 42px);
+    min-width: 0;
+    min-height: 0;
 
-    font-weight: bold;
-
-    user-select: none;
+    background: #fafafa;
+    border: 1px solid #ddd;
 
     cursor: pointer;
 
-    width: 100%;
-    height: 100%;
+    user-select: none;
+}
+
+.cell:hover {
+    filter: brightness(0.97);
 }
 
 
-/* --------------------------------
-   SCRABBLE BONUS SQUARES
--------------------------------- */
+/* ============================================================
+   TILES
+   ============================================================ */
+
+.board-tile {
+    position: relative;
+
+    width: 82%;
+    height: 82%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f5d98b;
+    border: 2px solid #c5a95d;
+    border-radius: 5px;
+
+    font-size: clamp(20px, 5vw, 34px);
+    font-weight: bold;
+
+    color: #222;
+
+    box-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.18);
+
+    user-select: none;
+}
+
+.locked-tile {
+    background: #e6d7ad;
+    border-color: #b8a875;
+}
+
+.tile-value {
+    position: absolute;
+
+    right: 4px;
+    bottom: 2px;
+
+    font-size: clamp(7px, 1.5vw, 11px);
+    font-weight: bold;
+}
+
+
+/* ============================================================
+   PLAYER TILES
+   ============================================================ */
+
+.player-tile {
+    cursor: pointer;
+}
+
+.player-tile.valid {
+    background: #a8dfad;
+    border-color: #4c9b57;
+}
+
+.player-tile.invalid {
+    background: #edaaaa;
+    border-color: #bd4d4d;
+}
+
+.player-tile.isolated {
+    background: #f1d875;
+    border-color: #c3a72d;
+}
+
+.player-tile:hover {
+    transform: scale(1.04);
+}
+
+
+/* ============================================================
+   BONUS SQUARES
+   ============================================================ */
 
 .cell.double-letter {
     background: #9ed8f5;
-
     border: 1px solid #4aa8d8;
 }
 
 .cell.triple-letter {
     background: #4f91c4;
-
     border: 1px solid #28638e;
-
     color: white;
 }
 
 .cell.double-word {
     background: #f2a8c4;
-
     border: 1px solid #d86c99;
 }
 
 .cell.triple-word {
     background: #e36b6b;
-
     border: 1px solid #b73535;
-
     color: white;
 }
 
-
-/* --------------------------------
-   BONUS LABEL
--------------------------------- */
-
 .bonus-label {
     font-size: clamp(11px, 2.5vw, 17px);
-
     font-weight: bold;
-
     line-height: 1;
-
     user-select: none;
+    text-align: center;
 }
-
-
-/* --------------------------------
-   EXISTING GENERATED TILES
--------------------------------- */
-
-.cell.letter {
-    background: #f4dfad;
-
-    border: 1px solid #c5ae7b;
-
-    border-radius: 2px;
-
-    box-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.2);
-
-    cursor: default;
-}
-
-
-/* --------------------------------
-   PLAYER TILES ON BOARD
--------------------------------- */
-
-.cell.player-tile {
-    width: 100%;
-    height: 100%;
-
-    min-width: 0;
-    min-height: 0;
-
-    padding: 0;
-
-    border-radius: 2px;
-
-    box-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.2);
-
-    cursor: default;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* --------------------------------
-   PLAYER TILE - VALID
--------------------------------- */
-
-.cell.player-tile.valid {
-    background: #bfe8c7;
-
-    border: 1px solid #3b9b4f;
-
-    box-shadow:
-        0 0 0 2px rgba(59, 155, 79, 0.25);
-}
-
-
-/* --------------------------------
-   PLAYER TILE - INVALID
--------------------------------- */
-
-.cell.player-tile.invalid {
-    background: #f3b8b8;
-
-    border: 1px solid #c43d3d;
-
-    box-shadow:
-        0 0 0 2px rgba(196, 61, 61, 0.25);
-}
-
-
-/* --------------------------------
-   PLAYER TILE - ISOLATED
--------------------------------- */
-
-.cell.player-tile.isolated {
-    background: #f4df83;
-
-    border: 1px solid #c4a72c;
-
-    box-shadow:
-        0 0 0 2px rgba(196, 167, 44, 0.25);
-}
-
-
-/* --------------------------------
-   BONUS BADGE ON PLAYER TILE
--------------------------------- */
 
 .bonus-badge {
     position: absolute;
@@ -247,7 +249,6 @@ button:hover {
     z-index: 2;
 
     font-size: clamp(7px, 1.5vw, 11px);
-
     line-height: 1;
 
     padding: 2px 3px;
@@ -255,7 +256,6 @@ button:hover {
     border-radius: 3px;
 
     background: rgba(255, 255, 255, 0.85);
-
     color: #222;
 
     font-weight: bold;
@@ -264,271 +264,182 @@ button:hover {
 }
 
 
-/* --------------------------------
-   TILE LETTER
--------------------------------- */
-
-.tile-letter {
-    position: relative;
-
-    z-index: 1;
-}
-
-
-/* --------------------------------
-   TILE VALUE
--------------------------------- */
-
-.tile-value {
-    position: absolute;
-
-    right: 8%;
-
-    bottom: 5%;
-
-    font-size: 0.35em;
-
-    font-weight: bold;
-
-    line-height: 1;
-}
-
-
-/* --------------------------------
-   PLAYER RACK
--------------------------------- */
-
-.rack-section {
-    margin: 30px auto;
-
-    padding: 20px;
-
-    background: white;
-
-    border-radius: 8px;
-}
-
-.rack-section h2 {
-    margin-top: 0;
-}
-
-
-/* --------------------------------
-   TILE RACK
--------------------------------- */
-
-.tile-rack {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 8px;
-
-    min-height: 70px;
-
-    flex-wrap: wrap;
-}
-
-
-/* --------------------------------
-   RACK TILE
--------------------------------- */
-
-.tile-rack .player-tile {
-    position: relative;
-
-    width: 58px;
-    height: 58px;
-
-    min-width: 58px;
-    min-height: 58px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: #f4dfad;
-
-    border: 2px solid #c5ae7b;
-
-    border-radius: 5px;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2);
-
-    font-size: 30px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    user-select: none;
-
-    transition:
-        transform 0.1s,
-        box-shadow 0.1s;
-}
-
-
-.tile-rack .player-tile:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 4px 7px rgba(0, 0, 0, 0.25);
-}
-
-
-/* --------------------------------
-   SELECTED RACK TILE
--------------------------------- */
-
-.tile-rack .player-tile.selected {
-    transform: translateY(-8px);
-
-    border: 3px solid #222;
-
-    box-shadow:
-        0 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-
-/* --------------------------------
-   RACK TILE VALUE
--------------------------------- */
-
-.tile-rack .player-tile .tile-value {
-    font-size: 12px;
-
-    right: 5px;
-
-    bottom: 4px;
-}
-
-
-/* --------------------------------
-   NEW TILES BUTTON
--------------------------------- */
-
-.secondary-button {
-    background: #666;
-
-    margin-top: 15px;
-}
-
-.secondary-button:hover {
-    background: #444;
-}
-
-
-/* --------------------------------
-   TILE MESSAGE
--------------------------------- */
-
-.tile-message {
-    margin-bottom: 0;
-
-    color: #666;
-
-    font-size: 14px;
-}
-
-.tile-message.error {
-    color: #b00020;
-}
-
-.tile-message.success {
-    color: #247a35;
-}
-
-
-/* --------------------------------
-   INFORMATION
--------------------------------- */
+/* ============================================================
+   WORD LIST
+   ============================================================ */
 
 .information {
-    margin-top: 30px;
-
-    background: white;
-
-    border-radius: 8px;
-
-    padding: 20px;
-
-    text-align: left;
+    width: min(100%, 560px);
+    margin: 20px auto 0 auto;
 }
 
-.information h2 {
-    margin-top: 0;
+#wordCount {
+    margin-bottom: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
 }
-
-
-/* --------------------------------
-   WORD LIST
--------------------------------- */
 
 #wordList {
     display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
+.word-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 12px;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    font-weight: bold;
+}
+
+.word-score {
+    color: #666;
+    font-weight: normal;
+}
+
+.empty-word-list {
+    padding: 10px;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    color: #777;
+    font-style: italic;
+}
+
+
+/* ============================================================
+   TILE RACK
+   ============================================================ */
+
+.tile-rack,
+#tileRack {
+    width: min(100%, 560px);
+
+    margin: 20px auto 0 auto;
+
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 
     gap: 8px;
 }
 
-.word {
-    background: #eee;
+.rack-tile {
+    position: relative;
 
-    padding: 5px 8px;
+    width: 58px;
+    height: 70px;
 
-    border-radius: 4px;
+    border: 2px solid #c5a95d;
+    border-radius: 7px;
 
-    font-size: 14px;
+    background: #f5d98b;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.rack-tile:hover {
+    transform: translateY(-2px);
+}
+
+.rack-tile.selected {
+    transform: translateY(-5px);
+
+    border-color: #222;
+
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.rack-letter {
+    display: block;
+
+    font-size: 30px;
+    line-height: 1;
+
+    font-weight: bold;
+
+    color: #222;
+}
+
+.rack-value {
+    position: absolute;
+
+    right: 5px;
+    bottom: 4px;
+
+    font-size: 11px;
+    font-weight: bold;
 }
 
 
-/* --------------------------------
+/* ============================================================
+   TILE MESSAGE
+   ============================================================ */
+
+#tileMessage {
+    width: min(100%, 560px);
+
+    min-height: 22px;
+
+    margin: 10px auto 0 auto;
+
+    text-align: center;
+
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* ============================================================
    MOBILE
--------------------------------- */
+   ============================================================ */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 20px 10px;
+        padding: 10px;
     }
 
-    .board {
+    #board {
         width: 96vw;
-
-        gap: 1px;
+        max-width: 560px;
+        gap: 2px;
+        padding: 2px;
     }
 
-    .cell {
-        font-size:
-            clamp(14px, 7vw, 32px);
+    .board-tile {
+        width: 86%;
+        height: 86%;
     }
 
-    .tile-rack .player-tile {
-        width: 50px;
-        height: 50px;
-
-        min-width: 50px;
-        min-height: 50px;
-
-        font-size: 26px;
+    .rack-tile {
+        width: 48px;
+        height: 60px;
     }
 
-    .bonus-label {
-        font-size: 10px;
+    .rack-letter {
+        font-size: 25px;
     }
 
-    .bonus-badge {
-        top: 2px;
-        left: 2px;
-
-        font-size: 7px;
-
-        padding: 1px 2px;
+    .score-box {
+        margin-bottom: 12px;
     }
 
+    #scoreValue {
+        font-size: 28px;
+    }
 }
