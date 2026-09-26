@@ -108,12 +108,15 @@ function getLetterValue(letter) {
     if (
         SCRABBLE_TILES[upperLetter]
     ) {
+
         return SCRABBLE_TILES[
             upperLetter
         ].value;
+
     }
 
     return 0;
+
 }
 
 
@@ -131,6 +134,7 @@ function calculateWordScore(word) {
     }
 
     return score;
+
 }
 
 
@@ -197,6 +201,7 @@ function displayBoard() {
 
             cell.dataset.row = row;
             cell.dataset.col = col;
+
 
             cell.addEventListener(
                 "click",
@@ -843,6 +848,96 @@ function selectPlayerTile(
 
 
 /* --------------------------------
+   RETURN PLAYER TILE TO RACK
+-------------------------------- */
+
+function returnPlayerTileToRack(
+    row,
+    col
+) {
+
+    const tileIndex =
+        playerPlacedTiles.findIndex(
+            tile =>
+                tile.row === row &&
+                tile.col === col
+        );
+
+
+    if (
+        tileIndex === -1
+    ) {
+
+        return false;
+
+    }
+
+
+    const tile =
+        playerPlacedTiles[
+            tileIndex
+        ];
+
+
+    /*
+       Put the tile back into
+       the player's rack.
+    */
+
+    playerTiles.push({
+
+        letter:
+            tile.letter,
+
+        value:
+            tile.value
+
+    });
+
+
+    /*
+       Remove it from the
+       board.
+    */
+
+    board[row][col] =
+        null;
+
+
+    /*
+       Remove it from the list
+       of placed player tiles.
+    */
+
+    playerPlacedTiles.splice(
+        tileIndex,
+        1
+    );
+
+
+    selectedTileIndex =
+        null;
+
+
+    displayBoard();
+
+    displayPlayerTiles();
+
+    displayWords();
+
+
+    showTileMessage(
+        `${tile.letter} returned to your rack.`,
+        ""
+    );
+
+
+    return true;
+
+}
+
+
+/* --------------------------------
    SHOW PLAYER MESSAGE
 -------------------------------- */
 
@@ -1207,6 +1302,41 @@ function handleBoardClick(
     col
 ) {
 
+    /*
+       FIRST:
+       Check whether this is
+       one of the player's own
+       placed tiles.
+
+       If it is, return it
+       to the rack.
+    */
+
+    const playerTile =
+        getPlayerPlacedTile(
+            row,
+            col
+        );
+
+
+    if (playerTile) {
+
+        returnPlayerTileToRack(
+            row,
+            col
+        );
+
+        return;
+
+    }
+
+
+    /*
+       If there is no selected
+       tile, tell the player
+       to select one.
+    */
+
     if (
         selectedTileIndex === null
     ) {
@@ -1220,6 +1350,11 @@ function handleBoardClick(
 
     }
 
+
+    /*
+       Generated puzzle tiles
+       cannot be overwritten.
+    */
 
     if (
         board[row][col]
@@ -1241,9 +1376,19 @@ function handleBoardClick(
         ];
 
 
+    /*
+       Put the tile onto
+       the board.
+    */
+
     board[row][col] =
         selectedTile.letter;
 
+
+    /*
+       Remember that this tile
+       belongs to the player.
+    */
 
     playerPlacedTiles.push({
 
@@ -1259,6 +1404,11 @@ function handleBoardClick(
 
     });
 
+
+    /*
+       Remove the tile from
+       the rack.
+    */
 
     playerTiles.splice(
         selectedTileIndex,
@@ -1276,6 +1426,11 @@ function handleBoardClick(
 
     displayWords();
 
+
+    /*
+       Check the new tile's
+       current status.
+    */
 
     const tileStatuses =
         getPlayerTileStatuses();
