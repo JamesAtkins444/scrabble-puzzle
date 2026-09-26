@@ -1,4 +1,4 @@
-const boardSize = 7;
+const boardSize = 8;
 
 let dictionary = new Set();
 let board = [];
