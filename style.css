@@ -12,6 +12,7 @@ body {
         sans-serif;
 
     background: #f3f3f3;
+
     color: #222;
 }
 
@@ -19,98 +20,221 @@ button {
     font-family: inherit;
 }
 
+
+/* --------------------------------
+   MAIN CONTAINER
+-------------------------------- */
+
 .container {
     width: 100%;
+
     max-width: 900px;
+
     margin: 0 auto;
 }
 
 
-/* ------------------------------
+/* --------------------------------
    CONTROLS
------------------------------- */
+-------------------------------- */
 
 .controls {
     display: flex;
+
     justify-content: center;
+
     gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+
+    margin-bottom: 16px;
 }
 
 .controls button,
-#generateButton,
-#newTilesButton {
+#generateButton {
     padding: 10px 18px;
+
     border: none;
-    border-radius: 6px;
+
+    border-radius: 7px;
+
     background: #222;
+
     color: white;
+
     font-size: 15px;
+
+    font-weight: bold;
+
     cursor: pointer;
 }
 
 .controls button:hover,
-#generateButton:hover,
-#newTilesButton:hover {
+#generateButton:hover {
     background: #444;
 }
 
 
-/* ------------------------------
+/* --------------------------------
    SCORE
------------------------------- */
+-------------------------------- */
 
 .score-box {
     width: min(100%, 500px);
 
-    margin: 0 auto 16px auto;
-    padding: 14px 20px;
+    margin: 0 auto 8px auto;
+
+    padding: 8px 16px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: baseline;
-    gap: 10px;
 
-    background: white;
-
-    border-radius: 10px;
-    border: 1px solid #ddd;
-
-    box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.06);
+    gap: 8px;
 
     flex-wrap: wrap;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
 }
 
 .score-label {
-    font-size: 17px;
-    color: #666;
+    font-size: 16px;
+
+    color: #777;
+
     font-weight: bold;
 }
 
 #scoreValue {
-    font-size: 32px;
+    font-size: 36px;
+
     line-height: 1;
+
     font-weight: 800;
+
     color: #222;
 }
 
 .score-bonus {
     width: 100%;
+
     text-align: center;
 
-    font-size: 14px;
+    font-size: 13px;
+
     font-weight: bold;
 
-    color: #555;
+    color: #666;
+
     margin-top: 2px;
 }
 
 
-/* ------------------------------
+/* --------------------------------
+   SCORING WORD PILLS
+-------------------------------- */
+
+#wordList {
+    width: min(100%, 500px);
+
+    margin: 0 auto 18px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    min-height: 0;
+}
+
+.word-pill {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    line-height: 1;
+
+    box-shadow:
+        0 1px 3px
+        rgba(0, 0, 0, 0.08);
+}
+
+.word-pill-word {
+    font-weight: bold;
+
+    color: #222;
+}
+
+.word-pill-score {
+    color: #777;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/*
+   This also supports the existing
+   word display if any old word
+   elements are still generated.
+*/
+
+.word-item {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    line-height: 1;
+
+    box-shadow:
+        0 1px 3px
+        rgba(0, 0, 0, 0.08);
+}
+
+.word-item strong {
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* --------------------------------
    BOARD
------------------------------- */
+-------------------------------- */
 
 #board {
     width: min(100%, 500px);
@@ -121,8 +245,11 @@ button {
 
     display: grid;
 
- grid-template-columns: repeat(8, 1fr);
-grid-template-rows: repeat(8, 1fr);
+    grid-template-columns:
+        repeat(8, 1fr);
+
+    grid-template-rows:
+        repeat(8, 1fr);
 
     gap: 3px;
 
@@ -132,15 +259,17 @@ grid-template-rows: repeat(8, 1fr);
 }
 
 
-/* ------------------------------
+/* --------------------------------
    BOARD CELLS
------------------------------- */
+-------------------------------- */
 
 .cell {
     position: relative;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: white;
@@ -148,7 +277,7 @@ grid-template-rows: repeat(8, 1fr);
     border: 1px solid #ccc;
 
     font-size:
-        clamp(22px, 6vw, 42px);
+        clamp(20px, 5.5vw, 40px);
 
     font-weight: bold;
 
@@ -162,72 +291,86 @@ grid-template-rows: repeat(8, 1fr);
 }
 
 
-/* ------------------------------
+/* --------------------------------
    ORIGINAL PUZZLE TILES
------------------------------- */
+-------------------------------- */
 
 .cell.original-tile {
     background: #ddd;
+
     color: #222;
 
     cursor: default;
 }
 
 
-/* ------------------------------
+/* --------------------------------
    PLAYER TILES
------------------------------- */
+-------------------------------- */
 
 .cell.player-valid {
     background: #b8e6b8;
+
     border: 2px solid #4a9f4a;
+
     color: #174d17;
 }
 
 .cell.player-invalid {
     background: #f3b0b0;
+
     border: 2px solid #c94c4c;
+
     color: #681717;
 }
 
 .cell.player-isolated {
     background: #f3df8b;
+
     border: 2px solid #d2ae35;
+
     color: #66500c;
 }
 
 
-/* ------------------------------
+/* --------------------------------
    BONUS SQUARES
------------------------------- */
+-------------------------------- */
 
 .cell.double-letter {
     background: #9ed8f5;
+
     border: 1px solid #4aa8d8;
 }
 
 .cell.triple-letter {
     background: #4f91c4;
+
     border: 1px solid #28638e;
+
     color: white;
 }
 
 .cell.double-word {
     background: #f2a8c4;
+
     border: 1px solid #d86c99;
 }
 
 .cell.triple-word {
     background: #e36b6b;
+
     border: 1px solid #b73535;
+
     color: white;
 }
 
 .bonus-label {
     font-size:
-        clamp(11px, 2.5vw, 17px);
+        clamp(10px, 2.3vw, 16px);
 
     font-weight: bold;
+
     line-height: 1;
 
     user-select: none;
@@ -237,6 +380,7 @@ grid-template-rows: repeat(8, 1fr);
     position: absolute;
 
     top: 3px;
+
     left: 4px;
 
     z-index: 2;
@@ -261,33 +405,69 @@ grid-template-rows: repeat(8, 1fr);
 }
 
 
-/* ------------------------------
+/* --------------------------------
+   TILE MESSAGE
+-------------------------------- */
+
+.tile-message {
+    width: min(100%, 500px);
+
+    min-height: 20px;
+
+    margin: 0 auto 10px auto;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+.tile-message.success {
+    color: #39803b;
+
+    font-weight: bold;
+}
+
+.tile-message.error {
+    color: #b33b3b;
+
+    font-weight: bold;
+}
+
+
+/* --------------------------------
    TILE RACK
------------------------------- */
+-------------------------------- */
 
 #tileRack {
     width: min(100%, 500px);
 
-    margin: 20px auto;
+    margin: 16px auto 0 auto;
 
     display: flex;
 
     justify-content: center;
+
+    align-items: center;
 
     gap: 8px;
 
     flex-wrap: wrap;
 }
 
-.rack-tile {
+.rack-tile,
+.player-tile {
     position: relative;
 
     width: 55px;
+
     height: 55px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background: #f5e6c8;
@@ -299,24 +479,29 @@ grid-template-rows: repeat(8, 1fr);
     cursor: pointer;
 
     box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.15);
+        0 2px 4px
+        rgba(0, 0, 0, 0.15);
 }
 
-.rack-tile:hover {
+.rack-tile:hover,
+.player-tile:hover {
     transform: translateY(-2px);
 }
 
-.rack-tile.selected {
+.rack-tile.selected,
+.player-tile.selected {
     border: 3px solid #222;
 
     transform: translateY(-5px);
 
     box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.2);
+        0 4px 8px
+        rgba(0, 0, 0, 0.2);
 }
 
 .tile-letter {
     font-size: 28px;
+
     font-weight: bold;
 }
 
@@ -324,6 +509,7 @@ grid-template-rows: repeat(8, 1fr);
     position: absolute;
 
     bottom: 4px;
+
     right: 5px;
 
     font-size: 11px;
@@ -332,68 +518,34 @@ grid-template-rows: repeat(8, 1fr);
 }
 
 
-/* ------------------------------
-   WORD LIST
------------------------------- */
-
-#wordList {
-    width: min(100%, 500px);
-
-    margin: 20px auto 0 auto;
-
-    background: white;
-
-    border: 1px solid #ddd;
-
-    border-radius: 10px;
-
-    padding: 15px;
-}
-
-#wordList p {
-    margin: 0;
-
-    text-align: center;
-
-    color: #777;
-}
-
-.word-item {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 8px 4px;
-
-    border-bottom: 1px solid #eee;
-}
-
-.word-item:last-child {
-    border-bottom: none;
-}
-
-.word-item strong {
-    font-size: 16px;
-}
-
-
-/* ------------------------------
+/* --------------------------------
    MOBILE
------------------------------- */
+-------------------------------- */
 
 @media (max-width: 600px) {
+
     body {
         padding: 10px;
+    }
+
+    .controls {
+        margin-bottom: 12px;
+    }
+
+    #board {
+        gap: 2px;
+
+        padding: 2px;
     }
 
     .cell {
         font-size: 22px;
     }
 
-    .rack-tile {
+    .rack-tile,
+    .player-tile {
         width: 45px;
+
         height: 45px;
     }
 
@@ -403,11 +555,23 @@ grid-template-rows: repeat(8, 1fr);
 
     .tile-value {
         font-size: 9px;
+
         bottom: 2px;
+
         right: 3px;
     }
 
     #scoreValue {
-        font-size: 28px;
+        font-size: 30px;
+    }
+
+    .word-pill {
+        padding: 6px 9px;
+
+        font-size: 13px;
+    }
+
+    .word-pill-score {
+        font-size: 11px;
     }
 }
