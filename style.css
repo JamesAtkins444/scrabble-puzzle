@@ -5,7 +5,12 @@
 body {
     margin: 0;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     background: #f3f3f3;
     color: #222;
 }
@@ -21,29 +26,28 @@ button {
 }
 
 
-/* ============================================================
+/* ------------------------------
    CONTROLS
-   ============================================================ */
+------------------------------ */
 
 .controls {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
+    gap: 10px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .controls button,
 #generateButton,
 #newTilesButton {
+    padding: 10px 18px;
     border: none;
     border-radius: 6px;
-    padding: 10px 16px;
     background: #222;
     color: white;
-    cursor: pointer;
     font-size: 15px;
-    font-weight: bold;
+    cursor: pointer;
 }
 
 .controls button:hover,
@@ -53,12 +57,13 @@ button {
 }
 
 
-/* ============================================================
+/* ------------------------------
    SCORE
-   ============================================================ */
+------------------------------ */
 
 .score-box {
     width: min(100%, 500px);
+
     margin: 0 auto 16px auto;
     padding: 14px 20px;
 
@@ -68,10 +73,14 @@ button {
     gap: 10px;
 
     background: white;
+
     border-radius: 10px;
     border: 1px solid #ddd;
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+
+    flex-wrap: wrap;
 }
 
 .score-label {
@@ -87,45 +96,68 @@ button {
     color: #222;
 }
 
+.score-bonus {
+    width: 100%;
+    text-align: center;
 
-/* ============================================================
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #555;
+    margin-top: 2px;
+}
+
+
+/* ------------------------------
    BOARD
-   ============================================================ */
+------------------------------ */
 
 #board {
-    width: min(90vw, 560px);
+    width: min(100%, 500px);
+
     aspect-ratio: 1 / 1;
 
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    grid-template-rows:
+        repeat(7, 1fr);
 
     gap: 3px;
 
-    background: #222;
-    padding: 3px;
+    background: #999;
 
-    border-radius: 8px;
+    padding: 3px;
 }
+
+
+/* ------------------------------
+   BOARD CELLS
+------------------------------ */
 
 .cell {
     position: relative;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    min-width: 0;
-    min-height: 0;
+    background: white;
 
-    background: #fafafa;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
 
-    cursor: pointer;
+    font-size:
+        clamp(22px, 6vw, 42px);
+
+    font-weight: bold;
 
     user-select: none;
+
+    cursor: pointer;
 }
 
 .cell:hover {
@@ -133,82 +165,44 @@ button {
 }
 
 
-/* ============================================================
-   TILES
-   ============================================================ */
+/* ------------------------------
+   ORIGINAL PUZZLE TILES
+------------------------------ */
 
-.board-tile {
-    position: relative;
-
-    width: 82%;
-    height: 82%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: #f5d98b;
-    border: 2px solid #c5a95d;
-    border-radius: 5px;
-
-    font-size: clamp(20px, 5vw, 34px);
-    font-weight: bold;
-
+.cell.original-tile {
+    background: #ddd;
     color: #222;
 
-    box-shadow:
-        0 2px 3px rgba(0, 0, 0, 0.18);
-
-    user-select: none;
-}
-
-.locked-tile {
-    background: #e6d7ad;
-    border-color: #b8a875;
-}
-
-.tile-value {
-    position: absolute;
-
-    right: 4px;
-    bottom: 2px;
-
-    font-size: clamp(7px, 1.5vw, 11px);
-    font-weight: bold;
+    cursor: default;
 }
 
 
-/* ============================================================
+/* ------------------------------
    PLAYER TILES
-   ============================================================ */
+------------------------------ */
 
-.player-tile {
-    cursor: pointer;
+.cell.player-valid {
+    background: #b8e6b8;
+    border: 2px solid #4a9f4a;
+    color: #174d17;
 }
 
-.player-tile.valid {
-    background: #a8dfad;
-    border-color: #4c9b57;
+.cell.player-invalid {
+    background: #f3b0b0;
+    border: 2px solid #c94c4c;
+    color: #681717;
 }
 
-.player-tile.invalid {
-    background: #edaaaa;
-    border-color: #bd4d4d;
-}
-
-.player-tile.isolated {
-    background: #f1d875;
-    border-color: #c3a72d;
-}
-
-.player-tile:hover {
-    transform: scale(1.04);
+.cell.player-isolated {
+    background: #f3df8b;
+    border: 2px solid #d2ae35;
+    color: #66500c;
 }
 
 
-/* ============================================================
+/* ------------------------------
    BONUS SQUARES
-   ============================================================ */
+------------------------------ */
 
 .cell.double-letter {
     background: #9ed8f5;
@@ -233,11 +227,13 @@ button {
 }
 
 .bonus-label {
-    font-size: clamp(11px, 2.5vw, 17px);
+    font-size:
+        clamp(11px, 2.5vw, 17px);
+
     font-weight: bold;
     line-height: 1;
+
     user-select: none;
-    text-align: center;
 }
 
 .bonus-badge {
@@ -248,14 +244,18 @@ button {
 
     z-index: 2;
 
-    font-size: clamp(7px, 1.5vw, 11px);
+    font-size:
+        clamp(7px, 1.5vw, 11px);
+
     line-height: 1;
 
     padding: 2px 3px;
 
     border-radius: 3px;
 
-    background: rgba(255, 255, 255, 0.85);
+    background:
+        rgba(255, 255, 255, 0.85);
+
     color: #222;
 
     font-weight: bold;
@@ -264,86 +264,40 @@ button {
 }
 
 
-/* ============================================================
-   WORD LIST
-   ============================================================ */
-
-.information {
-    width: min(100%, 560px);
-    margin: 20px auto 0 auto;
-}
-
-#wordCount {
-    margin-bottom: 8px;
-
-    font-size: 16px;
-    font-weight: bold;
-}
-
-#wordList {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.word-list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 8px 12px;
-
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-
-    font-weight: bold;
-}
-
-.word-score {
-    color: #666;
-    font-weight: normal;
-}
-
-.empty-word-list {
-    padding: 10px;
-
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-
-    color: #777;
-    font-style: italic;
-}
-
-
-/* ============================================================
+/* ------------------------------
    TILE RACK
-   ============================================================ */
+------------------------------ */
 
-.tile-rack,
 #tileRack {
-    width: min(100%, 560px);
+    width: min(100%, 500px);
 
-    margin: 20px auto 0 auto;
+    margin: 20px auto;
 
     display: flex;
+
     justify-content: center;
-    flex-wrap: wrap;
 
     gap: 8px;
+
+    flex-wrap: wrap;
 }
 
 .rack-tile {
     position: relative;
 
-    width: 58px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
 
-    border: 2px solid #c5a95d;
-    border-radius: 7px;
+    display: flex;
 
-    background: #f5d98b;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5e6c8;
+
+    border: 2px solid #c7a76a;
+
+    border-radius: 6px;
 
     cursor: pointer;
 
@@ -356,87 +310,104 @@ button {
 }
 
 .rack-tile.selected {
+    border: 3px solid #222;
+
     transform: translateY(-5px);
 
-    border-color: #222;
-
     box-shadow:
-        0 5px 10px rgba(0, 0, 0, 0.25);
+        0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.rack-letter {
-    display: block;
-
-    font-size: 30px;
-    line-height: 1;
-
+.tile-letter {
+    font-size: 28px;
     font-weight: bold;
-
-    color: #222;
 }
 
-.rack-value {
+.tile-value {
     position: absolute;
 
-    right: 5px;
     bottom: 4px;
+    right: 5px;
 
     font-size: 11px;
+
     font-weight: bold;
 }
 
 
-/* ============================================================
-   TILE MESSAGE
-   ============================================================ */
+/* ------------------------------
+   WORD LIST
+------------------------------ */
 
-#tileMessage {
-    width: min(100%, 560px);
+#wordList {
+    width: min(100%, 500px);
 
-    min-height: 22px;
+    margin: 20px auto 0 auto;
 
-    margin: 10px auto 0 auto;
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 15px;
+}
+
+#wordList p {
+    margin: 0;
 
     text-align: center;
 
-    font-size: 14px;
-    color: #666;
+    color: #777;
+}
+
+.word-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 8px 4px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.word-item:last-child {
+    border-bottom: none;
+}
+
+.word-item strong {
+    font-size: 16px;
 }
 
 
-/* ============================================================
+/* ------------------------------
    MOBILE
-   ============================================================ */
+------------------------------ */
 
 @media (max-width: 600px) {
-
     body {
         padding: 10px;
     }
 
-    #board {
-        width: 96vw;
-        max-width: 560px;
-        gap: 2px;
-        padding: 2px;
-    }
-
-    .board-tile {
-        width: 86%;
-        height: 86%;
+    .cell {
+        font-size: 22px;
     }
 
     .rack-tile {
-        width: 48px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
     }
 
-    .rack-letter {
-        font-size: 25px;
+    .tile-letter {
+        font-size: 23px;
     }
 
-    .score-box {
-        margin-bottom: 12px;
+    .tile-value {
+        font-size: 9px;
+        bottom: 2px;
+        right: 3px;
     }
 
     #scoreValue {
