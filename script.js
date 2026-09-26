@@ -450,6 +450,147 @@ function getPlayerTileStatuses() {
 
     const statuses = {};
 
+    /*
+       First find all tiles that are connected
+       to the original generated puzzle.
+
+       We start from every original puzzle tile
+       and spread through neighbouring tiles.
+    */
+
+    const connectedToPuzzle = new Set();
+
+    const queue = [];
+
+
+    /*
+       Add all original generated tiles
+       to the starting queue.
+    */
+
+    for (
+        let row = 0;
+        row < BOARD_SIZE;
+        row++
+    ) {
+
+        for (
+            let col = 0;
+            col < BOARD_SIZE;
+            col++
+        ) {
+
+            if (
+                board[row][col] &&
+                !getPlayerPlacedTile(row, col)
+            ) {
+
+                const key =
+                    `${row},${col}`;
+
+                connectedToPuzzle.add(key);
+
+                queue.push({
+                    row: row,
+                    col: col
+                });
+
+            }
+
+        }
+
+    }
+
+
+    /*
+       Spread from the original puzzle tiles
+       through ALL neighbouring occupied tiles.
+
+       This means a chain like:
+
+       Original → Player → Player → Player
+
+       is considered connected.
+    */
+
+    while (
+        queue.length > 0
+    ) {
+
+        const current =
+            queue.shift();
+
+
+        const neighbours =
+            getNeighbours(
+                current.row,
+                current.col
+            );
+
+
+        for (
+            const neighbour of neighbours
+        ) {
+
+            if (
+                !isInsideBoard(
+                    neighbour.row,
+                    neighbour.col
+                )
+            ) {
+
+                continue;
+
+            }
+
+
+            if (
+                !board[
+                    neighbour.row
+                ][
+                    neighbour.col
+                ]
+            ) {
+
+                continue;
+
+            }
+
+
+            const key =
+                `${neighbour.row},${neighbour.col}`;
+
+
+            if (
+                connectedToPuzzle.has(key)
+            ) {
+
+                continue;
+
+            }
+
+
+            connectedToPuzzle.add(key);
+
+
+            queue.push({
+
+                row:
+                    neighbour.row,
+
+                col:
+                    neighbour.col
+
+            });
+
+        }
+
+    }
+
+
+    /*
+       Now evaluate every player tile.
+    */
 
     playerPlacedTiles.forEach(
         tile => {
@@ -458,20 +599,63 @@ function getPlayerTileStatuses() {
                 `${tile.row},${tile.col}`;
 
 
-            if (
-                isTileIsolated(
-                    tile.row,
-                    tile.col
-                )
-            ) {
+            /*
+               Is this tile actually connected
+               to the original puzzle?
+            */
 
-                statuses[key] =
-                    "isolated";
+            const connected =
+                connectedToPuzzle.has(key);
+
+
+            /*
+               If it isn't connected to the
+               original puzzle, it is invalid.
+
+               This takes priority over whether
+               it happens to spell a dictionary word.
+            */
+
+            if (!connected) {
+
+                /*
+                   Keep the special yellow state
+                   for a completely isolated single
+                   tile.
+
+                   Once it is touching another tile,
+                   it becomes red.
+                */
+
+                if (
+                    isTileIsolated(
+                        tile.row,
+                        tile.col
+                    )
+                ) {
+
+                    statuses[key] =
+                        "isolated";
+
+                }
+                else {
+
+                    statuses[key] =
+                        "invalid";
+
+                }
 
                 return;
 
             }
 
+
+            /*
+               The tile IS connected to the
+               original puzzle.
+
+               Now check the words it creates.
+            */
 
             const horizontalWord =
                 getWordAtTile(
@@ -489,23 +673,16 @@ function getPlayerTileStatuses() {
                 );
 
 
-            const horizontalLength =
-                horizontalWord.length;
-
-
-            const verticalLength =
-                verticalWord.length;
-
-
             const hasHorizontalWord =
-                horizontalLength >= 2;
+                horizontalWord.length >= 2;
 
 
             const hasVerticalWord =
-                verticalLength >= 2;
+                verticalWord.length >= 2;
 
 
-            let hasInvalidWord = false;
+            let hasInvalidWord =
+                false;
 
 
             if (
@@ -542,6 +719,11 @@ function getPlayerTileStatuses() {
             }
 
 
+            /*
+               Connected to the puzzle and
+               all resulting words are valid.
+            */
+
             if (
                 hasHorizontalWord ||
                 hasVerticalWord
@@ -555,8 +737,12 @@ function getPlayerTileStatuses() {
             }
 
 
+            /*
+               Fallback.
+            */
+
             statuses[key] =
-                "isolated";
+                "invalid";
 
         }
     );
@@ -565,7 +751,6 @@ function getPlayerTileStatuses() {
     return statuses;
 
 }
-
 
 /* --------------------------------
    DISPLAY WORDS
