@@ -19,68 +19,28 @@
 
 <body>
 
-    <main class="container">
+    <div class="container">
 
-        <h1>Scrabble Puzzle</h1>
+        <div class="controls">
 
-        <p class="description">
-            Generate a connected 7×7 Scrabble board.
-        </p>
-
-        <button id="generateButton">
-            Generate Board
-        </button>
-
-        <div
-            id="board"
-            class="board"
-        ></div>
-
-
-        <!-- PLAYER TILE RACK -->
-
-        <section class="rack-section">
-
-            <h2>Your Tiles</h2>
-
-            <div
-                id="tileRack"
-                class="tile-rack"
-            ></div>
-
-            <p
-                id="tileMessage"
-                class="tile-message"
-            >
-                Select a tile, then click anywhere on the board.
-            </p>
-
-            <button
-                id="newTilesButton"
-                class="secondary-button"
-            >
-                New Tiles
+            <button id="generateButton">
+                New Puzzle
             </button>
 
-        </section>
+        </div>
 
+        <div id="board"></div>
 
-        <!-- WORD INFORMATION -->
+        <div id="wordList"></div>
 
-        <section class="information">
+        <div
+            id="tileMessage"
+            class="tile-message"
+        ></div>
 
-            <h2>Words on Board</h2>
+        <div id="tileRack"></div>
 
-            <p id="wordCount">
-                0 words
-            </p>
-
-            <div id="wordList"></div>
-
-        </section>
-
-    </main>
-
+    </div>
 
     <script src="script.js"></script>
 
