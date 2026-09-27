@@ -135,100 +135,117 @@ button {
 
 
 /* --------------------------------
-   SCORING WORD PILLS
+SCORING WORD PILLS
 -------------------------------- */
 
 #wordList {
-    width: min(100%, 500px);
+width: min(100%, 500px);
 
-    margin: 0 auto 18px auto;
+```
+margin: 0 auto 18px auto;
 
-    display: flex;
+display: flex;
 
-    justify-content: center;
+justify-content: center;
 
-    align-items: center;
+align-items: center;
 
-    flex-wrap: wrap;
+flex-wrap: wrap;
 
-    gap: 7px;
+gap: 7px;
 
-    min-height: 0;
+min-height: 0;
+```
+
 }
 
 .word-pill {
-    display: inline-flex;
+display: inline-flex;
 
-    align-items: center;
+```
+align-items: center;
 
-    gap: 6px;
+gap: 6px;
 
-    padding: 7px 11px;
+padding: 7px 11px;
 
-    background: white;
+background: white;
 
-    border: 1px solid #ddd;
+border: 1px solid #ddd;
 
-    border-radius: 999px;
+border-radius: 999px;
 
-    font-size: 14px;
+font-size: 14px;
 
-    line-height: 1;
+line-height: 1;
 
-    box-shadow:
-        0 1px 3px
-        rgba(0, 0, 0, 0.08);
+box-shadow:
+    0 1px 3px
+    rgba(0, 0, 0, 0.08);
+```
+
 }
 
 .word-pill-word {
-    font-weight: bold;
+font-weight: bold;
 
-    color: #222;
+```
+color: #222;
+```
+
 }
 
 .word-pill-score {
-    color: #777;
+color: #777;
 
-    font-size: 12px;
+```
+font-size: 12px;
 
-    font-weight: bold;
+font-weight: bold;
+```
+
 }
 
-
 /*
-   This also supports the existing
-   word display if any old word
-   elements are still generated.
+This also supports the existing
+word display if any old word
+elements are still generated.
 */
 
 .word-item {
-    display: inline-flex;
+display: inline-flex;
 
-    align-items: center;
+```
+align-items: center;
 
-    gap: 6px;
+gap: 6px;
 
-    padding: 7px 11px;
+padding: 7px 11px;
 
-    background: white;
+background: white;
 
-    border: 1px solid #ddd;
+border: 1px solid #ddd;
 
-    border-radius: 999px;
+border-radius: 999px;
 
-    font-size: 14px;
+font-size: 14px;
 
-    line-height: 1;
+line-height: 1;
 
-    box-shadow:
-        0 1px 3px
-        rgba(0, 0, 0, 0.08);
+box-shadow:
+    0 1px 3px
+    rgba(0, 0, 0, 0.08);
+```
+
 }
 
 .word-item strong {
-    color: #777;
+color: #777;
 
-    font-size: 12px;
+```
+font-size: 12px;
+```
+
 }
 
 
