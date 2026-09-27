@@ -1,70 +1,107 @@
-<!DOCTYPE html>
+/* --------------------------------
+SCORING WORD PILLS
+-------------------------------- */
 
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-
-```
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>Scrabble Puzzle</title>
-
-<link
-    rel="stylesheet"
-    href="style.css"
->
-```
-
-</head>
-
-<body>
+#wordList {
+width: min(100%, 500px);
 
 ```
-<div class="container">
+margin: 0 auto 18px auto;
 
-    <div class="controls">
+display: flex;
 
-        <button id="generateButton">
-            New Puzzle
-        </button>
+justify-content: center;
 
-    </div>
+align-items: center;
 
-    <!--
-        These elements are kept for the
-        existing JavaScript, but hidden
-        from the player.
-    -->
-    <div
-        id="wordCount"
-        style="display: none;"
-    ></div>
+flex-wrap: wrap;
 
-    <button
-        id="newTilesButton"
-        style="display: none;"
-    ></button>
+gap: 7px;
 
-    <div id="board"></div>
-
-    <div id="wordList"></div>
-
-    <div
-        id="tileMessage"
-        class="tile-message"
-    ></div>
-
-    <div id="tileRack"></div>
-
-</div>
-
-<script src="script.js"></script>
+min-height: 0;
 ```
 
-</body>
+}
 
-</html>
+.word-pill {
+display: inline-flex;
+
+```
+align-items: center;
+
+gap: 6px;
+
+padding: 7px 11px;
+
+background: white;
+
+border: 1px solid #ddd;
+
+border-radius: 999px;
+
+font-size: 14px;
+
+line-height: 1;
+
+box-shadow:
+    0 1px 3px
+    rgba(0, 0, 0, 0.08);
+```
+
+}
+
+.word-pill-word {
+font-weight: bold;
+
+```
+color: #222;
+```
+
+}
+
+.word-pill-score {
+color: #777;
+
+```
+font-size: 12px;
+
+font-weight: bold;
+```
+
+}
+
+.word-item {
+display: inline-flex;
+
+```
+align-items: center;
+
+gap: 6px;
+
+padding: 7px 11px;
+
+background: white;
+
+border: 1px solid #ddd;
+
+border-radius: 999px;
+
+font-size: 14px;
+
+line-height: 1;
+
+box-shadow:
+    0 1px 3px
+    rgba(0, 0, 0, 0.08);
+```
+
+}
+
+.word-item strong {
+color: #777;
+
+```
+font-size: 12px;
+```
+
+}
