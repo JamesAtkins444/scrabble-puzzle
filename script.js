@@ -829,6 +829,80 @@ function calculateWordScoreAtPosition(
     let wordMultiplier = 1;
 
     for (let i = 0; i < word.length; i++) {
+
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+        const key =
+            `${position.row},${position.col}`;
+
+        const letter =
+            word[i];
+
+        let letterScore =
+            letterValues[letter] || 0;
+
+        /*
+           Bonus squares only apply when
+           the player actually placed a tile
+           on that square.
+        */
+
+        const playerTile =
+            getPlayerPlacedTile(
+                position.row,
+                position.col
+            );
+
+        if (playerTile) {
+
+            const bonus =
+                getBonusSquare(
+                    position.row,
+                    position.col
+                );
+
+            if (
+                bonus === "double-letter"
+            ) {
+                letterScore *= 2;
+            }
+
+            if (
+                bonus === "triple-letter"
+            ) {
+                letterScore *= 3;
+            }
+
+            if (
+                bonus === "double-word"
+            ) {
+                wordMultiplier *= 2;
+            }
+
+            if (
+                bonus === "triple-word"
+            ) {
+                wordMultiplier *= 3;
+            }
+
+        }
+
+        score += letterScore;
+
+    }
+
+    return score * wordMultiplier;
+} {
+    let score = 0;
+    let wordMultiplier = 1;
+
+    for (let i = 0; i < word.length; i++) {
         const position =
             getPosition(
                 row,
@@ -1667,7 +1741,948 @@ function displayWords() {
     updateScore();
 }
 
+// --------------------------------------------------
+// HIGHEST POSSIBLE SCORE
+// --------------------------------------------------
 
+function getRackCounts() {
+
+    const letters = {};
+    let blanks = 0;
+
+    playerTiles.forEach(tile => {
+
+        if (tile.letter === "") {
+            blanks++;
+            return;
+        }
+
+        letters[tile.letter] =
+            (letters[tile.letter] || 0) + 1;
+
+    });
+
+    return {
+        letters,
+        blanks
+    };
+}
+
+
+function getPlacementNewTiles(
+    word,
+    row,
+    col,
+    direction
+) {
+
+    const newTiles = [];
+
+    for (let i = 0; i < word.length; i++) {
+
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+        const existing =
+            board[
+                position.row
+            ][
+                position.col
+            ];
+
+        if (!existing) {
+
+            newTiles.push({
+                row: position.row,
+                col: position.col,
+                letter: word[i],
+                key:
+                    `${position.row},${position.col}`
+            });
+
+        }
+
+    }
+
+    return newTiles;
+}
+
+
+function placementTouchesBoard(
+    word,
+    row,
+    col,
+    direction
+) {
+
+    const newTiles =
+        getPlacementNewTiles(
+            word,
+            row,
+            col,
+            direction
+        );
+
+    if (newTiles.length === 0) {
+        return false;
+    }
+
+    for (const tile of newTiles) {
+
+        const neighbours = [
+            [tile.row - 1, tile.col],
+            [tile.row + 1, tile.col],
+            [tile.row, tile.col - 1],
+            [tile.row, tile.col + 1]
+        ];
+
+        for (const [r, c] of neighbours) {
+
+            if (!isInsideBoard(r, c)) {
+                continue;
+            }
+
+            if (board[r][c]) {
+                return true;
+            }
+
+        }
+
+    }
+
+    return false;
+}
+
+
+function canMakeWordWithRack(
+    word,
+    newTiles,
+    rackCounts
+) {
+
+    const neededLetters = {};
+
+    for (const tile of newTiles) {
+
+        neededLetters[tile.letter] =
+            (neededLetters[tile.letter] || 0) + 1;
+
+    }
+
+    let blanksNeeded = 0;
+
+    for (const letter in neededLetters) {
+
+        const needed =
+            neededLetters[letter];
+
+        const available =
+            rackCounts.letters[letter] || 0;
+
+        if (needed > available) {
+
+            blanksNeeded +=
+                needed - available;
+
+        }
+
+    }
+
+    return blanksNeeded <= rackCounts.blanks;
+}
+
+
+/*
+   Generate every possible way the rack can
+   supply the newly placed letters.
+
+   This matters because a blank can represent
+   a letter, and putting the real letter on a
+   bonus square can sometimes produce a higher
+   score than using the blank there.
+*/
+
+function getTileAssignments(
+    newTiles,
+    rackCounts
+) {
+
+    const results = [];
+
+    function buildAssignments(
+        index,
+        remainingLetters,
+        remainingBlanks,
+        assignments
+    ) {
+
+        if (
+            index >=
+            newTiles.length
+        ) {
+
+            results.push(
+                assignments.map(
+                    assignment => ({
+                        ...assignment
+                    })
+                )
+            );
+
+            return;
+        }
+
+        const tile =
+            newTiles[index];
+
+        const letter =
+            tile.letter;
+
+
+        /*
+           Option 1:
+           Use the real letter tile.
+        */
+
+        if (
+            (remainingLetters[letter] || 0) > 0
+        ) {
+
+            remainingLetters[letter]--;
+
+            assignments.push({
+                key: tile.key,
+                blank: false
+            });
+
+            buildAssignments(
+                index + 1,
+                remainingLetters,
+                remainingBlanks,
+                assignments
+            );
+
+            assignments.pop();
+
+            remainingLetters[letter]++;
+
+        }
+
+
+        /*
+           Option 2:
+           Use a blank tile.
+        */
+
+        if (
+            remainingBlanks > 0
+        ) {
+
+            assignments.push({
+                key: tile.key,
+                blank: true
+            });
+
+            buildAssignments(
+                index + 1,
+                remainingLetters,
+                remainingBlanks - 1,
+                assignments
+            );
+
+            assignments.pop();
+
+        }
+
+    }
+
+
+    buildAssignments(
+        0,
+        {
+            ...rackCounts.letters
+        },
+        rackCounts.blanks,
+        []
+    );
+
+
+    return results;
+}
+
+
+function createTestBoardForMove(
+    word,
+    row,
+    col,
+    direction
+) {
+
+    const testBoard =
+        board.map(
+            currentRow => [
+                ...currentRow
+            ]
+        );
+
+    for (
+        let i = 0;
+        i < word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+        testBoard[
+            position.row
+        ][
+            position.col
+        ] = word[i];
+
+    }
+
+    return testBoard;
+}
+
+
+function getWordsCreatedByMove(
+    testBoard,
+    newTiles
+) {
+
+    const allWords =
+        getAllBoardWordsWithPositions(
+            testBoard
+        );
+
+    const newTileKeys =
+        new Set(
+            newTiles.map(
+                tile => tile.key
+            )
+        );
+
+    return allWords.filter(
+        wordData => {
+
+            for (
+                let i = 0;
+                i < wordData.word.length;
+                i++
+            ) {
+
+                const position =
+                    getPosition(
+                        wordData.row,
+                        wordData.col,
+                        wordData.direction,
+                        i
+                    );
+
+                const key =
+                    `${position.row},${position.col}`;
+
+                if (
+                    newTileKeys.has(key)
+                ) {
+                    return true;
+                }
+
+            }
+
+            return false;
+
+        }
+    );
+}
+
+
+function areMoveWordsValid(
+    words
+) {
+
+    for (const wordData of words) {
+
+        if (
+            !dictionary.has(
+                wordData.word
+            )
+        ) {
+
+            return false;
+
+        }
+
+    }
+
+    return true;
+}
+
+
+function calculateMoveWordScore(
+    wordData,
+    newTiles,
+    blankKeys
+) {
+
+    const newTileKeys =
+        new Set(
+            newTiles.map(
+                tile => tile.key
+            )
+        );
+
+    let score = 0;
+    let wordMultiplier = 1;
+
+    for (
+        let i = 0;
+        i < wordData.word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
+                wordData.row,
+                wordData.col,
+                wordData.direction,
+                i
+            );
+
+        const key =
+            `${position.row},${position.col}`;
+
+        const letter =
+            wordData.word[i];
+
+        let letterScore =
+            letterValues[letter] || 0;
+
+
+        /*
+           Only newly placed tiles get
+           bonus-square effects.
+
+           Existing puzzle tiles are
+           face value.
+        */
+
+        if (
+            newTileKeys.has(key)
+        ) {
+
+            if (
+                blankKeys.has(key)
+            ) {
+
+                letterScore = 0;
+
+            }
+
+            const bonus =
+                getBonusSquare(
+                    position.row,
+                    position.col
+                );
+
+            if (
+                bonus === "double-letter"
+            ) {
+
+                letterScore *= 2;
+
+            }
+
+            if (
+                bonus === "triple-letter"
+            ) {
+
+                letterScore *= 3;
+
+            }
+
+            if (
+                bonus === "double-word"
+            ) {
+
+                wordMultiplier *= 2;
+
+            }
+
+            if (
+                bonus === "triple-word"
+            ) {
+
+                wordMultiplier *= 3;
+
+            }
+
+        }
+
+        score += letterScore;
+
+    }
+
+    return score * wordMultiplier;
+}
+
+
+function calculateMoveScore(
+    words,
+    newTiles,
+    assignment
+) {
+
+    const blankKeys =
+        new Set(
+            assignment
+                .filter(
+                    item => item.blank
+                )
+                .map(
+                    item => item.key
+                )
+        );
+
+    let score = 0;
+
+    words.forEach(wordData => {
+
+        score +=
+            calculateMoveWordScore(
+                wordData,
+                newTiles,
+                blankKeys
+            );
+
+    });
+
+
+    /*
+       Seven-tile bonus.
+
+       Your game has the special rule:
+       - 7 tiles = +50
+       - 7 tiles forming one word = +100
+    */
+
+    if (
+        newTiles.length === 7
+    ) {
+
+        const sevenTileWord =
+            words.some(wordData => {
+
+                let count = 0;
+
+                for (
+                    let i = 0;
+                    i < wordData.word.length;
+                    i++
+                ) {
+
+                    const position =
+                        getPosition(
+                            wordData.row,
+                            wordData.col,
+                            wordData.direction,
+                            i
+                        );
+
+                    const key =
+                        `${position.row},${position.col}`;
+
+                    if (
+                        newTiles.some(
+                            tile =>
+                                tile.key === key
+                        )
+                    ) {
+
+                        count++;
+
+                    }
+
+                }
+
+                return count === 7;
+
+            });
+
+
+        if (sevenTileWord) {
+            score += 100;
+        }
+        else {
+            score += 50;
+        }
+
+    }
+
+    return score;
+}
+
+
+function findHighestScoringMove() {
+
+    if (
+        playerTiles.length === 0
+    ) {
+
+        return null;
+
+    }
+
+    if (
+        !board ||
+        board.length !== boardSize
+    ) {
+
+        return null;
+
+    }
+
+    if (
+        dictionary.size === 0
+    ) {
+
+        return null;
+
+    }
+
+
+    const rackCounts =
+        getRackCounts();
+
+
+    /*
+       Only words up to the size of the
+       board can be played.
+    */
+
+    const possibleWords =
+        Array.from(dictionary)
+            .filter(
+                word =>
+                    word.length >= 2 &&
+                    word.length <= boardSize
+            );
+
+
+    let bestMove = null;
+
+
+    for (
+        const word of possibleWords
+    ) {
+
+        for (
+            const direction of [
+                "horizontal",
+                "vertical"
+            ]
+        ) {
+
+            for (
+                let row = 0;
+                row < boardSize;
+                row++
+            ) {
+
+                for (
+                    let col = 0;
+                    col < boardSize;
+                    col++
+                ) {
+
+                    /*
+                       Check whether the word fits.
+                    */
+
+                    if (
+                        !canPlaceWord(
+                            board,
+                            word,
+                            row,
+                            col,
+                            direction,
+                            false
+                        )
+                    ) {
+
+                        continue;
+
+                    }
+
+
+                    const newTiles =
+                        getPlacementNewTiles(
+                            word,
+                            row,
+                            col,
+                            direction
+                        );
+
+
+                    /*
+                       The move must actually
+                       place at least one tile.
+                    */
+
+                    if (
+                        newTiles.length === 0
+                    ) {
+
+                        continue;
+
+                    }
+
+
+                    /*
+                       The move must connect
+                       to the existing puzzle.
+                    */
+
+                    if (
+                        !placementTouchesBoard(
+                            word,
+                            row,
+                            col,
+                            direction
+                        )
+                    ) {
+
+                        continue;
+
+                    }
+
+
+                    /*
+                       Check whether the rack
+                       contains the required tiles.
+                    */
+
+                    if (
+                        !canMakeWordWithRack(
+                            word,
+                            newTiles,
+                            rackCounts
+                        )
+                    ) {
+
+                        continue;
+
+                    }
+
+
+                    /*
+                       Build the hypothetical board.
+                    */
+
+                    const testBoard =
+                        createTestBoardForMove(
+                            word,
+                            row,
+                            col,
+                            direction
+                        );
+
+
+                    /*
+                       Find the main word and
+                       all perpendicular words.
+                    */
+
+                    const words =
+                        getWordsCreatedByMove(
+                            testBoard,
+                            newTiles
+                        );
+
+
+                    if (
+                        words.length === 0
+                    ) {
+
+                        continue;
+
+                    }
+
+
+                    /*
+                       Every word created by the
+                       move must be valid.
+                    */
+
+                    if (
+                        !areMoveWordsValid(
+                            words
+                        )
+                    ) {
+
+                        continue;
+
+                    }
+
+
+                    /*
+                       Try every possible blank
+                       assignment and keep the
+                       highest-scoring one.
+                    */
+
+                    const assignments =
+                        getTileAssignments(
+                            newTiles,
+                            rackCounts
+                        );
+
+
+                    for (
+                        const assignment of assignments
+                    ) {
+
+                        const score =
+                            calculateMoveScore(
+                                words,
+                                newTiles,
+                                assignment
+                            );
+
+
+                        if (
+                            !bestMove ||
+                            score > bestMove.score ||
+                            (
+                                score === bestMove.score &&
+                                newTiles.length >
+                                    bestMove.tilesUsed
+                            )
+                        ) {
+
+                            bestMove = {
+
+                                word,
+
+                                row,
+
+                                col,
+
+                                direction,
+
+                                score,
+
+                                tilesUsed:
+                                    newTiles.length,
+
+                                words:
+                                    words.map(
+                                        wordData =>
+                                            wordData.word
+                                    )
+
+                            };
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+    return bestMove;
+}
+
+
+function displayBestMove() {
+
+    const element =
+        document.getElementById(
+            "bestMove"
+        );
+
+    if (!element) {
+        return;
+    }
+
+
+    const bestMove =
+        findHighestScoringMove();
+
+
+    if (!bestMove) {
+
+        element.innerHTML = `
+            <span class="best-move-label">
+                Highest Possible Score
+            </span>
+
+            <span class="best-move-details">
+                No valid scoring move available
+            </span>
+        `;
+
+        return;
+
+    }
+
+
+    let details =
+        `${bestMove.tilesUsed} tile`;
+
+    if (
+        bestMove.tilesUsed !== 1
+    ) {
+        details += "s";
+    }
+
+
+    if (
+        bestMove.words.length > 1
+    ) {
+
+        details +=
+            ` • ${bestMove.words.length} words`;
+
+    }
+
+
+    element.innerHTML = `
+        <span class="best-move-label">
+            Highest Possible Score
+        </span>
+
+        <span class="best-move-word">
+            ${bestMove.word}
+        </span>
+
+        <span class="best-move-score">
+            ${bestMove.score}
+        </span>
+
+        <div class="best-move-details">
+            ${details}
+        </div>
+    `;
+
+}
 // --------------------------------------------------
 // BUTTONS
 // --------------------------------------------------
