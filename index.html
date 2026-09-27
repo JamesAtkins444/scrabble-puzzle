@@ -1,107 +1,70 @@
-/* --------------------------------
-SCORING WORD PILLS
--------------------------------- */
+<!DOCTYPE html>
 
-#wordList {
-width: min(100%, 500px);
+<html lang="en">
 
-```
-margin: 0 auto 18px auto;
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-flex-wrap: wrap;
-
-gap: 7px;
-
-min-height: 0;
-```
-
-}
-
-.word-pill {
-display: inline-flex;
+<head>
+    <meta charset="UTF-8">
 
 ```
-align-items: center;
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-gap: 6px;
+<title>Scrabble Puzzle</title>
 
-padding: 7px 11px;
-
-background: white;
-
-border: 1px solid #ddd;
-
-border-radius: 999px;
-
-font-size: 14px;
-
-line-height: 1;
-
-box-shadow:
-    0 1px 3px
-    rgba(0, 0, 0, 0.08);
+<link
+    rel="stylesheet"
+    href="style.css"
+>
 ```
 
-}
+</head>
 
-.word-pill-word {
-font-weight: bold;
-
-```
-color: #222;
-```
-
-}
-
-.word-pill-score {
-color: #777;
+<body>
 
 ```
-font-size: 12px;
+<div class="container">
 
-font-weight: bold;
+    <div class="controls">
+
+        <button id="generateButton">
+            New Puzzle
+        </button>
+
+    </div>
+
+    <!--
+        These elements are kept for the
+        existing JavaScript, but hidden
+        from the player.
+    -->
+    <div
+        id="wordCount"
+        style="display: none;"
+    ></div>
+
+    <button
+        id="newTilesButton"
+        style="display: none;"
+    ></button>
+
+    <div id="board"></div>
+
+    <div id="wordList"></div>
+
+    <div
+        id="tileMessage"
+        class="tile-message"
+    ></div>
+
+    <div id="tileRack"></div>
+
+</div>
+
+<script src="script.js"></script>
 ```
 
-}
+</body>
 
-.word-item {
-display: inline-flex;
-
-```
-align-items: center;
-
-gap: 6px;
-
-padding: 7px 11px;
-
-background: white;
-
-border: 1px solid #ddd;
-
-border-radius: 999px;
-
-font-size: 14px;
-
-line-height: 1;
-
-box-shadow:
-    0 1px 3px
-    rgba(0, 0, 0, 0.08);
-```
-
-}
-
-.word-item strong {
-color: #777;
-
-```
-font-size: 12px;
-```
-
-}
+</html>
