@@ -1,63 +1,94 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+```
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <title>Scrabble Puzzle</title>
+<title>Scrabble Puzzle</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+```
+
 </head>
 
 <body>
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="controls">
+    <div class="controls">
 
-            <button id="generateButton">
-                New Puzzle
-            </button>
-
-        </div>
-
-        <!--
-            These elements are kept for the
-            existing JavaScript, but hidden
-            from the player.
-        -->
-        <div
-            id="wordCount"
-            style="display: none;"
-        ></div>
-
-        <button
-            id="newTilesButton"
-            style="display: none;"
-        ></button>
-
-        <div id="board"></div>
-
-        <div id="wordList"></div>
-
-        <div
-            id="tileMessage"
-            class="tile-message"
-        ></div>
-
-        <div id="tileRack"></div>
+        <button id="generateButton">
+            New Puzzle
+        </button>
 
     </div>
 
-    <script src="script.js"></script>
+    <!--
+        These elements are kept for the
+        existing JavaScript, but hidden
+        from the player.
+    -->
+    <div
+        id="wordCount"
+        style="display: none;"
+    ></div>
+
+    <button
+        id="newTilesButton"
+        style="display: none;"
+    ></button>
+
+    <!--
+        Score and scoring words
+        sit together above the board.
+    -->
+    <div class="score-area">
+
+        <div class="score-box">
+
+            <span class="score-label">
+                Score
+            </span>
+
+            <span id="scoreValue">
+                0
+            </span>
+
+            <span
+                id="scoreBonus"
+                class="score-bonus"
+            ></span>
+
+        </div>
+
+        <div id="wordList"></div>
+
+    </div>
+
+    <div id="board"></div>
+
+    <div
+        id="tileMessage"
+        class="tile-message"
+    ></div>
+
+    <div id="tileRack"></div>
+
+</div>
+
+<script src="script.js"></script>
+```
 
 </body>
 
