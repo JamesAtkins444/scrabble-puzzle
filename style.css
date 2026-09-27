@@ -26,12 +26,54 @@ button {
 -------------------------------- */
 
 .container {
-    width: 100%;
+width: 100%;
 
-    max-width: 900px;
+```
+max-width: 900px;
 
-    margin: 0 auto;
+margin: 0 auto;
+
+display: flex;
+
+flex-direction: column;
+```
+
 }
+
+/* --------------------------------
+PAGE ELEMENT ORDER
+-------------------------------- */
+
+/* New Puzzle button */
+.controls {
+order: 1;
+}
+
+/* Dynamically-created Score */
+.score-box {
+order: 2;
+}
+
+/* Scoring word pills */
+#wordList {
+order: 3;
+}
+
+/* Board */
+#board {
+order: 4;
+}
+
+/* Message underneath board */
+#tileMessage {
+order: 5;
+}
+
+/* Player tiles */
+#tileRack {
+order: 6;
+}
+
 
 
 /* --------------------------------
