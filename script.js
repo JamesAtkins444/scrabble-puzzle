@@ -632,9 +632,10 @@ function generateBoard() {
     // Generate bonus squares AFTER puzzle generation
     generateBonusSquares();
 
-    displayBoard();
-    displayWords();
-    generatePlayerTiles();
+displayBoard();
+displayWords();
+generatePlayerTiles();
+displayBestMove();
 }
 
 
