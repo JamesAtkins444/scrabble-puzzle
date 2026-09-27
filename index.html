@@ -27,23 +27,31 @@
 <div class="container">
 
     <div class="controls">
+
         <button id="generateButton">
             New Puzzle
         </button>
+
     </div>
 
-    <div id="scoreBox" class="score-box">
-        <span class="score-label">Score</span>
-        <span id="scoreValue">0</span>
-        <span
-            id="scoreBonus"
-            class="score-bonus"
-        ></span>
-    </div>
+    <!--
+        These elements are kept for the
+        existing JavaScript, but hidden
+        from the player.
+    -->
+    <div
+        id="wordCount"
+        style="display: none;"
+    ></div>
 
-    <div id="wordList"></div>
+    <button
+        id="newTilesButton"
+        style="display: none;"
+    ></button>
 
     <div id="board"></div>
+
+    <div id="wordList"></div>
 
     <div
         id="tileMessage"
@@ -51,30 +59,7 @@
     ></div>
 
     <div id="tileRack"></div>
-
-    <div
-        id="bestScoreBox"
-        class="best-score-box"
-    >
-        <div class="best-score-title">
-            Highest Possible Score
-        </div>
-
-        <div
-            id="bestScoreWord"
-            class="best-score-word"
-        >
-            —
-        </div>
-
-        <div
-            id="bestScoreValue"
-            class="best-score-value"
-        >
-            0
-        </div>
-    </div>
-
+<div id="bestMove"></div>
 </div>
 
 <script src="script.js"></script>
