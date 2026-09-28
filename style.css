@@ -740,3 +740,191 @@ body {
 }
 
 }
+
+
+/* =========================================
+   PUZZLE GENERATOR PANEL
+========================================= */
+
+#generatorPanel {
+    position: fixed;
+
+    left: 20px;
+    top: 20px;
+
+    width: 230px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1);
+
+    z-index: 100;
+}
+
+#generatorPanel h2 {
+    margin: 0 0 8px 0;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #222;
+}
+
+.panel-description {
+    margin: 0 0 18px 0;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: #777;
+}
+
+
+/* -----------------------------------------
+   SETTINGS
+----------------------------------------- */
+
+.setting {
+    margin-bottom: 16px;
+}
+
+.setting label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: #333;
+}
+
+.setting input {
+    width: 100%;
+
+    padding: 9px 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: #fafafa;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+.setting input:focus {
+    outline: none;
+
+    border-color: #555;
+
+    background: white;
+}
+
+.setting-help {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    color: #999;
+}
+
+
+/* -----------------------------------------
+   PANEL BUTTON
+----------------------------------------- */
+
+#generatorPanel #generateButton {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #222;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#generatorPanel #generateButton:hover {
+    background: #444;
+}
+
+#generatorPanel #generateButton:disabled {
+    opacity: 0.6;
+
+    cursor: default;
+}
+
+
+/* -----------------------------------------
+   PANEL MESSAGE
+----------------------------------------- */
+
+.generator-message {
+    min-height: 18px;
+
+    margin: -4px 0 10px 0;
+
+    font-size: 12px;
+    line-height: 1.3;
+
+    color: #b33b3b;
+}
+
+
+/* =========================================
+   DESKTOP GAME POSITION
+========================================= */
+
+@media (min-width: 1000px) {
+
+    .container {
+        max-width: 900px;
+
+        margin-left: 280px;
+        margin-right: auto;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 999px) {
+
+    #generatorPanel {
+        position: static;
+
+        width: min(
+            calc(100% - 20px),
+            500px
+        );
+
+        margin: 0 auto 20px auto;
+
+        box-sizing: border-box;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+
+}
