@@ -168,39 +168,45 @@ font-weight: bold;
 ================================================ */
 
 .board-tile {
-
     position: relative;
-
     width: 82%;
     height: 82%;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     box-sizing: border-box;
 
     background: #f4dfad;
-
     border: 2px solid #c5ae7b;
-
     border-radius: 6px;
 
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2);
-
-    font-size: clamp(
-        20px,
-        4vw,
-        32px
-    );
-
-    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     user-select: none;
-
     z-index: 1;
+}
+
+/* BOARD LETTER */
+
+.board-tile .tile-letter {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* BOARD TILE SCORE */
+
+.board-tile .tile-value {
+    position: absolute;
+
+    bottom: 5%;
+    right: 8%;
+
+    font-size: clamp(7px, 1.2vw, 11px);
+    font-weight: bold;
+    line-height: 1;
 }
 
 
