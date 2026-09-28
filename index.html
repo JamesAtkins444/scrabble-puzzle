@@ -3,19 +3,20 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Scrabble Puzzle</title>
+    <title>Scrabble Puzzle</title>
 
-<link
-    rel="stylesheet"
-    href="style.css"
->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -24,18 +25,31 @@
 <div class="container">
 
     <div class="controls">
+
         <button id="generateButton">
             New Puzzle
         </button>
+
     </div>
 
-    <div id="scoreBox" class="score-box">
-        <span class="score-label">Score</span>
-        <span id="scoreValue">0</span>
+    <div
+        id="scoreBox"
+        class="score-box"
+    >
+
+        <span class="score-label">
+            Score
+        </span>
+
+        <span id="scoreValue">
+            0
+        </span>
+
         <span
             id="scoreBonus"
             class="score-bonus"
         ></span>
+
     </div>
 
     <div id="wordList"></div>
@@ -48,29 +62,6 @@
     ></div>
 
     <div id="tileRack"></div>
-
-    <div
-        id="bestScoreBox"
-        class="best-score-box"
-    >
-        <div class="best-score-title">
-            Highest Possible Score
-        </div>
-
-        <div
-            id="bestScoreWord"
-            class="best-score-word"
-        >
-            —
-        </div>
-
-        <div
-            id="bestScoreValue"
-            class="best-score-value"
-        >
-            0
-        </div>
-    </div>
 
 </div>
 
