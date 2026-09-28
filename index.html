@@ -1,36 +1,117 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Scrabble Puzzle</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- =========================================
+     PUZZLE GENERATOR PANEL
+========================================= -->
+
+<aside id="generatorPanel">
+
+    <h2>Puzzle Generator</h2>
+
+    <p class="panel-description">
+        Change these values and generate a new puzzle to test different configurations.
+    </p>
+
+    <div class="setting">
+
+        <label for="gridSizeInput">
+            Grid Size
+        </label>
+
+        <input
+            id="gridSizeInput"
+            type="number"
+            min="5"
+            max="12"
+            value="8"
+        >
+
+        <span class="setting-help">
+            5–12
+        </span>
+
+    </div>
+
+
+    <div class="setting">
+
+        <label for="wordCountInput">
+            Number of Words
+        </label>
+
+        <input
+            id="wordCountInput"
+            type="number"
+            min="1"
+            max="8"
+            value="4"
+        >
+
+        <span class="setting-help">
+            Total puzzle words
+        </span>
+
+    </div>
+
+
+    <div class="setting">
+
+        <label for="initialWordLengthInput">
+            Initial Word Length
+        </label>
+
+        <input
+            id="initialWordLengthInput"
+            type="number"
+            min="3"
+            max="8"
+            value="5"
+        >
+
+        <span class="setting-help">
+            Exact length
+        </span>
+
+    </div>
+
+
+    <div
+        id="generatorMessage"
+        class="generator-message"
+    ></div>
+
+
+    <button
+        id="generateButton"
+        type="button"
+    >
+        New Puzzle
+    </button>
+
+</aside>
+
+
+<!-- =========================================
+     MAIN GAME
+========================================= -->
+
 <div class="container">
 
     <div class="controls">
-
-        <button id="generateButton">
-            New Puzzle
-        </button>
-
+        <!-- New Puzzle button is now in the side panel -->
     </div>
+
 
     <div
         id="scoreBox"
@@ -52,21 +133,25 @@
 
     </div>
 
+
     <div id="wordList"></div>
 
+
     <div id="board"></div>
+
 
     <div
         id="tileMessage"
         class="tile-message"
     ></div>
 
+
     <div id="tileRack"></div>
 
 </div>
 
+
 <script src="script.js"></script>
 
 </body>
-
 </html>
