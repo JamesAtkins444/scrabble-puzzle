@@ -520,6 +520,18 @@ GENERATE PUZZLE
 
 function generateBoard() {
 
+    // Clear all player-placed tiles
+    playerPlacedTiles = {};
+
+    // Give the player a completely new rack
+    playerTiles = drawRandomTiles(7);
+
+    // Clear any selected rack tile
+    selectedRackTile = null;
+
+    // Reset score
+    score = 0;
+
     board = createEmptyBoard();
 
     originalBoard =
