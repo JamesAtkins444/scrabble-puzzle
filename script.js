@@ -84,8 +84,8 @@ let puzzleWords = [];
 
 let score = 0;
 
-let highestPossibleScore = 0;
-let highestPossibleWord = "";
+let PossibleScore = 0;
+let PossibleWord = "";
 
 let isGenerating = false;
 
@@ -776,7 +776,7 @@ function generateBoard() {
 
     calculatePlayerScore();
 
-    calculateHighestPossibleScore();
+    calculatePossibleScore();
 }
 
 /* ==================================================
@@ -1354,7 +1354,7 @@ function handleBoardClick(
         displayBoard();
 
         calculatePlayerScore();
-        calculateHighestPossibleScore();
+        calculatePossibleScore();
 
         return;
     }
@@ -1421,7 +1421,7 @@ function handleBoardClick(
     displayBoard();
 
     calculatePlayerScore();
-    calculateHighestPossibleScore();
+    calculatePossibleScore();
 }
 
 /* ==================================================
@@ -3210,84 +3210,77 @@ function calculatePotentialMoveScore(
 
 
 /* ==================================================
-FIND HIGHEST POSSIBLE SCORE
+HIGHEST POSSIBLE SCORE
 ================================================== */
 
 /*
-    This is the important part.
+    Finds the highest scoring SINGLE MOVE.
 
-    We don't simply ask:
+    The move may:
 
-        "What is the highest value word?"
+    - use one or more rack tiles
+    - overlap existing puzzle letters
+    - create a main word
+    - create perpendicular words
+    - use bonus squares
+    - use all 7 rack tiles
+    - receive the +50 / +100 seven-tile bonus
 
-    Instead we ask:
-
-        "What legal placement produces the
-         highest total score?"
-
-    That means a lower-value word can win if:
-
-        - It lands on a Triple Word square
-        - It creates multiple cross words
-        - It uses more rack tiles
-        - It uses all 7 tiles
-        - It gets the +50 / +100 bonus
+    Premium squares only apply to newly placed tiles.
 */
+
+
+function getRackLetterCounts() {
+
+    const counts = {};
+
+    for (const tile of playerTiles) {
+
+        const letter = tile.letter;
+
+        if (!counts[letter]) {
+            counts[letter] = 0;
+        }
+
+        counts[letter]++;
+    }
+
+    return counts;
+}
+
 
 /*
-    Quickly determine the minimum number of
-    rack tiles a word could require.
+    Check whether the rack can supply
+    the letters required by a move.
 
-    This lets us skip impossible words before
-    checking every board position.
+    Blank tiles are represented by "".
 */
 
-function wordCouldUseRack(
-    word
-) {
+function canSupplyLetters(requiredLetters) {
 
-    const rackCounts =
+    const counts =
         getRackLetterCounts();
 
     let blanks =
-        rackCounts.BLANK || 0;
+        counts[""] || 0;
 
-    const required =
-        {};
-
-    for (
-        const letter of word
-    ) {
-
-        required[letter] =
-            (
-                required[letter] || 0
-            ) + 1;
-    }
-
-    for (
-        const letter in required
-    ) {
-
-        const available =
-            rackCounts[letter] || 0;
-
-        const missing =
-            Math.max(
-                0,
-                required[letter] -
-                available
-            );
+    for (const letter of requiredLetters) {
 
         if (
-            missing > blanks
+            counts[letter] &&
+            counts[letter] > 0
         ) {
+
+            counts[letter]--;
+
+        } else if (blanks > 0) {
+
+            blanks--;
+
+        } else {
 
             return false;
         }
-
-        blanks -=
-            missing;
     }
 
     return true;
@@ -3295,112 +3288,686 @@ function wordCouldUseRack(
 
 
 /*
-    Compare two moves.
-
-    Score is the primary comparison.
-
-    If scores are equal:
-
-    1. Prefer using more rack tiles.
-    2. Prefer using all 7 tiles.
-    3. Prefer the move with the larger
-       base word score.
+    Get the empty squares that a word
+    would need to fill.
 */
 
-function isBetterMove(
-    candidate,
-    currentBest
+function getRequiredRackLetters(
+    word,
+    row,
+    col,
+    direction
 ) {
 
-    if (!currentBest) {
-        return true;
-    }
+    const required = [];
 
-    if (
-        candidate.score >
-        currentBest.score
+    for (
+        let i = 0;
+        i < word.length;
+        i++
     ) {
 
-        return true;
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+        if (
+            !isInsideBoard(
+                position.row,
+                position.col
+            )
+        ) {
+
+            return null;
+        }
+
+        const existing =
+            board[
+                position.row
+            ][
+                position.col
+            ];
+
+        /*
+            Empty square:
+            player must supply this letter.
+        */
+
+        if (!existing) {
+
+            required.push(
+                word[i]
+            );
+
+        /*
+            Existing square:
+            it must match the word.
+        */
+
+        } else if (
+            existing !== word[i]
+        ) {
+
+            return null;
+        }
     }
 
-    if (
-        candidate.score <
-        currentBest.score
-    ) {
-
-        return false;
-    }
-
-    /*
-        Same score.
-
-        Prefer more tiles.
-    */
-
-    if (
-        candidate.tilesUsed >
-        currentBest.tilesUsed
-    ) {
-
-        return true;
-    }
-
-    if (
-        candidate.tilesUsed <
-        currentBest.tilesUsed
-    ) {
-
-        return false;
-    }
-
-    /*
-        Same score and same tile count.
-
-        Prefer a seven-tile bonus.
-    */
-
-    if (
-        candidate.sevenTileBonus >
-        currentBest.sevenTileBonus
-    ) {
-
-        return true;
-    }
-
-    if (
-        candidate.sevenTileBonus <
-        currentBest.sevenTileBonus
-    ) {
-
-        return false;
-    }
-
-    /*
-        Same everything else.
-
-        Prefer the larger actual
-        word score.
-    */
-
-    return (
-        candidate.wordScore >
-        currentBest.wordScore
-    );
+    return required;
 }
 
 
 /*
-    Main search.
+    Return the board after a proposed move.
 
-    This checks:
+    Also returns the positions of the
+    newly placed tiles.
+*/
 
-        every dictionary word
-        every horizontal position
-        every vertical position
+function createBestMoveBoard(
+    word,
+    row,
+    col,
+    direction
+) {
 
-    and calculates the complete score
-    for every legal move.
+    const temporaryBoard =
+        board.map(
+            r => [...r]
+        );
+
+    const newKeys =
+        new Set();
+
+    const requiredLetters = [];
+
+
+    for (
+        let i = 0;
+        i < word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+
+        if (
+            !isInsideBoard(
+                position.row,
+                position.col
+            )
+        ) {
+
+            return null;
+        }
+
+
+        const existing =
+            temporaryBoard[
+                position.row
+            ][
+                position.col
+            ];
+
+
+        /*
+            Existing letter.
+        */
+
+        if (existing) {
+
+            if (
+                existing !== word[i]
+            ) {
+
+                return null;
+            }
+
+        /*
+            New player tile.
+        */
+
+        } else {
+
+            temporaryBoard[
+                position.row
+            ][
+                position.col
+            ] =
+                word[i];
+
+            newKeys.add(
+                `${position.row},${position.col}`
+            );
+
+            requiredLetters.push(
+                word[i]
+            );
+        }
+    }
+
+
+    /*
+        A move must actually place
+        at least one tile.
+    */
+
+    if (
+        newKeys.size === 0
+    ) {
+
+        return null;
+    }
+
+
+    /*
+        Check that the rack can supply
+        all required letters.
+    */
+
+    if (
+        !canSupplyLetters(
+            requiredLetters
+        )
+    ) {
+
+        return null;
+    }
+
+
+    return {
+        board:
+            temporaryBoard,
+
+        newKeys,
+
+        requiredLetters
+    };
+}
+
+
+/*
+    Check whether the new tiles connect
+    to the existing puzzle.
+
+    A new tile can connect by:
+
+    - being directly beside an old tile
+    - overlapping an old tile while another
+      newly placed tile connects to it
+*/
+
+function moveConnectsToPuzzle(
+newKeys
+) {
+
+    for (const key of newKeys) {
+
+        const [
+            row,
+            col
+        ] =
+            key
+                .split(",")
+                .map(Number);
+
+
+        const neighbours = [
+            [row - 1, col],
+            [row + 1, col],
+            [row, col - 1],
+            [row, col + 1]
+        ];
+
+
+        for (
+            const [
+                nr,
+                nc
+            ] of neighbours
+        ) {
+
+            if (
+                !isInsideBoard(
+                    nr,
+                    nc
+                )
+            ) {
+
+                continue;
+            }
+
+
+            /*
+                IMPORTANT:
+
+                Only an ORIGINAL puzzle tile
+                counts as the connection.
+
+                This prevents a completely
+                disconnected new word from
+                being considered valid.
+            */
+
+            if (
+                originalBoard[nr][nc]
+            ) {
+
+                return true;
+            }
+        }
+    }
+
+
+    /*
+        Also check whether the new move
+        overlaps an original puzzle tile.
+    */
+
+    for (const key of newKeys) {
+
+        const [
+            row,
+            col
+        ] =
+            key
+                .split(",")
+                .map(Number);
+
+        /*
+            Look for original tiles around
+            the complete new placement.
+        */
+
+        const neighbours = [
+            [row - 1, col],
+            [row + 1, col],
+            [row, col - 1],
+            [row, col + 1]
+        ];
+
+        for (
+            const [
+                nr,
+                nc
+            ] of neighbours
+        ) {
+
+            if (
+                !isInsideBoard(
+                    nr,
+                    nc
+                )
+            ) {
+
+                continue;
+            }
+
+            if (
+                originalBoard[nr][nc]
+            ) {
+
+                return true;
+            }
+        }
+    }
+
+
+    return false;
+}
+
+
+/*
+    Determine which generated words
+    contain newly placed tiles.
+*/
+
+function getScoringWordsForMove(
+temporaryBoard,
+newKeys
+) {
+
+    const allWords =
+        getAllBoardWordsWithPositions(
+            temporaryBoard
+        );
+
+
+    const scoringWords = [];
+
+
+    for (
+        const wordData of allWords
+    ) {
+
+        let containsNewTile =
+            false;
+
+
+        for (
+            let i = 0;
+            i < wordData.word.length;
+            i++
+        ) {
+
+            const position =
+                getPosition(
+                    wordData.row,
+                    wordData.col,
+                    wordData.direction,
+                    i
+                );
+
+
+            const key =
+                `${position.row},${position.col}`;
+
+
+            if (
+                newKeys.has(key)
+            ) {
+
+                containsNewTile =
+                    true;
+
+                break;
+            }
+        }
+
+
+        /*
+            Existing puzzle words that were
+            not changed do not score.
+        */
+
+        if (
+            !containsNewTile
+        ) {
+
+            continue;
+        }
+
+
+        /*
+            Every new word must be in the
+            dictionary.
+        */
+
+        if (
+            !dictionary.has(
+                wordData.word
+            )
+        ) {
+
+            return null;
+        }
+
+
+        scoringWords.push(
+            wordData
+        );
+    }
+
+
+    return scoringWords;
+}
+
+
+/*
+    Calculate the score for a proposed move.
+
+    Bonus squares only affect newly
+    placed tiles.
+*/
+
+function calculateBestMoveScore(
+word,
+row,
+col,
+direction
+) {
+
+    const move =
+        createBestMoveBoard(
+            word,
+            row,
+            col,
+            direction
+        );
+
+
+    if (!move) {
+        return null;
+    }
+
+
+    /*
+        The move must connect to the
+        original puzzle.
+    */
+
+    if (
+        !moveConnectsToPuzzle(
+            move.newKeys
+        )
+    ) {
+
+        return null;
+    }
+
+
+    const scoringWords =
+        getScoringWordsForMove(
+            move.board,
+            move.newKeys
+        );
+
+
+    if (!scoringWords) {
+        return null;
+    }
+
+
+    /*
+        At least one scoring word
+        must have been created.
+    */
+
+    if (
+        scoringWords.length === 0
+    ) {
+
+        return null;
+    }
+
+
+    let totalScore = 0;
+
+
+    /*
+        Score every word created
+        by the move.
+    */
+
+    for (
+        const wordData of scoringWords
+    ) {
+
+        const score =
+            calculateWordScoreAtPosition(
+                wordData.word,
+                wordData.row,
+                wordData.col,
+                wordData.direction,
+                move.newKeys
+            );
+
+
+        totalScore += score;
+    }
+
+
+    /*
+        Seven-tile bonus.
+
+        If the move uses all seven
+        rack tiles:
+
+        +100 if all seven newly placed
+        tiles are part of ONE scoring word.
+
+        Otherwise:
+
+        +50.
+    */
+
+    let sevenTileBonus = 0;
+
+
+    if (
+        move.newKeys.size === 7 &&
+        playerTiles.length === 7
+    ) {
+
+        let allSevenInOneWord =
+            false;
+
+
+        for (
+            const wordData of scoringWords
+        ) {
+
+            let count = 0;
+
+
+            for (
+                let i = 0;
+                i < wordData.word.length;
+                i++
+            ) {
+
+                const position =
+                    getPosition(
+                        wordData.row,
+                        wordData.col,
+                        wordData.direction,
+                        i
+                    );
+
+
+                const key =
+                    `${position.row},${position.col}`;
+
+
+                if (
+                    move.newKeys.has(key)
+                ) {
+
+                    count++;
+                }
+            }
+
+
+            if (
+                count === 7
+            ) {
+
+                allSevenInOneWord =
+                    true;
+
+                break;
+            }
+        }
+
+
+        if (
+            allSevenInOneWord
+        ) {
+
+            sevenTileBonus =
+                100;
+
+        } else {
+
+            sevenTileBonus =
+                50;
+        }
+
+
+        totalScore +=
+            sevenTileBonus;
+    }
+
+
+    /*
+        Find the main word.
+
+        Prefer the word that was
+        actually requested by the
+        candidate search.
+    */
+
+    let mainWord =
+        scoringWords.find(
+            wordData =>
+                wordData.word === word
+        );
+
+
+    if (!mainWord) {
+
+        mainWord =
+            scoringWords[0];
+    }
+
+
+    return {
+
+        score:
+            totalScore,
+
+        sevenTileBonus,
+
+        scoringWords,
+
+        mainWord,
+
+        board:
+            move.board,
+
+        newKeys:
+            move.newKeys
+    };
+}
+
+
+/*
+    Search every possible dictionary word
+    at every possible board position.
+
+    This is the important part:
+
+    We do NOT assume that the best answer
+    is simply a seven-letter dictionary word.
+
+    A high scoring move may instead:
+
+        WORD
+          |
+      A - B - C
+
+    and score several words at once.
+
+    Every possible placement is tested.
 */
 
 function findHighestPossibleScore() {
@@ -3412,10 +3979,6 @@ function findHighestPossibleScore() {
         return null;
     }
 
-    /*
-        The board is 8x8, so no word longer
-        than 8 letters can fit.
-    */
 
     const dictionaryWords =
         Array.from(dictionary)
@@ -3425,45 +3988,34 @@ function findHighestPossibleScore() {
                     word.length <= boardSize
             );
 
-    /*
-        Longer words first.
-
-        This does NOT determine the winner;
-        we still compare every score.
-
-        It simply means seven-tile candidates
-        are found earlier.
-    */
-
-    dictionaryWords.sort(
-        (a, b) =>
-            b.length -
-            a.length
-    );
 
     let bestMove = null;
 
-    /*
-        ========================================
-        HORIZONTAL
-        ========================================
-    */
 
     for (
         const word of dictionaryWords
     ) {
 
         /*
-            Skip words that cannot possibly
-            be made from the rack.
+            The word cannot require
+            more than seven new tiles.
+
+            Existing board letters can
+            reduce the number of rack
+            tiles required.
         */
 
         if (
-            !wordCouldUseRack(word)
+            word.length > boardSize
         ) {
 
             continue;
         }
+
+
+        /*
+            HORIZONTAL
+        */
 
         for (
             let row = 0;
@@ -3478,43 +4030,61 @@ function findHighestPossibleScore() {
             ) {
 
                 if (
-                    col +
-                    word.length >
+                    col + word.length >
                     boardSize
                 ) {
 
                     continue;
                 }
 
+
                 const result =
-                    calculatePotentialMoveScore(
+                    calculateBestMoveScore(
                         word,
                         row,
                         col,
                         "horizontal"
                     );
 
+
                 if (!result) {
                     continue;
                 }
 
+
                 if (
-                    isBetterMove(
-                        result,
-                        bestMove
-                    )
+                    !bestMove ||
+                    result.score >
+                        bestMove.score
                 ) {
 
-                    bestMove =
-                        result;
+                    bestMove = {
+
+                        word,
+
+                        score:
+                            result.score,
+
+                        row,
+
+                        col,
+
+                        direction:
+                            "horizontal",
+
+                        sevenTileBonus:
+                            result.sevenTileBonus,
+
+                        scoringWords:
+                            result.scoringWords
+                    };
                 }
             }
         }
 
+
         /*
-            ========================================
             VERTICAL
-            ========================================
         */
 
         for (
@@ -3530,47 +4100,67 @@ function findHighestPossibleScore() {
             ) {
 
                 if (
-                    row +
-                    word.length >
+                    row + word.length >
                     boardSize
                 ) {
 
                     continue;
                 }
 
+
                 const result =
-                    calculatePotentialMoveScore(
+                    calculateBestMoveScore(
                         word,
                         row,
                         col,
                         "vertical"
                     );
 
+
                 if (!result) {
                     continue;
                 }
 
+
                 if (
-                    isBetterMove(
-                        result,
-                        bestMove
-                    )
+                    !bestMove ||
+                    result.score >
+                        bestMove.score
                 ) {
 
-                    bestMove =
-                        result;
+                    bestMove = {
+
+                        word,
+
+                        score:
+                            result.score,
+
+                        row,
+
+                        col,
+
+                        direction:
+                            "vertical",
+
+                        sevenTileBonus:
+                            result.sevenTileBonus,
+
+                        scoringWords:
+                            result.scoringWords
+                    };
                 }
             }
         }
     }
 
+
     return bestMove;
 }
 
 
-/* ==================================================
-DISPLAY HIGHEST POSSIBLE SCORE
-================================================== */
+/*
+    Display the highest possible score.
+*/
 
 function calculateAndDisplayHighestScore() {
 
@@ -3579,10 +4169,12 @@ function calculateAndDisplayHighestScore() {
             "bestScoreWord"
         );
 
+
     const scoreElement =
         document.getElementById(
             "bestScoreValue"
         );
+
 
     if (
         !wordElement ||
@@ -3592,16 +4184,19 @@ function calculateAndDisplayHighestScore() {
         return;
     }
 
+
     wordElement.textContent =
         "Calculating…";
+
 
     scoreElement.textContent =
         "";
 
-    /*
-        Let the board render first.
 
-        Then perform the dictionary search.
+    /*
+        Give the browser a moment to
+        render the board before doing
+        the dictionary search.
     */
 
     setTimeout(
@@ -3609,6 +4204,7 @@ function calculateAndDisplayHighestScore() {
 
             const bestMove =
                 findHighestPossibleScore();
+
 
             if (!bestMove) {
 
@@ -3621,62 +4217,18 @@ function calculateAndDisplayHighestScore() {
                 return;
             }
 
-            /*
-                Display the main word.
-
-                The score includes:
-
-                - Main word
-                - Cross words
-                - Letter bonuses
-                - Word bonuses
-                - Seven tile bonus
-            */
 
             wordElement.textContent =
                 bestMove.word;
 
-            scoreElement.textContent =
-                bestMove.score;
 
-            console.log(
-                "Highest possible move:",
-                bestMove
-            );
+            scoreElement.textContent =
+                `${bestMove.score} points`;
 
         },
         20
     );
 }
-
-
-/* ==================================================
-INITIALISE HIGHEST SCORE AFTER RACK CHANGES
-================================================== */
-
-/*
-    These functions are intentionally exposed
-    so the rest of the game can call them after:
-
-    - Generating a new puzzle
-    - Generating new rack tiles
-    - Placing a tile
-    - Removing a tile
-*/
-
-window.calculateAndDisplayHighestScore =
-    calculateAndDisplayHighestScore;
-
-window.findHighestPossibleScore =
-    findHighestPossibleScore;
-
-
-/* ==================================================
-INITIALISE
-================================================== */
-
-calculateAndDisplayHighestScore();
-
 /* ==================================================
 NEW PUZZLE BUTTON
 ================================================== */
