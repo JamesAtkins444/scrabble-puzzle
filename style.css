@@ -163,7 +163,199 @@ color: #777;
 font-size: 12px;
 font-weight: bold;
 }
+/* ================================================
+   BOARD TILE
+================================================ */
 
+.board-tile {
+
+    position: relative;
+
+    width: 82%;
+    height: 82%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    background: #f4dfad;
+
+    border: 2px solid #c5ae7b;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+
+    font-size: clamp(
+        20px,
+        4vw,
+        32px
+    );
+
+    font-weight: bold;
+
+    user-select: none;
+
+    z-index: 1;
+}
+
+
+/* ================================================
+   ORIGINAL PUZZLE TILE
+================================================ */
+
+.board-tile.original-tile {
+
+    background: #f4dfad;
+
+    border-color: #c5ae7b;
+}
+
+
+/* ================================================
+   PLAYER TILE - VALID
+================================================ */
+
+.board-tile.player-valid {
+
+    background: #bfe8c7;
+
+    border-color: #3b9b4f;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   PLAYER TILE - INVALID
+================================================ */
+
+.board-tile.player-invalid {
+
+    background: #f3b8b8;
+
+    border-color: #c43d3d;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   PLAYER TILE - ISOLATED
+================================================ */
+
+.board-tile.player-isolated {
+
+    background: #f4df83;
+
+    border-color: #c4a72c;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   BOARD TILE LETTER
+================================================ */
+
+.board-tile .tile-letter {
+
+    position: relative;
+
+    z-index: 2;
+
+    line-height: 1;
+}
+
+
+/* ================================================
+   BOARD TILE VALUE
+================================================ */
+
+.board-tile .tile-value {
+
+    position: absolute;
+
+    top: 5%;
+    right: 8%;
+
+    font-size: 0.32em;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    z-index: 3;
+}
+
+
+/* ================================================
+   BONUS BADGE
+================================================ */
+
+.bonus-badge {
+
+    position: absolute;
+
+    top: 3px;
+    left: 4px;
+
+    z-index: 4;
+
+    font-size: clamp(
+        7px,
+        1.5vw,
+        11px
+    );
+
+    line-height: 1;
+
+    padding: 2px 3px;
+
+    border-radius: 3px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.85
+        );
+
+    color: #222;
+
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+
+/* ================================================
+   MAKE SURE BONUS COLOUR STAYS ON CELL
+================================================ */
+
+.cell.double-letter {
+    background: #b9dcf5;
+}
+
+.cell.triple-letter {
+    background: #6fa8dc;
+}
+
+.cell.double-word {
+    background: #f4b6c2;
+}
+
+.cell.triple-word {
+    background: #e57373;
+}
 /* -------------------------------- */
 /* BOARD */
 /* -------------------------------- */
