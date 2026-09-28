@@ -40,8 +40,7 @@ const letterValues = {
     W: 4,
     X: 8,
     Y: 4,
-    Z: 10,
-    "": 0
+    Z: 10
 };
 
 const letterDistribution = {
@@ -70,8 +69,7 @@ const letterDistribution = {
     W: 2,
     X: 1,
     Y: 2,
-    Z: 1,
-    "": 2
+    Z: 1
 };
 
 /* ==================================================
@@ -998,6 +996,9 @@ function displayBoard() {
 
     boardElement.innerHTML = "";
 
+    const tileStatuses =
+        getPlayerTileStatuses();
+
     for (
         let row = 0;
         row < boardSize;
@@ -1013,13 +1014,21 @@ function displayBoard() {
             const cell =
                 document.createElement("div");
 
-            cell.className = "cell";
+            cell.className =
+                "cell";
 
             cell.dataset.row = row;
             cell.dataset.col = col;
 
             const key =
-                keyForCell(row, col);
+                keyForCell(
+                    row,
+                    col
+                );
+
+            /*
+             * BONUS SQUARE
+             */
 
             const bonus =
                 getBonusSquare(
@@ -1034,7 +1043,9 @@ function displayBoard() {
                 );
 
                 const bonusBadge =
-                    document.createElement("span");
+                    document.createElement(
+                        "span"
+                    );
 
                 bonusBadge.className =
                     "bonus-badge";
@@ -1043,6 +1054,7 @@ function displayBoard() {
                     bonus ===
                     "double-letter"
                 ) {
+
                     bonusBadge.textContent =
                         "2x L";
                 }
@@ -1051,6 +1063,7 @@ function displayBoard() {
                     bonus ===
                     "triple-letter"
                 ) {
+
                     bonusBadge.textContent =
                         "3x L";
                 }
@@ -1059,6 +1072,7 @@ function displayBoard() {
                     bonus ===
                     "double-word"
                 ) {
+
                     bonusBadge.textContent =
                         "2x W";
                 }
@@ -1067,6 +1081,7 @@ function displayBoard() {
                     bonus ===
                     "triple-word"
                 ) {
+
                     bonusBadge.textContent =
                         "3x W";
                 }
@@ -1076,46 +1091,52 @@ function displayBoard() {
                 );
             }
 
+            /*
+             * LETTER TILE
+             */
+
             const letter =
                 board[row][col];
 
             if (letter !== "") {
 
-                const letterElement =
-                    document.createElement("span");
+                const boardTile =
+                    document.createElement(
+                        "div"
+                    );
 
-                letterElement.textContent =
-                    letter;
+                boardTile.className =
+                    "board-tile";
 
-                letterElement.className =
-                    "tile-letter";
-
-                cell.appendChild(
-                    letterElement
-                );
+                /*
+                 * ORIGINAL PUZZLE TILE
+                 */
 
                 if (
                     originalBoard[row][col] !== ""
                 ) {
 
-                    cell.classList.add(
+                    boardTile.classList.add(
                         "original-tile"
                     );
+
+                /*
+                 * PLAYER TILE
+                 */
 
                 } else if (
                     playerPlacedTiles[key]
                 ) {
 
                     const status =
-                        getPlayerTileStatuses()[
-                            key
-                        ];
+                        tileStatuses[key];
 
                     if (
-                        status === "valid"
+                        status ===
+                        "valid"
                     ) {
 
-                        cell.classList.add(
+                        boardTile.classList.add(
                             "player-valid"
                         );
 
@@ -1124,25 +1145,73 @@ function displayBoard() {
                         "isolated"
                     ) {
 
-                        cell.classList.add(
+                        boardTile.classList.add(
                             "player-isolated"
                         );
 
                     } else {
 
-                        cell.classList.add(
+                        boardTile.classList.add(
                             "player-invalid"
                         );
                     }
                 }
+
+                /*
+                 * LETTER
+                 */
+
+                const letterElement =
+                    document.createElement(
+                        "span"
+                    );
+
+                letterElement.className =
+                    "tile-letter";
+
+                letterElement.textContent =
+                    letter;
+
+                boardTile.appendChild(
+                    letterElement
+                );
+
+                /*
+                 * LETTER VALUE
+                 */
+
+                const valueElement =
+                    document.createElement(
+                        "span"
+                    );
+
+                valueElement.className =
+                    "tile-value";
+
+                valueElement.textContent =
+                    letterValues[letter] ??
+                    0;
+
+                boardTile.appendChild(
+                    valueElement
+                );
+
+                cell.appendChild(
+                    boardTile
+                );
             }
+
+            /*
+             * CLICKING THE BOARD
+             */
 
             cell.addEventListener(
                 "click",
-                () => handleBoardClick(
-                    row,
-                    col
-                )
+                () =>
+                    handleBoardClick(
+                        row,
+                        col
+                    )
             );
 
             boardElement.appendChild(
@@ -1179,53 +1248,84 @@ function createTileBag() {
 function drawRandomTiles(count) {
 
     const bag =
-        createTileBag();
+        shuffle(createTileBag());
 
-    const tiles = [];
+    const vowels =
+        new Set([
+            "A",
+            "E",
+            "I",
+            "O",
+            "U"
+        ]);
+
+    const vowelTiles =
+        bag.filter(
+            letter =>
+                vowels.has(letter)
+        );
+
+    const otherTiles =
+        bag.filter(
+            letter =>
+                !vowels.has(letter)
+        );
+
+    /*
+     * Guarantee at least two vowels.
+     */
+
+    const guaranteedVowels =
+        shuffle(vowelTiles).slice(
+            0,
+            Math.min(2, count)
+        );
+
+    /*
+     * Remove the guaranteed vowels
+     * from the remaining pool.
+     */
+
+    const remainingVowels =
+        [...vowelTiles];
 
     for (
-        let i = 0;
-        i < count;
-        i++
+        const vowel of guaranteedVowels
     ) {
-
-        if (
-            bag.length === 0
-        ) {
-            break;
-        }
 
         const index =
-            randomInt(
-                0,
-                bag.length - 1
+            remainingVowels.indexOf(
+                vowel
             );
 
-        tiles.push(
-            bag.splice(index, 1)[0]
+        if (index !== -1) {
+            remainingVowels.splice(
+                index,
+                1
+            );
+        }
+    }
+
+    const remainingPool =
+        shuffle([
+            ...remainingVowels,
+            ...otherTiles
+        ]);
+
+    const remainingCount =
+        count -
+        guaranteedVowels.length;
+
+    const additionalTiles =
+        remainingPool.slice(
+            0,
+            remainingCount
         );
-    }
 
-    return tiles;
-}
-
-function generatePlayerTiles() {
-
-    playerPlacedTiles = {};
-
-    playerTiles =
-        drawRandomTiles(7);
-
-    selectedRackTile = null;
-
-    displayTileRack();
-
-    if (
-        tileMessageElement
-    ) {
-        tileMessageElement.textContent =
-            "Select a tile, then click an empty square.";
-    }
+    return shuffle([
+        ...guaranteedVowels,
+        ...additionalTiles
+    ]);
 }
 
 /* ==================================================
@@ -1264,10 +1364,8 @@ function displayTileRack() {
             letterElement.className =
                 "tile-letter";
 
-            letterElement.textContent =
-                letter === ""
-                    ? "★"
-                    : letter;
+         letterElement.textContent =
+    letter;
 
             tile.appendChild(
                 letterElement
@@ -1387,10 +1485,7 @@ function handleBoardClick(
         return;
     }
 
-    board[row][col] =
-        tile === ""
-            ? "?"
-            : tile;
+board[row][col] = tile;
 
     playerPlacedTiles[key] = {
         letter: tile,
