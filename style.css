@@ -280,18 +280,12 @@ font-weight: bold;
 ================================================ */
 
 .board-tile .tile-value {
-
     position: absolute;
-
-    top: 5%;
+    bottom: 7%;
     right: 8%;
-
     font-size: 0.32em;
-
     font-weight: bold;
-
     line-height: 1;
-
     z-index: 3;
 }
 
