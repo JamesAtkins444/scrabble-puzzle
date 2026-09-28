@@ -752,18 +752,21 @@ function generateBoard() {
         return;
     }
 
-    originalBoard =
-        cloneBoard(board);
+originalBoard =
+    cloneBoard(board);
 
-    bonusSquares = {};
+bonusSquares = {};
 
-    generateBonusSquares();
+generateBonusSquares();
 
-    displayBoard();
+displayBoard();
 
-    generatePlayerTiles();
+playerTiles = drawRandomTiles(7);
+selectedRackTile = null;
 
-    calculatePlayerScore();
+displayTileRack();
+
+calculatePlayerScore();
 }
 
 /* ==================================================
