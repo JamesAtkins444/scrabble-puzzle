@@ -1,4 +1,8 @@
-let boardSize = 8;
+const DEFAULT_GRID_SIZE = 7;
+const DEFAULT_WORD_COUNT = 3;
+const DEFAULT_INITIAL_WORD_LENGTH = 6;
+
+let boardSize = DEFAULT_GRID_SIZE;
 
 let dictionary = new Set();
 
@@ -9,6 +13,10 @@ let playerPlacedTiles = {};
 let playerTiles = [];
 
 let bonusSquares = {};
+
+let selectedRackTile = null;
+let score = 0;
+
 
 /* ==================================================
 SCRABBLE VALUES
@@ -72,36 +80,52 @@ const letterDistribution = {
     Z: 1
 };
 
-/* ==================================================
-GLOBAL STATE
-================================================== */
-
-let selectedRackTile = null;
-
-let puzzleWords = [];
-
-let score = 0;
-
-let isGenerating = false;
-
 
 /* ==================================================
-PUZZLE GENERATOR SETTINGS
+BONUS SETTINGS
 ================================================== */
 
-let generatorSettings = {
-    gridSize: 8,
-    wordCount: 4,
-    initialWordLength: 5
+const bonusTypes = [
+    "double-letter",
+    "triple-letter",
+    "double-word",
+    "triple-word"
+];
+
+const bonusLabels = {
+    "double-letter": "2x L",
+    "triple-letter": "3x L",
+    "double-word": "2x W",
+    "triple-word": "3x W"
+};
+
+const bonusWeights = {
+    "double-letter": 40,
+    "triple-letter": 25,
+    "double-word": 20,
+    "triple-word": 15
+};
+
+const maxBonusCounts = {
+    "double-letter": 3,
+    "triple-letter": 3,
+    "double-word": 2,
+    "triple-word": 2
 };
 
 
 /* ==================================================
-DOM ELEMENTS
+DOM
 ================================================== */
 
 const boardElement =
     document.getElementById("board");
+
+const wordListElement =
+    document.getElementById("wordList");
+
+const generateButton =
+    document.getElementById("generateButton");
 
 const tileRackElement =
     document.getElementById("tileRack");
@@ -109,95 +133,150 @@ const tileRackElement =
 const tileMessageElement =
     document.getElementById("tileMessage");
 
-const wordListElement =
-    document.getElementById("wordList");
-
-const scoreValueElement =
-    document.getElementById("scoreValue");
-
-const scoreBonusElement =
-    document.getElementById("scoreBonus");
-
-const generateButton =
-    document.getElementById("generateButton");
-
-const newTilesButton =
-    document.getElementById("newTilesButton");
-
-const wordCountElement =
-    document.getElementById("wordCount");
-
-
-/* ==================================================
-GENERATOR PANEL ELEMENTS
-================================================== */
-
 const gridSizeInput =
-    document.getElementById(
-        "gridSizeInput"
-    );
+    document.getElementById("gridSizeInput");
 
 const wordCountInput =
-    document.getElementById(
-        "wordCountInput"
-    );
+    document.getElementById("wordCountInput");
 
 const initialWordLengthInput =
-    document.getElementById(
-        "initialWordLengthInput"
-    );
+    document.getElementById("initialWordLengthInput");
 
-const generatorMessageElement =
-    document.getElementById(
-        "generatorMessage"
-    );
+const generatorMessage =
+    document.getElementById("generatorMessage");
 
 
 /* ==================================================
-UTILITY
+GENERATOR SETTINGS
 ================================================== */
 
-function randomInt(min, max) {
+function getGeneratorSettings() {
 
-    return Math.floor(
-        Math.random() *
-        (max - min + 1)
-    ) + min;
+    const gridSize =
+        Math.max(
+            5,
+            Math.min(
+                12,
+                parseInt(
+                    gridSizeInput?.value,
+                    10
+                ) || DEFAULT_GRID_SIZE
+            )
+        );
+
+    const wordCount =
+        Math.max(
+            1,
+            Math.min(
+                8,
+                parseInt(
+                    wordCountInput?.value,
+                    10
+                ) || DEFAULT_WORD_COUNT
+            )
+        );
+
+    const initialWordLength =
+        Math.max(
+            3,
+            Math.min(
+                gridSize,
+                parseInt(
+                    initialWordLengthInput?.value,
+                    10
+                ) || DEFAULT_INITIAL_WORD_LENGTH
+            )
+        );
+
+    return {
+        gridSize,
+        wordCount,
+        initialWordLength
+    };
 }
 
 
-function shuffle(array) {
+/* ==================================================
+LOAD DICTIONARY
+================================================== */
 
-    const result = [...array];
+async function loadDictionary() {
 
-    for (
-        let i = result.length - 1;
-        i > 0;
-        i--
-    ) {
+    try {
 
-        const j =
-            Math.floor(
-                Math.random() *
-                (i + 1)
+        const response =
+            await fetch("dictionary.txt");
+
+        if (!response.ok) {
+            throw new Error(
+                "Could not load dictionary.txt"
+            );
+        }
+
+        const text =
+            await response.text();
+
+        dictionary =
+            new Set(
+                text
+                    .split(/\r?\n/)
+                    .map(word =>
+                        word
+                            .trim()
+                            .toUpperCase()
+                    )
+                    .filter(word =>
+                        /^[A-Z]+$/.test(word)
+                    )
             );
 
-        [
-            result[i],
-            result[j]
-        ] = [
-            result[j],
-            result[i]
-        ];
-    }
+        if (dictionary.size === 0) {
+            throw new Error(
+                "Dictionary is empty."
+            );
+        }
 
-    return result;
+        generateBoard();
+
+    } catch (error) {
+
+        console.error(error);
+
+        boardElement.innerHTML = `
+            <div style="
+                grid-column: 1 / -1;
+                grid-row: 1 / -1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                color: #b33b3b;
+                padding: 20px;
+                text-align: center;
+                font-size: 14px;
+            ">
+                Could not load dictionary.txt.
+                Make sure dictionary.txt is in the
+                same folder as index.html.
+            </div>
+        `;
+    }
 }
 
 
-function keyForCell(row, col) {
+/* ==================================================
+BASIC BOARD HELPERS
+================================================== */
 
-    return `${row},${col}`;
+function createEmptyBoard() {
+
+    return Array.from(
+        {
+            length: boardSize
+        },
+        () =>
+            Array(boardSize).fill("")
+    );
 }
 
 
@@ -212,204 +291,43 @@ function isInsideBoard(row, col) {
 }
 
 
-function cloneBoard(source) {
-
-    return source.map(
-        row => [...row]
-    );
-}
-
-
-/* ==================================================
-GENERATOR SETTINGS
-================================================== */
-
-function getGeneratorSettings() {
-
-    let gridSize =
-        parseInt(
-            gridSizeInput?.value,
-            10
-        );
-
-    let wordCount =
-        parseInt(
-            wordCountInput?.value,
-            10
-        );
-
-    let initialWordLength =
-        parseInt(
-            initialWordLengthInput?.value,
-            10
-        );
-
-
-    /* --------------------------------
-       DEFAULTS
-    -------------------------------- */
+function getPosition(
+    row,
+    col,
+    direction,
+    index
+) {
 
     if (
-        Number.isNaN(gridSize)
+        direction ===
+        "horizontal"
     ) {
-        gridSize = 8;
+
+        return {
+            row,
+            col: col + index
+        };
     }
 
-    if (
-        Number.isNaN(wordCount)
-    ) {
-        wordCount = 4;
-    }
-
-    if (
-        Number.isNaN(initialWordLength)
-    ) {
-        initialWordLength = 5;
-    }
-
-
-    /* --------------------------------
-       LIMIT VALUES
-    -------------------------------- */
-
-    gridSize =
-        Math.max(
-            5,
-            Math.min(
-                12,
-                gridSize
-            )
-        );
-
-    wordCount =
-        Math.max(
-            1,
-            Math.min(
-                8,
-                wordCount
-            )
-        );
-
-    initialWordLength =
-        Math.max(
-            3,
-            Math.min(
-                gridSize,
-                initialWordLength
-            )
-        );
-
-
-    /* --------------------------------
-       UPDATE INPUTS
-    -------------------------------- */
-
-    if (gridSizeInput) {
-
-        gridSizeInput.value =
-            gridSize;
-    }
-
-    if (wordCountInput) {
-
-        wordCountInput.value =
-            wordCount;
-    }
-
-    if (initialWordLengthInput) {
-
-        initialWordLengthInput.value =
-            initialWordLength;
-    }
-
-
-    generatorSettings = {
-
-        gridSize,
-
-        wordCount,
-
-        initialWordLength
+    return {
+        row: row + index,
+        col
     };
-
-
-    return generatorSettings;
 }
 
 
-/* ==================================================
-DICTIONARY
-================================================== */
+function getRandomItem(array) {
 
-async function loadDictionary() {
-
-    try {
-
-        const response =
-            await fetch(
-                "dictionary.txt"
-            );
-
-        if (!response.ok) {
-
-            throw new Error(
-                `Dictionary request failed: ${response.status}`
-            );
-        }
-
-        const text =
-            await response.text();
-
-        dictionary =
-            new Set(
-                text
-                    .split(/\r?\n/)
-                    .map(
-                        word =>
-                            word
-                                .trim()
-                                .toUpperCase()
-                    )
-                    .filter(
-                        word =>
-                            /^[A-Z]+$/.test(
-                                word
-                            )
-                    )
-            );
-
-        console.log(
-            `Loaded ${dictionary.size} dictionary words.`
-        );
-
-    } catch (error) {
-
-        console.error(
-            "Could not load dictionary:",
-            error
-        );
-
-        dictionary =
-            new Set();
+    if (!array.length) {
+        return null;
     }
-}
 
-
-/* ==================================================
-BOARD CREATION
-================================================== */
-
-function createEmptyBoard() {
-
-    return Array.from(
-        {
-            length: boardSize
-        },
-        () =>
-            Array(
-                boardSize
-            ).fill("")
-    );
+    return array[
+        Math.floor(
+            Math.random() *
+            array.length
+        )
+    ];
 }
 
 
@@ -417,285 +335,98 @@ function createEmptyBoard() {
 WORD HELPERS
 ================================================== */
 
-function getWordLength(word) {
-
-    return word.length;
-}
-
-
-function getWordCells(
-    word,
-    row,
-    col,
-    direction
+function getAllWordsFromDictionaryByLength(
+    min,
+    max
 ) {
 
-    const cells = [];
-
-    const deltaRow =
-        direction === "horizontal"
-            ? 0
-            : 1;
-
-    const deltaCol =
-        direction === "horizontal"
-            ? 1
-            : 0;
-
-    for (
-        let i = 0;
-        i < word.length;
-        i++
-    ) {
-
-        cells.push({
-
-            row:
-                row +
-                deltaRow * i,
-
-            col:
-                col +
-                deltaCol * i,
-
-            letter:
-                word[i]
-        });
-    }
-
-    return cells;
-}
-
-
-function getRandomWord(
-    minLength,
-    maxLength
-) {
-
-    const candidates =
-        Array.from(dictionary)
-            .filter(
-                word =>
-                    word.length >=
-                        minLength &&
-                    word.length <=
-                        maxLength
-            );
-
-    if (
-        candidates.length === 0
-    ) {
-
-        return null;
-    }
-
-    return candidates[
-        randomInt(
-            0,
-            candidates.length - 1
-        )
-    ];
-}
-
-
-/* ==================================================
-PLACEMENT VALIDATION
-================================================== */
-
-function canPlaceWord(
-    targetBoard,
-    word,
-    row,
-    col,
-    direction,
-    requireOverlap = false
-) {
-
-    const cells =
-        getWordCells(
-            word,
-            row,
-            col,
-            direction
+    return Array.from(dictionary)
+        .filter(
+            word =>
+                word.length >= min &&
+                word.length <= max
         );
-
-    let overlapCount = 0;
-
-    for (
-        const cell of cells
-    ) {
-
-        if (
-            !isInsideBoard(
-                cell.row,
-                cell.col
-            )
-        ) {
-
-            return false;
-        }
-
-        const existing =
-            targetBoard[
-                cell.row
-            ][
-                cell.col
-            ];
-
-        if (
-            existing !== ""
-        ) {
-
-            if (
-                existing !==
-                cell.letter
-            ) {
-
-                return false;
-            }
-
-            overlapCount++;
-        }
-    }
-
-    if (
-        requireOverlap &&
-        overlapCount === 0
-    ) {
-
-        return false;
-    }
-
-    return true;
 }
 
 
-function placeWordOnBoard(
-    targetBoard,
-    word,
-    row,
-    col,
-    direction
-) {
+function getHorizontalWord(row, col) {
 
-    const cells =
-        getWordCells(
-            word,
-            row,
-            col,
-            direction
-        );
-
-    for (
-        const cell of cells
-    ) {
-
-        targetBoard[
-            cell.row
-        ][
-            cell.col
-        ] =
-            cell.letter;
+    if (!board[row][col]) {
+        return "";
     }
-}
-
-
-/* ==================================================
-WORD EXTRACTION
-================================================== */
-
-function getWordAt(
-    targetBoard,
-    row,
-    col,
-    direction
-) {
-
-    let startRow = row;
 
     let startCol = col;
 
-    const deltaRow =
-        direction === "horizontal"
-            ? 0
-            : 1;
-
-    const deltaCol =
-        direction === "horizontal"
-            ? 1
-            : 0;
-
     while (
-        isInsideBoard(
-            startRow -
-                deltaRow,
-            startCol -
-                deltaCol
-        ) &&
-        targetBoard[
-            startRow -
-                deltaRow
-        ][
-            startCol -
-                deltaCol
-        ] !== ""
+        startCol > 0 &&
+        board[row][startCol - 1]
     ) {
 
-        startRow -=
-            deltaRow;
-
-        startCol -=
-            deltaCol;
+        startCol--;
     }
 
     let word = "";
 
-    let currentRow =
-        startRow;
-
-    let currentCol =
-        startCol;
-
     while (
-        isInsideBoard(
-            currentRow,
-            currentCol
-        ) &&
-        targetBoard[
-            currentRow
-        ][
-            currentCol
-        ] !== ""
+        startCol < boardSize &&
+        board[row][startCol]
     ) {
 
         word +=
-            targetBoard[
-                currentRow
-            ][
-                currentCol
-            ];
+            board[row][startCol];
 
-        currentRow +=
-            deltaRow;
-
-        currentCol +=
-            deltaCol;
+        startCol++;
     }
 
     return word;
 }
 
 
-function getAllWords(
-    targetBoard
+function getVerticalWord(row, col) {
+
+    if (!board[row][col]) {
+        return "";
+    }
+
+    let startRow = row;
+
+    while (
+        startRow > 0 &&
+        board[startRow - 1][col]
+    ) {
+
+        startRow--;
+    }
+
+    let word = "";
+
+    while (
+        startRow < boardSize &&
+        board[startRow][col]
+    ) {
+
+        word +=
+            board[startRow][col];
+
+        startRow++;
+    }
+
+    return word;
+}
+
+
+/* ==================================================
+GET ALL BOARD WORDS
+================================================== */
+
+function getAllBoardWordsWithPositions(
+    currentBoard
 ) {
 
     const words = [];
 
 
-    /* --------------------------------
-       HORIZONTAL
-    -------------------------------- */
+    /* HORIZONTAL */
 
     for (
         let row = 0;
@@ -710,15 +441,10 @@ function getAllWords(
         ) {
 
             if (
-                targetBoard[
-                    row
-                ][
-                    col
-                ] === ""
+                !currentBoard[row][col]
             ) {
 
                 col++;
-
                 continue;
             }
 
@@ -729,19 +455,11 @@ function getAllWords(
 
             while (
                 col < boardSize &&
-                targetBoard[
-                    row
-                ][
-                    col
-                ] !== ""
+                currentBoard[row][col]
             ) {
 
                 word +=
-                    targetBoard[
-                        row
-                    ][
-                        col
-                    ];
+                    currentBoard[row][col];
 
                 col++;
             }
@@ -751,14 +469,9 @@ function getAllWords(
             ) {
 
                 words.push({
-
                     word,
-
                     row,
-
-                    col:
-                        startCol,
-
+                    col: startCol,
                     direction:
                         "horizontal"
                 });
@@ -767,9 +480,7 @@ function getAllWords(
     }
 
 
-    /* --------------------------------
-       VERTICAL
-    -------------------------------- */
+    /* VERTICAL */
 
     for (
         let col = 0;
@@ -784,15 +495,10 @@ function getAllWords(
         ) {
 
             if (
-                targetBoard[
-                    row
-                ][
-                    col
-                ] === ""
+                !currentBoard[row][col]
             ) {
 
                 row++;
-
                 continue;
             }
 
@@ -803,19 +509,11 @@ function getAllWords(
 
             while (
                 row < boardSize &&
-                targetBoard[
-                    row
-                ][
-                    col
-                ] !== ""
+                currentBoard[row][col]
             ) {
 
                 word +=
-                    targetBoard[
-                        row
-                    ][
-                        col
-                    ];
+                    currentBoard[row][col];
 
                 row++;
             }
@@ -825,14 +523,9 @@ function getAllWords(
             ) {
 
                 words.push({
-
                     word,
-
-                    row:
-                        startRow,
-
+                    row: startRow,
                     col,
-
                     direction:
                         "vertical"
                 });
@@ -845,28 +538,144 @@ function getAllWords(
 
 
 /* ==================================================
-VALID WORD CHECKING
+CAN PLACE WORD
 ================================================== */
 
-function allWordsAreValid(
-    targetBoard
+function canPlaceWord(
+    testBoard,
+    word,
+    row,
+    col,
+    direction,
+    requireOverlap = false
 ) {
 
-    const words =
-        getAllWords(
-            targetBoard
-        );
+    let hasOverlap = false;
 
-    return words.every(
-        item =>
-            dictionary.has(
-                item.word
+    for (
+        let i = 0;
+        i < word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+        if (
+            !isInsideBoard(
+                position.row,
+                position.col
             )
-    );
+        ) {
+
+            return false;
+        }
+
+        const existing =
+            testBoard[
+                position.row
+            ][
+                position.col
+            ];
+
+        if (existing) {
+
+            if (
+                existing !==
+                word[i]
+            ) {
+
+                return false;
+            }
+
+            hasOverlap = true;
+        }
+    }
+
+    if (
+        requireOverlap &&
+        !hasOverlap
+    ) {
+
+        return false;
+    }
+
+    return true;
 }
 
 
+/* ==================================================
+CHECK PLACEMENT
+================================================== */
+
 function placementCreatesValidWords(
+    testBoard,
+    word,
+    row,
+    col,
+    direction
+) {
+
+    const temporaryBoard =
+        testBoard.map(
+            r => [...r]
+        );
+
+    for (
+        let i = 0;
+        i < word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
+
+        temporaryBoard[
+            position.row
+        ][
+            position.col
+        ] =
+            word[i];
+    }
+
+    const allWords =
+        getAllBoardWordsWithPositions(
+            temporaryBoard
+        );
+
+    for (
+        const wordData of allWords
+    ) {
+
+        if (
+            !dictionary.has(
+                wordData.word
+            )
+        ) {
+
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+/* ==================================================
+PLACE WORD
+================================================== */
+
+function placeWord(
     targetBoard,
     word,
     row,
@@ -874,22 +683,27 @@ function placementCreatesValidWords(
     direction
 ) {
 
-    const testBoard =
-        cloneBoard(
-            targetBoard
-        );
+    for (
+        let i = 0;
+        i < word.length;
+        i++
+    ) {
 
-    placeWordOnBoard(
-        testBoard,
-        word,
-        row,
-        col,
-        direction
-    );
+        const position =
+            getPosition(
+                row,
+                col,
+                direction,
+                i
+            );
 
-    return allWordsAreValid(
-        testBoard
-    );
+        targetBoard[
+            position.row
+        ][
+            position.col
+        ] =
+            word[i];
+    }
 }
 
 
@@ -899,34 +713,11 @@ GENERATE PUZZLE
 
 function generateBoard() {
 
-    /* --------------------------------
-       GET CURRENT GENERATOR SETTINGS
-    -------------------------------- */
-
     const settings =
         getGeneratorSettings();
 
     boardSize =
         settings.gridSize;
-
-
-    /* --------------------------------
-       RESET PLAYER STATE
-    -------------------------------- */
-
-    playerPlacedTiles = {};
-
-    playerTiles =
-        drawRandomTiles(7);
-
-    selectedRackTile = null;
-
-    score = 0;
-
-
-    /* --------------------------------
-       RESET BOARD
-    -------------------------------- */
 
     board =
         createEmptyBoard();
@@ -934,83 +725,72 @@ function generateBoard() {
     originalBoard =
         createEmptyBoard();
 
-    puzzleWords = [];
+    playerPlacedTiles = {};
+
+    playerTiles = [];
+
+    selectedRackTile = null;
+
+    score = 0;
+
+    bonusSquares = {};
 
 
     /* --------------------------------
        STARTING WORD
     -------------------------------- */
 
-    const startingWord =
-        getRandomWord(
+    const startingWords =
+        getAllWordsFromDictionaryByLength(
             settings.initialWordLength,
             settings.initialWordLength
         );
 
-    if (!startingWord) {
+    if (
+        startingWords.length === 0
+    ) {
 
-        console.error(
-            "Could not find a starting word of the requested length."
+        showGeneratorMessage(
+            `No ${settings.initialWordLength}-letter words were found in dictionary.txt.`
         );
-
-        if (
-            generatorMessageElement
-        ) {
-
-            generatorMessageElement.textContent =
-                `No dictionary word found with exactly ${settings.initialWordLength} letters.`;
-        }
 
         return;
     }
 
 
-    if (
-        generatorMessageElement
-    ) {
-
-        generatorMessageElement.textContent =
-            "";
-    }
+    const startingWord =
+        getRandomItem(
+            startingWords
+        );
 
 
-    /* --------------------------------
-       STARTING WORD PLACEMENT
-    -------------------------------- */
+    let placedStartingWord =
+        false;
 
-    const directions = [
-        "horizontal",
-        "vertical"
-    ];
-
-    let placed = false;
 
     for (
         let attempt = 0;
-        attempt < 500 &&
-        !placed;
+        attempt < 500;
         attempt++
     ) {
 
         const direction =
-            directions[
-                randomInt(
-                    0,
-                    directions.length - 1
-                )
-            ];
+            Math.random() < 0.5
+                ? "horizontal"
+                : "vertical";
 
         const row =
-            randomInt(
-                0,
-                boardSize - 1
+            Math.floor(
+                Math.random() *
+                boardSize
             );
 
         const col =
-            randomInt(
-                0,
-                boardSize - 1
+            Math.floor(
+                Math.random() *
+                boardSize
             );
+
 
         if (
             canPlaceWord(
@@ -1022,7 +802,7 @@ function generateBoard() {
             )
         ) {
 
-            placeWordOnBoard(
+            placeWord(
                 board,
                 startingWord,
                 row,
@@ -1030,27 +810,20 @@ function generateBoard() {
                 direction
             );
 
-            puzzleWords.push({
+            placedStartingWord =
+                true;
 
-                word:
-                    startingWord,
-
-                row,
-
-                col,
-
-                direction
-            });
-
-            placed = true;
+            break;
         }
     }
 
 
-    if (!placed) {
+    if (
+        !placedStartingWord
+    ) {
 
-        console.error(
-            "Could not place starting word."
+        showGeneratorMessage(
+            "Could not place the starting word."
         );
 
         return;
@@ -1058,30 +831,35 @@ function generateBoard() {
 
 
     /* --------------------------------
-       ADD ADDITIONAL WORDS
+       ADD CROSSING WORDS
     -------------------------------- */
 
-    const targetWordCount =
-        settings.wordCount;
+    const additionalWordCount =
+        settings.wordCount - 1;
 
-    let attempts = 0;
+    const additionalWords =
+        getAllWordsFromDictionaryByLength(
+            3,
+            Math.min(
+                5,
+                boardSize
+            )
+        );
+
+    let wordsAdded = 0;
 
 
-    while (
-        puzzleWords.length <
-            targetWordCount &&
-        attempts < 1000
+    for (
+        let attempt = 0;
+        attempt < 3000 &&
+        wordsAdded <
+            additionalWordCount;
+        attempt++
     ) {
 
-        attempts++;
-
         const word =
-            getRandomWord(
-                3,
-                Math.min(
-                    5,
-                    boardSize
-                )
+            getRandomItem(
+                additionalWords
             );
 
         if (!word) {
@@ -1089,185 +867,160 @@ function generateBoard() {
         }
 
 
-        /*
-         * Choose the opposite direction
-         * from a random existing word.
-         */
+        const existingWords =
+            getAllBoardWordsWithPositions(
+                board
+            );
 
-        const referenceWord =
-            puzzleWords[
-                randomInt(
-                    0,
-                    puzzleWords.length - 1
-                )
-            ];
+        if (
+            existingWords.length === 0
+        ) {
+
+            continue;
+        }
+
+
+        const existingWord =
+            getRandomItem(
+                existingWords
+            );
+
 
         const direction =
-            referenceWord.direction ===
-                "horizontal"
+            existingWord.direction ===
+            "horizontal"
                 ? "vertical"
                 : "horizontal";
 
 
-        /*
-         * Find every occupied cell.
-         */
-
-        const existingCells = [];
-
-        for (
-            let r = 0;
-            r < boardSize;
-            r++
-        ) {
-
-            for (
-                let c = 0;
-                c < boardSize;
-                c++
-            ) {
-
-                if (
-                    board[r][c] !== ""
-                ) {
-
-                    existingCells.push({
-
-                        row: r,
-
-                        col: c
-                    });
-                }
-            }
-        }
-
-
-        const shuffledCells =
-            shuffle(
-                existingCells
+        const crossingIndex =
+            Math.floor(
+                Math.random() *
+                existingWord.word.length
             );
 
-        let wordPlaced = false;
+
+        const crossingPosition =
+            getPosition(
+                existingWord.row,
+                existingWord.col,
+                existingWord.direction,
+                crossingIndex
+            );
 
 
-        /* --------------------------------
-           TRY CROSSING CELLS
-        -------------------------------- */
+        const matchingIndexes =
+            [];
+
 
         for (
-            const crossingCell
-            of shuffledCells
+            let i = 0;
+            i < word.length;
+            i++
         ) {
 
             if (
-                wordPlaced
+                word[i] ===
+                existingWord.word[
+                    crossingIndex
+                ]
             ) {
 
-                break;
-            }
-
-
-            const letters =
-                [...word];
-
-
-            for (
-                let letterIndex = 0;
-                letterIndex <
-                    letters.length;
-                letterIndex++
-            ) {
-
-                const startRow =
-                    direction ===
-                        "horizontal"
-                        ? crossingCell.row
-                        : crossingCell.row -
-                          letterIndex;
-
-                const startCol =
-                    direction ===
-                        "horizontal"
-                        ? crossingCell.col -
-                          letterIndex
-                        : crossingCell.col;
-
-
-                if (
-                    !canPlaceWord(
-                        board,
-                        word,
-                        startRow,
-                        startCol,
-                        direction,
-                        true
-                    )
-                ) {
-
-                    continue;
-                }
-
-
-                if (
-                    !placementCreatesValidWords(
-                        board,
-                        word,
-                        startRow,
-                        startCol,
-                        direction
-                    )
-                ) {
-
-                    continue;
-                }
-
-
-                placeWordOnBoard(
-                    board,
-                    word,
-                    startRow,
-                    startCol,
-                    direction
-                );
-
-
-                puzzleWords.push({
-
-                    word,
-
-                    row:
-                        startRow,
-
-                    col:
-                        startCol,
-
-                    direction
-                });
-
-
-                wordPlaced = true;
-
-                break;
+                matchingIndexes.push(i);
             }
         }
+
+
+        if (
+            matchingIndexes.length === 0
+        ) {
+
+            continue;
+        }
+
+
+        const wordIndex =
+            getRandomItem(
+                matchingIndexes
+            );
+
+
+        let newRow;
+        let newCol;
+
+
+        if (
+            direction ===
+            "horizontal"
+        ) {
+
+            newRow =
+                crossingPosition.row;
+
+            newCol =
+                crossingPosition.col -
+                wordIndex;
+
+        } else {
+
+            newRow =
+                crossingPosition.row -
+                wordIndex;
+
+            newCol =
+                crossingPosition.col;
+        }
+
+
+        if (
+            !canPlaceWord(
+                board,
+                word,
+                newRow,
+                newCol,
+                direction,
+                true
+            )
+        ) {
+
+            continue;
+        }
+
+
+        if (
+            !placementCreatesValidWords(
+                board,
+                word,
+                newRow,
+                newCol,
+                direction
+            )
+        ) {
+
+            continue;
+        }
+
+
+        placeWord(
+            board,
+            word,
+            newRow,
+            newCol,
+            direction
+        );
+
+        wordsAdded++;
     }
 
 
-    /* --------------------------------
-       MAKE SURE REQUESTED WORD COUNT
-       WAS ACTUALLY GENERATED
-    -------------------------------- */
-
     if (
-        puzzleWords.length <
-        targetWordCount
+        wordsAdded <
+        additionalWordCount
     ) {
 
-        console.warn(
-            "Could not generate the requested number of words. Retrying..."
+        showGeneratorMessage(
+            `Could not generate ${settings.wordCount} words with these settings. Try changing the values.`
         );
-
-        generateBoard();
 
         return;
     }
@@ -1278,16 +1031,14 @@ function generateBoard() {
     -------------------------------- */
 
     originalBoard =
-        cloneBoard(
-            board
+        board.map(
+            row => [...row]
         );
 
 
     /* --------------------------------
-       BONUS SQUARES
+       GENERATE BONUS SQUARES
     -------------------------------- */
-
-    bonusSquares = {};
 
     generateBonusSquares();
 
@@ -1298,11 +1049,13 @@ function generateBoard() {
 
     displayBoard();
 
-    displayTileRack();
+    displayWords();
 
-    calculatePlayerScore();
+    generatePlayerTiles();
 
     updateWordCount();
+
+    showGeneratorMessage("");
 }
 
 
@@ -1310,118 +1063,22 @@ function generateBoard() {
 BONUS SQUARES
 ================================================== */
 
-const bonusTypes = [
+function getBonusSquare(
+    row,
+    col
+) {
 
-    "double-letter",
-
-    "triple-letter",
-
-    "double-word",
-
-    "triple-word"
-];
-
-
-const bonusWeights = {
-
-    "double-letter": 40,
-
-    "triple-letter": 25,
-
-    "double-word": 20,
-
-    "triple-word": 15
-};
-
-
-const bonusMaximums = {
-
-    "double-letter": 3,
-
-    "triple-letter": 3,
-
-    "double-word": 2,
-
-    "triple-word": 2
-};
-
-
-function getWeightedBonusType() {
-
-    const availableTypes =
-        bonusTypes.filter(
-            type => {
-
-                const count =
-                    Object.values(
-                        bonusSquares
-                    ).filter(
-                        value =>
-                            value ===
-                            type
-                    ).length;
-
-                return (
-                    count <
-                    bonusMaximums[type]
-                );
-            }
-        );
-
-
-    if (
-        availableTypes.length === 0
-    ) {
-
-        return null;
-    }
-
-
-    let totalWeight = 0;
-
-
-    for (
-        const type
-        of availableTypes
-    ) {
-
-        totalWeight +=
-            bonusWeights[type];
-    }
-
-
-    let random =
-        Math.random() *
-        totalWeight;
-
-
-    for (
-        const type
-        of availableTypes
-    ) {
-
-        random -=
-            bonusWeights[type];
-
-        if (
-            random <= 0
-        ) {
-
-            return type;
-        }
-    }
-
-
-    return availableTypes[
-        availableTypes.length - 1
-    ];
+    return (
+        bonusSquares[
+            `${row},${col}`
+        ] || null
+    );
 }
 
 
 function generateBonusSquares() {
 
     bonusSquares = {};
-
 
     const emptyCells = [];
 
@@ -1439,13 +1096,11 @@ function generateBonusSquares() {
         ) {
 
             if (
-                board[row][col] === ""
+                !board[row][col]
             ) {
 
                 emptyCells.push({
-
                     row,
-
                     col
                 });
             }
@@ -1453,172 +1108,1007 @@ function generateBonusSquares() {
     }
 
 
-    const desiredCount =
-        randomInt(
-            4,
-            6
+    const targetCount =
+        4 +
+        Math.floor(
+            Math.random() * 3
         );
 
 
-    const selected = [];
-
-
-    /*
-     * Prefer spacing bonuses at least
-     * Manhattan distance 2 apart.
-     */
-
-    const shuffled =
-        shuffle(
-            emptyCells
-        );
+    const selectedCells = [];
 
 
     for (
-        const cell
-        of shuffled
+        let attempt = 0;
+        attempt < 500 &&
+        selectedCells.length <
+            targetCount;
+        attempt++
     ) {
 
         if (
-            selected.length >=
-            desiredCount
+            emptyCells.length === 0
         ) {
 
             break;
         }
 
 
+        const candidate =
+            getRandomItem(
+                emptyCells
+            );
+
+
         const tooClose =
-            selected.some(
-                other =>
-                    Math.abs(
-                        other.row -
-                        cell.row
-                    ) +
-                    Math.abs(
-                        other.col -
-                        cell.col
-                    ) < 2
+            selectedCells.some(
+                cell => {
+
+                    const distance =
+                        Math.abs(
+                            cell.row -
+                            candidate.row
+                        ) +
+                        Math.abs(
+                            cell.col -
+                            candidate.col
+                        );
+
+                    return distance < 2;
+                }
             );
 
 
-        if (!tooClose) {
-
-            selected.push(
-                cell
-            );
+        if (tooClose) {
+            continue;
         }
-    }
 
-
-    /*
-     * Fallback if there weren't enough
-     * appropriately spaced cells.
-     */
-
-    if (
-        selected.length <
-        desiredCount
-    ) {
-
-        for (
-            const cell
-            of shuffled
-        ) {
-
-            if (
-                selected.length >=
-                desiredCount
-            ) {
-
-                break;
-            }
-
-
-            const alreadySelected =
-                selected.some(
-                    other =>
-                        other.row ===
-                            cell.row &&
-                        other.col ===
-                            cell.col
-                );
-
-
-            if (
-                !alreadySelected
-            ) {
-
-                selected.push(
-                    cell
-                );
-            }
-        }
-    }
-
-
-    for (
-        const cell
-        of selected
-    ) {
 
         const type =
             getWeightedBonusType();
 
 
         if (!type) {
-
-            break;
+            continue;
         }
 
 
-        bonusSquares[
-            keyForCell(
-                cell.row,
-                cell.col
-            )
-        ] =
-            type;
+        const currentCount =
+            selectedCells.filter(
+                cell =>
+                    cell.type ===
+                    type
+            ).length;
+
+
+        if (
+            currentCount >=
+            maxBonusCounts[type]
+        ) {
+
+            continue;
+        }
+
+
+        selectedCells.push({
+            row:
+                candidate.row,
+
+            col:
+                candidate.col,
+
+            type
+        });
     }
+
+
+    /* Fallback if spacing prevented
+       enough bonus squares */
+
+    if (
+        selectedCells.length <
+        targetCount
+    ) {
+
+        for (
+            const candidate of
+            emptyCells
+        ) {
+
+            if (
+                selectedCells.some(
+                    cell =>
+                        cell.row ===
+                            candidate.row &&
+                        cell.col ===
+                            candidate.col
+                )
+            ) {
+
+                continue;
+            }
+
+
+            const type =
+                getWeightedBonusType();
+
+
+            if (!type) {
+                continue;
+            }
+
+
+            const currentCount =
+                selectedCells.filter(
+                    cell =>
+                        cell.type ===
+                        type
+                ).length;
+
+
+            if (
+                currentCount >=
+                maxBonusCounts[type]
+            ) {
+
+                continue;
+            }
+
+
+            selectedCells.push({
+                row:
+                    candidate.row,
+
+                col:
+                    candidate.col,
+
+                type
+            });
+
+
+            if (
+                selectedCells.length >=
+                targetCount
+            ) {
+
+                break;
+            }
+        }
+    }
+
+
+    selectedCells.forEach(
+        cell => {
+
+            bonusSquares[
+                `${cell.row},${cell.col}`
+            ] =
+                cell.type;
+        }
+    );
 }
 
 
-function getBonusSquare(
+function getWeightedBonusType() {
+
+    const counts = {};
+
+
+    bonusTypes.forEach(
+        type => {
+
+            counts[type] =
+                Object.values(
+                    bonusSquares
+                ).filter(
+                    value =>
+                        value ===
+                        type
+                ).length;
+        }
+    );
+
+
+    const availableTypes =
+        bonusTypes.filter(
+            type =>
+                counts[type] <
+                maxBonusCounts[type]
+        );
+
+
+    if (
+        availableTypes.length === 0
+    ) {
+
+        return null;
+    }
+
+
+    let totalWeight = 0;
+
+
+    availableTypes.forEach(
+        type => {
+
+            totalWeight +=
+                bonusWeights[type];
+        }
+    );
+
+
+    let random =
+        Math.random() *
+        totalWeight;
+
+
+    for (
+        const type of
+        availableTypes
+    ) {
+
+        random -=
+            bonusWeights[type];
+
+
+        if (
+            random <= 0
+        ) {
+
+            return type;
+        }
+    }
+
+
+    return availableTypes[
+        availableTypes.length - 1
+    ];
+}
+
+
+/* ==================================================
+SCORE A WORD
+================================================== */
+
+function calculateWordScoreAtPosition(
+    word,
     row,
-    col
+    col,
+    direction
 ) {
 
-    return (
-        bonusSquares[
-            keyForCell(
+    let score = 0;
+
+    let wordMultiplier = 1;
+
+
+    for (
+        let i = 0;
+        i < word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
                 row,
-                col
-            )
-        ] ||
-        null
+                col,
+                direction,
+                i
+            );
+
+
+        const letter =
+            word[i];
+
+
+        let letterScore =
+            letterValues[
+                letter
+            ] || 0;
+
+
+        const bonus =
+            getBonusSquare(
+                position.row,
+                position.col
+            );
+
+
+        if (
+            bonus ===
+            "double-letter"
+        ) {
+
+            letterScore *= 2;
+        }
+
+
+        if (
+            bonus ===
+            "triple-letter"
+        ) {
+
+            letterScore *= 3;
+        }
+
+
+        if (
+            bonus ===
+            "double-word"
+        ) {
+
+            wordMultiplier *= 2;
+        }
+
+
+        if (
+            bonus ===
+            "triple-word"
+        ) {
+
+            wordMultiplier *= 3;
+        }
+
+
+        score +=
+            letterScore;
+    }
+
+
+    return (
+        score *
+        wordMultiplier
     );
 }
 
 
 /* ==================================================
-BOARD DISPLAY
+PLAYER TILE HELPERS
 ================================================== */
 
-function displayBoard() {
+function getPlayerPlacedTile(
+    row,
+    col
+) {
 
-    if (!boardElement) {
+    return (
+        playerPlacedTiles[
+            `${row},${col}`
+        ]
+    );
+}
 
+
+/* ==================================================
+PLAYER TILE STATUS
+================================================== */
+
+function getPlayerTileStatuses() {
+
+    const statuses = {};
+
+    const playerKeys =
+        Object.keys(
+            playerPlacedTiles
+        );
+
+
+    const connected =
+        new Set();
+
+    const queue = [];
+
+
+    /* Find player tiles touching
+       original puzzle tiles */
+
+    for (
+        const key of
+        playerKeys
+    ) {
+
+        const [
+            row,
+            col
+        ] =
+            key
+                .split(",")
+                .map(Number);
+
+
+        let touchesOriginal =
+            false;
+
+
+        const neighbours = [
+            [row - 1, col],
+            [row + 1, col],
+            [row, col - 1],
+            [row, col + 1]
+        ];
+
+
+        for (
+            const [
+                r,
+                c
+            ] of neighbours
+        ) {
+
+            if (
+                isInsideBoard(
+                    r,
+                    c
+                ) &&
+                originalBoard[r][c]
+            ) {
+
+                touchesOriginal =
+                    true;
+
+                break;
+            }
+        }
+
+
+        if (
+            touchesOriginal
+        ) {
+
+            connected.add(key);
+
+            queue.push(key);
+        }
+    }
+
+
+    /* Spread connectivity
+       through player tiles */
+
+    while (
+        queue.length > 0
+    ) {
+
+        const key =
+            queue.shift();
+
+
+        const [
+            row,
+            col
+        ] =
+            key
+                .split(",")
+                .map(Number);
+
+
+        const neighbours = [
+            [row - 1, col],
+            [row + 1, col],
+            [row, col - 1],
+            [row, col + 1]
+        ];
+
+
+        for (
+            const [
+                r,
+                c
+            ] of neighbours
+        ) {
+
+            if (
+                !isInsideBoard(
+                    r,
+                    c
+                )
+            ) {
+
+                continue;
+            }
+
+
+            const neighbourKey =
+                `${r},${c}`;
+
+
+            if (
+                playerPlacedTiles[
+                    neighbourKey
+                ] &&
+                !connected.has(
+                    neighbourKey
+                )
+            ) {
+
+                connected.add(
+                    neighbourKey
+                );
+
+                queue.push(
+                    neighbourKey
+                );
+            }
+        }
+    }
+
+
+    /* Evaluate every player tile */
+
+    for (
+        const key of
+        playerKeys
+    ) {
+
+        const [
+            row,
+            col
+        ] =
+            key
+                .split(",")
+                .map(Number);
+
+
+        if (
+            !connected.has(key)
+        ) {
+
+            const neighbours = [
+                [row - 1, col],
+                [row + 1, col],
+                [row, col - 1],
+                [row, col + 1]
+            ];
+
+
+            const touchesAnotherPlayerTile =
+                neighbours.some(
+                    ([
+                        r,
+                        c
+                    ]) =>
+                        isInsideBoard(
+                            r,
+                            c
+                        ) &&
+                        playerPlacedTiles[
+                            `${r},${c}`
+                        ]
+                );
+
+
+            statuses[key] =
+                touchesAnotherPlayerTile
+                    ? "invalid"
+                    : "isolated";
+
+
+            continue;
+        }
+
+
+        const horizontalWord =
+            getHorizontalWord(
+                row,
+                col
+            );
+
+
+        const verticalWord =
+            getVerticalWord(
+                row,
+                col
+            );
+
+
+        let valid = true;
+
+        let hasWord = false;
+
+
+        if (
+            horizontalWord.length >= 2
+        ) {
+
+            hasWord = true;
+
+
+            if (
+                !dictionary.has(
+                    horizontalWord
+                )
+            ) {
+
+                valid = false;
+            }
+        }
+
+
+        if (
+            verticalWord.length >= 2
+        ) {
+
+            hasWord = true;
+
+
+            if (
+                !dictionary.has(
+                    verticalWord
+                )
+            ) {
+
+                valid = false;
+            }
+        }
+
+
+        statuses[key] =
+            valid && hasWord
+                ? "valid"
+                : "invalid";
+    }
+
+
+    return statuses;
+}
+
+
+/* ==================================================
+PLAYER SCORING WORDS
+================================================== */
+
+function isScoringWordValid(
+    wordData,
+    statuses
+) {
+
+    let containsPlayerTile =
+        false;
+
+
+    for (
+        let i = 0;
+        i < wordData.word.length;
+        i++
+    ) {
+
+        const position =
+            getPosition(
+                wordData.row,
+                wordData.col,
+                wordData.direction,
+                i
+            );
+
+
+        const key =
+            `${position.row},${position.col}`;
+
+
+        const playerTile =
+            getPlayerPlacedTile(
+                position.row,
+                position.col
+            );
+
+
+        if (playerTile) {
+
+            containsPlayerTile =
+                true;
+
+
+            if (
+                statuses[key] !==
+                "valid"
+            ) {
+
+                return false;
+            }
+        }
+    }
+
+
+    return containsPlayerTile;
+}
+
+
+function getPlayerScoringWords() {
+
+    const allWords =
+        getAllBoardWordsWithPositions(
+            board
+        );
+
+
+    const statuses =
+        getPlayerTileStatuses();
+
+
+    return allWords.filter(
+        wordData =>
+            isScoringWordValid(
+                wordData,
+                statuses
+            )
+    );
+}
+
+
+/* ==================================================
+7-TILE BONUS
+================================================== */
+
+function getSevenTileBonus() {
+
+    const placedKeys =
+        Object.keys(
+            playerPlacedTiles
+        );
+
+
+    if (
+        placedKeys.length !== 7
+    ) {
+
+        return {
+            points: 0,
+            type: null
+        };
+    }
+
+
+    const statuses =
+        getPlayerTileStatuses();
+
+
+    const allSevenValid =
+        placedKeys.every(
+            key =>
+                statuses[key] ===
+                "valid"
+        );
+
+
+    if (!allSevenValid) {
+
+        return {
+            points: 0,
+            type: null
+        };
+    }
+
+
+    const scoringWords =
+        getPlayerScoringWords();
+
+
+    const hasSevenTileWord =
+        scoringWords.some(
+            wordData => {
+
+                let playerTilesInWord =
+                    0;
+
+
+                for (
+                    let i = 0;
+                    i < wordData.word.length;
+                    i++
+                ) {
+
+                    const position =
+                        getPosition(
+                            wordData.row,
+                            wordData.col,
+                            wordData.direction,
+                            i
+                        );
+
+
+                    if (
+                        getPlayerPlacedTile(
+                            position.row,
+                            position.col
+                        )
+                    ) {
+
+                        playerTilesInWord++;
+                    }
+                }
+
+
+                return (
+                    playerTilesInWord ===
+                    7
+                );
+            }
+        );
+
+
+    if (
+        hasSevenTileWord
+    ) {
+
+        return {
+            points: 100,
+            type: "seven-word"
+        };
+    }
+
+
+    return {
+        points: 50,
+        type: "seven-tiles"
+    };
+}
+
+
+/* ==================================================
+TOTAL SCORE
+================================================== */
+
+function calculatePlayerScore() {
+
+    const scoringWords =
+        getPlayerScoringWords();
+
+
+    let total = 0;
+
+
+    scoringWords.forEach(
+        wordData => {
+
+            total +=
+                calculateWordScoreAtPosition(
+                    wordData.word,
+                    wordData.row,
+                    wordData.col,
+                    wordData.direction
+                );
+        }
+    );
+
+
+    const sevenTileBonus =
+        getSevenTileBonus();
+
+
+    total +=
+        sevenTileBonus.points;
+
+
+    return total;
+}
+
+
+/* ==================================================
+SCORE DISPLAY
+================================================== */
+
+function ensureScoreElement() {
+
+    let scoreBox =
+        document.getElementById(
+            "scoreBox"
+        );
+
+
+    if (!scoreBox) {
+
+        scoreBox =
+            document.createElement(
+                "div"
+            );
+
+        scoreBox.id =
+            "scoreBox";
+
+        scoreBox.className =
+            "score-box";
+
+        scoreBox.innerHTML = `
+            <span class="score-label">
+                Score
+            </span>
+
+            <span id="scoreValue">
+                0
+            </span>
+
+            <span
+                id="scoreBonus"
+                class="score-bonus"
+            ></span>
+        `;
+
+
+        if (
+            boardElement.parentNode
+        ) {
+
+            boardElement.parentNode.insertBefore(
+                scoreBox,
+                boardElement
+            );
+        }
+    }
+
+
+    return document.getElementById(
+        "scoreValue"
+    );
+}
+
+
+function updateScore() {
+
+    const scoreElement =
+        ensureScoreElement();
+
+
+    if (!scoreElement) {
         return;
     }
 
 
+    score =
+        calculatePlayerScore();
+
+
+    scoreElement.textContent =
+        score;
+
+
+    const bonus =
+        getSevenTileBonus();
+
+
+    const bonusElement =
+        document.getElementById(
+            "scoreBonus"
+        );
+
+
+    if (!bonusElement) {
+        return;
+    }
+
+
+    if (
+        bonus.type ===
+        "seven-word"
+    ) {
+
+        bonusElement.textContent =
+            "+100 7-tile word bonus";
+
+    } else if (
+        bonus.type ===
+        "seven-tiles"
+    ) {
+
+        bonusElement.textContent =
+            "+50 7-tile bonus";
+
+    } else {
+
+        bonusElement.textContent =
+            "";
+    }
+}
+
+
+/* ==================================================
+DISPLAY BOARD
+================================================== */
+
+function displayBoard() {
+
     boardElement.innerHTML =
         "";
 
-
-    /*
-     * Dynamically resize the grid.
-     */
 
     boardElement.style.gridTemplateColumns =
         `repeat(${boardSize}, 1fr)`;
@@ -1627,7 +2117,7 @@ function displayBoard() {
         `repeat(${boardSize}, 1fr)`;
 
 
-    const tileStatuses =
+    const statuses =
         getPlayerTileStatuses();
 
 
@@ -1653,24 +2143,6 @@ function displayBoard() {
                 "cell";
 
 
-            cell.dataset.row =
-                row;
-
-            cell.dataset.col =
-                col;
-
-
-            const key =
-                keyForCell(
-                    row,
-                    col
-                );
-
-
-            /* --------------------------------
-               BONUS SQUARE
-            -------------------------------- */
-
             const bonus =
                 getBonusSquare(
                     row,
@@ -1683,214 +2155,139 @@ function displayBoard() {
                 cell.classList.add(
                     bonus
                 );
-
-
-                const bonusBadge =
-                    document.createElement(
-                        "span"
-                    );
-
-
-                bonusBadge.className =
-                    "bonus-badge";
-
-
-                if (
-                    bonus ===
-                    "double-letter"
-                ) {
-
-                    bonusBadge.textContent =
-                        "2x L";
-                }
-
-
-                if (
-                    bonus ===
-                    "triple-letter"
-                ) {
-
-                    bonusBadge.textContent =
-                        "3x L";
-                }
-
-
-                if (
-                    bonus ===
-                    "double-word"
-                ) {
-
-                    bonusBadge.textContent =
-                        "2x W";
-                }
-
-
-                if (
-                    bonus ===
-                    "triple-word"
-                ) {
-
-                    bonusBadge.textContent =
-                        "3x W";
-                }
-
-
-                cell.appendChild(
-                    bonusBadge
-                );
             }
 
-
-            /* --------------------------------
-               LETTER TILE
-            -------------------------------- */
 
             const letter =
                 board[row][col];
 
 
-            if (
-                letter !== ""
-            ) {
-
-                const boardTile =
-                    document.createElement(
-                        "div"
-                    );
+            const playerTile =
+                getPlayerPlacedTile(
+                    row,
+                    col
+                );
 
 
-                boardTile.className =
-                    "board-tile";
-
-
-                /* --------------------------------
-                   ORIGINAL PUZZLE TILE
-                -------------------------------- */
-
-                if (
-                    originalBoard[
-                        row
-                    ][
-                        col
-                    ] !== ""
-                ) {
-
-                    boardTile.classList.add(
-                        "original-tile"
-                    );
-
-
-                /*
-                 * PLAYER TILE
-                 */
-
-                } else if (
-                    playerPlacedTiles[
-                        key
-                    ]
-                ) {
-
-                    const status =
-                        tileStatuses[
-                            key
-                        ];
-
-
-                    if (
-                        status ===
-                        "valid"
-                    ) {
-
-                        boardTile.classList.add(
-                            "player-valid"
-                        );
-
-
-                    } else if (
-                        status ===
-                        "isolated"
-                    ) {
-
-                        boardTile.classList.add(
-                            "player-isolated"
-                        );
-
-
-                    } else {
-
-                        boardTile.classList.add(
-                            "player-invalid"
-                        );
-                    }
-                }
-
-
-                /* --------------------------------
-                   LETTER
-                -------------------------------- */
+            if (letter) {
 
                 const letterElement =
                     document.createElement(
                         "span"
                     );
 
-
                 letterElement.className =
                     "tile-letter";
-
 
                 letterElement.textContent =
                     letter;
 
-
-                boardTile.appendChild(
-                    letterElement
-                );
-
-
-                /* --------------------------------
-                   LETTER VALUE
-                -------------------------------- */
 
                 const valueElement =
                     document.createElement(
                         "span"
                     );
 
-
                 valueElement.className =
                     "tile-value";
-
 
                 valueElement.textContent =
                     letterValues[
                         letter
-                    ] ?? 0;
+                    ] || 0;
 
 
-                boardTile.appendChild(
+                cell.appendChild(
+                    letterElement
+                );
+
+                cell.appendChild(
                     valueElement
                 );
 
 
-                cell.appendChild(
-                    boardTile
+                if (playerTile) {
+
+                    const status =
+                        statuses[
+                            `${row},${col}`
+                        ];
+
+
+                    cell.classList.add(
+                        `player-${status}`
+                    );
+
+
+                    cell.addEventListener(
+                        "click",
+                        () =>
+                            removePlayerTile(
+                                row,
+                                col
+                            )
+                    );
+
+
+                    if (bonus) {
+
+                        const badge =
+                            document.createElement(
+                                "span"
+                            );
+
+                        badge.className =
+                            "bonus-badge";
+
+                        badge.textContent =
+                            bonusLabels[
+                                bonus
+                            ];
+
+                        cell.appendChild(
+                            badge
+                        );
+                    }
+
+                } else {
+
+                    cell.classList.add(
+                        "original-tile"
+                    );
+                }
+
+            } else {
+
+                if (bonus) {
+
+                    const label =
+                        document.createElement(
+                            "span"
+                        );
+
+                    label.className =
+                        "bonus-label";
+
+                    label.textContent =
+                        bonusLabels[
+                            bonus
+                        ];
+
+                    cell.appendChild(
+                        label
+                    );
+                }
+
+
+                cell.addEventListener(
+                    "click",
+                    () =>
+                        placePlayerTile(
+                            row,
+                            col
+                        )
                 );
             }
-
-
-            /* --------------------------------
-               CLICKING THE BOARD
-            -------------------------------- */
-
-            cell.addEventListener(
-                "click",
-                () =>
-                    handleBoardClick(
-                        row,
-                        col
-                    )
-            );
 
 
             boardElement.appendChild(
@@ -1902,336 +2299,39 @@ function displayBoard() {
 
 
 /* ==================================================
-PLAYER TILE GENERATION
+PLACE PLAYER TILE
 ================================================== */
 
-function createTileBag() {
-
-    const bag = [];
-
-
-    for (
-        const letter
-        in letterDistribution
-    ) {
-
-        for (
-            let i = 0;
-            i <
-                letterDistribution[
-                    letter
-                ];
-            i++
-        ) {
-
-            bag.push(
-                letter
-            );
-        }
-    }
-
-
-    return bag;
-}
-
-
-function drawRandomTiles(
-    count
-) {
-
-    const bag =
-        shuffle(
-            createTileBag()
-        );
-
-
-    const vowels =
-        new Set([
-            "A",
-            "E",
-            "I",
-            "O",
-            "U"
-        ]);
-
-
-    const vowelTiles =
-        bag.filter(
-            letter =>
-                vowels.has(
-                    letter
-                )
-        );
-
-
-    const otherTiles =
-        bag.filter(
-            letter =>
-                !vowels.has(
-                    letter
-                )
-        );
-
-
-    /*
-     * Guarantee at least two vowels.
-     */
-
-    const guaranteedVowels =
-        shuffle(
-            vowelTiles
-        ).slice(
-            0,
-            Math.min(
-                2,
-                count
-            )
-        );
-
-
-    /*
-     * Remove guaranteed vowels
-     * from remaining pool.
-     */
-
-    const remainingVowels =
-        [...vowelTiles];
-
-
-    for (
-        const vowel
-        of guaranteedVowels
-    ) {
-
-        const index =
-            remainingVowels.indexOf(
-                vowel
-            );
-
-
-        if (
-            index !== -1
-        ) {
-
-            remainingVowels.splice(
-                index,
-                1
-            );
-        }
-    }
-
-
-    const remainingPool =
-        shuffle([
-            ...remainingVowels,
-            ...otherTiles
-        ]);
-
-
-    const remainingCount =
-        count -
-        guaranteedVowels.length;
-
-
-    const additionalTiles =
-        remainingPool.slice(
-            0,
-            remainingCount
-        );
-
-
-    return shuffle([
-        ...guaranteedVowels,
-        ...additionalTiles
-    ]);
-}
-
-
-/* ==================================================
-TILE RACK DISPLAY
-================================================== */
-
-function displayTileRack() {
-
-    if (!tileRackElement) {
-
-        return;
-    }
-
-
-    tileRackElement.innerHTML =
-        "";
-
-
-    playerTiles.forEach(
-        (
-            letter,
-            index
-        ) => {
-
-            const tile =
-                document.createElement(
-                    "div"
-                );
-
-
-            tile.className =
-                "rack-tile";
-
-
-            if (
-                selectedRackTile ===
-                index
-            ) {
-
-                tile.classList.add(
-                    "selected"
-                );
-            }
-
-
-            const letterElement =
-                document.createElement(
-                    "span"
-                );
-
-
-            letterElement.className =
-                "tile-letter";
-
-
-            letterElement.textContent =
-                letter;
-
-
-            tile.appendChild(
-                letterElement
-            );
-
-
-            const valueElement =
-                document.createElement(
-                    "span"
-                );
-
-
-            valueElement.className =
-                "tile-value";
-
-
-            valueElement.textContent =
-                letterValues[
-                    letter
-                ] ?? 0;
-
-
-            tile.appendChild(
-                valueElement
-            );
-
-
-            tile.addEventListener(
-                "click",
-                () => {
-
-                    selectedRackTile =
-                        selectedRackTile ===
-                        index
-                            ? null
-                            : index;
-
-
-                    displayTileRack();
-                }
-            );
-
-
-            tileRackElement.appendChild(
-                tile
-            );
-        }
-    );
-}
-
-
-/* ==================================================
-BOARD CLICKING
-================================================== */
-
-function handleBoardClick(
+function placePlayerTile(
     row,
     col
 ) {
 
-    const key =
-        keyForCell(
-            row,
-            col
-        );
-
-
-    /*
-     * Clicking an existing player tile
-     * returns it to the rack.
-     */
-
     if (
-        playerPlacedTiles[key]
-    ) {
-
-        const tile =
-            playerPlacedTiles[key];
-
-
-        playerTiles.push(
-            tile.letter
-        );
-
-
-        delete playerPlacedTiles[
-            key
-        ];
-
-
-        board[row][col] =
-            "";
-
-
-        displayTileRack();
-
-        displayBoard();
-
-        calculatePlayerScore();
-
-        return;
-    }
-
-
-    /*
-     * Original puzzle tiles cannot
-     * be changed.
-     */
-
-    if (
-        originalBoard[row][col] !== ""
+        board[row][col]
     ) {
 
         return;
     }
 
 
-    /*
-     * Empty board cell.
-     */
-
     if (
-        selectedRackTile ===
-        null
+        playerTiles.length === 0
     ) {
 
-        if (
-            tileMessageElement
-        ) {
+        return;
+    }
+
+
+    const selectedTile =
+        document.querySelector(
+            ".rack-tile.selected"
+        );
+
+
+    if (!selectedTile) {
+
+        if (tileMessageElement) {
 
             tileMessageElement.textContent =
                 "Select a tile first.";
@@ -2241,890 +2341,384 @@ function handleBoardClick(
     }
 
 
+    const index =
+        Number(
+            selectedTile.dataset.index
+        );
+
+
     const tile =
-        playerTiles[
-            selectedRackTile
-        ];
+        playerTiles[index];
 
 
-    if (
-        tile === undefined
-    ) {
-
+    if (!tile) {
         return;
     }
 
 
     board[row][col] =
-        tile;
+        tile.letter;
 
 
-    playerPlacedTiles[key] = {
+    playerPlacedTiles[
+        `${row},${col}`
+    ] = {
 
-        letter: tile,
+        letter:
+            tile.letter,
 
-        row,
+        value:
+            tile.value,
 
-        col
+        rackIndex:
+            index
     };
 
 
     playerTiles.splice(
-        selectedRackTile,
+        index,
         1
     );
 
 
-    selectedRackTile =
-        null;
-
-
-    displayTileRack();
+    displayRack();
 
     displayBoard();
 
-    calculatePlayerScore();
+    displayWords();
+
+    updateScore();
 }
 
 
 /* ==================================================
-PLAYER TILE STATUS
+REMOVE PLAYER TILE
 ================================================== */
 
-function getPlayerTileStatuses() {
-
-    const statuses = {};
-
-
-    const playerKeys =
-        Object.keys(
-            playerPlacedTiles
-        );
-
-
-    /*
-     * First determine which player
-     * tiles are connected to the
-     * original puzzle.
-     */
-
-    const connected =
-        new Set();
-
-
-    const queue = [];
-
-
-    for (
-        let row = 0;
-        row < boardSize;
-        row++
-    ) {
-
-        for (
-            let col = 0;
-            col < boardSize;
-            col++
-        ) {
-
-            if (
-                originalBoard[
-                    row
-                ][
-                    col
-                ] !== ""
-            ) {
-
-                const key =
-                    keyForCell(
-                        row,
-                        col
-                    );
-
-
-                connected.add(
-                    key
-                );
-
-
-                queue.push({
-
-                    row,
-
-                    col
-                });
-            }
-        }
-    }
-
-
-    while (
-        queue.length > 0
-    ) {
-
-        const current =
-            queue.shift();
-
-
-        const neighbors = [
-
-            {
-                row:
-                    current.row - 1,
-
-                col:
-                    current.col
-            },
-
-            {
-                row:
-                    current.row + 1,
-
-                col:
-                    current.col
-            },
-
-            {
-                row:
-                    current.row,
-
-                col:
-                    current.col - 1
-            },
-
-            {
-                row:
-                    current.row,
-
-                col:
-                    current.col + 1
-            }
-        ];
-
-
-        for (
-            const neighbor
-            of neighbors
-        ) {
-
-            if (
-                !isInsideBoard(
-                    neighbor.row,
-                    neighbor.col
-                )
-            ) {
-
-                continue;
-            }
-
-
-            const neighborKey =
-                keyForCell(
-                    neighbor.row,
-                    neighbor.col
-                );
-
-
-            if (
-                connected.has(
-                    neighborKey
-                )
-            ) {
-
-                continue;
-            }
-
-
-            const occupied =
-                board[
-                    neighbor.row
-                ][
-                    neighbor.col
-                ] !== "";
-
-
-            if (!occupied) {
-
-                continue;
-            }
-
-
-            connected.add(
-                neighborKey
-            );
-
-
-            queue.push(
-                neighbor
-            );
-        }
-    }
-
-
-    /*
-     * Find words created by current board.
-     */
-
-    const words =
-        getAllWords(
-            board
-        );
-
-
-    /*
-     * Every player tile starts
-     * as invalid.
-     */
-
-    for (
-        const key
-        of playerKeys
-    ) {
-
-        statuses[key] =
-            "invalid";
-    }
-
-
-    /*
-     * Handle disconnected tiles.
-     */
-
-    for (
-        const key
-        of playerKeys
-    ) {
-
-        if (
-            !connected.has(
-                key
-            )
-        ) {
-
-            let touchesAnotherPlayer =
-                false;
-
-
-            const tile =
-                playerPlacedTiles[
-                    key
-                ];
-
-
-            const neighbors = [
-
-                {
-                    row:
-                        tile.row - 1,
-
-                    col:
-                        tile.col
-                },
-
-                {
-                    row:
-                        tile.row + 1,
-
-                    col:
-                        tile.col
-                },
-
-                {
-                    row:
-                        tile.row,
-
-                    col:
-                        tile.col - 1
-                },
-
-                {
-                    row:
-                        tile.row,
-
-                    col:
-                        tile.col + 1
-                }
-            ];
-
-
-            for (
-                const neighbor
-                of neighbors
-            ) {
-
-                const neighborKey =
-                    keyForCell(
-                        neighbor.row,
-                        neighbor.col
-                    );
-
-
-                if (
-                    playerPlacedTiles[
-                        neighborKey
-                    ]
-                ) {
-
-                    touchesAnotherPlayer =
-                        true;
-
-                    break;
-                }
-            }
-
-
-            if (
-                !touchesAnotherPlayer
-            ) {
-
-                statuses[key] =
-                    "isolated";
-            }
-
-
-            continue;
-        }
-    }
-
-
-    /*
-     * Connected player tile is valid
-     * only if all words it participates
-     * in are valid dictionary words.
-     */
-
-    for (
-        const key
-        of playerKeys
-    ) {
-
-        if (
-            !connected.has(
-                key
-            )
-        ) {
-
-            continue;
-        }
-
-
-        const tile =
-            playerPlacedTiles[
-                key
-            ];
-
-
-        const horizontalWord =
-            getWordAt(
-                board,
-                tile.row,
-                tile.col,
-                "horizontal"
-            );
-
-
-        const verticalWord =
-            getWordAt(
-                board,
-                tile.row,
-                tile.col,
-                "vertical"
-            );
-
-
-        const horizontalValid =
-            horizontalWord.length >= 2 &&
-            dictionary.has(
-                horizontalWord
-            );
-
-
-        const verticalValid =
-            verticalWord.length >= 2 &&
-            dictionary.has(
-                verticalWord
-            );
-
-
-        /*
-         * Must participate in at least
-         * one valid 2+ letter word.
-         */
-
-        if (
-            horizontalValid ||
-            verticalValid
-        ) {
-
-            let valid = true;
-
-
-            for (
-                const wordInfo
-                of words
-            ) {
-
-                const wordCells =
-                    getWordCells(
-                        wordInfo.word,
-                        wordInfo.row,
-                        wordInfo.col,
-                        wordInfo.direction
-                    );
-
-
-                const containsTile =
-                    wordCells.some(
-                        cell =>
-                            cell.row ===
-                                tile.row &&
-                            cell.col ===
-                                tile.col
-                    );
-
-
-                if (
-                    containsTile &&
-                    !dictionary.has(
-                        wordInfo.word
-                    )
-                ) {
-
-                    valid = false;
-
-                    break;
-                }
-            }
-
-
-            if (valid) {
-
-                statuses[key] =
-                    "valid";
-            }
-        }
-    }
-
-
-    return statuses;
-}
-
-
-/* ==================================================
-SCORING
-================================================== */
-
-function calculateWordScoreAtPosition(
-    word,
+function removePlayerTile(
     row,
-    col,
-    direction,
-    newlyPlacedKeys = null
+    col
 ) {
 
-    let total = 0;
+    const key =
+        `${row},${col}`;
 
-    let wordMultiplier = 1;
+
+    const tile =
+        playerPlacedTiles[key];
 
 
-    const cells =
-        getWordCells(
-            word,
-            row,
-            col,
-            direction
-        );
+    if (!tile) {
+        return;
+    }
 
+
+    board[row][col] =
+        "";
+
+
+    playerTiles.push({
+        letter:
+            tile.letter,
+
+        value:
+            tile.value
+    });
+
+
+    delete playerPlacedTiles[
+        key
+    ];
+
+
+    displayRack();
+
+    displayBoard();
+
+    displayWords();
+
+    updateScore();
+}
+
+
+/* ==================================================
+GENERATE PLAYER TILES
+================================================== */
+
+function generatePlayerTiles() {
+
+    playerTiles = [];
+
+    selectedRackTile = null;
+
+
+    /*
+       VOWELS
+
+       We deliberately create a separate
+       vowel pool so that every rack gets
+       exactly 3 vowels.
+    */
+
+    const vowelPool = [];
+
+    Object.entries(
+        letterDistribution
+    ).forEach(
+        ([letter, count]) => {
+
+            if (
+                ["A", "E", "I", "O", "U"]
+                    .includes(letter)
+            ) {
+
+                for (
+                    let i = 0;
+                    i < count;
+                    i++
+                ) {
+
+                    vowelPool.push(
+                        letter
+                    );
+                }
+            }
+        }
+    );
+
+
+    /*
+       CONSONANTS
+
+       Everything except A E I O U.
+    */
+
+    const consonantPool = [];
+
+    Object.entries(
+        letterDistribution
+    ).forEach(
+        ([letter, count]) => {
+
+            if (
+                ![
+                    "A",
+                    "E",
+                    "I",
+                    "O",
+                    "U"
+                ].includes(letter)
+            ) {
+
+                for (
+                    let i = 0;
+                    i < count;
+                    i++
+                ) {
+
+                    consonantPool.push(
+                        letter
+                    );
+                }
+            }
+        }
+    );
+
+
+    /*
+       Draw exactly 3 vowels.
+    */
 
     for (
-        const cell
-        of cells
+        let i = 0;
+        i < 3;
+        i++
     ) {
 
-        const key =
-            keyForCell(
-                cell.row,
-                cell.col
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                vowelPool.length
             );
 
 
         const letter =
-            board[
-                cell.row
-            ][
-                cell.col
-            ];
+            vowelPool.splice(
+                randomIndex,
+                1
+            )[0];
 
 
-        const value =
-            letterValues[
-                letter
-            ] ?? 0;
+        playerTiles.push({
 
+            letter,
 
-        const isNew =
-            !newlyPlacedKeys ||
-            newlyPlacedKeys.has(
-                key
-            );
-
-
-        let letterMultiplier =
-            1;
-
-
-        if (isNew) {
-
-            const bonus =
-                getBonusSquare(
-                    cell.row,
-                    cell.col
-                );
-
-
-            if (
-                bonus ===
-                "double-letter"
-            ) {
-
-                letterMultiplier =
-                    2;
-            }
-
-
-            if (
-                bonus ===
-                "triple-letter"
-            ) {
-
-                letterMultiplier =
-                    3;
-            }
-
-
-            if (
-                bonus ===
-                "double-word"
-            ) {
-
-                wordMultiplier *= 2;
-            }
-
-
-            if (
-                bonus ===
-                "triple-word"
-            ) {
-
-                wordMultiplier *= 3;
-            }
-        }
-
-
-        total +=
-            value *
-            letterMultiplier;
-    }
-
-
-    return (
-        total *
-        wordMultiplier
-    );
-}
-
-
-function getPlayerScoringWords() {
-
-    const statuses =
-        getPlayerTileStatuses();
-
-
-    const scoringWords = [];
-
-
-    const words =
-        getAllWords(
-            board
-        );
-
-
-    for (
-        const wordInfo
-        of words
-    ) {
-
-        const cells =
-            getWordCells(
-                wordInfo.word,
-                wordInfo.row,
-                wordInfo.col,
-                wordInfo.direction
-            );
-
-
-        const playerCells =
-            cells.filter(
-                cell =>
-                    playerPlacedTiles[
-                        keyForCell(
-                            cell.row,
-                            cell.col
-                        )
-                    ]
-            );
-
-
-        /*
-         * Word must contain at least
-         * one player tile.
-         */
-
-        if (
-            playerCells.length === 0
-        ) {
-
-            continue;
-        }
-
-
-        /*
-         * Every player tile belonging
-         * to this word must be valid.
-         */
-
-        const allPlayerTilesValid =
-            playerCells.every(
-                cell =>
-                    statuses[
-                        keyForCell(
-                            cell.row,
-                            cell.col
-                        )
-                    ] ===
-                    "valid"
-            );
-
-
-        if (
-            !allPlayerTilesValid
-        ) {
-
-            continue;
-        }
-
-
-        /*
-         * Score player tiles for
-         * premium squares.
-         */
-
-        const newlyPlacedKeys =
-            new Set(
-                playerCells.map(
-                    cell =>
-                        keyForCell(
-                            cell.row,
-                            cell.col
-                        )
-                )
-            );
-
-
-        const wordScore =
-            calculateWordScoreAtPosition(
-                wordInfo.word,
-                wordInfo.row,
-                wordInfo.col,
-                wordInfo.direction,
-                newlyPlacedKeys
-            );
-
-
-        scoringWords.push({
-
-            word:
-                wordInfo.word,
-
-            score:
-                wordScore,
-
-            row:
-                wordInfo.row,
-
-            col:
-                wordInfo.col,
-
-            direction:
-                wordInfo.direction
+            value:
+                letterValues[
+                    letter
+                ] || 0
         });
     }
 
 
-    return scoringWords;
-}
-
-
-function calculatePlayerScore() {
-
-    const scoringWords =
-        getPlayerScoringWords();
-
-
-    score =
-        scoringWords.reduce(
-            (
-                total,
-                item
-            ) =>
-                total +
-                item.score,
-            0
-        );
-
-
-    let bonus = 0;
-
-    let bonusText = "";
-
-
     /*
-     * 7-tile bonus.
-     */
+       Draw exactly 4 consonants.
+    */
 
-    if (
-        playerTiles.length === 0 &&
-        Object.keys(
-            playerPlacedTiles
-        ).length === 7
+    for (
+        let i = 0;
+        i < 4;
+        i++
     ) {
 
-        const statuses =
-            getPlayerTileStatuses();
-
-
-        const allValid =
-            Object.keys(
-                playerPlacedTiles
-            ).every(
-                key =>
-                    statuses[key] ===
-                    "valid"
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                consonantPool.length
             );
 
 
-        if (allValid) {
+        const letter =
+            consonantPool.splice(
+                randomIndex,
+                1
+            )[0];
 
-            const playerKeys =
-                new Set(
-                    Object.keys(
-                        playerPlacedTiles
-                    )
+
+        playerTiles.push({
+
+            letter,
+
+            value:
+                letterValues[
+                    letter
+                ] || 0
+        });
+    }
+
+
+    /*
+       Shuffle the complete rack so
+       vowels aren't always grouped
+       together.
+    */
+
+    for (
+        let i =
+            playerTiles.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() *
+                (i + 1)
+            );
+
+
+        [
+            playerTiles[i],
+            playerTiles[j]
+        ] =
+        [
+            playerTiles[j],
+            playerTiles[i]
+        ];
+    }
+
+
+    displayRack();
+
+    updateScore();
+}
+
+
+/* ==================================================
+DISPLAY RACK
+================================================== */
+
+function displayRack() {
+
+    if (!tileRackElement) {
+        return;
+    }
+
+
+    tileRackElement.innerHTML =
+        "";
+
+
+    playerTiles.forEach(
+        (tile, index) => {
+
+            const tileElement =
+                document.createElement(
+                    "div"
                 );
 
 
-            const hasSingleWordUsingAll =
-                scoringWords.some(
-                    wordInfo => {
-
-                        const cells =
-                            getWordCells(
-                                wordInfo.word,
-                                wordInfo.row,
-                                wordInfo.col,
-                                wordInfo.direction
-                            );
+            tileElement.className =
+                "rack-tile";
 
 
-                        const containsAll =
-                            playerKeys.size ===
-                            cells.filter(
-                                cell =>
-                                    playerPlacedTiles[
-                                        keyForCell(
-                                            cell.row,
-                                            cell.col
-                                        )
-                                    ]
-                            ).length;
+            tileElement.dataset.index =
+                index;
 
 
-                        return containsAll;
-                    }
-                );
+            tileElement.innerHTML = `
+                <span class="tile-letter">
+                    ${tile.letter}
+                </span>
+
+                <span class="tile-value">
+                    ${tile.value}
+                </span>
+            `;
 
 
-            if (
-                hasSingleWordUsingAll
-            ) {
+            tileElement.addEventListener(
+                "click",
+                () => {
 
-                bonus = 100;
-
-                bonusText =
-                    "+100 7-tile word bonus";
-
-            } else {
-
-                bonus = 50;
-
-                bonusText =
-                    "+50 7-tile bonus";
-            }
+                    document
+                        .querySelectorAll(
+                            ".rack-tile"
+                        )
+                        .forEach(
+                            tile =>
+                                tile.classList.remove(
+                                    "selected"
+                                )
+                        );
 
 
-            score +=
-                bonus;
+                    tileElement.classList.add(
+                        "selected"
+                    );
+
+
+                    selectedRackTile =
+                        index;
+                }
+            );
+
+
+            tileRackElement.appendChild(
+                tileElement
+            );
         }
-    }
-
-
-    updateScoreDisplay(
-        score,
-        bonusText
     );
-
-
-    displayScoringWords(
-        scoringWords
-    );
-
-
-    return score;
 }
 
 
-function updateScoreDisplay(
-    currentScore,
-    bonusText = ""
-) {
+/* ==================================================
+DISPLAY WORDS
+================================================== */
 
-    if (
-        scoreValueElement
-    ) {
+function displayWords() {
 
-        scoreValueElement.textContent =
-            currentScore;
-    }
-
-
-    if (
-        scoreBonusElement
-    ) {
-
-        scoreBonusElement.textContent =
-            bonusText;
-    }
-}
-
-
-function displayScoringWords(
-    scoringWords
-) {
-
-    if (
-        !wordListElement
-    ) {
-
+    if (!wordListElement) {
         return;
     }
 
@@ -3133,145 +2727,51 @@ function displayScoringWords(
         "";
 
 
-    for (
-        const item
-        of scoringWords
-    ) {
-
-        const pill =
-            document.createElement(
-                "div"
-            );
+    const scoringWords =
+        getPlayerScoringWords();
 
 
-        pill.className =
-            "word-pill";
+    scoringWords.forEach(
+        wordData => {
 
-
-        const word =
-            document.createElement(
-                "span"
-            );
-
-
-        word.className =
-            "word-pill-word";
-
-
-        word.textContent =
-            item.word;
-
-
-        const wordScore =
-            document.createElement(
-                "span"
-            );
-
-
-        wordScore.className =
-            "word-pill-score";
-
-
-        wordScore.textContent =
-            `+${item.score}`;
-
-
-        pill.appendChild(
-            word
-        );
-
-
-        pill.appendChild(
-            wordScore
-        );
-
-
-        wordListElement.appendChild(
-            pill
-        );
-    }
-}
-
-
-/* ==================================================
-NEW PUZZLE BUTTON
-================================================== */
-
-if (
-    generateButton
-) {
-
-    generateButton.addEventListener(
-        "click",
-        () => {
-
-            if (
-                isGenerating
-            ) {
-
-                return;
-            }
-
-
-            isGenerating =
-                true;
-
-
-            generateButton.disabled =
-                true;
-
-
-            generateBoard();
-
-
-            setTimeout(
-                () => {
-
-                    isGenerating =
-                        false;
-
-                    generateButton.disabled =
-                        false;
-
-                },
-                100
-            );
-        }
-    );
-}
-
-
-/* ==================================================
-NEW TILES BUTTON
-================================================== */
-
-if (
-    newTilesButton
-) {
-
-    newTilesButton.addEventListener(
-        "click",
-        () => {
-
-            playerPlacedTiles =
-                {};
-
-            playerTiles =
-                drawRandomTiles(
-                    7
+            const score =
+                calculateWordScoreAtPosition(
+                    wordData.word,
+                    wordData.row,
+                    wordData.col,
+                    wordData.direction
                 );
 
-            selectedRackTile =
-                null;
+
+            const pill =
+                document.createElement(
+                    "div"
+                );
 
 
-            displayTileRack();
+            pill.className =
+                "word-pill";
 
-            displayBoard();
 
-            calculatePlayerScore();
+            pill.innerHTML = `
+                <span class="word-pill-word">
+                    ${wordData.word}
+                </span>
+
+                <span class="word-pill-score">
+                    ${score}
+                </span>
+            `;
+
+
+            wordListElement.appendChild(
+                pill
+            );
         }
     );
+
+
+    updateScore();
 }
 
 
@@ -3281,54 +2781,100 @@ WORD COUNT
 
 function updateWordCount() {
 
-    if (
-        !wordCountElement
-    ) {
+    const wordCountElement =
+        document.getElementById(
+            "wordCount"
+        );
 
+
+    if (!wordCountElement) {
         return;
     }
 
 
+    const words =
+        getAllBoardWordsWithPositions(
+            board
+        );
+
+
     wordCountElement.textContent =
-        `${puzzleWords.length} words`;
+        `${words.length} words`;
 }
 
 
 /* ==================================================
-INITIALISE
+GENERATOR MESSAGE
 ================================================== */
 
-async function initialise() {
-
-    /*
-     * Read the generator settings
-     * from the panel.
-     */
-
-    getGeneratorSettings();
-
-
-    await loadDictionary();
-
+function showGeneratorMessage(
+    message
+) {
 
     if (
-        dictionary.size === 0
+        generatorMessage
     ) {
 
-        if (
-            tileMessageElement
-        ) {
-
-            tileMessageElement.textContent =
-                "Could not load dictionary.txt";
-        }
-
-        return;
+        generatorMessage.textContent =
+            message;
     }
-
-
-    generateBoard();
 }
 
 
-initialise();
+/* ==================================================
+BUTTONS
+================================================== */
+
+if (generateButton) {
+
+    generateButton.addEventListener(
+        "click",
+        () => {
+
+            /*
+               The current values in the
+               generator panel are read here.
+
+               This means changing the values
+               does NOT alter the current board.
+               They only affect the next board.
+            */
+
+            generateBoard();
+        }
+    );
+}
+
+
+/* ==================================================
+START
+================================================== */
+
+if (
+    gridSizeInput
+) {
+
+    gridSizeInput.value =
+        DEFAULT_GRID_SIZE;
+}
+
+
+if (
+    wordCountInput
+) {
+
+    wordCountInput.value =
+        DEFAULT_WORD_COUNT;
+}
+
+
+if (
+    initialWordLengthInput
+) {
+
+    initialWordLengthInput.value =
+        DEFAULT_INITIAL_WORD_LENGTH;
+}
+
+
+loadDictionary();
