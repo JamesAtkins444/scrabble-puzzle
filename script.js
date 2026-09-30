@@ -2833,7 +2833,207 @@ function calculateHiddenScore() {
 
 return getHiddenScoreDetails().hiddenScore;
 }
+function updateHiddenScoreDisplay() {
 
+    const doubleLetterCount =
+        Object.values(bonusSquares).filter(
+            type =>
+                type === "double-letter"
+        ).length;
+
+    const tripleLetterCount =
+        Object.values(bonusSquares).filter(
+            type =>
+                type === "triple-letter"
+        ).length;
+
+    const doubleWordCount =
+        Object.values(bonusSquares).filter(
+            type =>
+                type === "double-word"
+        ).length;
+
+    /*
+     * The existing Hidden Score formula:
+     *
+     * RackValueAvg =
+     *     original rack total / 7
+     *
+     * 2xLscore =
+     *     2 × RackValueAvg × 2x Letter tiles
+     *
+     * 3xLscore =
+     *     3 × RackValueAvg × 3x Letter tiles
+     *
+     * 2xWscore =
+     *     5 × 2x Word tiles
+     *
+     * 3xWscore =
+     *     10 × 2x Word tiles
+     */
+
+    const rackValueAvg =
+        Math.round(
+            startingRackValueTotal / 7
+        );
+
+    const doubleLetterScore =
+        2 *
+        rackValueAvg *
+        doubleLetterCount;
+
+    const tripleLetterScore =
+        3 *
+        rackValueAvg *
+        tripleLetterCount;
+
+    const doubleWordScore =
+        5 *
+        doubleWordCount;
+
+    const tripleWordScore =
+        10 *
+        doubleWordCount;
+
+    const hiddenScore =
+        tripleWordScore +
+        doubleWordScore +
+        doubleLetterScore +
+        tripleLetterScore +
+        startingRackValueTotal +
+        50;
+
+
+    const doubleLetterElement =
+        document.getElementById(
+            "hiddenDoubleLetterCount"
+        );
+
+    const doubleLetterScoreElement =
+        document.getElementById(
+            "hiddenDoubleLetterScore"
+        );
+
+    const tripleLetterElement =
+        document.getElementById(
+            "hiddenTripleLetterCount"
+        );
+
+    const tripleLetterScoreElement =
+        document.getElementById(
+            "hiddenTripleLetterScore"
+        );
+
+    const doubleWordElement =
+        document.getElementById(
+            "hiddenDoubleWordCount"
+        );
+
+    const doubleWordScoreElement =
+        document.getElementById(
+            "hiddenDoubleWordScore"
+        );
+
+    const tripleWordElement =
+        document.getElementById(
+            "hiddenTripleWordCount"
+        );
+
+    const tripleWordScoreElement =
+        document.getElementById(
+            "hiddenTripleWordScore"
+        );
+
+    const rackValueElement =
+        document.getElementById(
+            "hiddenRackValue"
+        );
+
+    const rackAverageElement =
+        document.getElementById(
+            "hiddenRackValueAvg"
+        );
+
+    const totalElement =
+        document.getElementById(
+            "hiddenScoreTotal"
+        );
+
+
+    if (doubleLetterElement) {
+
+        doubleLetterElement.textContent =
+            doubleLetterCount;
+    }
+
+    if (doubleLetterScoreElement) {
+
+        doubleLetterScoreElement.textContent =
+            doubleLetterScore;
+    }
+
+    if (tripleLetterElement) {
+
+        tripleLetterElement.textContent =
+            tripleLetterCount;
+    }
+
+    if (tripleLetterScoreElement) {
+
+        tripleLetterScoreElement.textContent =
+            tripleLetterScore;
+    }
+
+    if (doubleWordElement) {
+
+        doubleWordElement.textContent =
+            doubleWordCount;
+    }
+
+    if (doubleWordScoreElement) {
+
+        doubleWordScoreElement.textContent =
+            doubleWordScore;
+    }
+
+    if (tripleWordElement) {
+
+        /*
+         * This is displayed because the
+         * Hidden Score breakdown contains
+         * the number of 3x Word tiles.
+         */
+        tripleWordElement.textContent =
+            Object.values(bonusSquares).filter(
+                type =>
+                    type === "triple-word"
+            ).length;
+    }
+
+    if (tripleWordScoreElement) {
+
+        tripleWordScoreElement.textContent =
+            tripleWordScore;
+    }
+
+    if (rackValueElement) {
+
+        rackValueElement.textContent =
+            startingRackValueTotal;
+    }
+
+    if (rackAverageElement) {
+
+        rackAverageElement.textContent =
+            rackValueAvg;
+    }
+
+    if (totalElement) {
+
+        totalElement.textContent =
+            hiddenScore;
+    }
+}
 
 function updateHiddenScoreBreakdown() {
 
