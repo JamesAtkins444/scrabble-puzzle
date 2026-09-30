@@ -82,6 +82,10 @@ let puzzleWords = [];
 
 let score = 0;
 
+// Stores the total value of the original 7-tile rack.
+// This remains unchanged when tiles are placed on the board.
+let startingRackValueTotal = 0;
+
 let isGenerating = false;
 
 
@@ -918,6 +922,14 @@ function generateBoard() {
 
     playerTiles =
         drawRandomTiles(7);
+
+    startingRackValueTotal =
+        playerTiles.reduce(
+            (total, letter) =>
+                total +
+                (letterValues[letter] ?? 0),
+            0
+        );
 
     selectedRackTile = null;
 
@@ -1936,6 +1948,7 @@ function createTileBag() {
 
 
 function drawRandomTiles(count = 7) {
+
     const vowels = [
         "A", "A", "A", "A",
         "E", "E", "E", "E", "E", "E", "E",
@@ -1972,26 +1985,65 @@ function drawRandomTiles(count = 7) {
 
     // Always 3 vowels
     for (let i = 0; i < 3; i++) {
-        const index = Math.floor(Math.random() * vowels.length);
-        tiles.push(vowels[index]);
-        vowels.splice(index, 1);
+        const index =
+            Math.floor(
+                Math.random() *
+                vowels.length
+            );
+
+        tiles.push(
+            vowels[index]
+        );
+
+        vowels.splice(
+            index,
+            1
+        );
     }
 
     // Always 4 consonants
     for (let i = 0; i < 4; i++) {
-        const index = Math.floor(Math.random() * consonants.length);
-        tiles.push(consonants[index]);
-        consonants.splice(index, 1);
+        const index =
+            Math.floor(
+                Math.random() *
+                consonants.length
+            );
+
+        tiles.push(
+            consonants[index]
+        );
+
+        consonants.splice(
+            index,
+            1
+        );
     }
 
     // Shuffle the 7 tiles so the vowels aren't always at the front
-    for (let i = tiles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+    for (
+        let i = tiles.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random() *
+                (i + 1)
+            );
+
+        [
+            tiles[i],
+            tiles[j]
+        ] = [
+            tiles[j],
+            tiles[i]
+        ];
     }
 
     return tiles;
 }
+
 
 /* ==================================================
 TILE RACK DISPLAY
@@ -3039,14 +3091,208 @@ function calculatePlayerScore() {
 }
 
 
+function calculateHiddenScore() {
+
+    const doubleLetterCount =
+        Object.values(bonusSquares).filter(
+            type =>
+                type === "double-letter"
+        ).length;
+
+    const tripleLetterCount =
+        Object.values(bonusSquares).filter(
+            type =>
+                type === "triple-letter"
+        ).length;
+
+    const doubleWordCount =
+        Object.values(bonusSquares).filter(
+            type =>
+                type === "double-word"
+        ).length;
+
+    /*
+     * This follows the Hidden Score formula
+     * discussed previously:
+     *
+     * RackValueAvg =
+     *     starting rack total / 7,
+     *     rounded to the nearest whole number.
+     *
+     * 2xLscore =
+     *     2 x RackValueAvg x number of 2x Letter tiles
+     *
+     * 3xLscore =
+     *     3 x RackValueAvg x number of 3x Letter tiles
+     *
+     * 2xWscore =
+     *     5 x number of 2x Word tiles
+     *
+     * 3xWscore =
+     *     10 x number of 2x Word tiles
+     *
+     * HiddenScore =
+     *     3xWscore +
+     *     2xWscore +
+     *     2xLscore +
+     *     3xLscore +
+     *     rack total +
+     *     50
+     */
+
+    const rackValueAvg =
+        Math.round(
+            startingRackValueTotal / 7
+        );
+
+    const doubleLetterScore =
+        2 *
+        rackValueAvg *
+        doubleLetterCount;
+
+    const tripleLetterScore =
+        3 *
+        rackValueAvg *
+        tripleLetterCount;
+
+    const doubleWordScore =
+        5 *
+        doubleWordCount;
+
+    const tripleWordScore =
+        10 *
+        doubleWordCount;
+
+    const hiddenScore =
+        tripleWordScore +
+        doubleWordScore +
+        doubleLetterScore +
+        tripleLetterScore +
+        startingRackValueTotal +
+        50;
+
+    return hiddenScore;
+}
+
+
 function updateScoreDisplay(
     currentScore,
     bonusText = ""
 ) {
 
+    /*
+     * Hidden Score
+     *
+     * Create the display element here so no other
+     * HTML structure needs to be changed.
+     */
+
     if (
         scoreValueElement
     ) {
+
+        let hiddenScoreElement =
+            document.getElementById(
+                "hiddenScoreValue"
+            );
+
+        if (!hiddenScoreElement) {
+
+            hiddenScoreElement =
+                document.createElement(
+                    "div"
+                );
+
+            hiddenScoreElement.id =
+                "hiddenScoreValue";
+
+            hiddenScoreElement.style.fontSize =
+                "22px";
+
+            hiddenScoreElement.style.fontWeight =
+                "800";
+
+            hiddenScoreElement.style.textAlign =
+                "center";
+
+            hiddenScoreElement.style.marginBottom =
+                "6px";
+
+            hiddenScoreElement.style.lineHeight =
+                "1";
+
+            const hiddenScoreLabel =
+                document.createElement(
+                    "span"
+                );
+
+            hiddenScoreLabel.textContent =
+                "Hidden Score ";
+
+            hiddenScoreLabel.style.fontSize =
+                "12px";
+
+            hiddenScoreLabel.style.fontWeight =
+                "600";
+
+            hiddenScoreLabel.style.opacity =
+                "0.6";
+
+            hiddenScoreLabel.style.marginRight =
+                "6px";
+
+            hiddenScoreElement.appendChild(
+                hiddenScoreLabel
+            );
+
+            const scoreRowElement =
+                scoreValueElement.parentNode;
+
+            if (
+                scoreRowElement.parentNode
+            ) {
+
+                scoreRowElement.parentNode.insertBefore(
+                    hiddenScoreElement,
+                    scoreRowElement
+                );
+
+            } else {
+
+                scoreRowElement.insertBefore(
+                    hiddenScoreElement,
+                    scoreValueElement
+                );
+            }
+        }
+
+        /*
+         * Keep the label and number separate so
+         * only the number changes.
+         */
+
+        let hiddenScoreNumber =
+            document.getElementById(
+                "hiddenScoreNumber"
+            );
+
+        if (!hiddenScoreNumber) {
+
+            hiddenScoreNumber =
+                document.createElement(
+                    "span"
+                );
+
+            hiddenScoreNumber.id =
+                "hiddenScoreNumber";
+
+            hiddenScoreElement.appendChild(
+                hiddenScoreNumber
+            );
+        }
+
+        hiddenScoreNumber.textContent =
+            calculateHiddenScore();
 
         scoreValueElement.textContent =
             currentScore;
@@ -3205,6 +3451,14 @@ if (
             playerTiles =
                 drawRandomTiles(
                     7
+                );
+
+            startingRackValueTotal =
+                playerTiles.reduce(
+                    (total, letter) =>
+                        total +
+                        (letterValues[letter] ?? 0),
+                    0
                 );
 
             selectedRackTile =
