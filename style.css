@@ -59,7 +59,55 @@ cursor: pointer;
 #generateButton:hover {
 background: #444;
 }
+/* =========================================
+   HIDDEN SCORE PANEL
+========================================= */
 
+#hiddenScorePanel {
+    width: 260px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#hiddenScorePanel h2 {
+    margin: 0 0 18px 0;
+    font-size: 20px;
+}
+
+.hidden-score-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.hidden-score-row span:last-child {
+    font-weight: 700;
+    min-width: 35px;
+    text-align: right;
+}
+
+.hidden-score-divider {
+    height: 1px;
+    margin: 14px 0;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.hidden-score-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+}
+
+.hidden-score-total strong {
+    font-size: 22px;
+}
 /* ================================================
    HIDDEN SCORE
 ================================================ */
