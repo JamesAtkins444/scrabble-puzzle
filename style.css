@@ -60,6 +60,41 @@ cursor: pointer;
 background: #444;
 }
 
+/* ================================================
+   HIDDEN SCORE
+================================================ */
+
+.hidden-score-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.hidden-score-label {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.hidden-score-value {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+/* ================================================
+   SCORE ROW
+================================================ */
+
+.score-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
 /* -------------------------------- */
 /* SCORE */
 /* -------------------------------- */
