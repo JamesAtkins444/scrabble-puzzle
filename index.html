@@ -12,80 +12,92 @@
 <body>
 
 <!-- =========================================
-     HIDDEN SCORE PANEL
+     PUZZLE GENERATOR PANEL
 ========================================= -->
 
-<aside id="hiddenScorePanel">
+<aside id="generatorPanel">
 
-    <h2>Hidden Score</h2>
+    <h2>Puzzle Generator</h2>
 
-    <div class="hidden-score-row">
-        <span>2× Letter tiles</span>
-        <span id="hiddenDoubleLetterCount">0</span>
-    </div>
+    <p class="panel-description">
+        Change these values and generate a new puzzle to test different configurations.
+    </p>
 
-    <div class="hidden-score-row">
-        <span>2xLscore</span>
-        <span id="hiddenDoubleLetterScore">0</span>
-    </div>
+    <div class="setting">
 
+        <label for="gridSizeInput">
+            Grid Size
+        </label>
 
-    <div class="hidden-score-row">
-        <span>3× Letter tiles</span>
-        <span id="hiddenTripleLetterCount">0</span>
-    </div>
+        <input
+            id="gridSizeInput"
+            type="number"
+            min="5"
+            max="12"
+            value="7"
+        >
 
-    <div class="hidden-score-row">
-        <span>3xLscore</span>
-        <span id="hiddenTripleLetterScore">0</span>
-    </div>
+        <span class="setting-help">
+            5–12
+        </span>
 
-
-    <div class="hidden-score-row">
-        <span>2× Word tiles</span>
-        <span id="hiddenDoubleWordCount">0</span>
-    </div>
-
-    <div class="hidden-score-row">
-        <span>2xWscore</span>
-        <span id="hiddenDoubleWordScore">0</span>
     </div>
 
 
-    <div class="hidden-score-row">
-        <span>3× Word tiles</span>
-        <span id="hiddenTripleWordCount">0</span>
-    </div>
+    <div class="setting">
 
-    <div class="hidden-score-row">
-        <span>3xWscore</span>
-        <span id="hiddenTripleWordScore">0</span>
-    </div>
+        <label for="wordCountInput">
+            Number of Words
+        </label>
 
+        <input
+            id="wordCountInput"
+            type="number"
+            min="1"
+            max="8"
+            value="3"
+        >
 
-    <div class="hidden-score-divider"></div>
+        <span class="setting-help">
+            Total puzzle words
+        </span>
 
-
-    <div class="hidden-score-row">
-        <span>Original rack value</span>
-        <span id="hiddenRackValue">0</span>
-    </div>
-
-    <div class="hidden-score-row">
-        <span>RackValueAvg</span>
-        <span id="hiddenRackValueAvg">0</span>
-    </div>
-
-    <div class="hidden-score-row">
-        <span>+50 bonus</span>
-        <span id="hiddenFiftyBonus">50</span>
     </div>
 
 
-    <div class="hidden-score-total">
-        <span>Hidden Score</span>
-        <strong id="hiddenScoreTotal">0</strong>
+    <div class="setting">
+
+        <label for="initialWordLengthInput">
+            Initial Word Length
+        </label>
+
+        <input
+            id="initialWordLengthInput"
+            type="number"
+            min="3"
+            max="8"
+            value="6"
+        >
+
+        <span class="setting-help">
+            Exact length
+        </span>
+
     </div>
+
+
+    <div
+        id="generatorMessage"
+        class="generator-message"
+    ></div>
+
+
+    <button
+        id="generateButton"
+        type="button"
+    >
+        New Puzzle
+    </button>
 
 </aside>
 
@@ -97,6 +109,7 @@
 <div class="container">
 
     <div class="controls">
+        <!-- New Puzzle button is now in the side panel -->
     </div>
 
 
