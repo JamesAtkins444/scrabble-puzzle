@@ -3091,7 +3091,7 @@ function calculatePlayerScore() {
 }
 
 
-function calculateHiddenScore() {
+function calculateenScore() {
 
     const doubleLetterCount =
         Object.values(bonusSquares).filter(
@@ -3111,8 +3111,14 @@ function calculateHiddenScore() {
                 type === "double-word"
         ).length;
 
+       const TripleWordCount =
+        Object.values(bonusSquares).filter(
+            type =>
+                type === "double-word"
+        ).length;
+
     /*
-     * This follows the Hidden Score formula
+     * This follows the en Score formula
      * discussed previously:
      *
      * RackValueAvg =
@@ -3129,9 +3135,9 @@ function calculateHiddenScore() {
      *     5 x number of 2x Word tiles
      *
      * 3xWscore =
-     *     10 x number of 2x Word tiles
+     *     10 x number of 3x Word tiles
      *
-     * HiddenScore =
+     * enScore =
      *     3xWscore +
      *     2xWscore +
      *     2xLscore +
@@ -3161,9 +3167,9 @@ function calculateHiddenScore() {
 
     const tripleWordScore =
         10 *
-        doubleWordCount;
+        TripleWordCount;
 
-    const hiddenScore =
+    const enScore =
         tripleWordScore +
         doubleWordScore +
         doubleLetterScore +
@@ -3171,7 +3177,7 @@ function calculateHiddenScore() {
         startingRackValueTotal +
         50;
 
-    return hiddenScore;
+    return enScore;
 }
 
 
