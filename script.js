@@ -3114,7 +3114,7 @@ function calculateenScore() {
        const TripleWordCount =
         Object.values(bonusSquares).filter(
             type =>
-                type === "double-word"
+                type === "triple-word"
         ).length;
 
     /*
