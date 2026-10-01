@@ -206,7 +206,7 @@ body {
 ========================================= */
 
 #board {
-    width: min(100%, 920px);
+    width: min(100%, 450px);
     aspect-ratio: 1 / 1;
 
     margin: 0 auto;
@@ -526,7 +526,7 @@ body {
 ========================================= */
 
 #tileRack {
-    width: min(100%, 710px);
+    width: min(100%, 450px);
 
     margin: 42px auto 0;
     padding: 20px 24px;
