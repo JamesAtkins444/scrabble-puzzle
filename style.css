@@ -1,174 +1,941 @@
-```css
-/* =========================================
-   BOARD — 7 × 7, 450px WIDE
-========================================= */
+* {
+  box-sizing: border-box;
+  }
 
-#board {
-    width: min(100%, 450px);
-    aspect-ratio: 1 / 1;
+body {
+margin: 0;
+padding: 20px;
+font-family: Arial, Helvetica, sans-serif;
+background: #f3f3f3;
+color: #222;
+}
 
-    margin: 0 auto;
+button {
+font-family: inherit;
+}
 
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    grid-template-rows: repeat(7, minmax(0, 1fr));
+.container {
+width: 100%;
+max-width: 900px;
+margin: 0 auto;
 
-    gap: 4px;
-    padding: 8px;
+display: flex;
+flex-direction: column;
 
-    background: linear-gradient(
-        145deg,
-        rgba(24, 34, 48, 0.96),
-        rgba(20, 29, 41, 0.96)
-    );
+}
 
-    border: 2px solid #303d50;
-    border-radius: 12px;
+/* -------------------------------- */
+/* CONTROLS */
+/* -------------------------------- */
 
-    box-shadow:
-        0 12px 32px rgba(0, 0, 0, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+.controls {
+order: 1;
+
+display: flex;
+justify-content: center;
+
+margin-bottom: 16px;
+
+}
+
+.controls button,
+#generateButton {
+padding: 10px 18px;
+
+border: none;
+border-radius: 7px;
+
+background: #222;
+color: white;
+
+font-size: 15px;
+font-weight: bold;
+
+cursor: pointer;
+
+}
+
+.controls button:hover,
+#generateButton:hover {
+background: #444;
+}
+
+/* ================================================
+   HIDDEN SCORE
+================================================ */
+
+.hidden-score-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.hidden-score-label {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.hidden-score-value {
+    font-size: 22px;
+    font-weight: 800;
 }
 
 
-/* =========================================
-   BOARD LETTER TILES
-========================================= */
+/* ================================================
+   SCORE ROW
+================================================ */
+
+.score-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* -------------------------------- */
+/* SCORE */
+/* -------------------------------- */
+
+.score-box {
+order: 2;
+
+width: min(100%, 500px);
+
+margin: 0 auto 4px auto;
+padding: 8px 16px;
+
+display: flex;
+justify-content: center;
+align-items: baseline;
+
+gap: 8px;
+flex-wrap: wrap;
+
+background: transparent;
+
+}
+
+.score-label {
+font-size: 16px;
+color: #777;
+font-weight: bold;
+}
+
+#scoreValue {
+font-size: 36px;
+line-height: 1;
+font-weight: 800;
+color: #222;
+}
+
+.score-bonus {
+width: 100%;
+
+text-align: center;
+
+font-size: 13px;
+font-weight: bold;
+
+color: #666;
+
+margin-top: 2px;
+
+}
+
+/* -------------------------------- */
+/* SCORING WORDS */
+/* -------------------------------- */
+
+#wordList {
+order: 3;
+
+width: min(100%, 500px);
+
+margin: 0 auto 14px auto;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+flex-wrap: wrap;
+gap: 7px;
+
+min-height: 0;
+
+}
+
+.word-pill {
+display: inline-flex;
+align-items: center;
+
+gap: 6px;
+
+padding: 7px 11px;
+
+background: white;
+
+border: 1px solid #ddd;
+border-radius: 999px;
+
+font-size: 14px;
+line-height: 1;
+
+box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08);
+
+}
+
+.word-pill-word {
+font-weight: bold;
+color: #222;
+}
+
+.word-pill-score {
+color: #777;
+font-size: 12px;
+font-weight: bold;
+}
+/* ================================================
+   BOARD TILE
+================================================ */
 
 .board-tile {
     position: relative;
-
-    width: 100%;
-    height: 100%;
-    min-width: 0;
-    min-height: 0;
+    width: 82%;
+    height: 82%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(
-        145deg,
-        #fff7df,
-        #f7edcf
-    );
+    box-sizing: border-box;
 
-    border: 1px solid #fff6df;
-    border-radius: 5px;
+    background: #f4dfad;
+    border: 2px solid #c5ae7b;
+    border-radius: 6px;
 
-    color: #192535;
-
-    font-size: clamp(16px, 3vw, 30px);
-    font-weight: 800;
-    line-height: 1;
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     user-select: none;
+    z-index: 1;
+}
+
+/* BOARD LETTER */
+
+.board-tile .tile-letter {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* BOARD TILE SCORE */
+
+.board-tile .tile-value {
+    position: absolute;
+
+    bottom: 5%;
+    right: 8%;
+
+    font-size: clamp(7px, 1.2vw, 11px);
+    font-weight: bold;
+    line-height: 1;
 }
 
 
-/* =========================================
-   RACK — MATCHES BOARD WIDTH
-========================================= */
+/* ================================================
+   ORIGINAL PUZZLE TILE
+================================================ */
 
-#tileRack {
-    width: min(100%, 450px);
+.board-tile.original-tile {
 
-    margin: 24px auto 0;
-    padding: 8px;
+    background: #f4dfad;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 4px;
-
-    background: linear-gradient(
-        145deg,
-        #192432,
-        #17212e
-    );
-
-    border: 2px solid #303d50;
-    border-radius: 12px;
-
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    border-color: #c5ae7b;
 }
 
 
-/* =========================================
-   RACK TILES — SAME SIZE AS BOARD CELLS
-========================================= */
+/* ================================================
+   PLAYER TILE - VALID
+================================================ */
 
-.rack-tile {
+.board-tile.player-valid {
+
+    background: #bfe8c7;
+
+    border-color: #3b9b4f;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   PLAYER TILE - INVALID
+================================================ */
+
+.board-tile.player-invalid {
+
+    background: #f3b8b8;
+
+    border-color: #c43d3d;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   PLAYER TILE - ISOLATED
+================================================ */
+
+.board-tile.player-isolated {
+
+    background: #f4df83;
+
+    border-color: #c4a72c;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   BOARD TILE LETTER
+================================================ */
+
+.board-tile .tile-letter {
+
     position: relative;
 
-    /* Match the seven board columns */
-    width: calc((100% - 24px) / 7);
-    aspect-ratio: 1 / 1;
+    z-index: 2;
 
-    flex: 0 1 calc((100% - 24px) / 7);
-    min-width: 0;
+    line-height: 1;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    background: linear-gradient(
-        145deg,
-        #fff7df,
-        #f7edcf
+/* ================================================
+   BOARD TILE VALUE
+================================================ */
+
+.board-tile .tile-value {
+    position: absolute;
+    bottom: 7%;
+    right: 8%;
+    font-size: 0.32em;
+    font-weight: bold;
+    line-height: 1;
+    z-index: 3;
+}
+
+
+/* ================================================
+   BONUS BADGE
+================================================ */
+
+.bonus-badge {
+
+    position: absolute;
+
+    top: 3px;
+    left: 4px;
+
+    z-index: 4;
+
+    font-size: clamp(
+        7px,
+        1.5vw,
+        11px
     );
 
-    border: 1px solid #fff6df;
-    border-radius: 5px;
+    line-height: 1;
 
-    color: #192535;
+    padding: 2px 3px;
 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
 
-    cursor: pointer;
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.85
+        );
 
-    transition:
-        transform 0.12s ease,
-        border-color 0.12s ease,
-        box-shadow 0.12s ease;
+    color: #222;
+
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+
+/* ================================================
+   MAKE SURE BONUS COLOUR STAYS ON CELL
+================================================ */
+
+.cell.double-letter {
+    background: #b9dcf5;
+}
+
+.cell.triple-letter {
+    background: #6fa8dc;
+}
+
+.cell.double-word {
+    background: #f4b6c2;
+}
+
+.cell.triple-word {
+    background: #e57373;
+}
+/* -------------------------------- */
+/* BOARD */
+/* -------------------------------- */
+
+#board {
+order: 4;
+
+width: min(100%, 500px);
+
+aspect-ratio: 1 / 1;
+
+margin: 0 auto;
+
+display: grid;
+
+grid-template-columns:
+    repeat(8, 1fr);
+
+grid-template-rows:
+    repeat(8, 1fr);
+
+gap: 3px;
+
+background: #999;
+
+padding: 3px;
+
+border-radius: 3px;
+
+}
+
+/* -------------------------------- */
+/* BOARD CELLS */
+/* -------------------------------- */
+
+.cell {
+position: relative;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: white;
+
+border: 1px solid #ccc;
+
+font-size:
+    clamp(20px, 5.5vw, 40px);
+
+font-weight: bold;
+
+user-select: none;
+
+cursor: pointer;
+
+}
+
+.cell:hover {
+filter: brightness(0.97);
+}
+
+/* Original puzzle tiles */
+
+.cell.original-tile {
+background: #ddd;
+color: #222;
+cursor: default;
+}
+
+/* Player tiles */
+
+.cell.player-valid {
+background: #b8e6b8;
+border: 2px solid #4a9f4a;
+color: #174d17;
+}
+
+.cell.player-invalid {
+background: #f3b0b0;
+border: 2px solid #c94c4c;
+color: #681717;
+}
+
+.cell.player-isolated {
+background: #f3df8b;
+border: 2px solid #d2ae35;
+color: #66500c;
+}
+
+/* -------------------------------- */
+/* BONUS SQUARES */
+/* -------------------------------- */
+
+.cell.double-letter {
+background: #9ed8f5;
+border: 1px solid #4aa8d8;
+}
+
+.cell.triple-letter {
+background: #4f91c4;
+border: 1px solid #28638e;
+color: white;
+}
+
+.cell.double-word {
+background: #f2a8c4;
+border: 1px solid #d86c99;
+}
+
+.cell.triple-word {
+background: #e36b6b;
+border: 1px solid #b73535;
+color: white;
+}
+
+.bonus-label {
+font-size:
+clamp(10px, 2.3vw, 16px);
+
+font-weight: bold;
+
+line-height: 1;
+
+user-select: none;
+
+}
+
+.bonus-badge {
+position: absolute;
+
+top: 3px;
+left: 4px;
+
+z-index: 2;
+
+font-size:
+    clamp(7px, 1.5vw, 11px);
+
+line-height: 1;
+
+padding: 2px 3px;
+
+border-radius: 3px;
+
+background:
+    rgba(255, 255, 255, 0.85);
+
+color: #222;
+
+font-weight: bold;
+
+pointer-events: none;
+
+}
+
+/* -------------------------------- */
+/* TILE MESSAGE */
+/* -------------------------------- */
+
+.tile-message {
+order: 5;
+
+width: min(100%, 500px);
+
+min-height: 20px;
+
+margin: 0 auto 10px auto;
+
+text-align: center;
+
+font-size: 13px;
+
+color: #777;
+
+}
+
+.tile-message.success {
+color: #39803b;
+font-weight: bold;
+}
+
+.tile-message.error {
+color: #b33b3b;
+font-weight: bold;
+}
+
+/* -------------------------------- */
+/* TILE RACK */
+/* -------------------------------- */
+
+#tileRack {
+order: 6;
+
+width: min(100%, 500px);
+
+margin: 10px auto 0 auto;
+
+display: flex;
+
+justify-content: center;
+align-items: center;
+
+gap: 8px;
+
+flex-wrap: wrap;
+
+}
+
+.rack-tile {
+position: relative;
+
+width: 55px;
+height: 55px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+background: #f5e6c8;
+
+border:
+    2px solid #c7a76a;
+
+border-radius: 6px;
+
+cursor: pointer;
+
+box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.15);
+
 }
 
 .rack-tile:hover {
-    transform: translateY(-3px);
-
-    border-color: #ffffff;
-
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.18);
+transform: translateY(-2px);
 }
 
 .rack-tile.selected {
-    transform: translateY(-5px);
+border: 3px solid #222;
 
-    border: 2px solid #75a9ff;
+transform:
+    translateY(-5px);
 
-    box-shadow: 0 0 0 3px rgba(57, 136, 237, 0.15);
+box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.tile-letter {
+font-size: 28px;
+font-weight: bold;
+}
+
+.tile-value {
+position: absolute;
+
+bottom: 4px;
+right: 5px;
+
+font-size: 11px;
+
+font-weight: bold;
+
+}
+
+/* -------------------------------- */
+/* HIGHEST POSSIBLE SCORE */
+/* -------------------------------- */
+
+.best-score-box {
+order: 7;
+
+width: min(100%, 500px);
+
+margin: 28px auto 0 auto;
+
+padding: 14px 18px;
+
+background: white;
+
+border:
+    1px solid #ddd;
+
+border-radius: 10px;
+
+text-align: center;
+
+box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.06);
+
+}
+
+.best-score-title {
+font-size: 13px;
+
+color: #777;
+
+font-weight: bold;
+
+margin-bottom: 6px;
+
+}
+
+.best-score-word {
+font-size: 24px;
+
+font-weight: 800;
+
+letter-spacing: 0.5px;
+
+}
+
+.best-score-value {
+margin-top: 3px;
+
+font-size: 16px;
+
+color: #555;
+
+font-weight: bold;
+
+}
+
+/* -------------------------------- */
+/* MOBILE */
+/* -------------------------------- */
+
+@media (max-width: 600px) {
+
+body {
+    padding: 10px;
+}
+
+.controls {
+    margin-bottom: 12px;
+}
+
+#board {
+    gap: 2px;
+    padding: 2px;
+}
+
+.cell {
+    font-size: 22px;
+}
+
+.rack-tile {
+    width: 45px;
+    height: 45px;
+}
+
+.tile-letter {
+    font-size: 23px;
+}
+
+.tile-value {
+    font-size: 9px;
+
+    bottom: 2px;
+    right: 3px;
+}
+
+#scoreValue {
+    font-size: 30px;
+}
+
+.word-pill {
+    padding: 6px 9px;
+    font-size: 13px;
+}
+
+.word-pill-score {
+    font-size: 11px;
+}
+
+.best-score-box {
+    margin-top: 22px;
+}
+
+.best-score-word {
+    font-size: 21px;
+}
+
 }
 
 
 /* =========================================
-   RACK LETTERS AND VALUES
+   PUZZLE GENERATOR PANEL
 ========================================= */
 
-.rack-tile .tile-letter {
-    font-size: clamp(16px, 3vw, 30px);
-    font-weight: 800;
+#generatorPanel {
+    position: fixed;
+
+    left: 20px;
+    top: 20px;
+
+    width: 230px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1);
+
+    z-index: 100;
 }
 
-.rack-tile .tile-value {
-    position: absolute;
+#generatorPanel h2 {
+    margin: 0 0 8px 0;
 
-    right: 7%;
-    bottom: 7%;
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #222;
+}
+
+.panel-description {
+    margin: 0 0 18px 0;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: #777;
+}
+
+
+/* -----------------------------------------
+   SETTINGS
+----------------------------------------- */
+
+.setting {
+    margin-bottom: 16px;
+}
+
+.setting label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: #333;
+}
+
+.setting input {
+    width: 100%;
+
+    padding: 9px 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    background: #fafafa;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+.setting input:focus {
+    outline: none;
+
+    border-color: #555;
+
+    background: white;
+}
+
+.setting-help {
+    display: block;
+
+    margin-top: 4px;
 
     font-size: 11px;
+
+    color: #999;
+}
+
+
+/* -----------------------------------------
+   PANEL BUTTON
+----------------------------------------- */
+
+#generatorPanel #generateButton {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #222;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#generatorPanel #generateButton:hover {
+    background: #444;
+}
+
+#generatorPanel #generateButton:disabled {
+    opacity: 0.6;
+
+    cursor: default;
+}
+
+
+/* -----------------------------------------
+   PANEL MESSAGE
+----------------------------------------- */
+
+.generator-message {
+    min-height: 18px;
+
+    margin: -4px 0 10px 0;
+
+    font-size: 12px;
+    line-height: 1.3;
+
+    color: #b33b3b;
+}
+
+
+/* =========================================
+   DESKTOP GAME POSITION
+========================================= */
+
+@media (min-width: 1000px) {
+
+    .container {
+        max-width: 900px;
+
+        margin-left: 280px;
+        margin-right: auto;
+    }
+
 }
 
 
@@ -176,28 +943,23 @@
    MOBILE
 ========================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 999px) {
 
-    #board {
-        width: 100%;
-        gap: 3px;
-        padding: 6px;
+    #generatorPanel {
+        position: static;
+
+        width: min(
+            calc(100% - 20px),
+            500px
+        );
+
+        margin: 0 auto 20px auto;
+
+        box-sizing: border-box;
     }
 
-    #tileRack {
-        width: 100%;
-        gap: 3px;
-        padding: 6px;
-        margin-top: 18px;
+    .container {
+        margin: 0 auto;
     }
 
-    .rack-tile {
-        flex: 0 1 calc((100% - 18px) / 7);
-        width: calc((100% - 18px) / 7);
-    }
-
-    .rack-tile .tile-letter {
-        font-size: clamp(18px, 6vw, 25px);
-    }
 }
-```
