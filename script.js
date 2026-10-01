@@ -3712,7 +3712,7 @@ function findBestSolution() {
 
     const rackCounts = countLetters(initialRackTiles);
     const startingBoard = cloneBoard(originalBoard);
-    const searchLimit = 25000;
+    const searchLimit = 250000;
     let visitedNodes = 0;
     let fullSolution = null;
     const failedStates = new Set();
