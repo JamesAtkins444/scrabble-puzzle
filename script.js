@@ -3111,6 +3111,12 @@ function calculateHiddenScore() {
                 type === "double-word"
         ).length;
 
+        const tripleWordCount =
+        Object.values(bonusSquares).filter(
+            type =>
+                type === "triple-word"
+        ).length;
+
     /*
      * This follows the Hidden Score formula
      * discussed previously:
@@ -3161,7 +3167,7 @@ function calculateHiddenScore() {
 
     const tripleWordScore =
         10 *
-        doubleWordCount;
+        tripleWordCount;
 
     const hiddenScore =
         tripleWordScore +
