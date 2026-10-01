@@ -1,6 +1,6 @@
 ```css
 /* =========================================
-   BOARD — 450px WIDE
+   BOARD — 7 × 7, 450px WIDE
 ========================================= */
 
 #board {
@@ -10,8 +10,8 @@
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    grid-template-rows: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(7, minmax(0, 1fr));
 
     gap: 4px;
     padding: 8px;
@@ -62,8 +62,7 @@
     font-weight: 800;
     line-height: 1;
 
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 
     user-select: none;
 }
@@ -94,28 +93,23 @@
     border: 2px solid #303d50;
     border-radius: 12px;
 
-    box-shadow:
-        0 8px 22px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
 
 /* =========================================
-   RACK TILES — SAME SIZE AS BOARD TILES
+   RACK TILES — SAME SIZE AS BOARD CELLS
 ========================================= */
 
 .rack-tile {
     position: relative;
 
-    /*
-      Match the board's inner grid dimensions.
-      Each tile uses the same width and height
-      as one board cell.
-    */
+    /* Match the seven board columns */
+    width: calc((100% - 24px) / 7);
+    aspect-ratio: 1 / 1;
 
-    width: calc((450px - 20px - 28px) / 8);
-    height: calc((450px - 20px - 28px) / 8);
-
-    flex: 0 0 auto;
+    flex: 0 1 calc((100% - 24px) / 7);
+    min-width: 0;
 
     display: flex;
     align-items: center;
@@ -132,8 +126,7 @@
 
     color: #192535;
 
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 
     cursor: pointer;
 
@@ -143,12 +136,35 @@
         box-shadow 0.12s ease;
 }
 
+.rack-tile:hover {
+    transform: translateY(-3px);
+
+    border-color: #ffffff;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.18);
+}
+
+.rack-tile.selected {
+    transform: translateY(-5px);
+
+    border: 2px solid #75a9ff;
+
+    box-shadow: 0 0 0 3px rgba(57, 136, 237, 0.15);
+}
+
+
+/* =========================================
+   RACK LETTERS AND VALUES
+========================================= */
+
 .rack-tile .tile-letter {
     font-size: clamp(16px, 3vw, 30px);
     font-weight: 800;
 }
 
 .rack-tile .tile-value {
+    position: absolute;
+
     right: 7%;
     bottom: 7%;
 
@@ -161,10 +177,6 @@
 ========================================= */
 
 @media (max-width: 480px) {
-
-    body {
-        padding: 16px 10px 28px;
-    }
 
     #board {
         width: 100%;
@@ -180,11 +192,8 @@
     }
 
     .rack-tile {
-        width: calc((100vw - 44px) / 8);
-        height: calc((100vw - 44px) / 8);
-
-        max-width: 52px;
-        max-height: 52px;
+        flex: 0 1 calc((100% - 18px) / 7);
+        width: calc((100% - 18px) / 7);
     }
 
     .rack-tile .tile-letter {
