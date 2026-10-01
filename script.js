@@ -3707,7 +3707,7 @@ function getFullRackSolutionScore(solutionBoard, newKeys) {
     return { score: total, words: scoringWords };
 }
 
-function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget) {
+function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget, prioritizeTileUsage = false) {
     const directions = ["horizontal", "vertical"];
     const words = [...dictionary]
         .filter(word => word.length >= 2 && word.length <= boardSize)
@@ -3773,8 +3773,17 @@ function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget) {
                     const move = evaluateSolverPlacement(
                         word, row, col, direction, sourceBoard, rackCounts
                     );
-                    if (move && (!bestMove || move.score > bestMove.score)) {
-                        bestMove = move;
+                    if (move) {
+                        // On the opening turn, keep the existing score-first strategy.
+                        // After that, use as many remaining tiles as possible first,
+                        // then use score to break ties between moves using that count.
+                        const isBetterMove = !bestMove || (
+                            prioritizeTileUsage
+                                ? move.usedTiles > bestMove.usedTiles ||
+                                    (move.usedTiles === bestMove.usedTiles && move.score > bestMove.score)
+                                : move.score > bestMove.score
+                        );
+                        if (isBetterMove) bestMove = move;
                     }
                 }
             }
@@ -3798,8 +3807,8 @@ function findBestSolution() {
     let searchLimitReached = false;
     let currentBoard = startingBoard;
 
-    // Greedily choose the highest-scoring legal move, apply it, remove the
-    // letters used by that move, then solve again against the updated board.
+    // Keep the opening move score-first. From turn two onward, prioritize
+    // using the largest number of remaining tiles, then maximize that move score.
     while (Object.values(remainingCounts).some(count => count > 0)) {
         const remainingTiles = Object.values(remainingCounts)
             .reduce((sum, count) => sum + count, 0);
@@ -3808,7 +3817,8 @@ function findBestSolution() {
         const result = findBestMoveOnBoard(
             currentBoard,
             remainingCounts,
-            Math.max(1, searchLimit - visitedCandidates)
+            searchLimit,
+            moves.length > 0
         );
         visitedCandidates += result.checked;
         if (result.limitReached) searchLimitReached = true;
@@ -3841,7 +3851,9 @@ function findBestSolution() {
         }
         allScoringWords.push(...move.scoringWords.map(info => ({ ...info, move: moveRecord.turn })));
 
-        if (searchLimitReached) break;
+        // Continue to the next turn even if this turn reached its candidate cap;
+        // each turn gets its own search budget so one expensive turn does not
+        // prevent the solver from trying to place the remaining tiles.
     }
 
     const tilesUsed = allNewKeys.length;
