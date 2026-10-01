@@ -657,7 +657,7 @@ font-weight: bold;
 }
 
 /* -------------------------------- */
-/* HIGHEST POSSIBLE SCORE */
+/* FULL-RACK SOLUTION */
 /* -------------------------------- */
 
 .best-score-box {
@@ -994,7 +994,7 @@ body {
 
 
 /* ================================================
-   BEST SCORE SOLVER / REVEAL ANSWER
+   FULL-RACK SOLVER / REVEAL ANSWER
 ================================================ */
 .best-score-message {
     margin: 7px 0 12px;
