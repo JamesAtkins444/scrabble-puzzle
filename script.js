@@ -7,6 +7,9 @@ let originalBoard = [];
 
 let playerPlacedTiles = {};
 let playerTiles = [];
+let initialRackTiles = [];
+let bestSolution = null;
+let answerRevealed = false;
 
 let bonusSquares = {};
 
@@ -130,6 +133,18 @@ const newTilesButton =
 
 const wordCountElement =
     document.getElementById("wordCount");
+
+const bestScoreWordElement =
+    document.getElementById("bestScoreWord");
+
+const bestScoreValueElement =
+    document.getElementById("bestScoreValue");
+
+const revealAnswerButton =
+    document.getElementById("revealAnswerButton");
+
+const bestScoreMessageElement =
+    document.getElementById("bestScoreMessage");
 
 
 /* ==================================================
@@ -923,6 +938,18 @@ function generateBoard() {
     playerTiles =
         drawRandomTiles(7);
 
+    initialRackTiles = [...playerTiles];
+    bestSolution = null;
+    answerRevealed = false;
+
+    if (revealAnswerButton) {
+        revealAnswerButton.textContent = "Reveal Answer";
+        revealAnswerButton.disabled = true;
+    }
+    if (bestScoreWordElement) bestScoreWordElement.textContent = "Finding best move…";
+    if (bestScoreValueElement) bestScoreValueElement.textContent = "—";
+    if (bestScoreMessageElement) bestScoreMessageElement.textContent = "";
+
     startingRackValueTotal =
         playerTiles.reduce(
             (total, letter) =>
@@ -1315,6 +1342,7 @@ function generateBoard() {
     calculatePlayerScore();
 
     updateWordCount();
+    findBestSolution();
 }
 
 
@@ -3450,6 +3478,195 @@ function displayScoringWords(
             pill
         );
     }
+}
+
+
+
+/* ==================================================
+BEST MOVE SOLVER + REVEAL ANSWER
+================================================== */
+
+function countLetters(letters) {
+    const counts = {};
+    for (const letter of letters) {
+        counts[letter] = (counts[letter] || 0) + 1;
+    }
+    return counts;
+}
+
+function scoreWordOnCandidateBoard(candidateBoard, wordInfo, newlyPlacedKeys) {
+    let letterTotal = 0;
+    let wordMultiplier = 1;
+    const cells = getWordCells(wordInfo.word, wordInfo.row, wordInfo.col, wordInfo.direction);
+
+    for (const cell of cells) {
+        const key = keyForCell(cell.row, cell.col);
+        const letter = candidateBoard[cell.row][cell.col];
+        const value = letterValues[letter] || 0;
+        let letterMultiplier = 1;
+
+        // Premium squares only count when a tile is newly placed on them.
+        if (newlyPlacedKeys.has(key)) {
+            const bonus = getBonusSquare(cell.row, cell.col);
+            if (bonus === "double-letter") letterMultiplier = 2;
+            if (bonus === "triple-letter") letterMultiplier = 3;
+            if (bonus === "double-word") wordMultiplier *= 2;
+            if (bonus === "triple-word") wordMultiplier *= 3;
+        }
+        letterTotal += value * letterMultiplier;
+    }
+    return letterTotal * wordMultiplier;
+}
+
+function candidateTouchesExistingBoard(candidateBoard, newKeys, sourceBoard) {
+    for (const key of newKeys) {
+        const [row, col] = key.split(",").map(Number);
+        const neighbours = [[row - 1, col], [row + 1, col], [row, col - 1], [row, col + 1]];
+        for (const [r, c] of neighbours) {
+            if (isInsideBoard(r, c) && sourceBoard[r][c] !== "") return true;
+        }
+    }
+    return false;
+}
+
+function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCounts) {
+    const cells = getWordCells(word, row, col, direction);
+    if (!cells.length || cells.some(cell => !isInsideBoard(cell.row, cell.col))) return null;
+
+    // Do not allow the proposed word to be only part of a longer word.
+    const beforeRow = row - (direction === "vertical" ? 1 : 0);
+    const beforeCol = col - (direction === "horizontal" ? 1 : 0);
+    const afterRow = row + (direction === "vertical" ? word.length : 0);
+    const afterCol = col + (direction === "horizontal" ? word.length : 0);
+    if (isInsideBoard(beforeRow, beforeCol) && sourceBoard[beforeRow][beforeCol] !== "") return null;
+    if (isInsideBoard(afterRow, afterCol) && sourceBoard[afterRow][afterCol] !== "") return null;
+
+    const remaining = { ...rackCounts };
+    const newKeys = new Set();
+    let usedTiles = 0;
+    const candidateBoard = cloneBoard(sourceBoard);
+
+    for (const cell of cells) {
+        const existing = sourceBoard[cell.row][cell.col];
+        if (existing !== "") {
+            if (existing !== cell.letter) return null;
+            continue;
+        }
+        if (!remaining[cell.letter]) return null;
+        remaining[cell.letter]--;
+        usedTiles++;
+        const key = keyForCell(cell.row, cell.col);
+        newKeys.add(key);
+        candidateBoard[cell.row][cell.col] = cell.letter;
+    }
+
+    if (usedTiles === 0) return null;
+    if (!candidateTouchesExistingBoard(candidateBoard, newKeys, sourceBoard)) return null;
+    if (!allWordsAreValid(candidateBoard)) return null;
+
+    // Score every word created or extended by the move, including cross-words.
+    const scoringWords = getAllWords(candidateBoard).filter(info =>
+        getWordCells(info.word, info.row, info.col, info.direction)
+            .some(cell => newKeys.has(keyForCell(cell.row, cell.col)))
+    );
+    const mainWord = scoringWords.find(info =>
+        info.direction === direction &&
+        info.row === row && info.col === col
+    );
+    if (!mainWord || !dictionary.has(mainWord.word)) return null;
+
+    let totalScore = scoringWords.reduce((sum, info) =>
+        sum + scoreWordOnCandidateBoard(candidateBoard, info, newKeys), 0
+    );
+
+    // Match the game's 7-tile bonus rule.
+    if (usedTiles === 7) {
+        const mainWordUsesAllTiles = getWordCells(mainWord.word, mainWord.row, mainWord.col, mainWord.direction)
+            .filter(cell => newKeys.has(keyForCell(cell.row, cell.col))).length === 7;
+        totalScore += mainWordUsesAllTiles ? 100 : 50;
+    }
+
+    return {
+        word: mainWord.word,
+        row,
+        col,
+        direction,
+        score: totalScore,
+        board: candidateBoard,
+        newKeys: [...newKeys],
+        usedTiles,
+        scoringWords
+    };
+}
+
+function findBestSolution() {
+    if (!dictionary.size || !originalBoard.length || !initialRackTiles.length) return;
+
+    const sourceBoard = cloneBoard(originalBoard);
+    const rackCounts = countLetters(initialRackTiles);
+    const candidateWords = [...dictionary].filter(word => word.length >= 2 && word.length <= boardSize);
+    let best = null;
+
+    // Search every dictionary word, starting cell, and direction.
+    for (const word of candidateWords) {
+        for (let row = 0; row < boardSize; row++) {
+            for (let col = 0; col < boardSize; col++) {
+                const horizontal = evaluateSolverPlacement(word, row, col, "horizontal", sourceBoard, rackCounts);
+                if (horizontal && (!best || horizontal.score > best.score)) best = horizontal;
+
+                const vertical = evaluateSolverPlacement(word, row, col, "vertical", sourceBoard, rackCounts);
+                if (vertical && (!best || vertical.score > best.score)) best = vertical;
+            }
+        }
+    }
+
+    bestSolution = best;
+    if (bestScoreWordElement) bestScoreWordElement.textContent = best ? best.word : "No legal move";
+    if (bestScoreValueElement) bestScoreValueElement.textContent = best ? `${best.score} points` : "—";
+    if (revealAnswerButton) revealAnswerButton.disabled = !best;
+    if (bestScoreMessageElement) {
+        bestScoreMessageElement.textContent = best
+            ? `Uses ${best.usedTiles} rack tile${best.usedTiles === 1 ? "" : "s"}; includes word and cross-word scores.`
+            : "No legal move found with this rack.";
+    }
+}
+
+function revealBestAnswer() {
+    if (!bestSolution) return;
+
+    // Reset to the original puzzle, then show the solver's full recommended move.
+    board = cloneBoard(bestSolution.board);
+    playerPlacedTiles = {};
+    const usedLetters = [];
+
+    for (const key of bestSolution.newKeys) {
+        const [row, col] = key.split(",").map(Number);
+        const letter = board[row][col];
+        playerPlacedTiles[key] = { letter, row, col };
+        usedLetters.push(letter);
+    }
+
+    playerTiles = [...initialRackTiles];
+    for (const letter of usedLetters) {
+        const index = playerTiles.indexOf(letter);
+        if (index !== -1) playerTiles.splice(index, 1);
+    }
+
+    selectedRackTile = null;
+    answerRevealed = true;
+    displayTileRack();
+    displayBoard();
+    calculatePlayerScore();
+
+    if (revealAnswerButton) revealAnswerButton.textContent = "Answer Revealed";
+    if (tileMessageElement) {
+        tileMessageElement.textContent = `Answer: place ${bestSolution.word} ${bestSolution.direction} — ${bestSolution.score} points.`;
+        tileMessageElement.className = "tile-message success";
+    }
+}
+
+if (revealAnswerButton) {
+    revealAnswerButton.addEventListener("click", revealBestAnswer);
 }
 
 
