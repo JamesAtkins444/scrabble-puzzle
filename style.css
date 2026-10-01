@@ -1,130 +1,73 @@
-```css
-/* =========================================
-   SCRAMBLE — MODERN WORD GAME THEME
-========================================= */
-
 * {
-    box-sizing: border-box;
-}
-
-:root {
-    --background: #111923;
-    --background-glow: #1b2a3d;
-
-    --panel: #192432;
-    --panel-border: #344256;
-
-    --cell: #293747;
-    --cell-border: #344256;
-
-    --tile: #f7edcf;
-    --tile-border: #fff5dc;
-    --tile-text: #202b3a;
-
-    --blue: #3988ed;
-    --blue-border: #6aabff;
-
-    --pink: #e84d94;
-    --pink-border: #ff85b8;
-
-    --green: #76db91;
-    --green-dark: #173a27;
-
-    --text: #f5f7fb;
-    --muted: #a8b5c6;
-}
-
-
-/* =========================================
-   PAGE BACKGROUND
-========================================= */
+  box-sizing: border-box;
+  }
 
 body {
-    margin: 0;
-    padding: 20px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 25%,
-            #1d2c40 0%,
-            #151f2d 45%,
-            #111923 100%
-        );
-
-    color: var(--text);
-
-    -webkit-font-smoothing: antialiased;
+margin: 0;
+padding: 20px;
+font-family: Arial, Helvetica, sans-serif;
+background: #f3f3f3;
+color: #222;
 }
 
 button {
-    font-family: inherit;
+font-family: inherit;
 }
 
 .container {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+width: 100%;
+max-width: 900px;
+margin: 0 auto;
 
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
+
 }
 
-
-/* =========================================
-   CONTROLS
-========================================= */
+/* -------------------------------- */
+/* CONTROLS */
+/* -------------------------------- */
 
 .controls {
-    order: 1;
+order: 1;
 
-    display: flex;
-    justify-content: center;
+display: flex;
+justify-content: center;
 
-    margin-bottom: 16px;
+margin-bottom: 16px;
+
 }
 
 .controls button,
 #generateButton {
-    padding: 10px 18px;
+padding: 10px 18px;
 
-    border: 1px solid #43536a;
-    border-radius: 8px;
+border: none;
+border-radius: 7px;
 
-    background: #29384b;
-    color: white;
+background: #222;
+color: white;
 
-    font-size: 15px;
-    font-weight: bold;
+font-size: 15px;
+font-weight: bold;
 
-    cursor: pointer;
+cursor: pointer;
 
-    transition:
-        background 0.15s ease,
-        transform 0.15s ease;
 }
 
 .controls button:hover,
 #generateButton:hover {
-    background: #354961;
+background: #444;
 }
 
-.controls button:active,
-#generateButton:active {
-    transform: scale(0.98);
-}
-
-
-/* =========================================
+/* ================================================
    HIDDEN SCORE
-========================================= */
+================================================ */
 
 .hidden-score-box {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
     margin-bottom: 6px;
 }
@@ -132,9 +75,7 @@ button {
 .hidden-score-label {
     font-size: 12px;
     font-weight: 600;
-
-    color: var(--muted);
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .hidden-score-value {
@@ -143,340 +84,126 @@ button {
 }
 
 
-/* =========================================
+/* ================================================
    SCORE ROW
-========================================= */
+================================================ */
 
 .score-row {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 8px;
 }
 
-
-/* =========================================
-   SCORE DISPLAY
-========================================= */
+/* -------------------------------- */
+/* SCORE */
+/* -------------------------------- */
 
 .score-box {
-    order: 2;
+order: 2;
 
-    width: min(100%, 500px);
+width: min(100%, 500px);
 
-    margin: 0 auto 8px;
-    padding: 8px 16px;
+margin: 0 auto 4px auto;
+padding: 8px 16px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+display: flex;
+justify-content: center;
+align-items: baseline;
 
-    gap: 12px;
-    flex-wrap: wrap;
+gap: 8px;
+flex-wrap: wrap;
 
-    background: transparent;
+background: transparent;
+
 }
 
 .score-label {
-    font-size: 17px;
-    color: #e3eaf3;
-    font-weight: 700;
+font-size: 16px;
+color: #777;
+font-weight: bold;
 }
 
 #scoreValue {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 64px;
-    padding: 9px 18px;
-
-    font-size: 30px;
-    line-height: 1;
-    font-weight: 800;
-
-    color: #173a27;
-    background: var(--green);
-
-    border: 1px solid #a1f2b4;
-    border-radius: 999px;
-
-    box-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+font-size: 36px;
+line-height: 1;
+font-weight: 800;
+color: #222;
 }
 
 .score-bonus {
-    width: 100%;
+width: 100%;
 
-    text-align: center;
+text-align: center;
 
-    font-size: 13px;
-    font-weight: bold;
+font-size: 13px;
+font-weight: bold;
 
-    color: var(--muted);
+color: #666;
 
-    margin-top: 2px;
+margin-top: 2px;
+
 }
 
-
-/* =========================================
-   SCORING WORDS
-========================================= */
+/* -------------------------------- */
+/* SCORING WORDS */
+/* -------------------------------- */
 
 #wordList {
-    order: 3;
+order: 3;
 
-    width: min(100%, 500px);
+width: min(100%, 500px);
 
-    margin: 0 auto 14px;
+margin: 0 auto 14px auto;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
 
-    flex-wrap: wrap;
-    gap: 7px;
+flex-wrap: wrap;
+gap: 7px;
 
-    min-height: 0;
+min-height: 0;
+
 }
 
 .word-pill {
-    display: inline-flex;
-    align-items: center;
+display: inline-flex;
+align-items: center;
 
-    gap: 6px;
-    padding: 7px 11px;
+gap: 6px;
 
-    background: #1b2837;
+padding: 7px 11px;
 
-    border: 1px solid #39485d;
-    border-radius: 999px;
+background: white;
 
-    font-size: 14px;
-    line-height: 1;
+border: 1px solid #ddd;
+border-radius: 999px;
 
-    box-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.12);
+font-size: 14px;
+line-height: 1;
+
+box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08);
+
 }
 
 .word-pill-word {
-    font-weight: bold;
-    color: #f5f7fb;
+font-weight: bold;
+color: #222;
 }
 
 .word-pill-score {
-    color: var(--green);
-    font-size: 12px;
-    font-weight: bold;
+color: #777;
+font-size: 12px;
+font-weight: bold;
 }
-
-
-/* =========================================
-   BOARD FRAME
-========================================= */
-
-#board {
-    order: 4;
-
-    width: min(100%, 500px);
-    aspect-ratio: 1 / 1;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    grid-template-rows: repeat(7, minmax(0, 1fr));
-
-    gap: 4px;
-    padding: 9px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #1c2938,
-            #17212e
-        );
-
-    border: 2px solid var(--panel-border);
-    border-radius: 14px;
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
-}
-
-
-/* =========================================
-   BOARD CELLS
-========================================= */
-
-.cell {
-    position: relative;
-
-    min-width: 0;
-    min-height: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #2d3b4d,
-            #273444
-        );
-
-    border: 1px solid #354459;
-    border-radius: 6px;
-
-    color: var(--text);
-
-    font-size: clamp(20px, 5.5vw, 40px);
-    font-weight: bold;
-
-    user-select: none;
-    cursor: pointer;
-
-    transition:
-        background 0.12s ease,
-        border-color 0.12s ease;
-}
-
-.cell:hover {
-    border-color: #52647b;
-}
-
-
-/* =========================================
-   ORIGINAL PUZZLE TILES
-========================================= */
-
-.cell.original-tile {
-    background: #293747;
-
-    border-color: #344256;
-
-    color: var(--text);
-
-    cursor: default;
-}
-
-
-/* =========================================
-   PLAYER TILES
-========================================= */
-
-.cell.player-valid {
-    background: #76db91;
-
-    border: 2px solid #9af0ad;
-
-    color: #173a27;
-}
-
-.cell.player-invalid {
-    background: #e84d94;
-
-    border: 2px solid #ff85b8;
-
-    color: #ffffff;
-}
-
-.cell.player-isolated {
-    background: #f2d779;
-
-    border: 2px solid #ffe9a0;
-
-    color: #3c3215;
-}
-
-
-/* =========================================
-   BONUS SQUARES
-========================================= */
-
-.cell.double-letter {
-    background: #3988ed;
-
-    border: 1px solid #6aabff;
-
-    color: #ffffff;
-}
-
-.cell.triple-letter {
-    background: #2868bb;
-
-    border: 1px solid #5799ec;
-
-    color: #ffffff;
-}
-
-.cell.double-word {
-    background: #e84d94;
-
-    border: 1px solid #ff85b8;
-
-    color: #ffffff;
-}
-
-.cell.triple-word {
-    background: #bd3675;
-
-    border: 1px solid #eb6da5;
-
-    color: #ffffff;
-}
-
-.bonus-label {
-    font-size: clamp(10px, 2.3vw, 16px);
-
-    font-weight: bold;
-    line-height: 1;
-
-    user-select: none;
-}
-
-
-/* =========================================
-   BONUS BADGE
-========================================= */
-
-.bonus-badge {
-    position: absolute;
-
-    top: 3px;
-    left: 4px;
-
-    z-index: 4;
-
-    font-size: clamp(7px, 1.5vw, 11px);
-    line-height: 1;
-
-    padding: 2px 3px;
-
-    border-radius: 3px;
-
-    background: rgba(12, 20, 31, 0.3);
-
-    color: inherit;
-
-    font-weight: bold;
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   BOARD LETTER TILES
-========================================= */
+/* ================================================
+   BOARD TILE
+================================================ */
 
 .board-tile {
     position: relative;
-
     width: 82%;
     height: 82%;
 
@@ -486,421 +213,567 @@ button {
 
     box-sizing: border-box;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fff7df,
-            #f7edcf
-        );
-
-    border: 1px solid #fff5dc;
+    background: #f4dfad;
+    border: 2px solid #c5ae7b;
     border-radius: 6px;
 
-    color: #202b3a;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     user-select: none;
     z-index: 1;
 }
 
+/* BOARD LETTER */
+
 .board-tile .tile-letter {
-    position: relative;
-    z-index: 2;
-
     font-size: clamp(20px, 4vw, 32px);
-    font-weight: 800;
+    font-weight: bold;
     line-height: 1;
-
-    color: inherit;
 }
+
+/* BOARD TILE SCORE */
 
 .board-tile .tile-value {
     position: absolute;
 
     bottom: 5%;
-    right: 7%;
+    right: 8%;
 
     font-size: clamp(7px, 1.2vw, 11px);
-    font-weight: 800;
+    font-weight: bold;
     line-height: 1;
+}
 
-    color: inherit;
 
+/* ================================================
+   ORIGINAL PUZZLE TILE
+================================================ */
+
+.board-tile.original-tile {
+
+    background: #f4dfad;
+
+    border-color: #c5ae7b;
+}
+
+
+/* ================================================
+   PLAYER TILE - VALID
+================================================ */
+
+.board-tile.player-valid {
+
+    background: #bfe8c7;
+
+    border-color: #3b9b4f;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   PLAYER TILE - INVALID
+================================================ */
+
+.board-tile.player-invalid {
+
+    background: #f3b8b8;
+
+    border-color: #c43d3d;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   PLAYER TILE - ISOLATED
+================================================ */
+
+.board-tile.player-isolated {
+
+    background: #f4df83;
+
+    border-color: #c4a72c;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================================
+   BOARD TILE LETTER
+================================================ */
+
+.board-tile .tile-letter {
+
+    position: relative;
+
+    z-index: 2;
+
+    line-height: 1;
+}
+
+
+/* ================================================
+   BOARD TILE VALUE
+================================================ */
+
+.board-tile .tile-value {
+    position: absolute;
+    bottom: 7%;
+    right: 8%;
+    font-size: 0.32em;
+    font-weight: bold;
+    line-height: 1;
     z-index: 3;
 }
 
 
-/* =========================================
-   ORIGINAL PUZZLE LETTER TILES
-========================================= */
+/* ================================================
+   BONUS BADGE
+================================================ */
 
-.board-tile.original-tile {
+.bonus-badge {
+
+    position: absolute;
+
+    top: 3px;
+    left: 4px;
+
+    z-index: 4;
+
+    font-size: clamp(
+        7px,
+        1.5vw,
+        11px
+    );
+
+    line-height: 1;
+
+    padding: 2px 3px;
+
+    border-radius: 3px;
+
     background:
-        linear-gradient(
-            145deg,
-            #fff7df,
-            #f7edcf
+        rgba(
+            255,
+            255,
+            255,
+            0.85
         );
 
-    border-color: #fff5dc;
+    color: #222;
 
-    color: #202b3a;
+    font-weight: bold;
+
+    pointer-events: none;
 }
 
 
-/* =========================================
-   PLAYER LETTER TILES
-========================================= */
+/* ================================================
+   MAKE SURE BONUS COLOUR STAYS ON CELL
+================================================ */
 
-.board-tile.player-valid {
-    background:
-        linear-gradient(
-            145deg,
-            #8ce8a3,
-            #76db91
-        );
-
-    border-color: #a1f2b4;
-
-    color: #173a27;
-
-    box-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.15);
+.cell.double-letter {
+    background: #b9dcf5;
 }
 
-.board-tile.player-invalid {
-    background:
-        linear-gradient(
-            145deg,
-            #f477ad,
-            #e84d94
-        );
-
-    border-color: #ff9ac5;
-
-    color: #ffffff;
+.cell.triple-letter {
+    background: #6fa8dc;
 }
 
-.board-tile.player-isolated {
-    background:
-        linear-gradient(
-            145deg,
-            #f9e7a0,
-            #f2d779
-        );
-
-    border-color: #ffe9a0;
-
-    color: #3c3215;
+.cell.double-word {
+    background: #f4b6c2;
 }
 
+.cell.triple-word {
+    background: #e57373;
+}
+/* -------------------------------- */
+/* BOARD */
+/* -------------------------------- */
 
-/* =========================================
-   TILE MESSAGE
-========================================= */
+#board {
+order: 4;
+
+width: min(100%, 500px);
+
+aspect-ratio: 1 / 1;
+
+margin: 0 auto;
+
+display: grid;
+
+grid-template-columns:
+    repeat(8, 1fr);
+
+grid-template-rows:
+    repeat(8, 1fr);
+
+gap: 3px;
+
+background: #999;
+
+padding: 3px;
+
+border-radius: 3px;
+
+}
+
+/* -------------------------------- */
+/* BOARD CELLS */
+/* -------------------------------- */
+
+.cell {
+position: relative;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: white;
+
+border: 1px solid #ccc;
+
+font-size:
+    clamp(20px, 5.5vw, 40px);
+
+font-weight: bold;
+
+user-select: none;
+
+cursor: pointer;
+
+}
+
+.cell:hover {
+filter: brightness(0.97);
+}
+
+/* Original puzzle tiles */
+
+.cell.original-tile {
+background: #ddd;
+color: #222;
+cursor: default;
+}
+
+/* Player tiles */
+
+.cell.player-valid {
+background: #b8e6b8;
+border: 2px solid #4a9f4a;
+color: #174d17;
+}
+
+.cell.player-invalid {
+background: #f3b0b0;
+border: 2px solid #c94c4c;
+color: #681717;
+}
+
+.cell.player-isolated {
+background: #f3df8b;
+border: 2px solid #d2ae35;
+color: #66500c;
+}
+
+/* -------------------------------- */
+/* BONUS SQUARES */
+/* -------------------------------- */
+
+.cell.double-letter {
+background: #9ed8f5;
+border: 1px solid #4aa8d8;
+}
+
+.cell.triple-letter {
+background: #4f91c4;
+border: 1px solid #28638e;
+color: white;
+}
+
+.cell.double-word {
+background: #f2a8c4;
+border: 1px solid #d86c99;
+}
+
+.cell.triple-word {
+background: #e36b6b;
+border: 1px solid #b73535;
+color: white;
+}
+
+.bonus-label {
+font-size:
+clamp(10px, 2.3vw, 16px);
+
+font-weight: bold;
+
+line-height: 1;
+
+user-select: none;
+
+}
+
+.bonus-badge {
+position: absolute;
+
+top: 3px;
+left: 4px;
+
+z-index: 2;
+
+font-size:
+    clamp(7px, 1.5vw, 11px);
+
+line-height: 1;
+
+padding: 2px 3px;
+
+border-radius: 3px;
+
+background:
+    rgba(255, 255, 255, 0.85);
+
+color: #222;
+
+font-weight: bold;
+
+pointer-events: none;
+
+}
+
+/* -------------------------------- */
+/* TILE MESSAGE */
+/* -------------------------------- */
 
 .tile-message {
-    order: 5;
+order: 5;
 
-    width: min(100%, 500px);
+width: min(100%, 500px);
 
-    min-height: 20px;
+min-height: 20px;
 
-    margin: 0 auto 10px;
+margin: 0 auto 10px auto;
 
-    text-align: center;
+text-align: center;
 
-    font-size: 13px;
+font-size: 13px;
 
-    color: var(--muted);
+color: #777;
+
 }
 
 .tile-message.success {
-    color: var(--green);
-    font-weight: bold;
+color: #39803b;
+font-weight: bold;
 }
 
 .tile-message.error {
-    color: #ff80ad;
-    font-weight: bold;
+color: #b33b3b;
+font-weight: bold;
 }
 
-
-/* =========================================
-   TILE RACK FRAME
-========================================= */
+/* -------------------------------- */
+/* TILE RACK */
+/* -------------------------------- */
 
 #tileRack {
-    order: 6;
+order: 6;
 
-    width: min(100%, 500px);
+width: min(100%, 500px);
 
-    margin: 10px auto 0;
-    padding: 12px;
+margin: 10px auto 0 auto;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+display: flex;
 
-    gap: 8px;
-    flex-wrap: wrap;
+justify-content: center;
+align-items: center;
 
-    background:
-        linear-gradient(
-            145deg,
-            #1c2938,
-            #17212e
-        );
+gap: 8px;
 
-    border: 2px solid var(--panel-border);
-    border-radius: 14px;
+flex-wrap: wrap;
 
-    box-shadow:
-        0 8px 22px rgba(0, 0, 0, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
 }
 
-
-/* =========================================
-   RACK LETTER TILES
-========================================= */
-
 .rack-tile {
-    position: relative;
+position: relative;
 
-    width: 55px;
-    height: 55px;
+width: 55px;
+height: 55px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+display: flex;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fff7df,
-            #f7edcf
-        );
+align-items: center;
+justify-content: center;
 
-    border: 1px solid #fff5dc;
-    border-radius: 6px;
+background: #f5e6c8;
 
-    color: #202b3a;
+border:
+    2px solid #c7a76a;
 
-    cursor: pointer;
+border-radius: 6px;
 
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.15);
+cursor: pointer;
 
-    transition:
-        transform 0.12s ease,
-        border-color 0.12s ease,
-        box-shadow 0.12s ease;
+box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.15);
+
 }
 
 .rack-tile:hover {
-    transform: translateY(-2px);
-
-    border-color: #ffffff;
+transform: translateY(-2px);
 }
 
 .rack-tile.selected {
-    border: 2px solid #75a9ff;
+border: 3px solid #222;
 
-    transform: translateY(-5px);
+transform:
+    translateY(-5px);
 
-    box-shadow:
-        0 0 0 3px rgba(57, 136, 237, 0.2),
-        0 4px 8px rgba(0, 0, 0, 0.2);
+box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .tile-letter {
-    font-size: 28px;
-    font-weight: 800;
-    color: inherit;
+font-size: 28px;
+font-weight: bold;
 }
 
 .tile-value {
-    position: absolute;
+position: absolute;
 
-    bottom: 4px;
-    right: 5px;
+bottom: 4px;
+right: 5px;
 
-    font-size: 11px;
-    font-weight: 800;
+font-size: 11px;
 
-    color: inherit;
+font-weight: bold;
+
 }
 
-
-/* =========================================
-   HIGHEST POSSIBLE SCORE
-========================================= */
+/* -------------------------------- */
+/* HIGHEST POSSIBLE SCORE */
+/* -------------------------------- */
 
 .best-score-box {
-    order: 7;
+order: 7;
 
-    width: min(100%, 500px);
+width: min(100%, 500px);
 
-    margin: 28px auto 0;
-    padding: 16px 18px;
+margin: 28px auto 0 auto;
 
-    background: #192432;
+padding: 14px 18px;
 
-    border: 1px solid #344256;
-    border-radius: 12px;
+background: white;
 
-    text-align: center;
+border:
+    1px solid #ddd;
 
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+
+text-align: center;
+
+box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.06);
+
 }
 
 .best-score-title {
-    font-size: 13px;
+font-size: 13px;
 
-    color: var(--muted);
+color: #777;
 
-    font-weight: bold;
+font-weight: bold;
 
-    margin-bottom: 6px;
+margin-bottom: 6px;
+
 }
 
 .best-score-word {
-    font-size: 24px;
+font-size: 24px;
 
-    color: var(--text);
+font-weight: 800;
 
-    font-weight: 800;
-    letter-spacing: 0.5px;
+letter-spacing: 0.5px;
+
 }
 
 .best-score-value {
-    margin-top: 5px;
+margin-top: 3px;
 
-    font-size: 16px;
+font-size: 16px;
 
-    color: var(--green);
+color: #555;
 
-    font-weight: bold;
+font-weight: bold;
+
 }
 
-
-/* =========================================
-   MOBILE RESPONSIVENESS
-========================================= */
+/* -------------------------------- */
+/* MOBILE */
+/* -------------------------------- */
 
 @media (max-width: 600px) {
 
-    body {
-        padding: 10px;
-    }
+body {
+    padding: 10px;
+}
 
-    .controls {
-        margin-bottom: 12px;
-    }
+.controls {
+    margin-bottom: 12px;
+}
 
-    .score-box {
-        gap: 8px;
-        padding: 6px 10px;
-    }
+#board {
+    gap: 2px;
+    padding: 2px;
+}
 
-    .score-label {
-        font-size: 15px;
-    }
+.cell {
+    font-size: 22px;
+}
 
-    #scoreValue {
-        min-width: 54px;
-        padding: 8px 14px;
-        font-size: 26px;
-    }
+.rack-tile {
+    width: 45px;
+    height: 45px;
+}
 
-    #board {
-        width: 100%;
+.tile-letter {
+    font-size: 23px;
+}
 
-        gap: 3px;
-        padding: 6px;
+.tile-value {
+    font-size: 9px;
 
-        border-radius: 10px;
-    }
+    bottom: 2px;
+    right: 3px;
+}
 
-    .cell {
-        border-radius: 4px;
+#scoreValue {
+    font-size: 30px;
+}
 
-        font-size: clamp(16px, 5.5vw, 28px);
-    }
+.word-pill {
+    padding: 6px 9px;
+    font-size: 13px;
+}
 
-    .board-tile {
-        width: 88%;
-        height: 88%;
+.word-pill-score {
+    font-size: 11px;
+}
 
-        border-radius: 4px;
-    }
+.best-score-box {
+    margin-top: 22px;
+}
 
-    .board-tile .tile-letter {
-        font-size: clamp(15px, 5vw, 25px);
-    }
+.best-score-word {
+    font-size: 21px;
+}
 
-    .board-tile .tile-value {
-        font-size: 9px;
-    }
-
-    .bonus-badge {
-        top: 2px;
-        left: 2px;
-
-        font-size: clamp(6px, 1.8vw, 9px);
-
-        padding: 1px 2px;
-    }
-
-    #tileRack {
-        width: 100%;
-
-        margin-top: 14px;
-        padding: 8px;
-
-        gap: 6px;
-
-        border-radius: 10px;
-    }
-
-    .rack-tile {
-        width: clamp(38px, 11vw, 48px);
-        height: clamp(38px, 11vw, 48px);
-
-        border-radius: 5px;
-    }
-
-    .tile-letter {
-        font-size: clamp(20px, 6vw, 25px);
-    }
-
-    .tile-value {
-        font-size: 9px;
-
-        bottom: 3px;
-        right: 3px;
-    }
-
-    .word-pill {
-        padding: 6px 9px;
-        font-size: 13px;
-    }
-
-    .word-pill-score {
-        font-size: 11px;
-    }
-
-    .best-score-box {
-        margin-top: 22px;
-    }
-
-    .best-score-word {
-        font-size: 21px;
-    }
 }
 
 
@@ -918,39 +791,39 @@ button {
 
     padding: 18px;
 
-    background: #192432;
+    background: white;
 
-    border: 1px solid #344256;
-    border-radius: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 
     box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.2);
+        0 2px 8px rgba(0, 0, 0, 0.1);
 
     z-index: 100;
 }
 
 #generatorPanel h2 {
-    margin: 0 0 8px;
+    margin: 0 0 8px 0;
 
     font-size: 18px;
     font-weight: bold;
 
-    color: var(--text);
+    color: #222;
 }
 
 .panel-description {
-    margin: 0 0 18px;
+    margin: 0 0 18px 0;
 
     font-size: 12px;
     line-height: 1.4;
 
-    color: var(--muted);
+    color: #777;
 }
 
 
-/* =========================================
-   GENERATOR SETTINGS
-========================================= */
+/* -----------------------------------------
+   SETTINGS
+----------------------------------------- */
 
 .setting {
     margin-bottom: 16px;
@@ -964,7 +837,7 @@ button {
     font-size: 13px;
     font-weight: bold;
 
-    color: #e5ebf3;
+    color: #333;
 }
 
 .setting input {
@@ -972,22 +845,23 @@ button {
 
     padding: 9px 10px;
 
-    border: 1px solid #43536a;
+    border: 1px solid #ccc;
     border-radius: 6px;
 
-    background: #111923;
-    color: var(--text);
+    background: #fafafa;
 
     font-family: inherit;
     font-size: 15px;
+
+    box-sizing: border-box;
 }
 
 .setting input:focus {
     outline: none;
 
-    border-color: #75a9ff;
+    border-color: #555;
 
-    background: #151f2d;
+    background: white;
 }
 
 .setting-help {
@@ -997,23 +871,23 @@ button {
 
     font-size: 11px;
 
-    color: #9aa9bb;
+    color: #999;
 }
 
 
-/* =========================================
-   GENERATOR BUTTON
-========================================= */
+/* -----------------------------------------
+   PANEL BUTTON
+----------------------------------------- */
 
 #generatorPanel #generateButton {
     width: 100%;
 
     padding: 10px 12px;
 
-    border: 1px solid #43536a;
+    border: none;
     border-radius: 7px;
 
-    background: #29384b;
+    background: #222;
     color: white;
 
     font-size: 14px;
@@ -1023,28 +897,29 @@ button {
 }
 
 #generatorPanel #generateButton:hover {
-    background: #354961;
+    background: #444;
 }
 
 #generatorPanel #generateButton:disabled {
     opacity: 0.6;
+
     cursor: default;
 }
 
 
-/* =========================================
-   GENERATOR MESSAGE
-========================================= */
+/* -----------------------------------------
+   PANEL MESSAGE
+----------------------------------------- */
 
 .generator-message {
     min-height: 18px;
 
-    margin: -4px 0 10px;
+    margin: -4px 0 10px 0;
 
     font-size: 12px;
     line-height: 1.3;
 
-    color: #ff80ad;
+    color: #b33b3b;
 }
 
 
@@ -1060,11 +935,12 @@ button {
         margin-left: 280px;
         margin-right: auto;
     }
+
 }
 
 
 /* =========================================
-   SMALLER SCREEN GENERATOR LAYOUT
+   MOBILE
 ========================================= */
 
 @media (max-width: 999px) {
@@ -1077,7 +953,7 @@ button {
             500px
         );
 
-        margin: 0 auto 20px;
+        margin: 0 auto 20px auto;
 
         box-sizing: border-box;
     }
@@ -1085,32 +961,5 @@ button {
     .container {
         margin: 0 auto;
     }
+
 }
-
-
-/* =========================================
-   ACCESSIBILITY
-========================================= */
-
-button:focus-visible,
-.cell:focus-visible,
-.rack-tile:focus-visible {
-    outline: 3px solid #75a9ff;
-    outline-offset: 2px;
-}
-
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        transition: none !important;
-        animation: none !important;
-    }
-}
-```
