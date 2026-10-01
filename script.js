@@ -288,7 +288,7 @@ function getGeneratorSettings() {
 
 
     /* --------------------------------
-        VALUES
+       LIMIT VALUES
     -------------------------------- */
 
     gridSize =
@@ -3707,111 +3707,193 @@ function getFullRackSolutionScore(solutionBoard, newKeys) {
     return { score: total, words: scoringWords };
 }
 
+function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget) {
+    const directions = ["horizontal", "vertical"];
+    const words = [...dictionary]
+        .filter(word => word.length >= 2 && word.length <= boardSize)
+        // Check promising words first if the safety limit is reached.
+        .sort((a, b) => {
+            const valueA = [...a].reduce((sum, letter) => sum + (letterValues[letter] || 0), 0);
+            const valueB = [...b].reduce((sum, letter) => sum + (letterValues[letter] || 0), 0);
+            return (b.length * 10 + valueB) - (a.length * 10 + valueA);
+        });
+
+    let bestMove = null;
+    let checked = 0;
+    let limitReached = false;
+
+    for (const word of words) {
+        for (const direction of directions) {
+            const maxRow = direction === "vertical" ? boardSize - word.length : boardSize - 1;
+            const maxCol = direction === "horizontal" ? boardSize - word.length : boardSize - 1;
+
+            for (let row = 0; row <= maxRow; row++) {
+                for (let col = 0; col <= maxCol; col++) {
+                    // Fast pre-check: reject placements that cannot match the board
+                    // or cannot be made from the remaining rack before cloning/scoring.
+                    const remaining = { ...rackCounts };
+                    let usedTiles = 0;
+                    let matches = true;
+                    let touchesBoard = false;
+
+                    const cells = getWordCells(word, row, col, direction);
+                    for (const cell of cells) {
+                        const existing = sourceBoard[cell.row][cell.col];
+                        if (existing !== "") {
+                            if (existing !== cell.letter) {
+                                matches = false;
+                                break;
+                            }
+                            touchesBoard = true;
+                        } else {
+                            if (!remaining[cell.letter]) {
+                                matches = false;
+                                break;
+                            }
+                            remaining[cell.letter]--;
+                            usedTiles++;
+                            const neighbours = [
+                                [cell.row - 1, cell.col], [cell.row + 1, cell.col],
+                                [cell.row, cell.col - 1], [cell.row, cell.col + 1]
+                            ];
+                            if (neighbours.some(([r, c]) =>
+                                isInsideBoard(r, c) && sourceBoard[r][c] !== ""
+                            )) touchesBoard = true;
+                        }
+                    }
+
+                    if (!matches || usedTiles === 0 || !touchesBoard) continue;
+
+                    checked++;
+                    if (checked > searchBudget) {
+                        limitReached = true;
+                        return { move: bestMove, checked, limitReached };
+                    }
+
+                    const move = evaluateSolverPlacement(
+                        word, row, col, direction, sourceBoard, rackCounts
+                    );
+                    if (move && (!bestMove || move.score > bestMove.score)) {
+                        bestMove = move;
+                    }
+                }
+            }
+        }
+    }
+
+    return { move: bestMove, checked, limitReached };
+}
+
 function findBestSolution() {
     if (!dictionary.size || !originalBoard.length || !initialRackTiles.length) return;
 
-    const rackCounts = countLetters(initialRackTiles);
     const startingBoard = cloneBoard(originalBoard);
-    const searchLimit = 25000000;
-    let visitedNodes = 0;
-    let fullSolution = null;
-    const failedStates = new Set();
+    const remainingCounts = countLetters(initialRackTiles);
+    const allNewKeys = [];
+    const moves = [];
+    const allScoringWords = [];
+    let totalScore = 0;
+    let visitedCandidates = 0;
+    const searchLimit = 25000;
+    let searchLimitReached = false;
+    let currentBoard = startingBoard;
 
-    function searchFullRack(targetBoard, remainingCounts, newKeys) {
-        visitedNodes++;
-        if (visitedNodes > searchLimit) return null;
-
-        const remainingLetters = Object.keys(remainingCounts)
-            .sort()
-            .map(letter => `${letter}${remainingCounts[letter]}`)
-            .join("");
-        const stateKey = `${targetBoard.map(row => row.join("")).join("/")}|${remainingLetters}`;
-        if (failedStates.has(stateKey)) return null;
-
-        const remainingTotal = Object.values(remainingCounts)
+    // Greedily choose the highest-scoring legal move, apply it, remove the
+    // letters used by that move, then solve again against the updated board.
+    while (Object.values(remainingCounts).some(count => count > 0)) {
+        const remainingTiles = Object.values(remainingCounts)
             .reduce((sum, count) => sum + count, 0);
+        if (remainingTiles === 0) break;
 
-        if (remainingTotal === 0) {
-            if (!allWordsAreValid(targetBoard)) {
-                failedStates.add(stateKey);
-                return null;
-            }
+        const result = findBestMoveOnBoard(
+            currentBoard,
+            remainingCounts,
+            Math.max(1, searchLimit - visitedCandidates)
+        );
+        visitedCandidates += result.checked;
+        if (result.limitReached) searchLimitReached = true;
 
-            const scored = getFullRackSolutionScore(targetBoard, newKeys);
-            return {
-                board: cloneBoard(targetBoard),
-                newKeys: [...newKeys],
-                score: scored.score,
-                words: scored.words.map(info => info.word),
-                scoringWords: scored.words
-            };
+        const move = result.move;
+        if (!move) break;
+
+        // Store this turn separately so its score is not recalculated against
+        // the final board and premium squares are not counted more than once.
+        const moveRecord = {
+            turn: moves.length + 1,
+            word: move.word,
+            row: move.row,
+            col: move.col,
+            direction: move.direction,
+            score: move.score,
+            usedTiles: move.usedTiles,
+            newKeys: [...move.newKeys],
+            scoringWords: move.scoringWords.map(info => ({ ...info }))
+        };
+        moves.push(moveRecord);
+        totalScore += move.score;
+        currentBoard = cloneBoard(move.board);
+
+        for (const key of move.newKeys) {
+            const [row, col] = key.split(",").map(Number);
+            const letter = currentBoard[row][col];
+            if (remainingCounts[letter] > 0) remainingCounts[letter]--;
+            allNewKeys.push(key);
         }
+        allScoringWords.push(...move.scoringWords.map(info => ({ ...info, move: moveRecord.turn })));
 
-        const frontier = getSolverFrontier(targetBoard);
-        if (!frontier.length) {
-            failedStates.add(stateKey);
-            return null;
-        }
-
-        // Try high-value letters and premium squares first, but also backtrack
-        // through every distinct remaining letter so constrained racks can work.
-        const letters = Object.keys(remainingCounts)
-            .filter(letter => remainingCounts[letter] > 0)
-            .sort((a, b) => (letterValues[b] || 0) - (letterValues[a] || 0));
-
-        for (const letter of letters) {
-            for (const cell of frontier) {
-                if (visitedNodes > searchLimit) return null;
-
-                targetBoard[cell.row][cell.col] = letter;
-                remainingCounts[letter]--;
-                newKeys.push(cell.key);
-
-                const stillPossible =
-                    partialRunCanStillBecomeValid(targetBoard, cell.row, cell.col, "horizontal") &&
-                    partialRunCanStillBecomeValid(targetBoard, cell.row, cell.col, "vertical");
-
-                if (stillPossible) {
-                    const result = searchFullRack(targetBoard, remainingCounts, newKeys);
-                    if (result) return result;
-                }
-
-                newKeys.pop();
-                remainingCounts[letter]++;
-                targetBoard[cell.row][cell.col] = "";
-            }
-        }
-
-        failedStates.add(stateKey);
-        return null;
+        if (searchLimitReached) break;
     }
 
-    fullSolution = searchFullRack(startingBoard, { ...rackCounts }, []);
-    bestSolution = fullSolution;
+    const tilesUsed = allNewKeys.length;
+    const tilesRemaining = initialRackTiles.length - tilesUsed;
+    const fullSolution = tilesRemaining === 0;
+
+    bestSolution = tilesUsed > 0 ? {
+        board: cloneBoard(currentBoard),
+        newKeys: allNewKeys,
+        score: totalScore,
+        words: allScoringWords.map(info => info.word),
+        scoringWords: allScoringWords,
+        moves,
+        tilesUsed,
+        tilesRemaining,
+        fullSolution,
+        searchLimitReached,
+        visitedCandidates
+    } : null;
 
     if (bestScoreWordElement) {
         bestScoreWordElement.textContent = fullSolution
-            ? "All 7 tiles placed"
-            : "No full-rack solution found";
+            ? `${moves.length} turns · all tiles placed`
+            : tilesUsed > 0
+                ? `${moves.length} turns · ${tilesRemaining} tile${tilesRemaining === 1 ? "" : "s"} left`
+                : "No legal move found";
     }
     if (bestScoreValueElement) {
-        bestScoreValueElement.textContent = fullSolution ? `${fullSolution.score} points` : "—";
+        bestScoreValueElement.textContent = bestSolution ? `${totalScore} points` : "—";
     }
     if (revealAnswerButton) {
-        revealAnswerButton.disabled = !fullSolution;
-        revealAnswerButton.textContent = "Reveal Full Answer";
+        revealAnswerButton.disabled = !bestSolution;
+        revealAnswerButton.textContent = fullSolution ? "Reveal Full Answer" : "Reveal Solver Answer";
     }
     if (bestScoreMessageElement) {
-        bestScoreMessageElement.textContent = fullSolution
-            ? `Found a legal arrangement using all 7 rack tiles and creating ${fullSolution.words.length} scoring word${fullSolution.words.length === 1 ? "" : "s"}.`
-            : visitedNodes > searchLimit
-                ? "The full-rack search reached its limit before finding a complete arrangement. Try a new puzzle."
-                : "This rack has no complete legal arrangement found on this board. Try a new puzzle.";
+        if (!bestSolution) {
+            bestScoreMessageElement.textContent = "No legal move was found for these tiles on this board.";
+        } else {
+            const turnSummary = moves.map(move =>
+                `Turn ${move.turn}: ${move.word} (+${move.score}, ${move.usedTiles} tile${move.usedTiles === 1 ? "" : "s"})`
+            ).join(" · ");
+            bestScoreMessageElement.textContent = fullSolution
+                ? `All ${initialRackTiles.length} tiles placed across ${moves.length} turns. ${turnSummary}`
+                : searchLimitReached
+                    ? `Search limit reached after ${tilesUsed} tile${tilesUsed === 1 ? "" : "s"} placed; ${tilesRemaining} remain. ${turnSummary}`
+                    : `No further legal move was found after placing ${tilesUsed} of ${initialRackTiles.length} tiles; ${tilesRemaining} remain. ${turnSummary}`;
+        }
     }
 }
 
 function revealBestAnswer() {
-    if (!bestSolution || bestSolution.newKeys.length !== initialRackTiles.length) return;
+    if (!bestSolution || !bestSolution.newKeys.length) return;
 
     board = cloneBoard(bestSolution.board);
     playerPlacedTiles = {};
@@ -3829,10 +3911,21 @@ function revealBestAnswer() {
     displayBoard();
     calculatePlayerScore();
 
-    if (revealAnswerButton) revealAnswerButton.textContent = "Full Answer Revealed";
+    if (revealAnswerButton) {
+        revealAnswerButton.textContent = bestSolution.fullSolution
+            ? "Full Answer Revealed"
+            : "Solver Answer Revealed";
+    }
     if (tileMessageElement) {
-        tileMessageElement.textContent = `Full answer revealed: all 7 tiles placed for ${bestSolution.score} points.`;
-        tileMessageElement.className = "tile-message success";
+        const moveSummary = bestSolution.moves.map(move =>
+            `Turn ${move.turn}: ${move.word} (+${move.score})`
+        ).join("; ");
+        tileMessageElement.textContent = bestSolution.fullSolution
+            ? `Solver answer revealed: all ${initialRackTiles.length} tiles placed across ${bestSolution.moves.length} turns for ${bestSolution.score} total points. ${moveSummary}`
+            : `Solver answer revealed: ${bestSolution.tilesUsed} of ${initialRackTiles.length} tiles placed for ${bestSolution.score} total points. ${bestSolution.tilesRemaining} tile${bestSolution.tilesRemaining === 1 ? "" : "s"} could not be placed. ${moveSummary}`;
+        tileMessageElement.className = bestSolution.fullSolution
+            ? "tile-message success"
+            : "tile-message";
     }
 }
 
