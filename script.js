@@ -3111,12 +3111,6 @@ function calculateHiddenScore() {
                 type === "double-word"
         ).length;
 
-        const tripleWordCount =
-        Object.values(bonusSquares).filter(
-            type =>
-                type === "triple-word"
-        ).length;
-
     /*
      * This follows the Hidden Score formula
      * discussed previously:
@@ -3167,7 +3161,7 @@ function calculateHiddenScore() {
 
     const tripleWordScore =
         10 *
-        tripleWordCount;
+        doubleWordCount;
 
     const hiddenScore =
         tripleWordScore +
@@ -3297,11 +3291,21 @@ function updateScoreDisplay(
             );
         }
 
-        hiddenScoreNumber.textContent =
+        const hiddenScore =
             calculateHiddenScore();
+
+        hiddenScoreNumber.textContent =
+            hiddenScore;
 
         scoreValueElement.textContent =
             currentScore;
+
+        /* Update the three achievement stars beneath Hidden Score. */
+        updateAchievementStars(
+            currentScore,
+            hiddenScore,
+            bonusText.includes("7-tile")
+        );
     }
 
 
@@ -3312,6 +3316,64 @@ function updateScoreDisplay(
         scoreBonusElement.textContent =
             bonusText;
     }
+}
+
+
+function updateAchievementStars(
+    currentScore,
+    hiddenScore,
+    earnedAllTilesBonus
+) {
+    let starsElement = document.getElementById("achievementStars");
+
+    if (!starsElement) {
+        starsElement = document.createElement("div");
+        starsElement.id = "achievementStars";
+        starsElement.className = "achievement-stars";
+        starsElement.setAttribute("aria-label", "Puzzle achievement stars");
+
+        const hiddenScoreElement = document.getElementById("hiddenScoreValue");
+        if (hiddenScoreElement && hiddenScoreElement.parentNode) {
+            hiddenScoreElement.insertAdjacentElement("afterend", starsElement);
+        } else if (scoreValueElement && scoreValueElement.parentNode) {
+            scoreValueElement.parentNode.insertBefore(starsElement, scoreValueElement);
+        }
+    }
+
+    /*
+     * The score thresholds determine the two- and three-star levels.
+     * The all-tiles bonus independently earns the one-star level.
+     */
+    let earnedStars = 0;
+
+    if (earnedAllTilesBonus) {
+        earnedStars = 1;
+    }
+
+    if (currentScore > hiddenScore - 8 && currentScore <= hiddenScore) {
+        earnedStars = Math.max(earnedStars, 2);
+    }
+
+    if (currentScore > hiddenScore) {
+        earnedStars = 3;
+    }
+
+    starsElement.innerHTML = "";
+
+    for (let i = 1; i <= 3; i++) {
+        const star = document.createElement("span");
+        const earned = i <= earnedStars;
+
+        star.className = earned ? "achievement-star earned" : "achievement-star";
+        star.textContent = "★";
+        star.setAttribute("aria-hidden", "true");
+        starsElement.appendChild(star);
+    }
+
+    starsElement.setAttribute(
+        "aria-label",
+        `${earnedStars} of 3 stars earned`
+    );
 }
 
 
