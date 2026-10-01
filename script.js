@@ -288,7 +288,7 @@ function getGeneratorSettings() {
 
 
     /* --------------------------------
-       LIMIT VALUES
+        VALUES
     -------------------------------- */
 
     gridSize =
@@ -3712,7 +3712,7 @@ function findBestSolution() {
 
     const rackCounts = countLetters(initialRackTiles);
     const startingBoard = cloneBoard(originalBoard);
-    const searchLimit = 250000;
+    const searchLimit = 2500000;
     let visitedNodes = 0;
     let fullSolution = null;
     const failedStates = new Set();
