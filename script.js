@@ -3599,68 +3599,239 @@ function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCou
     };
 }
 
-function findBestSolution() {
-    if (!dictionary.size || !originalBoard.length || !initialRackTiles.length) return;
+function getSolverFrontier(targetBoard) {
+    const frontier = new Set();
+    const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
-    const sourceBoard = cloneBoard(originalBoard);
-    const rackCounts = countLetters(initialRackTiles);
-    const candidateWords = [...dictionary].filter(word => word.length >= 2 && word.length <= boardSize);
-    let best = null;
+    for (let row = 0; row < boardSize; row++) {
+        for (let col = 0; col < boardSize; col++) {
+            if (targetBoard[row][col] === "") continue;
 
-    // Search every dictionary word, starting cell, and direction.
-    for (const word of candidateWords) {
-        for (let row = 0; row < boardSize; row++) {
-            for (let col = 0; col < boardSize; col++) {
-                const horizontal = evaluateSolverPlacement(word, row, col, "horizontal", sourceBoard, rackCounts);
-                if (horizontal && (!best || horizontal.score > best.score)) best = horizontal;
-
-                const vertical = evaluateSolverPlacement(word, row, col, "vertical", sourceBoard, rackCounts);
-                if (vertical && (!best || vertical.score > best.score)) best = vertical;
+            for (const [dr, dc] of directions) {
+                const nextRow = row + dr;
+                const nextCol = col + dc;
+                if (!isInsideBoard(nextRow, nextCol)) continue;
+                if (targetBoard[nextRow][nextCol] !== "") continue;
+                frontier.add(keyForCell(nextRow, nextCol));
             }
         }
     }
 
-    bestSolution = best;
-    if (bestScoreWordElement) bestScoreWordElement.textContent = best ? best.word : "No legal move";
-    if (bestScoreValueElement) bestScoreValueElement.textContent = best ? `${best.score} points` : "—";
-    if (revealAnswerButton) revealAnswerButton.disabled = !best;
+    return [...frontier].map(key => {
+        const [row, col] = key.split(",").map(Number);
+        const bonus = getBonusSquare(row, col);
+        const bonusPriority = {
+            "triple-word": 40,
+            "double-word": 30,
+            "triple-letter": 20,
+            "double-letter": 10
+        }[bonus] || 0;
+        return { row, col, key, priority: bonusPriority };
+    }).sort((a, b) => b.priority - a.priority);
+}
+
+function getRunThroughCell(targetBoard, row, col, direction) {
+    const dr = direction === "vertical" ? 1 : 0;
+    const dc = direction === "horizontal" ? 1 : 0;
+    let startRow = row;
+    let startCol = col;
+
+    while (
+        isInsideBoard(startRow - dr, startCol - dc) &&
+        targetBoard[startRow - dr][startCol - dc] !== ""
+    ) {
+        startRow -= dr;
+        startCol -= dc;
+    }
+
+    let word = "";
+    let endRow = startRow;
+    let endCol = startCol;
+    while (
+        isInsideBoard(endRow, endCol) &&
+        targetBoard[endRow][endCol] !== ""
+    ) {
+        word += targetBoard[endRow][endCol];
+        endRow += dr;
+        endCol += dc;
+    }
+
+    return {
+        word,
+        startRow,
+        startCol,
+        endRow,
+        endCol,
+        dr,
+        dc
+    };
+}
+
+// An unfinished word may still become valid if one of its ends is empty.
+// If both ends are blocked, an invalid word can never be repaired later.
+function partialRunCanStillBecomeValid(targetBoard, row, col, direction) {
+    const run = getRunThroughCell(targetBoard, row, col, direction);
+    if (run.word.length < 2 || dictionary.has(run.word)) return true;
+
+    const canExtendBefore =
+        isInsideBoard(run.startRow - run.dr, run.startCol - run.dc) &&
+        targetBoard[run.startRow - run.dr][run.startCol - run.dc] === "";
+    const canExtendAfter =
+        isInsideBoard(run.endRow, run.endCol) &&
+        targetBoard[run.endRow][run.endCol] === "";
+
+    return canExtendBefore || canExtendAfter;
+}
+
+function getFullRackSolutionScore(solutionBoard, newKeys) {
+    const keySet = new Set(newKeys);
+    const scoringWords = getAllWords(solutionBoard).filter(info =>
+        getWordCells(info.word, info.row, info.col, info.direction)
+            .some(cell => keySet.has(keyForCell(cell.row, cell.col)))
+    );
+
+    let total = scoringWords.reduce(
+        (sum, info) => sum + scoreWordOnCandidateBoard(solutionBoard, info, keySet),
+        0
+    );
+
+    const usesAllTilesInOneWord = scoringWords.some(info =>
+        getWordCells(info.word, info.row, info.col, info.direction)
+            .filter(cell => keySet.has(keyForCell(cell.row, cell.col))).length === 7
+    );
+
+    // Keep the game's existing 7-tile bonus: +100 if one word uses all tiles,
+    // otherwise +50 when all seven rack tiles are used in the same placement.
+    total += usesAllTilesInOneWord ? 100 : 50;
+
+    return { score: total, words: scoringWords };
+}
+
+function findBestSolution() {
+    if (!dictionary.size || !originalBoard.length || !initialRackTiles.length) return;
+
+    const rackCounts = countLetters(initialRackTiles);
+    const startingBoard = cloneBoard(originalBoard);
+    const searchLimit = 25000;
+    let visitedNodes = 0;
+    let fullSolution = null;
+    const failedStates = new Set();
+
+    function searchFullRack(targetBoard, remainingCounts, newKeys) {
+        visitedNodes++;
+        if (visitedNodes > searchLimit) return null;
+
+        const remainingLetters = Object.keys(remainingCounts)
+            .sort()
+            .map(letter => `${letter}${remainingCounts[letter]}`)
+            .join("");
+        const stateKey = `${targetBoard.map(row => row.join("")).join("/")}|${remainingLetters}`;
+        if (failedStates.has(stateKey)) return null;
+
+        const remainingTotal = Object.values(remainingCounts)
+            .reduce((sum, count) => sum + count, 0);
+
+        if (remainingTotal === 0) {
+            if (!allWordsAreValid(targetBoard)) {
+                failedStates.add(stateKey);
+                return null;
+            }
+
+            const scored = getFullRackSolutionScore(targetBoard, newKeys);
+            return {
+                board: cloneBoard(targetBoard),
+                newKeys: [...newKeys],
+                score: scored.score,
+                words: scored.words.map(info => info.word),
+                scoringWords: scored.words
+            };
+        }
+
+        const frontier = getSolverFrontier(targetBoard);
+        if (!frontier.length) {
+            failedStates.add(stateKey);
+            return null;
+        }
+
+        // Try high-value letters and premium squares first, but also backtrack
+        // through every distinct remaining letter so constrained racks can work.
+        const letters = Object.keys(remainingCounts)
+            .filter(letter => remainingCounts[letter] > 0)
+            .sort((a, b) => (letterValues[b] || 0) - (letterValues[a] || 0));
+
+        for (const letter of letters) {
+            for (const cell of frontier) {
+                if (visitedNodes > searchLimit) return null;
+
+                targetBoard[cell.row][cell.col] = letter;
+                remainingCounts[letter]--;
+                newKeys.push(cell.key);
+
+                const stillPossible =
+                    partialRunCanStillBecomeValid(targetBoard, cell.row, cell.col, "horizontal") &&
+                    partialRunCanStillBecomeValid(targetBoard, cell.row, cell.col, "vertical");
+
+                if (stillPossible) {
+                    const result = searchFullRack(targetBoard, remainingCounts, newKeys);
+                    if (result) return result;
+                }
+
+                newKeys.pop();
+                remainingCounts[letter]++;
+                targetBoard[cell.row][cell.col] = "";
+            }
+        }
+
+        failedStates.add(stateKey);
+        return null;
+    }
+
+    fullSolution = searchFullRack(startingBoard, { ...rackCounts }, []);
+    bestSolution = fullSolution;
+
+    if (bestScoreWordElement) {
+        bestScoreWordElement.textContent = fullSolution
+            ? "All 7 tiles placed"
+            : "No full-rack solution found";
+    }
+    if (bestScoreValueElement) {
+        bestScoreValueElement.textContent = fullSolution ? `${fullSolution.score} points` : "—";
+    }
+    if (revealAnswerButton) {
+        revealAnswerButton.disabled = !fullSolution;
+        revealAnswerButton.textContent = "Reveal Full Answer";
+    }
     if (bestScoreMessageElement) {
-        bestScoreMessageElement.textContent = best
-            ? `Uses ${best.usedTiles} rack tile${best.usedTiles === 1 ? "" : "s"}; includes word and cross-word scores.`
-            : "No legal move found with this rack.";
+        bestScoreMessageElement.textContent = fullSolution
+            ? `Found a legal arrangement using all 7 rack tiles and creating ${fullSolution.words.length} scoring word${fullSolution.words.length === 1 ? "" : "s"}.`
+            : visitedNodes > searchLimit
+                ? "The full-rack search reached its limit before finding a complete arrangement. Try a new puzzle."
+                : "This rack has no complete legal arrangement found on this board. Try a new puzzle.";
     }
 }
 
 function revealBestAnswer() {
-    if (!bestSolution) return;
+    if (!bestSolution || bestSolution.newKeys.length !== initialRackTiles.length) return;
 
-    // Reset to the original puzzle, then show the solver's full recommended move.
     board = cloneBoard(bestSolution.board);
     playerPlacedTiles = {};
-    const usedLetters = [];
 
     for (const key of bestSolution.newKeys) {
         const [row, col] = key.split(",").map(Number);
-        const letter = board[row][col];
-        playerPlacedTiles[key] = { letter, row, col };
-        usedLetters.push(letter);
+        playerPlacedTiles[key] = { letter: board[row][col], row, col };
     }
 
-    playerTiles = [...initialRackTiles];
-    for (const letter of usedLetters) {
-        const index = playerTiles.indexOf(letter);
-        if (index !== -1) playerTiles.splice(index, 1);
-    }
-
+    playerTiles = [];
     selectedRackTile = null;
     answerRevealed = true;
+
     displayTileRack();
     displayBoard();
     calculatePlayerScore();
 
-    if (revealAnswerButton) revealAnswerButton.textContent = "Answer Revealed";
+    if (revealAnswerButton) revealAnswerButton.textContent = "Full Answer Revealed";
     if (tileMessageElement) {
-        tileMessageElement.textContent = `Answer: place ${bestSolution.word} ${bestSolution.direction} — ${bestSolution.score} points.`;
+        tileMessageElement.textContent = `Full answer revealed: all 7 tiles placed for ${bestSolution.score} points.`;
         tileMessageElement.className = "tile-message success";
     }
 }
