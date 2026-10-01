@@ -3506,13 +3506,13 @@ function scoreWordOnCandidateBoard(candidateBoard, wordInfo, newlyPlacedKeys) {
         let letterMultiplier = 1;
 
         // Premium squares only count when a tile is newly placed on them.
-      //  if (newlyPlacedKeys.has(key)) {
-     //       const bonus = getBonusSquare(cell.row, cell.col);
-      //      if (bonus === "double-letter") letterMultiplier = 2;
-       //     if (bonus === "triple-letter") letterMultiplier = 3;
-        //    if (bonus === "double-word") wordMultiplier *= 2;
-        //    if (bonus === "triple-word") wordMultiplier *= 3;
-       // }
+        if (newlyPlacedKeys.has(key)) {
+            const bonus = getBonusSquare(cell.row, cell.col);
+           if (bonus === "double-letter") letterMultiplier = 2;
+           if (bonus === "triple-letter") letterMultiplier = 3;
+            if (bonus === "double-word") wordMultiplier *= 2;
+            if (bonus === "triple-word") wordMultiplier *= 3;
+       }
         letterTotal += value * letterMultiplier;
     }
     return letterTotal * wordMultiplier;
