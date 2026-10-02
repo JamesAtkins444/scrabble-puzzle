@@ -2993,6 +2993,17 @@ function getPlayerScoringWords() {
 
 function calculatePlayerScore() {
 
+    // When the solver answer is revealed, use the solver's turn-by-turn
+    // scoring total. Re-scoring every tile on the completed board would apply
+    // reusable premium squares to all historical turns at once and inflate
+    // the displayed total compared with the solver's move summary.
+    if (answerRevealed && bestSolution) {
+        score = bestSolution.score;
+        updateScoreDisplay(score, "Solver turn-by-turn total");
+        displayScoringWords(bestSolution.scoringWords || []);
+        return score;
+    }
+
     const scoringWords =
         getPlayerScoringWords();
 
@@ -3827,7 +3838,17 @@ function findBestSolution() {
             score: move.score,
             usedTiles: move.usedTiles,
             newKeys: [...move.newKeys],
-            scoringWords: move.scoringWords.map(info => ({ ...info }))
+            // Save each word's score as it was scored on this specific turn.
+            // This is important because the custom puzzle rule allows premium
+            // squares to be reused on later turns.
+            scoringWords: move.scoringWords.map(info => ({
+                ...info,
+                score: scoreWordOnCandidateBoard(
+                    move.board,
+                    info,
+                    new Set(move.newKeys)
+                )
+            }))
         };
         moves.push(moveRecord);
         totalScore += move.score;
@@ -3839,7 +3860,7 @@ function findBestSolution() {
             if (remainingCounts[letter] > 0) remainingCounts[letter]--;
             allNewKeys.push(key);
         }
-        allScoringWords.push(...move.scoringWords.map(info => ({ ...info, move: moveRecord.turn })));
+        allScoringWords.push(...moveRecord.scoringWords.map(info => ({ ...info, move: moveRecord.turn })));
 
         if (searchLimitReached) break;
     }
