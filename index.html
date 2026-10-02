@@ -118,13 +118,9 @@
         class="score-box"
     >
 
-        <span class="score-label">
-            Score
-        </span>
+        <span class="score-label">Score</span>
 
-        <span id="scoreValue">
-            0
-        </span>
+        <span id="scoreValue" aria-label="Your score compared with the solver score">0/—</span>
 
         <span
             id="scoreBonus"
@@ -147,6 +143,10 @@
 
 
     <div id="tileRack"></div>
+
+    <button id="shuffleRackButton" class="shuffle-rack-button" type="button" aria-label="Shuffle rack tiles" title="Shuffle rack tiles">
+        <span aria-hidden="true">⟳</span> Shuffle tiles
+    </button>
 
     <section id="bestScoreBox" class="best-score-box" aria-live="polite">
         <div class="best-score-title">Full-Rack Solution</div>
