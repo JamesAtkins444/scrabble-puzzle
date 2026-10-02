@@ -3505,14 +3505,14 @@ function scoreWordOnCandidateBoard(candidateBoard, wordInfo, newlyPlacedKeys) {
         const value = letterValues[letter] || 0;
         let letterMultiplier = 1;
 
-        // Premium squares only count when a tile is newly placed on them.
-        if (newlyPlacedKeys.has(key)) {
-            const bonus = getBonusSquare(cell.row, cell.col);
-           if (bonus === "double-letter") letterMultiplier = 2;
-           if (bonus === "triple-letter") letterMultiplier = 3;
-            if (bonus === "double-word") wordMultiplier *= 2;
-            if (bonus === "triple-word") wordMultiplier *= 3;
-       }
+        // In this puzzle game's solver, premium squares remain active for
+        // any scoring word that crosses them, even if the tile was placed on
+        // an earlier turn. This lets later moves reuse a premium square.
+        const bonus = getBonusSquare(cell.row, cell.col);
+        if (bonus === "double-letter") letterMultiplier = 2;
+        if (bonus === "triple-letter") letterMultiplier = 3;
+        if (bonus === "double-word") wordMultiplier *= 2;
+        if (bonus === "triple-word") wordMultiplier *= 3;
         letterTotal += value * letterMultiplier;
     }
     return letterTotal * wordMultiplier;
@@ -3707,7 +3707,7 @@ function getFullRackSolutionScore(solutionBoard, newKeys) {
     return { score: total, words: scoringWords };
 }
 
-function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget, prioritizeTileUsage = false) {
+function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget) {
     const directions = ["horizontal", "vertical"];
     const words = [...dictionary]
         .filter(word => word.length >= 2 && word.length <= boardSize)
@@ -3773,17 +3773,8 @@ function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget, prioritizeTi
                     const move = evaluateSolverPlacement(
                         word, row, col, direction, sourceBoard, rackCounts
                     );
-                    if (move) {
-                        // On the opening turn, keep the existing score-first strategy.
-                        // After that, use as many remaining tiles as possible first,
-                        // then use score to break ties between moves using that count.
-                        const isBetterMove = !bestMove || (
-                            prioritizeTileUsage
-                                ? move.usedTiles > bestMove.usedTiles ||
-                                    (move.usedTiles === bestMove.usedTiles && move.score > bestMove.score)
-                                : move.score > bestMove.score
-                        );
-                        if (isBetterMove) bestMove = move;
+                    if (move && (!bestMove || move.score > bestMove.score)) {
+                        bestMove = move;
                     }
                 }
             }
@@ -3807,8 +3798,8 @@ function findBestSolution() {
     let searchLimitReached = false;
     let currentBoard = startingBoard;
 
-    // Keep the opening move score-first. From turn two onward, prioritize
-    // using the largest number of remaining tiles, then maximize that move score.
+    // Greedily choose the highest-scoring legal move, apply it, remove the
+    // letters used by that move, then solve again against the updated board.
     while (Object.values(remainingCounts).some(count => count > 0)) {
         const remainingTiles = Object.values(remainingCounts)
             .reduce((sum, count) => sum + count, 0);
@@ -3817,8 +3808,7 @@ function findBestSolution() {
         const result = findBestMoveOnBoard(
             currentBoard,
             remainingCounts,
-            searchLimit,
-            moves.length > 0
+            Math.max(1, searchLimit - visitedCandidates)
         );
         visitedCandidates += result.checked;
         if (result.limitReached) searchLimitReached = true;
@@ -3851,9 +3841,7 @@ function findBestSolution() {
         }
         allScoringWords.push(...move.scoringWords.map(info => ({ ...info, move: moveRecord.turn })));
 
-        // Continue to the next turn even if this turn reached its candidate cap;
-        // each turn gets its own search budget so one expensive turn does not
-        // prevent the solver from trying to place the remaining tiles.
+        if (searchLimitReached) break;
     }
 
     const tilesUsed = allNewKeys.length;
