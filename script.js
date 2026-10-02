@@ -3266,7 +3266,7 @@ function updateScoreDisplay(
                 );
 
             hiddenScoreLabel.textContent =
-                "Hidden Score ";
+                "Solver Score ";
 
             hiddenScoreLabel.style.fontSize =
                 "12px";
@@ -3330,19 +3330,24 @@ function updateScoreDisplay(
             );
         }
 
-        const hiddenScore =
-            calculateHiddenScore();
+        // Use the verified solver total as the target for the daily challenge.
+        // Fall back to the legacy estimate only until a solver result is ready.
+        const solverScore =
+            bestSolution && Number.isFinite(bestSolution.score)
+                ? bestSolution.score
+                : null;
 
         hiddenScoreNumber.textContent =
-            hiddenScore;
+            solverScore === null
+                ? "—"
+                : solverScore;
 
         scoreValueElement.textContent =
             currentScore;
 
-        /* Update the three achievement stars beneath Hidden Score. */
         updateAchievementStars(
             currentScore,
-            hiddenScore,
+            solverScore,
             bonusText.includes("7-tile")
         );
     }
@@ -3360,7 +3365,7 @@ function updateScoreDisplay(
 
 function updateAchievementStars(
     currentScore,
-    hiddenScore,
+    solverScore,
     earnedAllTilesBonus
 ) {
     let starsElement = document.getElementById("achievementStars");
@@ -3371,29 +3376,24 @@ function updateAchievementStars(
         starsElement.className = "achievement-stars";
         starsElement.setAttribute("aria-label", "Puzzle achievement stars");
 
-        const hiddenScoreElement = document.getElementById("hiddenScoreValue");
-        if (hiddenScoreElement && hiddenScoreElement.parentNode) {
-            hiddenScoreElement.insertAdjacentElement("afterend", starsElement);
+        const solverScoreElement = document.getElementById("hiddenScoreValue");
+        if (solverScoreElement && solverScoreElement.parentNode) {
+            solverScoreElement.insertAdjacentElement("afterend", starsElement);
         } else if (scoreValueElement && scoreValueElement.parentNode) {
             scoreValueElement.parentNode.insertBefore(starsElement, scoreValueElement);
         }
     }
 
-    /*
-     * The score thresholds determine the two- and three-star levels.
-     * The all-tiles bonus independently earns the one-star level.
-     */
-    let earnedStars = 0;
+    let earnedStars = earnedAllTilesBonus ? 1 : 0;
+    const hasSolverScore = Number.isFinite(solverScore);
+    const beatsSolver = hasSolverScore && currentScore > solverScore;
 
-    if (earnedAllTilesBonus) {
-        earnedStars = 1;
-    }
-
-    if (currentScore > hiddenScore - 8 && currentScore <= hiddenScore) {
+    if (hasSolverScore && currentScore < solverScore && currentScore >= solverScore - 10) {
         earnedStars = Math.max(earnedStars, 2);
     }
 
-    if (currentScore > hiddenScore) {
+    // Matching or beating the solver total earns all three stars.
+    if (hasSolverScore && currentScore >= solverScore) {
         earnedStars = 3;
     }
 
@@ -3402,19 +3402,33 @@ function updateAchievementStars(
     for (let i = 1; i <= 3; i++) {
         const star = document.createElement("span");
         const earned = i <= earnedStars;
-
         star.className = earned ? "achievement-star earned" : "achievement-star";
         star.textContent = "★";
         star.setAttribute("aria-hidden", "true");
         starsElement.appendChild(star);
     }
 
+    // The crown is present but hidden until the player beats the solver.
+    const crown = document.createElement("span");
+    crown.className = "achievement-crown";
+    crown.textContent = "👑";
+    crown.title = "Solver beaten!";
+    crown.setAttribute("role", "img");
+    crown.setAttribute("aria-label", "Solver beaten");
+    crown.hidden = !beatsSolver;
+    crown.style.display = beatsSolver ? "inline-flex" : "none";
+    crown.style.alignItems = "center";
+    crown.style.marginLeft = "5px";
+    crown.style.fontSize = "22px";
+    crown.style.lineHeight = "1";
+    crown.style.verticalAlign = "middle";
+    starsElement.appendChild(crown);
+
     starsElement.setAttribute(
         "aria-label",
-        `${earnedStars} of 3 stars earned`
+        `${earnedStars} of 3 stars earned${beatsSolver ? "; solver beaten" : ""}`
     );
 }
-
 
 function displayScoringWords(
     scoringWords
@@ -3894,10 +3908,17 @@ function findBestSolution() {
     const tilesRemaining = initialRackTiles.length - tilesUsed;
     const fullSolution = tilesRemaining === 0;
 
+    // The solver awards +100 when all seven tiles are played in one turn
+    // (already included in that move's score). If all seven are used over
+    // multiple turns, award the normal +50 completion bonus here.
+    const completionBonus = fullSolution && moves.length > 1 ? 50 : 0;
+    totalScore += completionBonus;
+
     bestSolution = tilesUsed > 0 ? {
         board: cloneBoard(currentBoard),
         newKeys: allNewKeys,
         score: totalScore,
+        completionBonus,
         words: allScoringWords.map(info => info.word),
         scoringWords: allScoringWords,
         moves,
@@ -3922,6 +3943,10 @@ function findBestSolution() {
         revealAnswerButton.disabled = !bestSolution;
         revealAnswerButton.textContent = fullSolution ? "Reveal Full Answer" : "Reveal Solver Answer";
     }
+    // Refresh the displayed solver target and achievement stars now that the
+    // solver has finished calculating this puzzle.
+    updateScoreDisplay(score, "");
+
     if (bestScoreMessageElement) {
         if (!bestSolution) {
             bestScoreMessageElement.textContent = "No legal move was found for these tiles on this board.";
@@ -3930,7 +3955,9 @@ function findBestSolution() {
                 `Turn ${move.turn}: ${move.word} (+${move.score}, ${move.usedTiles} tile${move.usedTiles === 1 ? "" : "s"})`
             ).join(" · ");
             bestScoreMessageElement.textContent = fullSolution
-                ? `All ${initialRackTiles.length} tiles placed across ${moves.length} turns. ${turnSummary}`
+                ? moves.length === 1
+                    ? `All ${initialRackTiles.length} tiles placed in one turn, including the +100 7-tile word bonus. ${turnSummary}`
+                    : `All ${initialRackTiles.length} tiles placed across ${moves.length} turns, including the +50 all-tiles bonus. ${turnSummary}`
                 : searchLimitReached
                     ? `Search limit reached after ${tilesUsed} tile${tilesUsed === 1 ? "" : "s"} placed; ${tilesRemaining} remain. ${turnSummary}`
                     : `No further legal move was found after placing ${tilesUsed} of ${initialRackTiles.length} tiles; ${tilesRemaining} remain. ${turnSummary}`;
