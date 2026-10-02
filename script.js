@@ -2993,17 +2993,6 @@ function getPlayerScoringWords() {
 
 function calculatePlayerScore() {
 
-    // When the solver answer is revealed, use the solver's turn-by-turn
-    // scoring total. Re-scoring every tile on the completed board would apply
-    // reusable premium squares to all historical turns at once and inflate
-    // the displayed total compared with the solver's move summary.
-    if (answerRevealed && bestSolution) {
-        score = bestSolution.score;
-        updateScoreDisplay(score, "Solver turn-by-turn total");
-        displayScoringWords(bestSolution.scoringWords || []);
-        return score;
-    }
-
     const scoringWords =
         getPlayerScoringWords();
 
@@ -3214,160 +3203,25 @@ function calculateHiddenScore() {
 }
 
 
-function updateScoreDisplay(
-    currentScore,
-    bonusText = ""
-) {
+function updateScoreDisplay(currentScore, bonusText = "") {
+    const hiddenScore = calculateHiddenScore();
+    const solverScore = bestSolution ? bestSolution.score : "—";
 
-    /*
-     * Hidden Score
-     *
-     * Create the display element here so no other
-     * HTML structure needs to be changed.
-     */
-
-    if (
-        scoreValueElement
-    ) {
-
-        let hiddenScoreElement =
-            document.getElementById(
-                "hiddenScoreValue"
-            );
-
-        if (!hiddenScoreElement) {
-
-            hiddenScoreElement =
-                document.createElement(
-                    "div"
-                );
-
-            hiddenScoreElement.id =
-                "hiddenScoreValue";
-
-            hiddenScoreElement.style.fontSize =
-                "22px";
-
-            hiddenScoreElement.style.fontWeight =
-                "800";
-
-            hiddenScoreElement.style.textAlign =
-                "center";
-
-            hiddenScoreElement.style.marginBottom =
-                "6px";
-
-            hiddenScoreElement.style.lineHeight =
-                "1";
-
-            const hiddenScoreLabel =
-                document.createElement(
-                    "span"
-                );
-
-            hiddenScoreLabel.textContent =
-                "Solver Score ";
-
-            hiddenScoreLabel.style.fontSize =
-                "12px";
-
-            hiddenScoreLabel.style.fontWeight =
-                "600";
-
-            hiddenScoreLabel.style.opacity =
-                "0.6";
-
-            hiddenScoreLabel.style.marginRight =
-                "6px";
-
-            hiddenScoreElement.appendChild(
-                hiddenScoreLabel
-            );
-
-            const scoreRowElement =
-                scoreValueElement.parentNode;
-
-            if (
-                scoreRowElement.parentNode
-            ) {
-
-                scoreRowElement.parentNode.insertBefore(
-                    hiddenScoreElement,
-                    scoreRowElement
-                );
-
-            } else {
-
-                scoreRowElement.insertBefore(
-                    hiddenScoreElement,
-                    scoreValueElement
-                );
-            }
-        }
-
-        /*
-         * Keep the label and number separate so
-         * only the number changes.
-         */
-
-        let hiddenScoreNumber =
-            document.getElementById(
-                "hiddenScoreNumber"
-            );
-
-        if (!hiddenScoreNumber) {
-
-            hiddenScoreNumber =
-                document.createElement(
-                    "span"
-                );
-
-            hiddenScoreNumber.id =
-                "hiddenScoreNumber";
-
-            hiddenScoreElement.appendChild(
-                hiddenScoreNumber
-            );
-        }
-
-        // Use the verified solver total as the target for the daily challenge.
-        // Fall back to the legacy estimate only until a solver result is ready.
-        const solverScore =
-            bestSolution && Number.isFinite(bestSolution.score)
-                ? bestSolution.score
-                : null;
-
-        hiddenScoreNumber.textContent =
-            solverScore === null
-                ? "—"
-                : solverScore;
-
-        scoreValueElement.textContent =
-            currentScore;
-
+    if (scoreValueElement) {
+        scoreValueElement.textContent = `${currentScore}/${solverScore}`;
         updateAchievementStars(
             currentScore,
-            solverScore,
+            hiddenScore,
             bonusText.includes("7-tile")
         );
     }
 
-
-    if (
-        scoreBonusElement
-    ) {
-
-        scoreBonusElement.textContent =
-            bonusText;
+    if (scoreBonusElement) {
+        scoreBonusElement.textContent = bonusText;
     }
 }
 
-
-function updateAchievementStars(
-    currentScore,
-    solverScore,
-    earnedAllTilesBonus
-) {
+function updateAchievementStars(currentScore, hiddenScore, earnedAllTilesBonus) {
     let starsElement = document.getElementById("achievementStars");
 
     if (!starsElement) {
@@ -3376,135 +3230,31 @@ function updateAchievementStars(
         starsElement.className = "achievement-stars";
         starsElement.setAttribute("aria-label", "Puzzle achievement stars");
 
-        const solverScoreElement = document.getElementById("hiddenScoreValue");
-        if (solverScoreElement && solverScoreElement.parentNode) {
-            solverScoreElement.insertAdjacentElement("afterend", starsElement);
-        } else if (scoreValueElement && scoreValueElement.parentNode) {
-            scoreValueElement.parentNode.insertBefore(starsElement, scoreValueElement);
+        // Keep the stars directly underneath the score display.
+        const scoreBox = document.getElementById("scoreBox");
+        if (scoreBox) {
+            scoreBox.appendChild(starsElement);
         }
     }
 
-    let earnedStars = earnedAllTilesBonus ? 1 : 0;
-    const hasSolverScore = Number.isFinite(solverScore);
-    const beatsSolver = hasSolverScore && currentScore > solverScore;
-
-    if (hasSolverScore && currentScore < solverScore && currentScore >= solverScore - 10) {
+    let earnedStars = 0;
+    if (earnedAllTilesBonus) earnedStars = 1;
+    if (currentScore > hiddenScore - 8 && currentScore <= hiddenScore) {
         earnedStars = Math.max(earnedStars, 2);
     }
-
-    // Matching or beating the solver total earns all three stars.
-    if (hasSolverScore && currentScore >= solverScore) {
-        earnedStars = 3;
-    }
+    if (currentScore > hiddenScore) earnedStars = 3;
 
     starsElement.innerHTML = "";
-
     for (let i = 1; i <= 3; i++) {
         const star = document.createElement("span");
-        const earned = i <= earnedStars;
-        star.className = earned ? "achievement-star earned" : "achievement-star";
+        star.className = i <= earnedStars ? "achievement-star earned" : "achievement-star";
         star.textContent = "★";
         star.setAttribute("aria-hidden", "true");
         starsElement.appendChild(star);
     }
 
-    // The crown is present but hidden until the player beats the solver.
-    const crown = document.createElement("span");
-    crown.className = "achievement-crown";
-    crown.textContent = "👑";
-    crown.title = "Solver beaten!";
-    crown.setAttribute("role", "img");
-    crown.setAttribute("aria-label", "Solver beaten");
-    crown.hidden = !beatsSolver;
-    crown.style.display = beatsSolver ? "inline-flex" : "none";
-    crown.style.alignItems = "center";
-    crown.style.marginLeft = "5px";
-    crown.style.fontSize = "22px";
-    crown.style.lineHeight = "1";
-    crown.style.verticalAlign = "middle";
-    starsElement.appendChild(crown);
-
-    starsElement.setAttribute(
-        "aria-label",
-        `${earnedStars} of 3 stars earned${beatsSolver ? "; solver beaten" : ""}`
-    );
+    starsElement.setAttribute("aria-label", `${earnedStars} of 3 stars earned`);
 }
-
-function displayScoringWords(
-    scoringWords
-) {
-
-    if (
-        !wordListElement
-    ) {
-
-        return;
-    }
-
-
-    wordListElement.innerHTML =
-        "";
-
-
-    for (
-        const item
-        of scoringWords
-    ) {
-
-        const pill =
-            document.createElement(
-                "div"
-            );
-
-
-        pill.className =
-            "word-pill";
-
-
-        const word =
-            document.createElement(
-                "span"
-            );
-
-
-        word.className =
-            "word-pill-word";
-
-
-        word.textContent =
-            item.word;
-
-
-        const wordScore =
-            document.createElement(
-                "span"
-            );
-
-
-        wordScore.className =
-            "word-pill-score";
-
-
-        wordScore.textContent =
-            `+${item.score}`;
-
-
-        pill.appendChild(
-            word
-        );
-
-
-        pill.appendChild(
-            wordScore
-        );
-
-
-        wordListElement.appendChild(
-            pill
-        );
-    }
-}
-
 
 
 /* ==================================================
@@ -3525,49 +3275,22 @@ function scoreWordOnCandidateBoard(candidateBoard, wordInfo, newlyPlacedKeys) {
     const cells = getWordCells(wordInfo.word, wordInfo.row, wordInfo.col, wordInfo.direction);
 
     for (const cell of cells) {
+        const key = keyForCell(cell.row, cell.col);
         const letter = candidateBoard[cell.row][cell.col];
         const value = letterValues[letter] || 0;
         let letterMultiplier = 1;
 
-        // Custom puzzle rule: premium squares remain active when a later
-        // word crosses them, including squares covered on an earlier turn.
-        const bonus = getBonusSquare(cell.row, cell.col);
-        if (bonus === "double-letter") letterMultiplier = 2;
-        if (bonus === "triple-letter") letterMultiplier = 3;
-        if (bonus === "double-word") wordMultiplier *= 2;
-        if (bonus === "triple-word") wordMultiplier *= 3;
+        // Premium squares only count when a tile is newly placed on them.
+        if (newlyPlacedKeys.has(key)) {
+            const bonus = getBonusSquare(cell.row, cell.col);
+            if (bonus === "double-letter") letterMultiplier = 2;
+            if (bonus === "triple-letter") letterMultiplier = 3;
+            if (bonus === "double-word") wordMultiplier *= 2;
+            if (bonus === "triple-word") wordMultiplier *= 3;
+        }
         letterTotal += value * letterMultiplier;
     }
     return letterTotal * wordMultiplier;
-}
-
-// When a move extends a word that was already on the board, score only the
-// increase from the old word to the new word. Newly formed cross-words still
-// score their full value. This prevents the solver from counting the old
-// crossword's points again every time another letter is added.
-function scoreIncrementalWord(candidateBoard, sourceBoard, wordInfo, newKeys) {
-    const newCells = getWordCells(
-        wordInfo.word, wordInfo.row, wordInfo.col, wordInfo.direction
-    );
-    const newCellKeys = new Set(newCells.map(cell => keyForCell(cell.row, cell.col)));
-    const newWordScore = scoreWordOnCandidateBoard(candidateBoard, wordInfo, newKeys);
-
-    const previousWord = getAllWords(sourceBoard).find(oldInfo => {
-        if (oldInfo.direction !== wordInfo.direction) return false;
-        const oldCells = getWordCells(
-            oldInfo.word, oldInfo.row, oldInfo.col, oldInfo.direction
-        );
-        // The old word must sit entirely inside the new run, and the new run
-        // must contain at least one tile placed on this turn.
-        return oldCells.every(cell => newCellKeys.has(keyForCell(cell.row, cell.col))) &&
-            oldCells.some(cell => sourceBoard[cell.row][cell.col] !== "") &&
-            newCells.some(cell => newKeys.has(keyForCell(cell.row, cell.col)));
-    });
-
-    if (!previousWord) return newWordScore;
-
-    const previousWordScore = scoreWordOnCandidateBoard(sourceBoard, previousWord, new Set());
-    return Math.max(0, newWordScore - previousWordScore);
 }
 
 function candidateTouchesExistingBoard(candidateBoard, newKeys, sourceBoard) {
@@ -3627,11 +3350,9 @@ function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCou
     );
     if (!mainWord || !dictionary.has(mainWord.word)) return null;
 
-    const scoredWords = scoringWords.map(info => ({
-        ...info,
-        score: scoreIncrementalWord(candidateBoard, sourceBoard, info, newKeys)
-    }));
-    let totalScore = scoredWords.reduce((sum, info) => sum + info.score, 0);
+    let totalScore = scoringWords.reduce((sum, info) =>
+        sum + scoreWordOnCandidateBoard(candidateBoard, info, newKeys), 0
+    );
 
     // Match the game's 7-tile bonus rule.
     if (usedTiles === 7) {
@@ -3649,7 +3370,7 @@ function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCou
         board: candidateBoard,
         newKeys: [...newKeys],
         usedTiles,
-        scoringWords: scoredWords
+        scoringWords
     };
 }
 
@@ -3881,12 +3602,6 @@ function findBestSolution() {
             score: move.score,
             usedTiles: move.usedTiles,
             newKeys: [...move.newKeys],
-            // Save each word's score as it was scored on this specific turn.
-            // This is important because the custom puzzle rule allows premium
-            // squares to be reused on later turns.
-            // These scores are already incremental: extended existing words
-            // contribute only their increase, while newly formed cross-words
-            // contribute their full score.
             scoringWords: move.scoringWords.map(info => ({ ...info }))
         };
         moves.push(moveRecord);
@@ -3899,7 +3614,7 @@ function findBestSolution() {
             if (remainingCounts[letter] > 0) remainingCounts[letter]--;
             allNewKeys.push(key);
         }
-        allScoringWords.push(...moveRecord.scoringWords.map(info => ({ ...info, move: moveRecord.turn })));
+        allScoringWords.push(...move.scoringWords.map(info => ({ ...info, move: moveRecord.turn })));
 
         if (searchLimitReached) break;
     }
@@ -3908,17 +3623,10 @@ function findBestSolution() {
     const tilesRemaining = initialRackTiles.length - tilesUsed;
     const fullSolution = tilesRemaining === 0;
 
-    // The solver awards +100 when all seven tiles are played in one turn
-    // (already included in that move's score). If all seven are used over
-    // multiple turns, award the normal +50 completion bonus here.
-    const completionBonus = fullSolution && moves.length > 1 ? 50 : 0;
-    totalScore += completionBonus;
-
     bestSolution = tilesUsed > 0 ? {
         board: cloneBoard(currentBoard),
         newKeys: allNewKeys,
         score: totalScore,
-        completionBonus,
         words: allScoringWords.map(info => info.word),
         scoringWords: allScoringWords,
         moves,
@@ -3928,6 +3636,8 @@ function findBestSolution() {
         searchLimitReached,
         visitedCandidates
     } : null;
+
+    updateScoreDisplay(score, scoreBonusElement ? scoreBonusElement.textContent : "");
 
     if (bestScoreWordElement) {
         bestScoreWordElement.textContent = fullSolution
@@ -3943,10 +3653,6 @@ function findBestSolution() {
         revealAnswerButton.disabled = !bestSolution;
         revealAnswerButton.textContent = fullSolution ? "Reveal Full Answer" : "Reveal Solver Answer";
     }
-    // Refresh the displayed solver target and achievement stars now that the
-    // solver has finished calculating this puzzle.
-    updateScoreDisplay(score, "");
-
     if (bestScoreMessageElement) {
         if (!bestSolution) {
             bestScoreMessageElement.textContent = "No legal move was found for these tiles on this board.";
@@ -3955,9 +3661,7 @@ function findBestSolution() {
                 `Turn ${move.turn}: ${move.word} (+${move.score}, ${move.usedTiles} tile${move.usedTiles === 1 ? "" : "s"})`
             ).join(" · ");
             bestScoreMessageElement.textContent = fullSolution
-                ? moves.length === 1
-                    ? `All ${initialRackTiles.length} tiles placed in one turn, including the +100 7-tile word bonus. ${turnSummary}`
-                    : `All ${initialRackTiles.length} tiles placed across ${moves.length} turns, including the +50 all-tiles bonus. ${turnSummary}`
+                ? `All ${initialRackTiles.length} tiles placed across ${moves.length} turns. ${turnSummary}`
                 : searchLimitReached
                     ? `Search limit reached after ${tilesUsed} tile${tilesUsed === 1 ? "" : "s"} placed; ${tilesRemaining} remain. ${turnSummary}`
                     : `No further legal move was found after placing ${tilesUsed} of ${initialRackTiles.length} tiles; ${tilesRemaining} remain. ${turnSummary}`;
@@ -4006,151 +3710,62 @@ if (revealAnswerButton) {
     revealAnswerButton.addEventListener("click", revealBestAnswer);
 }
 
+const shuffleRackButton = document.getElementById("shuffleRackButton");
+if (shuffleRackButton) {
+    shuffleRackButton.addEventListener("click", () => {
+        if (playerTiles.length < 2) return;
+        playerTiles = shuffle([...playerTiles]);
+        selectedRackTile = null;
+        displayTileRack();
+    });
+}
+
 
 /* ==================================================
-DAILY CHALLENGE
+NEW PUZZLE BUTTON
 ================================================== */
 
-let dailyRandomState = 0;
-let activeDailyDateKey = "";
-let dailyClockInterval = null;
-let dailyChallengeInfoElement = null;
+if (
+    generateButton
+) {
 
-function getUtcDateKey(date = new Date()) {
-    const year = date.getUTCFullYear();
-    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
-    const day = String(date.getUTCDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-}
+    generateButton.addEventListener(
+        "click",
+        () => {
 
-// Small deterministic PRNG. The same date key always produces the same
-// random sequence, so every visitor generates the same board and rack.
-function seededDailyRandom() {
-    let t = dailyRandomState += 0x6D2B79F5;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-}
+            if (
+                isGenerating
+            ) {
 
-function seedDailyRandom(dateKey) {
-    let hash = 2166136261;
-    for (let i = 0; i < dateKey.length; i++) {
-        hash ^= dateKey.charCodeAt(i);
-        hash = Math.imul(hash, 16777619);
-    }
-    dailyRandomState = hash >>> 0;
-
-    // The existing generator already routes its random choices through
-    // Math.random(), so seeding it keeps the existing generation logic intact.
-    Math.random = seededDailyRandom;
-}
-
-function ensureDailyChallengeInfo() {
-    if (!dailyChallengeInfoElement) {
-        dailyChallengeInfoElement = document.getElementById("dailyChallengeInfo");
-    }
-
-    if (!dailyChallengeInfoElement && generateButton && generateButton.parentNode) {
-        dailyChallengeInfoElement = document.createElement("div");
-        dailyChallengeInfoElement.id = "dailyChallengeInfo";
-        generateButton.parentNode.insertBefore(dailyChallengeInfoElement, generateButton);
-
-        const style = document.createElement("style");
-        style.textContent = `
-            #dailyChallengeInfo {
-                margin: 0 auto 10px;
-                max-width: 100%;
-                color: #64748b;
-                font: 600 13px/1.5 Arial, Helvetica, sans-serif;
-                text-align: center;
+                return;
             }
-            #generateButton { min-width: 190px; }
-        `;
-        document.head.appendChild(style);
-    }
-}
 
-function updateDailyChallengeClock() {
-    if (!activeDailyDateKey) return;
 
-    // Use one global reset point (00:00 UTC) so visitors in different
-    // time zones still share exactly the same 24-hour challenge.
-    if (getUtcDateKey() !== activeDailyDateKey) {
-        window.location.reload();
-        return;
-    }
+            isGenerating =
+                true;
 
-    const now = new Date();
-    const nextUtcMidnight = Date.UTC(
-        now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 0
-    );
-    const remainingSeconds = Math.max(0, Math.floor((nextUtcMidnight - now.getTime()) / 1000));
-    const hours = String(Math.floor(remainingSeconds / 3600)).padStart(2, "0");
-    const minutes = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, "0");
-    const seconds = String(remainingSeconds % 60).padStart(2, "0");
 
-    ensureDailyChallengeInfo();
-    if (dailyChallengeInfoElement) {
-        dailyChallengeInfoElement.textContent =
-            `DAILY CHALLENGE · ${activeDailyDateKey} · New puzzle in ${hours}:${minutes}:${seconds}`;
-    }
-}
+            generateButton.disabled =
+                true;
 
-async function generateDailyPuzzle() {
-    if (isGenerating) return;
-
-    isGenerating = true;
-    if (generateButton) {
-        generateButton.disabled = true;
-        generateButton.textContent = "Loading Daily Puzzle…";
-    }
-
-    activeDailyDateKey = getUtcDateKey();
-    seedDailyRandom(activeDailyDateKey);
-    ensureDailyChallengeInfo();
-
-    if (dailyClockInterval) clearInterval(dailyClockInterval);
-    updateDailyChallengeClock();
-    dailyClockInterval = setInterval(updateDailyChallengeClock, 1000);
-
-    const maxPuzzleAttempts = 100;
-    let solvedWithAllTiles = false;
-
-    try {
-        for (let attempt = 1; attempt <= maxPuzzleAttempts; attempt++) {
-            if (dailyChallengeInfoElement) {
-                dailyChallengeInfoElement.textContent =
-                    `Preparing today's shared puzzle… (attempt ${attempt})`;
-            }
 
             generateBoard();
 
-            if (bestSolution && bestSolution.fullSolution) {
-                solvedWithAllTiles = true;
-                break;
-            }
 
-            // Give the browser a chance to update the progress message.
-            await new Promise(resolve => setTimeout(resolve, 0));
-        }
+            setTimeout(
+                () => {
 
-        if (!solvedWithAllTiles && tileMessageElement) {
-            tileMessageElement.textContent =
-                `The daily puzzle could not be prepared after ${maxPuzzleAttempts} attempts. Please reload the page to try again.`;
-        }
-    } finally {
-        isGenerating = false;
-        if (generateButton) {
-            generateButton.disabled = false;
-            generateButton.textContent = "Restart Daily Puzzle";
-        }
-        updateDailyChallengeClock();
-    }
-}
+                    isGenerating =
+                        false;
 
-if (generateButton) {
-    generateButton.textContent = "Daily Puzzle";
-    generateButton.addEventListener("click", generateDailyPuzzle);
+                    generateButton.disabled =
+                        false;
+
+                },
+                100
+            );
+        }
+    );
 }
 
 
@@ -4248,7 +3863,7 @@ async function initialise() {
     }
 
 
-    await generateDailyPuzzle();
+    generateBoard();
 }
 
 
