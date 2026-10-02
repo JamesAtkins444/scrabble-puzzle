@@ -3981,56 +3981,149 @@ if (revealAnswerButton) {
 
 
 /* ==================================================
-NEW PUZZLE BUTTON
+DAILY CHALLENGE
 ================================================== */
 
-if (
-    generateButton
-) {
+let dailyRandomState = 0;
+let activeDailyDateKey = "";
+let dailyClockInterval = null;
+let dailyChallengeInfoElement = null;
 
-    generateButton.addEventListener(
-        "click",
-        async () => {
+function getUtcDateKey(date = new Date()) {
+    const year = date.getUTCFullYear();
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(date.getUTCDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
 
-            if (isGenerating) return;
+// Small deterministic PRNG. The same date key always produces the same
+// random sequence, so every visitor generates the same board and rack.
+function seededDailyRandom() {
+    let t = dailyRandomState += 0x6D2B79F5;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+}
 
-            isGenerating = true;
-            generateButton.disabled = true;
+function seedDailyRandom(dateKey) {
+    let hash = 2166136261;
+    for (let i = 0; i < dateKey.length; i++) {
+        hash ^= dateKey.charCodeAt(i);
+        hash = Math.imul(hash, 16777619);
+    }
+    dailyRandomState = hash >>> 0;
 
-            // Retry fresh boards until the solver can place every rack tile.
-            // Keep a generous safety cap so an unusually difficult settings
-            // combination cannot trap the browser in an endless loop.
-            const maxPuzzleAttempts = 100;
-            let solvedWithAllTiles = false;
+    // The existing generator already routes its random choices through
+    // Math.random(), so seeding it keeps the existing generation logic intact.
+    Math.random = seededDailyRandom;
+}
 
-            try {
-                for (let attempt = 1; attempt <= maxPuzzleAttempts; attempt++) {
-                    if (generatorMessageElement) {
-                        generatorMessageElement.textContent =
-                            `Finding a puzzle that uses all 7 tiles… (attempt ${attempt})`;
-                    }
+function ensureDailyChallengeInfo() {
+    if (!dailyChallengeInfoElement) {
+        dailyChallengeInfoElement = document.getElementById("dailyChallengeInfo");
+    }
 
-                    generateBoard();
+    if (!dailyChallengeInfoElement && generateButton && generateButton.parentNode) {
+        dailyChallengeInfoElement = document.createElement("div");
+        dailyChallengeInfoElement.id = "dailyChallengeInfo";
+        generateButton.parentNode.insertBefore(dailyChallengeInfoElement, generateButton);
 
-                    if (bestSolution && bestSolution.fullSolution) {
-                        solvedWithAllTiles = true;
-                        break;
-                    }
-
-                    // Let the browser repaint the status message between attempts.
-                    await new Promise(resolve => setTimeout(resolve, 0));
-                }
-
-                if (!solvedWithAllTiles && generatorMessageElement) {
-                    generatorMessageElement.textContent =
-                        `Couldn't find a puzzle using all 7 tiles after ${maxPuzzleAttempts} attempts. Try New Puzzle again or adjust the puzzle settings.`;
-                }
-            } finally {
-                isGenerating = false;
-                generateButton.disabled = false;
+        const style = document.createElement("style");
+        style.textContent = `
+            #dailyChallengeInfo {
+                margin: 0 auto 10px;
+                max-width: 100%;
+                color: #64748b;
+                font: 600 13px/1.5 Arial, Helvetica, sans-serif;
+                text-align: center;
             }
-        }
+            #generateButton { min-width: 190px; }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+function updateDailyChallengeClock() {
+    if (!activeDailyDateKey) return;
+
+    // Use one global reset point (00:00 UTC) so visitors in different
+    // time zones still share exactly the same 24-hour challenge.
+    if (getUtcDateKey() !== activeDailyDateKey) {
+        window.location.reload();
+        return;
+    }
+
+    const now = new Date();
+    const nextUtcMidnight = Date.UTC(
+        now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 0
     );
+    const remainingSeconds = Math.max(0, Math.floor((nextUtcMidnight - now.getTime()) / 1000));
+    const hours = String(Math.floor(remainingSeconds / 3600)).padStart(2, "0");
+    const minutes = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, "0");
+    const seconds = String(remainingSeconds % 60).padStart(2, "0");
+
+    ensureDailyChallengeInfo();
+    if (dailyChallengeInfoElement) {
+        dailyChallengeInfoElement.textContent =
+            `DAILY CHALLENGE · ${activeDailyDateKey} · New puzzle in ${hours}:${minutes}:${seconds}`;
+    }
+}
+
+async function generateDailyPuzzle() {
+    if (isGenerating) return;
+
+    isGenerating = true;
+    if (generateButton) {
+        generateButton.disabled = true;
+        generateButton.textContent = "Loading Daily Puzzle…";
+    }
+
+    activeDailyDateKey = getUtcDateKey();
+    seedDailyRandom(activeDailyDateKey);
+    ensureDailyChallengeInfo();
+
+    if (dailyClockInterval) clearInterval(dailyClockInterval);
+    updateDailyChallengeClock();
+    dailyClockInterval = setInterval(updateDailyChallengeClock, 1000);
+
+    const maxPuzzleAttempts = 100;
+    let solvedWithAllTiles = false;
+
+    try {
+        for (let attempt = 1; attempt <= maxPuzzleAttempts; attempt++) {
+            if (dailyChallengeInfoElement) {
+                dailyChallengeInfoElement.textContent =
+                    `Preparing today's shared puzzle… (attempt ${attempt})`;
+            }
+
+            generateBoard();
+
+            if (bestSolution && bestSolution.fullSolution) {
+                solvedWithAllTiles = true;
+                break;
+            }
+
+            // Give the browser a chance to update the progress message.
+            await new Promise(resolve => setTimeout(resolve, 0));
+        }
+
+        if (!solvedWithAllTiles && tileMessageElement) {
+            tileMessageElement.textContent =
+                `The daily puzzle could not be prepared after ${maxPuzzleAttempts} attempts. Please reload the page to try again.`;
+        }
+    } finally {
+        isGenerating = false;
+        if (generateButton) {
+            generateButton.disabled = false;
+            generateButton.textContent = "Restart Daily Puzzle";
+        }
+        updateDailyChallengeClock();
+    }
+}
+
+if (generateButton) {
+    generateButton.textContent = "Daily Puzzle";
+    generateButton.addEventListener("click", generateDailyPuzzle);
 }
 
 
@@ -4128,7 +4221,7 @@ async function initialise() {
     }
 
 
-    generateBoard();
+    await generateDailyPuzzle();
 }
 
 
