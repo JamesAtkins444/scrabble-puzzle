@@ -3511,14 +3511,12 @@ function scoreWordOnCandidateBoard(candidateBoard, wordInfo, newlyPlacedKeys) {
     const cells = getWordCells(wordInfo.word, wordInfo.row, wordInfo.col, wordInfo.direction);
 
     for (const cell of cells) {
-        const key = keyForCell(cell.row, cell.col);
         const letter = candidateBoard[cell.row][cell.col];
         const value = letterValues[letter] || 0;
         let letterMultiplier = 1;
 
-        // In this puzzle game's solver, premium squares remain active for
-        // any scoring word that crosses them, even if the tile was placed on
-        // an earlier turn. This lets later moves reuse a premium square.
+        // Custom puzzle rule: premium squares remain active when a later
+        // word crosses them, including squares covered on an earlier turn.
         const bonus = getBonusSquare(cell.row, cell.col);
         if (bonus === "double-letter") letterMultiplier = 2;
         if (bonus === "triple-letter") letterMultiplier = 3;
@@ -3527,6 +3525,35 @@ function scoreWordOnCandidateBoard(candidateBoard, wordInfo, newlyPlacedKeys) {
         letterTotal += value * letterMultiplier;
     }
     return letterTotal * wordMultiplier;
+}
+
+// When a move extends a word that was already on the board, score only the
+// increase from the old word to the new word. Newly formed cross-words still
+// score their full value. This prevents the solver from counting the old
+// crossword's points again every time another letter is added.
+function scoreIncrementalWord(candidateBoard, sourceBoard, wordInfo, newKeys) {
+    const newCells = getWordCells(
+        wordInfo.word, wordInfo.row, wordInfo.col, wordInfo.direction
+    );
+    const newCellKeys = new Set(newCells.map(cell => keyForCell(cell.row, cell.col)));
+    const newWordScore = scoreWordOnCandidateBoard(candidateBoard, wordInfo, newKeys);
+
+    const previousWord = getAllWords(sourceBoard).find(oldInfo => {
+        if (oldInfo.direction !== wordInfo.direction) return false;
+        const oldCells = getWordCells(
+            oldInfo.word, oldInfo.row, oldInfo.col, oldInfo.direction
+        );
+        // The old word must sit entirely inside the new run, and the new run
+        // must contain at least one tile placed on this turn.
+        return oldCells.every(cell => newCellKeys.has(keyForCell(cell.row, cell.col))) &&
+            oldCells.some(cell => sourceBoard[cell.row][cell.col] !== "") &&
+            newCells.some(cell => newKeys.has(keyForCell(cell.row, cell.col)));
+    });
+
+    if (!previousWord) return newWordScore;
+
+    const previousWordScore = scoreWordOnCandidateBoard(sourceBoard, previousWord, new Set());
+    return Math.max(0, newWordScore - previousWordScore);
 }
 
 function candidateTouchesExistingBoard(candidateBoard, newKeys, sourceBoard) {
@@ -3586,9 +3613,11 @@ function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCou
     );
     if (!mainWord || !dictionary.has(mainWord.word)) return null;
 
-    let totalScore = scoringWords.reduce((sum, info) =>
-        sum + scoreWordOnCandidateBoard(candidateBoard, info, newKeys), 0
-    );
+    const scoredWords = scoringWords.map(info => ({
+        ...info,
+        score: scoreIncrementalWord(candidateBoard, sourceBoard, info, newKeys)
+    }));
+    let totalScore = scoredWords.reduce((sum, info) => sum + info.score, 0);
 
     // Match the game's 7-tile bonus rule.
     if (usedTiles === 7) {
@@ -3606,7 +3635,7 @@ function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCou
         board: candidateBoard,
         newKeys: [...newKeys],
         usedTiles,
-        scoringWords
+        scoringWords: scoredWords
     };
 }
 
@@ -3841,14 +3870,10 @@ function findBestSolution() {
             // Save each word's score as it was scored on this specific turn.
             // This is important because the custom puzzle rule allows premium
             // squares to be reused on later turns.
-            scoringWords: move.scoringWords.map(info => ({
-                ...info,
-                score: scoreWordOnCandidateBoard(
-                    move.board,
-                    info,
-                    new Set(move.newKeys)
-                )
-            }))
+            // These scores are already incremental: extended existing words
+            // contribute only their increase, while newly formed cross-words
+            // contribute their full score.
+            scoringWords: move.scoringWords.map(info => ({ ...info }))
         };
         moves.push(moveRecord);
         totalScore += move.score;
