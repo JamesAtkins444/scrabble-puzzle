@@ -108,9 +108,8 @@ margin: 0 auto 4px auto;
 padding: 8px 16px;
 
 display: flex;
-flex-direction: column;
 justify-content: center;
-align-items: center;
+align-items: baseline;
 
 gap: 8px;
 flex-wrap: wrap;
@@ -130,7 +129,6 @@ font-size: 36px;
 line-height: 1;
 font-weight: 800;
 color: #222;
-font-variant-numeric: tabular-nums;
 }
 
 .score-bonus {
@@ -978,7 +976,7 @@ body {
     gap: 8px;
     margin: 0 auto 8px;
     min-height: 28px;
-    font-size: 34px;
+    font-size: 27px;
     line-height: 1;
 }
 
@@ -1023,41 +1021,4 @@ body {
 #revealAnswerButton:disabled {
     opacity: 0.45;
     cursor: wait;
-}
-
-
-/* ================================================
-   RACK SHUFFLE BUTTON
-================================================ */
-.shuffle-rack-button {
-    order: 7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    margin: 12px auto 0;
-    padding: 8px 14px;
-    border: 1px solid #c9d1dc;
-    border-radius: 8px;
-    background: #fff;
-    color: #263445;
-    font: inherit;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 150ms ease, transform 150ms ease;
-}
-
-.shuffle-rack-button span {
-    font-size: 23px;
-    line-height: 0.8;
-}
-
-.shuffle-rack-button:hover {
-    background: #eef3f8;
-    transform: translateY(-1px);
-}
-
-.shuffle-rack-button:active {
-    transform: translateY(0);
 }
