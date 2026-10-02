@@ -3990,39 +3990,45 @@ if (
 
     generateButton.addEventListener(
         "click",
-        () => {
+        async () => {
 
-            if (
-                isGenerating
-            ) {
+            if (isGenerating) return;
 
-                return;
+            isGenerating = true;
+            generateButton.disabled = true;
+
+            // Retry fresh boards until the solver can place every rack tile.
+            // Keep a generous safety cap so an unusually difficult settings
+            // combination cannot trap the browser in an endless loop.
+            const maxPuzzleAttempts = 100;
+            let solvedWithAllTiles = false;
+
+            try {
+                for (let attempt = 1; attempt <= maxPuzzleAttempts; attempt++) {
+                    if (generatorMessageElement) {
+                        generatorMessageElement.textContent =
+                            `Finding a puzzle that uses all 7 tiles… (attempt ${attempt})`;
+                    }
+
+                    generateBoard();
+
+                    if (bestSolution && bestSolution.fullSolution) {
+                        solvedWithAllTiles = true;
+                        break;
+                    }
+
+                    // Let the browser repaint the status message between attempts.
+                    await new Promise(resolve => setTimeout(resolve, 0));
+                }
+
+                if (!solvedWithAllTiles && generatorMessageElement) {
+                    generatorMessageElement.textContent =
+                        `Couldn't find a puzzle using all 7 tiles after ${maxPuzzleAttempts} attempts. Try New Puzzle again or adjust the puzzle settings.`;
+                }
+            } finally {
+                isGenerating = false;
+                generateButton.disabled = false;
             }
-
-
-            isGenerating =
-                true;
-
-
-            generateButton.disabled =
-                true;
-
-
-            generateBoard();
-
-
-            setTimeout(
-                () => {
-
-                    isGenerating =
-                        false;
-
-                    generateButton.disabled =
-                        false;
-
-                },
-                100
-            );
         }
     );
 }
