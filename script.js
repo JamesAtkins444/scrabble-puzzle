@@ -99,7 +99,7 @@ PUZZLE GENERATOR SETTINGS
 let generatorSettings = {
     gridSize: 8,
     wordCount: 4,
-    initialWordLength: 5
+    initialWordLength: 7
 };
 
 
