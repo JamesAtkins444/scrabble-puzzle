@@ -3011,7 +3011,7 @@ function calculatePlayerScore() {
     // the displayed total compared with the solver's move summary.
     if (answerRevealed && bestSolution) {
         score = bestSolution.score;
-        updateScoreDisplay(score, "Solver turn-by-turn total");
+     //   updateScoreDisplay(score, "Solver turn-by-turn total");
         displayScoringWords(bestSolution.scoringWords || []);
         return score;
     }
