@@ -113,6 +113,12 @@ const boardElement =
 const tileRackElement =
     document.getElementById("tileRack");
 
+const revealPuzzleButton =
+    document.getElementById("revealPuzzleButton");
+
+const bestScoreBoxElement =
+    document.getElementById("bestScoreBox");
+
 const tileMessageElement =
     document.getElementById("tileMessage");
 
@@ -3879,6 +3885,32 @@ function revealBestAnswer() {
 
 if (revealAnswerButton) {
     revealAnswerButton.addEventListener("click", revealBestAnswer);
+}
+
+
+/* ==================================================
+REVEAL PUZZLE PANEL CONFIRMATION
+================================================== */
+
+if (revealPuzzleButton && bestScoreBoxElement) {
+    let revealConfirmationPending = false;
+
+    revealPuzzleButton.addEventListener("click", () => {
+        if (!revealConfirmationPending) {
+            revealConfirmationPending = true;
+            revealPuzzleButton.textContent = "Are you sure?";
+            revealPuzzleButton.setAttribute(
+                "aria-label",
+                "Confirm revealing the full-rack solution"
+            );
+            return;
+        }
+
+        bestScoreBoxElement.hidden = false;
+        revealPuzzleButton.textContent = "Puzzle Revealed";
+        revealPuzzleButton.disabled = true;
+        revealPuzzleButton.setAttribute("aria-expanded", "true");
+    });
 }
 
 
