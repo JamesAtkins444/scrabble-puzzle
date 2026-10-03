@@ -3894,6 +3894,7 @@ REVEAL PUZZLE PANEL CONFIRMATION
 
 if (revealPuzzleButton && bestScoreBoxElement) {
     let revealConfirmationPending = false;
+    let revealConfirmationTimeout = null;
 
     revealPuzzleButton.addEventListener("click", () => {
         if (!revealConfirmationPending) {
@@ -3903,8 +3904,27 @@ if (revealPuzzleButton && bestScoreBoxElement) {
                 "aria-label",
                 "Confirm revealing the full-rack solution"
             );
+
+            // Return to the original button state if the user doesn't confirm
+            // within five seconds.
+            revealConfirmationTimeout = setTimeout(() => {
+                if (!revealConfirmationPending) return;
+
+                revealConfirmationPending = false;
+                revealPuzzleButton.textContent = "Reveal Puzzle";
+                revealPuzzleButton.removeAttribute("aria-label");
+                revealConfirmationTimeout = null;
+            }, 5000);
+
             return;
         }
+
+        // The user confirmed in time, so cancel the reset timer.
+        if (revealConfirmationTimeout !== null) {
+            clearTimeout(revealConfirmationTimeout);
+            revealConfirmationTimeout = null;
+        }
+        revealConfirmationPending = false;
 
         bestScoreBoxElement.hidden = false;
         revealPuzzleButton.textContent = "Puzzle Revealed";
