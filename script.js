@@ -3218,132 +3218,16 @@ function updateScoreDisplay(
     currentScore,
     bonusText = ""
 ) {
-
-    /*
-     * Hidden Score
-     *
-     * Create the display element here so no other
-     * HTML structure needs to be changed.
-     */
-
-    if (
-        scoreValueElement
-    ) {
-
-        let hiddenScoreElement =
-            document.getElementById(
-                "hiddenScoreValue"
-            );
-
-        if (!hiddenScoreElement) {
-
-            hiddenScoreElement =
-                document.createElement(
-                    "div"
-                );
-
-            hiddenScoreElement.id =
-                "hiddenScoreValue";
-
-            hiddenScoreElement.style.fontSize =
-                "22px";
-
-            hiddenScoreElement.style.fontWeight =
-                "800";
-
-            hiddenScoreElement.style.textAlign =
-                "center";
-
-            hiddenScoreElement.style.marginBottom =
-                "6px";
-
-            hiddenScoreElement.style.lineHeight =
-                "1";
-
-            const hiddenScoreLabel =
-                document.createElement(
-                    "span"
-                );
-
-            hiddenScoreLabel.textContent =
-                "Solver Score ";
-
-            hiddenScoreLabel.style.fontSize =
-                "12px";
-
-            hiddenScoreLabel.style.fontWeight =
-                "600";
-
-            hiddenScoreLabel.style.opacity =
-                "0.6";
-
-            hiddenScoreLabel.style.marginRight =
-                "6px";
-
-            hiddenScoreElement.appendChild(
-                hiddenScoreLabel
-            );
-
-            const scoreRowElement =
-                scoreValueElement.parentNode;
-
-            if (
-                scoreRowElement.parentNode
-            ) {
-
-                scoreRowElement.parentNode.insertBefore(
-                    hiddenScoreElement,
-                    scoreRowElement
-                );
-
-            } else {
-
-                scoreRowElement.insertBefore(
-                    hiddenScoreElement,
-                    scoreValueElement
-                );
-            }
-        }
-
-        /*
-         * Keep the label and number separate so
-         * only the number changes.
-         */
-
-        let hiddenScoreNumber =
-            document.getElementById(
-                "hiddenScoreNumber"
-            );
-
-        if (!hiddenScoreNumber) {
-
-            hiddenScoreNumber =
-                document.createElement(
-                    "span"
-                );
-
-            hiddenScoreNumber.id =
-                "hiddenScoreNumber";
-
-            hiddenScoreElement.appendChild(
-                hiddenScoreNumber
-            );
-        }
-
-        // Use the verified solver total as the target for the daily challenge.
-        // Fall back to the legacy estimate only until a solver result is ready.
+    if (scoreValueElement) {
+        // Show the player's score and the verified solver target together.
+        // The solver target stays hidden until the solver has a result.
         const solverScore =
             bestSolution && Number.isFinite(bestSolution.score)
                 ? bestSolution.score
                 : null;
 
-        hiddenScoreNumber.textContent =
-            solverScore === null
-                ? "—"
-                : solverScore;
-
         scoreValueElement.textContent =
-            currentScore;
+            `${currentScore}/${solverScore === null ? "—" : solverScore}`;
 
         updateAchievementStars(
             currentScore,
@@ -3352,16 +3236,10 @@ function updateScoreDisplay(
         );
     }
 
-
-    if (
-        scoreBonusElement
-    ) {
-
-        scoreBonusElement.textContent =
-            bonusText;
+    if (scoreBonusElement) {
+        scoreBonusElement.textContent = bonusText;
     }
 }
-
 
 function updateAchievementStars(
     currentScore,
@@ -3376,11 +3254,8 @@ function updateAchievementStars(
         starsElement.className = "achievement-stars";
         starsElement.setAttribute("aria-label", "Puzzle achievement stars");
 
-        const solverScoreElement = document.getElementById("hiddenScoreValue");
-        if (solverScoreElement && solverScoreElement.parentNode) {
-            solverScoreElement.insertAdjacentElement("afterend", starsElement);
-        } else if (scoreValueElement && scoreValueElement.parentNode) {
-            scoreValueElement.parentNode.insertBefore(starsElement, scoreValueElement);
+        if (scoreValueElement && scoreValueElement.parentNode) {
+            scoreValueElement.insertAdjacentElement("afterend", starsElement);
         }
     }
 
