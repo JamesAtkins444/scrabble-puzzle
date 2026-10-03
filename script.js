@@ -86,7 +86,7 @@ let puzzleWords = [];
 let score = 0;
 
 // Stores the total value of the original 7-tile rack.
-// This remains unchanged when tiles are placed on the board.
+// This remains unchanged when tiles are placed on the .
 let startingRackValueTotal = 0;
 
 let isGenerating = false;
@@ -107,7 +107,7 @@ let generatorSettings = {
 DOM ELEMENTS
 ================================================== */
 
-const boardElement =
+const Element =
     document.getElementById("board");
 
 const tileRackElement =
@@ -283,7 +283,7 @@ function getGeneratorSettings() {
     if (
         Number.isNaN(gridSize)
     ) {
-        gridSize = 7;
+        gridSize = 8;
     }
 
     if (
@@ -295,7 +295,7 @@ function getGeneratorSettings() {
     if (
         Number.isNaN(initialWordLength)
     ) {
-        initialWordLength = 6;
+        initialWordLength = 7;
     }
 
 
