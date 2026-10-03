@@ -3910,6 +3910,9 @@ if (revealPuzzleButton && bestScoreBoxElement) {
         revealPuzzleButton.textContent = "Puzzle Revealed";
         revealPuzzleButton.disabled = true;
         revealPuzzleButton.setAttribute("aria-expanded", "true");
+
+        // Use the exact same action as the panel's existing answer button.
+        revealBestAnswer();
     });
 }
 
