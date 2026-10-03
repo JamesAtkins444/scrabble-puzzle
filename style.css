@@ -944,7 +944,7 @@ body {
     .container {
         max-width: 900px;
 
-        margin-left: 280px;
+        margin-left: auto;
         margin-right: auto;
     }
 
