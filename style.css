@@ -1019,11 +1019,24 @@ body {
     display: inline-block;
 }
 
-/* Place Reveal Puzzle at the bottom of the playable area, directly under the rack. */
-#revealPuzzleButton {
+/* Keep the rack controls together directly beneath the tile rack. */
+.rack-actions {
     order: 7;
-    display: block;
-    width: fit-content;
-    min-width: 190px;
+    width: min(100%, 500px);
     margin: 14px auto 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.rack-actions button {
+    flex: 0 1 auto;
+}
+
+#revealPuzzleButton {
+    display: inline-block;
+    min-width: 190px;
+    margin: 0;
 }
