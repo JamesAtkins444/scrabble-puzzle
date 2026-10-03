@@ -1032,7 +1032,13 @@ body {
 }
 
 .rack-actions button {
+    /* Match the dimensions and typography of the other game controls. */
     flex: 0 1 auto;
+    min-height: 39px;
+    line-height: normal;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 #revealPuzzleButton {
