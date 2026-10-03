@@ -3881,8 +3881,8 @@ function revealBestAnswer() {
             `Turn ${move.turn}: ${move.word} (+${move.score})`
         ).join("; ");
         tileMessageElement.textContent = bestSolution.fullSolution
-            ? `Solver answer revealed: all ${initialRackTiles.length} tiles placed across ${bestSolution.moves.length} turns for ${bestSolution.score} total points. ${moveSummary}`
-            : `Solver answer revealed: ${bestSolution.tilesUsed} of ${initialRackTiles.length} tiles placed for ${bestSolution.score} total points. ${bestSolution.tilesRemaining} tile${bestSolution.tilesRemaining === 1 ? "" : "s"} could not be placed. ${moveSummary}`;
+         //   ? `Solver answer revealed: all ${initialRackTiles.length} tiles placed across ${bestSolution.moves.length} turns for ${bestSolution.score} total points. ${moveSummary}`
+        //    : `Solver answer revealed: ${bestSolution.tilesUsed} of ${initialRackTiles.length} tiles placed for ${bestSolution.score} total points. ${bestSolution.tilesRemaining} tile${bestSolution.tilesRemaining === 1 ? "" : "s"} could not be placed. ${moveSummary}`;
         tileMessageElement.className = bestSolution.fullSolution
             ? "tile-message success"
             : "tile-message";
