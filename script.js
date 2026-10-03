@@ -116,6 +116,12 @@ const tileRackElement =
 const revealPuzzleButton =
     document.getElementById("revealPuzzleButton");
 
+const shuffleRackButton =
+    document.getElementById("shuffleRackButton");
+
+const clearBoardButton =
+    document.getElementById("clearBoardButton");
+
 const bestScoreBoxElement =
     document.getElementById("bestScoreBox");
 
@@ -3885,6 +3891,44 @@ function revealBestAnswer() {
 
 if (revealAnswerButton) {
     revealAnswerButton.addEventListener("click", revealBestAnswer);
+}
+
+
+/* ==================================================
+RACK ACTION BUTTONS
+================================================== */
+
+if (shuffleRackButton) {
+    shuffleRackButton.addEventListener("click", () => {
+        // Fisher–Yates shuffle: change tile order without changing the letters.
+        for (let i = playerTiles.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [playerTiles[i], playerTiles[j]] = [playerTiles[j], playerTiles[i]];
+        }
+
+        selectedRackTile = null;
+        displayTileRack();
+    });
+}
+
+if (clearBoardButton) {
+    clearBoardButton.addEventListener("click", () => {
+        // Return the original rack letters and restore only the fixed puzzle tiles.
+        playerTiles = [...initialRackTiles];
+        board = cloneBoard(originalBoard);
+        playerPlacedTiles = {};
+        selectedRackTile = null;
+        answerRevealed = false;
+
+        displayTileRack();
+        displayBoard();
+        calculatePlayerScore();
+
+        if (tileMessageElement) {
+            tileMessageElement.textContent = "";
+            tileMessageElement.className = "tile-message";
+        }
+    });
 }
 
 
