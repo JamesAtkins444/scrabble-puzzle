@@ -39,25 +39,37 @@ margin-bottom: 16px;
 }
 
 .controls button,
-#generateButton {
-padding: 10px 18px;
-
-border: none;
-border-radius: 7px;
-
-background: #222;
-color: white;
-
-font-size: 15px;
-font-weight: bold;
-
-cursor: pointer;
-
+#generateButton,
+#revealAnswerButton,
+#revealPuzzleButton,
+#generatorPanel #generateButton {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 7px;
+    background: #222;
+    color: #fff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 150ms ease, transform 150ms ease;
 }
 
-.controls button:hover,
-#generateButton:hover {
-background: #444;
+.controls button:hover:not(:disabled),
+#generateButton:hover:not(:disabled),
+#revealAnswerButton:hover:not(:disabled),
+#revealPuzzleButton:hover:not(:disabled),
+#generatorPanel #generateButton:hover:not(:disabled) {
+    background: #444;
+}
+
+.controls button:disabled,
+#generateButton:disabled,
+#revealAnswerButton:disabled,
+#revealPuzzleButton:disabled,
+#generatorPanel #generateButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* ================================================
@@ -661,7 +673,7 @@ font-weight: bold;
 /* -------------------------------- */
 
 .best-score-box {
-order: 7;
+order: 8;
 
 width: min(100%, 500px);
 
@@ -1004,28 +1016,14 @@ body {
 }
 
 #revealAnswerButton {
-    padding: 10px 18px;
-    border: 0;
-    border-radius: 7px;
-    background: #222;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
+    display: inline-block;
 }
 
-#revealAnswerButton:hover:not(:disabled) {
-    background: #444;
-}
-
-#revealAnswerButton:disabled {
-    opacity: 0.45;
-    cursor: wait;
-}
-
-
-/* Reveal Puzzle uses the same visual treatment as Reveal Full Answer. */
+/* Place Reveal Puzzle at the bottom of the playable area, directly under the rack. */
 #revealPuzzleButton {
+    order: 7;
     display: block;
+    width: fit-content;
+    min-width: 190px;
     margin: 14px auto 18px;
 }
