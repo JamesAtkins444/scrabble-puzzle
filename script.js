@@ -4066,7 +4066,8 @@ function updateDailyChallengeClock() {
     ensureDailyChallengeInfo();
     if (dailyChallengeInfoElement) {
         dailyChallengeInfoElement.textContent =
-            `DAILY CHALLENGE · ${activeDailyDateKey} · New puzzle in ${hours}:${minutes}:${seconds}`;
+            `DAILY CHALLENGE · ${activeDailyDateKey}`;
+        // `DAILY CHALLENGE · ${activeDailyDateKey} · New puzzle in ${hours}:${minutes}:${seconds}`;
     }
 }
 
