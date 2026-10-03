@@ -1022,3 +1022,10 @@ body {
     opacity: 0.45;
     cursor: wait;
 }
+
+
+/* Reveal Puzzle uses the same visual treatment as Reveal Full Answer. */
+#revealPuzzleButton {
+    display: block;
+    margin: 14px auto 18px;
+}
