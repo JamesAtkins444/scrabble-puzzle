@@ -80,6 +80,7 @@ GLOBAL STATE
 ================================================== */
 
 let selectedRackTile = null;
+let selectedBoardCell = null;
 
 let puzzleWords = [];
 
@@ -1704,6 +1705,14 @@ function displayBoard() {
             cell.className =
                 "cell";
 
+            if (
+                selectedBoardCell &&
+                selectedBoardCell.row === row &&
+                selectedBoardCell.col === col
+            ) {
+                cell.classList.add("selected-target");
+            }
+
 
             cell.dataset.row =
                 row;
@@ -2171,13 +2180,19 @@ function displayTileRack() {
             tile.addEventListener(
                 "click",
                 () => {
+                    // If the player selected a board cell first, place this tile there.
+                    if (selectedBoardCell) {
+                        selectedRackTile = index;
+
+                        const target = { ...selectedBoardCell };
+                        handleBoardClick(target.row, target.col);
+                        return;
+                    }
 
                     selectedRackTile =
-                        selectedRackTile ===
-                        index
+                        selectedRackTile === index
                             ? null
                             : index;
-
 
                     displayTileRack();
                 }
@@ -2263,18 +2278,17 @@ function handleBoardClick(
      */
 
     if (
-        selectedRackTile ===
-        null
+        selectedRackTile === null
     ) {
+        // Allow the player to choose the board position before choosing a rack tile.
+        selectedBoardCell = { row, col };
 
-        if (
-            tileMessageElement
-        ) {
-
+        if (tileMessageElement) {
             tileMessageElement.textContent =
-                "Select a tile first.";
+                "Now select a tile from the rack.";
         }
 
+        displayBoard();
         return;
     }
 
@@ -2296,6 +2310,12 @@ function handleBoardClick(
     board[row][col] =
         tile;
 
+    selectedBoardCell = null;
+
+    if (tileMessageElement) {
+        tileMessageElement.textContent = "";
+        tileMessageElement.className = "tile-message";
+    }
 
     playerPlacedTiles[key] = {
 
@@ -3918,6 +3938,7 @@ if (clearBoardButton) {
         board = cloneBoard(originalBoard);
         playerPlacedTiles = {};
         selectedRackTile = null;
+        selectedBoardCell = null;
         answerRevealed = false;
 
         displayTileRack();
