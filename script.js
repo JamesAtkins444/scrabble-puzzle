@@ -3871,10 +3871,10 @@ function revealBestAnswer() {
     displayBoard();
     calculatePlayerScore();
 
-    if (revealAnswerButton) {
-        revealAnswerButton.textContent = bestSolution.fullSolution
-            ? "Full Answer Revealed"
-            : "Solver Answer Revealed";
+  //  if (revealAnswerButton) {
+    //    revealAnswerButton.textContent = bestSolution.fullSolution
+       //     ? "Full Answer Revealed"
+      //      : "Solver Answer Revealed";
     }
     if (tileMessageElement) {
         const moveSummary = bestSolution.moves.map(move =>
