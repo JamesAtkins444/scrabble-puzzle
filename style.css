@@ -1,200 +1,519 @@
+```css
+/* =========================================
+   SCRAMBLE — MODERN WORD GAME THEME
+========================================= */
+
 * {
-  box-sizing: border-box;
-  }
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #111923;
+    --background-glow: #1b2a3d;
+
+    --panel: #192432;
+    --panel-border: #344256;
+
+    --cell: #293747;
+    --cell-border: #344256;
+
+    --tile: #f7edcf;
+    --tile-border: #fff5dc;
+    --tile-text: #202b3a;
+
+    --blue: #3988ed;
+    --blue-border: #6aabff;
+
+    --pink: #e84d94;
+    --pink-border: #ff85b8;
+
+    --green: #76db91;
+    --green-dark: #173a27;
+
+    --text: #f5f7fb;
+    --muted: #a8b5c6;
+}
+
+
+/* =========================================
+   PAGE BACKGROUND
+========================================= */
 
 body {
-margin: 0;
-padding: 20px;
-font-family: Arial, Helvetica, sans-serif;
-background: #f3f3f3;
-color: #222;
+    margin: 0;
+    padding: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 25%,
+            #1d2c40 0%,
+            #151f2d 45%,
+            #111923 100%
+        );
+
+    color: var(--text);
+
+    -webkit-font-smoothing: antialiased;
 }
 
 button {
-font-family: inherit;
+    font-family: inherit;
 }
 
 .container {
-width: 100%;
-max-width: 900px;
-margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 
-display: flex;
-flex-direction: column;
-
+    display: flex;
+    flex-direction: column;
 }
 
-/* -------------------------------- */
-/* CONTROLS */
-/* -------------------------------- */
+
+/* =========================================
+   CONTROLS
+========================================= */
 
 .controls {
-order: 1;
+    order: 1;
 
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 
-margin-bottom: 16px;
-
+    margin-bottom: 16px;
 }
 
 .controls button,
-#generateButton,
-#revealAnswerButton,
-#revealPuzzleButton,
-.rack-actions button,
-#generatorPanel #generateButton {
+#generateButton {
     padding: 10px 18px;
-    border: none;
-    border-radius: 7px;
-    background: #222;
-    color: #fff;
-    font-family: inherit;
+
+    border: 1px solid #43536a;
+    border-radius: 8px;
+
+    background: #29384b;
+    color: white;
+
     font-size: 15px;
-    font-weight: 700;
+    font-weight: bold;
+
     cursor: pointer;
-    transition: background 150ms ease, transform 150ms ease;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
 }
 
-.controls button:hover:not(:disabled),
-#generateButton:hover:not(:disabled),
-#revealAnswerButton:hover:not(:disabled),
-#revealPuzzleButton:hover:not(:disabled),
-#generatorPanel #generateButton:hover:not(:disabled) {
-    background: #444;
+.controls button:hover,
+#generateButton:hover {
+    background: #354961;
 }
 
-.controls button:disabled,
-#generateButton:disabled,
-#revealAnswerButton:disabled,
-#revealPuzzleButton:disabled,
-#generatorPanel #generateButton:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+.controls button:active,
+#generateButton:active {
+    transform: scale(0.98);
 }
 
 
+/* =========================================
+   HIDDEN SCORE
+========================================= */
 
-/* ================================================
-   SCORE ROW
-================================================ */
+.hidden-score-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.hidden-score-label {
+    font-size: 12px;
+    font-weight: 600;
+
+    color: var(--muted);
+    opacity: 0.8;
+}
+
+.hidden-score-value {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   SCORE ROW AND STAR RATING
+========================================= */
 
 .score-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-/* -------------------------------- */
-/* SCORE */
-/* -------------------------------- */
+/*
+   Supports common star-container class names.
+   If your HTML uses one of these, the stars
+   will be larger and closer to the score.
+*/
+
+.stars,
+.score-stars,
+.star-rating,
+#stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+    margin-left: 4px;
+
+    color: #526b85;
+}
+
+.stars span,
+.score-stars span,
+.star-rating span,
+#stars span {
+    display: inline-block;
+
+    font-size: 30px;
+    line-height: 1;
+
+    color: #526b85;
+
+    transition:
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+/* =========================================
+   SCORE DISPLAY
+========================================= */
 
 .score-box {
-order: 2;
+    order: 2;
 
-width: min(100%, 500px);
+    width: min(100%, 500px);
 
-margin: 0 auto 4px auto;
-padding: 8px 16px;
+    margin: 0 auto 8px;
+    padding: 8px 16px;
 
-display: flex;
-justify-content: center;
-align-items: baseline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-gap: 8px;
-flex-wrap: wrap;
+    gap: 12px;
+    flex-wrap: wrap;
 
-background: transparent;
-
+    background: transparent;
 }
 
 .score-label {
-font-size: 16px;
-color: #777;
-font-weight: bold;
+    font-size: 17px;
+    color: #e3eaf3;
+    font-weight: 700;
 }
 
 #scoreValue {
-font-size: 36px;
-line-height: 1;
-font-weight: 800;
-color: #222;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 64px;
+    padding: 9px 18px;
+
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 800;
+
+    color: #173a27;
+    background: var(--green);
+
+    border: 1px solid #a1f2b4;
+    border-radius: 999px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .score-bonus {
-width: 100%;
+    width: 100%;
 
-text-align: center;
+    text-align: center;
 
-font-size: 13px;
-font-weight: bold;
+    font-size: 13px;
+    font-weight: bold;
 
-color: #666;
+    color: var(--muted);
 
-margin-top: 2px;
-
+    margin-top: 2px;
 }
 
-/* -------------------------------- */
-/* SCORING WORDS */
-/* -------------------------------- */
+
+/* =========================================
+   SCORING WORDS
+========================================= */
 
 #wordList {
-order: 3;
+    order: 3;
 
-width: min(100%, 500px);
+    width: min(100%, 500px);
 
-margin: 0 auto 14px auto;
+    margin: 0 auto 14px;
 
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-flex-wrap: wrap;
-gap: 7px;
+    flex-wrap: wrap;
+    gap: 7px;
 
-min-height: 0;
-
+    min-height: 0;
 }
 
 .word-pill {
-display: inline-flex;
-align-items: center;
+    display: inline-flex;
+    align-items: center;
 
-gap: 6px;
+    gap: 6px;
+    padding: 7px 11px;
 
-padding: 7px 11px;
+    background: #1b2837;
 
-background: white;
+    border: 1px solid #39485d;
+    border-radius: 999px;
 
-border: 1px solid #ddd;
-border-radius: 999px;
+    font-size: 14px;
+    line-height: 1;
 
-font-size: 14px;
-line-height: 1;
-
-box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.08);
-
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.12);
 }
 
 .word-pill-word {
-font-weight: bold;
-color: #222;
+    font-weight: bold;
+    color: #f5f7fb;
 }
 
 .word-pill-score {
-color: #777;
-font-size: 12px;
-font-weight: bold;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
 }
-/* ================================================
-   BOARD TILE
-================================================ */
+
+
+/* =========================================
+   BOARD FRAME
+========================================= */
+
+#board {
+    order: 4;
+
+    width: min(100%, 500px);
+    aspect-ratio: 1 / 1;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(7, minmax(0, 1fr));
+
+    gap: 4px;
+    padding: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c2938,
+            #17212e
+        );
+
+    border: 2px solid var(--panel-border);
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================
+   BOARD CELLS
+========================================= */
+
+.cell {
+    position: relative;
+
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2d3b4d,
+            #273444
+        );
+
+    border: 1px solid #354459;
+    border-radius: 6px;
+
+    color: var(--text);
+
+    font-size: clamp(20px, 5.5vw, 40px);
+    font-weight: bold;
+
+    user-select: none;
+    cursor: pointer;
+
+    transition:
+        background 0.12s ease,
+        border-color 0.12s ease;
+}
+
+.cell:hover {
+    border-color: #52647b;
+}
+
+
+/* =========================================
+   ORIGINAL PUZZLE CELLS
+========================================= */
+
+.cell.original-tile {
+    background: #293747;
+
+    border-color: #344256;
+
+    color: var(--text);
+
+    cursor: default;
+}
+
+
+/* =========================================
+   PLAYER CELLS
+========================================= */
+
+.cell.player-valid {
+    background: #76db91;
+
+    border: 2px solid #9af0ad;
+
+    color: #173a27;
+}
+
+.cell.player-invalid {
+    background: #e84d94;
+
+    border: 2px solid #ff85b8;
+
+    color: #ffffff;
+}
+
+.cell.player-isolated {
+    background: #f2d779;
+
+    border: 2px solid #ffe9a0;
+
+    color: #3c3215;
+}
+
+
+/* =========================================
+   BONUS SQUARES
+========================================= */
+
+.cell.double-letter {
+    background: #3988ed;
+
+    border: 1px solid #6aabff;
+
+    color: #ffffff;
+}
+
+.cell.triple-letter {
+    background: #2868bb;
+
+    border: 1px solid #5799ec;
+
+    color: #ffffff;
+}
+
+.cell.double-word {
+    background: #e84d94;
+
+    border: 1px solid #ff85b8;
+
+    color: #ffffff;
+}
+
+.cell.triple-word {
+    background: #bd3675;
+
+    border: 1px solid #eb6da5;
+
+    color: #ffffff;
+}
+
+.bonus-label {
+    font-size: clamp(10px, 2.3vw, 16px);
+
+    font-weight: bold;
+    line-height: 1;
+
+    user-select: none;
+}
+
+
+/* =========================================
+   BONUS BADGE
+========================================= */
+
+.bonus-badge {
+    position: absolute;
+
+    top: 3px;
+    left: 4px;
+
+    z-index: 4;
+
+    font-size: clamp(7px, 1.5vw, 11px);
+    line-height: 1;
+
+    padding: 2px 3px;
+
+    border-radius: 3px;
+
+    background: rgba(12, 20, 31, 0.3);
+
+    color: inherit;
+
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BOARD LETTER TILES
+========================================= */
 
 .board-tile {
     position: relative;
+
     width: 82%;
     height: 82%;
 
@@ -204,567 +523,468 @@ font-weight: bold;
 
     box-sizing: border-box;
 
-    background: #f4dfad;
-    border: 2px solid #c5ae7b;
+    background:
+        linear-gradient(
+            145deg,
+            #fff7df,
+            #f7edcf
+        );
+
+    border: 1px solid #fff5dc;
     border-radius: 6px;
 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #202b3a;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.18);
 
     user-select: none;
     z-index: 1;
 }
 
-/* BOARD LETTER */
-
 .board-tile .tile-letter {
-    font-size: clamp(20px, 4vw, 32px);
-    font-weight: bold;
-    line-height: 1;
-}
+    position: relative;
+    z-index: 2;
 
-/* BOARD TILE SCORE */
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 800;
+    line-height: 1;
+
+    color: inherit;
+}
 
 .board-tile .tile-value {
     position: absolute;
 
     bottom: 5%;
-    right: 8%;
+    right: 7%;
 
     font-size: clamp(7px, 1.2vw, 11px);
-    font-weight: bold;
+    font-weight: 800;
     line-height: 1;
-}
 
+    color: inherit;
 
-/* ================================================
-   ORIGINAL PUZZLE TILE
-================================================ */
-
-.board-tile.original-tile {
-
-    background: #f4dfad;
-
-    border-color: #c5ae7b;
-}
-
-
-/* ================================================
-   PLAYER TILE - VALID
-================================================ */
-
-.board-tile.player-valid {
-
-    background: #bfe8c7;
-
-    border-color: #3b9b4f;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-
-/* ================================================
-   PLAYER TILE - INVALID
-================================================ */
-
-.board-tile.player-invalid {
-
-    background: #f3b8b8;
-
-    border-color: #c43d3d;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-
-/* ================================================
-   PLAYER TILE - ISOLATED
-================================================ */
-
-.board-tile.player-isolated {
-
-    background: #f4df83;
-
-    border-color: #c4a72c;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-
-/* ================================================
-   BOARD TILE LETTER
-================================================ */
-
-.board-tile .tile-letter {
-
-    position: relative;
-
-    z-index: 2;
-
-    line-height: 1;
-}
-
-
-/* ================================================
-   BOARD TILE VALUE
-================================================ */
-
-.board-tile .tile-value {
-    position: absolute;
-    bottom: 7%;
-    right: 8%;
-    font-size: 0.32em;
-    font-weight: bold;
-    line-height: 1;
     z-index: 3;
 }
 
 
-/* ================================================
-   BONUS BADGE
-================================================ */
+/* =========================================
+   ORIGINAL PUZZLE LETTER TILES
+========================================= */
 
-.bonus-badge {
-
-    position: absolute;
-
-    top: 3px;
-    left: 4px;
-
-    z-index: 4;
-
-    font-size: clamp(
-        7px,
-        1.5vw,
-        11px
-    );
-
-    line-height: 1;
-
-    padding: 2px 3px;
-
-    border-radius: 3px;
-
+.board-tile.original-tile {
     background:
-        rgba(
-            255,
-            255,
-            255,
-            0.85
+        linear-gradient(
+            145deg,
+            #fff7df,
+            #f7edcf
         );
 
-    color: #222;
+    border-color: #fff5dc;
 
-    font-weight: bold;
-
-    pointer-events: none;
+    color: #202b3a;
 }
 
 
-/* ================================================
-   MAKE SURE BONUS COLOUR STAYS ON CELL
-================================================ */
+/* =========================================
+   PLAYER LETTER TILES
+========================================= */
 
-.cell.double-letter {
-    background: #b9dcf5;
+.board-tile.player-valid {
+    background:
+        linear-gradient(
+            145deg,
+            #8ce8a3,
+            #76db91
+        );
+
+    border-color: #a1f2b4;
+
+    color: #173a27;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-.cell.triple-letter {
-    background: #6fa8dc;
+.board-tile.player-invalid {
+    background:
+        linear-gradient(
+            145deg,
+            #f477ad,
+            #e84d94
+        );
+
+    border-color: #ff9ac5;
+
+    color: #ffffff;
 }
 
-.cell.double-word {
-    background: #f4b6c2;
+.board-tile.player-isolated {
+    background:
+        linear-gradient(
+            145deg,
+            #f9e7a0,
+            #f2d779
+        );
+
+    border-color: #ffe9a0;
+
+    color: #3c3215;
 }
 
-.cell.triple-word {
-    background: #e57373;
-}
-/* -------------------------------- */
-/* BOARD */
-/* -------------------------------- */
 
-#board {
-order: 4;
-
-width: min(100%, 500px);
-
-aspect-ratio: 1 / 1;
-
-margin: 0 auto;
-
-display: grid;
-
-grid-template-columns:
-    repeat(8, 1fr);
-
-grid-template-rows:
-    repeat(8, 1fr);
-
-gap: 3px;
-
-background: #999;
-
-padding: 3px;
-
-border-radius: 3px;
-
-}
-
-/* -------------------------------- */
-/* BOARD CELLS */
-/* -------------------------------- */
-
-.cell {
-position: relative;
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-background: white;
-
-border: 1px solid #ccc;
-
-font-size:
-    clamp(20px, 5.5vw, 40px);
-
-font-weight: bold;
-
-user-select: none;
-
-cursor: pointer;
-
-}
-
-.cell:hover {
-filter: brightness(0.97);
-}
-
-/* Original puzzle tiles */
-
-.cell.original-tile {
-background: #ddd;
-color: #222;
-cursor: default;
-}
-
-/* Player tiles */
-
-.cell.player-valid {
-background: #b8e6b8;
-border: 2px solid #4a9f4a;
-color: #174d17;
-}
-
-.cell.player-invalid {
-background: #f3b0b0;
-border: 2px solid #c94c4c;
-color: #681717;
-}
-
-.cell.player-isolated {
-background: #f3df8b;
-border: 2px solid #d2ae35;
-color: #66500c;
-}
-
-/* -------------------------------- */
-/* BONUS SQUARES */
-/* -------------------------------- */
-
-.cell.double-letter {
-background: #9ed8f5;
-border: 1px solid #4aa8d8;
-}
-
-.cell.triple-letter {
-background: #4f91c4;
-border: 1px solid #28638e;
-color: white;
-}
-
-.cell.double-word {
-background: #f2a8c4;
-border: 1px solid #d86c99;
-}
-
-.cell.triple-word {
-background: #e36b6b;
-border: 1px solid #b73535;
-color: white;
-}
-
-.bonus-label {
-font-size:
-clamp(10px, 2.3vw, 16px);
-
-font-weight: bold;
-
-line-height: 1;
-
-user-select: none;
-
-}
-
-.bonus-badge {
-position: absolute;
-
-top: 3px;
-left: 4px;
-
-z-index: 2;
-
-font-size:
-    clamp(7px, 1.5vw, 11px);
-
-line-height: 1;
-
-padding: 2px 3px;
-
-border-radius: 3px;
-
-background:
-    rgba(255, 255, 255, 0.85);
-
-color: #222;
-
-font-weight: bold;
-
-pointer-events: none;
-
-}
-
-/* -------------------------------- */
-/* TILE MESSAGE */
-/* -------------------------------- */
+/* =========================================
+   TILE MESSAGE
+========================================= */
 
 .tile-message {
-order: 5;
+    order: 5;
 
-width: min(100%, 500px);
+    width: min(100%, 500px);
 
-min-height: 20px;
+    min-height: 20px;
 
-margin: 0 auto 10px auto;
+    margin: 0 auto 10px;
 
-text-align: center;
+    text-align: center;
 
-font-size: 13px;
+    font-size: 13px;
 
-color: #777;
-
+    color: var(--muted);
 }
 
 .tile-message.success {
-color: #39803b;
-font-weight: bold;
+    color: var(--green);
+    font-weight: bold;
 }
 
 .tile-message.error {
-color: #b33b3b;
-font-weight: bold;
+    color: #ff80ad;
+    font-weight: bold;
 }
 
-/* -------------------------------- */
-/* TILE RACK */
-/* -------------------------------- */
+
+/* =========================================
+   TILE RACK FRAME
+   Seven tiles in one horizontal row
+========================================= */
 
 #tileRack {
-order: 6;
+    order: 6;
 
-width: min(100%, 500px);
+    width: min(100%, 500px);
 
-margin: 10px auto 0 auto;
+    margin: 10px auto 0;
+    padding: 9px;
 
-display: flex;
+    display: grid;
 
-justify-content: center;
-align-items: center;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: 1fr;
 
-gap: 8px;
+    gap: 4px;
 
-flex-wrap: wrap;
+    align-items: stretch;
+    justify-items: stretch;
 
+    background:
+        linear-gradient(
+            145deg,
+            #1c2938,
+            #17212e
+        );
+
+    border: 2px solid var(--panel-border);
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
 }
 
+
+/* =========================================
+   RACK LETTER TILES
+========================================= */
+
 .rack-tile {
-position: relative;
+    position: relative;
 
-width: 55px;
-height: 55px;
+    width: 100%;
+    min-width: 0;
 
-display: flex;
+    aspect-ratio: 1 / 1;
 
-align-items: center;
-justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-background: #f5e6c8;
+    padding: 0;
+    box-sizing: border-box;
 
-border:
-    2px solid #c7a76a;
+    background:
+        linear-gradient(
+            145deg,
+            #fff7df,
+            #f7edcf
+        );
 
-border-radius: 6px;
+    border: 1px solid #fff5dc;
+    border-radius: 6px;
 
-cursor: pointer;
+    color: #202b3a;
 
-box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.12s ease,
+        border-color 0.12s ease,
+        box-shadow 0.12s ease;
 }
 
 .rack-tile:hover {
-transform: translateY(-2px);
+    transform: translateY(-2px);
+
+    border-color: #ffffff;
 }
 
 .rack-tile.selected {
-border: 3px solid #222;
+    border: 2px solid #75a9ff;
 
-transform:
-    translateY(-5px);
+    transform: translateY(-3px);
 
-box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.2);
-
+    box-shadow:
+        0 0 0 3px rgba(57, 136, 237, 0.2),
+        0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+/* =========================================
+   RACK LETTERS AND TILE VALUES
+========================================= */
+
 .tile-letter {
-font-size: 28px;
-font-weight: bold;
+    font-size: clamp(15px, 3vw, 28px);
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: inherit;
 }
 
 .tile-value {
-position: absolute;
+    position: absolute;
 
-bottom: 4px;
-right: 5px;
+    bottom: 5%;
+    right: 7%;
 
-font-size: 11px;
+    font-size: clamp(7px, 1.2vw, 11px);
+    font-weight: 800;
 
-font-weight: bold;
+    line-height: 1;
 
+    color: inherit;
 }
 
-/* -------------------------------- */
-/* FULL-RACK SOLUTION */
-/* -------------------------------- */
+
+/* =========================================
+   HIGHEST POSSIBLE SCORE
+========================================= */
 
 .best-score-box {
-order: 8;
+    order: 7;
 
-width: min(100%, 500px);
+    width: min(100%, 500px);
 
-margin: 28px auto 0 auto;
+    margin: 28px auto 0;
+    padding: 16px 18px;
 
-padding: 14px 18px;
+    background: #192432;
 
-background: white;
+    border: 1px solid #344256;
+    border-radius: 12px;
 
-border:
-    1px solid #ddd;
+    text-align: center;
 
-border-radius: 10px;
-
-text-align: center;
-
-box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.06);
-
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .best-score-title {
-font-size: 13px;
+    font-size: 13px;
 
-color: #777;
+    color: var(--muted);
 
-font-weight: bold;
+    font-weight: bold;
 
-margin-bottom: 6px;
-
+    margin-bottom: 6px;
 }
 
 .best-score-word {
-font-size: 24px;
+    font-size: 24px;
 
-font-weight: 800;
+    color: var(--text);
 
-letter-spacing: 0.5px;
-
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 .best-score-value {
-margin-top: 3px;
+    margin-top: 5px;
 
-font-size: 16px;
+    font-size: 16px;
 
-color: #555;
+    color: var(--green);
 
-font-weight: bold;
-
+    font-weight: bold;
 }
 
-/* -------------------------------- */
-/* MOBILE */
-/* -------------------------------- */
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
 
 @media (max-width: 600px) {
 
-body {
-    padding: 10px;
-}
+    body {
+        padding: 10px;
+    }
 
-.controls {
-    margin-bottom: 12px;
-}
+    .controls {
+        margin-bottom: 12px;
+    }
 
-#board {
-    gap: 2px;
-    padding: 2px;
-}
+    .score-box {
+        gap: 8px;
+        padding: 6px 10px;
+    }
 
-.cell {
-    font-size: 22px;
-}
+    .score-label {
+        font-size: 15px;
+    }
 
-.rack-tile {
-    width: 45px;
-    height: 45px;
-}
+    #scoreValue {
+        min-width: 54px;
+        padding: 8px 14px;
+        font-size: 26px;
+    }
 
-.tile-letter {
-    font-size: 23px;
-}
+    /* Larger stars, closer to the score */
 
-.tile-value {
-    font-size: 9px;
+    .score-row {
+        gap: 6px;
+    }
 
-    bottom: 2px;
-    right: 3px;
-}
+    .stars,
+    .score-stars,
+    .star-rating,
+    #stars {
+        gap: 5px;
+        margin-left: 2px;
+    }
 
-#scoreValue {
-    font-size: 30px;
-}
+    .stars span,
+    .score-stars span,
+    .star-rating span,
+    #stars span {
+        font-size: 27px;
+    }
 
-.word-pill {
-    padding: 6px 9px;
-    font-size: 13px;
-}
+    #board {
+        width: 100%;
 
-.word-pill-score {
-    font-size: 11px;
-}
+        gap: 3px;
+        padding: 6px;
 
-.best-score-box {
-    margin-top: 22px;
-}
+        border-radius: 10px;
+    }
 
-.best-score-word {
-    font-size: 21px;
-}
+    .cell {
+        border-radius: 4px;
 
+        font-size: clamp(16px, 5.5vw, 28px);
+    }
+
+    .board-tile {
+        width: 88%;
+        height: 88%;
+
+        border-radius: 4px;
+    }
+
+    .board-tile .tile-letter {
+        font-size: clamp(15px, 5vw, 25px);
+    }
+
+    .board-tile .tile-value {
+        font-size: 9px;
+    }
+
+    .bonus-badge {
+        top: 2px;
+        left: 2px;
+
+        font-size: clamp(6px, 1.8vw, 9px);
+
+        padding: 1px 2px;
+    }
+
+    /* Rack matches the board's responsive grid */
+
+    #tileRack {
+        width: 100%;
+
+        margin-top: 14px;
+        padding: 6px;
+
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        grid-template-rows: 1fr;
+
+        gap: 3px;
+
+        border-radius: 10px;
+    }
+
+    .rack-tile {
+        width: 100%;
+        min-width: 0;
+
+        aspect-ratio: 1 / 1;
+
+        border-radius: 4px;
+    }
+
+    .rack-tile .tile-letter {
+        font-size: clamp(13px, 5vw, 25px);
+    }
+
+    .rack-tile .tile-value {
+        font-size: 9px;
+
+        bottom: 5%;
+        right: 7%;
+    }
+
+    .word-pill {
+        padding: 6px 9px;
+        font-size: 13px;
+    }
+
+    .word-pill-score {
+        font-size: 11px;
+    }
+
+    .best-score-box {
+        margin-top: 22px;
+    }
+
+    .best-score-word {
+        font-size: 21px;
+    }
 }
 
 
@@ -782,39 +1002,39 @@ body {
 
     padding: 18px;
 
-    background: white;
+    background: #192432;
 
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border: 1px solid #344256;
+    border-radius: 12px;
 
     box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.1);
+        0 8px 24px rgba(0, 0, 0, 0.2);
 
     z-index: 100;
 }
 
 #generatorPanel h2 {
-    margin: 0 0 8px 0;
+    margin: 0 0 8px;
 
     font-size: 18px;
     font-weight: bold;
 
-    color: #222;
+    color: var(--text);
 }
 
 .panel-description {
-    margin: 0 0 18px 0;
+    margin: 0 0 18px;
 
     font-size: 12px;
     line-height: 1.4;
 
-    color: #777;
+    color: var(--muted);
 }
 
 
-/* -----------------------------------------
-   SETTINGS
------------------------------------------ */
+/* =========================================
+   GENERATOR SETTINGS
+========================================= */
 
 .setting {
     margin-bottom: 16px;
@@ -828,7 +1048,7 @@ body {
     font-size: 13px;
     font-weight: bold;
 
-    color: #333;
+    color: #e5ebf3;
 }
 
 .setting input {
@@ -836,23 +1056,22 @@ body {
 
     padding: 9px 10px;
 
-    border: 1px solid #ccc;
+    border: 1px solid #43536a;
     border-radius: 6px;
 
-    background: #fafafa;
+    background: #111923;
+    color: var(--text);
 
     font-family: inherit;
     font-size: 15px;
-
-    box-sizing: border-box;
 }
 
 .setting input:focus {
     outline: none;
 
-    border-color: #555;
+    border-color: #75a9ff;
 
-    background: white;
+    background: #151f2d;
 }
 
 .setting-help {
@@ -862,23 +1081,23 @@ body {
 
     font-size: 11px;
 
-    color: #999;
+    color: #9aa9bb;
 }
 
 
-/* -----------------------------------------
-   PANEL BUTTON
------------------------------------------ */
+/* =========================================
+   GENERATOR BUTTON
+========================================= */
 
 #generatorPanel #generateButton {
     width: 100%;
 
     padding: 10px 12px;
 
-    border: none;
+    border: 1px solid #43536a;
     border-radius: 7px;
 
-    background: #222;
+    background: #29384b;
     color: white;
 
     font-size: 14px;
@@ -888,29 +1107,28 @@ body {
 }
 
 #generatorPanel #generateButton:hover {
-    background: #444;
+    background: #354961;
 }
 
 #generatorPanel #generateButton:disabled {
     opacity: 0.6;
-
     cursor: default;
 }
 
 
-/* -----------------------------------------
-   PANEL MESSAGE
------------------------------------------ */
+/* =========================================
+   GENERATOR MESSAGE
+========================================= */
 
 .generator-message {
     min-height: 18px;
 
-    margin: -4px 0 10px 0;
+    margin: -4px 0 10px;
 
     font-size: 12px;
     line-height: 1.3;
 
-    color: #b33b3b;
+    color: #ff80ad;
 }
 
 
@@ -923,15 +1141,14 @@ body {
     .container {
         max-width: 900px;
 
-        margin-left: auto;
+        margin-left: 280px;
         margin-right: auto;
     }
-
 }
 
 
 /* =========================================
-   MOBILE
+   SMALLER SCREEN GENERATOR LAYOUT
 ========================================= */
 
 @media (max-width: 999px) {
@@ -944,7 +1161,7 @@ body {
             500px
         );
 
-        margin: 0 auto 20px auto;
+        margin: 0 auto 20px;
 
         box-sizing: border-box;
     }
@@ -952,73 +1169,32 @@ body {
     .container {
         margin: 0 auto;
     }
-
 }
 
 
-/* ================================================
-   HIDDEN SCORE ACHIEVEMENT STARS
-================================================ */
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 
-.achievement-stars {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin: 0 auto 8px;
-    min-height: 28px;
-    font-size: 27px;
-    line-height: 1;
-}
-
-.achievement-star {
-    color: #d0d0d0;
-    opacity: 0.7;
-    transition: color 160ms ease, opacity 160ms ease, transform 160ms ease;
-}
-
-.achievement-star.earned {
-    color: #e3ad22;
-    opacity: 1;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+button:focus-visible,
+.cell:focus-visible,
+.rack-tile:focus-visible {
+    outline: 3px solid #75a9ff;
+    outline-offset: 2px;
 }
 
 
-/* ================================================
-   FULL-RACK SOLVER / REVEAL ANSWER
-================================================ */
-.best-score-message {
-    margin: 7px 0 12px;
-    color: #777;
-    font-size: 12px;
-    line-height: 1.4;
-}
+/* =========================================
+   REDUCED MOTION
+========================================= */
 
-#revealAnswerButton {
-    display: inline-block;
-}
+@media (prefers-reduced-motion: reduce) {
 
-/* Keep the rack controls together directly beneath the tile rack. */
-.rack-actions {
-    order: 7;
-    width: min(100%, 500px);
-    margin: 14px auto 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
 }
-
-.rack-actions button {
-    /* Match the dimensions and typography of the other game controls. */
-       display: inline-block;
-    min-width: 190px;
-    margin: 0;
-}
-
-#revealPuzzleButton {
-    display: inline-block;
-    min-width: 190px;
-    margin: 0;
-}
+```
