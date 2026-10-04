@@ -123,6 +123,15 @@ const shuffleRackButton =
 const clearBoardButton =
     document.getElementById("clearBoardButton");
 
+const rulesHelpButton =
+    document.getElementById("rulesHelpButton");
+
+const rulesDialog =
+    document.getElementById("rulesDialog");
+
+const closeRulesButton =
+    document.getElementById("closeRulesButton");
+
 const bestScoreBoxElement =
     document.getElementById("bestScoreBox");
 
@@ -4208,6 +4217,50 @@ function updateWordCount() {
 
     wordCountElement.textContent =
         `${puzzleWords.length} words`;
+}
+
+
+/* ==================================================
+RULES POPUP
+================================================== */
+
+if (rulesHelpButton && rulesDialog) {
+    rulesHelpButton.addEventListener("click", () => {
+        if (typeof rulesDialog.showModal === "function") {
+            rulesDialog.showModal();
+        } else {
+            rulesDialog.setAttribute("open", "");
+        }
+    });
+
+    if (closeRulesButton) {
+        closeRulesButton.addEventListener("click", () => {
+            if (typeof rulesDialog.close === "function") {
+                rulesDialog.close();
+            } else {
+                rulesDialog.removeAttribute("open");
+            }
+        });
+    }
+
+    rulesDialog.addEventListener("click", event => {
+        // Clicking the dimmed backdrop closes the rules; clicks inside the panel do not.
+        if (event.target === rulesDialog) {
+            if (typeof rulesDialog.close === "function") {
+                rulesDialog.close();
+            } else {
+                rulesDialog.removeAttribute("open");
+            }
+        }
+    });
+
+    rulesDialog.addEventListener("cancel", event => {
+        // Keep Escape-key dismissal consistent across browsers.
+        if (typeof rulesDialog.close !== "function") {
+            event.preventDefault();
+            rulesDialog.removeAttribute("open");
+        }
+    });
 }
 
 
