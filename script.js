@@ -4002,8 +4002,12 @@ if (revealPuzzleButton && bestScoreBoxElement) {
         }
         revealConfirmationPending = false;
 
+        // Replace the rack action buttons with the full-rack solution panel.
+        const rackActionsElement = document.getElementById("rackActions");
+        if (rackActionsElement) {
+            rackActionsElement.hidden = true;
+        }
         bestScoreBoxElement.hidden = false;
-        revealPuzzleButton.textContent = "Puzzle Revealed";
         revealPuzzleButton.disabled = true;
         revealPuzzleButton.setAttribute("aria-expanded", "true");
 
