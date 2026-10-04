@@ -3295,9 +3295,11 @@ function updateAchievementStars(
         starsElement.className = "achievement-stars";
         starsElement.setAttribute("aria-label", "Puzzle achievement stars");
 
-        if (scoreValueElement && scoreValueElement.parentNode) {
-            scoreValueElement.insertAdjacentElement("afterend", starsElement);
-        }
+    }
+
+    // Keep the stars directly after the score value, on the same line.
+    if (scoreValueElement && starsElement && scoreValueElement.parentNode) {
+        scoreValueElement.insertAdjacentElement("afterend", starsElement);
     }
 
     let earnedStars = earnedAllTilesBonus ? 1 : 0;
