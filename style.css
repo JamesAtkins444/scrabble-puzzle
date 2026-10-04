@@ -1291,3 +1291,10 @@ body {
 #generatorPanel {
     display: none !important;
 }
+
+
+/* Keep the solver panel hidden until the player reveals the puzzle. */
+#bestScoreBox[hidden],
+#rackActions[hidden] {
+    display: none !important;
+}
