@@ -503,6 +503,12 @@ border: 1px solid #b73535;
 color: white;
 }
 
+/* Keep letter tiles' text dark, even when their cell is a premium square. */
+.board-tile .tile-letter,
+.board-tile .tile-value {
+    color: #222;
+}
+
 .bonus-label {
 font-size:
 clamp(10px, 2.3vw, 16px);
