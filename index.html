@@ -11,6 +11,40 @@
 
 <body>
 
+<!-- Rules help button -->
+<button
+    id="rulesHelpButton"
+    class="rules-help-button"
+    type="button"
+    aria-label="Open game rules"
+    aria-haspopup="dialog"
+    aria-controls="rulesDialog"
+>?</button>
+
+<dialog id="rulesDialog" class="rules-dialog" aria-labelledby="rulesTitle">
+    <div class="rules-dialog-header">
+        <h2 id="rulesTitle">Rules</h2>
+        <button id="closeRulesButton" class="rules-close-button" type="button" aria-label="Close rules">×</button>
+    </div>
+
+    <div class="rules-content">
+        <p>Every day a randomised board of words and bonus squares is generated.</p>
+
+        <p>Make as many words as possible using the 7 tiles at the bottom of the board.</p>
+
+        <h3>Bonus Tiles <span>(Bonuses can be used by multiple words)</span></h3>
+        <ul class="rules-bonus-list">
+            <li><strong>2xL:</strong> Doubles the letter value of the tile placed on this tile</li>
+            <li><strong>3xL:</strong> Triples the letter value of the tile placed on this tile</li>
+            <li><strong>2xW:</strong> Doubles the score of the entire word placed on this tile</li>
+            <li><strong>3xW:</strong> Triples the score of the entire word placed on this tile</li>
+        </ul>
+
+        <p class="rules-bonus-points">Using all 7 tiles gives you an additional <strong>+50 points</strong></p>
+        <p class="rules-bonus-points">Using all 7 tiles on one word gives you an additional <strong>+100 points</strong></p>
+    </div>
+</dialog>
+
 <!-- =========================================
      PUZZLE GENERATOR PANEL
 ========================================= -->
