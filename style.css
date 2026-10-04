@@ -1285,3 +1285,9 @@ body {
     }
 
 }
+
+
+/* Temporarily hide the puzzle generator UI while keeping it in the DOM for debugging. */
+#generatorPanel {
+    display: none !important;
+}
