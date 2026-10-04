@@ -1207,3 +1207,55 @@ body {
         font-size: 14px;
     }
 }
+
+
+/* ================================================
+   BOARD TOP ROW LAYOUT
+================================================ */
+
+.board-top-row {
+    width: min(100%, 500px);
+    margin: 0 auto 4px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.score-stack {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.board-top-row .score-box {
+    width: 100%;
+    margin: 0;
+}
+
+.board-top-row .achievement-stars {
+    justify-content: flex-start;
+    margin: 2px 0 8px 16px;
+    min-height: 28px;
+}
+
+.board-top-row .rules-help-button {
+    position: static;
+    flex: 0 0 38px;
+    margin-top: 8px;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .board-top-row {
+        gap: 8px;
+    }
+
+    .board-top-row .rules-help-button {
+        flex-basis: 36px;
+        margin-top: 8px;
+    }
+
+    .board-top-row .achievement-stars {
+        margin-left: 16px;
+    }
+}
