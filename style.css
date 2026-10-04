@@ -1230,6 +1230,13 @@ body {
 .board-top-row .score-box {
     width: 100%;
     margin: 0;
+    padding-left: 0;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.board-top-row .score-box .score-bonus {
+    text-align: left;
 }
 
 .board-top-row .achievement-stars {
