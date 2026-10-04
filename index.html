@@ -12,14 +12,7 @@
 <body>
 
 <!-- Rules help button -->
-<button
-    id="rulesHelpButton"
-    class="rules-help-button"
-    type="button"
-    aria-label="Open game rules"
-    aria-haspopup="dialog"
-    aria-controls="rulesDialog"
->?</button>
+
 
 <dialog id="rulesDialog" class="rules-dialog" aria-labelledby="rulesTitle">
     <div class="rules-dialog-header">
@@ -147,6 +140,8 @@
     </div>
 
 
+    <div class="board-top-row">
+        <div class="score-stack">
     <div
         id="scoreBox"
         class="score-box"
@@ -165,6 +160,18 @@
             class="score-bonus"
         ></span>
 
+    </div>
+            <div id="achievementStars" class="achievement-stars" aria-label="Puzzle achievement stars"></div>
+        </div>
+
+        <button
+    id="rulesHelpButton"
+    class="rules-help-button"
+    type="button"
+    aria-label="Open game rules"
+    aria-haspopup="dialog"
+    aria-controls="rulesDialog"
+>?</button>
     </div>
 
 
