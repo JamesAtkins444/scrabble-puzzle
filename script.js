@@ -3907,16 +3907,10 @@ function revealBestAnswer() {
             ? "Full Answer Revealed"
             : "Solver Answer Revealed";
     }
+    // Keep the board area clear after revealing the solver's answer.
     if (tileMessageElement) {
-        const moveSummary = bestSolution.moves.map(move =>
-            `Turn ${move.turn}: ${move.word} (+${move.score})`
-        ).join("; ");
-        tileMessageElement.textContent = bestSolution.fullSolution
-            ? `Solver answer revealed: all ${initialRackTiles.length} tiles placed across ${bestSolution.moves.length} turns for ${bestSolution.score} total points. ${moveSummary}`
-            : `Solver answer revealed: ${bestSolution.tilesUsed} of ${initialRackTiles.length} tiles placed for ${bestSolution.score} total points. ${bestSolution.tilesRemaining} tile${bestSolution.tilesRemaining === 1 ? "" : "s"} could not be placed. ${moveSummary}`;
-        tileMessageElement.className = bestSolution.fullSolution
-            ? "tile-message success"
-            : "tile-message";
+        tileMessageElement.textContent = "";
+        tileMessageElement.className = "tile-message";
     }
 }
 
