@@ -1241,8 +1241,32 @@ body {
 
 .board-top-row .achievement-stars {
     justify-content: flex-start;
-    margin: 2px 0 8px 16px;
-    min-height: 28px;
+    align-items: center;
+    margin: 0;
+    min-height: 0;
+    width: auto;
+    flex: 0 0 auto;
+}
+
+.board-top-row .score-stack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
+
+.board-top-row .score-box {
+    width: auto;
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.board-top-row .score-box .score-bonus {
+    width: 100%;
 }
 
 .board-top-row .rules-help-button {
