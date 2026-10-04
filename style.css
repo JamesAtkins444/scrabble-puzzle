@@ -1298,3 +1298,10 @@ body {
 #rackActions[hidden] {
     display: none !important;
 }
+
+
+/* Remove the extra space above the Full-Rack Solution panel. */
+#bestScoreBox {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
