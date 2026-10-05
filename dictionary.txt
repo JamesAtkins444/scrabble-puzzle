@@ -82016,6 +82016,7 @@ lacers
 lacertid
 lacertids
 laces
+lacet
 lacewing
 lacewings
 lacewood
