@@ -1,6 +1,7 @@
 let boardSize = 8;
 
 let dictionary = new Set();
+let solverDictionary = new Set();
 
 let board = [];
 let originalBoard = [];
@@ -437,8 +438,43 @@ async function loadDictionary() {
 
 
 /* ==================================================
+SOLVER DICTIONARY
+================================================== */
+
+async function loadSolverDictionary() {
+    try {
+        const response = await fetch("solver dictionary.txt");
+
+        if (!response.ok) {
+            throw new Error(
+                `Solver dictionary request failed: ${response.status}`
+            );
+        }
+
+        const text = await response.text();
+
+        solverDictionary = new Set(
+            text
+                .split(/\r?\n/)
+                .map(word => word.trim().toUpperCase())
+                .filter(word => /^[A-Z]+$/.test(word))
+        );
+
+        console.log(
+            `Loaded ${solverDictionary.size} solver dictionary words.`
+        );
+    } catch (error) {
+        console.error("Could not load solver dictionary:", error);
+        solverDictionary = new Set();
+    }
+}
+
+
+/* ==================================================
 BOARD CREATION
 ================================================== */
+
+
 
 function createEmptyBoard() {
 
@@ -890,7 +926,8 @@ VALID WORD CHECKING
 ================================================== */
 
 function allWordsAreValid(
-    targetBoard
+    targetBoard,
+    wordSet = dictionary
 ) {
 
     const words =
@@ -3532,7 +3569,7 @@ function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCou
 
     if (usedTiles === 0) return null;
     if (!candidateTouchesExistingBoard(candidateBoard, newKeys, sourceBoard)) return null;
-    if (!allWordsAreValid(candidateBoard)) return null;
+    if (!allWordsAreValid(candidateBoard, solverDictionary)) return null;
 
     // Score every word created or extended by the move, including cross-words.
     const scoringWords = getAllWords(candidateBoard).filter(info =>
@@ -3543,7 +3580,7 @@ function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCou
         info.direction === direction &&
         info.row === row && info.col === col
     );
-    if (!mainWord || !dictionary.has(mainWord.word)) return null;
+    if (!mainWord || !solverDictionary.has(mainWord.word)) return null;
 
     const scoredWords = scoringWords.map(info => ({
         ...info,
@@ -3681,7 +3718,7 @@ function getFullRackSolutionScore(solutionBoard, newKeys) {
 
 function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget) {
     const directions = ["horizontal", "vertical"];
-    const words = [...dictionary]
+    const words = [...solverDictionary]
         .filter(word => word.length >= 2 && word.length <= boardSize)
         // Check promising words first if the safety limit is reached.
         .sort((a, b) => {
@@ -3757,7 +3794,7 @@ function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget) {
 }
 
 function findBestSolution() {
-    if (!dictionary.size || !originalBoard.length || !initialRackTiles.length) return;
+    if (!solverDictionary.size || !originalBoard.length || !initialRackTiles.length) return;
 
     const startingBoard = cloneBoard(originalBoard);
     const remainingCounts = countLetters(initialRackTiles);
@@ -4279,6 +4316,7 @@ async function initialise() {
 
 
     await loadDictionary();
+    await loadSolverDictionary();
 
 
     if (
