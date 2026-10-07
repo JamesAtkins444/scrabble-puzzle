@@ -937,7 +937,7 @@ function allWordsAreValid(
 
     return words.every(
         item =>
-            dictionary.has(
+            wordSet.has(
                 item.word
             )
     );
