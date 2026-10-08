@@ -4058,6 +4058,15 @@ let dailyClockInterval = null;
 let dailyChallengeInfoElement = null;
 
 function getUtcDateKey(date = new Date()) {
+    // The pre-generation workflow can supply a specific date while keeping
+    // the normal game tied to the real current UTC date.
+    if (
+        typeof window !== "undefined" &&
+        window.__SCRABBLE_PREGENERATE_DATE__
+    ) {
+        return window.__SCRABBLE_PREGENERATE_DATE__;
+    }
+
     const year = date.getUTCFullYear();
     const month = String(date.getUTCMonth() + 1).padStart(2, "0");
     const day = String(date.getUTCDate()).padStart(2, "0");
@@ -4138,6 +4147,141 @@ function updateDailyChallengeClock() {
     }
 }
 
+async function loadDailyPuzzle() {
+    if (isGenerating) return;
+
+    isGenerating = true;
+
+    if (generateButton) {
+        generateButton.disabled = true;
+        generateButton.textContent = "Loading Daily Puzzle…";
+    }
+
+    activeDailyDateKey = getUtcDateKey();
+    ensureDailyChallengeInfo();
+
+    if (dailyClockInterval) clearInterval(dailyClockInterval);
+    updateDailyChallengeClock();
+    dailyClockInterval = setInterval(updateDailyChallengeClock, 1000);
+
+    try {
+        const response = await fetch(
+            `puzzles/${activeDailyDateKey}.json`,
+            { cache: "no-store" }
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `Puzzle request failed: ${response.status}`
+            );
+        }
+
+        const puzzle = await response.json();
+
+        if (
+            !puzzle ||
+            !Array.isArray(puzzle.board) ||
+            !Array.isArray(puzzle.originalBoard) ||
+            !puzzle.boardSize ||
+            !Array.isArray(puzzle.initialRackTiles) ||
+            !puzzle.bestSolution
+        ) {
+            throw new Error("Daily puzzle file is incomplete.");
+        }
+
+        boardSize = puzzle.boardSize;
+        board = cloneBoard(puzzle.board);
+        originalBoard = cloneBoard(puzzle.originalBoard);
+        bonusSquares = { ...(puzzle.bonusSquares || {}) };
+        puzzleWords = Array.isArray(puzzle.puzzleWords)
+            ? puzzle.puzzleWords.map(word => ({ ...word }))
+            : [];
+
+        initialRackTiles = [...puzzle.initialRackTiles];
+        playerTiles = [...initialRackTiles];
+        playerPlacedTiles = {};
+        bestSolution = {
+            ...puzzle.bestSolution,
+            board: cloneBoard(puzzle.bestSolution.board),
+            newKeys: [...(puzzle.bestSolution.newKeys || [])],
+            words: [...(puzzle.bestSolution.words || [])],
+            scoringWords: (puzzle.bestSolution.scoringWords || []).map(word => ({ ...word })),
+            moves: (puzzle.bestSolution.moves || []).map(move => ({
+                ...move,
+                newKeys: [...(move.newKeys || [])],
+                scoringWords: (move.scoringWords || []).map(word => ({ ...word }))
+            }))
+        };
+
+        startingRackValueTotal = initialRackTiles.reduce(
+            (total, letter) =>
+                total + (letterValues[letter] ?? 0),
+            0
+        );
+
+        selectedRackTile = null;
+        selectedBoardCell = null;
+        score = 0;
+        answerRevealed = false;
+
+        if (revealAnswerButton) {
+            revealAnswerButton.textContent = bestSolution.fullSolution
+                ? "Reveal Full Answer"
+                : "Reveal Solver Answer";
+            revealAnswerButton.disabled = !bestSolution;
+        }
+
+        if (bestScoreWordElement) {
+            const tilesRemaining = bestSolution.tilesRemaining ?? initialRackTiles.length;
+            bestScoreWordElement.textContent = bestSolution.fullSolution
+                ? `${bestSolution.moves.length} turns · all tiles placed`
+                : `${bestSolution.moves.length} turns · ${tilesRemaining} tile${tilesRemaining === 1 ? "" : "s"} left`;
+        }
+
+        if (bestScoreValueElement) {
+            bestScoreValueElement.textContent = `${bestSolution.score} points`;
+        }
+
+        if (bestScoreMessageElement) {
+            const moves = bestSolution.moves || [];
+            const turnSummary = moves.map(move =>
+                `Turn ${move.turn}: ${move.word} (+${move.score}, ${move.usedTiles} tile${move.usedTiles === 1 ? "" : "s"})`
+            ).join(" · ");
+
+            bestScoreMessageElement.textContent =
+                bestSolution.fullSolution
+                    ? moves.length === 1
+                        ? `All ${initialRackTiles.length} tiles placed in one turn, including the +100 7-tile word bonus. ${turnSummary}`
+                        : `All ${initialRackTiles.length} tiles placed across ${moves.length} turns, including the +50 all-tiles bonus. ${turnSummary}`
+                    : bestSolution.searchLimitReached
+                        ? `Search limit reached after ${bestSolution.tilesUsed} tile${bestSolution.tilesUsed === 1 ? "" : "s"} placed; ${bestSolution.tilesRemaining} remain. ${turnSummary}`
+                        : `No further legal move was found after placing ${bestSolution.tilesUsed} of ${initialRackTiles.length} tiles; ${bestSolution.tilesRemaining} remain. ${turnSummary}`;
+        }
+
+        displayBoard();
+        displayTileRack();
+        updateWordCount();
+        calculatePlayerScore();
+    } catch (error) {
+        console.error("Could not load today's pre-generated puzzle:", error);
+
+        if (tileMessageElement) {
+            tileMessageElement.textContent =
+                "Today's puzzle could not be loaded. Please try again later.";
+            tileMessageElement.className = "tile-message error";
+        }
+    } finally {
+        isGenerating = false;
+
+        if (generateButton) {
+            generateButton.disabled = false;
+            generateButton.textContent = "Restart Daily Puzzle";
+        }
+
+        updateDailyChallengeClock();
+    }
+}
+
 async function generateDailyPuzzle() {
     if (isGenerating) return;
 
@@ -4192,7 +4336,7 @@ async function generateDailyPuzzle() {
 
 if (generateButton) {
     generateButton.textContent = "Daily Puzzle";
-    generateButton.addEventListener("click", generateDailyPuzzle);
+    generateButton.addEventListener("click", loadDailyPuzzle);
 }
 
 
@@ -4315,8 +4459,15 @@ async function initialise() {
     getGeneratorSettings();
 
 
+    const isPreGenerationMode =
+        typeof window !== "undefined" &&
+        window.__SCRABBLE_PREGENERATE__ === true;
+
     await loadDictionary();
-    await loadSolverDictionary();
+
+    if (isPreGenerationMode) {
+        await loadSolverDictionary();
+    }
 
 
     if (
@@ -4335,7 +4486,11 @@ async function initialise() {
     }
 
 
-    await generateDailyPuzzle();
+    if (isPreGenerationMode) {
+        await generateDailyPuzzle();
+    } else {
+        await loadDailyPuzzle();
+    }
 }
 
 
