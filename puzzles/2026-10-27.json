@@ -14,9 +14,9 @@
     ],
     [
       "",
-      "C",
-      "O",
-      "H",
+      "",
+      "",
+      "",
       "O",
       "",
       "",
@@ -96,9 +96,9 @@
     ],
     [
       "",
-      "C",
-      "O",
-      "H",
+      "",
+      "",
+      "",
       "O",
       "",
       "",
@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "5,7": "double-letter",
-    "0,7": "triple-letter",
-    "6,5": "double-letter",
-    "7,1": "double-letter",
-    "0,1": "triple-word"
+    "4,2": "double-letter",
+    "2,0": "double-letter",
+    "6,4": "triple-letter",
+    "6,6": "double-letter",
+    "2,3": "triple-word",
+    "6,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -190,12 +191,6 @@
       "row": 0,
       "col": 4,
       "direction": "vertical"
-    },
-    {
-      "word": "COHO",
-      "row": 1,
-      "col": 1,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -210,20 +205,20 @@
   "bestSolution": {
     "board": [
       [
-        "",
-        "",
-        "H",
-        "A",
-        "B",
+        "E",
         "U",
-        "",
-        ""
+        "R",
+        "Y",
+        "B",
+        "A",
+        "T",
+        "H"
       ],
       [
         "",
-        "C",
-        "O",
-        "H",
+        "",
+        "",
+        "",
         "O",
         "",
         "",
@@ -236,7 +231,7 @@
         "",
         "L",
         "A",
-        "R",
+        "",
         ""
       ],
       [
@@ -256,7 +251,7 @@
         "",
         "S",
         "I",
-        "T",
+        "",
         ""
       ],
       [
@@ -266,8 +261,8 @@
         "",
         "",
         "D",
-        "E",
-        "Y"
+        "",
+        ""
       ],
       [
         "",
@@ -291,176 +286,54 @@
       ]
     ],
     "newKeys": [
+      "0,0",
+      "0,1",
       "0,2",
       "0,3",
       "0,5",
-      "5,6",
-      "5,7",
-      "2,6",
-      "4,6"
+      "0,6",
+      "0,7"
     ],
-    "score": 86,
-    "completionBonus": 50,
+    "score": 116,
+    "completionBonus": 0,
     "words": [
-      "HABU",
-      "HO",
-      "AH",
-      "DEY",
-      "LAR",
-      "SIT",
-      "RITE"
+      "EURYBATH"
     ],
     "scoringWords": [
       {
-        "word": "HABU",
+        "word": "EURYBATH",
         "row": 0,
-        "col": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 9,
+        "score": 16,
         "move": 1
-      },
-      {
-        "word": "HO",
-        "row": 0,
-        "col": 2,
-        "direction": "vertical",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "AH",
-        "row": 0,
-        "col": 3,
-        "direction": "vertical",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "DEY",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 11,
-        "move": 2
-      },
-      {
-        "word": "LAR",
-        "row": 2,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 1,
-        "move": 3
-      },
-      {
-        "word": "SIT",
-        "row": 4,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 1,
-        "move": 3
-      },
-      {
-        "word": "RITE",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
-        "score": 4,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "HABU",
+        "word": "EURYBATH",
         "row": 0,
-        "col": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 19,
-        "usedTiles": 3,
+        "score": 116,
+        "usedTiles": 7,
         "newKeys": [
+          "0,0",
+          "0,1",
           "0,2",
           "0,3",
-          "0,5"
+          "0,5",
+          "0,6",
+          "0,7"
         ],
         "scoringWords": [
           {
-            "word": "HABU",
+            "word": "EURYBATH",
             "row": 0,
-            "col": 2,
+            "col": 0,
             "direction": "horizontal",
-            "score": 9
-          },
-          {
-            "word": "HO",
-            "row": 0,
-            "col": 2,
-            "direction": "vertical",
-            "score": 5
-          },
-          {
-            "word": "AH",
-            "row": 0,
-            "col": 3,
-            "direction": "vertical",
-            "score": 5
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "DEY",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 11,
-        "usedTiles": 2,
-        "newKeys": [
-          "5,6",
-          "5,7"
-        ],
-        "scoringWords": [
-          {
-            "word": "DEY",
-            "row": 5,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 11
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "RITE",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
-        "score": 6,
-        "usedTiles": 2,
-        "newKeys": [
-          "2,6",
-          "4,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "LAR",
-            "row": 2,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 1
-          },
-          {
-            "word": "SIT",
-            "row": 4,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 1
-          },
-          {
-            "word": "RITE",
-            "row": 2,
-            "col": 6,
-            "direction": "vertical",
-            "score": 4
+            "score": 16
           }
         ]
       }
@@ -469,6 +342,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3060
+    "visitedCandidates": 2860
   }
 }

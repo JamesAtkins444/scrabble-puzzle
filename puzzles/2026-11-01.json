@@ -28,8 +28,8 @@
       "",
       "",
       "",
-      "S",
-      "E",
+      "",
+      "",
       "A"
     ],
     [
@@ -110,8 +110,8 @@
       "",
       "",
       "",
-      "S",
-      "E",
+      "",
+      "",
       "A"
     ],
     [
@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "2,3": "double-word",
-    "4,6": "triple-word",
-    "1,2": "double-letter",
-    "7,1": "double-word",
-    "0,5": "double-letter",
-    "7,6": "double-letter"
+    "6,0": "double-letter",
+    "4,1": "double-letter",
+    "0,4": "double-letter",
+    "7,6": "double-word",
+    "0,2": "double-word",
+    "2,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -191,12 +191,6 @@
       "row": 1,
       "col": 7,
       "direction": "vertical"
-    },
-    {
-      "word": "SEA",
-      "row": 2,
-      "col": 5,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -226,8 +220,8 @@
         "",
         "",
         "",
-        "U",
-        "P",
+        "",
+        "O",
         "S"
       ],
       [
@@ -236,8 +230,8 @@
         "",
         "",
         "",
-        "S",
-        "E",
+        "",
+        "P",
         "A"
       ],
       [
@@ -257,7 +251,7 @@
         "",
         "",
         "R",
-        "O",
+        "",
         "E"
       ],
       [
@@ -272,12 +266,12 @@
       ],
       [
         "",
-        "",
+        "N",
         "E",
         "",
         "",
         "U",
-        "N",
+        "",
         ""
       ],
       [
@@ -287,63 +281,54 @@
         "",
         "",
         "X",
-        "",
+        "U",
         ""
       ]
     ],
     "newKeys": [
-      "4,6",
-      "6,6",
+      "1,6",
+      "2,6",
       "4,5",
       "6,5",
       "7,5",
-      "1,5",
-      "1,6"
+      "7,6",
+      "6,1"
     ],
-    "score": 101,
+    "score": 105,
     "completionBonus": 50,
     "words": [
-      "OE",
-      "OWN",
-      "ROE",
-      "UN",
+      "OS",
+      "PA",
+      "OP",
       "ROUX",
-      "UPS",
-      "US",
-      "PE"
+      "XU",
+      "NE",
+      "UN"
     ],
     "scoringWords": [
       {
-        "word": "OE",
-        "row": 4,
+        "word": "OS",
+        "row": 1,
         "col": 6,
-        "direction": "horizontal",
-        "score": 6,
-        "move": 1
-      },
-      {
-        "word": "OWN",
-        "row": 4,
-        "col": 6,
-        "direction": "vertical",
-        "score": 18,
-        "move": 1
-      },
-      {
-        "word": "ROE",
-        "row": 4,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "UN",
-        "row": 6,
-        "col": 5,
         "direction": "horizontal",
         "score": 2,
-        "move": 2
+        "move": 1
+      },
+      {
+        "word": "PA",
+        "row": 2,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "OP",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 10,
+        "move": 1
       },
       {
         "word": "ROUX",
@@ -354,57 +339,64 @@
         "move": 2
       },
       {
-        "word": "UPS",
-        "row": 1,
+        "word": "XU",
+        "row": 7,
         "col": 5,
         "direction": "horizontal",
-        "score": 5,
+        "score": 18,
         "move": 3
       },
       {
-        "word": "US",
-        "row": 1,
-        "col": 5,
+        "word": "NE",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 4
+      },
+      {
+        "word": "UN",
+        "row": 5,
+        "col": 1,
         "direction": "vertical",
         "score": 2,
-        "move": 3
-      },
-      {
-        "word": "PE",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 4,
-        "move": 3
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "OWN",
-        "row": 4,
+        "word": "OP",
+        "row": 1,
         "col": 6,
         "direction": "vertical",
-        "score": 24,
+        "score": 22,
         "usedTiles": 2,
         "newKeys": [
-          "4,6",
-          "6,6"
+          "1,6",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "OE",
-            "row": 4,
+            "word": "OS",
+            "row": 1,
             "col": 6,
             "direction": "horizontal",
-            "score": 6
+            "score": 2
           },
           {
-            "word": "OWN",
-            "row": 4,
+            "word": "PA",
+            "row": 2,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "OP",
+            "row": 1,
             "col": 6,
             "direction": "vertical",
-            "score": 18
+            "score": 10
           }
         ]
       },
@@ -414,7 +406,7 @@
         "row": 4,
         "col": 5,
         "direction": "vertical",
-        "score": 16,
+        "score": 11,
         "usedTiles": 3,
         "newKeys": [
           "4,5",
@@ -422,20 +414,6 @@
           "7,5"
         ],
         "scoringWords": [
-          {
-            "word": "ROE",
-            "row": 4,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "UN",
-            "row": 6,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 2
-          },
           {
             "word": "ROUX",
             "row": 4,
@@ -447,37 +425,50 @@
       },
       {
         "turn": 3,
-        "word": "UPS",
-        "row": 1,
+        "word": "XU",
+        "row": 7,
         "col": 5,
         "direction": "horizontal",
-        "score": 11,
-        "usedTiles": 2,
+        "score": 18,
+        "usedTiles": 1,
         "newKeys": [
-          "1,5",
-          "1,6"
+          "7,6"
         ],
         "scoringWords": [
           {
-            "word": "UPS",
-            "row": 1,
+            "word": "XU",
+            "row": 7,
             "col": 5,
             "direction": "horizontal",
-            "score": 5
-          },
+            "score": 18
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "NE",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,1"
+        ],
+        "scoringWords": [
           {
-            "word": "US",
-            "row": 1,
-            "col": 5,
-            "direction": "vertical",
+            "word": "NE",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
             "score": 2
           },
           {
-            "word": "PE",
-            "row": 1,
-            "col": 6,
+            "word": "UN",
+            "row": 5,
+            "col": 1,
             "direction": "vertical",
-            "score": 4
+            "score": 2
           }
         ]
       }
@@ -486,6 +477,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1189
+    "visitedCandidates": 1164
   }
 }

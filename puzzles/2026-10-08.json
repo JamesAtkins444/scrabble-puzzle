@@ -6,7 +6,7 @@
       "",
       "",
       "",
-      "G",
+      "",
       "",
       "C",
       "",
@@ -16,7 +16,7 @@
       "",
       "",
       "",
-      "A",
+      "",
       "",
       "A",
       "",
@@ -26,7 +26,7 @@
       "",
       "",
       "D",
-      "O",
+      "",
       "",
       "B",
       "",
@@ -88,7 +88,7 @@
       "",
       "",
       "",
-      "G",
+      "",
       "",
       "C",
       "",
@@ -98,7 +98,7 @@
       "",
       "",
       "",
-      "A",
+      "",
       "",
       "A",
       "",
@@ -108,7 +108,7 @@
       "",
       "",
       "D",
-      "O",
+      "",
       "",
       "B",
       "",
@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
+    "6,3": "triple-letter",
+    "1,0": "double-letter",
+    "7,6": "triple-word",
+    "0,3": "double-word",
     "0,6": "double-letter",
-    "7,0": "double-letter",
-    "3,0": "double-word",
-    "7,6": "triple-letter",
-    "3,7": "double-letter"
+    "4,7": "double-letter"
   },
   "puzzleWords": [
     {
@@ -190,12 +191,6 @@
       "row": 2,
       "col": 2,
       "direction": "vertical"
-    },
-    {
-      "word": "GAOL",
-      "row": 0,
-      "col": 3,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -213,7 +208,7 @@
         "",
         "",
         "",
-        "G",
+        "",
         "",
         "C",
         "",
@@ -223,7 +218,7 @@
         "",
         "",
         "",
-        "A",
+        "",
         "",
         "A",
         "N",
@@ -233,7 +228,7 @@
         "",
         "",
         "D",
-        "O",
+        "",
         "",
         "B",
         "E",
@@ -257,7 +252,7 @@
         "",
         "M",
         "E",
-        ""
+        "T"
       ],
       [
         "",
@@ -267,7 +262,7 @@
         "",
         "B",
         "A",
-        "T"
+        ""
       ],
       [
         "",
@@ -297,9 +292,9 @@
       "7,6",
       "1,6",
       "2,6",
-      "5,7"
+      "4,7"
     ],
-    "score": 75,
+    "score": 82,
     "completionBonus": 50,
     "words": [
       "ME",
@@ -309,7 +304,7 @@
       "AN",
       "BE",
       "NE",
-      "BAT"
+      "MET"
     ],
     "scoringWords": [
       {
@@ -341,7 +336,7 @@
         "row": 4,
         "col": 6,
         "direction": "vertical",
-        "score": 6,
+        "score": 12,
         "move": 1
       },
       {
@@ -369,11 +364,11 @@
         "move": 2
       },
       {
-        "word": "BAT",
-        "row": 5,
+        "word": "MET",
+        "row": 4,
         "col": 5,
         "direction": "horizontal",
-        "score": 1,
+        "score": 2,
         "move": 3
       }
     ],
@@ -384,7 +379,7 @@
         "row": 4,
         "col": 6,
         "direction": "vertical",
-        "score": 16,
+        "score": 22,
         "usedTiles": 4,
         "newKeys": [
           "4,6",
@@ -419,7 +414,7 @@
             "row": 4,
             "col": 6,
             "direction": "vertical",
-            "score": 6
+            "score": 12
           }
         ]
       },
@@ -461,22 +456,22 @@
       },
       {
         "turn": 3,
-        "word": "BAT",
-        "row": 5,
+        "word": "MET",
+        "row": 4,
         "col": 5,
         "direction": "horizontal",
-        "score": 1,
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "5,7"
+          "4,7"
         ],
         "scoringWords": [
           {
-            "word": "BAT",
-            "row": 5,
+            "word": "MET",
+            "row": 4,
             "col": 5,
             "direction": "horizontal",
-            "score": 1
+            "score": 2
           }
         ]
       }
@@ -485,6 +480,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3405
+    "visitedCandidates": 3767
   }
 }

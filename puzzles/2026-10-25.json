@@ -13,7 +13,7 @@
       ""
     ],
     [
-      "M",
+      "",
       "",
       "",
       "",
@@ -23,7 +23,7 @@
       ""
     ],
     [
-      "A",
+      "",
       "",
       "",
       "",
@@ -33,7 +33,7 @@
       ""
     ],
     [
-      "W",
+      "",
       "",
       "D",
       "",
@@ -43,7 +43,7 @@
       ""
     ],
     [
-      "E",
+      "",
       "",
       "E",
       "",
@@ -95,7 +95,7 @@
       ""
     ],
     [
-      "M",
+      "",
       "",
       "",
       "",
@@ -105,7 +105,7 @@
       ""
     ],
     [
-      "A",
+      "",
       "",
       "",
       "",
@@ -115,7 +115,7 @@
       ""
     ],
     [
-      "W",
+      "",
       "",
       "D",
       "",
@@ -125,7 +125,7 @@
       ""
     ],
     [
-      "E",
+      "",
       "",
       "E",
       "",
@@ -166,10 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "3,4": "double-letter",
-    "1,1": "triple-letter",
-    "1,3": "triple-letter",
-    "6,0": "double-word"
+    "2,3": "double-letter",
+    "1,6": "triple-letter",
+    "6,0": "double-letter",
+    "3,0": "double-word",
+    "1,0": "triple-letter",
+    "4,4": "double-letter"
   },
   "puzzleWords": [
     {
@@ -189,12 +191,6 @@
       "row": 3,
       "col": 2,
       "direction": "vertical"
-    },
-    {
-      "word": "MAWED",
-      "row": 1,
-      "col": 0,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -210,7 +206,7 @@
     "board": [
       [
         "",
-        "E",
+        "",
         "",
         "",
         "",
@@ -220,7 +216,7 @@
       ],
       [
         "M",
-        "M",
+        "",
         "",
         "",
         "",
@@ -229,8 +225,8 @@
         ""
       ],
       [
-        "A",
         "E",
+        "L",
         "",
         "",
         "",
@@ -243,14 +239,14 @@
         "U",
         "D",
         "",
-        "W",
+        "",
         "A",
-        "R",
+        "",
         ""
       ],
       [
         "E",
-        "",
+        "R",
         "E",
         "",
         "",
@@ -272,7 +268,7 @@
         "",
         "",
         "A",
-        "L",
+        "",
         "",
         "S",
         "",
@@ -290,108 +286,106 @@
       ]
     ],
     "newKeys": [
-      "0,1",
-      "1,1",
+      "1,0",
+      "2,0",
+      "3,0",
+      "4,0",
       "2,1",
       "3,1",
-      "3,4",
-      "3,6",
-      "6,3"
+      "4,1"
     ],
-    "score": 97,
+    "score": 107,
     "completionBonus": 50,
     "words": [
-      "MM",
-      "AE",
+      "MEWED",
+      "EL",
       "WUD",
-      "EMEU",
-      "WAR",
-      "AL",
-      "EL"
+      "ERE",
+      "LURE"
     ],
     "scoringWords": [
       {
-        "word": "MM",
+        "word": "MEWED",
         "row": 1,
         "col": 0,
-        "direction": "horizontal",
-        "score": 12,
+        "direction": "vertical",
+        "score": 34,
         "move": 1
       },
       {
-        "word": "AE",
+        "word": "EL",
         "row": 2,
         "col": 0,
         "direction": "horizontal",
         "score": 2,
-        "move": 1
+        "move": 2
       },
       {
         "word": "WUD",
         "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 7,
-        "move": 1
-      },
-      {
-        "word": "EMEU",
-        "row": 0,
-        "col": 1,
-        "direction": "vertical",
-        "score": 12,
-        "move": 1
-      },
-      {
-        "word": "WAR",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 10,
+        "score": 14,
         "move": 2
       },
       {
-        "word": "AL",
-        "row": 6,
-        "col": 2,
+        "word": "ERE",
+        "row": 4,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "move": 3
+        "score": 3,
+        "move": 2
       },
       {
-        "word": "EL",
-        "row": 5,
-        "col": 3,
+        "word": "LURE",
+        "row": 2,
+        "col": 1,
         "direction": "vertical",
-        "score": 2,
-        "move": 3
+        "score": 4,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "EMEU",
-        "row": 0,
-        "col": 1,
+        "word": "MEWED",
+        "row": 1,
+        "col": 0,
         "direction": "vertical",
-        "score": 33,
+        "score": 34,
         "usedTiles": 4,
         "newKeys": [
-          "0,1",
-          "1,1",
-          "2,1",
-          "3,1"
+          "1,0",
+          "2,0",
+          "3,0",
+          "4,0"
         ],
         "scoringWords": [
           {
-            "word": "MM",
+            "word": "MEWED",
             "row": 1,
             "col": 0,
-            "direction": "horizontal",
-            "score": 12
-          },
+            "direction": "vertical",
+            "score": 34
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "LURE",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 23,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,1",
+          "3,1",
+          "4,1"
+        ],
+        "scoringWords": [
           {
-            "word": "AE",
+            "word": "EL",
             "row": 2,
             "col": 0,
             "direction": "horizontal",
@@ -402,64 +396,21 @@
             "row": 3,
             "col": 0,
             "direction": "horizontal",
-            "score": 7
+            "score": 14
           },
           {
-            "word": "EMEU",
-            "row": 0,
+            "word": "ERE",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "LURE",
+            "row": 2,
             "col": 1,
             "direction": "vertical",
-            "score": 12
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "WAR",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 10,
-        "usedTiles": 2,
-        "newKeys": [
-          "3,4",
-          "3,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "WAR",
-            "row": 3,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 10
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "AL",
-        "row": 6,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 4,
-        "usedTiles": 1,
-        "newKeys": [
-          "6,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "AL",
-            "row": 6,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "EL",
-            "row": 5,
-            "col": 3,
-            "direction": "vertical",
-            "score": 2
+            "score": 4
           }
         ]
       }
@@ -468,6 +419,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1567
+    "visitedCandidates": 1550
   }
 }

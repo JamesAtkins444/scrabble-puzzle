@@ -38,7 +38,7 @@
       "",
       "",
       "",
-      "B",
+      "",
       "",
       "I"
     ],
@@ -58,7 +58,7 @@
       "",
       "",
       "",
-      "Y",
+      "",
       "",
       "H"
     ],
@@ -68,7 +68,7 @@
       "",
       "",
       "",
-      "E",
+      "",
       "",
       "E"
     ],
@@ -78,7 +78,7 @@
       "",
       "",
       "",
-      "D",
+      "",
       "",
       "R"
     ]
@@ -120,7 +120,7 @@
       "",
       "",
       "",
-      "B",
+      "",
       "",
       "I"
     ],
@@ -140,7 +140,7 @@
       "",
       "",
       "",
-      "Y",
+      "",
       "",
       "H"
     ],
@@ -150,7 +150,7 @@
       "",
       "",
       "",
-      "E",
+      "",
       "",
       "E"
     ],
@@ -160,16 +160,16 @@
       "",
       "",
       "",
-      "D",
+      "",
       "",
       "R"
     ]
   ],
   "bonusSquares": {
-    "2,6": "double-word",
-    "6,6": "triple-letter",
-    "7,3": "double-letter",
-    "0,6": "triple-letter"
+    "5,5": "triple-letter",
+    "4,1": "triple-letter",
+    "3,0": "double-letter",
+    "7,5": "double-word"
   },
   "puzzleWords": [
     {
@@ -189,12 +189,6 @@
       "row": 1,
       "col": 3,
       "direction": "horizontal"
-    },
-    {
-      "word": "BAYED",
-      "row": 3,
-      "col": 5,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -213,8 +207,8 @@
         "",
         "",
         "",
-        "T",
-        "I",
+        "",
+        "",
         "",
         ""
       ],
@@ -233,7 +227,7 @@
         "",
         "",
         "",
-        "V",
+        "",
         "",
         "",
         "W"
@@ -244,7 +238,7 @@
         "",
         "",
         "",
-        "B",
+        "V",
         "",
         "I"
       ],
@@ -264,8 +258,8 @@
         "",
         "",
         "",
-        "Y",
-        "A",
+        "R",
+        "",
         "H"
       ],
       [
@@ -274,7 +268,7 @@
         "",
         "",
         "",
-        "E",
+        "I",
         "R",
         "E"
       ],
@@ -283,179 +277,86 @@
         "",
         "",
         "U",
-        "R",
-        "D",
+        "T",
+        "A",
         "",
         "R"
       ]
     ],
     "newKeys": [
-      "5,6",
-      "6,6",
-      "0,4",
-      "0,5",
+      "3,5",
+      "5,5",
+      "6,5",
+      "7,5",
       "7,3",
       "7,4",
-      "2,4"
+      "6,6"
     ],
-    "score": 88,
+    "score": 79,
     "completionBonus": 50,
     "words": [
-      "YAH",
-      "ERE",
-      "GAR",
-      "TI",
-      "TA",
-      "IF",
-      "URD",
-      "TAV"
+      "VARIA",
+      "UTA",
+      "IRE"
     ],
     "scoringWords": [
       {
-        "word": "YAH",
-        "row": 5,
+        "word": "VARIA",
+        "row": 3,
         "col": 5,
-        "direction": "horizontal",
-        "score": 9,
+        "direction": "vertical",
+        "score": 20,
         "move": 1
       },
       {
-        "word": "ERE",
-        "row": 6,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "GAR",
-        "row": 4,
-        "col": 6,
-        "direction": "vertical",
-        "score": 6,
-        "move": 1
-      },
-      {
-        "word": "TI",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "TA",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "IF",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "URD",
+        "word": "UTA",
         "row": 7,
         "col": 3,
         "direction": "horizontal",
-        "score": 5,
-        "move": 3
+        "score": 6,
+        "move": 2
       },
       {
-        "word": "TAV",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 4,
-        "move": 4
+        "word": "IRE",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "GAR",
-        "row": 4,
-        "col": 6,
+        "word": "VARIA",
+        "row": 3,
+        "col": 5,
         "direction": "vertical",
         "score": 20,
-        "usedTiles": 2,
+        "usedTiles": 4,
         "newKeys": [
-          "5,6",
-          "6,6"
+          "3,5",
+          "5,5",
+          "6,5",
+          "7,5"
         ],
         "scoringWords": [
           {
-            "word": "YAH",
-            "row": 5,
+            "word": "VARIA",
+            "row": 3,
             "col": 5,
-            "direction": "horizontal",
-            "score": 9
-          },
-          {
-            "word": "ERE",
-            "row": 6,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "GAR",
-            "row": 4,
-            "col": 6,
             "direction": "vertical",
-            "score": 6
+            "score": 20
           }
         ]
       },
       {
         "turn": 2,
-        "word": "TI",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 9,
-        "usedTiles": 2,
-        "newKeys": [
-          "0,4",
-          "0,5"
-        ],
-        "scoringWords": [
-          {
-            "word": "TI",
-            "row": 0,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "TA",
-            "row": 0,
-            "col": 4,
-            "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "IF",
-            "row": 0,
-            "col": 5,
-            "direction": "vertical",
-            "score": 5
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "URD",
+        "word": "UTA",
         "row": 7,
         "col": 3,
         "direction": "horizontal",
-        "score": 5,
+        "score": 6,
         "usedTiles": 2,
         "newKeys": [
           "7,3",
@@ -463,32 +364,32 @@
         ],
         "scoringWords": [
           {
-            "word": "URD",
+            "word": "UTA",
             "row": 7,
             "col": 3,
             "direction": "horizontal",
-            "score": 5
+            "score": 6
           }
         ]
       },
       {
-        "turn": 4,
-        "word": "TAV",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 4,
+        "turn": 3,
+        "word": "IRE",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
         "usedTiles": 1,
         "newKeys": [
-          "2,4"
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "TAV",
-            "row": 0,
-            "col": 4,
-            "direction": "vertical",
-            "score": 4
+            "word": "IRE",
+            "row": 6,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 3
           }
         ]
       }
@@ -497,6 +398,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1093
+    "visitedCandidates": 1048
   }
 }
