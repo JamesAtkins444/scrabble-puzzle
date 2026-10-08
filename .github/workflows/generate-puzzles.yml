@@ -40,7 +40,7 @@ jobs:
 
       - name: Commit generated puzzles
         run: |
-          if git diff --quiet -- puzzles; then
+          if [ -z "$(git status --porcelain -- puzzles)" ]; then
             echo "No new puzzles were generated."
             exit 0
           fi
