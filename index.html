@@ -210,7 +210,9 @@
 <script>
     // Pre-generation mode is enabled only by the local/CI generator.
     // Normal players simply load the ready-made daily puzzle.
-    window.__SCRABBLE_PREGENERATE__ = false;
+    if (typeof window.__SCRABBLE_PREGENERATE__ === "undefined") {
+        window.__SCRABBLE_PREGENERATE__ = false;
+    }
 </script>
 <script src="script.js"></script>
 
