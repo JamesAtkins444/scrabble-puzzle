@@ -26,7 +26,7 @@
       "",
       "",
       "",
-      "",
+      "B",
       "",
       "",
       "",
@@ -36,7 +36,7 @@
       "",
       "",
       "",
-      "",
+      "O",
       "",
       "",
       "",
@@ -46,7 +46,7 @@
       "",
       "R",
       "",
-      "",
+      "D",
       "",
       "",
       "",
@@ -108,7 +108,7 @@
       "",
       "",
       "",
-      "",
+      "B",
       "",
       "",
       "",
@@ -118,7 +118,7 @@
       "",
       "",
       "",
-      "",
+      "O",
       "",
       "",
       "",
@@ -128,7 +128,7 @@
       "",
       "R",
       "",
-      "",
+      "D",
       "",
       "",
       "",
@@ -166,10 +166,10 @@
     ]
   ],
   "bonusSquares": {
-    "1,2": "double-letter",
-    "3,6": "double-word",
-    "6,7": "double-word",
-    "5,5": "triple-word"
+    "2,6": "double-word",
+    "3,5": "triple-word",
+    "2,4": "triple-word",
+    "0,5": "double-word"
   },
   "puzzleWords": [
     {
@@ -189,6 +189,12 @@
       "row": 5,
       "col": 0,
       "direction": "horizontal"
+    },
+    {
+      "word": "BODE",
+      "row": 2,
+      "col": 3,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -216,37 +222,37 @@
         "",
         "",
         "",
-        "D",
         "",
         "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "U",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
         "J",
         "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "B",
+        "D",
+        "U",
+        "C",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "O",
         "",
         "N",
         "",
-        "",
-        "",
         ""
       ],
       [
-        "A",
+        "",
         "R",
         "",
-        "C",
+        "D",
         "",
         "",
         "",
@@ -263,7 +269,7 @@
         ""
       ],
       [
-        "E",
+        "",
         "M",
         "",
         "",
@@ -284,115 +290,83 @@
       ]
     ],
     "newKeys": [
-      "3,0",
-      "4,0",
-      "6,0",
-      "1,3",
-      "2,3",
-      "3,3",
-      "4,3"
+      "2,2",
+      "2,4",
+      "2,5",
+      "2,6",
+      "2,7",
+      "1,5",
+      "3,5"
     ],
-    "score": 78,
+    "score": 146,
     "completionBonus": 50,
     "words": [
-      "AR",
-      "EM",
-      "JAPER",
-      "DUNCE"
+      "ABDUCE",
+      "JUN"
     ],
     "scoringWords": [
       {
-        "word": "AR",
-        "row": 4,
-        "col": 0,
+        "word": "ABDUCE",
+        "row": 2,
+        "col": 2,
         "direction": "horizontal",
-        "score": 2,
+        "score": 66,
         "move": 1
       },
       {
-        "word": "EM",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "JAPER",
-        "row": 3,
-        "col": 0,
-        "direction": "vertical",
-        "score": 14,
-        "move": 1
-      },
-      {
-        "word": "DUNCE",
+        "word": "JUN",
         "row": 1,
-        "col": 3,
+        "col": 5,
         "direction": "vertical",
-        "score": 8,
+        "score": 30,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "JAPER",
-        "row": 3,
-        "col": 0,
-        "direction": "vertical",
-        "score": 20,
-        "usedTiles": 3,
+        "word": "ABDUCE",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 66,
+        "usedTiles": 5,
         "newKeys": [
-          "3,0",
-          "4,0",
-          "6,0"
+          "2,2",
+          "2,4",
+          "2,5",
+          "2,6",
+          "2,7"
         ],
         "scoringWords": [
           {
-            "word": "AR",
-            "row": 4,
-            "col": 0,
+            "word": "ABDUCE",
+            "row": 2,
+            "col": 2,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "EM",
-            "row": 6,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "JAPER",
-            "row": 3,
-            "col": 0,
-            "direction": "vertical",
-            "score": 14
+            "score": 66
           }
         ]
       },
       {
         "turn": 2,
-        "word": "DUNCE",
+        "word": "JUN",
         "row": 1,
-        "col": 3,
+        "col": 5,
         "direction": "vertical",
-        "score": 8,
-        "usedTiles": 4,
+        "score": 30,
+        "usedTiles": 2,
         "newKeys": [
-          "1,3",
-          "2,3",
-          "3,3",
-          "4,3"
+          "1,5",
+          "3,5"
         ],
         "scoringWords": [
           {
-            "word": "DUNCE",
+            "word": "JUN",
             "row": 1,
-            "col": 3,
+            "col": 5,
             "direction": "vertical",
-            "score": 8
+            "score": 30
           }
         ]
       }
@@ -401,6 +375,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1195
+    "visitedCandidates": 1352
   }
 }

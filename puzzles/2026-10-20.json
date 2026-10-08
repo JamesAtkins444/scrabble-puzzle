@@ -16,7 +16,7 @@
       "",
       "",
       "",
-      "",
+      "G",
       "",
       "",
       "",
@@ -26,7 +26,7 @@
       "",
       "",
       "",
-      "",
+      "E",
       "",
       "",
       "",
@@ -36,7 +36,7 @@
       "",
       "",
       "",
-      "",
+      "L",
       "",
       "C",
       "",
@@ -56,7 +56,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       "D",
       "",
@@ -98,7 +98,7 @@
       "",
       "",
       "",
-      "",
+      "G",
       "",
       "",
       "",
@@ -108,7 +108,7 @@
       "",
       "",
       "",
-      "",
+      "E",
       "",
       "",
       "",
@@ -118,7 +118,7 @@
       "",
       "",
       "",
-      "",
+      "L",
       "",
       "C",
       "",
@@ -138,7 +138,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       "D",
       "",
@@ -166,10 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "7,4": "triple-word",
-    "2,3": "double-letter",
-    "0,1": "double-letter",
-    "7,1": "double-word"
+    "1,2": "triple-letter",
+    "4,0": "triple-letter",
+    "6,3": "triple-word",
+    "1,6": "triple-word",
+    "0,3": "double-word"
   },
   "puzzleWords": [
     {
@@ -188,6 +189,12 @@
       "word": "CODE",
       "row": 3,
       "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "GELDS",
+      "row": 1,
+      "col": 3,
       "direction": "vertical"
     }
   ],
@@ -216,7 +223,7 @@
         "",
         "",
         "",
-        "",
+        "G",
         "",
         "",
         "",
@@ -226,20 +233,20 @@
         "",
         "",
         "",
+        "E",
+        "F",
         "",
-        "",
-        "",
-        "",
+        "L",
         "A"
       ],
       [
         "",
         "",
         "",
-        "",
+        "L",
         "",
         "C",
-        "",
+        "A",
         "M"
       ],
       [
@@ -256,10 +263,10 @@
         "",
         "",
         "",
+        "S",
         "",
-        "O",
         "D",
-        "",
+        "I",
         "N"
       ],
       [
@@ -269,45 +276,97 @@
         "",
         "",
         "E",
-        "",
+        "N",
         "G"
       ],
       [
-        "F",
-        "I",
-        "N",
-        "A",
-        "L",
-        "S",
         "",
+        "",
+        "",
+        "",
+        "",
+        "S",
+        "O",
         ""
       ]
     ],
     "newKeys": [
-      "7,0",
-      "7,1",
-      "7,2",
-      "7,3",
-      "7,4",
-      "7,5",
-      "5,4"
+      "2,6",
+      "3,6",
+      "5,6",
+      "6,6",
+      "7,6",
+      "2,4",
+      "7,5"
     ],
-    "score": 113,
+    "score": 81,
     "completionBonus": 50,
     "words": [
-      "FINALS",
-      "CODES",
-      "OD",
-      "HO"
+      "LA",
+      "CAM",
+      "DIN",
+      "ENG",
+      "LATINO",
+      "EF",
+      "SO",
+      "CODES"
     ],
     "scoringWords": [
       {
-        "word": "FINALS",
-        "row": 7,
-        "col": 0,
+        "word": "LA",
+        "row": 2,
+        "col": 6,
         "direction": "horizontal",
-        "score": 54,
+        "score": 2,
         "move": 1
+      },
+      {
+        "word": "CAM",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 7,
+        "move": 1
+      },
+      {
+        "word": "DIN",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "ENG",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "LATINO",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 6,
+        "move": 1
+      },
+      {
+        "word": "EF",
+        "row": 2,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 2
+      },
+      {
+        "word": "SO",
+        "row": 7,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
       },
       {
         "word": "CODES",
@@ -315,49 +374,102 @@
         "col": 5,
         "direction": "vertical",
         "score": 1,
-        "move": 1
-      },
-      {
-        "word": "OD",
-        "row": 5,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "HO",
-        "row": 4,
-        "col": 4,
-        "direction": "vertical",
-        "score": 5,
-        "move": 2
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FINALS",
-        "row": 7,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 55,
-        "usedTiles": 6,
+        "word": "LATINO",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 23,
+        "usedTiles": 5,
         "newKeys": [
-          "7,0",
-          "7,1",
-          "7,2",
-          "7,3",
-          "7,4",
+          "2,6",
+          "3,6",
+          "5,6",
+          "6,6",
+          "7,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "LA",
+            "row": 2,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "CAM",
+            "row": 3,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "DIN",
+            "row": 5,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "ENG",
+            "row": 6,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "LATINO",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "EF",
+        "row": 2,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "EF",
+            "row": 2,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "CODES",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 3,
+        "usedTiles": 1,
+        "newKeys": [
           "7,5"
         ],
         "scoringWords": [
           {
-            "word": "FINALS",
+            "word": "SO",
             "row": 7,
-            "col": 0,
+            "col": 5,
             "direction": "horizontal",
-            "score": 54
+            "score": 2
           },
           {
             "word": "CODES",
@@ -367,40 +479,12 @@
             "score": 1
           }
         ]
-      },
-      {
-        "turn": 2,
-        "word": "HO",
-        "row": 4,
-        "col": 4,
-        "direction": "vertical",
-        "score": 8,
-        "usedTiles": 1,
-        "newKeys": [
-          "5,4"
-        ],
-        "scoringWords": [
-          {
-            "word": "OD",
-            "row": 5,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "HO",
-            "row": 4,
-            "col": 4,
-            "direction": "vertical",
-            "score": 5
-          }
-        ]
       }
     ],
     "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2844
+    "visitedCandidates": 3076
   }
 }

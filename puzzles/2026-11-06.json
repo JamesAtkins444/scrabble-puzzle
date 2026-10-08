@@ -27,7 +27,7 @@
       "",
       "",
       "",
-      "",
+      "R",
       "",
       "",
       "N"
@@ -37,7 +37,7 @@
       "",
       "",
       "",
-      "",
+      "A",
       "",
       "",
       "R"
@@ -57,7 +57,7 @@
       "",
       "",
       "",
-      "",
+      "E",
       "",
       "",
       ""
@@ -67,7 +67,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       "",
       ""
@@ -109,7 +109,7 @@
       "",
       "",
       "",
-      "",
+      "R",
       "",
       "",
       "N"
@@ -119,7 +119,7 @@
       "",
       "",
       "",
-      "",
+      "A",
       "",
       "",
       "R"
@@ -139,7 +139,7 @@
       "",
       "",
       "",
-      "",
+      "E",
       "",
       "",
       ""
@@ -149,7 +149,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       "",
       ""
@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "5,5": "double-word",
-    "4,1": "triple-letter",
-    "3,3": "double-letter",
-    "0,3": "double-letter",
-    "7,1": "double-letter"
+    "7,2": "double-letter",
+    "6,5": "triple-letter",
+    "0,4": "double-letter",
+    "2,3": "double-letter",
+    "7,0": "triple-letter",
+    "3,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -190,6 +191,12 @@
       "row": 4,
       "col": 4,
       "direction": "horizontal"
+    },
+    {
+      "word": "RACES",
+      "row": 2,
+      "col": 4,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -226,25 +233,25 @@
       [
         "R",
         "A",
-        "Y",
-        "A",
+        "X",
         "",
+        "R",
         "",
         "",
         "N"
       ],
       [
+        "Y",
         "",
         "",
         "",
-        "T",
-        "",
+        "A",
         "",
         "",
         "R"
       ],
       [
-        "",
+        "A",
         "",
         "",
         "",
@@ -258,18 +265,18 @@
         "",
         "",
         "",
+        "E",
         "",
-        "X",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "S",
         "I",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
         "",
         ""
       ],
@@ -279,64 +286,38 @@
         "",
         "",
         "",
-        "",
+        "T",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "5,5",
-      "5,6",
       "2,0",
       "2,1",
       "2,2",
-      "2,3",
-      "3,3"
+      "3,0",
+      "4,0",
+      "6,5",
+      "7,5"
     ],
-    "score": 112,
+    "score": 95,
     "completionBonus": 50,
     "words": [
-      "XI",
-      "OX",
-      "PI",
-      "RAYA",
+      "RAX",
       "BA",
-      "AY",
-      "PA",
-      "PAT"
+      "AX",
+      "RYA",
+      "SI",
+      "IT"
     ],
     "scoringWords": [
       {
-        "word": "XI",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 18,
-        "move": 1
-      },
-      {
-        "word": "OX",
-        "row": 4,
-        "col": 5,
-        "direction": "vertical",
-        "score": 18,
-        "move": 1
-      },
-      {
-        "word": "PI",
-        "row": 4,
-        "col": 6,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "RAYA",
+        "word": "RAX",
         "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 7,
-        "move": 2
+        "score": 10,
+        "move": 1
       },
       {
         "word": "BA",
@@ -344,91 +325,62 @@
         "col": 1,
         "direction": "vertical",
         "score": 4,
-        "move": 2
+        "move": 1
       },
       {
-        "word": "AY",
+        "word": "AX",
         "row": 1,
         "col": 2,
         "direction": "vertical",
-        "score": 5,
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "RYA",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 14,
         "move": 2
       },
       {
-        "word": "PA",
-        "row": 1,
-        "col": 3,
+        "word": "SI",
+        "row": 6,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 3
+      },
+      {
+        "word": "IT",
+        "row": 6,
+        "col": 5,
         "direction": "vertical",
         "score": 4,
-        "move": 2
-      },
-      {
-        "word": "PAT",
-        "row": 1,
-        "col": 3,
-        "direction": "vertical",
-        "score": 2,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "XI",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 40,
-        "usedTiles": 2,
-        "newKeys": [
-          "5,5",
-          "5,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "XI",
-            "row": 5,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 18
-          },
-          {
-            "word": "OX",
-            "row": 4,
-            "col": 5,
-            "direction": "vertical",
-            "score": 18
-          },
-          {
-            "word": "PI",
-            "row": 4,
-            "col": 6,
-            "direction": "vertical",
-            "score": 4
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "RAYA",
+        "word": "RAX",
         "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 20,
-        "usedTiles": 4,
+        "score": 23,
+        "usedTiles": 3,
         "newKeys": [
           "2,0",
           "2,1",
-          "2,2",
-          "2,3"
+          "2,2"
         ],
         "scoringWords": [
           {
-            "word": "RAYA",
+            "word": "RAX",
             "row": 2,
             "col": 0,
             "direction": "horizontal",
-            "score": 7
+            "score": 10
           },
           {
             "word": "BA",
@@ -438,39 +390,62 @@
             "score": 4
           },
           {
-            "word": "AY",
+            "word": "AX",
             "row": 1,
             "col": 2,
             "direction": "vertical",
-            "score": 5
-          },
+            "score": 9
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "RYA",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 14,
+        "usedTiles": 2,
+        "newKeys": [
+          "3,0",
+          "4,0"
+        ],
+        "scoringWords": [
           {
-            "word": "PA",
-            "row": 1,
-            "col": 3,
+            "word": "RYA",
+            "row": 2,
+            "col": 0,
             "direction": "vertical",
-            "score": 4
+            "score": 14
           }
         ]
       },
       {
         "turn": 3,
-        "word": "PAT",
-        "row": 1,
-        "col": 3,
+        "word": "IT",
+        "row": 6,
+        "col": 5,
         "direction": "vertical",
-        "score": 2,
-        "usedTiles": 1,
+        "score": 8,
+        "usedTiles": 2,
         "newKeys": [
-          "3,3"
+          "6,5",
+          "7,5"
         ],
         "scoringWords": [
           {
-            "word": "PAT",
-            "row": 1,
-            "col": 3,
+            "word": "SI",
+            "row": 6,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "IT",
+            "row": 6,
+            "col": 5,
             "direction": "vertical",
-            "score": 2
+            "score": 4
           }
         ]
       }
@@ -479,6 +454,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1827
+    "visitedCandidates": 1830
   }
 }

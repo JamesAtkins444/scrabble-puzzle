@@ -15,7 +15,7 @@
     [
       "",
       "",
-      "",
+      "L",
       "",
       "A",
       "",
@@ -25,7 +25,7 @@
     [
       "",
       "",
-      "",
+      "A",
       "",
       "N",
       "",
@@ -35,7 +35,7 @@
     [
       "",
       "",
-      "",
+      "N",
       "",
       "S",
       "",
@@ -45,7 +45,7 @@
     [
       "",
       "",
-      "",
+      "G",
       "",
       "Y",
       "",
@@ -97,7 +97,7 @@
     [
       "",
       "",
-      "",
+      "L",
       "",
       "A",
       "",
@@ -107,7 +107,7 @@
     [
       "",
       "",
-      "",
+      "A",
       "",
       "N",
       "",
@@ -117,7 +117,7 @@
     [
       "",
       "",
-      "",
+      "N",
       "",
       "S",
       "",
@@ -127,7 +127,7 @@
     [
       "",
       "",
-      "",
+      "G",
       "",
       "Y",
       "",
@@ -167,9 +167,11 @@
   ],
   "bonusSquares": {
     "6,5": "triple-letter",
-    "5,0": "double-letter",
-    "3,0": "triple-word",
-    "4,2": "double-letter"
+    "7,2": "double-word",
+    "7,4": "double-letter",
+    "4,6": "triple-word",
+    "1,1": "triple-letter",
+    "0,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -188,6 +190,12 @@
       "word": "TANSY",
       "row": 0,
       "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "CLANG",
+      "row": 0,
+      "col": 2,
       "direction": "vertical"
     }
   ],
@@ -215,17 +223,17 @@
       [
         "",
         "",
-        "",
+        "L",
         "",
         "A",
         "",
-        "O",
+        "",
         "H"
       ],
       [
         "",
         "",
-        "",
+        "A",
         "",
         "N",
         "",
@@ -233,33 +241,43 @@
         "A"
       ],
       [
-        "F",
-        "O",
+        "",
+        "",
         "N",
-        "T",
+        "",
         "S",
         "",
         "",
         "V"
       ],
       [
+        "",
+        "",
+        "G",
         "O",
-        "",
-        "",
-        "",
         "Y",
         "",
-        "",
+        "B",
         "E"
       ],
       [
-        "B",
         "",
         "",
         "",
+        "F",
+        "",
+        "",
+        "O",
+        ""
+      ],
+      [
         "",
         "",
         "",
+        "T",
+        "",
+        "",
+        "O",
         ""
       ],
       [
@@ -269,143 +287,120 @@
         "",
         "",
         "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        "N",
         ""
       ]
     ],
     "newKeys": [
-      "3,0",
-      "3,1",
-      "3,2",
-      "3,3",
-      "4,0",
-      "5,0",
-      "1,6"
+      "4,6",
+      "5,6",
+      "6,6",
+      "7,6",
+      "4,3",
+      "5,3",
+      "6,3"
     ],
-    "score": 114,
+    "score": 93,
     "completionBonus": 50,
     "words": [
-      "FONTS",
-      "FOB",
-      "OH",
-      "NO"
+      "BE",
+      "BOON",
+      "GOY",
+      "OFT"
     ],
     "scoringWords": [
       {
-        "word": "FONTS",
-        "row": 3,
-        "col": 0,
+        "word": "BE",
+        "row": 4,
+        "col": 6,
         "direction": "horizontal",
-        "score": 24,
+        "score": 12,
         "move": 1
       },
       {
-        "word": "FOB",
-        "row": 3,
-        "col": 0,
+        "word": "BOON",
+        "row": 4,
+        "col": 6,
         "direction": "vertical",
-        "score": 33,
+        "score": 18,
+        "move": 1
+      },
+      {
+        "word": "GOY",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 7,
         "move": 2
       },
       {
-        "word": "OH",
-        "row": 1,
-        "col": 6,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 3
-      },
-      {
-        "word": "NO",
-        "row": 0,
-        "col": 6,
+        "word": "OFT",
+        "row": 4,
+        "col": 3,
         "direction": "vertical",
-        "score": 2,
-        "move": 3
+        "score": 6,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FONTS",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 24,
+        "word": "BOON",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 30,
         "usedTiles": 4,
         "newKeys": [
-          "3,0",
-          "3,1",
-          "3,2",
-          "3,3"
+          "4,6",
+          "5,6",
+          "6,6",
+          "7,6"
         ],
         "scoringWords": [
           {
-            "word": "FONTS",
-            "row": 3,
-            "col": 0,
+            "word": "BE",
+            "row": 4,
+            "col": 6,
             "direction": "horizontal",
-            "score": 24
+            "score": 12
+          },
+          {
+            "word": "BOON",
+            "row": 4,
+            "col": 6,
+            "direction": "vertical",
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "FOB",
-        "row": 3,
-        "col": 0,
+        "word": "OFT",
+        "row": 4,
+        "col": 3,
         "direction": "vertical",
-        "score": 33,
-        "usedTiles": 2,
+        "score": 13,
+        "usedTiles": 3,
         "newKeys": [
-          "4,0",
-          "5,0"
+          "4,3",
+          "5,3",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "FOB",
-            "row": 3,
-            "col": 0,
-            "direction": "vertical",
-            "score": 33
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "OH",
-        "row": 1,
-        "col": 6,
-        "direction": "horizontal",
-        "score": 7,
-        "usedTiles": 1,
-        "newKeys": [
-          "1,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "OH",
-            "row": 1,
-            "col": 6,
+            "word": "GOY",
+            "row": 4,
+            "col": 2,
             "direction": "horizontal",
-            "score": 5
+            "score": 7
           },
           {
-            "word": "NO",
-            "row": 0,
-            "col": 6,
+            "word": "OFT",
+            "row": 4,
+            "col": 3,
             "direction": "vertical",
-            "score": 2
+            "score": 6
           }
         ]
       }
@@ -414,6 +409,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 850
+    "visitedCandidates": 912
   }
 }

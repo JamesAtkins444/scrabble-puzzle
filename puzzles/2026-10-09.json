@@ -27,10 +27,10 @@
       "U",
       "",
       "S",
-      "",
-      "",
-      "",
-      ""
+      "L",
+      "I",
+      "M",
+      "E"
     ],
     [
       "",
@@ -109,10 +109,10 @@
       "U",
       "",
       "S",
-      "",
-      "",
-      "",
-      ""
+      "L",
+      "I",
+      "M",
+      "E"
     ],
     [
       "",
@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "4,2": "double-letter",
-    "3,0": "triple-letter",
-    "1,3": "double-letter",
-    "0,4": "double-letter",
-    "1,6": "triple-word",
-    "6,2": "double-word"
+    "1,4": "double-letter",
+    "3,2": "double-letter",
+    "3,7": "double-word",
+    "2,0": "triple-letter",
+    "6,0": "double-word",
+    "7,4": "double-letter"
   },
   "puzzleWords": [
     {
@@ -191,6 +191,12 @@
       "row": 2,
       "col": 1,
       "direction": "vertical"
+    },
+    {
+      "word": "SLIME",
+      "row": 2,
+      "col": 3,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -220,8 +226,8 @@
         "",
         "",
         "",
-        "",
         "R",
+        "",
         ""
       ],
       [
@@ -229,10 +235,10 @@
         "U",
         "",
         "S",
-        "",
-        "",
-        "E",
-        ""
+        "L",
+        "I",
+        "M",
+        "E"
       ],
       [
         "",
@@ -240,9 +246,9 @@
         "",
         "E",
         "",
-        "",
         "F",
-        ""
+        "E",
+        "R"
       ],
       [
         "",
@@ -251,7 +257,7 @@
         "A",
         "",
         "",
-        "I",
+        "",
         ""
       ],
       [
@@ -265,104 +271,226 @@
         "Y"
       ],
       [
-        "",
-        "E",
-        "",
-        "",
         "R",
-        "",
         "E",
+        "",
+        "",
+        "I",
+        "",
+        "",
         ""
       ],
       [
+        "E",
         "",
         "",
         "",
         "",
-        "R",
         "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "1,6",
-      "2,6",
+      "3,5",
       "3,6",
-      "4,6",
-      "6,6",
+      "3,7",
+      "6,0",
+      "7,0",
       "6,4",
-      "7,4"
+      "1,5"
     ],
-    "score": 82,
+    "score": 88,
     "completionBonus": 50,
     "words": [
-      "REFIRE",
-      "BRR"
+      "FER",
+      "IF",
+      "ME",
+      "ER",
+      "RE",
+      "RE",
+      "BI",
+      "RIF"
     ],
     "scoringWords": [
       {
-        "word": "REFIRE",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 27,
+        "word": "FER",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 12,
         "move": 1
       },
       {
-        "word": "BRR",
+        "word": "IF",
+        "row": 2,
+        "col": 5,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "ME",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "ER",
+        "row": 2,
+        "col": 7,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "RE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "RE",
+        "row": 6,
+        "col": 0,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "BI",
         "row": 5,
         "col": 4,
         "direction": "vertical",
-        "score": 5,
-        "move": 2
+        "score": 4,
+        "move": 3
+      },
+      {
+        "word": "RIF",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 1,
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "REFIRE",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 27,
-        "usedTiles": 5,
+        "word": "FER",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 25,
+        "usedTiles": 3,
         "newKeys": [
-          "1,6",
-          "2,6",
+          "3,5",
           "3,6",
-          "4,6",
-          "6,6"
+          "3,7"
         ],
         "scoringWords": [
           {
-            "word": "REFIRE",
-            "row": 1,
+            "word": "FER",
+            "row": 3,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 12
+          },
+          {
+            "word": "IF",
+            "row": 2,
+            "col": 5,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "ME",
+            "row": 2,
             "col": 6,
             "direction": "vertical",
-            "score": 27
+            "score": 4
+          },
+          {
+            "word": "ER",
+            "row": 2,
+            "col": 7,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       },
       {
         "turn": 2,
-        "word": "BRR",
-        "row": 5,
-        "col": 4,
+        "word": "RE",
+        "row": 6,
+        "col": 0,
         "direction": "vertical",
-        "score": 5,
+        "score": 8,
         "usedTiles": 2,
         "newKeys": [
-          "6,4",
-          "7,4"
+          "6,0",
+          "7,0"
         ],
         "scoringWords": [
           {
-            "word": "BRR",
+            "word": "RE",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "RE",
+            "row": 6,
+            "col": 0,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "BI",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "BI",
             "row": 5,
             "col": 4,
             "direction": "vertical",
-            "score": 5
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "RIF",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 1,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "RIF",
+            "row": 1,
+            "col": 5,
+            "direction": "vertical",
+            "score": 1
           }
         ]
       }
@@ -371,6 +499,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 937
+    "visitedCandidates": 1167
   }
 }

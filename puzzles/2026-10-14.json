@@ -6,80 +6,80 @@
       "",
       "",
       "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "",
+      "",
+      "",
+      "",
+      "I",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "I",
+      "L",
       "V",
       "A",
-      "L",
+      "N",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "",
+      "",
+      "",
+      "",
+      "G",
+      ""
+    ],
+    [
+      "N",
+      "I",
       "E",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "U"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "T",
-      "I",
-      "P",
-      "I",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "L",
+      "L",
+      "O",
+      "S",
       ""
     ]
   ],
@@ -88,71 +88,11 @@
       "",
       "",
       "",
-      "V",
-      "A",
-      "L",
-      "E",
-      "S"
-    ],
-    [
       "",
       "",
       "",
       "",
-      "",
-      "",
-      "",
-      "U"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "T",
-      "I",
-      "P",
-      "I",
-      "S"
+      ""
     ],
     [
       "",
@@ -163,42 +103,110 @@
       "",
       "",
       ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "",
+      "",
+      "",
+      "",
+      "I",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "I",
+      "L",
+      "V",
+      "A",
+      "N",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "",
+      "",
+      "",
+      "",
+      "G",
+      ""
+    ],
+    [
+      "N",
+      "I",
+      "E",
+      "L",
+      "L",
+      "O",
+      "S",
+      ""
     ]
   ],
   "bonusSquares": {
-    "5,2": "triple-word",
-    "1,4": "double-letter",
-    "3,4": "triple-letter",
-    "5,4": "double-word"
+    "4,4": "triple-word",
+    "2,5": "double-letter",
+    "5,7": "triple-letter",
+    "0,0": "triple-letter",
+    "2,1": "double-letter",
+    "2,7": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "SUTTEES",
-      "row": 0,
-      "col": 7,
-      "direction": "vertical"
-    },
-    {
-      "word": "TIPIS",
-      "row": 6,
-      "col": 3,
+      "word": "NIELLOS",
+      "row": 7,
+      "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "VALES",
-      "row": 0,
-      "col": 3,
+      "word": "RINGS",
+      "row": 3,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "DASHI",
+      "row": 3,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "SILVA",
+      "row": 5,
+      "col": 1,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
+    "A",
+    "C",
+    "N",
     "O",
-    "E",
-    "T",
-    "N",
-    "N",
-    "Y",
-    "I"
+    "U",
+    "M",
+    "M"
   ],
   "bestSolution": {
     "board": [
@@ -206,71 +214,11 @@
         "",
         "",
         "",
-        "V",
-        "A",
-        "L",
-        "E",
-        "S"
-      ],
-      [
         "",
         "",
         "",
         "",
-        "",
-        "",
-        "N",
-        "U"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "T"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "T"
-      ],
-      [
-        "",
-        "I",
-        "O",
-        "N",
-        "",
-        "",
-        "",
-        "E"
-      ],
-      [
-        "",
-        "",
-        "Y",
-        "E",
-        "T",
-        "",
-        "",
-        "E"
-      ],
-      [
-        "",
-        "",
-        "",
-        "T",
-        "I",
-        "P",
-        "I",
-        "S"
+        ""
       ],
       [
         "",
@@ -281,195 +229,236 @@
         "",
         "",
         ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "D",
+        "",
+        "",
+        "",
+        "U",
+        "R",
+        "N"
+      ],
+      [
+        "C",
+        "A",
+        "M",
+        "",
+        "O",
+        "",
+        "I",
+        ""
+      ],
+      [
+        "",
+        "S",
+        "I",
+        "L",
+        "V",
+        "A",
+        "N",
+        ""
+      ],
+      [
+        "",
+        "H",
+        "M",
+        "",
+        "A",
+        "",
+        "G",
+        ""
+      ],
+      [
+        "N",
+        "I",
+        "E",
+        "L",
+        "L",
+        "O",
+        "S",
+        ""
       ]
     ],
     "newKeys": [
-      "5,2",
-      "5,3",
-      "5,4",
-      "4,1",
+      "4,4",
+      "6,4",
       "4,2",
-      "4,3",
-      "1,6"
+      "6,2",
+      "4,0",
+      "3,5",
+      "3,7"
     ],
-    "score": 115,
+    "score": 96,
     "completionBonus": 50,
     "words": [
-      "YET",
-      "ET",
-      "TI",
-      "ION",
-      "OY",
-      "NET",
-      "NU",
-      "EN"
+      "OVAL",
+      "AM",
+      "HM",
+      "MIME",
+      "CAM",
+      "URN"
     ],
     "scoringWords": [
       {
-        "word": "YET",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 36,
-        "move": 1
-      },
-      {
-        "word": "ET",
-        "row": 5,
-        "col": 3,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "TI",
-        "row": 5,
+        "word": "OVAL",
+        "row": 4,
         "col": 4,
         "direction": "vertical",
-        "score": 4,
+        "score": 21,
         "move": 1
       },
       {
-        "word": "ION",
+        "word": "AM",
         "row": 4,
         "col": 1,
         "direction": "horizontal",
-        "score": 3,
+        "score": 4,
         "move": 2
       },
       {
-        "word": "OY",
+        "word": "HM",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 7,
+        "move": 2
+      },
+      {
+        "word": "MIME",
         "row": 4,
         "col": 2,
         "direction": "vertical",
-        "score": 15,
+        "score": 8,
         "move": 2
       },
       {
-        "word": "NET",
+        "word": "CAM",
         "row": 4,
-        "col": 3,
-        "direction": "vertical",
-        "score": 1,
-        "move": 2
-      },
-      {
-        "word": "NU",
-        "row": 1,
-        "col": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
+        "score": 3,
         "move": 3
       },
       {
-        "word": "EN",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 2,
-        "move": 3
+        "word": "URN",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "YET",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 42,
-        "usedTiles": 3,
+        "word": "OVAL",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 21,
+        "usedTiles": 2,
         "newKeys": [
-          "5,2",
-          "5,3",
-          "5,4"
+          "4,4",
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "YET",
-            "row": 5,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 36
-          },
-          {
-            "word": "ET",
-            "row": 5,
-            "col": 3,
-            "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "TI",
-            "row": 5,
+            "word": "OVAL",
+            "row": 4,
             "col": 4,
             "direction": "vertical",
-            "score": 4
+            "score": 21
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ION",
+        "word": "MIME",
         "row": 4,
-        "col": 1,
-        "direction": "horizontal",
+        "col": 2,
+        "direction": "vertical",
         "score": 19,
-        "usedTiles": 3,
+        "usedTiles": 2,
         "newKeys": [
-          "4,1",
           "4,2",
-          "4,3"
+          "6,2"
         ],
         "scoringWords": [
           {
-            "word": "ION",
+            "word": "AM",
             "row": 4,
             "col": 1,
             "direction": "horizontal",
-            "score": 3
+            "score": 4
           },
           {
-            "word": "OY",
+            "word": "HM",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "MIME",
             "row": 4,
             "col": 2,
             "direction": "vertical",
-            "score": 15
-          },
-          {
-            "word": "NET",
-            "row": 4,
-            "col": 3,
-            "direction": "vertical",
-            "score": 1
+            "score": 8
           }
         ]
       },
       {
         "turn": 3,
-        "word": "EN",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 4,
+        "word": "CAM",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 3,
         "usedTiles": 1,
         "newKeys": [
-          "1,6"
+          "4,0"
         ],
         "scoringWords": [
           {
-            "word": "NU",
-            "row": 1,
-            "col": 6,
+            "word": "CAM",
+            "row": 4,
+            "col": 0,
             "direction": "horizontal",
-            "score": 2
-          },
+            "score": 3
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "URN",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
+        "usedTiles": 2,
+        "newKeys": [
+          "3,5",
+          "3,7"
+        ],
+        "scoringWords": [
           {
-            "word": "EN",
-            "row": 0,
-            "col": 6,
-            "direction": "vertical",
-            "score": 2
+            "word": "URN",
+            "row": 3,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 3
           }
         ]
       }
@@ -478,6 +467,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1936
+    "visitedCandidates": 1790
   }
 }

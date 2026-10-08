@@ -33,7 +33,7 @@
       ""
     ],
     [
-      "",
+      "N",
       "",
       "",
       "",
@@ -43,7 +43,7 @@
       ""
     ],
     [
-      "",
+      "E",
       "",
       "",
       "",
@@ -53,7 +53,7 @@
       ""
     ],
     [
-      "",
+      "C",
       "",
       "",
       "H",
@@ -63,7 +63,7 @@
       "S"
     ],
     [
-      "",
+      "K",
       "",
       "",
       "",
@@ -115,7 +115,7 @@
       ""
     ],
     [
-      "",
+      "N",
       "",
       "",
       "",
@@ -125,7 +125,7 @@
       ""
     ],
     [
-      "",
+      "E",
       "",
       "",
       "",
@@ -135,7 +135,7 @@
       ""
     ],
     [
-      "",
+      "C",
       "",
       "",
       "H",
@@ -145,7 +145,7 @@
       "S"
     ],
     [
-      "",
+      "K",
       "",
       "",
       "",
@@ -166,12 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "3,4": "double-word",
-    "7,6": "double-letter",
-    "1,0": "double-word",
-    "3,6": "double-letter",
-    "7,1": "triple-word",
-    "0,6": "triple-word"
+    "7,2": "double-letter",
+    "0,0": "triple-letter",
+    "0,2": "triple-letter",
+    "7,7": "triple-word",
+    "1,5": "double-word"
   },
   "puzzleWords": [
     {
@@ -191,6 +190,12 @@
       "row": 5,
       "col": 3,
       "direction": "horizontal"
+    },
+    {
+      "word": "SNECK",
+      "row": 2,
+      "col": 0,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -211,17 +216,17 @@
         "",
         "",
         "",
-        "M",
+        "",
         ""
       ],
       [
         "",
         "",
         "",
-        "D",
         "",
         "",
-        "I",
+        "",
+        "",
         ""
       ],
       [
@@ -235,9 +240,9 @@
         ""
       ],
       [
-        "H",
-        "E",
-        "X",
+        "N",
+        "",
+        "",
         "",
         "",
         "L",
@@ -245,17 +250,17 @@
         ""
       ],
       [
+        "E",
         "",
         "",
         "",
-        "",
-        "",
+        "H",
         "A",
-        "",
+        "M",
         ""
       ],
       [
-        "",
+        "C",
         "",
         "",
         "H",
@@ -265,14 +270,14 @@
         "S"
       ],
       [
+        "K",
         "",
         "",
-        "",
-        "",
-        "",
+        "I",
+        "D",
         "S",
         "",
-        ""
+        "E"
       ],
       [
         "",
@@ -282,143 +287,209 @@
         "",
         "",
         "",
-        ""
+        "X"
       ]
     ],
     "newKeys": [
-      "3,0",
-      "3,1",
-      "3,2",
-      "0,6",
-      "1,6",
-      "3,6",
-      "1,3"
+      "6,7",
+      "7,7",
+      "4,4",
+      "4,6",
+      "6,3",
+      "6,4",
+      "3,6"
     ],
-    "score": 111,
+    "score": 113,
     "completionBonus": 50,
     "words": [
-      "HEX",
-      "SH",
-      "PE",
-      "OX",
+      "SEX",
+      "HAM",
+      "HO",
+      "ME",
+      "IDS",
+      "HI",
+      "HOD",
       "LI",
-      "MIDI",
-      "DO"
+      "DIME"
     ],
     "scoringWords": [
       {
-        "word": "HEX",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 13,
+        "word": "SEX",
+        "row": 5,
+        "col": 7,
+        "direction": "vertical",
+        "score": 30,
         "move": 1
       },
       {
-        "word": "SH",
-        "row": 2,
-        "col": 0,
+        "word": "HAM",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 8,
+        "move": 2
+      },
+      {
+        "word": "HO",
+        "row": 4,
+        "col": 4,
         "direction": "vertical",
         "score": 5,
-        "move": 1
+        "move": 2
       },
       {
-        "word": "PE",
-        "row": 2,
-        "col": 1,
+        "word": "ME",
+        "row": 4,
+        "col": 6,
         "direction": "vertical",
         "score": 4,
-        "move": 1
+        "move": 2
       },
       {
-        "word": "OX",
-        "row": 2,
-        "col": 2,
+        "word": "IDS",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 3
+      },
+      {
+        "word": "HI",
+        "row": 5,
+        "col": 3,
         "direction": "vertical",
-        "score": 9,
-        "move": 1
+        "score": 5,
+        "move": 3
+      },
+      {
+        "word": "HOD",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
       },
       {
         "word": "LI",
         "row": 3,
         "col": 5,
         "direction": "horizontal",
-        "score": 3,
-        "move": 2
+        "score": 2,
+        "move": 4
       },
       {
-        "word": "MIDI",
-        "row": 0,
+        "word": "DIME",
+        "row": 2,
         "col": 6,
         "direction": "vertical",
-        "score": 24,
-        "move": 2
-      },
-      {
-        "word": "DO",
-        "row": 1,
-        "col": 3,
-        "direction": "vertical",
         "score": 3,
-        "move": 3
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "HEX",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 31,
-        "usedTiles": 3,
+        "word": "SEX",
+        "row": 5,
+        "col": 7,
+        "direction": "vertical",
+        "score": 30,
+        "usedTiles": 2,
         "newKeys": [
-          "3,0",
-          "3,1",
-          "3,2"
+          "6,7",
+          "7,7"
         ],
         "scoringWords": [
           {
-            "word": "HEX",
-            "row": 3,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 13
-          },
-          {
-            "word": "SH",
-            "row": 2,
-            "col": 0,
+            "word": "SEX",
+            "row": 5,
+            "col": 7,
             "direction": "vertical",
-            "score": 5
-          },
-          {
-            "word": "PE",
-            "row": 2,
-            "col": 1,
-            "direction": "vertical",
-            "score": 4
-          },
-          {
-            "word": "OX",
-            "row": 2,
-            "col": 2,
-            "direction": "vertical",
-            "score": 9
+            "score": 30
           }
         ]
       },
       {
         "turn": 2,
-        "word": "MIDI",
-        "row": 0,
+        "word": "HAM",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 17,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,4",
+          "4,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "HAM",
+            "row": 4,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 8
+          },
+          {
+            "word": "HO",
+            "row": 4,
+            "col": 4,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "ME",
+            "row": 4,
+            "col": 6,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "IDS",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 11,
+        "usedTiles": 2,
+        "newKeys": [
+          "6,3",
+          "6,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "IDS",
+            "row": 6,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "HI",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "HOD",
+            "row": 4,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "DIME",
+        "row": 2,
         "col": 6,
         "direction": "vertical",
-        "score": 27,
-        "usedTiles": 3,
+        "score": 5,
+        "usedTiles": 1,
         "newKeys": [
-          "0,6",
-          "1,6",
           "3,6"
         ],
         "scoringWords": [
@@ -427,33 +498,12 @@
             "row": 3,
             "col": 5,
             "direction": "horizontal",
-            "score": 3
+            "score": 2
           },
           {
-            "word": "MIDI",
-            "row": 0,
+            "word": "DIME",
+            "row": 2,
             "col": 6,
-            "direction": "vertical",
-            "score": 24
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "DO",
-        "row": 1,
-        "col": 3,
-        "direction": "vertical",
-        "score": 3,
-        "usedTiles": 1,
-        "newKeys": [
-          "1,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "DO",
-            "row": 1,
-            "col": 3,
             "direction": "vertical",
             "score": 3
           }
@@ -464,6 +514,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1612
+    "visitedCandidates": 1910
   }
 }

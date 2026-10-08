@@ -35,11 +35,11 @@
     [
       "",
       "",
-      "",
-      "",
+      "W",
+      "E",
       "K",
-      "",
-      "",
+      "A",
+      "S",
       ""
     ],
     [
@@ -117,11 +117,11 @@
     [
       "",
       "",
-      "",
-      "",
+      "W",
+      "E",
       "K",
-      "",
-      "",
+      "A",
+      "S",
       ""
     ],
     [
@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "0,6": "triple-letter",
-    "2,5": "double-letter",
-    "6,6": "triple-letter",
-    "5,7": "double-letter",
-    "4,3": "double-letter"
+    "2,2": "double-word",
+    "1,7": "double-letter",
+    "5,7": "double-word",
+    "5,0": "triple-letter",
+    "7,1": "double-letter",
+    "3,1": "double-letter"
   },
   "puzzleWords": [
     {
@@ -190,6 +191,12 @@
       "row": 0,
       "col": 1,
       "direction": "vertical"
+    },
+    {
+      "word": "WEKAS",
+      "row": 3,
+      "col": 2,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -206,8 +213,8 @@
       [
         "",
         "W",
-        "",
-        "",
+        "A",
+        "I",
         "N",
         "",
         "",
@@ -236,11 +243,11 @@
       [
         "",
         "",
-        "",
-        "",
+        "W",
+        "E",
         "K",
         "A",
-        "",
+        "S",
         ""
       ],
       [
@@ -260,8 +267,8 @@
         "",
         "",
         "A",
-        "I",
-        "D"
+        "D",
+        ""
       ],
       [
         "",
@@ -285,28 +292,46 @@
       ]
     ],
     "newKeys": [
-      "3,5",
+      "0,2",
+      "0,3",
       "4,5",
       "5,5",
       "6,5",
       "7,5",
-      "5,6",
-      "5,7"
+      "5,6"
     ],
-    "score": 70,
+    "score": 73,
     "completionBonus": 50,
     "words": [
-      "KA",
+      "WAIN",
+      "AG",
+      "IN",
       "AVAST",
-      "AID"
+      "AD"
     ],
     "scoringWords": [
       {
-        "word": "KA",
-        "row": 3,
-        "col": 4,
+        "word": "WAIN",
+        "row": 0,
+        "col": 1,
         "direction": "horizontal",
-        "score": 6,
+        "score": 7,
+        "move": 1
+      },
+      {
+        "word": "AG",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 3,
+        "move": 1
+      },
+      {
+        "word": "IN",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
         "move": 1
       },
       {
@@ -315,41 +340,69 @@
         "col": 5,
         "direction": "vertical",
         "score": 8,
-        "move": 1
+        "move": 2
       },
       {
-        "word": "AID",
+        "word": "AD",
         "row": 5,
         "col": 5,
         "direction": "horizontal",
-        "score": 6,
-        "move": 2
+        "score": 3,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
+        "word": "WAIN",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 12,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,2",
+          "0,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "WAIN",
+            "row": 0,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "AG",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 3
+          },
+          {
+            "word": "IN",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 2,
         "word": "AVAST",
         "row": 3,
         "col": 5,
         "direction": "vertical",
-        "score": 14,
-        "usedTiles": 5,
+        "score": 8,
+        "usedTiles": 4,
         "newKeys": [
-          "3,5",
           "4,5",
           "5,5",
           "6,5",
           "7,5"
         ],
         "scoringWords": [
-          {
-            "word": "KA",
-            "row": 3,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 6
-          },
           {
             "word": "AVAST",
             "row": 3,
@@ -360,24 +413,23 @@
         ]
       },
       {
-        "turn": 2,
-        "word": "AID",
+        "turn": 3,
+        "word": "AD",
         "row": 5,
         "col": 5,
         "direction": "horizontal",
-        "score": 6,
-        "usedTiles": 2,
+        "score": 3,
+        "usedTiles": 1,
         "newKeys": [
-          "5,6",
-          "5,7"
+          "5,6"
         ],
         "scoringWords": [
           {
-            "word": "AID",
+            "word": "AD",
             "row": 5,
             "col": 5,
             "direction": "horizontal",
-            "score": 6
+            "score": 3
           }
         ]
       }
@@ -386,6 +438,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1398
+    "visitedCandidates": 1804
   }
 }
