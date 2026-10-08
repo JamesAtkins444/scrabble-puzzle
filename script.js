@@ -118,6 +118,9 @@ const tileRackElement =
 const revealPuzzleButton =
     document.getElementById("revealPuzzleButton");
 
+const nextPuzzleButton =
+    document.getElementById("nextPuzzleButton");
+
 const shuffleRackButton =
     document.getElementById("shuffleRackButton");
 
@@ -4054,6 +4057,7 @@ DAILY CHALLENGE
 
 let dailyRandomState = 0;
 let activeDailyDateKey = "";
+let dailyChallengeDateKey = "";
 let dailyClockInterval = null;
 let dailyChallengeInfoElement = null;
 
@@ -4121,11 +4125,11 @@ function ensureDailyChallengeInfo() {
 }
 
 function updateDailyChallengeClock() {
-    if (!activeDailyDateKey) return;
+    if (!dailyChallengeDateKey) return;
 
-    // Use one global reset point (00:00 UTC) so visitors in different
-    // time zones still share exactly the same 24-hour challenge.
-    if (getUtcDateKey() !== activeDailyDateKey) {
+    // The daily challenge always follows the real current UTC date.
+    // Loading a future puzzle for testing must not change this.
+    if (getUtcDateKey() !== dailyChallengeDateKey) {
         window.location.reload();
         return;
     }
@@ -4147,7 +4151,13 @@ function updateDailyChallengeClock() {
     }
 }
 
-async function loadDailyPuzzle() {
+function getNextPuzzleDateKey(dateKey) {
+    const date = new Date(dateKey + "T00:00:00Z");
+    date.setUTCDate(date.getUTCDate() + 1);
+    return getUtcDateKey(date);
+}
+
+async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
     if (isGenerating) return;
 
     isGenerating = true;
@@ -4157,7 +4167,11 @@ async function loadDailyPuzzle() {
         generateButton.textContent = "Loading Daily Puzzle…";
     }
 
-    activeDailyDateKey = getUtcDateKey();
+    if (!dailyChallengeDateKey) {
+        dailyChallengeDateKey = getUtcDateKey();
+    }
+
+    activeDailyDateKey = dateKey;
     ensureDailyChallengeInfo();
 
     if (dailyClockInterval) clearInterval(dailyClockInterval);
@@ -4258,33 +4272,48 @@ async function loadDailyPuzzle() {
                         : `No further legal move was found after placing ${bestSolution.tilesUsed} of ${initialRackTiles.length} tiles; ${bestSolution.tilesRemaining} remain. ${turnSummary}`;
         }
 
+        // Loading another puzzle should always return the normal puzzle UI.
+        const rackActionsElement = document.getElementById("rackActions");
+        if (rackActionsElement) {
+            rackActionsElement.hidden = false;
+        }
+        if (bestScoreBoxElement) {
+            bestScoreBoxElement.hidden = true;
+        }
+        if (revealPuzzleButton) {
+            revealPuzzleButton.disabled = false;
+            revealPuzzleButton.setAttribute("aria-expanded", "false");
+        }
+
         displayBoard();
         displayTileRack();
         updateWordCount();
         calculatePlayerScore();
     } catch (error) {
-        console.error("Could not load today's pre-generated puzzle:", error);
+        console.error("Could not load pre-generated puzzle:", error);
 
-        // Keep the game playable if a pre-generated file is temporarily
-        // unavailable (for example before the first automated generation run).
-        // Once the JSON exists, this fallback is never needed.
-        try {
-            if (solverDictionary.size === 0) {
-                await loadSolverDictionary();
-            }
+        if (allowDailyFallback) {
+            // Only the real daily puzzle may use the legacy browser fallback.
+            // The test/next-puzzle button always requires a pre-generated file.
+            try {
+                if (solverDictionary.size === 0) {
+                    await loadSolverDictionary();
+                }
 
-            if (solverDictionary.size > 0) {
-                isGenerating = false;
-                await generateDailyPuzzle();
-                return;
+                if (solverDictionary.size > 0) {
+                    isGenerating = false;
+                    await generateDailyPuzzle();
+                    return;
+                }
+            } catch (fallbackError) {
+                console.error("Fallback puzzle generation also failed:", fallbackError);
             }
-        } catch (fallbackError) {
-            console.error("Fallback puzzle generation also failed:", fallbackError);
         }
 
         if (tileMessageElement) {
-            tileMessageElement.textContent =
-                "Today's puzzle could not be loaded. Please try again later.";
+            tileMessageElement.textContent = allowDailyFallback
+                ? "Today's puzzle could not be loaded. Please try again later."
+                : "Puzzle " + dateKey + " could not be loaded.";
             tileMessageElement.className = "tile-message error";
         }
     } finally {
@@ -4297,6 +4326,17 @@ async function loadDailyPuzzle() {
 
         updateDailyChallengeClock();
     }
+}
+
+async function loadDailyPuzzle() {
+    dailyChallengeDateKey = getUtcDateKey();
+    return loadPuzzleForDate(dailyChallengeDateKey, true);
+}
+
+async function loadNextPuzzle() {
+    if (!activeDailyDateKey) return;
+    const nextDateKey = getNextPuzzleDateKey(activeDailyDateKey);
+    return loadPuzzleForDate(nextDateKey, false);
 }
 
 async function generateDailyPuzzle() {
@@ -4383,6 +4423,10 @@ async function generateDailyPuzzle() {
 if (generateButton) {
     generateButton.textContent = "Daily Puzzle";
     generateButton.addEventListener("click", loadDailyPuzzle);
+}
+
+if (nextPuzzleButton) {
+    nextPuzzleButton.addEventListener("click", loadNextPuzzle);
 }
 
 
