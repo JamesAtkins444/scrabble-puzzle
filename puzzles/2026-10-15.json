@@ -1,0 +1,419 @@
+{
+  "date": "2026-10-15",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "A",
+      "C",
+      "E",
+      "T",
+      "I",
+      "N",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "",
+      "V"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "Y",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "A",
+      "C",
+      "E",
+      "T",
+      "I",
+      "N",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "",
+      "V"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "Y",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,5": "triple-letter",
+    "5,0": "double-letter",
+    "3,0": "triple-word",
+    "4,2": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "ACETINS",
+      "row": 0,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SHAVE",
+      "row": 0,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "TANSY",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "O",
+    "O",
+    "T",
+    "F",
+    "B",
+    "N"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "A",
+        "C",
+        "E",
+        "T",
+        "I",
+        "N",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "",
+        "O",
+        "H"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "N",
+        "",
+        "",
+        "A"
+      ],
+      [
+        "F",
+        "O",
+        "N",
+        "T",
+        "S",
+        "",
+        "",
+        "V"
+      ],
+      [
+        "O",
+        "",
+        "",
+        "",
+        "Y",
+        "",
+        "",
+        "E"
+      ],
+      [
+        "B",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "3,0",
+      "3,1",
+      "3,2",
+      "3,3",
+      "4,0",
+      "5,0",
+      "1,6"
+    ],
+    "score": 114,
+    "completionBonus": 50,
+    "words": [
+      "FONTS",
+      "FOB",
+      "OH",
+      "NO"
+    ],
+    "scoringWords": [
+      {
+        "word": "FONTS",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 24,
+        "move": 1
+      },
+      {
+        "word": "FOB",
+        "row": 3,
+        "col": 0,
+        "direction": "vertical",
+        "score": 33,
+        "move": 2
+      },
+      {
+        "word": "OH",
+        "row": 1,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 3
+      },
+      {
+        "word": "NO",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "FONTS",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 24,
+        "usedTiles": 4,
+        "newKeys": [
+          "3,0",
+          "3,1",
+          "3,2",
+          "3,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "FONTS",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 24
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "FOB",
+        "row": 3,
+        "col": 0,
+        "direction": "vertical",
+        "score": 33,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,0",
+          "5,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "FOB",
+            "row": 3,
+            "col": 0,
+            "direction": "vertical",
+            "score": 33
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "OH",
+        "row": 1,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 7,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "OH",
+            "row": 1,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "NO",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 850
+  }
+}

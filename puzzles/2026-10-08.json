@@ -1,0 +1,485 @@
+{
+  "date": "2026-10-08",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "B",
+      "",
+      ""
+    ],
+    [
+      "",
+      "P",
+      "O",
+      "L",
+      "I",
+      "O",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "B",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "S",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "B",
+      "",
+      ""
+    ],
+    [
+      "",
+      "P",
+      "O",
+      "L",
+      "I",
+      "O",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "B",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "S",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,3": "triple-letter",
+    "1,0": "double-letter",
+    "7,6": "triple-word",
+    "0,3": "double-word",
+    "0,6": "double-letter",
+    "4,7": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "CABOMBA",
+      "row": 0,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "POLIO",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "DORRS",
+      "row": 2,
+      "col": 2,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "N",
+    "A",
+    "L",
+    "E",
+    "R",
+    "T"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "C",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "N",
+        ""
+      ],
+      [
+        "",
+        "",
+        "D",
+        "",
+        "",
+        "B",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "P",
+        "O",
+        "L",
+        "I",
+        "O",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "R",
+        "",
+        "",
+        "M",
+        "E",
+        "T"
+      ],
+      [
+        "",
+        "",
+        "R",
+        "",
+        "",
+        "B",
+        "A",
+        ""
+      ],
+      [
+        "",
+        "",
+        "S",
+        "",
+        "",
+        "A",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "L",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "4,6",
+      "5,6",
+      "6,6",
+      "7,6",
+      "1,6",
+      "2,6",
+      "4,7"
+    ],
+    "score": 82,
+    "completionBonus": 50,
+    "words": [
+      "ME",
+      "BA",
+      "AR",
+      "EARL",
+      "AN",
+      "BE",
+      "NE",
+      "MET"
+    ],
+    "scoringWords": [
+      {
+        "word": "ME",
+        "row": 4,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "BA",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "AR",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "EARL",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "AN",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "BE",
+        "row": 2,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "NE",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "MET",
+        "row": 4,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "EARL",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 22,
+        "usedTiles": 4,
+        "newKeys": [
+          "4,6",
+          "5,6",
+          "6,6",
+          "7,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "ME",
+            "row": 4,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "BA",
+            "row": 5,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "AR",
+            "row": 6,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "EARL",
+            "row": 4,
+            "col": 6,
+            "direction": "vertical",
+            "score": 12
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "NE",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,6",
+          "2,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "AN",
+            "row": 1,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "BE",
+            "row": 2,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "NE",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "MET",
+        "row": 4,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "MET",
+            "row": 4,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 3767
+  }
+}

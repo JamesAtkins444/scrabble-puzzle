@@ -1,0 +1,407 @@
+{
+  "date": "2026-11-04",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "O",
+      "O",
+      "M",
+      "B",
+      "O",
+      "X"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "X",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "E",
+      "T",
+      "U",
+      "P"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "O",
+      "O",
+      "M",
+      "B",
+      "O",
+      "X"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "X",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "E",
+      "T",
+      "U",
+      "P"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,3": "triple-letter",
+    "5,5": "double-letter",
+    "3,6": "triple-word",
+    "5,0": "double-letter",
+    "1,0": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "BOOMBOX",
+      "row": 1,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "MAXES",
+      "row": 1,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "LETUP",
+      "row": 4,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "S",
+    "F",
+    "D",
+    "E",
+    "A",
+    "N",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "F",
+        ""
+      ],
+      [
+        "",
+        "B",
+        "O",
+        "O",
+        "M",
+        "B",
+        "O",
+        "X"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "",
+        "N",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "A",
+        "X",
+        "E",
+        "D",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "L",
+        "E",
+        "T",
+        "U",
+        "P"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "S",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,6",
+      "2,6",
+      "3,6",
+      "5,6",
+      "6,6",
+      "3,3",
+      "3,5"
+    ],
+    "score": 123,
+    "completionBonus": 50,
+    "words": [
+      "FONDUES",
+      "AXED",
+      "AL",
+      "ET"
+    ],
+    "scoringWords": [
+      {
+        "word": "FONDUES",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 33,
+        "move": 1
+      },
+      {
+        "word": "AXED",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 36,
+        "move": 2
+      },
+      {
+        "word": "AL",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "ET",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "FONDUES",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 33,
+        "usedTiles": 5,
+        "newKeys": [
+          "0,6",
+          "2,6",
+          "3,6",
+          "5,6",
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "FONDUES",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 33
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "AXED",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 40,
+        "usedTiles": 2,
+        "newKeys": [
+          "3,3",
+          "3,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "AXED",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 36
+          },
+          {
+            "word": "AL",
+            "row": 3,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "ET",
+            "row": 3,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 2388
+  }
+}

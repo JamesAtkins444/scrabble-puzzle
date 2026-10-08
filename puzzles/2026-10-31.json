@@ -1,0 +1,440 @@
+{
+  "date": "2026-10-31",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "",
+      "W"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "P",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "",
+      "D"
+    ],
+    [
+      "",
+      "G",
+      "Y",
+      "P",
+      "S",
+      "I",
+      "E",
+      "S"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "",
+      "W"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "P",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "",
+      "D"
+    ],
+    [
+      "",
+      "G",
+      "Y",
+      "P",
+      "S",
+      "I",
+      "E",
+      "S"
+    ]
+  ],
+  "bonusSquares": {
+    "2,5": "double-word",
+    "1,0": "double-letter",
+    "0,1": "double-word",
+    "4,5": "double-letter",
+    "4,1": "double-letter",
+    "6,1": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "GYPSIES",
+      "row": 7,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "WARDS",
+      "row": 3,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "EPICS",
+      "row": 3,
+      "col": 4,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "E",
+    "T",
+    "D",
+    "B",
+    "E",
+    "W"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "T",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "B",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "W",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "E",
+        "D",
+        "",
+        "W"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "P",
+        "E",
+        "",
+        "A"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "I",
+        "",
+        "",
+        "R"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "C",
+        "",
+        "",
+        "D"
+      ],
+      [
+        "",
+        "G",
+        "Y",
+        "P",
+        "S",
+        "I",
+        "E",
+        "S"
+      ]
+    ],
+    "newKeys": [
+      "1,5",
+      "2,5",
+      "3,5",
+      "4,5",
+      "0,6",
+      "1,6",
+      "2,6"
+    ],
+    "score": 94,
+    "completionBonus": 50,
+    "words": [
+      "ED",
+      "PE",
+      "BODE",
+      "BE",
+      "OW",
+      "TEW"
+    ],
+    "scoringWords": [
+      {
+        "word": "ED",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 1
+      },
+      {
+        "word": "PE",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "BODE",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 16,
+        "move": 1
+      },
+      {
+        "word": "BE",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "OW",
+        "row": 2,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 10,
+        "move": 2
+      },
+      {
+        "word": "TEW",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "BODE",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 24,
+        "usedTiles": 4,
+        "newKeys": [
+          "1,5",
+          "2,5",
+          "3,5",
+          "4,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "ED",
+            "row": 3,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "PE",
+            "row": 4,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "BODE",
+            "row": 1,
+            "col": 5,
+            "direction": "vertical",
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "TEW",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 20,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,6",
+          "1,6",
+          "2,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "BE",
+            "row": 1,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "OW",
+            "row": 2,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "TEW",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1873
+  }
+}

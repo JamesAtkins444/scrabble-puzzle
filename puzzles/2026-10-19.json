@@ -1,0 +1,484 @@
+{
+  "date": "2026-10-19",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "M"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "P",
+      "O",
+      "U",
+      "T",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "V",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "M"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "P",
+      "O",
+      "U",
+      "T",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "V",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D"
+    ]
+  ],
+  "bonusSquares": {
+    "1,2": "triple-word",
+    "4,2": "double-word",
+    "2,5": "triple-letter",
+    "6,0": "triple-letter",
+    "5,3": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "MISREAD",
+      "row": 1,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "POUTS",
+      "row": 3,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "COVIN",
+      "row": 2,
+      "col": 4,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "A",
+    "H",
+    "M",
+    "A",
+    "F",
+    "E",
+    "M"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "M",
+        "M"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "C",
+        "",
+        "A",
+        "I"
+      ],
+      [
+        "",
+        "",
+        "",
+        "P",
+        "O",
+        "U",
+        "T",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "V",
+        "",
+        "E",
+        "R"
+      ],
+      [
+        "",
+        "",
+        "",
+        "H",
+        "I",
+        "",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "A",
+        "N",
+        "",
+        "F",
+        "A"
+      ],
+      [
+        "",
+        "",
+        "",
+        "M",
+        "",
+        "",
+        "",
+        "D"
+      ]
+    ],
+    "newKeys": [
+      "5,3",
+      "6,3",
+      "7,3",
+      "1,6",
+      "2,6",
+      "4,6",
+      "6,6"
+    ],
+    "score": 102,
+    "completionBonus": 50,
+    "words": [
+      "HI",
+      "AN",
+      "HAM",
+      "MM",
+      "AI",
+      "ER",
+      "MATE",
+      "FA"
+    ],
+    "scoringWords": [
+      {
+        "word": "HI",
+        "row": 5,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 13,
+        "move": 1
+      },
+      {
+        "word": "AN",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "HAM",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 16,
+        "move": 1
+      },
+      {
+        "word": "MM",
+        "row": 1,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "AI",
+        "row": 2,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "ER",
+        "row": 4,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "MATE",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "FA",
+        "row": 6,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "HAM",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 31,
+        "usedTiles": 3,
+        "newKeys": [
+          "5,3",
+          "6,3",
+          "7,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "HI",
+            "row": 5,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 13
+          },
+          {
+            "word": "AN",
+            "row": 6,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "HAM",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "MATE",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 16,
+        "usedTiles": 3,
+        "newKeys": [
+          "1,6",
+          "2,6",
+          "4,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "MM",
+            "row": 1,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "AI",
+            "row": 2,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "ER",
+            "row": 4,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "MATE",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "FA",
+        "row": 6,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "FA",
+            "row": 6,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 5
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1485
+  }
+}

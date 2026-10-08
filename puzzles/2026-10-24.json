@@ -1,0 +1,469 @@
+{
+  "date": "2026-10-24",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "P",
+      "O",
+      "O",
+      "R",
+      "E",
+      "D",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "O",
+      "N",
+      "E",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "P",
+      "O",
+      "O",
+      "R",
+      "E",
+      "D",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "O",
+      "N",
+      "E",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "3,4": "double-word",
+    "7,6": "double-letter",
+    "1,0": "double-word",
+    "3,6": "double-letter",
+    "7,1": "triple-word",
+    "0,6": "triple-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "SPOORED",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "ELANS",
+      "row": 2,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "HONES",
+      "row": 5,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "D",
+    "H",
+    "I",
+    "X",
+    "M",
+    "E",
+    "I"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "M",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "D",
+        "",
+        "",
+        "I",
+        ""
+      ],
+      [
+        "S",
+        "P",
+        "O",
+        "O",
+        "R",
+        "E",
+        "D",
+        ""
+      ],
+      [
+        "H",
+        "E",
+        "X",
+        "",
+        "",
+        "L",
+        "I",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "H",
+        "O",
+        "N",
+        "E",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "S",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "3,0",
+      "3,1",
+      "3,2",
+      "0,6",
+      "1,6",
+      "3,6",
+      "1,3"
+    ],
+    "score": 111,
+    "completionBonus": 50,
+    "words": [
+      "HEX",
+      "SH",
+      "PE",
+      "OX",
+      "LI",
+      "MIDI",
+      "DO"
+    ],
+    "scoringWords": [
+      {
+        "word": "HEX",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 13,
+        "move": 1
+      },
+      {
+        "word": "SH",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "PE",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "OX",
+        "row": 2,
+        "col": 2,
+        "direction": "vertical",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "LI",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "MIDI",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 24,
+        "move": 2
+      },
+      {
+        "word": "DO",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 3,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "HEX",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 31,
+        "usedTiles": 3,
+        "newKeys": [
+          "3,0",
+          "3,1",
+          "3,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "HEX",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 13
+          },
+          {
+            "word": "SH",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "PE",
+            "row": 2,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "OX",
+            "row": 2,
+            "col": 2,
+            "direction": "vertical",
+            "score": 9
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "MIDI",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 27,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,6",
+          "1,6",
+          "3,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "LI",
+            "row": 3,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "MIDI",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 24
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "DO",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 3,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "DO",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1612
+  }
+}

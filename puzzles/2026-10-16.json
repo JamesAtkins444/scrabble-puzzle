@@ -1,0 +1,423 @@
+{
+  "date": "2026-10-16",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "P",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "U",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "G",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "G",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "U",
+      "R",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "I",
+      "E",
+      "D"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "P",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "U",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "G",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "G",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "U",
+      "R",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "I",
+      "E",
+      "D"
+    ]
+  ],
+  "bonusSquares": {
+    "6,4": "triple-letter",
+    "0,5": "double-letter",
+    "4,1": "double-word",
+    "4,4": "double-letter",
+    "1,7": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "PUGGREE",
+      "row": 1,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "GIED",
+      "row": 7,
+      "col": 4,
+      "direction": "horizontal"
+    },
+    {
+      "word": "DURA",
+      "row": 5,
+      "col": 4,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "R",
+    "V",
+    "L",
+    "I",
+    "E",
+    "O",
+    "X"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "V",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "P",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "X",
+        "U",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "G",
+        ""
+      ],
+      [
+        "",
+        "L",
+        "I",
+        "R",
+        "E",
+        "",
+        "G",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "D",
+        "U",
+        "R",
+        "A"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "G",
+        "I",
+        "E",
+        "D"
+      ]
+    ],
+    "newKeys": [
+      "0,5",
+      "1,5",
+      "2,5",
+      "4,1",
+      "4,2",
+      "4,3",
+      "4,4"
+    ],
+    "score": 94,
+    "completionBonus": 50,
+    "words": [
+      "OP",
+      "XU",
+      "VOX",
+      "LIRE",
+      "ED"
+    ],
+    "scoringWords": [
+      {
+        "word": "OP",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "XU",
+        "row": 2,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "VOX",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 17,
+        "move": 1
+      },
+      {
+        "word": "LIRE",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 10,
+        "move": 2
+      },
+      {
+        "word": "ED",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "VOX",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 30,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,5",
+          "1,5",
+          "2,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "OP",
+            "row": 1,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "XU",
+            "row": 2,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "VOX",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 17
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "LIRE",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 14,
+        "usedTiles": 4,
+        "newKeys": [
+          "4,1",
+          "4,2",
+          "4,3",
+          "4,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "LIRE",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "ED",
+            "row": 4,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1779
+  }
+}

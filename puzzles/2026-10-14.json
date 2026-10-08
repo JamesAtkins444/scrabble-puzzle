@@ -1,0 +1,483 @@
+{
+  "date": "2026-10-14",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "V",
+      "A",
+      "L",
+      "E",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "U"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "T",
+      "I",
+      "P",
+      "I",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "V",
+      "A",
+      "L",
+      "E",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "U"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "T",
+      "I",
+      "P",
+      "I",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "5,2": "triple-word",
+    "1,4": "double-letter",
+    "3,4": "triple-letter",
+    "5,4": "double-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "SUTTEES",
+      "row": 0,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "TIPIS",
+      "row": 6,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "VALES",
+      "row": 0,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "E",
+    "T",
+    "N",
+    "N",
+    "Y",
+    "I"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "V",
+        "A",
+        "L",
+        "E",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "N",
+        "U"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "T"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "T"
+      ],
+      [
+        "",
+        "I",
+        "O",
+        "N",
+        "",
+        "",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "Y",
+        "E",
+        "T",
+        "",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "T",
+        "I",
+        "P",
+        "I",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "5,2",
+      "5,3",
+      "5,4",
+      "4,1",
+      "4,2",
+      "4,3",
+      "1,6"
+    ],
+    "score": 115,
+    "completionBonus": 50,
+    "words": [
+      "YET",
+      "ET",
+      "TI",
+      "ION",
+      "OY",
+      "NET",
+      "NU",
+      "EN"
+    ],
+    "scoringWords": [
+      {
+        "word": "YET",
+        "row": 5,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 36,
+        "move": 1
+      },
+      {
+        "word": "ET",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "TI",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "ION",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "OY",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 15,
+        "move": 2
+      },
+      {
+        "word": "NET",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 1,
+        "move": 2
+      },
+      {
+        "word": "NU",
+        "row": 1,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "EN",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "YET",
+        "row": 5,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 42,
+        "usedTiles": 3,
+        "newKeys": [
+          "5,2",
+          "5,3",
+          "5,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "YET",
+            "row": 5,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 36
+          },
+          {
+            "word": "ET",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "TI",
+            "row": 5,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ION",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 19,
+        "usedTiles": 3,
+        "newKeys": [
+          "4,1",
+          "4,2",
+          "4,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "ION",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "OY",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 15
+          },
+          {
+            "word": "NET",
+            "row": 4,
+            "col": 3,
+            "direction": "vertical",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "EN",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "NU",
+            "row": 1,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "EN",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1936
+  }
+}

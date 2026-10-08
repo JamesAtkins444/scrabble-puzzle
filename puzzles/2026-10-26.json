@@ -1,0 +1,405 @@
+{
+  "date": "2026-10-26",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "O",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "W",
+      "I",
+      "P",
+      "E",
+      "D",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "O",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "W",
+      "I",
+      "P",
+      "E",
+      "D",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "5,0": "triple-word",
+    "6,5": "double-letter",
+    "7,0": "double-word",
+    "2,6": "double-letter",
+    "3,0": "double-letter",
+    "7,4": "double-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "COOPING",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "WIPED",
+      "row": 3,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RES",
+      "row": 2,
+      "col": 5,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "N",
+    "U",
+    "A",
+    "W",
+    "I",
+    "B",
+    "T"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "C",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "R",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "W",
+        "I",
+        "P",
+        "E",
+        "D",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "I",
+        "S",
+        "",
+        ""
+      ],
+      [
+        "T",
+        "W",
+        "A",
+        "I",
+        "N",
+        "",
+        "",
+        ""
+      ],
+      [
+        "U",
+        "",
+        "N",
+        "",
+        "G",
+        "",
+        "",
+        ""
+      ],
+      [
+        "B",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "5,0",
+      "5,1",
+      "5,2",
+      "5,3",
+      "6,0",
+      "7,0",
+      "6,2"
+    ],
+    "score": 106,
+    "completionBonus": 50,
+    "words": [
+      "TWAIN",
+      "TUB",
+      "AN"
+    ],
+    "scoringWords": [
+      {
+        "word": "TWAIN",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 24,
+        "move": 1
+      },
+      {
+        "word": "TUB",
+        "row": 5,
+        "col": 0,
+        "direction": "vertical",
+        "score": 30,
+        "move": 2
+      },
+      {
+        "word": "AN",
+        "row": 5,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "TWAIN",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 24,
+        "usedTiles": 4,
+        "newKeys": [
+          "5,0",
+          "5,1",
+          "5,2",
+          "5,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "TWAIN",
+            "row": 5,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 24
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "TUB",
+        "row": 5,
+        "col": 0,
+        "direction": "vertical",
+        "score": 30,
+        "usedTiles": 2,
+        "newKeys": [
+          "6,0",
+          "7,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "TUB",
+            "row": 5,
+            "col": 0,
+            "direction": "vertical",
+            "score": 30
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AN",
+        "row": 5,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "AN",
+            "row": 5,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 2402
+  }
+}

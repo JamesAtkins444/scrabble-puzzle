@@ -1,0 +1,391 @@
+{
+  "date": "2026-11-05",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "W",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "I",
+      "G",
+      "N",
+      "O",
+      "R",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "Z",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "K",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "W",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "I",
+      "G",
+      "N",
+      "O",
+      "R",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "Z",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "K",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,6": "triple-letter",
+    "2,5": "double-letter",
+    "6,6": "triple-letter",
+    "5,7": "double-letter",
+    "4,3": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "SIGNORY",
+      "row": 1,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "NOOK",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "WIZ",
+      "row": 0,
+      "col": 1,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "A",
+    "A",
+    "V",
+    "D",
+    "T",
+    "S",
+    "I"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "W",
+        "",
+        "",
+        "N",
+        "",
+        "",
+        ""
+      ],
+      [
+        "S",
+        "I",
+        "G",
+        "N",
+        "O",
+        "R",
+        "Y",
+        ""
+      ],
+      [
+        "",
+        "Z",
+        "",
+        "",
+        "O",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "K",
+        "A",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "V",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "I",
+        "D"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "S",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "T",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "3,5",
+      "4,5",
+      "5,5",
+      "6,5",
+      "7,5",
+      "5,6",
+      "5,7"
+    ],
+    "score": 70,
+    "completionBonus": 50,
+    "words": [
+      "KA",
+      "AVAST",
+      "AID"
+    ],
+    "scoringWords": [
+      {
+        "word": "KA",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 1
+      },
+      {
+        "word": "AVAST",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 8,
+        "move": 1
+      },
+      {
+        "word": "AID",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "AVAST",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 14,
+        "usedTiles": 5,
+        "newKeys": [
+          "3,5",
+          "4,5",
+          "5,5",
+          "6,5",
+          "7,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "KA",
+            "row": 3,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "AVAST",
+            "row": 3,
+            "col": 5,
+            "direction": "vertical",
+            "score": 8
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "AID",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 6,
+        "usedTiles": 2,
+        "newKeys": [
+          "5,6",
+          "5,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "AID",
+            "row": 5,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 6
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1398
+  }
+}

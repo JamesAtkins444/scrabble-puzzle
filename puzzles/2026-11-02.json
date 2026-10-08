@@ -1,0 +1,405 @@
+{
+  "date": "2026-11-02",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "L",
+      "G",
+      "O",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "P",
+      "L",
+      "A",
+      "T",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "L",
+      "G",
+      "O",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "P",
+      "L",
+      "A",
+      "T",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "7,1": "double-letter",
+    "1,6": "double-letter",
+    "6,2": "triple-word",
+    "2,7": "triple-letter",
+    "3,4": "double-word",
+    "6,6": "double-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "BOATING",
+      "row": 1,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "PLATY",
+      "row": 4,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "ALGOR",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "S",
+    "F",
+    "B",
+    "E",
+    "E",
+    "V",
+    "A"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "B",
+        "",
+        "",
+        "B",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "L",
+        "G",
+        "O",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "P",
+        "L",
+        "A",
+        "T",
+        "Y",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "I",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "V",
+        "E",
+        "E",
+        "N",
+        "A",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "F",
+        "",
+        "G",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "6,2",
+      "6,3",
+      "6,4",
+      "6,6",
+      "6,7",
+      "7,3",
+      "1,2"
+    ],
+    "score": 113,
+    "completionBonus": 50,
+    "words": [
+      "VEENAS",
+      "EF",
+      "BA"
+    ],
+    "scoringWords": [
+      {
+        "word": "VEENAS",
+        "row": 6,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 54,
+        "move": 1
+      },
+      {
+        "word": "EF",
+        "row": 6,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5,
+        "move": 2
+      },
+      {
+        "word": "BA",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 4,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "VEENAS",
+        "row": 6,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 54,
+        "usedTiles": 5,
+        "newKeys": [
+          "6,2",
+          "6,3",
+          "6,4",
+          "6,6",
+          "6,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "VEENAS",
+            "row": 6,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 54
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "EF",
+        "row": 6,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "7,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "EF",
+            "row": 6,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "BA",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "BA",
+            "row": 1,
+            "col": 2,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1466
+  }
+}

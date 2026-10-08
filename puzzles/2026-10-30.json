@@ -1,0 +1,403 @@
+{
+  "date": "2026-10-30",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "A",
+      "F",
+      "F",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "W"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "A",
+      "G",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "A",
+      "F",
+      "F",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "W"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "A",
+      "G",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R"
+    ]
+  ],
+  "bonusSquares": {
+    "5,5": "triple-letter",
+    "4,1": "triple-letter",
+    "3,0": "double-letter",
+    "7,5": "double-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "SWISHER",
+      "row": 1,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "DAGS",
+      "row": 4,
+      "col": 4,
+      "direction": "horizontal"
+    },
+    {
+      "word": "DAFFS",
+      "row": 1,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "I",
+    "R",
+    "U",
+    "R",
+    "A",
+    "T",
+    "V"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "D",
+        "A",
+        "F",
+        "F",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "W"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "V",
+        "",
+        "I"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "D",
+        "A",
+        "G",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "R",
+        "",
+        "H"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "I",
+        "R",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "U",
+        "T",
+        "A",
+        "",
+        "R"
+      ]
+    ],
+    "newKeys": [
+      "3,5",
+      "5,5",
+      "6,5",
+      "7,5",
+      "7,3",
+      "7,4",
+      "6,6"
+    ],
+    "score": 79,
+    "completionBonus": 50,
+    "words": [
+      "VARIA",
+      "UTA",
+      "IRE"
+    ],
+    "scoringWords": [
+      {
+        "word": "VARIA",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 20,
+        "move": 1
+      },
+      {
+        "word": "UTA",
+        "row": 7,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "IRE",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "VARIA",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 20,
+        "usedTiles": 4,
+        "newKeys": [
+          "3,5",
+          "5,5",
+          "6,5",
+          "7,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "VARIA",
+            "row": 3,
+            "col": 5,
+            "direction": "vertical",
+            "score": 20
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "UTA",
+        "row": 7,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 6,
+        "usedTiles": 2,
+        "newKeys": [
+          "7,3",
+          "7,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "UTA",
+            "row": 7,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "IRE",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "IRE",
+            "row": 6,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1048
+  }
+}

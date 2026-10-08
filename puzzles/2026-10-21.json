@@ -1,0 +1,451 @@
+{
+  "date": "2026-10-21",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "B",
+      "O",
+      "G",
+      "E",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "A",
+      "C",
+      "N",
+      "E",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "B",
+      "O",
+      "G",
+      "E",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "A",
+      "C",
+      "N",
+      "E",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "3,6": "triple-letter",
+    "1,5": "double-letter",
+    "3,0": "double-letter",
+    "6,1": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "CHORDED",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "ACNES",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "BOGEY",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "A",
+    "E",
+    "E",
+    "K",
+    "P",
+    "R",
+    "B"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "C",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "H",
+        "",
+        "B",
+        "A",
+        "P"
+      ],
+      [
+        "",
+        "",
+        "B",
+        "O",
+        "G",
+        "E",
+        "Y",
+        ""
+      ],
+      [
+        "",
+        "R",
+        "",
+        "R",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "E",
+        "",
+        "D",
+        "E",
+        "",
+        "",
+        ""
+      ],
+      [
+        "A",
+        "C",
+        "N",
+        "E",
+        "S",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "K",
+        "",
+        "D",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "1,5",
+      "1,6",
+      "1,7",
+      "3,1",
+      "4,1",
+      "6,1",
+      "4,4"
+    ],
+    "score": 92,
+    "completionBonus": 50,
+    "words": [
+      "BAP",
+      "BE",
+      "AY",
+      "RECK",
+      "DE",
+      "ES"
+    ],
+    "scoringWords": [
+      {
+        "word": "BAP",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "BE",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 7,
+        "move": 1
+      },
+      {
+        "word": "AY",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "RECK",
+        "row": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 15,
+        "move": 2
+      },
+      {
+        "word": "DE",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 3
+      },
+      {
+        "word": "ES",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "BAP",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 22,
+        "usedTiles": 3,
+        "newKeys": [
+          "1,5",
+          "1,6",
+          "1,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "BAP",
+            "row": 1,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "BE",
+            "row": 1,
+            "col": 5,
+            "direction": "vertical",
+            "score": 7
+          },
+          {
+            "word": "AY",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "RECK",
+        "row": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 15,
+        "usedTiles": 3,
+        "newKeys": [
+          "3,1",
+          "4,1",
+          "6,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "RECK",
+            "row": 3,
+            "col": 1,
+            "direction": "vertical",
+            "score": 15
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "DE",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "DE",
+            "row": 4,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "ES",
+            "row": 4,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 2498
+  }
+}

@@ -1,0 +1,483 @@
+{
+  "date": "2026-11-03",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "J",
+      "",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "U",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "G",
+      "A",
+      "M",
+      "B",
+      "R",
+      "E",
+      "L"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "J",
+      "",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "U",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "G",
+      "A",
+      "M",
+      "B",
+      "R",
+      "E",
+      "L"
+    ]
+  ],
+  "bonusSquares": {
+    "6,4": "double-letter",
+    "0,6": "double-word",
+    "2,5": "triple-word",
+    "5,2": "double-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "GAMBREL",
+      "row": 7,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SELLE",
+      "row": 3,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "JORUM",
+      "row": 3,
+      "col": 3,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "F",
+    "U",
+    "S",
+    "E",
+    "A",
+    "L",
+    "H"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "F",
+        "",
+        "U"
+      ],
+      [
+        "",
+        "",
+        "",
+        "J",
+        "",
+        "E",
+        "S",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "L",
+        "O",
+        "",
+        "H",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "R",
+        "",
+        "",
+        "L",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "U",
+        "",
+        "",
+        "L",
+        ""
+      ],
+      [
+        "",
+        "G",
+        "A",
+        "M",
+        "B",
+        "R",
+        "E",
+        "L"
+      ]
+    ],
+    "newKeys": [
+      "2,5",
+      "3,5",
+      "4,5",
+      "4,2",
+      "5,2",
+      "2,7",
+      "3,7"
+    ],
+    "score": 97,
+    "completionBonus": 50,
+    "words": [
+      "ES",
+      "HE",
+      "FEH",
+      "LO",
+      "AR",
+      "LA",
+      "ESS",
+      "US"
+    ],
+    "scoringWords": [
+      {
+        "word": "ES",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "HE",
+        "row": 4,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "FEH",
+        "row": 2,
+        "col": 5,
+        "direction": "vertical",
+        "score": 27,
+        "move": 1
+      },
+      {
+        "word": "LO",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "AR",
+        "row": 5,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "LA",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "ESS",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 1,
+        "move": 3
+      },
+      {
+        "word": "US",
+        "row": 2,
+        "col": 7,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "FEH",
+        "row": 2,
+        "col": 5,
+        "direction": "vertical",
+        "score": 34,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,5",
+          "3,5",
+          "4,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "ES",
+            "row": 3,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "HE",
+            "row": 4,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "FEH",
+            "row": 2,
+            "col": 5,
+            "direction": "vertical",
+            "score": 27
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "LA",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 10,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,2",
+          "5,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "LO",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "AR",
+            "row": 5,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "LA",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "US",
+        "row": 2,
+        "col": 7,
+        "direction": "vertical",
+        "score": 3,
+        "usedTiles": 2,
+        "newKeys": [
+          "2,7",
+          "3,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "ESS",
+            "row": 3,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 1
+          },
+          {
+            "word": "US",
+            "row": 2,
+            "col": 7,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 3278
+  }
+}

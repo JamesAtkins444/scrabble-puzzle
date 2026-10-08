@@ -1,0 +1,406 @@
+{
+  "date": "2026-10-20",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "M"
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "H",
+      "O",
+      "T",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "G"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "M"
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "H",
+      "O",
+      "T",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "G"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "7,4": "triple-word",
+    "2,3": "double-letter",
+    "0,1": "double-letter",
+    "7,1": "double-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "BLAMING",
+      "row": 0,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "DHOTI",
+      "row": 4,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "CODE",
+      "row": 3,
+      "col": 5,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "N",
+    "F",
+    "A",
+    "O",
+    "S",
+    "L",
+    "I"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "B"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "L"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "C",
+        "",
+        "M"
+      ],
+      [
+        "",
+        "",
+        "",
+        "D",
+        "H",
+        "O",
+        "T",
+        "I"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "D",
+        "",
+        "N"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "E",
+        "",
+        "G"
+      ],
+      [
+        "F",
+        "I",
+        "N",
+        "A",
+        "L",
+        "S",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "7,0",
+      "7,1",
+      "7,2",
+      "7,3",
+      "7,4",
+      "7,5",
+      "5,4"
+    ],
+    "score": 113,
+    "completionBonus": 50,
+    "words": [
+      "FINALS",
+      "CODES",
+      "OD",
+      "HO"
+    ],
+    "scoringWords": [
+      {
+        "word": "FINALS",
+        "row": 7,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 54,
+        "move": 1
+      },
+      {
+        "word": "CODES",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 1,
+        "move": 1
+      },
+      {
+        "word": "OD",
+        "row": 5,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "HO",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "FINALS",
+        "row": 7,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 55,
+        "usedTiles": 6,
+        "newKeys": [
+          "7,0",
+          "7,1",
+          "7,2",
+          "7,3",
+          "7,4",
+          "7,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "FINALS",
+            "row": 7,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 54
+          },
+          {
+            "word": "CODES",
+            "row": 3,
+            "col": 5,
+            "direction": "vertical",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "HO",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 1,
+        "newKeys": [
+          "5,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "OD",
+            "row": 5,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "HO",
+            "row": 4,
+            "col": 4,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 2844
+  }
+}

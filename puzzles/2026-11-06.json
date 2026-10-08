@@ -1,0 +1,484 @@
+{
+  "date": "2026-11-06",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "G"
+    ],
+    [
+      "",
+      "B",
+      "A",
+      "P",
+      "T",
+      "I",
+      "S",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "O",
+      "P",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "G"
+    ],
+    [
+      "",
+      "B",
+      "A",
+      "P",
+      "T",
+      "I",
+      "S",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "O",
+      "P",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "5,5": "double-word",
+    "4,1": "triple-letter",
+    "3,3": "double-letter",
+    "0,3": "double-letter",
+    "7,1": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "BAPTISE",
+      "row": 1,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "GENRE",
+      "row": 0,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "COPE",
+      "row": 4,
+      "col": 4,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "X",
+    "A",
+    "A",
+    "Y",
+    "T",
+    "I",
+    "R"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "G"
+      ],
+      [
+        "",
+        "B",
+        "A",
+        "P",
+        "T",
+        "I",
+        "S",
+        "E"
+      ],
+      [
+        "R",
+        "A",
+        "Y",
+        "A",
+        "",
+        "",
+        "",
+        "N"
+      ],
+      [
+        "",
+        "",
+        "",
+        "T",
+        "",
+        "",
+        "",
+        "R"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "C",
+        "O",
+        "P",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "X",
+        "I",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "5,5",
+      "5,6",
+      "2,0",
+      "2,1",
+      "2,2",
+      "2,3",
+      "3,3"
+    ],
+    "score": 112,
+    "completionBonus": 50,
+    "words": [
+      "XI",
+      "OX",
+      "PI",
+      "RAYA",
+      "BA",
+      "AY",
+      "PA",
+      "PAT"
+    ],
+    "scoringWords": [
+      {
+        "word": "XI",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 18,
+        "move": 1
+      },
+      {
+        "word": "OX",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 18,
+        "move": 1
+      },
+      {
+        "word": "PI",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "RAYA",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 7,
+        "move": 2
+      },
+      {
+        "word": "BA",
+        "row": 1,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "AY",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 5,
+        "move": 2
+      },
+      {
+        "word": "PA",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "PAT",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "XI",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 40,
+        "usedTiles": 2,
+        "newKeys": [
+          "5,5",
+          "5,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "XI",
+            "row": 5,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 18
+          },
+          {
+            "word": "OX",
+            "row": 4,
+            "col": 5,
+            "direction": "vertical",
+            "score": 18
+          },
+          {
+            "word": "PI",
+            "row": 4,
+            "col": 6,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "RAYA",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 4,
+        "newKeys": [
+          "2,0",
+          "2,1",
+          "2,2",
+          "2,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "RAYA",
+            "row": 2,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "BA",
+            "row": 1,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "AY",
+            "row": 1,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "PA",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "PAT",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "PAT",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1827
+  }
+}

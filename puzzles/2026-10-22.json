@@ -1,0 +1,420 @@
+{
+  "date": "2026-10-22",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "R",
+      "G",
+      "Y",
+      "L",
+      "L",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "Y",
+      "I",
+      "P",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "R",
+      "G",
+      "Y",
+      "L",
+      "L",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "Y",
+      "I",
+      "P",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L"
+    ]
+  ],
+  "bonusSquares": {
+    "7,3": "triple-word",
+    "0,2": "triple-word",
+    "1,5": "double-letter",
+    "2,2": "triple-letter",
+    "4,5": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "ARGYLLS",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SHELL",
+      "row": 3,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "YIPE",
+      "row": 5,
+      "col": 4,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "O",
+    "I",
+    "J",
+    "G",
+    "B",
+    "N"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "J",
+        "I",
+        "G",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "E",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "N",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "A",
+        "R",
+        "G",
+        "Y",
+        "L",
+        "L",
+        "S"
+      ],
+      [
+        "",
+        "B",
+        "O",
+        "",
+        "",
+        "",
+        "",
+        "H"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "Y",
+        "I",
+        "P",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "L"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "L"
+      ]
+    ],
+    "newKeys": [
+      "0,2",
+      "1,2",
+      "2,2",
+      "4,2",
+      "0,0",
+      "0,1",
+      "4,1"
+    ],
+    "score": 115,
+    "completionBonus": 50,
+    "words": [
+      "GENRO",
+      "JIG",
+      "BO",
+      "AB"
+    ],
+    "scoringWords": [
+      {
+        "word": "GENRO",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 24,
+        "move": 1
+      },
+      {
+        "word": "JIG",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 33,
+        "move": 2
+      },
+      {
+        "word": "BO",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 3
+      },
+      {
+        "word": "AB",
+        "row": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "GENRO",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 24,
+        "usedTiles": 4,
+        "newKeys": [
+          "0,2",
+          "1,2",
+          "2,2",
+          "4,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "GENRO",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 24
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "JIG",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 33,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,0",
+          "0,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "JIG",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 33
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AB",
+        "row": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "BO",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "AB",
+            "row": 3,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1987
+  }
+}

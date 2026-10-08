@@ -1,0 +1,498 @@
+{
+  "date": "2026-10-11",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "F",
+      "R",
+      "I",
+      "T",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "P",
+      "E",
+      "E",
+      "R",
+      "A",
+      "G",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "F",
+      "R",
+      "I",
+      "T",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "P",
+      "E",
+      "E",
+      "R",
+      "A",
+      "G",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "1,2": "triple-letter",
+    "4,4": "double-word",
+    "7,1": "double-letter",
+    "0,4": "double-letter",
+    "3,5": "triple-letter",
+    "4,1": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "PEERAGE",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "MIRED",
+      "row": 2,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "FRITT",
+      "row": 3,
+      "col": 0,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "I",
+    "W",
+    "N",
+    "O",
+    "E",
+    "V",
+    "L"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "N",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "E",
+        "M",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "F",
+        "R",
+        "I",
+        "T",
+        "T",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "V",
+        "R",
+        "O",
+        "W",
+        "",
+        "",
+        ""
+      ],
+      [
+        "P",
+        "E",
+        "E",
+        "R",
+        "A",
+        "G",
+        "E",
+        ""
+      ],
+      [
+        "I",
+        "",
+        "D",
+        "",
+        "",
+        "",
+        "L",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "4,3",
+      "4,4",
+      "1,1",
+      "2,1",
+      "4,1",
+      "6,0",
+      "6,6"
+    ],
+    "score": 115,
+    "completionBonus": 50,
+    "words": [
+      "ROW",
+      "TOR",
+      "TWA",
+      "EM",
+      "VROW",
+      "NERVE",
+      "PI",
+      "EL"
+    ],
+    "scoringWords": [
+      {
+        "word": "ROW",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "TOR",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 3,
+        "move": 1
+      },
+      {
+        "word": "TWA",
+        "row": 3,
+        "col": 4,
+        "direction": "vertical",
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "EM",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "VROW",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 16,
+        "move": 2
+      },
+      {
+        "word": "NERVE",
+        "row": 1,
+        "col": 1,
+        "direction": "vertical",
+        "score": 12,
+        "move": 2
+      },
+      {
+        "word": "PI",
+        "row": 5,
+        "col": 0,
+        "direction": "vertical",
+        "score": 4,
+        "move": 3
+      },
+      {
+        "word": "EL",
+        "row": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2,
+        "move": 4
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "ROW",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 27,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,3",
+          "4,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "ROW",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 12
+          },
+          {
+            "word": "TOR",
+            "row": 3,
+            "col": 3,
+            "direction": "vertical",
+            "score": 3
+          },
+          {
+            "word": "TWA",
+            "row": 3,
+            "col": 4,
+            "direction": "vertical",
+            "score": 12
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "NERVE",
+        "row": 1,
+        "col": 1,
+        "direction": "vertical",
+        "score": 32,
+        "usedTiles": 3,
+        "newKeys": [
+          "1,1",
+          "2,1",
+          "4,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "EM",
+            "row": 2,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "VROW",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 16
+          },
+          {
+            "word": "NERVE",
+            "row": 1,
+            "col": 1,
+            "direction": "vertical",
+            "score": 12
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "PI",
+        "row": 5,
+        "col": 0,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "PI",
+            "row": 5,
+            "col": 0,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "EL",
+        "row": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "EL",
+            "row": 5,
+            "col": 6,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 2999
+  }
+}

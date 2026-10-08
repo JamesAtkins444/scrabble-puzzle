@@ -1,0 +1,424 @@
+{
+  "date": "2026-10-25",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "W",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "E",
+      "",
+      "",
+      "I",
+      "",
+      ""
+    ],
+    [
+      "D",
+      "E",
+      "C",
+      "E",
+      "R",
+      "N",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "L",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "W",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "D",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "E",
+      "",
+      "",
+      "I",
+      "",
+      ""
+    ],
+    [
+      "D",
+      "E",
+      "C",
+      "E",
+      "R",
+      "N",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "L",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "2,3": "double-letter",
+    "1,6": "triple-letter",
+    "6,0": "double-letter",
+    "3,0": "double-word",
+    "1,0": "triple-letter",
+    "4,4": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "DECERNS",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "WAINS",
+      "row": 2,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "DECAL",
+      "row": 3,
+      "col": 2,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "L",
+    "E",
+    "M",
+    "U",
+    "E",
+    "R",
+    "W"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "M",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "L",
+        "",
+        "",
+        "",
+        "W",
+        "",
+        ""
+      ],
+      [
+        "W",
+        "U",
+        "D",
+        "",
+        "",
+        "A",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "R",
+        "E",
+        "",
+        "",
+        "I",
+        "",
+        ""
+      ],
+      [
+        "D",
+        "E",
+        "C",
+        "E",
+        "R",
+        "N",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "",
+        "",
+        "S",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "L",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "1,0",
+      "2,0",
+      "3,0",
+      "4,0",
+      "2,1",
+      "3,1",
+      "4,1"
+    ],
+    "score": 107,
+    "completionBonus": 50,
+    "words": [
+      "MEWED",
+      "EL",
+      "WUD",
+      "ERE",
+      "LURE"
+    ],
+    "scoringWords": [
+      {
+        "word": "MEWED",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 34,
+        "move": 1
+      },
+      {
+        "word": "EL",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "WUD",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 14,
+        "move": 2
+      },
+      {
+        "word": "ERE",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "LURE",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "MEWED",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 34,
+        "usedTiles": 4,
+        "newKeys": [
+          "1,0",
+          "2,0",
+          "3,0",
+          "4,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "MEWED",
+            "row": 1,
+            "col": 0,
+            "direction": "vertical",
+            "score": 34
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "LURE",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 23,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,1",
+          "3,1",
+          "4,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "EL",
+            "row": 2,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "WUD",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 14
+          },
+          {
+            "word": "ERE",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "LURE",
+            "row": 2,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1550
+  }
+}

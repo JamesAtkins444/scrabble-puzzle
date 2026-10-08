@@ -1,0 +1,376 @@
+{
+  "date": "2026-10-09",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "U",
+      "",
+      "S",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "R",
+      "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "",
+      "A",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "T",
+      "I",
+      "L",
+      "B",
+      "U",
+      "R",
+      "Y"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "U",
+      "",
+      "S",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "R",
+      "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "",
+      "A",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "T",
+      "I",
+      "L",
+      "B",
+      "U",
+      "R",
+      "Y"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "4,2": "double-letter",
+    "3,0": "triple-letter",
+    "1,3": "double-letter",
+    "0,4": "double-letter",
+    "1,6": "triple-word",
+    "6,2": "double-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "TILBURY",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SEAL",
+      "row": 2,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "URATE",
+      "row": 2,
+      "col": 1,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "R",
+    "R",
+    "F",
+    "I",
+    "E",
+    "E",
+    "R"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "U",
+        "",
+        "S",
+        "",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "R",
+        "",
+        "E",
+        "",
+        "",
+        "F",
+        ""
+      ],
+      [
+        "",
+        "A",
+        "",
+        "A",
+        "",
+        "",
+        "I",
+        ""
+      ],
+      [
+        "",
+        "T",
+        "I",
+        "L",
+        "B",
+        "U",
+        "R",
+        "Y"
+      ],
+      [
+        "",
+        "E",
+        "",
+        "",
+        "R",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "R",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "1,6",
+      "2,6",
+      "3,6",
+      "4,6",
+      "6,6",
+      "6,4",
+      "7,4"
+    ],
+    "score": 82,
+    "completionBonus": 50,
+    "words": [
+      "REFIRE",
+      "BRR"
+    ],
+    "scoringWords": [
+      {
+        "word": "REFIRE",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 27,
+        "move": 1
+      },
+      {
+        "word": "BRR",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "REFIRE",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 27,
+        "usedTiles": 5,
+        "newKeys": [
+          "1,6",
+          "2,6",
+          "3,6",
+          "4,6",
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "REFIRE",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 27
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "BRR",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5,
+        "usedTiles": 2,
+        "newKeys": [
+          "6,4",
+          "7,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "BRR",
+            "row": 5,
+            "col": 4,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 937
+  }
+}

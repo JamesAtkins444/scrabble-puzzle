@@ -1,0 +1,376 @@
+{
+  "date": "2026-10-13",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "C",
+      "U",
+      "R",
+      "R",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "U",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "I",
+      "D",
+      "E",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "C",
+      "U",
+      "R",
+      "R",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "U",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "I",
+      "D",
+      "E",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "5,1": "double-word",
+    "3,2": "double-letter",
+    "7,6": "double-letter",
+    "4,3": "double-word",
+    "2,5": "triple-word",
+    "0,7": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "REGAUGE",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "BIDE",
+      "row": 6,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "CURRS",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "I",
+    "O",
+    "N",
+    "E",
+    "M",
+    "N",
+    "D"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "C",
+        "U",
+        "R",
+        "R",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "E",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "M",
+        "I",
+        "G",
+        "N",
+        "O",
+        "N"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "D",
+        "",
+        "",
+        "U",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "E",
+        "",
+        "",
+        "G",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "B",
+        "I",
+        "D",
+        "E",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "2,2",
+      "2,3",
+      "2,5",
+      "2,6",
+      "2,7",
+      "4,1",
+      "5,1"
+    ],
+    "score": 89,
+    "completionBonus": 50,
+    "words": [
+      "MIGNON",
+      "DEB"
+    ],
+    "scoringWords": [
+      {
+        "word": "MIGNON",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 27,
+        "move": 1
+      },
+      {
+        "word": "DEB",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 12,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "MIGNON",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 27,
+        "usedTiles": 5,
+        "newKeys": [
+          "2,2",
+          "2,3",
+          "2,5",
+          "2,6",
+          "2,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "MIGNON",
+            "row": 2,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 27
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "DEB",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 12,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,1",
+          "5,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "DEB",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 12
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 2518
+  }
+}

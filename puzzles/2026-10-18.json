@@ -1,0 +1,406 @@
+{
+  "date": "2026-10-18",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "R",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "P",
+      "I",
+      "L",
+      "E",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "R",
+      "E",
+      "N",
+      "T",
+      "I",
+      "N",
+      "G",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "R",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "P",
+      "I",
+      "L",
+      "E",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "R",
+      "E",
+      "N",
+      "T",
+      "I",
+      "N",
+      "G",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "1,2": "double-letter",
+    "3,6": "double-word",
+    "6,7": "double-word",
+    "5,5": "triple-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "RENTING",
+      "row": 7,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RIME",
+      "row": 4,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "PILEA",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "N",
+    "C",
+    "A",
+    "D",
+    "J",
+    "U",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "D",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "U",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "J",
+        "",
+        "",
+        "N",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "A",
+        "R",
+        "",
+        "C",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "P",
+        "I",
+        "L",
+        "E",
+        "A",
+        "",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "M",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "R",
+        "E",
+        "N",
+        "T",
+        "I",
+        "N",
+        "G",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "3,0",
+      "4,0",
+      "6,0",
+      "1,3",
+      "2,3",
+      "3,3",
+      "4,3"
+    ],
+    "score": 78,
+    "completionBonus": 50,
+    "words": [
+      "AR",
+      "EM",
+      "JAPER",
+      "DUNCE"
+    ],
+    "scoringWords": [
+      {
+        "word": "AR",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "EM",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "JAPER",
+        "row": 3,
+        "col": 0,
+        "direction": "vertical",
+        "score": 14,
+        "move": 1
+      },
+      {
+        "word": "DUNCE",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 8,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "JAPER",
+        "row": 3,
+        "col": 0,
+        "direction": "vertical",
+        "score": 20,
+        "usedTiles": 3,
+        "newKeys": [
+          "3,0",
+          "4,0",
+          "6,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "AR",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "EM",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "JAPER",
+            "row": 3,
+            "col": 0,
+            "direction": "vertical",
+            "score": 14
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "DUNCE",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 4,
+        "newKeys": [
+          "1,3",
+          "2,3",
+          "3,3",
+          "4,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "DUNCE",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 8
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1195
+  }
+}

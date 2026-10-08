@@ -1,0 +1,452 @@
+{
+  "date": "2026-10-12",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "M"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B",
+      "",
+      "C"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "K"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "R",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "M"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B",
+      "",
+      "C"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "K"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "R",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "1,1": "double-letter",
+    "3,4": "double-letter",
+    "7,4": "triple-letter",
+    "6,0": "double-letter",
+    "0,0": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "MICKEYS",
+      "row": 0,
+      "col": 7,
+      "direction": "vertical"
+    },
+    {
+      "word": "DRY",
+      "row": 5,
+      "col": 5,
+      "direction": "horizontal"
+    },
+    {
+      "word": "BOLDS",
+      "row": 2,
+      "col": 5,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "D",
+    "T",
+    "H",
+    "O",
+    "S",
+    "U",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "M"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "I"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "B",
+        "",
+        "C"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "H",
+        "O",
+        "",
+        "K"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "E",
+        "L",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "D",
+        "R",
+        "Y"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "S",
+        "",
+        "S"
+      ],
+      [
+        "",
+        "S",
+        "T",
+        "U",
+        "D",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "3,4",
+      "4,4",
+      "6,4",
+      "7,4",
+      "7,1",
+      "7,2",
+      "7,3"
+    ],
+    "score": 88,
+    "completionBonus": 50,
+    "words": [
+      "HO",
+      "EL",
+      "HE",
+      "OS",
+      "OD",
+      "STUD"
+    ],
+    "scoringWords": [
+      {
+        "word": "HO",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "EL",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "HE",
+        "row": 3,
+        "col": 4,
+        "direction": "vertical",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "OS",
+        "row": 6,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "OD",
+        "row": 6,
+        "col": 4,
+        "direction": "vertical",
+        "score": 7,
+        "move": 2
+      },
+      {
+        "word": "STUD",
+        "row": 7,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 9,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "HE",
+        "row": 3,
+        "col": 4,
+        "direction": "vertical",
+        "score": 20,
+        "usedTiles": 2,
+        "newKeys": [
+          "3,4",
+          "4,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "HO",
+            "row": 3,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "EL",
+            "row": 4,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "HE",
+            "row": 3,
+            "col": 4,
+            "direction": "vertical",
+            "score": 9
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "OD",
+        "row": 6,
+        "col": 4,
+        "direction": "vertical",
+        "score": 9,
+        "usedTiles": 2,
+        "newKeys": [
+          "6,4",
+          "7,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "OS",
+            "row": 6,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "OD",
+            "row": 6,
+            "col": 4,
+            "direction": "vertical",
+            "score": 7
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "STUD",
+        "row": 7,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 9,
+        "usedTiles": 3,
+        "newKeys": [
+          "7,1",
+          "7,2",
+          "7,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "STUD",
+            "row": 7,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 9
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 3614
+  }
+}
