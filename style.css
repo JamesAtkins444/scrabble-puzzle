@@ -1305,3 +1305,27 @@ body {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
+
+
+/* Test-only puzzle navigation */
+.next-puzzle-button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px 14px;
+    border: 1px solid #64748b;
+    border-radius: 8px;
+    background: transparent;
+    color: #64748b;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.next-puzzle-button:hover {
+    background: rgba(100, 116, 139, 0.08);
+}
+
+.next-puzzle-button:disabled {
+    opacity: 0.55;
+    cursor: wait;
+}
