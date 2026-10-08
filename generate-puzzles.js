@@ -12,7 +12,6 @@
 const fs = require("fs");
 const path = require("path");
 const http = require("http");
-const { spawn } = require("child_process");
 const { chromium } = require("playwright");
 
 const ROOT = __dirname;
@@ -101,22 +100,33 @@ function startServer() {
     });
 }
 
-async function generatePuzzle(page, dateKey) {
-    await page.addInitScript(date => {
-        window.__SCRABBLE_PREGENERATE__ = true;
-        window.__SCRABBLE_PREGENERATE_DATE__ = date;
-    }, dateKey);
+async function generatePuzzle(browser, dateKey) {
+    // Use a fresh page for every date so pre-generation init scripts and
+    // puzzle state cannot leak from one puzzle into the next.
+    const page = await browser.newPage();
 
-    await page.goto(`http://127.0.0.1:${PORT}/index.html?pregenerate=${dateKey}`, {
-        waitUntil: "load"
-    });
+    try {
+        await page.addInitScript(date => {
+            window.__SCRABBLE_PREGENERATE__ = true;
+            window.__SCRABBLE_PREGENERATE_DATE__ = date;
+        }, dateKey);
 
-    await page.waitForFunction(
-        () => Boolean(window.__SCRABBLE_PUZZLE_EXPORT__),
-        { timeout: 180000 }
-    );
+        await page.goto(`http://127.0.0.1:${PORT}/index.html?pregenerate=${dateKey}`, {
+            waitUntil: "load"
+        });
 
-    return page.evaluate(() => window.__SCRABBLE_PUZZLE_EXPORT__);
+        // Some puzzle seeds are much harder to generate than others.
+        // Give the existing generator up to 10 minutes rather than using
+        // Playwright's 30-second default.
+        await page.waitForFunction(
+            () => Boolean(window.__SCRABBLE_PUZZLE_EXPORT__),
+            { timeout: 600000 }
+        );
+
+        return await page.evaluate(() => window.__SCRABBLE_PUZZLE_EXPORT__);
+    } finally {
+        await page.close();
+    }
 }
 
 async function main() {
@@ -139,8 +149,6 @@ async function main() {
     });
 
     try {
-        const page = await browser.newPage();
-
         for (let offset = 0; offset < options.days; offset++) {
             const dateKey = getDateKey(addDays(startDate, offset));
             const outputPath = path.join(PUZZLE_DIR, `${dateKey}.json`);
@@ -151,7 +159,30 @@ async function main() {
             }
 
             console.log(`Generating puzzle ${dateKey}…`);
-            const puzzle = await generatePuzzle(page, dateKey);
+            let puzzle = null;
+            let lastError = null;
+
+            for (let attempt = 1; attempt <= 3; attempt++) {
+                try {
+                    puzzle = await generatePuzzle(browser, dateKey);
+                    break;
+                } catch (error) {
+                    lastError = error;
+                    console.warn(
+                        `Puzzle ${dateKey} attempt ${attempt}/3 failed: ${error.message}`
+                    );
+
+                    if (attempt < 3) {
+                        console.log(`Retrying puzzle ${dateKey} with a fresh browser page…`);
+                    }
+                }
+            }
+
+            if (!puzzle) {
+                throw new Error(
+                    `Could not generate puzzle ${dateKey} after 3 attempts. ${lastError?.message || ""}`
+                );
+            }
 
             if (!puzzle || puzzle.date !== dateKey) {
                 throw new Error(`Generated puzzle date mismatch for ${dateKey}`);
@@ -168,7 +199,6 @@ async function main() {
             );
         }
 
-        await page.close();
     } finally {
         await browser.close();
         await new Promise(resolve => server.close(resolve));
