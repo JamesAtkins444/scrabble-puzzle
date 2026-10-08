@@ -4324,6 +4324,35 @@ async function generateDailyPuzzle() {
             tileMessageElement.textContent =
                 `The daily puzzle could not be prepared after ${maxPuzzleAttempts} attempts. Please reload the page to try again.`;
         }
+
+        if (
+            typeof window !== "undefined" &&
+            window.__SCRABBLE_PREGENERATE__ === true &&
+            solvedWithAllTiles &&
+            bestSolution
+        ) {
+            window.__SCRABBLE_PUZZLE_EXPORT__ = {
+                date: activeDailyDateKey,
+                boardSize,
+                board: cloneBoard(originalBoard),
+                originalBoard: cloneBoard(originalBoard),
+                bonusSquares: { ...bonusSquares },
+                puzzleWords: puzzleWords.map(word => ({ ...word })),
+                initialRackTiles: [...initialRackTiles],
+                bestSolution: {
+                    ...bestSolution,
+                    board: cloneBoard(bestSolution.board),
+                    newKeys: [...bestSolution.newKeys],
+                    words: [...bestSolution.words],
+                    scoringWords: (bestSolution.scoringWords || []).map(word => ({ ...word })),
+                    moves: (bestSolution.moves || []).map(move => ({
+                        ...move,
+                        newKeys: [...move.newKeys],
+                        scoringWords: (move.scoringWords || []).map(word => ({ ...word }))
+                    }))
+                }
+            };
+        }
     } finally {
         isGenerating = false;
         if (generateButton) {
