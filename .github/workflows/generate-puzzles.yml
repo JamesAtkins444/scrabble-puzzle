@@ -30,7 +30,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 1800
 
     steps:
       - name: Check out repository
