@@ -1,0 +1,52 @@
+name: Generate Daily Scrabble Puzzles
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 0 * * *"
+  push:
+    paths:
+      - "script.js"
+      - "index.html"
+      - "generate-puzzles.js"
+      - "dictionary.txt"
+      - "solver dictionary.txt"
+      - ".github/workflows/generate-puzzles.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Playwright
+        run: npm install --no-save playwright@1.55.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Generate missing daily puzzles
+        run: node generate-puzzles.js --days 30
+
+      - name: Commit generated puzzles
+        run: |
+          if git diff --quiet -- puzzles; then
+            echo "No new puzzles were generated."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add puzzles
+          git commit -m "Generate daily Scrabble puzzles"
+          git push
