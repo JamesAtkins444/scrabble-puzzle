@@ -4265,6 +4265,23 @@ async function loadDailyPuzzle() {
     } catch (error) {
         console.error("Could not load today's pre-generated puzzle:", error);
 
+        // Keep the game playable if a pre-generated file is temporarily
+        // unavailable (for example before the first automated generation run).
+        // Once the JSON exists, this fallback is never needed.
+        try {
+            if (solverDictionary.size === 0) {
+                await loadSolverDictionary();
+            }
+
+            if (solverDictionary.size > 0) {
+                isGenerating = false;
+                await generateDailyPuzzle();
+                return;
+            }
+        } catch (fallbackError) {
+            console.error("Fallback puzzle generation also failed:", fallbackError);
+        }
+
         if (tileMessageElement) {
             tileMessageElement.textContent =
                 "Today's puzzle could not be loaded. Please try again later.";
