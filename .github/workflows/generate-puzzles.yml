@@ -2,6 +2,17 @@ name: Generate Daily Scrabble Puzzles
 
 on:
   workflow_dispatch:
+    inputs:
+      days:
+        description: "Number of future puzzles to generate"
+        required: true
+        default: "30"
+        type: number
+      force:
+        description: "Regenerate puzzles that already exist"
+        required: true
+        default: false
+        type: boolean
   schedule:
     - cron: "17 0 * * *"
   push:
@@ -19,6 +30,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    timeout-minutes: 180
 
     steps:
       - name: Check out repository
@@ -36,7 +48,15 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Generate missing daily puzzles
-        run: node generate-puzzles.js --days 30
+        run: |
+          DAYS="${{ inputs.days || '30' }}"
+          FORCE="${{ inputs.force || 'false' }}"
+
+          if [ "$FORCE" = "true" ]; then
+            node generate-puzzles.js --days "$DAYS" --force
+          else
+            node generate-puzzles.js --days "$DAYS"
+          fi
 
       - name: Commit generated puzzles
         run: |
