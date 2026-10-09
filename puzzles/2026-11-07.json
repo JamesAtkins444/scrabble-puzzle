@@ -1,0 +1,453 @@
+{
+  "date": "2026-11-07",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "P",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "V",
+      "",
+      "",
+      "P",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "L",
+      "V",
+      "E",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "N",
+      "",
+      "",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "P",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "V",
+      "",
+      "",
+      "P",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "L",
+      "V",
+      "E",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "N",
+      "",
+      "",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,3": "double-letter",
+    "6,7": "double-letter",
+    "0,2": "triple-letter",
+    "7,0": "triple-letter",
+    "7,4": "triple-letter",
+    "6,5": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "TIPPETS",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "ELVES",
+      "row": 4,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "WOVEN",
+      "row": 1,
+      "col": 1,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "K",
+    "I",
+    "R",
+    "G",
+    "A",
+    "N",
+    "O"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "K",
+        "A",
+        "T",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "W",
+        "O",
+        "",
+        "I",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "O",
+        "R",
+        "",
+        "P",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "V",
+        "",
+        "",
+        "P",
+        "I",
+        "N",
+        "G"
+      ],
+      [
+        "",
+        "E",
+        "L",
+        "V",
+        "E",
+        "S",
+        "",
+        ""
+      ],
+      [
+        "",
+        "N",
+        "",
+        "",
+        "T",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "S",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,2",
+      "1,2",
+      "2,2",
+      "0,3",
+      "3,5",
+      "3,6",
+      "3,7"
+    ],
+    "score": 100,
+    "completionBonus": 50,
+    "words": [
+      "WO",
+      "OR",
+      "KOR",
+      "KAT",
+      "PING",
+      "IS"
+    ],
+    "scoringWords": [
+      {
+        "word": "WO",
+        "row": 1,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "OR",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "KOR",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 17,
+        "move": 1
+      },
+      {
+        "word": "KAT",
+        "row": 0,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 17,
+        "move": 2
+      },
+      {
+        "word": "PING",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 7,
+        "move": 3
+      },
+      {
+        "word": "IS",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "KOR",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 24,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,2",
+          "1,2",
+          "2,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "WO",
+            "row": 1,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "OR",
+            "row": 2,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "KOR",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 17
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "KAT",
+        "row": 0,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 17,
+        "usedTiles": 1,
+        "newKeys": [
+          "0,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "KAT",
+            "row": 0,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 17
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "PING",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 9,
+        "usedTiles": 3,
+        "newKeys": [
+          "3,5",
+          "3,6",
+          "3,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "PING",
+            "row": 3,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "IS",
+            "row": 3,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 3588
+  }
+}
