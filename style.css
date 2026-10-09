@@ -1435,3 +1435,32 @@ body {
         padding: 21px 17px 18px;
     }
 }
+
+
+/* Pulse the share button when the player has used all seven rack tiles. */
+@keyframes share-results-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    }
+    50% {
+        transform: scale(1.12);
+        box-shadow: 0 0 0 7px rgba(59, 155, 232, 0.22);
+    }
+}
+
+.share-results-icon-button.needs-sharing {
+    animation: share-results-pulse 1.15s ease-in-out infinite;
+}
+
+.share-results-icon-button.needs-sharing:hover {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .share-results-icon-button.needs-sharing {
+        animation: none;
+        outline: 3px solid rgba(59, 155, 232, 0.45);
+        outline-offset: 3px;
+    }
+}
