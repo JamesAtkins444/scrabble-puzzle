@@ -1438,13 +1438,13 @@ const bonusWeights = {
 
 const bonusMaximums = {
 
-    "double-letter": 3,
+    "double-letter": 2,
 
-    "triple-letter": 3,
+    "triple-letter": 2,
 
-    "double-word": 2,
+    "double-word": 1,
 
-    "triple-word": 2
+    "triple-word": 1
 };
 
 
@@ -1524,172 +1524,96 @@ function generateBonusSquares() {
 
     bonusSquares = {};
 
-
     const emptyCells = [];
     const occupiedCells = [];
-
+    const placedBonusCells = [];
 
     for (
         let row = 0;
         row < boardSize;
         row++
     ) {
-
         for (
             let col = 0;
             col < boardSize;
             col++
         ) {
-
-            if (
-                board[row][col] === ""
-            ) {
-
-                emptyCells.push({
-                    row,
-                    col
-                });
-
+            if (board[row][col] === "") {
+                emptyCells.push({ row, col });
             } else {
-
-                occupiedCells.push({
-                    row,
-                    col
-                });
+                occupiedCells.push({ row, col });
             }
         }
     }
 
-
-    const desiredCount =
-        randomInt(
-            4,
-            6
-        );
-
-
-    const shuffled =
-        shuffle(
-            emptyCells
-        );
-
+    const shuffledCells = shuffle(emptyCells);
 
     /*
-     * Word bonuses must have a clear
-     * buffer around every pre-filled word.
+     * Bonus squares must stay clear of pre-filled words:
+     * - Triple word: 2-square buffer.
+     * - All other bonuses: 1-square buffer.
      *
-     * Triple word: no occupied cell within
-     * 2 squares in any direction.
-     *
-     * Double word: no occupied cell within
-     * 1 square in any direction.
-     *
-     * Chebyshev distance is used so diagonal
-     * neighbours count as part of the buffer.
+     * All bonus squares also need a 1-square buffer
+     * from every other bonus square, including diagonals.
      */
 
-    function isOutsideWordBuffer(
-        cell,
-        bufferSize
-    ) {
-
+    function isOutsideWordBuffer(cell, bufferSize) {
         return !occupiedCells.some(
             occupied =>
                 Math.max(
-                    Math.abs(
-                        occupied.row -
-                        cell.row
-                    ),
-                    Math.abs(
-                        occupied.col -
-                        cell.col
-                    )
+                    Math.abs(occupied.row - cell.row),
+                    Math.abs(occupied.col - cell.col)
                 ) <= bufferSize
         );
     }
 
+    function isOutsideBonusBuffer(cell) {
+        return !placedBonusCells.some(
+            bonus =>
+                Math.max(
+                    Math.abs(bonus.row - cell.row),
+                    Math.abs(bonus.col - cell.col)
+                ) <= 1
+        );
+    }
 
-    let placedCount = 0;
+    function placeBonus(type, wordBuffer) {
+        const candidates = shuffledCells.filter(
+            cell =>
+                !bonusSquares[keyForCell(cell.row, cell.col)] &&
+                isOutsideWordBuffer(cell, wordBuffer) &&
+                isOutsideBonusBuffer(cell)
+        );
 
-
-    for (
-        const cell
-        of shuffled
-    ) {
-
-        if (
-            placedCount >=
-            desiredCount
-        ) {
-
-            break;
+        if (candidates.length === 0) {
+            return false;
         }
 
+        const cell = candidates[
+            randomInt(0, candidates.length - 1)
+        ];
 
-        const allowedTypes = [];
+        bonusSquares[keyForCell(cell.row, cell.col)] = type;
+        placedBonusCells.push(cell);
+        return true;
+    }
 
+    // Place the required word bonuses first.
+    placeBonus("triple-word", 2);
+    placeBonus("double-word", 1);
 
-        /*
-         * Letter bonuses and double-word bonuses
-         * share the same 1-square buffer.
-         */
+    // Then add up to two of each letter bonus.
+    const letterBonusTypes = shuffle([
+        "triple-letter",
+        "triple-letter",
+        "double-letter",
+        "double-letter"
+    ]);
 
-        if (
-            isOutsideWordBuffer(
-                cell,
-                1
-            )
-        ) {
-
-            allowedTypes.push(
-                "double-letter",
-                "triple-letter",
-                "double-word"
-            );
-        }
-
-
-        /*
-         * Triple-word bonuses keep the larger
-         * 2-square buffer.
-         */
-
-        if (
-            isOutsideWordBuffer(
-                cell,
-                2
-            )
-        ) {
-
-            allowedTypes.push(
-                "triple-word"
-            );
-        }
-
-
-        const type =
-            getWeightedBonusType(
-                allowedTypes
-            );
-
-
-        if (!type) {
-            continue;
-        }
-
-
-        bonusSquares[
-            keyForCell(
-                cell.row,
-                cell.col
-            )
-        ] =
-            type;
-
-        placedCount++;
+    for (const type of letterBonusTypes) {
+        placeBonus(type, 1);
     }
 }
-
 
 function getBonusSquare(
     row,
