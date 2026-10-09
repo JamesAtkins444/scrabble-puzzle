@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "6,3": "double-letter",
     "6,7": "double-letter",
-    "0,2": "double-letter",
-    "7,0": "double-word",
-    "7,4": "triple-letter",
-    "6,5": "triple-letter"
+    "7,0": "double-letter",
+    "0,6": "triple-letter",
+    "7,7": "triple-letter",
+    "7,2": "triple-letter",
+    "1,7": "double-letter"
   },
   "puzzleWords": [
     {
@@ -210,14 +210,14 @@
         "",
         "",
         "T",
-        "",
-        "",
+        "O",
+        "G",
         ""
       ],
       [
         "",
         "W",
-        "O",
+        "",
         "",
         "I",
         "",
@@ -227,7 +227,7 @@
       [
         "",
         "O",
-        "R",
+        "",
         "",
         "P",
         "",
@@ -257,7 +257,7 @@
       [
         "",
         "N",
-        "",
+        "A",
         "",
         "T",
         "",
@@ -267,17 +267,17 @@
       [
         "",
         "",
-        "G",
-        "A",
+        "N",
+        "",
         "S",
-        "K",
-        "I",
-        "N"
+        "",
+        "",
+        ""
       ],
       [
-        "",
-        "",
-        "",
+        "I",
+        "R",
+        "K",
         "",
         "",
         "",
@@ -286,115 +286,128 @@
       ]
     ],
     "newKeys": [
+      "5,2",
       "6,2",
-      "6,3",
-      "6,5",
-      "6,6",
-      "6,7",
-      "1,2",
-      "2,2"
+      "7,2",
+      "7,0",
+      "7,1",
+      "0,5",
+      "0,6"
     ],
-    "score": 82,
+    "score": 96,
     "completionBonus": 50,
     "words": [
-      "GASKIN",
-      "WO",
-      "OR",
-      "OR"
+      "NA",
+      "LANK",
+      "IRK",
+      "TOG"
     ],
     "scoringWords": [
       {
-        "word": "GASKIN",
-        "row": 6,
-        "col": 2,
+        "word": "NA",
+        "row": 5,
+        "col": 1,
         "direction": "horizontal",
-        "score": 23,
+        "score": 2,
         "move": 1
       },
       {
-        "word": "WO",
-        "row": 1,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "OR",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "OR",
-        "row": 1,
+        "word": "LANK",
+        "row": 4,
         "col": 2,
         "direction": "vertical",
-        "score": 2,
+        "score": 18,
+        "move": 1
+      },
+      {
+        "word": "IRK",
+        "row": 7,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 18,
         "move": 2
+      },
+      {
+        "word": "TOG",
+        "row": 0,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 8,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "GASKIN",
-        "row": 6,
+        "word": "LANK",
+        "row": 4,
         "col": 2,
-        "direction": "horizontal",
-        "score": 23,
-        "usedTiles": 5,
+        "direction": "vertical",
+        "score": 20,
+        "usedTiles": 3,
         "newKeys": [
+          "5,2",
           "6,2",
-          "6,3",
-          "6,5",
-          "6,6",
-          "6,7"
+          "7,2"
         ],
         "scoringWords": [
           {
-            "word": "GASKIN",
-            "row": 6,
-            "col": 2,
+            "word": "NA",
+            "row": 5,
+            "col": 1,
             "direction": "horizontal",
-            "score": 23
+            "score": 2
+          },
+          {
+            "word": "LANK",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OR",
-        "row": 1,
-        "col": 2,
-        "direction": "vertical",
-        "score": 9,
+        "word": "IRK",
+        "row": 7,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 18,
         "usedTiles": 2,
         "newKeys": [
-          "1,2",
-          "2,2"
+          "7,0",
+          "7,1"
         ],
         "scoringWords": [
           {
-            "word": "WO",
-            "row": 1,
-            "col": 1,
+            "word": "IRK",
+            "row": 7,
+            "col": 0,
             "direction": "horizontal",
-            "score": 5
-          },
+            "score": 18
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "TOG",
+        "row": 0,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 8,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,5",
+          "0,6"
+        ],
+        "scoringWords": [
           {
-            "word": "OR",
-            "row": 2,
-            "col": 1,
+            "word": "TOG",
+            "row": 0,
+            "col": 4,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OR",
-            "row": 1,
-            "col": 2,
-            "direction": "vertical",
-            "score": 2
+            "score": 8
           }
         ]
       }
@@ -403,6 +416,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3036
+    "visitedCandidates": 3291
   }
 }

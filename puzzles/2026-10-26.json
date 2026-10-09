@@ -167,11 +167,11 @@
   ],
   "bonusSquares": {
     "5,0": "double-word",
-    "6,5": "double-letter",
-    "7,0": "double-word",
-    "5,5": "double-letter",
-    "6,0": "double-letter",
-    "2,6": "triple-letter"
+    "7,0": "double-letter",
+    "6,0": "double-word",
+    "3,0": "double-letter",
+    "1,0": "double-letter",
+    "7,7": "triple-word"
   },
   "puzzleWords": [
     {
@@ -294,7 +294,7 @@
       "1,2",
       "5,3"
     ],
-    "score": 79,
+    "score": 75,
     "completionBonus": 50,
     "words": [
       "TABORIN",
@@ -310,7 +310,7 @@
         "row": 2,
         "col": 1,
         "direction": "horizontal",
-        "score": 9,
+        "score": 7,
         "move": 1
       },
       {
@@ -334,7 +334,7 @@
         "row": 2,
         "col": 6,
         "direction": "vertical",
-        "score": 5,
+        "score": 3,
         "move": 1
       },
       {
@@ -361,7 +361,7 @@
         "row": 2,
         "col": 1,
         "direction": "horizontal",
-        "score": 23,
+        "score": 19,
         "usedTiles": 5,
         "newKeys": [
           "2,1",
@@ -376,7 +376,7 @@
             "row": 2,
             "col": 1,
             "direction": "horizontal",
-            "score": 9
+            "score": 7
           },
           {
             "word": "AW",
@@ -397,7 +397,7 @@
             "row": 2,
             "col": 6,
             "direction": "vertical",
-            "score": 5
+            "score": 3
           }
         ]
       },

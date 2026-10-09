@@ -3,74 +3,74 @@
   "boardSize": 8,
   "board": [
     [
+      "S",
       "",
       "",
       "",
       "",
       "",
       "",
-      "",
-      "B"
+      ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "L"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "A"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "C",
-      "",
-      "M"
-    ],
-    [
-      "",
-      "",
-      "",
-      "D",
-      "H",
-      "O",
+      "P",
+      "E",
       "T",
-      "I"
+      "A",
+      "L",
+      "",
+      "",
+      ""
     ],
     [
+      "I",
       "",
       "",
       "",
       "",
       "",
-      "D",
       "",
-      "N"
+      ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "",
       "E",
       "",
-      "G"
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "G",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "E",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "A",
+      "L",
+      "L",
+      "S",
+      "",
+      "",
+      ""
     ],
     [
       "",
@@ -85,74 +85,74 @@
   ],
   "originalBoard": [
     [
+      "S",
       "",
       "",
       "",
       "",
       "",
       "",
-      "",
-      "B"
+      ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "L"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "A"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "C",
-      "",
-      "M"
-    ],
-    [
-      "",
-      "",
-      "",
-      "D",
-      "H",
-      "O",
+      "P",
+      "E",
       "T",
-      "I"
+      "A",
+      "L",
+      "",
+      "",
+      ""
     ],
     [
+      "I",
       "",
       "",
       "",
       "",
       "",
-      "D",
       "",
-      "N"
+      ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "",
       "E",
       "",
-      "G"
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "G",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "E",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "A",
+      "L",
+      "L",
+      "S",
+      "",
+      "",
+      ""
     ],
     [
       "",
@@ -166,262 +166,262 @@
     ]
   ],
   "bonusSquares": {
-    "7,4": "triple-letter",
-    "2,3": "double-letter",
-    "0,1": "double-letter",
-    "7,1": "double-word"
+    "3,6": "double-letter",
+    "4,7": "double-word",
+    "1,7": "double-letter",
+    "5,6": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "BLAMING",
+      "word": "SPIEGEL",
       "row": 0,
-      "col": 7,
+      "col": 0,
       "direction": "vertical"
     },
     {
-      "word": "DHOTI",
-      "row": 4,
-      "col": 3,
+      "word": "PETAL",
+      "row": 1,
+      "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "CODE",
-      "row": 3,
-      "col": 5,
-      "direction": "vertical"
+      "word": "LALLS",
+      "row": 6,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "N",
-    "F",
-    "A",
+    "E",
     "O",
-    "S",
-    "L",
-    "I"
+    "T",
+    "T",
+    "Z",
+    "E",
+    "R"
   ],
   "bestSolution": {
     "board": [
       [
+        "S",
+        "",
+        "",
+        "R",
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "",
-        "B"
+        ""
       ],
       [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "L"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "A"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "C",
-        "",
-        "M"
-      ],
-      [
-        "",
-        "",
-        "",
-        "D",
-        "H",
-        "O",
-        "T",
-        "I"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "D",
-        "",
-        "N"
-      ],
-      [
-        "",
-        "N",
-        "",
-        "",
-        "O",
+        "P",
         "E",
-        "",
-        "G"
-      ],
-      [
-        "",
+        "T",
         "A",
         "L",
+        "",
+        "",
+        ""
+      ],
+      [
         "I",
-        "F",
+        "",
+        "",
+        "Z",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "T",
+        "",
+        "E",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "G",
+        "O",
+        "",
+        "E",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "L",
+        "A",
+        "L",
+        "L",
         "S",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "T",
+        "",
+        "",
+        "",
+        "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "7,1",
-      "7,2",
-      "7,3",
-      "7,4",
-      "7,5",
-      "6,4",
-      "6,1"
+      "0,3",
+      "2,3",
+      "3,3",
+      "4,3",
+      "3,1",
+      "4,1",
+      "7,1"
     ],
-    "score": 102,
+    "score": 73,
     "completionBonus": 50,
     "words": [
-      "ALIFS",
-      "CODES",
-      "OE",
-      "OF",
-      "NA"
+      "RAZEE",
+      "ET",
+      "GO",
+      "TO",
+      "AT"
     ],
     "scoringWords": [
       {
-        "word": "ALIFS",
-        "row": 7,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 32,
-        "move": 1
-      },
-      {
-        "word": "CODES",
-        "row": 3,
-        "col": 5,
+        "word": "RAZEE",
+        "row": 0,
+        "col": 3,
         "direction": "vertical",
-        "score": 1,
+        "score": 14,
         "move": 1
       },
       {
-        "word": "OE",
-        "row": 6,
-        "col": 4,
+        "word": "ET",
+        "row": 3,
+        "col": 0,
         "direction": "horizontal",
         "score": 2,
         "move": 2
       },
       {
-        "word": "OF",
-        "row": 6,
-        "col": 4,
-        "direction": "vertical",
-        "score": 13,
+        "word": "GO",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 3,
         "move": 2
       },
       {
-        "word": "NA",
+        "word": "TO",
+        "row": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "AT",
         "row": 6,
         "col": 1,
         "direction": "vertical",
-        "score": 4,
+        "score": 2,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "ALIFS",
-        "row": 7,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 33,
-        "usedTiles": 5,
+        "word": "RAZEE",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 14,
+        "usedTiles": 4,
         "newKeys": [
-          "7,1",
-          "7,2",
-          "7,3",
-          "7,4",
-          "7,5"
+          "0,3",
+          "2,3",
+          "3,3",
+          "4,3"
         ],
         "scoringWords": [
           {
-            "word": "ALIFS",
-            "row": 7,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 32
-          },
-          {
-            "word": "CODES",
-            "row": 3,
-            "col": 5,
+            "word": "RAZEE",
+            "row": 0,
+            "col": 3,
             "direction": "vertical",
-            "score": 1
+            "score": 14
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OF",
-        "row": 6,
-        "col": 4,
+        "word": "TO",
+        "row": 3,
+        "col": 1,
         "direction": "vertical",
-        "score": 15,
-        "usedTiles": 1,
+        "score": 7,
+        "usedTiles": 2,
         "newKeys": [
-          "6,4"
+          "3,1",
+          "4,1"
         ],
         "scoringWords": [
           {
-            "word": "OE",
-            "row": 6,
-            "col": 4,
+            "word": "ET",
+            "row": 3,
+            "col": 0,
             "direction": "horizontal",
             "score": 2
           },
           {
-            "word": "OF",
-            "row": 6,
-            "col": 4,
+            "word": "GO",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "TO",
+            "row": 3,
+            "col": 1,
             "direction": "vertical",
-            "score": 13
+            "score": 2
           }
         ]
       },
       {
         "turn": 3,
-        "word": "NA",
+        "word": "AT",
         "row": 6,
         "col": 1,
         "direction": "vertical",
-        "score": 4,
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "6,1"
+          "7,1"
         ],
         "scoringWords": [
           {
-            "word": "NA",
+            "word": "AT",
             "row": 6,
             "col": 1,
             "direction": "vertical",
-            "score": 4
+            "score": 2
           }
         ]
       }
@@ -430,6 +430,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2924
+    "visitedCandidates": 1306
   }
 }

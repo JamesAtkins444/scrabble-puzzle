@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "4,2": "double-letter",
-    "3,0": "double-letter",
-    "1,3": "double-letter",
-    "0,4": "triple-letter",
-    "1,6": "triple-word",
-    "6,2": "triple-letter"
+    "0,4": "double-letter",
+    "1,6": "triple-letter",
+    "0,7": "double-letter",
+    "7,6": "double-letter",
+    "0,2": "double-word",
+    "1,5": "double-word"
   },
   "puzzleWords": [
     {
@@ -221,7 +221,7 @@
         "",
         "",
         "",
-        "R",
+        "",
         ""
       ],
       [
@@ -231,7 +231,7 @@
         "S",
         "",
         "",
-        "E",
+        "",
         ""
       ],
       [
@@ -239,9 +239,9 @@
         "R",
         "",
         "E",
-        "",
-        "",
         "F",
+        "",
+        "",
         ""
       ],
       [
@@ -249,10 +249,10 @@
         "A",
         "",
         "A",
-        "",
-        "",
         "I",
-        ""
+        "",
+        "",
+        "R"
       ],
       [
         "",
@@ -265,14 +265,14 @@
         "Y"
       ],
       [
-        "",
-        "E",
-        "",
-        "",
         "R",
+        "E",
+        "",
         "",
         "E",
-        ""
+        "",
+        "",
+        "E"
       ],
       [
         "",
@@ -286,83 +286,144 @@
       ]
     ],
     "newKeys": [
-      "1,6",
-      "2,6",
-      "3,6",
-      "4,6",
-      "6,6",
+      "3,4",
+      "4,4",
       "6,4",
-      "7,4"
+      "7,4",
+      "4,7",
+      "6,7",
+      "6,0"
     ],
-    "score": 82,
+    "score": 75,
     "completionBonus": 50,
     "words": [
-      "REFIRE",
-      "BRR"
+      "EF",
+      "AI",
+      "FIBER",
+      "RYE",
+      "RE"
     ],
     "scoringWords": [
       {
-        "word": "REFIRE",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 27,
+        "word": "EF",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
         "move": 1
       },
       {
-        "word": "BRR",
-        "row": 5,
+        "word": "AI",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "FIBER",
+        "row": 3,
         "col": 4,
         "direction": "vertical",
-        "score": 5,
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "RYE",
+        "row": 4,
+        "col": 7,
+        "direction": "vertical",
+        "score": 6,
         "move": 2
+      },
+      {
+        "word": "RE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "REFIRE",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 27,
-        "usedTiles": 5,
-        "newKeys": [
-          "1,6",
-          "2,6",
-          "3,6",
-          "4,6",
-          "6,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "REFIRE",
-            "row": 1,
-            "col": 6,
-            "direction": "vertical",
-            "score": 27
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "BRR",
-        "row": 5,
+        "word": "FIBER",
+        "row": 3,
         "col": 4,
         "direction": "vertical",
-        "score": 5,
-        "usedTiles": 2,
+        "score": 17,
+        "usedTiles": 4,
         "newKeys": [
+          "3,4",
+          "4,4",
           "6,4",
           "7,4"
         ],
         "scoringWords": [
           {
-            "word": "BRR",
-            "row": 5,
+            "word": "EF",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "AI",
+            "row": 4,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "FIBER",
+            "row": 3,
             "col": 4,
             "direction": "vertical",
-            "score": 5
+            "score": 10
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "RYE",
+        "row": 4,
+        "col": 7,
+        "direction": "vertical",
+        "score": 6,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,7",
+          "6,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "RYE",
+            "row": 4,
+            "col": 7,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "RE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "RE",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
           }
         ]
       }
@@ -371,6 +432,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 937
+    "visitedCandidates": 1086
   }
 }

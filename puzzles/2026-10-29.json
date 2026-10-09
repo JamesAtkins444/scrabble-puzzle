@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "1,4": "double-letter",
-    "7,7": "double-word",
-    "6,3": "double-letter",
-    "1,0": "triple-letter",
-    "2,7": "double-letter"
+    "7,7": "triple-letter",
+    "6,3": "triple-letter",
+    "7,1": "double-letter",
+    "7,3": "double-word",
+    "5,2": "double-letter"
   },
   "puzzleWords": [
     {
@@ -293,7 +293,7 @@
       "7,4",
       "6,3"
     ],
-    "score": 84,
+    "score": 86,
     "completionBonus": 50,
     "words": [
       "FON",
@@ -349,7 +349,7 @@
         "row": 6,
         "col": 3,
         "direction": "horizontal",
-        "score": 5,
+        "score": 7,
         "move": 3
       }
     ],
@@ -427,7 +427,7 @@
         "row": 6,
         "col": 3,
         "direction": "horizontal",
-        "score": 5,
+        "score": 7,
         "usedTiles": 1,
         "newKeys": [
           "6,3"
@@ -438,7 +438,7 @@
             "row": 6,
             "col": 3,
             "direction": "horizontal",
-            "score": 5
+            "score": 7
           }
         ]
       }

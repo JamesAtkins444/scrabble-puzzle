@@ -166,10 +166,10 @@
     ]
   ],
   "bonusSquares": {
-    "3,6": "triple-letter",
-    "1,5": "double-letter",
-    "3,0": "double-letter",
-    "6,1": "double-letter"
+    "3,0": "triple-letter",
+    "5,7": "double-letter",
+    "0,1": "double-letter",
+    "0,6": "double-letter"
   },
   "puzzleWords": [
     {
@@ -203,7 +203,7 @@
   "bestSolution": {
     "board": [
       [
-        "",
+        "P",
         "",
         "",
         "C",
@@ -213,17 +213,17 @@
         ""
       ],
       [
-        "",
+        "E",
         "",
         "",
         "H",
         "",
-        "B",
-        "A",
-        "P"
+        "",
+        "",
+        ""
       ],
       [
-        "",
+        "E",
         "",
         "B",
         "O",
@@ -233,9 +233,9 @@
         ""
       ],
       [
-        "",
-        "R",
-        "",
+        "K",
+        "B",
+        "A",
         "R",
         "",
         "",
@@ -244,10 +244,10 @@
       ],
       [
         "",
-        "E",
+        "",
         "",
         "D",
-        "E",
+        "",
         "",
         "",
         ""
@@ -263,8 +263,8 @@
         ""
       ],
       [
+        "R",
         "",
-        "K",
         "",
         "D",
         "",
@@ -284,69 +284,51 @@
       ]
     ],
     "newKeys": [
-      "1,5",
-      "1,6",
-      "1,7",
+      "3,0",
       "3,1",
-      "4,1",
-      "6,1",
-      "4,4"
+      "3,2",
+      "0,0",
+      "1,0",
+      "2,0",
+      "6,0"
     ],
-    "score": 92,
+    "score": 96,
     "completionBonus": 50,
     "words": [
-      "BAP",
-      "BE",
-      "AY",
-      "RECK",
-      "DE",
-      "ES"
+      "KBAR",
+      "BA",
+      "PEEK",
+      "AR"
     ],
     "scoringWords": [
       {
-        "word": "BAP",
-        "row": 1,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "BE",
-        "row": 1,
-        "col": 5,
-        "direction": "vertical",
-        "score": 7,
-        "move": 1
-      },
-      {
-        "word": "AY",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "RECK",
+        "word": "KBAR",
         "row": 3,
-        "col": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
+        "move": 1
+      },
+      {
+        "word": "BA",
+        "row": 2,
+        "col": 2,
         "direction": "vertical",
-        "score": 15,
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "PEEK",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 20,
         "move": 2
       },
       {
-        "word": "DE",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 3
-      },
-      {
-        "word": "ES",
-        "row": 4,
-        "col": 4,
+        "word": "AR",
+        "row": 5,
+        "col": 0,
         "direction": "vertical",
         "score": 2,
         "move": 3
@@ -355,87 +337,73 @@
     "moves": [
       {
         "turn": 1,
-        "word": "BAP",
-        "row": 1,
-        "col": 5,
+        "word": "KBAR",
+        "row": 3,
+        "col": 0,
         "direction": "horizontal",
-        "score": 22,
+        "score": 24,
         "usedTiles": 3,
         "newKeys": [
-          "1,5",
-          "1,6",
-          "1,7"
+          "3,0",
+          "3,1",
+          "3,2"
         ],
         "scoringWords": [
           {
-            "word": "BAP",
-            "row": 1,
-            "col": 5,
+            "word": "KBAR",
+            "row": 3,
+            "col": 0,
             "direction": "horizontal",
-            "score": 10
+            "score": 20
           },
           {
-            "word": "BE",
-            "row": 1,
-            "col": 5,
+            "word": "BA",
+            "row": 2,
+            "col": 2,
             "direction": "vertical",
-            "score": 7
-          },
-          {
-            "word": "AY",
-            "row": 1,
-            "col": 6,
-            "direction": "vertical",
-            "score": 5
+            "score": 4
           }
         ]
       },
       {
         "turn": 2,
-        "word": "RECK",
-        "row": 3,
-        "col": 1,
+        "word": "PEEK",
+        "row": 0,
+        "col": 0,
         "direction": "vertical",
-        "score": 15,
+        "score": 20,
         "usedTiles": 3,
         "newKeys": [
-          "3,1",
-          "4,1",
-          "6,1"
+          "0,0",
+          "1,0",
+          "2,0"
         ],
         "scoringWords": [
           {
-            "word": "RECK",
-            "row": 3,
-            "col": 1,
+            "word": "PEEK",
+            "row": 0,
+            "col": 0,
             "direction": "vertical",
-            "score": 15
+            "score": 20
           }
         ]
       },
       {
         "turn": 3,
-        "word": "DE",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 5,
+        "word": "AR",
+        "row": 5,
+        "col": 0,
+        "direction": "vertical",
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "4,4"
+          "6,0"
         ],
         "scoringWords": [
           {
-            "word": "DE",
-            "row": 4,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "ES",
-            "row": 4,
-            "col": 4,
+            "word": "AR",
+            "row": 5,
+            "col": 0,
             "direction": "vertical",
             "score": 2
           }
@@ -446,6 +414,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2498
+    "visitedCandidates": 2598
   }
 }

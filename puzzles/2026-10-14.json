@@ -166,10 +166,10 @@
     ]
   ],
   "bonusSquares": {
-    "5,2": "triple-letter",
-    "1,4": "double-letter",
-    "2,4": "triple-letter",
-    "3,4": "double-word"
+    "2,4": "double-word",
+    "3,4": "double-letter",
+    "5,1": "triple-letter",
+    "1,1": "double-word"
   },
   "puzzleWords": [
     {
@@ -216,26 +216,16 @@
         "",
         "",
         "",
-        "O",
-        "Y",
-        "",
+        "I",
         "N",
+        "",
+        "",
         "U"
       ],
       [
         "",
         "",
-        "",
         "T",
-        "I",
-        "",
-        "",
-        "T"
-      ],
-      [
-        "",
-        "",
-        "",
         "E",
         "N",
         "",
@@ -247,7 +237,17 @@
         "",
         "",
         "",
+        "O",
         "",
+        "",
+        "T"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "Y",
         "",
         "",
         "E"
@@ -287,41 +287,39 @@
       "1,4",
       "2,4",
       "3,4",
+      "4,4",
       "1,3",
       "2,3",
-      "3,3",
-      "1,6"
+      "2,2"
     ],
-    "score": 104,
+    "score": 82,
     "completionBonus": 50,
     "words": [
-      "AYIN",
-      "OY",
-      "TI",
+      "ANNOY",
+      "IN",
       "EN",
-      "VOTE",
-      "NU",
-      "EN"
+      "VIE",
+      "TEN"
     ],
     "scoringWords": [
       {
-        "word": "AYIN",
+        "word": "ANNOY",
         "row": 0,
         "col": 4,
         "direction": "vertical",
-        "score": 26,
+        "score": 18,
         "move": 1
       },
       {
-        "word": "OY",
+        "word": "IN",
         "row": 1,
         "col": 3,
         "direction": "horizontal",
-        "score": 9,
+        "score": 2,
         "move": 2
       },
       {
-        "word": "TI",
+        "word": "EN",
         "row": 2,
         "col": 3,
         "direction": "horizontal",
@@ -329,34 +327,18 @@
         "move": 2
       },
       {
-        "word": "EN",
-        "row": 3,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 2
-      },
-      {
-        "word": "VOTE",
+        "word": "VIE",
         "row": 0,
         "col": 3,
         "direction": "vertical",
-        "score": 7,
+        "score": 6,
         "move": 2
       },
       {
-        "word": "NU",
-        "row": 1,
-        "col": 6,
+        "word": "TEN",
+        "row": 2,
+        "col": 2,
         "direction": "horizontal",
-        "score": 2,
-        "move": 3
-      },
-      {
-        "word": "EN",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
         "score": 2,
         "move": 3
       }
@@ -364,95 +346,81 @@
     "moves": [
       {
         "turn": 1,
-        "word": "AYIN",
+        "word": "ANNOY",
         "row": 0,
         "col": 4,
         "direction": "vertical",
-        "score": 26,
-        "usedTiles": 3,
+        "score": 18,
+        "usedTiles": 4,
         "newKeys": [
           "1,4",
           "2,4",
-          "3,4"
+          "3,4",
+          "4,4"
         ],
         "scoringWords": [
           {
-            "word": "AYIN",
+            "word": "ANNOY",
             "row": 0,
             "col": 4,
             "direction": "vertical",
-            "score": 26
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "VOTE",
+        "word": "VIE",
         "row": 0,
         "col": 3,
         "direction": "vertical",
-        "score": 24,
-        "usedTiles": 3,
+        "score": 12,
+        "usedTiles": 2,
         "newKeys": [
           "1,3",
-          "2,3",
-          "3,3"
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "OY",
+            "word": "IN",
             "row": 1,
             "col": 3,
             "direction": "horizontal",
-            "score": 9
+            "score": 2
           },
           {
-            "word": "TI",
+            "word": "EN",
             "row": 2,
             "col": 3,
             "direction": "horizontal",
             "score": 4
           },
           {
-            "word": "EN",
-            "row": 3,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "VOTE",
+            "word": "VIE",
             "row": 0,
             "col": 3,
             "direction": "vertical",
-            "score": 7
+            "score": 6
           }
         ]
       },
       {
         "turn": 3,
-        "word": "EN",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 4,
+        "word": "TEN",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "1,6"
+          "2,2"
         ],
         "scoringWords": [
           {
-            "word": "NU",
-            "row": 1,
-            "col": 6,
+            "word": "TEN",
+            "row": 2,
+            "col": 2,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "EN",
-            "row": 0,
-            "col": 6,
-            "direction": "vertical",
             "score": 2
           }
         ]
@@ -462,6 +430,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2329
+    "visitedCandidates": 1888
   }
 }

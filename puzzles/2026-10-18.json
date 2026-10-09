@@ -168,8 +168,8 @@
   "bonusSquares": {
     "1,2": "double-letter",
     "3,6": "triple-letter",
-    "6,7": "triple-letter",
-    "2,2": "double-word"
+    "2,2": "triple-letter",
+    "2,6": "triple-word"
   },
   "puzzleWords": [
     {

@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "5,7": "triple-letter",
-    "7,4": "triple-letter",
     "1,3": "triple-letter",
-    "7,2": "double-letter",
-    "2,4": "double-letter"
+    "2,4": "double-word",
+    "3,4": "triple-letter",
+    "0,2": "double-letter",
+    "1,5": "double-letter"
   },
   "puzzleWords": [
     {
@@ -214,7 +214,7 @@
         ""
       ],
       [
-        "L",
+        "",
         "",
         "",
         "",
@@ -224,31 +224,31 @@
         ""
       ],
       [
-        "O",
+        "",
         "S",
-        "",
-        "",
-        "",
+        "L",
+        "U",
+        "T",
         "",
         "",
         ""
       ],
       [
-        "U",
+        "",
         "H",
         "",
         "",
-        "",
+        "O",
         "",
         "I",
         ""
       ],
       [
-        "T",
+        "",
         "O",
         "",
         "",
-        "",
+        "W",
         "",
         "M",
         ""
@@ -258,7 +258,7 @@
         "E",
         "",
         "",
-        "",
+        "N",
         "",
         "P",
         ""
@@ -276,188 +276,92 @@
       [
         "",
         "",
-        "W",
+        "",
+        "",
         "E",
-        "N",
         "",
         "D",
         ""
       ]
     ],
     "newKeys": [
-      "7,2",
-      "7,3",
+      "2,4",
+      "3,4",
+      "4,4",
+      "5,4",
       "7,4",
-      "1,0",
-      "2,0",
-      "3,0",
-      "4,0"
+      "2,2",
+      "2,3"
     ],
-    "score": 92,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "WEN",
-      "AW",
-      "BE",
-      "IN",
-      "OS",
-      "UH",
-      "TO",
-      "LOUT"
+      "TOWNIE",
+      "SLUT"
     ],
     "scoringWords": [
       {
-        "word": "WEN",
-        "row": 7,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 12,
-        "move": 1
-      },
-      {
-        "word": "AW",
-        "row": 6,
-        "col": 2,
-        "direction": "vertical",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "BE",
-        "row": 6,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "IN",
-        "row": 6,
+        "word": "TOWNIE",
+        "row": 2,
         "col": 4,
         "direction": "vertical",
-        "score": 4,
+        "score": 22,
         "move": 1
       },
       {
-        "word": "OS",
+        "word": "SLUT",
         "row": 2,
-        "col": 0,
+        "col": 1,
         "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "UH",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "TO",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "LOUT",
-        "row": 1,
-        "col": 0,
-        "direction": "vertical",
-        "score": 4,
+        "score": 8,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "WEN",
-        "row": 7,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 29,
-        "usedTiles": 3,
+        "word": "TOWNIE",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 22,
+        "usedTiles": 5,
         "newKeys": [
-          "7,2",
-          "7,3",
+          "2,4",
+          "3,4",
+          "4,4",
+          "5,4",
           "7,4"
         ],
         "scoringWords": [
           {
-            "word": "WEN",
-            "row": 7,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 12
-          },
-          {
-            "word": "AW",
-            "row": 6,
-            "col": 2,
-            "direction": "vertical",
-            "score": 9
-          },
-          {
-            "word": "BE",
-            "row": 6,
-            "col": 3,
-            "direction": "vertical",
-            "score": 4
-          },
-          {
-            "word": "IN",
-            "row": 6,
+            "word": "TOWNIE",
+            "row": 2,
             "col": 4,
             "direction": "vertical",
-            "score": 4
+            "score": 22
           }
         ]
       },
       {
         "turn": 2,
-        "word": "LOUT",
-        "row": 1,
-        "col": 0,
-        "direction": "vertical",
-        "score": 13,
-        "usedTiles": 4,
+        "word": "SLUT",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 8,
+        "usedTiles": 2,
         "newKeys": [
-          "1,0",
-          "2,0",
-          "3,0",
-          "4,0"
+          "2,2",
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "OS",
+            "word": "SLUT",
             "row": 2,
-            "col": 0,
+            "col": 1,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "UH",
-            "row": 3,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "TO",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "LOUT",
-            "row": 1,
-            "col": 0,
-            "direction": "vertical",
-            "score": 4
+            "score": 8
           }
         ]
       }
@@ -466,6 +370,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3121
+    "visitedCandidates": 2826
   }
 }

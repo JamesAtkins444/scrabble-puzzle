@@ -167,11 +167,11 @@
   ],
   "bonusSquares": {
     "7,1": "double-letter",
-    "1,6": "double-letter",
-    "6,2": "double-word",
-    "2,7": "triple-letter",
-    "3,4": "triple-letter",
-    "6,6": "triple-letter"
+    "6,2": "double-letter",
+    "2,0": "double-word",
+    "0,0": "triple-letter",
+    "3,0": "double-word",
+    "7,0": "triple-word"
   },
   "puzzleWords": [
     {
@@ -205,7 +205,7 @@
   "bestSolution": {
     "board": [
       [
-        "",
+        "E",
         "",
         "",
         "",
@@ -215,9 +215,9 @@
         ""
       ],
       [
+        "A",
         "",
         "",
-        "B",
         "",
         "",
         "B",
@@ -225,7 +225,7 @@
         ""
       ],
       [
-        "",
+        "V",
         "",
         "A",
         "L",
@@ -235,9 +235,9 @@
         ""
       ],
       [
-        "",
-        "",
-        "",
+        "E",
+        "F",
+        "S",
         "",
         "",
         "A",
@@ -259,7 +259,7 @@
         "",
         "",
         "",
-        "",
+        "B",
         "I",
         "",
         ""
@@ -267,18 +267,18 @@
       [
         "",
         "",
-        "V",
-        "E",
-        "E",
+        "",
+        "",
+        "",
         "N",
-        "A",
-        "S"
+        "",
+        ""
       ],
       [
         "",
         "",
         "",
-        "F",
+        "",
         "",
         "G",
         "",
@@ -286,42 +286,60 @@
       ]
     ],
     "newKeys": [
-      "6,2",
-      "6,3",
-      "6,4",
-      "6,6",
-      "6,7",
-      "7,3",
-      "1,2"
+      "3,0",
+      "3,1",
+      "3,2",
+      "0,0",
+      "1,0",
+      "2,0",
+      "5,4"
     ],
-    "score": 81,
+    "score": 111,
     "completionBonus": 50,
     "words": [
-      "VEENAS",
-      "EF",
-      "BA"
+      "EFS",
+      "ASP",
+      "EAVE",
+      "BI",
+      "AB"
     ],
     "scoringWords": [
       {
-        "word": "VEENAS",
-        "row": 6,
-        "col": 2,
+        "word": "EFS",
+        "row": 3,
+        "col": 0,
         "direction": "horizontal",
-        "score": 22,
+        "score": 12,
         "move": 1
       },
       {
-        "word": "EF",
-        "row": 6,
-        "col": 3,
+        "word": "ASP",
+        "row": 2,
+        "col": 2,
         "direction": "vertical",
         "score": 5,
+        "move": 1
+      },
+      {
+        "word": "EAVE",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 36,
         "move": 2
       },
       {
-        "word": "BA",
-        "row": 1,
-        "col": 2,
+        "word": "BI",
+        "row": 5,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 3
+      },
+      {
+        "word": "AB",
+        "row": 4,
+        "col": 4,
         "direction": "vertical",
         "score": 4,
         "move": 3
@@ -330,66 +348,80 @@
     "moves": [
       {
         "turn": 1,
-        "word": "VEENAS",
-        "row": 6,
-        "col": 2,
+        "word": "EFS",
+        "row": 3,
+        "col": 0,
         "direction": "horizontal",
-        "score": 22,
-        "usedTiles": 5,
+        "score": 17,
+        "usedTiles": 3,
         "newKeys": [
-          "6,2",
-          "6,3",
-          "6,4",
-          "6,6",
-          "6,7"
+          "3,0",
+          "3,1",
+          "3,2"
         ],
         "scoringWords": [
           {
-            "word": "VEENAS",
-            "row": 6,
-            "col": 2,
+            "word": "EFS",
+            "row": 3,
+            "col": 0,
             "direction": "horizontal",
-            "score": 22
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "EF",
-        "row": 6,
-        "col": 3,
-        "direction": "vertical",
-        "score": 5,
-        "usedTiles": 1,
-        "newKeys": [
-          "7,3"
-        ],
-        "scoringWords": [
+            "score": 12
+          },
           {
-            "word": "EF",
-            "row": 6,
-            "col": 3,
+            "word": "ASP",
+            "row": 2,
+            "col": 2,
             "direction": "vertical",
             "score": 5
           }
         ]
       },
       {
-        "turn": 3,
-        "word": "BA",
-        "row": 1,
-        "col": 2,
+        "turn": 2,
+        "word": "EAVE",
+        "row": 0,
+        "col": 0,
         "direction": "vertical",
-        "score": 4,
-        "usedTiles": 1,
+        "score": 36,
+        "usedTiles": 3,
         "newKeys": [
-          "1,2"
+          "0,0",
+          "1,0",
+          "2,0"
         ],
         "scoringWords": [
           {
-            "word": "BA",
-            "row": 1,
-            "col": 2,
+            "word": "EAVE",
+            "row": 0,
+            "col": 0,
+            "direction": "vertical",
+            "score": 36
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AB",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 1,
+        "newKeys": [
+          "5,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "BI",
+            "row": 5,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "AB",
+            "row": 4,
+            "col": 4,
             "direction": "vertical",
             "score": 4
           }
@@ -400,6 +432,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1466
+    "visitedCandidates": 1766
   }
 }

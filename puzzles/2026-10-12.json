@@ -167,10 +167,10 @@
   ],
   "bonusSquares": {
     "1,1": "double-letter",
-    "3,4": "double-letter",
-    "7,4": "triple-letter",
     "6,0": "double-letter",
-    "0,0": "triple-letter"
+    "0,0": "triple-letter",
+    "7,3": "double-letter",
+    "4,2": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -236,19 +236,19 @@
       [
         "",
         "",
+        "T",
         "",
         "",
-        "H",
         "O",
         "",
         "K"
       ],
       [
         "",
-        "",
-        "",
-        "",
+        "S",
+        "H",
         "E",
+        "O",
         "L",
         "",
         "E"
@@ -256,7 +256,7 @@
       [
         "",
         "",
-        "",
+        "U",
         "",
         "",
         "D",
@@ -266,179 +266,102 @@
       [
         "",
         "",
+        "D",
         "",
         "",
-        "O",
         "S",
         "",
         "S"
       ],
       [
         "",
-        "S",
-        "T",
-        "U",
-        "D",
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "3,4",
+      "4,1",
+      "4,2",
+      "4,3",
       "4,4",
-      "6,4",
-      "7,4",
-      "7,1",
-      "7,2",
-      "7,3"
+      "3,2",
+      "5,2",
+      "6,2"
     ],
-    "score": 88,
+    "score": 82,
     "completionBonus": 50,
     "words": [
-      "HO",
-      "EL",
-      "HE",
-      "OS",
-      "OD",
-      "STUD"
+      "SHEOL",
+      "THUD"
     ],
     "scoringWords": [
       {
-        "word": "HO",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "EL",
+        "word": "SHEOL",
         "row": 4,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "HE",
-        "row": 3,
-        "col": 4,
-        "direction": "vertical",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "OS",
-        "row": 6,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "OD",
-        "row": 6,
-        "col": 4,
-        "direction": "vertical",
-        "score": 7,
-        "move": 2
-      },
-      {
-        "word": "STUD",
-        "row": 7,
         "col": 1,
         "direction": "horizontal",
-        "score": 9,
-        "move": 3
+        "score": 16,
+        "move": 1
+      },
+      {
+        "word": "THUD",
+        "row": 3,
+        "col": 2,
+        "direction": "vertical",
+        "score": 16,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "HE",
-        "row": 3,
-        "col": 4,
-        "direction": "vertical",
-        "score": 20,
-        "usedTiles": 2,
+        "word": "SHEOL",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 16,
+        "usedTiles": 4,
         "newKeys": [
-          "3,4",
+          "4,1",
+          "4,2",
+          "4,3",
           "4,4"
         ],
         "scoringWords": [
           {
-            "word": "HO",
-            "row": 3,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 9
-          },
-          {
-            "word": "EL",
+            "word": "SHEOL",
             "row": 4,
-            "col": 4,
+            "col": 1,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "HE",
-            "row": 3,
-            "col": 4,
-            "direction": "vertical",
-            "score": 9
+            "score": 16
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OD",
-        "row": 6,
-        "col": 4,
+        "word": "THUD",
+        "row": 3,
+        "col": 2,
         "direction": "vertical",
-        "score": 9,
-        "usedTiles": 2,
-        "newKeys": [
-          "6,4",
-          "7,4"
-        ],
-        "scoringWords": [
-          {
-            "word": "OS",
-            "row": 6,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OD",
-            "row": 6,
-            "col": 4,
-            "direction": "vertical",
-            "score": 7
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "STUD",
-        "row": 7,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 9,
+        "score": 16,
         "usedTiles": 3,
         "newKeys": [
-          "7,1",
-          "7,2",
-          "7,3"
+          "3,2",
+          "5,2",
+          "6,2"
         ],
         "scoringWords": [
           {
-            "word": "STUD",
-            "row": 7,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 9
+            "word": "THUD",
+            "row": 3,
+            "col": 2,
+            "direction": "vertical",
+            "score": 16
           }
         ]
       }
@@ -447,6 +370,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3614
+    "visitedCandidates": 2837
   }
 }

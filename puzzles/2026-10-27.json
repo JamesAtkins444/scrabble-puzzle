@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "4,2": "double-letter",
-    "2,0": "double-letter",
-    "6,4": "double-letter",
-    "6,6": "triple-letter",
-    "6,5": "triple-letter",
-    "2,3": "triple-letter"
+    "1,0": "double-letter",
+    "6,0": "double-letter",
+    "6,7": "triple-letter",
+    "5,7": "double-letter",
+    "0,6": "double-word",
+    "5,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -294,7 +294,7 @@
       "0,6",
       "0,7"
     ],
-    "score": 116,
+    "score": 132,
     "completionBonus": 0,
     "words": [
       "EURYBATH"
@@ -305,7 +305,7 @@
         "row": 0,
         "col": 0,
         "direction": "horizontal",
-        "score": 16,
+        "score": 32,
         "move": 1
       }
     ],
@@ -316,7 +316,7 @@
         "row": 0,
         "col": 0,
         "direction": "horizontal",
-        "score": 116,
+        "score": 132,
         "usedTiles": 7,
         "newKeys": [
           "0,0",
@@ -333,7 +333,7 @@
             "row": 0,
             "col": 0,
             "direction": "horizontal",
-            "score": 16
+            "score": 32
           }
         ]
       }

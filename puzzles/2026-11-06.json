@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "5,5": "triple-letter",
-    "4,1": "triple-letter",
-    "3,3": "double-letter",
-    "0,3": "double-letter",
-    "3,2": "double-letter"
+    "4,1": "double-word",
+    "3,2": "triple-letter",
+    "7,1": "double-letter",
+    "4,0": "double-letter",
+    "7,3": "double-letter"
   },
   "puzzleWords": [
     {
@@ -224,20 +224,20 @@
         "E"
       ],
       [
+        "",
         "R",
-        "A",
-        "Y",
-        "A",
         "",
         "",
+        "",
+        "T",
         "",
         "N"
       ],
       [
         "",
+        "A",
+        "A",
         "",
-        "",
-        "T",
         "",
         "",
         "",
@@ -245,8 +245,8 @@
       ],
       [
         "",
-        "",
-        "",
+        "X",
+        "I",
         "",
         "C",
         "O",
@@ -255,12 +255,12 @@
       ],
       [
         "",
+        "Y",
         "",
         "",
         "",
         "",
-        "X",
-        "I",
+        "",
         ""
       ],
       [
@@ -285,87 +285,60 @@
       ]
     ],
     "newKeys": [
-      "5,5",
-      "5,6",
-      "2,0",
       "2,1",
-      "2,2",
-      "2,3",
-      "3,3"
+      "3,1",
+      "4,1",
+      "5,1",
+      "3,2",
+      "4,2",
+      "2,5"
     ],
-    "score": 126,
+    "score": 112,
     "completionBonus": 50,
     "words": [
+      "BRAXY",
+      "AA",
       "XI",
-      "OX",
-      "PI",
-      "RAYA",
-      "BA",
-      "AY",
-      "PA",
-      "PAT"
+      "AI",
+      "IT"
     ],
     "scoringWords": [
       {
-        "word": "XI",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 25,
-        "move": 1
-      },
-      {
-        "word": "OX",
-        "row": 4,
-        "col": 5,
-        "direction": "vertical",
-        "score": 25,
-        "move": 1
-      },
-      {
-        "word": "PI",
-        "row": 4,
-        "col": 6,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "RAYA",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 7,
-        "move": 2
-      },
-      {
-        "word": "BA",
+        "word": "BRAXY",
         "row": 1,
         "col": 1,
         "direction": "vertical",
+        "score": 34,
+        "move": 1
+      },
+      {
+        "word": "AA",
+        "row": 3,
+        "col": 1,
+        "direction": "horizontal",
         "score": 4,
         "move": 2
       },
       {
-        "word": "AY",
-        "row": 1,
+        "word": "XI",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 18,
+        "move": 2
+      },
+      {
+        "word": "AI",
+        "row": 3,
         "col": 2,
         "direction": "vertical",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "PA",
-        "row": 1,
-        "col": 3,
-        "direction": "vertical",
         "score": 4,
         "move": 2
       },
       {
-        "word": "PAT",
+        "word": "IT",
         "row": 1,
-        "col": 3,
+        "col": 5,
         "direction": "vertical",
         "score": 2,
         "move": 3
@@ -374,80 +347,59 @@
     "moves": [
       {
         "turn": 1,
-        "word": "XI",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 54,
-        "usedTiles": 2,
+        "word": "BRAXY",
+        "row": 1,
+        "col": 1,
+        "direction": "vertical",
+        "score": 34,
+        "usedTiles": 4,
         "newKeys": [
-          "5,5",
-          "5,6"
+          "2,1",
+          "3,1",
+          "4,1",
+          "5,1"
         ],
         "scoringWords": [
           {
-            "word": "XI",
-            "row": 5,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 25
-          },
-          {
-            "word": "OX",
-            "row": 4,
-            "col": 5,
+            "word": "BRAXY",
+            "row": 1,
+            "col": 1,
             "direction": "vertical",
-            "score": 25
-          },
-          {
-            "word": "PI",
-            "row": 4,
-            "col": 6,
-            "direction": "vertical",
-            "score": 4
+            "score": 34
           }
         ]
       },
       {
         "turn": 2,
-        "word": "RAYA",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 20,
-        "usedTiles": 4,
+        "word": "AI",
+        "row": 3,
+        "col": 2,
+        "direction": "vertical",
+        "score": 26,
+        "usedTiles": 2,
         "newKeys": [
-          "2,0",
-          "2,1",
-          "2,2",
-          "2,3"
+          "3,2",
+          "4,2"
         ],
         "scoringWords": [
           {
-            "word": "RAYA",
-            "row": 2,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 7
-          },
-          {
-            "word": "BA",
-            "row": 1,
+            "word": "AA",
+            "row": 3,
             "col": 1,
-            "direction": "vertical",
+            "direction": "horizontal",
             "score": 4
           },
           {
-            "word": "AY",
-            "row": 1,
-            "col": 2,
-            "direction": "vertical",
-            "score": 5
+            "word": "XI",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 18
           },
           {
-            "word": "PA",
-            "row": 1,
-            "col": 3,
+            "word": "AI",
+            "row": 3,
+            "col": 2,
             "direction": "vertical",
             "score": 4
           }
@@ -455,20 +407,20 @@
       },
       {
         "turn": 3,
-        "word": "PAT",
+        "word": "IT",
         "row": 1,
-        "col": 3,
+        "col": 5,
         "direction": "vertical",
         "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "3,3"
+          "2,5"
         ],
         "scoringWords": [
           {
-            "word": "PAT",
+            "word": "IT",
             "row": 1,
-            "col": 3,
+            "col": 5,
             "direction": "vertical",
             "score": 2
           }
@@ -479,6 +431,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1827
+    "visitedCandidates": 1580
   }
 }

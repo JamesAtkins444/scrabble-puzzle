@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "0,6": "double-letter",
-    "2,5": "double-letter",
     "6,6": "triple-letter",
     "5,7": "double-letter",
-    "4,3": "triple-letter"
+    "4,1": "triple-letter",
+    "4,6": "double-letter",
+    "5,4": "double-letter"
   },
   "puzzleWords": [
     {
@@ -245,9 +245,9 @@
       ],
       [
         "",
-        "T",
-        "A",
         "V",
+        "A",
+        "T",
         "S",
         "",
         "",
@@ -255,9 +255,9 @@
       ],
       [
         "",
-        "",
-        "",
         "I",
+        "D",
+        "",
         "",
         "",
         "",
@@ -265,10 +265,10 @@
       ],
       [
         "",
-        "",
-        "",
         "A",
-        "D",
+        "",
+        "",
+        "",
         "",
         "",
         ""
@@ -289,21 +289,22 @@
       "4,2",
       "4,3",
       "4,4",
-      "5,3",
-      "6,3",
-      "6,4"
+      "5,1",
+      "6,1",
+      "5,2"
     ],
-    "score": 83,
+    "score": 86,
     "completionBonus": 50,
     "words": [
-      "TAVS",
+      "VATS",
       "NOOKS",
       "VIA",
+      "ID",
       "AD"
     ],
     "scoringWords": [
       {
-        "word": "TAVS",
+        "word": "VATS",
         "row": 4,
         "col": 1,
         "direction": "horizontal",
@@ -321,16 +322,24 @@
       {
         "word": "VIA",
         "row": 4,
-        "col": 3,
+        "col": 1,
         "direction": "vertical",
         "score": 14,
         "move": 2
       },
       {
-        "word": "AD",
-        "row": 6,
-        "col": 3,
+        "word": "ID",
+        "row": 5,
+        "col": 1,
         "direction": "horizontal",
+        "score": 3,
+        "move": 3
+      },
+      {
+        "word": "AD",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
         "score": 3,
         "move": 3
       }
@@ -338,7 +347,7 @@
     "moves": [
       {
         "turn": 1,
-        "word": "TAVS",
+        "word": "VATS",
         "row": 4,
         "col": 1,
         "direction": "horizontal",
@@ -352,7 +361,7 @@
         ],
         "scoringWords": [
           {
-            "word": "TAVS",
+            "word": "VATS",
             "row": 4,
             "col": 1,
             "direction": "horizontal",
@@ -371,19 +380,19 @@
         "turn": 2,
         "word": "VIA",
         "row": 4,
-        "col": 3,
+        "col": 1,
         "direction": "vertical",
         "score": 14,
         "usedTiles": 2,
         "newKeys": [
-          "5,3",
-          "6,3"
+          "5,1",
+          "6,1"
         ],
         "scoringWords": [
           {
             "word": "VIA",
             "row": 4,
-            "col": 3,
+            "col": 1,
             "direction": "vertical",
             "score": 14
           }
@@ -392,20 +401,27 @@
       {
         "turn": 3,
         "word": "AD",
-        "row": 6,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 3,
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 6,
         "usedTiles": 1,
         "newKeys": [
-          "6,4"
+          "5,2"
         ],
         "scoringWords": [
           {
-            "word": "AD",
-            "row": 6,
-            "col": 3,
+            "word": "ID",
+            "row": 5,
+            "col": 1,
             "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "AD",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
             "score": 3
           }
         ]
@@ -415,6 +431,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1530
+    "visitedCandidates": 1531
   }
 }
