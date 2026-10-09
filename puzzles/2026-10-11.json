@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "0,4": "triple-letter",
-    "0,6": "double-word",
-    "3,6": "double-letter",
+    "0,7": "triple-word",
+    "0,5": "double-word",
+    "3,6": "triple-letter",
     "0,3": "double-letter",
-    "0,0": "triple-letter",
-    "0,7": "double-letter"
+    "7,5": "triple-letter",
+    "1,0": "double-letter"
   },
   "puzzleWords": [
     {
@@ -211,7 +211,7 @@
         "",
         "",
         "",
-        "I",
+        "",
         ""
       ],
       [
@@ -221,7 +221,7 @@
         "",
         "",
         "",
-        "N",
+        "",
         ""
       ],
       [
@@ -231,7 +231,7 @@
         "",
         "",
         "",
-        "W",
+        "",
         ""
       ],
       [
@@ -241,7 +241,7 @@
         "T",
         "T",
         "",
-        "O",
+        "V",
         ""
       ],
       [
@@ -251,7 +251,7 @@
         "",
         "",
         "",
-        "V",
+        "I",
         ""
       ],
       [
@@ -265,14 +265,14 @@
         ""
       ],
       [
-        "E",
-        "L",
+        "",
+        "",
         "D",
         "",
-        "",
-        "",
-        "",
-        ""
+        "L",
+        "O",
+        "W",
+        "E"
       ],
       [
         "",
@@ -282,117 +282,146 @@
         "",
         "",
         "",
-        ""
+        "N"
       ]
     ],
     "newKeys": [
-      "0,6",
-      "1,6",
-      "2,6",
       "3,6",
       "4,6",
-      "6,0",
-      "6,1"
+      "6,6",
+      "6,4",
+      "6,5",
+      "6,7",
+      "7,7"
     ],
-    "score": 86,
+    "score": 82,
     "completionBonus": 50,
     "words": [
-      "INWOVE",
-      "ELD",
-      "PE",
-      "EL"
+      "VIEW",
+      "LOWE",
+      "AL",
+      "GO",
+      "EN"
     ],
     "scoringWords": [
       {
-        "word": "INWOVE",
-        "row": 0,
+        "word": "VIEW",
+        "row": 3,
         "col": 6,
         "direction": "vertical",
-        "score": 26,
+        "score": 18,
         "move": 1
       },
       {
-        "word": "ELD",
+        "word": "LOWE",
         "row": 6,
-        "col": 0,
+        "col": 4,
         "direction": "horizontal",
-        "score": 4,
+        "score": 7,
         "move": 2
       },
       {
-        "word": "PE",
+        "word": "AL",
         "row": 5,
-        "col": 0,
-        "direction": "vertical",
-        "score": 4,
-        "move": 2
-      },
-      {
-        "word": "EL",
-        "row": 5,
-        "col": 1,
+        "col": 4,
         "direction": "vertical",
         "score": 2,
         "move": 2
+      },
+      {
+        "word": "GO",
+        "row": 5,
+        "col": 5,
+        "direction": "vertical",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "EN",
+        "row": 6,
+        "col": 7,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "INWOVE",
-        "row": 0,
+        "word": "VIEW",
+        "row": 3,
         "col": 6,
         "direction": "vertical",
-        "score": 26,
-        "usedTiles": 5,
+        "score": 18,
+        "usedTiles": 3,
         "newKeys": [
-          "0,6",
-          "1,6",
-          "2,6",
           "3,6",
-          "4,6"
+          "4,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "INWOVE",
-            "row": 0,
+            "word": "VIEW",
+            "row": 3,
             "col": 6,
             "direction": "vertical",
-            "score": 26
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ELD",
+        "word": "LOWE",
         "row": 6,
-        "col": 0,
+        "col": 4,
         "direction": "horizontal",
-        "score": 10,
-        "usedTiles": 2,
+        "score": 12,
+        "usedTiles": 3,
         "newKeys": [
-          "6,0",
-          "6,1"
+          "6,4",
+          "6,5",
+          "6,7"
         ],
         "scoringWords": [
           {
-            "word": "ELD",
+            "word": "LOWE",
             "row": 6,
-            "col": 0,
+            "col": 4,
             "direction": "horizontal",
-            "score": 4
+            "score": 7
           },
           {
-            "word": "PE",
+            "word": "AL",
             "row": 5,
-            "col": 0,
+            "col": 4,
             "direction": "vertical",
-            "score": 4
+            "score": 2
           },
           {
-            "word": "EL",
+            "word": "GO",
             "row": 5,
-            "col": 1,
+            "col": 5,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "EN",
+        "row": 6,
+        "col": 7,
+        "direction": "vertical",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "7,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "EN",
+            "row": 6,
+            "col": 7,
             "direction": "vertical",
             "score": 2
           }
@@ -403,6 +432,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2354
+    "visitedCandidates": 2837
   }
 }

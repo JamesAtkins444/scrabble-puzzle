@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "4,1": "double-word",
-    "3,2": "triple-letter",
-    "7,1": "double-letter",
-    "4,0": "double-letter",
-    "7,3": "double-letter"
+    "7,0": "triple-word",
+    "4,2": "double-word",
+    "7,2": "triple-letter",
+    "6,4": "double-letter",
+    "6,6": "triple-letter",
+    "4,0": "double-letter"
   },
   "puzzleWords": [
     {
@@ -225,17 +226,17 @@
       ],
       [
         "",
-        "R",
-        "",
-        "",
         "",
         "T",
+        "",
+        "",
+        "",
         "",
         "N"
       ],
       [
         "",
-        "A",
+        "",
         "A",
         "",
         "",
@@ -245,8 +246,8 @@
       ],
       [
         "",
-        "X",
-        "I",
+        "",
+        "R",
         "",
         "C",
         "O",
@@ -255,28 +256,28 @@
       ],
       [
         "",
+        "",
+        "A",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "X",
+        "I",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
         "Y",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
         "",
         "",
         "",
@@ -285,144 +286,83 @@
       ]
     ],
     "newKeys": [
-      "2,1",
-      "3,1",
-      "4,1",
-      "5,1",
+      "2,2",
       "3,2",
       "4,2",
-      "2,5"
+      "5,2",
+      "6,2",
+      "7,2",
+      "6,3"
     ],
-    "score": 112,
+    "score": 109,
     "completionBonus": 50,
     "words": [
-      "BRAXY",
-      "AA",
-      "XI",
-      "AI",
-      "IT"
+      "ATARAXY",
+      "XI"
     ],
     "scoringWords": [
       {
-        "word": "BRAXY",
+        "word": "ATARAXY",
         "row": 1,
-        "col": 1,
+        "col": 2,
         "direction": "vertical",
-        "score": 34,
+        "score": 50,
         "move": 1
       },
       {
-        "word": "AA",
-        "row": 3,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 2
-      },
-      {
         "word": "XI",
-        "row": 4,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 18,
-        "move": 2
-      },
-      {
-        "word": "AI",
-        "row": 3,
+        "row": 6,
         "col": 2,
-        "direction": "vertical",
-        "score": 4,
+        "direction": "horizontal",
+        "score": 9,
         "move": 2
-      },
-      {
-        "word": "IT",
-        "row": 1,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BRAXY",
+        "word": "ATARAXY",
         "row": 1,
-        "col": 1,
+        "col": 2,
         "direction": "vertical",
-        "score": 34,
-        "usedTiles": 4,
+        "score": 50,
+        "usedTiles": 6,
         "newKeys": [
-          "2,1",
-          "3,1",
-          "4,1",
-          "5,1"
+          "2,2",
+          "3,2",
+          "4,2",
+          "5,2",
+          "6,2",
+          "7,2"
         ],
         "scoringWords": [
           {
-            "word": "BRAXY",
+            "word": "ATARAXY",
             "row": 1,
-            "col": 1,
+            "col": 2,
             "direction": "vertical",
-            "score": 34
+            "score": 50
           }
         ]
       },
       {
         "turn": 2,
-        "word": "AI",
-        "row": 3,
+        "word": "XI",
+        "row": 6,
         "col": 2,
-        "direction": "vertical",
-        "score": 26,
-        "usedTiles": 2,
-        "newKeys": [
-          "3,2",
-          "4,2"
-        ],
-        "scoringWords": [
-          {
-            "word": "AA",
-            "row": 3,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "XI",
-            "row": 4,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 18
-          },
-          {
-            "word": "AI",
-            "row": 3,
-            "col": 2,
-            "direction": "vertical",
-            "score": 4
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "IT",
-        "row": 1,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
+        "direction": "horizontal",
+        "score": 9,
         "usedTiles": 1,
         "newKeys": [
-          "2,5"
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "IT",
-            "row": 1,
-            "col": 5,
-            "direction": "vertical",
-            "score": 2
+            "word": "XI",
+            "row": 6,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 9
           }
         ]
       }
@@ -431,6 +371,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1580
+    "visitedCandidates": 1249
   }
 }

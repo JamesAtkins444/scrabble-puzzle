@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "7,3": "double-word",
-    "0,2": "triple-word",
-    "1,5": "double-letter",
-    "0,5": "triple-letter",
-    "0,3": "double-letter"
+    "6,0": "triple-word",
+    "7,2": "double-word",
+    "0,6": "triple-letter",
+    "0,0": "double-letter",
+    "5,2": "triple-letter",
+    "1,2": "double-letter"
   },
   "puzzleWords": [
     {
@@ -207,17 +208,7 @@
         "",
         "",
         "",
-        "J",
         "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "B",
-        "I",
         "",
         "",
         "",
@@ -226,8 +217,18 @@
       [
         "",
         "",
-        "E",
-        "N",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -246,8 +247,8 @@
       [
         "",
         "",
-        "G",
-        "O",
+        "",
+        "",
         "",
         "",
         "",
@@ -255,8 +256,8 @@
       ],
       [
         "",
-        "",
-        "",
+        "B",
+        "E",
         "",
         "Y",
         "I",
@@ -264,11 +265,11 @@
         "E"
       ],
       [
-        "",
-        "",
-        "",
-        "",
-        "",
+        "J",
+        "I",
+        "N",
+        "G",
+        "O",
         "",
         "",
         "L"
@@ -285,62 +286,62 @@
       ]
     ],
     "newKeys": [
-      "0,3",
-      "1,3",
-      "2,3",
-      "4,3",
-      "1,2",
-      "2,2",
-      "4,2"
+      "6,0",
+      "6,1",
+      "6,2",
+      "6,3",
+      "6,4",
+      "5,1",
+      "5,2"
     ],
-    "score": 87,
+    "score": 108,
     "completionBonus": 50,
     "words": [
       "JINGO",
+      "YO",
+      "BE",
       "BI",
-      "EN",
-      "GO",
-      "BERG"
+      "EN"
     ],
     "scoringWords": [
       {
         "word": "JINGO",
-        "row": 0,
-        "col": 3,
-        "direction": "vertical",
-        "score": 21,
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 39,
         "move": 1
       },
       {
-        "word": "BI",
-        "row": 1,
-        "col": 2,
+        "word": "YO",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "BE",
+        "row": 5,
+        "col": 1,
         "direction": "horizontal",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "BI",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
         "score": 4,
         "move": 2
       },
       {
         "word": "EN",
-        "row": 2,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "GO",
-        "row": 4,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "BERG",
-        "row": 1,
+        "row": 5,
         "col": 2,
         "direction": "vertical",
-        "score": 7,
+        "score": 4,
         "move": 2
       }
     ],
@@ -348,68 +349,68 @@
       {
         "turn": 1,
         "word": "JINGO",
-        "row": 0,
-        "col": 3,
-        "direction": "vertical",
-        "score": 21,
-        "usedTiles": 4,
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 44,
+        "usedTiles": 5,
         "newKeys": [
-          "0,3",
-          "1,3",
-          "2,3",
-          "4,3"
+          "6,0",
+          "6,1",
+          "6,2",
+          "6,3",
+          "6,4"
         ],
         "scoringWords": [
           {
             "word": "JINGO",
-            "row": 0,
-            "col": 3,
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 39
+          },
+          {
+            "word": "YO",
+            "row": 5,
+            "col": 4,
             "direction": "vertical",
-            "score": 21
+            "score": 5
           }
         ]
       },
       {
         "turn": 2,
-        "word": "BERG",
-        "row": 1,
-        "col": 2,
-        "direction": "vertical",
-        "score": 16,
-        "usedTiles": 3,
+        "word": "BE",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 14,
+        "usedTiles": 2,
         "newKeys": [
-          "1,2",
-          "2,2",
-          "4,2"
+          "5,1",
+          "5,2"
         ],
         "scoringWords": [
           {
-            "word": "BI",
-            "row": 1,
-            "col": 2,
+            "word": "BE",
+            "row": 5,
+            "col": 1,
             "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "BI",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
             "score": 4
           },
           {
             "word": "EN",
-            "row": 2,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "GO",
-            "row": 4,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "BERG",
-            "row": 1,
+            "row": 5,
             "col": 2,
             "direction": "vertical",
-            "score": 7
+            "score": 4
           }
         ]
       }
@@ -418,6 +419,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2010
+    "visitedCandidates": 1954
   }
 }

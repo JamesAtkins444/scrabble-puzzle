@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "1,1": "double-letter",
-    "6,0": "double-letter",
-    "0,0": "triple-letter",
-    "7,3": "double-letter",
-    "4,2": "triple-letter"
+    "3,1": "triple-word",
+    "1,1": "double-word",
+    "5,2": "double-letter",
+    "5,0": "triple-letter",
+    "2,3": "double-letter",
+    "7,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -215,7 +216,7 @@
       ],
       [
         "",
-        "",
+        "S",
         "",
         "",
         "",
@@ -225,7 +226,7 @@
       ],
       [
         "",
-        "",
+        "H",
         "",
         "",
         "",
@@ -235,20 +236,20 @@
       ],
       [
         "",
-        "",
+        "O",
+        "U",
         "T",
-        "",
-        "",
+        "D",
         "O",
         "",
         "K"
       ],
       [
         "",
-        "S",
-        "H",
         "E",
-        "O",
+        "",
+        "",
+        "",
         "L",
         "",
         "E"
@@ -256,7 +257,7 @@
       [
         "",
         "",
-        "U",
+        "",
         "",
         "",
         "D",
@@ -266,7 +267,7 @@
       [
         "",
         "",
-        "D",
+        "",
         "",
         "",
         "S",
@@ -285,83 +286,83 @@
       ]
     ],
     "newKeys": [
-      "4,1",
-      "4,2",
-      "4,3",
-      "4,4",
+      "3,1",
       "3,2",
-      "5,2",
-      "6,2"
+      "3,3",
+      "3,4",
+      "1,1",
+      "2,1",
+      "4,1"
     ],
-    "score": 82,
+    "score": 110,
     "completionBonus": 50,
     "words": [
-      "SHEOL",
-      "THUD"
+      "OUTDO",
+      "SHOE"
     ],
     "scoringWords": [
       {
-        "word": "SHEOL",
-        "row": 4,
+        "word": "OUTDO",
+        "row": 3,
         "col": 1,
         "direction": "horizontal",
-        "score": 16,
+        "score": 18,
         "move": 1
       },
       {
-        "word": "THUD",
-        "row": 3,
-        "col": 2,
+        "word": "SHOE",
+        "row": 1,
+        "col": 1,
         "direction": "vertical",
-        "score": 16,
+        "score": 42,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "SHEOL",
-        "row": 4,
+        "word": "OUTDO",
+        "row": 3,
         "col": 1,
         "direction": "horizontal",
-        "score": 16,
+        "score": 18,
         "usedTiles": 4,
         "newKeys": [
-          "4,1",
-          "4,2",
-          "4,3",
-          "4,4"
+          "3,1",
+          "3,2",
+          "3,3",
+          "3,4"
         ],
         "scoringWords": [
           {
-            "word": "SHEOL",
-            "row": 4,
+            "word": "OUTDO",
+            "row": 3,
             "col": 1,
             "direction": "horizontal",
-            "score": 16
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "THUD",
-        "row": 3,
-        "col": 2,
+        "word": "SHOE",
+        "row": 1,
+        "col": 1,
         "direction": "vertical",
-        "score": 16,
+        "score": 42,
         "usedTiles": 3,
         "newKeys": [
-          "3,2",
-          "5,2",
-          "6,2"
+          "1,1",
+          "2,1",
+          "4,1"
         ],
         "scoringWords": [
           {
-            "word": "THUD",
-            "row": 3,
-            "col": 2,
+            "word": "SHOE",
+            "row": 1,
+            "col": 1,
             "direction": "vertical",
-            "score": 16
+            "score": 42
           }
         ]
       }
@@ -370,6 +371,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2837
+    "visitedCandidates": 3018
   }
 }

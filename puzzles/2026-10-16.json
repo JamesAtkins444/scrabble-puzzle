@@ -166,10 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "4,2": "double-letter",
-    "4,0": "triple-letter",
-    "3,1": "double-letter",
-    "3,3": "double-word"
+    "1,0": "triple-word",
+    "3,1": "double-word",
+    "4,3": "double-letter",
+    "7,0": "triple-letter",
+    "5,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -206,9 +207,9 @@
         "",
         "",
         "",
-        "F",
         "",
-        "",
+        "T",
+        "U",
         "G",
         ""
       ],
@@ -226,31 +227,31 @@
         "",
         "",
         "",
-        "O",
+        "",
         "",
         "",
         "D",
-        ""
+        "O"
       ],
       [
         "",
         "",
-        "N",
-        "U",
-        "T",
+        "",
+        "",
+        "",
         "",
         "O",
-        ""
+        "F"
       ],
       [
         "",
         "",
+        "",
+        "",
         "U",
-        "T",
-        "",
-        "",
+        "N",
         "I",
-        ""
+        "T"
       ],
       [
         "",
@@ -284,60 +285,87 @@
       ]
     ],
     "newKeys": [
-      "0,3",
-      "2,3",
-      "3,3",
-      "4,3",
-      "3,2",
-      "4,2",
-      "3,4"
+      "2,7",
+      "3,7",
+      "4,7",
+      "0,4",
+      "0,5",
+      "4,4",
+      "4,5"
     ],
-    "score": 78,
+    "score": 76,
     "completionBonus": 50,
     "words": [
-      "FLOUT",
-      "NU",
+      "DO",
+      "OF",
+      "IT",
+      "OFT",
+      "TUG",
+      "TO",
       "UT",
-      "NU",
-      "NUT"
+      "UNIT"
     ],
     "scoringWords": [
       {
-        "word": "FLOUT",
-        "row": 0,
-        "col": 3,
-        "direction": "vertical",
-        "score": 16,
+        "word": "DO",
+        "row": 2,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 3,
         "move": 1
       },
       {
-        "word": "NU",
+        "word": "OF",
         "row": 3,
-        "col": 2,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "IT",
+        "row": 4,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "OFT",
+        "row": 2,
+        "col": 7,
+        "direction": "vertical",
+        "score": 6,
+        "move": 1
+      },
+      {
+        "word": "TUG",
+        "row": 0,
+        "col": 4,
         "direction": "horizontal",
         "score": 4,
         "move": 2
       },
       {
-        "word": "UT",
-        "row": 4,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "NU",
-        "row": 3,
-        "col": 2,
+        "word": "TO",
+        "row": 0,
+        "col": 4,
         "direction": "vertical",
-        "score": 3,
+        "score": 2,
         "move": 2
       },
       {
-        "word": "NUT",
-        "row": 3,
-        "col": 2,
+        "word": "UT",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "UNIT",
+        "row": 4,
+        "col": 4,
         "direction": "horizontal",
         "score": 2,
         "move": 3
@@ -346,80 +374,101 @@
     "moves": [
       {
         "turn": 1,
-        "word": "FLOUT",
-        "row": 0,
-        "col": 3,
+        "word": "OFT",
+        "row": 2,
+        "col": 7,
         "direction": "vertical",
         "score": 16,
-        "usedTiles": 4,
+        "usedTiles": 3,
         "newKeys": [
-          "0,3",
-          "2,3",
-          "3,3",
-          "4,3"
+          "2,7",
+          "3,7",
+          "4,7"
         ],
         "scoringWords": [
           {
-            "word": "FLOUT",
-            "row": 0,
-            "col": 3,
+            "word": "DO",
+            "row": 2,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "OF",
+            "row": 3,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "IT",
+            "row": 4,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "OFT",
+            "row": 2,
+            "col": 7,
             "direction": "vertical",
-            "score": 16
+            "score": 6
           }
         ]
       },
       {
         "turn": 2,
-        "word": "NU",
-        "row": 3,
-        "col": 2,
-        "direction": "vertical",
-        "score": 10,
+        "word": "TUG",
+        "row": 0,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 8,
         "usedTiles": 2,
         "newKeys": [
-          "3,2",
-          "4,2"
+          "0,4",
+          "0,5"
         ],
         "scoringWords": [
           {
-            "word": "NU",
-            "row": 3,
-            "col": 2,
+            "word": "TUG",
+            "row": 0,
+            "col": 4,
             "direction": "horizontal",
             "score": 4
           },
           {
-            "word": "UT",
-            "row": 4,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 3
+            "word": "TO",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
           },
           {
-            "word": "NU",
-            "row": 3,
-            "col": 2,
+            "word": "UT",
+            "row": 0,
+            "col": 5,
             "direction": "vertical",
-            "score": 3
+            "score": 2
           }
         ]
       },
       {
         "turn": 3,
-        "word": "NUT",
-        "row": 3,
-        "col": 2,
+        "word": "UNIT",
+        "row": 4,
+        "col": 4,
         "direction": "horizontal",
         "score": 2,
-        "usedTiles": 1,
+        "usedTiles": 2,
         "newKeys": [
-          "3,4"
+          "4,4",
+          "4,5"
         ],
         "scoringWords": [
           {
-            "word": "NUT",
-            "row": 3,
-            "col": 2,
+            "word": "UNIT",
+            "row": 4,
+            "col": 4,
             "direction": "horizontal",
             "score": 2
           }
@@ -430,6 +479,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1356
+    "visitedCandidates": 1403
   }
 }

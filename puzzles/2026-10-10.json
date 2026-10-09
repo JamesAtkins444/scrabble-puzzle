@@ -167,9 +167,11 @@
   ],
   "bonusSquares": {
     "7,3": "triple-word",
-    "5,6": "double-letter",
-    "0,5": "double-letter",
-    "5,7": "double-word"
+    "5,5": "double-word",
+    "7,5": "double-letter",
+    "2,5": "double-letter",
+    "4,7": "triple-letter",
+    "0,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -207,8 +209,8 @@
         "",
         "",
         "N",
+        "U",
         "",
-        "F",
         "",
         ""
       ],
@@ -218,18 +220,18 @@
         "",
         "A",
         "",
-        "U",
+        "",
         "",
         ""
       ],
       [
         "U",
         "",
-        "E",
+        "",
         "V",
-        "E",
-        "R",
-        "Y",
+        "",
+        "",
+        "",
         ""
       ],
       [
@@ -238,19 +240,19 @@
         "T",
         "E",
         "",
-        "",
+        "F",
         "",
         ""
       ],
       [
         "E",
-        "H",
+        "",
         "",
         "L",
-        "",
-        "",
-        "",
-        ""
+        "E",
+        "E",
+        "R",
+        "Y"
       ],
       [
         "L",
@@ -258,7 +260,7 @@
         "",
         "",
         "",
-        "",
+        "H",
         "",
         ""
       ],
@@ -284,144 +286,112 @@
       ]
     ],
     "newKeys": [
-      "2,2",
-      "2,4",
-      "2,5",
-      "2,6",
-      "0,5",
-      "1,5",
-      "4,1"
+      "4,4",
+      "4,5",
+      "4,6",
+      "4,7",
+      "3,5",
+      "5,5",
+      "0,4"
     ],
-    "score": 83,
+    "score": 86,
     "completionBonus": 50,
     "words": [
-      "EVERY",
-      "ET",
-      "FUR",
-      "EH",
-      "AH"
+      "LEERY",
+      "FEH",
+      "NU"
     ],
     "scoringWords": [
       {
-        "word": "EVERY",
-        "row": 2,
-        "col": 2,
+        "word": "LEERY",
+        "row": 4,
+        "col": 3,
         "direction": "horizontal",
-        "score": 11,
+        "score": 16,
         "move": 1
       },
       {
-        "word": "ET",
-        "row": 2,
-        "col": 2,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "FUR",
-        "row": 0,
+        "word": "FEH",
+        "row": 3,
         "col": 5,
         "direction": "vertical",
-        "score": 10,
+        "score": 18,
         "move": 2
       },
       {
-        "word": "EH",
-        "row": 4,
-        "col": 0,
+        "word": "NU",
+        "row": 0,
+        "col": 3,
         "direction": "horizontal",
-        "score": 5,
-        "move": 3
-      },
-      {
-        "word": "AH",
-        "row": 3,
-        "col": 1,
-        "direction": "vertical",
-        "score": 5,
+        "score": 2,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "EVERY",
-        "row": 2,
-        "col": 2,
+        "word": "LEERY",
+        "row": 4,
+        "col": 3,
         "direction": "horizontal",
-        "score": 13,
+        "score": 16,
         "usedTiles": 4,
         "newKeys": [
-          "2,2",
-          "2,4",
-          "2,5",
-          "2,6"
+          "4,4",
+          "4,5",
+          "4,6",
+          "4,7"
         ],
         "scoringWords": [
           {
-            "word": "EVERY",
-            "row": 2,
-            "col": 2,
+            "word": "LEERY",
+            "row": 4,
+            "col": 3,
             "direction": "horizontal",
-            "score": 11
-          },
-          {
-            "word": "ET",
-            "row": 2,
-            "col": 2,
-            "direction": "vertical",
-            "score": 2
+            "score": 16
           }
         ]
       },
       {
         "turn": 2,
-        "word": "FUR",
-        "row": 0,
+        "word": "FEH",
+        "row": 3,
         "col": 5,
         "direction": "vertical",
-        "score": 10,
+        "score": 18,
         "usedTiles": 2,
         "newKeys": [
-          "0,5",
-          "1,5"
+          "3,5",
+          "5,5"
         ],
         "scoringWords": [
           {
-            "word": "FUR",
-            "row": 0,
+            "word": "FEH",
+            "row": 3,
             "col": 5,
             "direction": "vertical",
-            "score": 10
+            "score": 18
           }
         ]
       },
       {
         "turn": 3,
-        "word": "AH",
-        "row": 3,
-        "col": 1,
-        "direction": "vertical",
-        "score": 10,
+        "word": "NU",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "4,1"
+          "0,4"
         ],
         "scoringWords": [
           {
-            "word": "EH",
-            "row": 4,
-            "col": 0,
+            "word": "NU",
+            "row": 0,
+            "col": 3,
             "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "AH",
-            "row": 3,
-            "col": 1,
-            "direction": "vertical",
-            "score": 5
+            "score": 2
           }
         ]
       }
@@ -430,6 +400,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1018
+    "visitedCandidates": 1012
   }
 }

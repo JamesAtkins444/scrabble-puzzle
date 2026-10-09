@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "0,4": "double-letter",
-    "7,6": "double-letter",
-    "0,2": "double-letter",
-    "3,0": "double-word",
+    "0,4": "triple-word",
     "2,5": "double-word",
-    "2,2": "triple-letter"
+    "1,0": "double-letter",
+    "7,5": "double-letter",
+    "2,2": "triple-letter",
+    "3,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -209,7 +209,7 @@
         "",
         "",
         "",
-        "X",
+        "",
         "",
         "",
         ""
@@ -219,8 +219,8 @@
         "",
         "",
         "",
-        "U",
-        "P",
+        "",
+        "",
         "",
         "S"
       ],
@@ -229,9 +229,9 @@
         "",
         "",
         "",
-        "",
-        "O",
-        "",
+        "P",
+        "U",
+        "N",
         "A"
       ],
       [
@@ -240,8 +240,8 @@
         "",
         "",
         "",
-        "R",
-        "U",
+        "",
+        "",
         "G"
       ],
       [
@@ -250,7 +250,7 @@
         "S",
         "",
         "",
-        "N",
+        "R",
         "",
         "E"
       ],
@@ -270,7 +270,7 @@
         "E",
         "",
         "",
-        "",
+        "U",
         "",
         ""
       ],
@@ -279,135 +279,119 @@
         "",
         "W",
         "",
-        "",
-        "",
+        "O",
+        "X",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "1,5",
-      "2,5",
-      "3,5",
       "4,5",
-      "0,4",
-      "1,4",
-      "3,6"
+      "6,5",
+      "7,5",
+      "7,4",
+      "2,4",
+      "2,5",
+      "2,6"
     ],
-    "score": 89,
+    "score": 98,
     "completionBonus": 50,
     "words": [
-      "PORNO",
-      "UP",
-      "XU",
-      "RUG"
+      "ROUX",
+      "OX",
+      "PUNA"
     ],
     "scoringWords": [
       {
-        "word": "PORNO",
-        "row": 1,
+        "word": "ROUX",
+        "row": 4,
         "col": 5,
         "direction": "vertical",
-        "score": 14,
+        "score": 19,
         "move": 1
       },
       {
-        "word": "UP",
-        "row": 1,
+        "word": "OX",
+        "row": 7,
         "col": 4,
         "direction": "horizontal",
-        "score": 4,
-        "move": 2
-      },
-      {
-        "word": "XU",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
         "score": 17,
         "move": 2
       },
       {
-        "word": "RUG",
-        "row": 3,
-        "col": 5,
+        "word": "PUNA",
+        "row": 2,
+        "col": 4,
         "direction": "horizontal",
-        "score": 4,
+        "score": 12,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "PORNO",
-        "row": 1,
+        "word": "ROUX",
+        "row": 4,
         "col": 5,
         "direction": "vertical",
-        "score": 14,
-        "usedTiles": 4,
+        "score": 19,
+        "usedTiles": 3,
         "newKeys": [
-          "1,5",
-          "2,5",
-          "3,5",
-          "4,5"
+          "4,5",
+          "6,5",
+          "7,5"
         ],
         "scoringWords": [
           {
-            "word": "PORNO",
-            "row": 1,
+            "word": "ROUX",
+            "row": 4,
             "col": 5,
             "direction": "vertical",
-            "score": 14
+            "score": 19
           }
         ]
       },
       {
         "turn": 2,
-        "word": "XU",
-        "row": 0,
+        "word": "OX",
+        "row": 7,
         "col": 4,
-        "direction": "vertical",
-        "score": 21,
-        "usedTiles": 2,
+        "direction": "horizontal",
+        "score": 17,
+        "usedTiles": 1,
         "newKeys": [
-          "0,4",
-          "1,4"
+          "7,4"
         ],
         "scoringWords": [
           {
-            "word": "UP",
-            "row": 1,
+            "word": "OX",
+            "row": 7,
             "col": 4,
             "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "XU",
-            "row": 0,
-            "col": 4,
-            "direction": "vertical",
             "score": 17
           }
         ]
       },
       {
         "turn": 3,
-        "word": "RUG",
-        "row": 3,
-        "col": 5,
+        "word": "PUNA",
+        "row": 2,
+        "col": 4,
         "direction": "horizontal",
-        "score": 4,
-        "usedTiles": 1,
+        "score": 12,
+        "usedTiles": 3,
         "newKeys": [
-          "3,6"
+          "2,4",
+          "2,5",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "RUG",
-            "row": 3,
-            "col": 5,
+            "word": "PUNA",
+            "row": 2,
+            "col": 4,
             "direction": "horizontal",
-            "score": 4
+            "score": 12
           }
         ]
       }
@@ -416,6 +400,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 918
+    "visitedCandidates": 1396
   }
 }

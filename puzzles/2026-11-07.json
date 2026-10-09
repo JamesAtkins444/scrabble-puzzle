@@ -166,12 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "6,7": "double-letter",
-    "7,0": "double-letter",
-    "0,6": "triple-letter",
-    "7,7": "triple-letter",
-    "7,2": "triple-letter",
-    "1,7": "double-letter"
+    "0,7": "triple-word",
+    "5,7": "double-word",
+    "2,7": "triple-letter",
+    "7,1": "double-letter",
+    "7,6": "double-letter"
   },
   "puzzleWords": [
     {
@@ -207,12 +206,12 @@
       [
         "",
         "",
-        "",
-        "",
+        "K",
+        "A",
         "T",
+        "I",
         "O",
-        "G",
-        ""
+        "N"
       ],
       [
         "",
@@ -225,9 +224,9 @@
         ""
       ],
       [
-        "",
+        "G",
         "O",
-        "",
+        "R",
         "",
         "P",
         "",
@@ -257,7 +256,7 @@
       [
         "",
         "N",
-        "A",
+        "",
         "",
         "T",
         "",
@@ -267,7 +266,7 @@
       [
         "",
         "",
-        "N",
+        "",
         "",
         "S",
         "",
@@ -275,9 +274,9 @@
         ""
       ],
       [
-        "I",
-        "R",
-        "K",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -286,128 +285,83 @@
       ]
     ],
     "newKeys": [
-      "5,2",
-      "6,2",
-      "7,2",
-      "7,0",
-      "7,1",
+      "0,2",
+      "0,3",
       "0,5",
-      "0,6"
+      "0,6",
+      "0,7",
+      "2,0",
+      "2,2"
     ],
-    "score": 96,
+    "score": 84,
     "completionBonus": 50,
     "words": [
-      "NA",
-      "LANK",
-      "IRK",
-      "TOG"
+      "KATION",
+      "GOR"
     ],
     "scoringWords": [
       {
-        "word": "NA",
-        "row": 5,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "LANK",
-        "row": 4,
+        "word": "KATION",
+        "row": 0,
         "col": 2,
-        "direction": "vertical",
-        "score": 18,
+        "direction": "horizontal",
+        "score": 30,
         "move": 1
       },
       {
-        "word": "IRK",
-        "row": 7,
+        "word": "GOR",
+        "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 18,
+        "score": 4,
         "move": 2
-      },
-      {
-        "word": "TOG",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 8,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "LANK",
-        "row": 4,
+        "word": "KATION",
+        "row": 0,
         "col": 2,
-        "direction": "vertical",
-        "score": 20,
-        "usedTiles": 3,
+        "direction": "horizontal",
+        "score": 30,
+        "usedTiles": 5,
         "newKeys": [
-          "5,2",
-          "6,2",
-          "7,2"
+          "0,2",
+          "0,3",
+          "0,5",
+          "0,6",
+          "0,7"
         ],
         "scoringWords": [
           {
-            "word": "NA",
-            "row": 5,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "LANK",
-            "row": 4,
+            "word": "KATION",
+            "row": 0,
             "col": 2,
-            "direction": "vertical",
-            "score": 18
+            "direction": "horizontal",
+            "score": 30
           }
         ]
       },
       {
         "turn": 2,
-        "word": "IRK",
-        "row": 7,
+        "word": "GOR",
+        "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 18,
+        "score": 4,
         "usedTiles": 2,
         "newKeys": [
-          "7,0",
-          "7,1"
+          "2,0",
+          "2,2"
         ],
         "scoringWords": [
           {
-            "word": "IRK",
-            "row": 7,
+            "word": "GOR",
+            "row": 2,
             "col": 0,
             "direction": "horizontal",
-            "score": 18
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "TOG",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 8,
-        "usedTiles": 2,
-        "newKeys": [
-          "0,5",
-          "0,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "TOG",
-            "row": 0,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 8
+            "score": 4
           }
         ]
       }
@@ -416,6 +370,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3291
+    "visitedCandidates": 2971
   }
 }

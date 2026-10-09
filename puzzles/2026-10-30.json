@@ -9,62 +9,52 @@
       "",
       "",
       "",
-      "",
+      "F",
       ""
     ],
     [
       "",
-      "W",
-      "E",
+      "",
+      "",
+      "",
+      "C",
       "L",
-      "S",
-      "H",
-      "",
-      ""
+      "A",
+      "D"
     ],
     [
       "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D",
+      ""
+    ],
+    [
+      "V",
       "I",
-      "",
-      "",
-      "E",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "T",
-      "",
-      "",
       "N",
-      "",
-      "",
+      "A",
+      "S",
+      "S",
+      "E",
       ""
     ],
     [
       "",
-      "H",
       "",
       "",
-      "O",
       "",
       "",
+      "",
+      "S",
       ""
     ],
     [
       "",
-      "O",
       "",
-      "",
-      "R",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "U",
       "",
       "",
       "",
@@ -74,7 +64,17 @@
     ],
     [
       "",
-      "T",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
       "",
       "",
       "",
@@ -91,62 +91,52 @@
       "",
       "",
       "",
-      "",
+      "F",
       ""
     ],
     [
       "",
-      "W",
-      "E",
+      "",
+      "",
+      "",
+      "C",
       "L",
-      "S",
-      "H",
-      "",
-      ""
+      "A",
+      "D"
     ],
     [
       "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D",
+      ""
+    ],
+    [
+      "V",
       "I",
-      "",
-      "",
-      "E",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "T",
-      "",
-      "",
       "N",
-      "",
-      "",
+      "A",
+      "S",
+      "S",
+      "E",
       ""
     ],
     [
       "",
-      "H",
       "",
       "",
-      "O",
       "",
       "",
+      "",
+      "S",
       ""
     ],
     [
       "",
-      "O",
       "",
-      "",
-      "R",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "U",
       "",
       "",
       "",
@@ -156,7 +146,17 @@
     ],
     [
       "",
-      "T",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
       "",
       "",
       "",
@@ -166,41 +166,41 @@
     ]
   ],
   "bonusSquares": {
-    "3,7": "double-letter",
-    "5,7": "double-word",
-    "6,7": "double-letter",
-    "4,7": "triple-word",
-    "0,7": "triple-letter",
-    "1,7": "triple-letter"
+    "7,4": "triple-word",
+    "1,1": "double-word",
+    "7,6": "triple-letter",
+    "5,2": "double-letter",
+    "5,4": "double-letter",
+    "6,0": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "WITHOUT",
-      "row": 1,
-      "col": 1,
-      "direction": "vertical"
-    },
-    {
-      "word": "WELSH",
-      "row": 1,
-      "col": 1,
+      "word": "VINASSE",
+      "row": 3,
+      "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "SENOR",
+      "word": "FADES",
+      "row": 0,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "CLAD",
       "row": 1,
       "col": 4,
-      "direction": "vertical"
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "I",
-    "R",
-    "J",
+    "A",
     "E",
-    "I",
     "N",
-    "G"
+    "T",
+    "R",
+    "I",
+    "C"
   ],
   "bestSolution": {
     "board": [
@@ -211,52 +211,62 @@
         "",
         "",
         "",
-        "",
+        "F",
         ""
       ],
       [
         "",
-        "W",
-        "E",
+        "",
+        "",
+        "",
+        "C",
         "L",
+        "A",
+        "D"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "I",
+        "",
+        "D",
+        ""
+      ],
+      [
+        "V",
+        "I",
+        "N",
+        "A",
         "S",
-        "H",
-        "",
-        ""
-      ],
-      [
-        "",
-        "I",
-        "",
-        "",
+        "S",
         "E",
-        "",
-        "",
         ""
       ],
       [
-        "I",
+        "",
+        "",
+        "",
+        "",
         "T",
         "",
+        "S",
+        ""
+      ],
+      [
         "",
-        "N",
+        "",
+        "",
+        "",
+        "E",
         "",
         "",
         ""
       ],
       [
         "",
-        "H",
         "",
-        "G",
-        "O",
-        "N",
-        "E",
-        "R"
-      ],
-      [
-        "J",
-        "O",
         "",
         "",
         "R",
@@ -266,161 +276,93 @@
       ],
       [
         "",
-        "U",
         "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "I",
-        "T",
-        "",
-        "",
-        "",
+        "C",
+        "A",
+        "N",
         "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "4,3",
-      "4,5",
-      "4,6",
-      "4,7",
-      "5,0",
-      "3,0",
-      "7,0"
+      "2,4",
+      "4,4",
+      "5,4",
+      "6,4",
+      "7,4",
+      "7,2",
+      "7,3"
     ],
-    "score": 81,
+    "score": 95,
     "completionBonus": 50,
     "words": [
-      "GONER",
-      "JO",
-      "IT",
-      "IT"
+      "CISTERN",
+      "CAN"
     ],
     "scoringWords": [
       {
-        "word": "GONER",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 18,
+        "word": "CISTERN",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 30,
         "move": 1
       },
       {
-        "word": "JO",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 9,
-        "move": 2
-      },
-      {
-        "word": "IT",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
-      },
-      {
-        "word": "IT",
+        "word": "CAN",
         "row": 7,
-        "col": 0,
+        "col": 2,
         "direction": "horizontal",
-        "score": 2,
-        "move": 4
+        "score": 15,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "GONER",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 18,
-        "usedTiles": 4,
+        "word": "CISTERN",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 30,
+        "usedTiles": 5,
         "newKeys": [
-          "4,3",
-          "4,5",
-          "4,6",
-          "4,7"
+          "2,4",
+          "4,4",
+          "5,4",
+          "6,4",
+          "7,4"
         ],
         "scoringWords": [
           {
-            "word": "GONER",
-            "row": 4,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 18
+            "word": "CISTERN",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 30
           }
         ]
       },
       {
         "turn": 2,
-        "word": "JO",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 9,
-        "usedTiles": 1,
-        "newKeys": [
-          "5,0"
-        ],
-        "scoringWords": [
-          {
-            "word": "JO",
-            "row": 5,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 9
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "IT",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 1,
-        "newKeys": [
-          "3,0"
-        ],
-        "scoringWords": [
-          {
-            "word": "IT",
-            "row": 3,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 2
-          }
-        ]
-      },
-      {
-        "turn": 4,
-        "word": "IT",
+        "word": "CAN",
         "row": 7,
-        "col": 0,
+        "col": 2,
         "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 1,
+        "score": 15,
+        "usedTiles": 2,
         "newKeys": [
-          "7,0"
+          "7,2",
+          "7,3"
         ],
         "scoringWords": [
           {
-            "word": "IT",
+            "word": "CAN",
             "row": 7,
-            "col": 0,
+            "col": 2,
             "direction": "horizontal",
-            "score": 2
+            "score": 15
           }
         ]
       }
@@ -429,6 +371,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1175
+    "visitedCandidates": 3833
   }
 }

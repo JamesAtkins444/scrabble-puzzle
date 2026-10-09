@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "1,2": "double-word",
-    "6,0": "double-word",
-    "3,0": "triple-letter",
-    "5,1": "double-letter",
-    "2,0": "triple-letter"
+    "6,0": "triple-word",
+    "3,0": "double-word",
+    "1,0": "triple-letter",
+    "0,3": "double-letter",
+    "5,2": "triple-letter",
+    "7,2": "double-letter"
   },
   "puzzleWords": [
     {
@@ -256,8 +257,8 @@
       [
         "",
         "",
-        "",
         "M",
+        "A",
         "I",
         "M",
         "",
@@ -280,7 +281,7 @@
         "",
         "",
         "",
-        "A",
+        "",
         "D"
       ]
     ],
@@ -288,22 +289,20 @@
       "1,6",
       "2,6",
       "4,6",
-      "6,6",
-      "7,6",
+      "5,2",
       "5,3",
-      "5,5"
+      "5,5",
+      "6,6"
     ],
-    "score": 88,
+    "score": 87,
     "completionBonus": 50,
     "words": [
       "HM",
       "AI",
       "ER",
       "HATE",
-      "FA",
-      "AD",
-      "FA",
-      "MIM"
+      "MAIM",
+      "FA"
     ],
     "scoringWords": [
       {
@@ -339,35 +338,19 @@
         "move": 1
       },
       {
-        "word": "FA",
-        "row": 6,
-        "col": 6,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "AD",
-        "row": 7,
-        "col": 6,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "FA",
-        "row": 6,
-        "col": 6,
-        "direction": "vertical",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "MIM",
+        "word": "MAIM",
         "row": 5,
-        "col": 3,
+        "col": 2,
         "direction": "horizontal",
-        "score": 7,
+        "score": 14,
+        "move": 2
+      },
+      {
+        "word": "FA",
+        "row": 6,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 5,
         "move": 3
       }
     ],
@@ -418,59 +401,45 @@
       },
       {
         "turn": 2,
-        "word": "FA",
-        "row": 6,
-        "col": 6,
-        "direction": "vertical",
-        "score": 13,
-        "usedTiles": 2,
-        "newKeys": [
-          "6,6",
-          "7,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "FA",
-            "row": 6,
-            "col": 6,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "AD",
-            "row": 7,
-            "col": 6,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "FA",
-            "row": 6,
-            "col": 6,
-            "direction": "vertical",
-            "score": 5
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "MIM",
+        "word": "MAIM",
         "row": 5,
-        "col": 3,
+        "col": 2,
         "direction": "horizontal",
-        "score": 7,
-        "usedTiles": 2,
+        "score": 14,
+        "usedTiles": 3,
         "newKeys": [
+          "5,2",
           "5,3",
           "5,5"
         ],
         "scoringWords": [
           {
-            "word": "MIM",
+            "word": "MAIM",
             "row": 5,
-            "col": 3,
+            "col": 2,
             "direction": "horizontal",
-            "score": 7
+            "score": 14
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "FA",
+        "row": 6,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "FA",
+            "row": 6,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 5
           }
         ]
       }
@@ -479,6 +448,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1251
+    "visitedCandidates": 1218
   }
 }

@@ -37,50 +37,50 @@
       "",
       "",
       "",
-      "Q",
       "",
       "",
-      ""
+      "",
+      "B"
     ],
     [
       "",
       "",
-      "",
-      "V",
-      "U",
-      "G",
-      "G",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "I",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "E",
-      "",
-      "",
-      ""
-    ],
-    [
       "",
       "K",
-      "I",
-      "T",
-      "T",
-      "E",
       "N",
-      "S"
+      "U",
+      "R",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "D",
+      "A",
+      "R",
+      "K",
+      "L",
+      "E",
+      "D"
     ]
   ],
   "originalBoard": [
@@ -119,86 +119,88 @@
       "",
       "",
       "",
-      "Q",
       "",
       "",
-      ""
+      "",
+      "B"
     ],
     [
       "",
       "",
-      "",
-      "V",
-      "U",
-      "G",
-      "G",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "I",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "E",
-      "",
-      "",
-      ""
-    ],
-    [
       "",
       "K",
-      "I",
-      "T",
-      "T",
-      "E",
       "N",
-      "S"
+      "U",
+      "R",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "D",
+      "A",
+      "R",
+      "K",
+      "L",
+      "E",
+      "D"
     ]
   ],
   "bonusSquares": {
-    "0,7": "triple-letter",
-    "0,0": "double-letter",
-    "0,5": "double-word",
-    "1,0": "double-letter"
+    "1,0": "triple-word",
+    "3,0": "double-word",
+    "5,0": "double-letter",
+    "2,5": "triple-letter",
+    "0,7": "double-letter",
+    "0,4": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "KITTENS",
+      "word": "DARKLED",
       "row": 7,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "QUIET",
+      "word": "BLIND",
       "row": 3,
-      "col": 4,
+      "col": 7,
       "direction": "vertical"
     },
     {
-      "word": "VUGG",
+      "word": "KNURL",
       "row": 4,
       "col": 3,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "R",
-    "D",
-    "L",
+    "F",
+    "I",
     "R",
     "E",
-    "U",
-    "O"
+    "P",
+    "F",
+    "A"
   ],
   "bestSolution": {
     "board": [
@@ -216,7 +218,7 @@
         "",
         "",
         "",
-        "",
+        "P",
         "",
         "",
         "",
@@ -226,202 +228,189 @@
         "",
         "",
         "",
-        "",
+        "A",
         "",
         "",
         "",
         ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "R",
+        "",
+        "",
+        "",
+        "B"
+      ],
+      [
+        "",
+        "",
+        "",
+        "K",
+        "N",
+        "U",
+        "R",
+        "L"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "I"
+      ],
+      [
+        "F",
+        "I",
+        "F",
+        "E",
+        "",
+        "",
+        "",
+        "N"
       ],
       [
         "",
         "D",
-        "",
-        "",
-        "Q",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
+        "A",
         "R",
-        "",
-        "V",
-        "U",
-        "G",
-        "G",
-        ""
-      ],
-      [
-        "",
-        "O",
-        "",
-        "",
-        "I",
-        "",
-        "L",
-        ""
-      ],
-      [
-        "",
-        "U",
-        "",
-        "",
-        "E",
-        "R",
-        "E",
-        ""
-      ],
-      [
-        "",
         "K",
-        "I",
-        "T",
-        "T",
+        "L",
         "E",
-        "N",
-        "S"
+        "D"
       ]
     ],
     "newKeys": [
-      "3,1",
-      "4,1",
-      "5,1",
+      "6,0",
       "6,1",
-      "6,5",
-      "6,6",
-      "5,6"
+      "6,2",
+      "6,3",
+      "1,3",
+      "2,3",
+      "3,3"
     ],
-    "score": 70,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "DROUK",
-      "ERE",
-      "RE",
-      "EN",
-      "GLEN"
+      "FIFE",
+      "ID",
+      "FA",
+      "ER",
+      "PARK"
     ],
     "scoringWords": [
       {
-        "word": "DROUK",
-        "row": 3,
-        "col": 1,
-        "direction": "vertical",
+        "word": "FIFE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
         "score": 10,
         "move": 1
       },
       {
-        "word": "ERE",
+        "word": "ID",
         "row": 6,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "RE",
-        "row": 6,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "EN",
-        "row": 6,
-        "col": 6,
-        "direction": "vertical",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "GLEN",
-        "row": 4,
-        "col": 6,
+        "col": 1,
         "direction": "vertical",
         "score": 3,
-        "move": 3
+        "move": 1
+      },
+      {
+        "word": "FA",
+        "row": 6,
+        "col": 2,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "ER",
+        "row": 6,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "PARK",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 10,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DROUK",
-        "row": 3,
-        "col": 1,
-        "direction": "vertical",
-        "score": 10,
+        "word": "FIFE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
         "usedTiles": 4,
         "newKeys": [
-          "3,1",
-          "4,1",
-          "5,1",
-          "6,1"
+          "6,0",
+          "6,1",
+          "6,2",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "DROUK",
-            "row": 3,
+            "word": "FIFE",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "ID",
+            "row": 6,
             "col": 1,
             "direction": "vertical",
-            "score": 10
+            "score": 3
+          },
+          {
+            "word": "FA",
+            "row": 6,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "ER",
+            "row": 6,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ERE",
-        "row": 6,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 7,
-        "usedTiles": 2,
-        "newKeys": [
-          "6,5",
-          "6,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "ERE",
-            "row": 6,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "RE",
-            "row": 6,
-            "col": 5,
-            "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "EN",
-            "row": 6,
-            "col": 6,
-            "direction": "vertical",
-            "score": 2
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "GLEN",
-        "row": 4,
-        "col": 6,
+        "word": "PARK",
+        "row": 1,
+        "col": 3,
         "direction": "vertical",
-        "score": 3,
-        "usedTiles": 1,
+        "score": 10,
+        "usedTiles": 3,
         "newKeys": [
-          "5,6"
+          "1,3",
+          "2,3",
+          "3,3"
         ],
         "scoringWords": [
           {
-            "word": "GLEN",
-            "row": 4,
-            "col": 6,
+            "word": "PARK",
+            "row": 1,
+            "col": 3,
             "direction": "vertical",
-            "score": 3
+            "score": 10
           }
         ]
       }
@@ -430,6 +419,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1935
+    "visitedCandidates": 1965
   }
 }

@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "5,0": "double-word",
-    "7,0": "double-letter",
-    "6,0": "double-word",
-    "3,0": "double-letter",
-    "1,0": "double-letter",
-    "7,7": "triple-word"
+    "7,1": "triple-word",
+    "0,0": "double-word",
+    "3,0": "triple-letter",
+    "7,7": "double-letter",
+    "5,2": "double-letter",
+    "1,7": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -222,7 +222,7 @@
         "O",
         "",
         "",
-        ""
+        "U"
       ],
       [
         "",
@@ -258,7 +258,7 @@
         "",
         "",
         "",
-        "U",
+        "",
         "N",
         "",
         "",
@@ -292,9 +292,9 @@
       "2,6",
       "2,7",
       "1,2",
-      "5,3"
+      "1,7"
     ],
-    "score": 75,
+    "score": 77,
     "completionBonus": 50,
     "words": [
       "TABORIN",
@@ -347,10 +347,10 @@
       },
       {
         "word": "UN",
-        "row": 5,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 2,
+        "row": 1,
+        "col": 7,
+        "direction": "vertical",
+        "score": 4,
         "move": 3
       }
     ],
@@ -425,21 +425,21 @@
       {
         "turn": 3,
         "word": "UN",
-        "row": 5,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 2,
+        "row": 1,
+        "col": 7,
+        "direction": "vertical",
+        "score": 4,
         "usedTiles": 1,
         "newKeys": [
-          "5,3"
+          "1,7"
         ],
         "scoringWords": [
           {
             "word": "UN",
-            "row": 5,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 2
+            "row": 1,
+            "col": 7,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }

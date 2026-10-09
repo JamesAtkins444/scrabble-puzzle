@@ -5,19 +5,9 @@
     [
       "",
       "",
-      "B",
       "",
       "",
       "",
-      "",
-      ""
-    ],
-    [
-      "D",
-      "U",
-      "O",
-      "M",
-      "O",
       "",
       "",
       ""
@@ -25,58 +15,68 @@
     [
       "",
       "",
-      "N",
       "",
+      "V",
       "",
       "",
       "",
       ""
     ],
     [
-      "T",
-      "O",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "W",
+      "H",
+      "E",
+      "Y",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
       "I",
-      "T",
       "",
       "",
       "",
       ""
     ],
     [
+      "P",
+      "L",
+      "I",
+      "N",
+      "K",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
       "",
       "",
       "E",
       "",
       "",
       "",
-      "",
       ""
     ],
     [
+      "",
       "",
       "",
       "S",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "T",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
       "",
       "",
       "",
@@ -87,19 +87,9 @@
     [
       "",
       "",
-      "B",
       "",
       "",
       "",
-      "",
-      ""
-    ],
-    [
-      "D",
-      "U",
-      "O",
-      "M",
-      "O",
       "",
       "",
       ""
@@ -107,58 +97,68 @@
     [
       "",
       "",
-      "N",
       "",
+      "V",
       "",
       "",
       "",
       ""
     ],
     [
-      "T",
-      "O",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "W",
+      "H",
+      "E",
+      "Y",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
       "I",
-      "T",
       "",
       "",
       "",
       ""
     ],
     [
+      "P",
+      "L",
+      "I",
+      "N",
+      "K",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
       "",
       "",
       "E",
       "",
       "",
       "",
-      "",
       ""
     ],
     [
+      "",
       "",
       "",
       "S",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "T",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
       "",
       "",
       "",
@@ -166,46 +166,47 @@
     ]
   ],
   "bonusSquares": {
-    "1,7": "double-word",
-    "7,0": "double-word",
-    "3,5": "double-letter",
-    "6,4": "triple-letter"
+    "0,0": "triple-word",
+    "0,6": "double-word",
+    "6,6": "double-letter",
+    "7,1": "double-letter",
+    "3,0": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "BONIEST",
-      "row": 0,
-      "col": 2,
+      "word": "VAHINES",
+      "row": 1,
+      "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "DUOMO",
-      "row": 1,
+      "word": "PLINK",
+      "row": 5,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "TOIT",
+      "word": "WHEYS",
       "row": 3,
-      "col": 0,
+      "col": 2,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "H",
+    "A",
+    "N",
+    "T",
     "O",
-    "R",
-    "E",
-    "K",
-    "E",
-    "R"
+    "X",
+    "O",
+    "D"
   ],
   "bestSolution": {
     "board": [
       [
         "",
         "",
-        "B",
+        "",
         "",
         "",
         "",
@@ -213,11 +214,21 @@
         ""
       ],
       [
+        "",
+        "",
+        "",
+        "V",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "T",
+        "O",
+        "A",
         "D",
-        "U",
-        "O",
-        "M",
-        "O",
         "",
         "",
         ""
@@ -225,6 +236,36 @@
       [
         "",
         "",
+        "W",
+        "H",
+        "E",
+        "Y",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "I",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "P",
+        "L",
+        "I",
+        "N",
+        "K",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "A",
         "N",
         "E",
         "",
@@ -233,193 +274,198 @@
         ""
       ],
       [
-        "T",
         "O",
-        "I",
-        "T",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "E",
-        "H",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
+        "X",
         "",
         "S",
         "",
         "",
         "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "T",
-        "O",
-        "K",
-        "E",
-        "R",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "R",
-        "",
         ""
       ]
     ],
     "newKeys": [
-      "6,3",
-      "6,4",
-      "6,5",
-      "6,6",
-      "2,3",
-      "4,3",
-      "7,5"
+      "6,1",
+      "7,1",
+      "7,0",
+      "2,1",
+      "2,2",
+      "2,4",
+      "6,2"
     ],
-    "score": 87,
+    "score": 103,
     "completionBonus": 50,
     "words": [
-      "TOKER",
-      "NE",
-      "EH",
-      "METH",
-      "ER"
+      "LAX",
+      "OX",
+      "TOAD",
+      "OW",
+      "DE",
+      "ANE",
+      "IN"
     ],
     "scoringWords": [
       {
-        "word": "TOKER",
-        "row": 6,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 19,
+        "word": "LAX",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 18,
         "move": 1
       },
       {
-        "word": "NE",
-        "row": 2,
-        "col": 2,
+        "word": "OX",
+        "row": 7,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
+        "score": 17,
         "move": 2
       },
       {
-        "word": "EH",
-        "row": 4,
-        "col": 2,
+        "word": "TOAD",
+        "row": 2,
+        "col": 1,
         "direction": "horizontal",
         "score": 5,
-        "move": 2
+        "move": 3
       },
       {
-        "word": "METH",
-        "row": 1,
-        "col": 3,
+        "word": "OW",
+        "row": 2,
+        "col": 2,
         "direction": "vertical",
-        "score": 9,
-        "move": 2
+        "score": 5,
+        "move": 3
       },
       {
-        "word": "ER",
+        "word": "DE",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 3,
+        "move": 3
+      },
+      {
+        "word": "ANE",
         "row": 6,
-        "col": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 4
+      },
+      {
+        "word": "IN",
+        "row": 5,
+        "col": 2,
         "direction": "vertical",
         "score": 2,
-        "move": 3
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "TOKER",
-        "row": 6,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 19,
-        "usedTiles": 4,
+        "word": "LAX",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 18,
+        "usedTiles": 2,
         "newKeys": [
-          "6,3",
-          "6,4",
-          "6,5",
-          "6,6"
+          "6,1",
+          "7,1"
         ],
         "scoringWords": [
           {
-            "word": "TOKER",
-            "row": 6,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 19
+            "word": "LAX",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "METH",
-        "row": 1,
-        "col": 3,
-        "direction": "vertical",
-        "score": 16,
-        "usedTiles": 2,
+        "word": "OX",
+        "row": 7,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 17,
+        "usedTiles": 1,
         "newKeys": [
-          "2,3",
-          "4,3"
+          "7,0"
         ],
         "scoringWords": [
           {
-            "word": "NE",
-            "row": 2,
-            "col": 2,
+            "word": "OX",
+            "row": 7,
+            "col": 0,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "EH",
-            "row": 4,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "METH",
-            "row": 1,
-            "col": 3,
-            "direction": "vertical",
-            "score": 9
+            "score": 17
           }
         ]
       },
       {
         "turn": 3,
-        "word": "ER",
-        "row": 6,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
-        "usedTiles": 1,
+        "word": "TOAD",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 13,
+        "usedTiles": 3,
         "newKeys": [
-          "7,5"
+          "2,1",
+          "2,2",
+          "2,4"
         ],
         "scoringWords": [
           {
-            "word": "ER",
+            "word": "TOAD",
+            "row": 2,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "OW",
+            "row": 2,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "DE",
+            "row": 2,
+            "col": 4,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "ANE",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "ANE",
             "row": 6,
-            "col": 5,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "IN",
+            "row": 5,
+            "col": 2,
             "direction": "vertical",
             "score": 2
           }
@@ -430,6 +476,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1133
+    "visitedCandidates": 2630
   }
 }

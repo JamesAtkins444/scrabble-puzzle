@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "1,3": "triple-letter",
-    "2,4": "double-word",
-    "3,4": "triple-letter",
+    "0,6": "triple-word",
+    "3,4": "double-word",
     "0,2": "double-letter",
-    "1,5": "double-letter"
+    "1,4": "triple-letter",
+    "0,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -208,26 +208,6 @@
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "S",
-        "L",
-        "U",
         "T",
         "",
         "",
@@ -235,10 +215,30 @@
       ],
       [
         "",
+        "",
+        "",
+        "",
+        "U",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "S",
+        "",
+        "",
+        "N",
+        "",
+        "",
+        ""
+      ],
+      [
+        "W",
         "H",
-        "",
-        "",
         "O",
+        "L",
+        "E",
         "",
         "I",
         ""
@@ -248,7 +248,7 @@
         "O",
         "",
         "",
-        "W",
+        "",
         "",
         "M",
         ""
@@ -258,7 +258,7 @@
         "E",
         "",
         "",
-        "N",
+        "",
         "",
         "P",
         ""
@@ -278,90 +278,90 @@
         "",
         "",
         "",
-        "E",
+        "",
         "",
         "D",
         ""
       ]
     ],
     "newKeys": [
-      "2,4",
+      "3,0",
+      "3,2",
+      "3,3",
       "3,4",
-      "4,4",
-      "5,4",
-      "7,4",
-      "2,2",
-      "2,3"
+      "0,4",
+      "1,4",
+      "2,4"
     ],
-    "score": 80,
+    "score": 84,
     "completionBonus": 50,
     "words": [
-      "TOWNIE",
-      "SLUT"
+      "WHOLE",
+      "TUNE"
     ],
     "scoringWords": [
       {
-        "word": "TOWNIE",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
+        "word": "WHOLE",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
         "score": 22,
         "move": 1
       },
       {
-        "word": "SLUT",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 8,
+        "word": "TUNE",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 12,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "TOWNIE",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
+        "word": "WHOLE",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
         "score": 22,
-        "usedTiles": 5,
+        "usedTiles": 4,
         "newKeys": [
-          "2,4",
-          "3,4",
-          "4,4",
-          "5,4",
-          "7,4"
+          "3,0",
+          "3,2",
+          "3,3",
+          "3,4"
         ],
         "scoringWords": [
           {
-            "word": "TOWNIE",
-            "row": 2,
-            "col": 4,
-            "direction": "vertical",
+            "word": "WHOLE",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
             "score": 22
           }
         ]
       },
       {
         "turn": 2,
-        "word": "SLUT",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 8,
-        "usedTiles": 2,
+        "word": "TUNE",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 12,
+        "usedTiles": 3,
         "newKeys": [
-          "2,2",
-          "2,3"
+          "0,4",
+          "1,4",
+          "2,4"
         ],
         "scoringWords": [
           {
-            "word": "SLUT",
-            "row": 2,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 8
+            "word": "TUNE",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 12
           }
         ]
       }
@@ -370,6 +370,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2826
+    "visitedCandidates": 3034
   }
 }

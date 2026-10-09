@@ -166,11 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "5,0": "triple-letter",
-    "6,6": "double-letter",
-    "4,1": "double-word",
-    "6,7": "double-letter",
-    "6,1": "double-letter"
+    "5,0": "triple-word",
+    "6,7": "double-word",
+    "7,0": "triple-letter",
+    "7,4": "double-letter",
+    "3,1": "double-letter",
+    "6,2": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -225,8 +226,8 @@
       ],
       [
         "",
-        "E",
-        "F",
+        "",
+        "",
         "",
         "A",
         "",
@@ -235,9 +236,9 @@
       ],
       [
         "",
+        "",
+        "",
         "A",
-        "",
-        "",
         "X",
         "",
         "",
@@ -245,7 +246,7 @@
       ],
       [
         "",
-        "N",
+        "",
         "",
         "L",
         "E",
@@ -254,30 +255,30 @@
         "P"
       ],
       [
-        "",
+        "D",
+        "E",
+        "N",
         "E",
         "S",
         "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "F",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
         "S",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "D",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
         "",
         "",
         "",
@@ -285,128 +286,115 @@
       ]
     ],
     "newKeys": [
-      "2,1",
-      "3,1",
-      "4,1",
+      "3,3",
+      "5,3",
+      "6,3",
+      "7,3",
+      "5,0",
       "5,1",
-      "6,1",
-      "2,2",
       "5,2"
     ],
-    "score": 84,
+    "score": 85,
     "completionBonus": 50,
     "words": [
-      "BEANED",
-      "EF",
-      "OF",
-      "ES"
+      "AX",
+      "ES",
+      "ALEFS",
+      "DENES"
     ],
     "scoringWords": [
       {
-        "word": "BEANED",
-        "row": 1,
-        "col": 1,
-        "direction": "vertical",
-        "score": 22,
-        "move": 1
-      },
-      {
-        "word": "EF",
-        "row": 2,
-        "col": 1,
+        "word": "AX",
+        "row": 3,
+        "col": 3,
         "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "OF",
-        "row": 1,
-        "col": 2,
-        "direction": "vertical",
-        "score": 5,
-        "move": 2
+        "score": 9,
+        "move": 1
       },
       {
         "word": "ES",
         "row": 5,
-        "col": 1,
+        "col": 3,
         "direction": "horizontal",
         "score": 2,
-        "move": 3
+        "move": 1
+      },
+      {
+        "word": "ALEFS",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 8,
+        "move": 1
+      },
+      {
+        "word": "DENES",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 16,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BEANED",
-        "row": 1,
-        "col": 1,
+        "word": "ALEFS",
+        "row": 3,
+        "col": 3,
         "direction": "vertical",
-        "score": 22,
-        "usedTiles": 5,
+        "score": 19,
+        "usedTiles": 4,
         "newKeys": [
-          "2,1",
-          "3,1",
-          "4,1",
-          "5,1",
-          "6,1"
+          "3,3",
+          "5,3",
+          "6,3",
+          "7,3"
         ],
         "scoringWords": [
           {
-            "word": "BEANED",
-            "row": 1,
-            "col": 1,
+            "word": "AX",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "ES",
+            "row": 5,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "ALEFS",
+            "row": 3,
+            "col": 3,
             "direction": "vertical",
-            "score": 22
+            "score": 8
           }
         ]
       },
       {
         "turn": 2,
-        "word": "EF",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 10,
-        "usedTiles": 1,
-        "newKeys": [
-          "2,2"
-        ],
-        "scoringWords": [
-          {
-            "word": "EF",
-            "row": 2,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "OF",
-            "row": 1,
-            "col": 2,
-            "direction": "vertical",
-            "score": 5
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "ES",
+        "word": "DENES",
         "row": 5,
-        "col": 1,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 1,
+        "score": 16,
+        "usedTiles": 3,
         "newKeys": [
+          "5,0",
+          "5,1",
           "5,2"
         ],
         "scoringWords": [
           {
-            "word": "ES",
+            "word": "DENES",
             "row": 5,
-            "col": 1,
+            "col": 0,
             "direction": "horizontal",
-            "score": 2
+            "score": 16
           }
         ]
       }
@@ -415,6 +403,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2329
+    "visitedCandidates": 2605
   }
 }

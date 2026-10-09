@@ -166,10 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "3,0": "triple-letter",
-    "5,7": "double-letter",
-    "0,1": "double-letter",
-    "0,6": "double-letter"
+    "5,7": "triple-word",
+    "0,5": "double-word",
+    "0,7": "triple-letter",
+    "0,0": "double-letter",
+    "7,7": "double-letter",
+    "7,5": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -203,27 +205,27 @@
   "bestSolution": {
     "board": [
       [
-        "P",
+        "",
         "",
         "",
         "C",
-        "",
-        "",
-        "",
-        ""
+        "R",
+        "E",
+        "A",
+        "K"
       ],
       [
-        "E",
+        "",
         "",
         "",
         "H",
         "",
-        "",
+        "P",
         "",
         ""
       ],
       [
-        "E",
+        "",
         "",
         "B",
         "O",
@@ -233,12 +235,12 @@
         ""
       ],
       [
-        "K",
-        "B",
-        "A",
+        "",
+        "",
+        "",
         "R",
         "",
-        "",
+        "E",
         "",
         ""
       ],
@@ -263,7 +265,7 @@
         ""
       ],
       [
-        "R",
+        "B",
         "",
         "",
         "D",
@@ -284,128 +286,112 @@
       ]
     ],
     "newKeys": [
-      "3,0",
-      "3,1",
-      "3,2",
-      "0,0",
-      "1,0",
-      "2,0",
+      "0,4",
+      "0,5",
+      "0,6",
+      "0,7",
+      "1,5",
+      "3,5",
       "6,0"
     ],
-    "score": 96,
+    "score": 108,
     "completionBonus": 50,
     "words": [
-      "KBAR",
-      "BA",
-      "PEEK",
-      "AR"
+      "CREAK",
+      "EPEE",
+      "AB"
     ],
     "scoringWords": [
       {
-        "word": "KBAR",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 20,
-        "move": 1
-      },
-      {
-        "word": "BA",
-        "row": 2,
-        "col": 2,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "PEEK",
+        "word": "CREAK",
         "row": 0,
-        "col": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 42,
+        "move": 1
+      },
+      {
+        "word": "EPEE",
+        "row": 0,
+        "col": 5,
         "direction": "vertical",
-        "score": 20,
+        "score": 12,
         "move": 2
       },
       {
-        "word": "AR",
+        "word": "AB",
         "row": 5,
         "col": 0,
         "direction": "vertical",
-        "score": 2,
+        "score": 4,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "KBAR",
-        "row": 3,
-        "col": 0,
+        "word": "CREAK",
+        "row": 0,
+        "col": 3,
         "direction": "horizontal",
-        "score": 24,
-        "usedTiles": 3,
+        "score": 42,
+        "usedTiles": 4,
         "newKeys": [
-          "3,0",
-          "3,1",
-          "3,2"
+          "0,4",
+          "0,5",
+          "0,6",
+          "0,7"
         ],
         "scoringWords": [
           {
-            "word": "KBAR",
-            "row": 3,
-            "col": 0,
+            "word": "CREAK",
+            "row": 0,
+            "col": 3,
             "direction": "horizontal",
-            "score": 20
-          },
-          {
-            "word": "BA",
-            "row": 2,
-            "col": 2,
-            "direction": "vertical",
-            "score": 4
+            "score": 42
           }
         ]
       },
       {
         "turn": 2,
-        "word": "PEEK",
+        "word": "EPEE",
         "row": 0,
-        "col": 0,
+        "col": 5,
         "direction": "vertical",
-        "score": 20,
-        "usedTiles": 3,
+        "score": 12,
+        "usedTiles": 2,
         "newKeys": [
-          "0,0",
-          "1,0",
-          "2,0"
+          "1,5",
+          "3,5"
         ],
         "scoringWords": [
           {
-            "word": "PEEK",
+            "word": "EPEE",
             "row": 0,
-            "col": 0,
+            "col": 5,
             "direction": "vertical",
-            "score": 20
+            "score": 12
           }
         ]
       },
       {
         "turn": 3,
-        "word": "AR",
+        "word": "AB",
         "row": 5,
         "col": 0,
         "direction": "vertical",
-        "score": 2,
+        "score": 4,
         "usedTiles": 1,
         "newKeys": [
           "6,0"
         ],
         "scoringWords": [
           {
-            "word": "AR",
+            "word": "AB",
             "row": 5,
             "col": 0,
             "direction": "vertical",
-            "score": 2
+            "score": 4
           }
         ]
       }
@@ -414,6 +400,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2598
+    "visitedCandidates": 2349
   }
 }

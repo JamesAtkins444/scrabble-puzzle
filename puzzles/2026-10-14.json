@@ -6,11 +6,11 @@
       "",
       "",
       "",
-      "V",
-      "A",
-      "L",
-      "E",
-      "S"
+      "",
+      "",
+      "",
+      "",
+      ""
     ],
     [
       "",
@@ -18,59 +18,19 @@
       "",
       "",
       "",
-      "",
-      "",
-      "U"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "T",
-      "I",
       "P",
-      "I",
-      "S"
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "W",
+      "O",
+      "N",
+      ""
     ],
     [
       "",
@@ -78,7 +38,47 @@
       "",
       "",
       "",
+      "I",
       "",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "A",
+      "W",
+      "L",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S",
       "",
       ""
     ]
@@ -88,117 +88,119 @@
       "",
       "",
       "",
-      "V",
-      "A",
-      "L",
-      "E",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "U"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "T",
-      "I",
-      "P",
-      "I",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "",
       "",
       "",
       "",
       "",
       ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "P",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "W",
+      "O",
+      "N",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "I",
+      "",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "A",
+      "W",
+      "L",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      ""
     ]
   ],
   "bonusSquares": {
-    "2,4": "double-word",
-    "3,4": "double-letter",
-    "5,1": "triple-letter",
-    "1,1": "double-word"
+    "0,0": "triple-word",
+    "6,2": "double-word",
+    "0,2": "double-letter",
+    "4,7": "triple-letter",
+    "2,2": "triple-letter",
+    "7,7": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "SUTTEES",
-      "row": 0,
-      "col": 7,
+      "word": "POISERS",
+      "row": 1,
+      "col": 5,
       "direction": "vertical"
     },
     {
-      "word": "TIPIS",
-      "row": 6,
-      "col": 3,
+      "word": "BAWLS",
+      "row": 4,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "VALES",
-      "row": 0,
-      "col": 3,
+      "word": "WON",
+      "row": 2,
+      "col": 4,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
+    "I",
+    "Y",
+    "N",
     "O",
     "E",
-    "T",
     "N",
-    "N",
-    "Y",
-    "I"
+    "G"
   ],
   "bestSolution": {
     "board": [
@@ -206,71 +208,71 @@
         "",
         "",
         "",
-        "V",
-        "A",
-        "L",
-        "E",
-        "S"
-      ],
-      [
-        "",
-        "",
-        "",
-        "I",
-        "N",
-        "",
-        "",
-        "U"
-      ],
-      [
-        "",
-        "",
-        "T",
-        "E",
-        "N",
-        "",
-        "",
-        "T"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "O",
-        "",
-        "",
-        "T"
-      ],
-      [
-        "",
         "",
         "",
         "",
         "Y",
-        "",
-        "",
-        "E"
+        ""
       ],
       [
         "",
         "",
+        "N",
         "",
         "",
-        "",
-        "",
-        "",
-        "E"
-      ],
-      [
-        "",
-        "",
-        "",
-        "T",
-        "I",
         "P",
         "I",
-        "S"
+        ""
+      ],
+      [
+        "",
+        "",
+        "O",
+        "",
+        "W",
+        "O",
+        "N",
+        ""
+      ],
+      [
+        "",
+        "",
+        "N",
+        "",
+        "",
+        "I",
+        "",
+        ""
+      ],
+      [
+        "",
+        "B",
+        "A",
+        "W",
+        "L",
+        "S",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "G",
+        "",
+        "",
+        "E",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "E",
+        "",
+        "",
+        "R",
+        "",
+        ""
       ],
       [
         "",
@@ -278,91 +280,74 @@
         "",
         "",
         "",
-        "",
+        "S",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "1,4",
-      "2,4",
-      "3,4",
-      "4,4",
-      "1,3",
-      "2,3",
-      "2,2"
+      "1,2",
+      "2,2",
+      "3,2",
+      "5,2",
+      "6,2",
+      "0,6",
+      "1,6"
     ],
-    "score": 82,
+    "score": 78,
     "completionBonus": 50,
     "words": [
-      "ANNOY",
-      "IN",
-      "EN",
-      "VIE",
-      "TEN"
+      "NONAGE",
+      "PI",
+      "YIN"
     ],
     "scoringWords": [
       {
-        "word": "ANNOY",
-        "row": 0,
-        "col": 4,
+        "word": "NONAGE",
+        "row": 1,
+        "col": 2,
         "direction": "vertical",
         "score": 18,
         "move": 1
       },
       {
-        "word": "IN",
+        "word": "PI",
         "row": 1,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "EN",
-        "row": 2,
-        "col": 3,
+        "col": 5,
         "direction": "horizontal",
         "score": 4,
         "move": 2
       },
       {
-        "word": "VIE",
+        "word": "YIN",
         "row": 0,
-        "col": 3,
+        "col": 6,
         "direction": "vertical",
         "score": 6,
         "move": 2
-      },
-      {
-        "word": "TEN",
-        "row": 2,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "ANNOY",
-        "row": 0,
-        "col": 4,
+        "word": "NONAGE",
+        "row": 1,
+        "col": 2,
         "direction": "vertical",
         "score": 18,
-        "usedTiles": 4,
+        "usedTiles": 5,
         "newKeys": [
-          "1,4",
-          "2,4",
-          "3,4",
-          "4,4"
+          "1,2",
+          "2,2",
+          "3,2",
+          "5,2",
+          "6,2"
         ],
         "scoringWords": [
           {
-            "word": "ANNOY",
-            "row": 0,
-            "col": 4,
+            "word": "NONAGE",
+            "row": 1,
+            "col": 2,
             "direction": "vertical",
             "score": 18
           }
@@ -370,58 +355,30 @@
       },
       {
         "turn": 2,
-        "word": "VIE",
+        "word": "YIN",
         "row": 0,
-        "col": 3,
+        "col": 6,
         "direction": "vertical",
-        "score": 12,
+        "score": 10,
         "usedTiles": 2,
         "newKeys": [
-          "1,3",
-          "2,3"
+          "0,6",
+          "1,6"
         ],
         "scoringWords": [
           {
-            "word": "IN",
+            "word": "PI",
             "row": 1,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "EN",
-            "row": 2,
-            "col": 3,
+            "col": 5,
             "direction": "horizontal",
             "score": 4
           },
           {
-            "word": "VIE",
+            "word": "YIN",
             "row": 0,
-            "col": 3,
+            "col": 6,
             "direction": "vertical",
             "score": 6
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "TEN",
-        "row": 2,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 1,
-        "newKeys": [
-          "2,2"
-        ],
-        "scoringWords": [
-          {
-            "word": "TEN",
-            "row": 2,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 2
           }
         ]
       }
@@ -430,6 +387,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1888
+    "visitedCandidates": 1431
   }
 }
