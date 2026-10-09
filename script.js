@@ -136,6 +136,24 @@ const rulesDialog =
 const closeRulesButton =
     document.getElementById("closeRulesButton");
 
+const shareResultsButton =
+    document.getElementById("shareResultsButton");
+
+const shareResultsDialog =
+    document.getElementById("shareResultsDialog");
+
+const closeShareResultsButton =
+    document.getElementById("closeShareResultsButton");
+
+const shareResultsSummary =
+    document.getElementById("shareResultsSummary");
+
+const copyShareResultsButton =
+    document.getElementById("copyShareResultsButton");
+
+const shareResultsStatus =
+    document.getElementById("shareResultsStatus");
+
 const bestScoreBoxElement =
     document.getElementById("bestScoreBox");
 
@@ -4460,6 +4478,105 @@ if (rulesHelpButton && rulesDialog) {
         if (typeof rulesDialog.close !== "function") {
             event.preventDefault();
             rulesDialog.removeAttribute("open");
+        }
+    });
+}
+
+
+/* ==================================================
+SHARE RESULTS POPUP
+================================================== */
+
+function getShareResultsText() {
+    const playerScore = Number.isFinite(score) ? score : 0;
+    const solverScore =
+        bestSolution && Number.isFinite(bestSolution.score)
+            ? bestSolution.score
+            : null;
+
+    let stars = 0;
+    if (playerTiles.length === 0 && Object.keys(playerPlacedTiles).length === 7) {
+        stars = 1;
+    }
+    if (solverScore !== null && playerScore < solverScore && playerScore >= solverScore - 10) {
+        stars = Math.max(stars, 2);
+    }
+    if (solverScore !== null && playerScore >= solverScore) {
+        stars = 3;
+    }
+
+    const crown = solverScore !== null && playerScore > solverScore ? " 👑" : "";
+    const starEmojis = "⭐".repeat(stars);
+    return `Results: ${playerScore}/${solverScore === null ? "—" : solverScore}${starEmojis ? " " + starEmojis : ""}${crown}`;
+}
+
+function refreshShareResultsSummary() {
+    if (shareResultsSummary) {
+        shareResultsSummary.textContent = getShareResultsText();
+    }
+    if (shareResultsStatus) {
+        shareResultsStatus.textContent = "";
+    }
+}
+
+if (shareResultsButton && shareResultsDialog) {
+    shareResultsButton.addEventListener("click", () => {
+        refreshShareResultsSummary();
+        if (typeof shareResultsDialog.showModal === "function") {
+            shareResultsDialog.showModal();
+        } else {
+            shareResultsDialog.setAttribute("open", "");
+        }
+    });
+
+    if (closeShareResultsButton) {
+        closeShareResultsButton.addEventListener("click", () => {
+            if (typeof shareResultsDialog.close === "function") {
+                shareResultsDialog.close();
+            } else {
+                shareResultsDialog.removeAttribute("open");
+            }
+        });
+    }
+
+    shareResultsDialog.addEventListener("click", event => {
+        if (event.target === shareResultsDialog) {
+            if (typeof shareResultsDialog.close === "function") {
+                shareResultsDialog.close();
+            } else {
+                shareResultsDialog.removeAttribute("open");
+            }
+        }
+    });
+}
+
+if (copyShareResultsButton) {
+    copyShareResultsButton.addEventListener("click", async () => {
+        const textToCopy = getShareResultsText();
+
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(textToCopy);
+            } else {
+                const temporaryInput = document.createElement("textarea");
+                temporaryInput.value = textToCopy;
+                temporaryInput.setAttribute("readonly", "");
+                temporaryInput.style.position = "absolute";
+                temporaryInput.style.left = "-9999px";
+                document.body.appendChild(temporaryInput);
+                temporaryInput.select();
+                const copied = document.execCommand("copy");
+                temporaryInput.remove();
+                if (!copied) throw new Error("Clipboard copy failed");
+            }
+
+            if (shareResultsStatus) {
+                shareResultsStatus.textContent = "Results copied to clipboard!";
+            }
+        } catch (error) {
+            if (shareResultsStatus) {
+                shareResultsStatus.textContent = "Could not copy automatically. Please select and copy the results above.";
+            }
         }
     });
 }
