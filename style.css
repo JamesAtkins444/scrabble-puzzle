@@ -1329,3 +1329,109 @@ body {
     opacity: 0.55;
     cursor: wait;
 }
+
+
+/* ================================================
+   SHARE RESULTS BUTTON AND POPUP
+================================================ */
+
+.board-top-row .share-results-icon-button {
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    margin-top: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #222;
+    border-radius: 50%;
+    background: #222;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    transition: background 150ms ease, transform 150ms ease;
+}
+
+.share-results-icon-button:hover {
+    background: #444;
+    transform: scale(1.04);
+}
+
+.share-results-icon-button svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.share-results-dialog {
+    width: min(420px, calc(100% - 32px));
+    max-width: 420px;
+    padding: 0;
+    border: 1px solid #d8d8d8;
+    border-radius: 14px;
+    background: #fff;
+    color: #222;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+}
+
+.share-results-dialog::backdrop {
+    background: rgba(20, 24, 30, 0.58);
+    backdrop-filter: blur(3px);
+}
+
+.share-results-content {
+    padding: 24px 22px 22px;
+    text-align: center;
+}
+
+.share-results-summary {
+    margin: 0 0 24px;
+    font-size: clamp(21px, 5vw, 27px);
+    line-height: 1.4;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+}
+
+.copy-share-results-button {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 9px;
+    background: #222;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 150ms ease;
+}
+
+.copy-share-results-button:hover {
+    background: #444;
+}
+
+.share-results-status {
+    min-height: 18px;
+    margin: 10px 0 0;
+    color: #39734a;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .board-top-row .share-results-icon-button {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+        padding: 7px;
+    }
+
+    .share-results-content {
+        padding: 21px 17px 18px;
+    }
+}
