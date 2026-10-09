@@ -1626,11 +1626,13 @@ function generateBonusSquares() {
         }
 
 
-        const allowedTypes = [
-            "double-letter",
-            "triple-letter"
-        ];
+        const allowedTypes = [];
 
+
+        /*
+         * Letter bonuses and double-word bonuses
+         * share the same 1-square buffer.
+         */
 
         if (
             isOutsideWordBuffer(
@@ -1640,10 +1642,17 @@ function generateBonusSquares() {
         ) {
 
             allowedTypes.push(
+                "double-letter",
+                "triple-letter",
                 "double-word"
             );
         }
 
+
+        /*
+         * Triple-word bonuses keep the larger
+         * 2-square buffer.
+         */
 
         if (
             isOutsideWordBuffer(
