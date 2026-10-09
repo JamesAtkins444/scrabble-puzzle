@@ -148,8 +148,8 @@ const wordListElement =
 const scoreValueElement =
     document.getElementById("scoreValue");
 
-const scoreBonusElement =
-    document.getElementById("scoreBonus");
+const scoreElement =
+    document.getElementById("score");
 
 const generateButton =
     document.getElementById("generateButton");
@@ -1440,11 +1440,11 @@ const bonusMaximums = {
 
     "double-letter": 3,
 
-    "triple-letter": 3,
+    "triple-letter": 2,
 
     "double-word": 2,
 
-    "triple-word": 2
+    "triple-word": 1
 };
 
 
