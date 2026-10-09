@@ -1448,10 +1448,10 @@ const bonusMaximums = {
 };
 
 
-function getWeightedBonusType() {
+function getWeightedBonusType(allowedTypes = bonusTypes) {
 
     const availableTypes =
-        bonusTypes.filter(
+        allowedTypes.filter(
             type => {
 
                 const count =
@@ -1526,6 +1526,7 @@ function generateBonusSquares() {
 
 
     const emptyCells = [];
+    const occupiedCells = [];
 
 
     for (
@@ -1545,9 +1546,14 @@ function generateBonusSquares() {
             ) {
 
                 emptyCells.push({
-
                     row,
+                    col
+                });
 
+            } else {
+
+                occupiedCells.push({
+                    row,
                     col
                 });
             }
@@ -1562,18 +1568,48 @@ function generateBonusSquares() {
         );
 
 
-    const selected = [];
-
-
-    /*
-     * Prefer spacing bonuses at least
-     * Manhattan distance 2 apart.
-     */
-
     const shuffled =
         shuffle(
             emptyCells
         );
+
+
+    /*
+     * Word bonuses must have a clear
+     * buffer around every pre-filled word.
+     *
+     * Triple word: no occupied cell within
+     * 2 squares in any direction.
+     *
+     * Double word: no occupied cell within
+     * 1 square in any direction.
+     *
+     * Chebyshev distance is used so diagonal
+     * neighbours count as part of the buffer.
+     */
+
+    function isOutsideWordBuffer(
+        cell,
+        bufferSize
+    ) {
+
+        return !occupiedCells.some(
+            occupied =>
+                Math.max(
+                    Math.abs(
+                        occupied.row -
+                        cell.row
+                    ),
+                    Math.abs(
+                        occupied.col -
+                        cell.col
+                    )
+                ) <= bufferSize
+        );
+    }
+
+
+    let placedCount = 0;
 
 
     for (
@@ -1582,7 +1618,7 @@ function generateBonusSquares() {
     ) {
 
         if (
-            selected.length >=
+            placedCount >=
             desiredCount
         ) {
 
@@ -1590,87 +1626,46 @@ function generateBonusSquares() {
         }
 
 
-        const tooClose =
-            selected.some(
-                other =>
-                    Math.abs(
-                        other.row -
-                        cell.row
-                    ) +
-                    Math.abs(
-                        other.col -
-                        cell.col
-                    ) < 2
-            );
+        const allowedTypes = [
+            "double-letter",
+            "triple-letter"
+        ];
 
 
-        if (!tooClose) {
-
-            selected.push(
-                cell
-            );
-        }
-    }
-
-
-    /*
-     * Fallback if there weren't enough
-     * appropriately spaced cells.
-     */
-
-    if (
-        selected.length <
-        desiredCount
-    ) {
-
-        for (
-            const cell
-            of shuffled
+        if (
+            isOutsideWordBuffer(
+                cell,
+                1
+            )
         ) {
 
-            if (
-                selected.length >=
-                desiredCount
-            ) {
-
-                break;
-            }
-
-
-            const alreadySelected =
-                selected.some(
-                    other =>
-                        other.row ===
-                            cell.row &&
-                        other.col ===
-                            cell.col
-                );
-
-
-            if (
-                !alreadySelected
-            ) {
-
-                selected.push(
-                    cell
-                );
-            }
+            allowedTypes.push(
+                "double-word"
+            );
         }
-    }
 
 
-    for (
-        const cell
-        of selected
-    ) {
+        if (
+            isOutsideWordBuffer(
+                cell,
+                2
+            )
+        ) {
+
+            allowedTypes.push(
+                "triple-word"
+            );
+        }
+
 
         const type =
-            getWeightedBonusType();
+            getWeightedBonusType(
+                allowedTypes
+            );
 
 
         if (!type) {
-
-            break;
+            continue;
         }
 
 
@@ -1681,6 +1676,8 @@ function generateBonusSquares() {
             )
         ] =
             type;
+
+        placedCount++;
     }
 }
 
