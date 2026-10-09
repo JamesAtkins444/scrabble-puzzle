@@ -167,9 +167,9 @@
   ],
   "bonusSquares": {
     "1,2": "double-letter",
-    "3,6": "double-word",
-    "6,7": "double-word",
-    "5,5": "triple-word"
+    "3,6": "triple-letter",
+    "6,7": "triple-letter",
+    "2,2": "double-word"
   },
   "puzzleWords": [
     {

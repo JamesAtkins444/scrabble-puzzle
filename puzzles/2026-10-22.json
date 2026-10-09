@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "7,3": "triple-word",
+    "7,3": "double-word",
     "0,2": "triple-word",
     "1,5": "double-letter",
-    "2,2": "triple-letter",
-    "4,5": "double-letter"
+    "2,2": "double-letter",
+    "0,5": "double-letter"
   },
   "puzzleWords": [
     {
@@ -293,7 +293,7 @@
       "0,1",
       "4,1"
     ],
-    "score": 115,
+    "score": 112,
     "completionBonus": 50,
     "words": [
       "GENRO",
@@ -307,7 +307,7 @@
         "row": 0,
         "col": 2,
         "direction": "vertical",
-        "score": 24,
+        "score": 21,
         "move": 1
       },
       {
@@ -342,7 +342,7 @@
         "row": 0,
         "col": 2,
         "direction": "vertical",
-        "score": 24,
+        "score": 21,
         "usedTiles": 4,
         "newKeys": [
           "0,2",
@@ -356,7 +356,7 @@
             "row": 0,
             "col": 2,
             "direction": "vertical",
-            "score": 24
+            "score": 21
           }
         ]
       },

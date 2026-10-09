@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "5,1": "double-word",
+    "5,1": "triple-letter",
     "3,2": "double-letter",
-    "7,6": "double-letter",
-    "4,3": "double-word",
-    "2,5": "triple-word",
-    "0,7": "double-letter"
+    "2,2": "double-letter",
+    "7,6": "double-word",
+    "7,5": "triple-letter",
+    "4,3": "double-letter"
   },
   "puzzleWords": [
     {
@@ -227,12 +227,12 @@
       [
         "",
         "",
-        "M",
-        "I",
+        "",
+        "",
         "G",
-        "N",
-        "O",
-        "N"
+        "",
+        "",
+        ""
       ],
       [
         "",
@@ -246,7 +246,7 @@
       ],
       [
         "",
-        "D",
+        "",
         "",
         "",
         "U",
@@ -256,12 +256,12 @@
       ],
       [
         "",
-        "E",
+        "",
         "",
         "",
         "G",
         "",
-        "",
+        "N",
         ""
       ],
       [
@@ -271,98 +271,159 @@
         "D",
         "E",
         "",
-        "",
-        ""
+        "I",
+        "N"
       ],
       [
         "",
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        ""
+        "D",
+        "E",
+        "M",
+        "O"
       ]
     ],
     "newKeys": [
-      "2,2",
-      "2,3",
-      "2,5",
-      "2,6",
-      "2,7",
-      "4,1",
-      "5,1"
+      "7,4",
+      "7,5",
+      "7,6",
+      "7,7",
+      "5,6",
+      "6,6",
+      "6,7"
     ],
-    "score": 89,
+    "score": 84,
     "completionBonus": 50,
     "words": [
-      "MIGNON",
-      "DEB"
+      "DEMO",
+      "REGAUGED",
+      "NIM",
+      "IN",
+      "NO"
     ],
     "scoringWords": [
       {
-        "word": "MIGNON",
-        "row": 2,
-        "col": 2,
+        "word": "DEMO",
+        "row": 7,
+        "col": 4,
         "direction": "horizontal",
-        "score": 27,
+        "score": 18,
         "move": 1
       },
       {
-        "word": "DEB",
-        "row": 4,
-        "col": 1,
+        "word": "REGAUGED",
+        "row": 0,
+        "col": 4,
         "direction": "vertical",
-        "score": 12,
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "NIM",
+        "row": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 10,
         "move": 2
+      },
+      {
+        "word": "IN",
+        "row": 6,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "NO",
+        "row": 6,
+        "col": 7,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "MIGNON",
-        "row": 2,
-        "col": 2,
+        "word": "DEMO",
+        "row": 7,
+        "col": 4,
         "direction": "horizontal",
-        "score": 27,
-        "usedTiles": 5,
+        "score": 20,
+        "usedTiles": 4,
         "newKeys": [
-          "2,2",
-          "2,3",
-          "2,5",
-          "2,6",
-          "2,7"
+          "7,4",
+          "7,5",
+          "7,6",
+          "7,7"
         ],
         "scoringWords": [
           {
-            "word": "MIGNON",
-            "row": 2,
-            "col": 2,
+            "word": "DEMO",
+            "row": 7,
+            "col": 4,
             "direction": "horizontal",
-            "score": 27
+            "score": 18
+          },
+          {
+            "word": "REGAUGED",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       },
       {
         "turn": 2,
-        "word": "DEB",
-        "row": 4,
-        "col": 1,
+        "word": "NIM",
+        "row": 5,
+        "col": 6,
         "direction": "vertical",
-        "score": 12,
+        "score": 10,
         "usedTiles": 2,
         "newKeys": [
-          "4,1",
-          "5,1"
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "DEB",
-            "row": 4,
-            "col": 1,
+            "word": "NIM",
+            "row": 5,
+            "col": 6,
             "direction": "vertical",
-            "score": 12
+            "score": 10
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "IN",
+        "row": 6,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "IN",
+            "row": 6,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "NO",
+            "row": 6,
+            "col": 7,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -371,6 +432,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2518
+    "visitedCandidates": 2513
   }
 }

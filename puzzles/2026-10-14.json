@@ -166,10 +166,10 @@
     ]
   ],
   "bonusSquares": {
-    "5,2": "triple-word",
+    "5,2": "triple-letter",
     "1,4": "double-letter",
-    "3,4": "triple-letter",
-    "5,4": "double-word"
+    "2,4": "triple-letter",
+    "3,4": "double-word"
   },
   "puzzleWords": [
     {
@@ -216,8 +216,8 @@
         "",
         "",
         "",
-        "",
-        "",
+        "O",
+        "Y",
         "",
         "N",
         "U"
@@ -226,27 +226,27 @@
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "",
-        "T"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "T"
-      ],
-      [
-        "",
+        "T",
         "I",
-        "O",
+        "",
+        "",
+        "T"
+      ],
+      [
+        "",
+        "",
+        "",
+        "E",
         "N",
+        "",
+        "",
+        "T"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -255,9 +255,9 @@
       [
         "",
         "",
-        "Y",
-        "E",
-        "T",
+        "",
+        "",
+        "",
         "",
         "",
         "E"
@@ -284,73 +284,64 @@
       ]
     ],
     "newKeys": [
-      "5,2",
-      "5,3",
-      "5,4",
-      "4,1",
-      "4,2",
-      "4,3",
+      "1,4",
+      "2,4",
+      "3,4",
+      "1,3",
+      "2,3",
+      "3,3",
       "1,6"
     ],
-    "score": 115,
+    "score": 104,
     "completionBonus": 50,
     "words": [
-      "YET",
-      "ET",
-      "TI",
-      "ION",
+      "AYIN",
       "OY",
-      "NET",
+      "TI",
+      "EN",
+      "VOTE",
       "NU",
       "EN"
     ],
     "scoringWords": [
       {
-        "word": "YET",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 36,
-        "move": 1
-      },
-      {
-        "word": "ET",
-        "row": 5,
-        "col": 3,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "TI",
-        "row": 5,
+        "word": "AYIN",
+        "row": 0,
         "col": 4,
         "direction": "vertical",
-        "score": 4,
+        "score": 26,
         "move": 1
-      },
-      {
-        "word": "ION",
-        "row": 4,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
       },
       {
         "word": "OY",
-        "row": 4,
-        "col": 2,
-        "direction": "vertical",
-        "score": 15,
+        "row": 1,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 9,
         "move": 2
       },
       {
-        "word": "NET",
-        "row": 4,
+        "word": "TI",
+        "row": 2,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "EN",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "VOTE",
+        "row": 0,
         "col": 3,
         "direction": "vertical",
-        "score": 1,
+        "score": 7,
         "move": 2
       },
       {
@@ -373,75 +364,68 @@
     "moves": [
       {
         "turn": 1,
-        "word": "YET",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 42,
+        "word": "AYIN",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 26,
         "usedTiles": 3,
         "newKeys": [
-          "5,2",
-          "5,3",
-          "5,4"
+          "1,4",
+          "2,4",
+          "3,4"
         ],
         "scoringWords": [
           {
-            "word": "YET",
-            "row": 5,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 36
-          },
-          {
-            "word": "ET",
-            "row": 5,
-            "col": 3,
-            "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "TI",
-            "row": 5,
+            "word": "AYIN",
+            "row": 0,
             "col": 4,
             "direction": "vertical",
-            "score": 4
+            "score": 26
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ION",
-        "row": 4,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 19,
+        "word": "VOTE",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 24,
         "usedTiles": 3,
         "newKeys": [
-          "4,1",
-          "4,2",
-          "4,3"
+          "1,3",
+          "2,3",
+          "3,3"
         ],
         "scoringWords": [
           {
-            "word": "ION",
-            "row": 4,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
             "word": "OY",
-            "row": 4,
-            "col": 2,
-            "direction": "vertical",
-            "score": 15
+            "row": 1,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 9
           },
           {
-            "word": "NET",
-            "row": 4,
+            "word": "TI",
+            "row": 2,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "EN",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "VOTE",
+            "row": 0,
             "col": 3,
             "direction": "vertical",
-            "score": 1
+            "score": 7
           }
         ]
       },
@@ -478,6 +462,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1936
+    "visitedCandidates": 2329
   }
 }

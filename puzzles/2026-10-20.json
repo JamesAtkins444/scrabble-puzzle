@@ -166,7 +166,7 @@
     ]
   ],
   "bonusSquares": {
-    "7,4": "triple-word",
+    "7,4": "triple-letter",
     "2,3": "double-letter",
     "0,1": "double-letter",
     "7,1": "double-word"
@@ -257,56 +257,57 @@
         "",
         "",
         "",
-        "O",
+        "",
         "D",
         "",
         "N"
       ],
       [
         "",
+        "N",
         "",
         "",
-        "",
-        "",
+        "O",
         "E",
         "",
         "G"
       ],
       [
-        "F",
-        "I",
-        "N",
+        "",
         "A",
         "L",
+        "I",
+        "F",
         "S",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "7,0",
       "7,1",
       "7,2",
       "7,3",
       "7,4",
       "7,5",
-      "5,4"
+      "6,4",
+      "6,1"
     ],
-    "score": 113,
+    "score": 102,
     "completionBonus": 50,
     "words": [
-      "FINALS",
+      "ALIFS",
       "CODES",
-      "OD",
-      "HO"
+      "OE",
+      "OF",
+      "NA"
     ],
     "scoringWords": [
       {
-        "word": "FINALS",
+        "word": "ALIFS",
         "row": 7,
-        "col": 0,
+        "col": 1,
         "direction": "horizontal",
-        "score": 54,
+        "score": 32,
         "move": 1
       },
       {
@@ -318,33 +319,40 @@
         "move": 1
       },
       {
-        "word": "OD",
-        "row": 5,
+        "word": "OE",
+        "row": 6,
         "col": 4,
         "direction": "horizontal",
-        "score": 3,
+        "score": 2,
         "move": 2
       },
       {
-        "word": "HO",
-        "row": 4,
+        "word": "OF",
+        "row": 6,
         "col": 4,
         "direction": "vertical",
-        "score": 5,
+        "score": 13,
         "move": 2
+      },
+      {
+        "word": "NA",
+        "row": 6,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FINALS",
+        "word": "ALIFS",
         "row": 7,
-        "col": 0,
+        "col": 1,
         "direction": "horizontal",
-        "score": 55,
-        "usedTiles": 6,
+        "score": 33,
+        "usedTiles": 5,
         "newKeys": [
-          "7,0",
           "7,1",
           "7,2",
           "7,3",
@@ -353,11 +361,11 @@
         ],
         "scoringWords": [
           {
-            "word": "FINALS",
+            "word": "ALIFS",
             "row": 7,
-            "col": 0,
+            "col": 1,
             "direction": "horizontal",
-            "score": 54
+            "score": 32
           },
           {
             "word": "CODES",
@@ -370,29 +378,50 @@
       },
       {
         "turn": 2,
-        "word": "HO",
-        "row": 4,
+        "word": "OF",
+        "row": 6,
         "col": 4,
         "direction": "vertical",
-        "score": 8,
+        "score": 15,
         "usedTiles": 1,
         "newKeys": [
-          "5,4"
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "OD",
-            "row": 5,
+            "word": "OE",
+            "row": 6,
             "col": 4,
             "direction": "horizontal",
-            "score": 3
+            "score": 2
           },
           {
-            "word": "HO",
-            "row": 4,
+            "word": "OF",
+            "row": 6,
             "col": 4,
             "direction": "vertical",
-            "score": 5
+            "score": 13
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "NA",
+        "row": 6,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "NA",
+            "row": 6,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }
@@ -401,6 +430,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2844
+    "visitedCandidates": 2924
   }
 }

@@ -166,12 +166,12 @@
     ]
   ],
   "bonusSquares": {
-    "5,0": "triple-word",
+    "5,0": "double-word",
     "6,5": "double-letter",
     "7,0": "double-word",
-    "2,6": "double-letter",
-    "3,0": "double-letter",
-    "7,4": "double-word"
+    "5,5": "double-letter",
+    "6,0": "double-letter",
+    "2,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -217,7 +217,7 @@
       [
         "",
         "",
-        "",
+        "W",
         "",
         "O",
         "",
@@ -226,13 +226,13 @@
       ],
       [
         "",
-        "",
-        "",
-        "",
+        "T",
+        "A",
+        "B",
         "O",
         "R",
-        "",
-        ""
+        "I",
+        "N"
       ],
       [
         "",
@@ -255,19 +255,19 @@
         ""
       ],
       [
-        "T",
-        "W",
-        "A",
-        "I",
+        "",
+        "",
+        "",
+        "U",
         "N",
         "",
         "",
         ""
       ],
       [
-        "U",
         "",
-        "N",
+        "",
+        "",
         "",
         "G",
         "",
@@ -275,7 +275,7 @@
         ""
       ],
       [
-        "B",
+        "",
         "",
         "",
         "",
@@ -286,43 +286,70 @@
       ]
     ],
     "newKeys": [
-      "5,0",
-      "5,1",
-      "5,2",
-      "5,3",
-      "6,0",
-      "7,0",
-      "6,2"
+      "2,1",
+      "2,2",
+      "2,3",
+      "2,6",
+      "2,7",
+      "1,2",
+      "5,3"
     ],
-    "score": 106,
+    "score": 79,
     "completionBonus": 50,
     "words": [
-      "TWAIN",
-      "TUB",
-      "AN"
+      "TABORIN",
+      "AW",
+      "BI",
+      "ID",
+      "WAW",
+      "UN"
     ],
     "scoringWords": [
       {
-        "word": "TWAIN",
-        "row": 5,
-        "col": 0,
+        "word": "TABORIN",
+        "row": 2,
+        "col": 1,
         "direction": "horizontal",
-        "score": 24,
+        "score": 9,
         "move": 1
       },
       {
-        "word": "TUB",
-        "row": 5,
-        "col": 0,
+        "word": "AW",
+        "row": 2,
+        "col": 2,
         "direction": "vertical",
-        "score": 30,
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "BI",
+        "row": 2,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "ID",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "WAW",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 4,
         "move": 2
       },
       {
-        "word": "AN",
+        "word": "UN",
         "row": 5,
-        "col": 2,
-        "direction": "vertical",
+        "col": 3,
+        "direction": "horizontal",
         "score": 2,
         "move": 3
       }
@@ -330,67 +357,88 @@
     "moves": [
       {
         "turn": 1,
-        "word": "TWAIN",
-        "row": 5,
-        "col": 0,
+        "word": "TABORIN",
+        "row": 2,
+        "col": 1,
         "direction": "horizontal",
-        "score": 24,
-        "usedTiles": 4,
+        "score": 23,
+        "usedTiles": 5,
         "newKeys": [
-          "5,0",
-          "5,1",
-          "5,2",
-          "5,3"
+          "2,1",
+          "2,2",
+          "2,3",
+          "2,6",
+          "2,7"
         ],
         "scoringWords": [
           {
-            "word": "TWAIN",
-            "row": 5,
-            "col": 0,
+            "word": "TABORIN",
+            "row": 2,
+            "col": 1,
             "direction": "horizontal",
-            "score": 24
+            "score": 9
+          },
+          {
+            "word": "AW",
+            "row": 2,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "BI",
+            "row": 2,
+            "col": 3,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "ID",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 5
           }
         ]
       },
       {
         "turn": 2,
-        "word": "TUB",
-        "row": 5,
-        "col": 0,
+        "word": "WAW",
+        "row": 1,
+        "col": 2,
         "direction": "vertical",
-        "score": 30,
-        "usedTiles": 2,
+        "score": 4,
+        "usedTiles": 1,
         "newKeys": [
-          "6,0",
-          "7,0"
+          "1,2"
         ],
         "scoringWords": [
           {
-            "word": "TUB",
-            "row": 5,
-            "col": 0,
+            "word": "WAW",
+            "row": 1,
+            "col": 2,
             "direction": "vertical",
-            "score": 30
+            "score": 4
           }
         ]
       },
       {
         "turn": 3,
-        "word": "AN",
+        "word": "UN",
         "row": 5,
-        "col": 2,
-        "direction": "vertical",
+        "col": 3,
+        "direction": "horizontal",
         "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "6,2"
+          "5,3"
         ],
         "scoringWords": [
           {
-            "word": "AN",
+            "word": "UN",
             "row": 5,
-            "col": 2,
-            "direction": "vertical",
+            "col": 3,
+            "direction": "horizontal",
             "score": 2
           }
         ]
@@ -400,6 +448,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2402
+    "visitedCandidates": 2234
   }
 }

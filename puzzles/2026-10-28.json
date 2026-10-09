@@ -168,9 +168,9 @@
   "bonusSquares": {
     "0,0": "triple-word",
     "7,0": "double-letter",
-    "0,2": "triple-word",
-    "0,4": "double-word",
-    "6,5": "triple-letter"
+    "0,1": "triple-word",
+    "0,2": "double-word",
+    "0,4": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -204,9 +204,9 @@
   "bestSolution": {
     "board": [
       [
-        "R",
-        "A",
-        "D",
+        "",
+        "",
+        "",
         "",
         "",
         "",
@@ -216,7 +216,7 @@
       [
         "",
         "",
-        "A",
+        "",
         "R",
         "",
         "",
@@ -226,7 +226,7 @@
       [
         "",
         "",
-        "H",
+        "",
         "U",
         "N",
         "",
@@ -246,8 +246,8 @@
       [
         "",
         "",
-        "",
-        "",
+        "A",
+        "R",
         "M",
         "",
         "X",
@@ -261,7 +261,7 @@
         "",
         "",
         "I",
-        ""
+        "D"
       ],
       [
         "",
@@ -271,7 +271,7 @@
         "",
         "",
         "L",
-        ""
+        "A"
       ],
       [
         "",
@@ -281,122 +281,193 @@
         "",
         "",
         "E",
-        ""
+        "H"
       ]
     ],
     "newKeys": [
-      "0,2",
-      "1,2",
-      "2,2",
-      "0,0",
-      "0,1",
+      "5,7",
+      "6,7",
+      "7,7",
+      "4,2",
+      "4,3",
       "1,3",
       "2,3"
     ],
-    "score": 121,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "DAHL",
-      "RAD",
-      "AR",
-      "HUN",
-      "RUE"
+      "ID",
+      "LA",
+      "EH",
+      "DAH",
+      "ARM",
+      "LA",
+      "ER",
+      "UN",
+      "RUER"
     ],
     "scoringWords": [
       {
-        "word": "DAHL",
-        "row": 0,
-        "col": 2,
-        "direction": "vertical",
-        "score": 24,
+        "word": "ID",
+        "row": 5,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 3,
         "move": 1
       },
       {
-        "word": "RAD",
-        "row": 0,
-        "col": 0,
+        "word": "LA",
+        "row": 6,
+        "col": 6,
         "direction": "horizontal",
-        "score": 36,
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "EH",
+        "row": 7,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "DAH",
+        "row": 5,
+        "col": 7,
+        "direction": "vertical",
+        "score": 7,
+        "move": 1
+      },
+      {
+        "word": "ARM",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 5,
         "move": 2
       },
       {
-        "word": "AR",
-        "row": 1,
+        "word": "LA",
+        "row": 3,
         "col": 2,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "ER",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "UN",
+        "row": 2,
+        "col": 3,
         "direction": "horizontal",
         "score": 2,
         "move": 3
       },
       {
-        "word": "HUN",
-        "row": 2,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 6,
-        "move": 3
-      },
-      {
-        "word": "RUE",
+        "word": "RUER",
         "row": 1,
         "col": 3,
         "direction": "vertical",
-        "score": 3,
+        "score": 2,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DAHL",
-        "row": 0,
-        "col": 2,
+        "word": "DAH",
+        "row": 5,
+        "col": 7,
         "direction": "vertical",
-        "score": 24,
+        "score": 17,
         "usedTiles": 3,
         "newKeys": [
-          "0,2",
-          "1,2",
-          "2,2"
+          "5,7",
+          "6,7",
+          "7,7"
         ],
         "scoringWords": [
           {
-            "word": "DAHL",
-            "row": 0,
-            "col": 2,
+            "word": "ID",
+            "row": 5,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "LA",
+            "row": 6,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "EH",
+            "row": 7,
+            "col": 6,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "DAH",
+            "row": 5,
+            "col": 7,
             "direction": "vertical",
-            "score": 24
+            "score": 7
           }
         ]
       },
       {
         "turn": 2,
-        "word": "RAD",
-        "row": 0,
-        "col": 0,
+        "word": "ARM",
+        "row": 4,
+        "col": 2,
         "direction": "horizontal",
-        "score": 36,
+        "score": 9,
         "usedTiles": 2,
         "newKeys": [
-          "0,0",
-          "0,1"
+          "4,2",
+          "4,3"
         ],
         "scoringWords": [
           {
-            "word": "RAD",
-            "row": 0,
-            "col": 0,
+            "word": "ARM",
+            "row": 4,
+            "col": 2,
             "direction": "horizontal",
-            "score": 36
+            "score": 5
+          },
+          {
+            "word": "LA",
+            "row": 3,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "ER",
+            "row": 3,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       },
       {
         "turn": 3,
-        "word": "RUE",
+        "word": "RUER",
         "row": 1,
         "col": 3,
         "direction": "vertical",
-        "score": 11,
+        "score": 4,
         "usedTiles": 2,
         "newKeys": [
           "1,3",
@@ -404,25 +475,18 @@
         ],
         "scoringWords": [
           {
-            "word": "AR",
-            "row": 1,
-            "col": 2,
+            "word": "UN",
+            "row": 2,
+            "col": 3,
             "direction": "horizontal",
             "score": 2
           },
           {
-            "word": "HUN",
-            "row": 2,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 6
-          },
-          {
-            "word": "RUE",
+            "word": "RUER",
             "row": 1,
             "col": 3,
             "direction": "vertical",
-            "score": 3
+            "score": 2
           }
         ]
       }
@@ -431,6 +495,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 968
+    "visitedCandidates": 952
   }
 }

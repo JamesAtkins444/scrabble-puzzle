@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "6,3": "triple-letter",
+    "6,3": "double-letter",
     "5,5": "double-letter",
-    "3,6": "triple-word",
+    "3,6": "triple-letter",
     "5,0": "double-letter",
-    "1,0": "double-letter"
+    "1,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -210,8 +210,8 @@
         "",
         "",
         "",
-        "F",
-        ""
+        "D",
+        "E"
       ],
       [
         "",
@@ -230,7 +230,7 @@
         "",
         "A",
         "",
-        "N",
+        "",
         ""
       ],
       [
@@ -239,8 +239,8 @@
         "",
         "A",
         "X",
-        "E",
-        "D",
+        "",
+        "N",
         ""
       ],
       [
@@ -257,27 +257,27 @@
         "",
         "",
         "",
-        "",
-        "S",
-        "",
         "E",
+        "S",
+        "",
+        "",
         ""
       ],
       [
         "",
         "",
         "",
+        "F",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
         "",
         "",
         "",
         "S",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
         "",
         "",
         "",
@@ -285,115 +285,176 @@
       ]
     ],
     "newKeys": [
-      "0,6",
-      "2,6",
-      "3,6",
-      "5,6",
-      "6,6",
       "3,3",
-      "3,5"
+      "5,3",
+      "6,3",
+      "7,3",
+      "0,6",
+      "0,7",
+      "3,6"
     ],
-    "score": 123,
+    "score": 92,
     "completionBonus": 50,
     "words": [
-      "FONDUES",
-      "AXED",
-      "AL",
-      "ET"
+      "AX",
+      "ES",
+      "ALEFS",
+      "DE",
+      "DO",
+      "EX",
+      "NU"
     ],
     "scoringWords": [
       {
-        "word": "FONDUES",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 33,
-        "move": 1
-      },
-      {
-        "word": "AXED",
+        "word": "AX",
         "row": 3,
         "col": 3,
         "direction": "horizontal",
-        "score": 36,
-        "move": 2
+        "score": 9,
+        "move": 1
       },
       {
-        "word": "AL",
+        "word": "ES",
+        "row": 5,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "ALEFS",
         "row": 3,
         "col": 3,
         "direction": "vertical",
-        "score": 2,
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "DE",
+        "row": 0,
+        "col": 6,
+        "direction": "horizontal",
+        "score": 3,
         "move": 2
       },
       {
-        "word": "ET",
-        "row": 3,
-        "col": 5,
+        "word": "DO",
+        "row": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 2,
+        "score": 3,
         "move": 2
+      },
+      {
+        "word": "EX",
+        "row": 0,
+        "col": 7,
+        "direction": "vertical",
+        "score": 9,
+        "move": 2
+      },
+      {
+        "word": "NU",
+        "row": 3,
+        "col": 6,
+        "direction": "vertical",
+        "score": 4,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FONDUES",
-        "row": 0,
-        "col": 6,
+        "word": "ALEFS",
+        "row": 3,
+        "col": 3,
         "direction": "vertical",
-        "score": 33,
-        "usedTiles": 5,
+        "score": 23,
+        "usedTiles": 4,
         "newKeys": [
-          "0,6",
-          "2,6",
-          "3,6",
-          "5,6",
-          "6,6"
+          "3,3",
+          "5,3",
+          "6,3",
+          "7,3"
         ],
         "scoringWords": [
           {
-            "word": "FONDUES",
-            "row": 0,
-            "col": 6,
+            "word": "AX",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "ES",
+            "row": 5,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "ALEFS",
+            "row": 3,
+            "col": 3,
             "direction": "vertical",
-            "score": 33
+            "score": 12
           }
         ]
       },
       {
         "turn": 2,
-        "word": "AXED",
-        "row": 3,
-        "col": 3,
+        "word": "DE",
+        "row": 0,
+        "col": 6,
         "direction": "horizontal",
-        "score": 40,
+        "score": 15,
         "usedTiles": 2,
         "newKeys": [
-          "3,3",
-          "3,5"
+          "0,6",
+          "0,7"
         ],
         "scoringWords": [
           {
-            "word": "AXED",
-            "row": 3,
-            "col": 3,
+            "word": "DE",
+            "row": 0,
+            "col": 6,
             "direction": "horizontal",
-            "score": 36
+            "score": 3
           },
           {
-            "word": "AL",
-            "row": 3,
-            "col": 3,
+            "word": "DO",
+            "row": 0,
+            "col": 6,
             "direction": "vertical",
-            "score": 2
+            "score": 3
           },
           {
-            "word": "ET",
-            "row": 3,
-            "col": 5,
+            "word": "EX",
+            "row": 0,
+            "col": 7,
             "direction": "vertical",
-            "score": 2
+            "score": 9
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "NU",
+        "row": 3,
+        "col": 6,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "NU",
+            "row": 3,
+            "col": 6,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }
@@ -402,6 +463,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2388
+    "visitedCandidates": 2618
   }
 }

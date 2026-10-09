@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "5,5": "double-word",
+    "5,5": "triple-letter",
     "4,1": "triple-letter",
     "3,3": "double-letter",
     "0,3": "double-letter",
-    "7,1": "double-letter"
+    "3,2": "double-letter"
   },
   "puzzleWords": [
     {
@@ -293,7 +293,7 @@
       "2,3",
       "3,3"
     ],
-    "score": 112,
+    "score": 126,
     "completionBonus": 50,
     "words": [
       "XI",
@@ -311,7 +311,7 @@
         "row": 5,
         "col": 5,
         "direction": "horizontal",
-        "score": 18,
+        "score": 25,
         "move": 1
       },
       {
@@ -319,7 +319,7 @@
         "row": 4,
         "col": 5,
         "direction": "vertical",
-        "score": 18,
+        "score": 25,
         "move": 1
       },
       {
@@ -378,7 +378,7 @@
         "row": 5,
         "col": 5,
         "direction": "horizontal",
-        "score": 40,
+        "score": 54,
         "usedTiles": 2,
         "newKeys": [
           "5,5",
@@ -390,14 +390,14 @@
             "row": 5,
             "col": 5,
             "direction": "horizontal",
-            "score": 18
+            "score": 25
           },
           {
             "word": "OX",
             "row": 4,
             "col": 5,
             "direction": "vertical",
-            "score": 18
+            "score": 25
           },
           {
             "word": "PI",

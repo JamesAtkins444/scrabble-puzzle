@@ -168,9 +168,9 @@
   "bonusSquares": {
     "1,0": "triple-letter",
     "3,1": "double-letter",
-    "5,5": "triple-letter",
-    "2,4": "triple-letter",
-    "6,4": "double-letter"
+    "5,5": "double-letter",
+    "2,4": "double-letter",
+    "2,5": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -208,8 +208,8 @@
         "",
         "",
         "",
-        "N",
-        "A",
+        "",
+        "D",
         "",
         ""
       ],
@@ -218,18 +218,18 @@
         "",
         "",
         "V",
+        "",
         "O",
-        "X",
         "",
         ""
       ],
       [
         "",
-        "T",
-        "O",
-        "A",
-        "D",
         "",
+        "T",
+        "A",
+        "",
+        "X",
         "",
         ""
       ],
@@ -244,9 +244,9 @@
         ""
       ],
       [
+        "O",
         "",
-        "",
-        "",
+        "A",
         "I",
         "",
         "",
@@ -266,7 +266,7 @@
       [
         "",
         "",
-        "",
+        "N",
         "E",
         "",
         "",
@@ -285,192 +285,160 @@
       ]
     ],
     "newKeys": [
-      "2,1",
-      "2,2",
-      "2,4",
-      "1,4",
+      "0,5",
       "1,5",
-      "0,4",
-      "0,5"
+      "2,5",
+      "2,2",
+      "4,2",
+      "6,2",
+      "4,0"
     ],
-    "score": 97,
+    "score": 99,
     "completionBonus": 50,
     "words": [
-      "TOAD",
-      "OW",
-      "DE",
-      "VOX",
-      "ODE",
-      "NA",
-      "NODE",
-      "AX"
+      "DOXY",
+      "TA",
+      "AI",
+      "NE",
+      "TWAIN",
+      "OP"
     ],
     "scoringWords": [
       {
-        "word": "TOAD",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "OW",
-        "row": 2,
-        "col": 2,
-        "direction": "vertical",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "DE",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
-        "score": 7,
-        "move": 1
-      },
-      {
-        "word": "VOX",
-        "row": 1,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 13,
-        "move": 2
-      },
-      {
-        "word": "ODE",
-        "row": 1,
-        "col": 4,
-        "direction": "vertical",
-        "score": 1,
-        "move": 2
-      },
-      {
-        "word": "NA",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
-      },
-      {
-        "word": "NODE",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 1,
-        "move": 3
-      },
-      {
-        "word": "AX",
+        "word": "DOXY",
         "row": 0,
         "col": 5,
         "direction": "vertical",
-        "score": 9,
+        "score": 31,
+        "move": 1
+      },
+      {
+        "word": "TA",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "AI",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "NE",
+        "row": 6,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "TWAIN",
+        "row": 2,
+        "col": 2,
+        "direction": "vertical",
+        "score": 8,
+        "move": 2
+      },
+      {
+        "word": "OP",
+        "row": 4,
+        "col": 0,
+        "direction": "vertical",
+        "score": 4,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "TOAD",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 21,
+        "word": "DOXY",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 31,
         "usedTiles": 3,
         "newKeys": [
-          "2,1",
-          "2,2",
-          "2,4"
+          "0,5",
+          "1,5",
+          "2,5"
         ],
         "scoringWords": [
           {
-            "word": "TOAD",
-            "row": 2,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 9
-          },
-          {
-            "word": "OW",
-            "row": 2,
-            "col": 2,
+            "word": "DOXY",
+            "row": 0,
+            "col": 5,
             "direction": "vertical",
-            "score": 5
-          },
-          {
-            "word": "DE",
-            "row": 2,
-            "col": 4,
-            "direction": "vertical",
-            "score": 7
+            "score": 31
           }
         ]
       },
       {
         "turn": 2,
-        "word": "VOX",
-        "row": 1,
-        "col": 3,
-        "direction": "horizontal",
+        "word": "TWAIN",
+        "row": 2,
+        "col": 2,
+        "direction": "vertical",
         "score": 14,
-        "usedTiles": 2,
+        "usedTiles": 3,
         "newKeys": [
-          "1,4",
-          "1,5"
+          "2,2",
+          "4,2",
+          "6,2"
         ],
         "scoringWords": [
           {
-            "word": "VOX",
-            "row": 1,
-            "col": 3,
+            "word": "TA",
+            "row": 2,
+            "col": 2,
             "direction": "horizontal",
-            "score": 13
+            "score": 2
           },
           {
-            "word": "ODE",
-            "row": 1,
-            "col": 4,
+            "word": "AI",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "NE",
+            "row": 6,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "TWAIN",
+            "row": 2,
+            "col": 2,
             "direction": "vertical",
-            "score": 1
+            "score": 8
           }
         ]
       },
       {
         "turn": 3,
-        "word": "NA",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 12,
-        "usedTiles": 2,
+        "word": "OP",
+        "row": 4,
+        "col": 0,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
         "newKeys": [
-          "0,4",
-          "0,5"
+          "4,0"
         ],
         "scoringWords": [
           {
-            "word": "NA",
-            "row": 0,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "NODE",
-            "row": 0,
-            "col": 4,
+            "word": "OP",
+            "row": 4,
+            "col": 0,
             "direction": "vertical",
-            "score": 1
-          },
-          {
-            "word": "AX",
-            "row": 0,
-            "col": 5,
-            "direction": "vertical",
-            "score": 9
+            "score": 4
           }
         ]
       }
@@ -479,6 +447,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1999
+    "visitedCandidates": 2169
   }
 }

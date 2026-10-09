@@ -168,10 +168,10 @@
   "bonusSquares": {
     "6,3": "double-letter",
     "6,7": "double-letter",
-    "0,2": "triple-letter",
-    "7,0": "triple-letter",
+    "0,2": "double-letter",
+    "7,0": "double-word",
     "7,4": "triple-letter",
-    "6,5": "double-letter"
+    "6,5": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -207,8 +207,8 @@
       [
         "",
         "",
-        "K",
-        "A",
+        "",
+        "",
         "T",
         "",
         "",
@@ -240,9 +240,9 @@
         "",
         "",
         "P",
-        "I",
-        "N",
-        "G"
+        "",
+        "",
+        ""
       ],
       [
         "",
@@ -267,12 +267,12 @@
       [
         "",
         "",
-        "",
-        "",
+        "G",
+        "A",
         "S",
-        "",
-        "",
-        ""
+        "K",
+        "I",
+        "N"
       ],
       [
         "",
@@ -286,32 +286,38 @@
       ]
     ],
     "newKeys": [
-      "0,2",
+      "6,2",
+      "6,3",
+      "6,5",
+      "6,6",
+      "6,7",
       "1,2",
-      "2,2",
-      "0,3",
-      "3,5",
-      "3,6",
-      "3,7"
+      "2,2"
     ],
-    "score": 100,
+    "score": 82,
     "completionBonus": 50,
     "words": [
+      "GASKIN",
       "WO",
       "OR",
-      "KOR",
-      "KAT",
-      "PING",
-      "IS"
+      "OR"
     ],
     "scoringWords": [
+      {
+        "word": "GASKIN",
+        "row": 6,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 23,
+        "move": 1
+      },
       {
         "word": "WO",
         "row": 1,
         "col": 1,
         "direction": "horizontal",
         "score": 5,
-        "move": 1
+        "move": 2
       },
       {
         "word": "OR",
@@ -319,52 +325,52 @@
         "col": 1,
         "direction": "horizontal",
         "score": 2,
-        "move": 1
-      },
-      {
-        "word": "KOR",
-        "row": 0,
-        "col": 2,
-        "direction": "vertical",
-        "score": 17,
-        "move": 1
-      },
-      {
-        "word": "KAT",
-        "row": 0,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 17,
         "move": 2
       },
       {
-        "word": "PING",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 7,
-        "move": 3
-      },
-      {
-        "word": "IS",
-        "row": 3,
-        "col": 5,
+        "word": "OR",
+        "row": 1,
+        "col": 2,
         "direction": "vertical",
         "score": 2,
-        "move": 3
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "KOR",
-        "row": 0,
+        "word": "GASKIN",
+        "row": 6,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 23,
+        "usedTiles": 5,
+        "newKeys": [
+          "6,2",
+          "6,3",
+          "6,5",
+          "6,6",
+          "6,7"
+        ],
+        "scoringWords": [
+          {
+            "word": "GASKIN",
+            "row": 6,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 23
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "OR",
+        "row": 1,
         "col": 2,
         "direction": "vertical",
-        "score": 24,
-        "usedTiles": 3,
+        "score": 9,
+        "usedTiles": 2,
         "newKeys": [
-          "0,2",
           "1,2",
           "2,2"
         ],
@@ -384,60 +390,9 @@
             "score": 2
           },
           {
-            "word": "KOR",
-            "row": 0,
+            "word": "OR",
+            "row": 1,
             "col": 2,
-            "direction": "vertical",
-            "score": 17
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "KAT",
-        "row": 0,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 17,
-        "usedTiles": 1,
-        "newKeys": [
-          "0,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "KAT",
-            "row": 0,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 17
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "PING",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 9,
-        "usedTiles": 3,
-        "newKeys": [
-          "3,5",
-          "3,6",
-          "3,7"
-        ],
-        "scoringWords": [
-          {
-            "word": "PING",
-            "row": 3,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 7
-          },
-          {
-            "word": "IS",
-            "row": 3,
-            "col": 5,
             "direction": "vertical",
             "score": 2
           }
@@ -448,6 +403,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3588
+    "visitedCandidates": 3036
   }
 }

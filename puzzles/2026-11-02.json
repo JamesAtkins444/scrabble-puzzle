@@ -168,10 +168,10 @@
   "bonusSquares": {
     "7,1": "double-letter",
     "1,6": "double-letter",
-    "6,2": "triple-word",
+    "6,2": "double-word",
     "2,7": "triple-letter",
-    "3,4": "double-word",
-    "6,6": "double-word"
+    "3,4": "triple-letter",
+    "6,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -294,7 +294,7 @@
       "7,3",
       "1,2"
     ],
-    "score": 113,
+    "score": 81,
     "completionBonus": 50,
     "words": [
       "VEENAS",
@@ -307,7 +307,7 @@
         "row": 6,
         "col": 2,
         "direction": "horizontal",
-        "score": 54,
+        "score": 22,
         "move": 1
       },
       {
@@ -334,7 +334,7 @@
         "row": 6,
         "col": 2,
         "direction": "horizontal",
-        "score": 54,
+        "score": 22,
         "usedTiles": 5,
         "newKeys": [
           "6,2",
@@ -349,7 +349,7 @@
             "row": 6,
             "col": 2,
             "direction": "horizontal",
-            "score": 54
+            "score": 22
           }
         ]
       },

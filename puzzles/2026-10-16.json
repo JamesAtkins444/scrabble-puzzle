@@ -166,11 +166,11 @@
     ]
   ],
   "bonusSquares": {
-    "6,4": "triple-letter",
+    "6,4": "double-letter",
     "0,5": "double-letter",
     "4,1": "double-word",
-    "4,4": "double-letter",
-    "1,7": "triple-letter"
+    "6,3": "double-letter",
+    "4,4": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -293,7 +293,7 @@
       "4,3",
       "4,4"
     ],
-    "score": 94,
+    "score": 97,
     "completionBonus": 50,
     "words": [
       "OP",
@@ -332,7 +332,7 @@
         "row": 4,
         "col": 1,
         "direction": "horizontal",
-        "score": 10,
+        "score": 12,
         "move": 2
       },
       {
@@ -340,7 +340,7 @@
         "row": 4,
         "col": 4,
         "direction": "vertical",
-        "score": 4,
+        "score": 5,
         "move": 2
       }
     ],
@@ -388,7 +388,7 @@
         "row": 4,
         "col": 1,
         "direction": "horizontal",
-        "score": 14,
+        "score": 17,
         "usedTiles": 4,
         "newKeys": [
           "4,1",
@@ -402,14 +402,14 @@
             "row": 4,
             "col": 1,
             "direction": "horizontal",
-            "score": 10
+            "score": 12
           },
           {
             "word": "ED",
             "row": 4,
             "col": 4,
             "direction": "vertical",
-            "score": 4
+            "score": 5
           }
         ]
       }
