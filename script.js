@@ -1444,7 +1444,7 @@ const bonusMaximums = {
 
     "double-word": 2,
 
-    "triple-word": 1
+    "triple-word": 2
 };
 
 
