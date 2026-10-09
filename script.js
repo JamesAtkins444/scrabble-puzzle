@@ -3154,6 +3154,8 @@ function calculatePlayerScore() {
         scoringWords
     );
 
+    updateShareButtonPulse();
+
 
     return score;
 }
@@ -3247,6 +3249,8 @@ function updateScoreDisplay(
     currentScore,
     bonusText = ""
 ) {
+    updateShareButtonPulse();
+
     if (scoreValueElement) {
         // Show the player's score and the verified solver target together.
         // The solver target stays hidden until the solver has a result.
@@ -4487,6 +4491,16 @@ if (rulesHelpButton && rulesDialog) {
 SHARE RESULTS POPUP
 ================================================== */
 
+function updateShareButtonPulse() {
+    if (!shareResultsButton) return;
+
+    const allTilesUsed =
+        playerTiles.length === 0 &&
+        Object.keys(playerPlacedTiles).length === 7;
+
+    shareResultsButton.classList.toggle("needs-sharing", allTilesUsed);
+}
+
 function getShareResultsText() {
     const playerScore = Number.isFinite(score) ? score : 0;
     const solverScore =
@@ -4521,6 +4535,7 @@ function refreshShareResultsSummary() {
 
 if (shareResultsButton && shareResultsDialog) {
     shareResultsButton.addEventListener("click", () => {
+        shareResultsButton.classList.remove("needs-sharing");
         refreshShareResultsSummary();
         if (typeof shareResultsDialog.showModal === "function") {
             shareResultsDialog.showModal();
