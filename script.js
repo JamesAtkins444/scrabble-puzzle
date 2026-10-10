@@ -2285,12 +2285,26 @@ function handleBoardClick(
     if (
         selectedRackTile === null
     ) {
-        // Allow the player to choose the board position before choosing a rack tile.
-        selectedBoardCell = { row, col };
+        // Clicking the currently selected empty cell again deselects it.
+        if (
+            selectedBoardCell &&
+            selectedBoardCell.row === row &&
+            selectedBoardCell.col === col
+        ) {
+            selectedBoardCell = null;
 
-        if (tileMessageElement) {
-            tileMessageElement.textContent =
-                "Now select a tile from the rack.";
+            if (tileMessageElement) {
+                tileMessageElement.textContent = "";
+                tileMessageElement.className = "tile-message";
+            }
+        } else {
+            // Allow the player to choose the board position before choosing a rack tile.
+            selectedBoardCell = { row, col };
+
+            if (tileMessageElement) {
+                tileMessageElement.textContent =
+                    "Now select a tile from the rack.";
+            }
         }
 
         displayBoard();
