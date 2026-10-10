@@ -1,13 +1,12 @@
 {
   "date": "2026-10-26",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
       "",
       "",
       "",
       "",
-      "C",
       "",
       "",
       ""
@@ -16,8 +15,7 @@
       "",
       "",
       "",
-      "",
-      "O",
+      "P",
       "",
       "",
       ""
@@ -26,34 +24,21 @@
       "",
       "",
       "",
-      "",
-      "O",
       "R",
       "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "W",
-      "I",
-      "P",
-      "E",
-      "D",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "I",
-      "S",
       "",
       ""
     ],
     [
       "",
+      "",
+      "",
+      "U",
+      "",
+      "",
+      ""
+    ],
+    [
       "",
       "",
       "",
@@ -64,20 +49,18 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "G",
-      "",
-      "",
+      "P",
+      "O",
+      "U",
+      "L",
+      "T",
       ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "",
+      "G",
+      "A",
+      "R",
+      "S",
       "",
       "",
       ""
@@ -89,7 +72,6 @@
       "",
       "",
       "",
-      "C",
       "",
       "",
       ""
@@ -98,8 +80,7 @@
       "",
       "",
       "",
-      "",
-      "O",
+      "P",
       "",
       "",
       ""
@@ -108,34 +89,21 @@
       "",
       "",
       "",
-      "",
-      "O",
       "R",
       "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "W",
-      "I",
-      "P",
-      "E",
-      "D",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "I",
-      "S",
       "",
       ""
     ],
     [
       "",
+      "",
+      "",
+      "U",
+      "",
+      "",
+      ""
+    ],
+    [
       "",
       "",
       "",
@@ -146,61 +114,56 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "G",
-      "",
-      "",
+      "P",
+      "O",
+      "U",
+      "L",
+      "T",
       ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "",
+      "G",
+      "A",
+      "R",
+      "S",
       "",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "7,1": "triple-word",
-    "0,0": "double-word",
-    "3,0": "triple-letter",
-    "7,7": "double-letter",
-    "5,2": "double-letter",
-    "1,7": "triple-letter"
+    "0,0": "triple-word",
+    "3,1": "double-word",
+    "3,5": "triple-letter",
+    "0,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "COOPING",
-      "row": 0,
-      "col": 4,
+      "word": "PRUNUS",
+      "row": 1,
+      "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "WIPED",
-      "row": 3,
-      "col": 2,
+      "word": "POULT",
+      "row": 5,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "RES",
-      "row": 2,
-      "col": 5,
-      "direction": "vertical"
+      "word": "GARS",
+      "row": 6,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "N",
     "U",
     "A",
-    "W",
     "I",
-    "B",
-    "T"
+    "W",
+    "N",
+    "B"
   ],
   "bestSolution": {
     "board": [
@@ -209,245 +172,149 @@
         "",
         "",
         "",
-        "C",
         "",
         "",
         ""
       ],
       [
         "",
-        "",
-        "W",
-        "",
-        "O",
-        "",
-        "",
-        "U"
-      ],
-      [
-        "",
-        "T",
-        "A",
         "B",
-        "O",
-        "R",
-        "I",
-        "N"
+        "A",
+        "P",
+        "",
+        "U",
+        ""
       ],
       [
         "",
+        "",
+        "",
+        "R",
+        "",
+        "N",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "U",
         "",
         "W",
-        "I",
-        "P",
-        "E",
-        "D",
         ""
       ],
       [
-        "",
-        "",
-        "",
-        "",
-        "I",
-        "S",
-        "",
-        ""
-      ],
-      [
-        "",
         "",
         "",
         "",
         "N",
         "",
-        "",
+        "I",
         ""
       ],
       [
         "",
-        "",
-        "",
-        "",
+        "P",
+        "O",
+        "U",
+        "L",
+        "T",
+        ""
+      ],
+      [
         "G",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
+        "A",
+        "R",
+        "S",
         "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "2,1",
-      "2,2",
-      "2,3",
-      "2,6",
-      "2,7",
-      "1,2",
-      "1,7"
+      "1,5",
+      "2,5",
+      "3,5",
+      "4,5",
+      "1,1",
+      "1,2"
     ],
-    "score": 77,
+    "score": 73,
     "completionBonus": 50,
     "words": [
-      "TABORIN",
-      "AW",
-      "BI",
-      "ID",
-      "WAW",
-      "UN"
+      "UNWIT",
+      "BAP"
     ],
     "scoringWords": [
       {
-        "word": "TABORIN",
-        "row": 2,
+        "word": "UNWIT",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 16,
+        "move": 1
+      },
+      {
+        "word": "BAP",
+        "row": 1,
         "col": 1,
         "direction": "horizontal",
         "score": 7,
-        "move": 1
-      },
-      {
-        "word": "AW",
-        "row": 2,
-        "col": 2,
-        "direction": "vertical",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "BI",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "ID",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
-        "score": 3,
-        "move": 1
-      },
-      {
-        "word": "WAW",
-        "row": 1,
-        "col": 2,
-        "direction": "vertical",
-        "score": 4,
         "move": 2
-      },
-      {
-        "word": "UN",
-        "row": 1,
-        "col": 7,
-        "direction": "vertical",
-        "score": 4,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "TABORIN",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 19,
-        "usedTiles": 5,
+        "word": "UNWIT",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 16,
+        "usedTiles": 4,
         "newKeys": [
-          "2,1",
-          "2,2",
-          "2,3",
-          "2,6",
-          "2,7"
+          "1,5",
+          "2,5",
+          "3,5",
+          "4,5"
         ],
         "scoringWords": [
           {
-            "word": "TABORIN",
-            "row": 2,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 7
-          },
-          {
-            "word": "AW",
-            "row": 2,
-            "col": 2,
+            "word": "UNWIT",
+            "row": 1,
+            "col": 5,
             "direction": "vertical",
-            "score": 5
-          },
-          {
-            "word": "BI",
-            "row": 2,
-            "col": 3,
-            "direction": "vertical",
-            "score": 4
-          },
-          {
-            "word": "ID",
-            "row": 2,
-            "col": 6,
-            "direction": "vertical",
-            "score": 3
+            "score": 16
           }
         ]
       },
       {
         "turn": 2,
-        "word": "WAW",
+        "word": "BAP",
         "row": 1,
-        "col": 2,
-        "direction": "vertical",
-        "score": 4,
-        "usedTiles": 1,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 7,
+        "usedTiles": 2,
         "newKeys": [
+          "1,1",
           "1,2"
         ],
         "scoringWords": [
           {
-            "word": "WAW",
+            "word": "BAP",
             "row": 1,
-            "col": 2,
-            "direction": "vertical",
-            "score": 4
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "UN",
-        "row": 1,
-        "col": 7,
-        "direction": "vertical",
-        "score": 4,
-        "usedTiles": 1,
-        "newKeys": [
-          "1,7"
-        ],
-        "scoringWords": [
-          {
-            "word": "UN",
-            "row": 1,
-            "col": 7,
-            "direction": "vertical",
-            "score": 4
+            "col": 1,
+            "direction": "horizontal",
+            "score": 7
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2234
+    "visitedCandidates": 881
   }
 }

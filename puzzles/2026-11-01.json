@@ -1,6 +1,6 @@
 {
   "date": "2026-11-01",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
       "",
@@ -9,77 +9,60 @@
       "",
       "",
       "",
-      "",
       ""
     ],
     [
       "",
       "",
       "",
-      "",
-      "",
-      "",
-      "",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "A"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "G"
-    ],
-    [
       "",
       "",
       "S",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "U",
-      "P",
-      "G",
-      "R",
-      "O",
-      "W",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "E",
-      "",
-      "",
-      "",
-      "",
       ""
     ],
     [
       "",
       "",
-      "W",
+      "T",
+      "",
+      "",
+      "I",
+      ""
+    ],
+    [
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "D",
+      "I",
+      "V",
+      "V",
+      "Y"
+    ],
+    [
       "",
       "",
       "",
       "",
+      "",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
       ""
     ]
   ],
@@ -91,116 +74,97 @@
       "",
       "",
       "",
-      "",
       ""
     ],
     [
       "",
       "",
       "",
-      "",
-      "",
-      "",
-      "",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "A"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "G"
-    ],
-    [
       "",
       "",
       "S",
-      "",
-      "",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "U",
-      "P",
-      "G",
-      "R",
-      "O",
-      "W",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "E",
-      "",
-      "",
-      "",
-      "",
       ""
     ],
     [
       "",
       "",
-      "W",
+      "T",
+      "",
+      "",
+      "I",
+      ""
+    ],
+    [
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "D",
+      "I",
+      "V",
+      "V",
+      "Y"
+    ],
+    [
       "",
       "",
       "",
       "",
+      "",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,4": "triple-word",
-    "2,5": "double-word",
-    "1,0": "double-letter",
-    "7,5": "double-letter",
-    "2,2": "triple-letter",
-    "3,0": "triple-letter"
+    "0,0": "double-word",
+    "3,0": "triple-letter",
+    "6,1": "double-letter",
+    "0,3": "triple-letter",
+    "6,3": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "UPGROWS",
-      "row": 5,
-      "col": 1,
-      "direction": "horizontal"
-    },
-    {
-      "word": "SPEW",
-      "row": 4,
-      "col": 2,
+      "word": "SILVAE",
+      "row": 1,
+      "col": 5,
       "direction": "vertical"
     },
     {
-      "word": "SAGES",
-      "row": 1,
-      "col": 7,
+      "word": "DIVVY",
+      "row": 4,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "TOD",
+      "row": 2,
+      "col": 2,
       "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "N",
-    "U",
-    "O",
-    "P",
-    "R",
     "X",
-    "U"
+    "U",
+    "R",
+    "O",
+    "U",
+    "P"
   ],
   "bestSolution": {
     "board": [
@@ -208,9 +172,8 @@
         "",
         "",
         "",
-        "",
-        "",
-        "",
+        "U",
+        "P",
         "",
         ""
       ],
@@ -219,187 +182,201 @@
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "S"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "P",
-        "U",
-        "N",
-        "A"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "G"
-      ],
-      [
-        "",
-        "",
+        "O",
         "S",
-        "",
-        "",
-        "R",
-        "",
-        "E"
-      ],
-      [
-        "",
-        "U",
-        "P",
-        "G",
-        "R",
-        "O",
-        "W",
-        "S"
-      ],
-      [
-        "",
-        "",
-        "E",
-        "",
-        "",
-        "U",
-        "",
         ""
       ],
       [
         "",
         "",
-        "W",
+        "T",
+        "",
+        "X",
+        "I",
+        ""
+      ],
+      [
+        "",
         "",
         "O",
-        "X",
         "",
+        "",
+        "L",
+        ""
+      ],
+      [
+        "",
+        "",
+        "D",
+        "I",
+        "V",
+        "V",
+        "Y"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "R",
+        "U",
+        "E",
         ""
       ]
     ],
     "newKeys": [
-      "4,5",
-      "6,5",
-      "7,5",
-      "7,4",
+      "0,4",
+      "1,4",
       "2,4",
-      "2,5",
-      "2,6"
+      "0,3",
+      "6,3",
+      "6,4"
     ],
-    "score": 98,
+    "score": 83,
     "completionBonus": 50,
     "words": [
-      "ROUX",
-      "OX",
-      "PUNA"
+      "OS",
+      "XI",
+      "POX",
+      "UP",
+      "RUE"
     ],
     "scoringWords": [
       {
-        "word": "ROUX",
-        "row": 4,
-        "col": 5,
-        "direction": "vertical",
-        "score": 19,
+        "word": "OS",
+        "row": 1,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
         "move": 1
       },
       {
-        "word": "OX",
-        "row": 7,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 17,
-        "move": 2
-      },
-      {
-        "word": "PUNA",
+        "word": "XI",
         "row": 2,
         "col": 4,
         "direction": "horizontal",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "POX",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
         "score": 12,
+        "move": 1
+      },
+      {
+        "word": "UP",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "RUE",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "ROUX",
-        "row": 4,
-        "col": 5,
+        "word": "POX",
+        "row": 0,
+        "col": 4,
         "direction": "vertical",
-        "score": 19,
+        "score": 23,
         "usedTiles": 3,
         "newKeys": [
-          "4,5",
-          "6,5",
-          "7,5"
+          "0,4",
+          "1,4",
+          "2,4"
         ],
         "scoringWords": [
           {
-            "word": "ROUX",
-            "row": 4,
-            "col": 5,
+            "word": "OS",
+            "row": 1,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "XI",
+            "row": 2,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "POX",
+            "row": 0,
+            "col": 4,
             "direction": "vertical",
-            "score": 19
+            "score": 12
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OX",
-        "row": 7,
-        "col": 4,
+        "word": "UP",
+        "row": 0,
+        "col": 3,
         "direction": "horizontal",
-        "score": 17,
+        "score": 6,
         "usedTiles": 1,
         "newKeys": [
-          "7,4"
+          "0,3"
         ],
         "scoringWords": [
           {
-            "word": "OX",
-            "row": 7,
-            "col": 4,
+            "word": "UP",
+            "row": 0,
+            "col": 3,
             "direction": "horizontal",
-            "score": 17
+            "score": 6
           }
         ]
       },
       {
         "turn": 3,
-        "word": "PUNA",
-        "row": 2,
-        "col": 4,
+        "word": "RUE",
+        "row": 6,
+        "col": 3,
         "direction": "horizontal",
-        "score": 12,
-        "usedTiles": 3,
+        "score": 4,
+        "usedTiles": 2,
         "newKeys": [
-          "2,4",
-          "2,5",
-          "2,6"
+          "6,3",
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "PUNA",
-            "row": 2,
-            "col": 4,
+            "word": "RUE",
+            "row": 6,
+            "col": 3,
             "direction": "horizontal",
-            "score": 12
+            "score": 4
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1396
+    "visitedCandidates": 453
   }
 }

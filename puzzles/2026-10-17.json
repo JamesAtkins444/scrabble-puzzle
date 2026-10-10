@@ -1,10 +1,9 @@
 {
   "date": "2026-10-17",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
-      "",
-      "",
+      "C",
       "",
       "",
       "",
@@ -13,62 +12,38 @@
       ""
     ],
     [
-      "",
-      "",
-      "",
-      "V",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "A",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "W",
-      "H",
-      "E",
-      "Y",
-      "S",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "I",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "P",
       "L",
-      "I",
-      "N",
-      "K",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
+      "A",
+      "T",
       "E",
       "",
       "",
+      ""
+    ],
+    [
+      "U",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "N",
+      "",
+      "",
+      "D",
+      "",
+      "",
+      ""
+    ],
+    [
+      "G",
+      "",
+      "",
+      "I",
+      "",
       "",
       ""
     ],
@@ -76,8 +51,16 @@
       "",
       "",
       "",
-      "S",
+      "N",
       "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "G",
       "",
       "",
       ""
@@ -85,8 +68,7 @@
   ],
   "originalBoard": [
     [
-      "",
-      "",
+      "C",
       "",
       "",
       "",
@@ -95,62 +77,38 @@
       ""
     ],
     [
-      "",
-      "",
-      "",
-      "V",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "A",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "W",
-      "H",
-      "E",
-      "Y",
-      "S",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "I",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "P",
       "L",
-      "I",
-      "N",
-      "K",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
+      "A",
+      "T",
       "E",
       "",
       "",
+      ""
+    ],
+    [
+      "U",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "N",
+      "",
+      "",
+      "D",
+      "",
+      "",
+      ""
+    ],
+    [
+      "G",
+      "",
+      "",
+      "I",
+      "",
       "",
       ""
     ],
@@ -158,54 +116,60 @@
       "",
       "",
       "",
-      "S",
+      "N",
       "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "G",
       "",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,0": "triple-word",
-    "0,6": "double-word",
+    "0,6": "triple-word",
+    "2,5": "double-word",
+    "6,1": "triple-letter",
     "6,6": "double-letter",
-    "7,1": "double-letter",
-    "3,0": "triple-letter"
+    "4,5": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "VAHINES",
+      "word": "ENDING",
       "row": 1,
       "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "PLINK",
-      "row": 5,
+      "word": "LATE",
+      "row": 1,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "WHEYS",
-      "row": 3,
-      "col": 2,
-      "direction": "horizontal"
+      "word": "CLUNG",
+      "row": 0,
+      "col": 0,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "A",
-    "N",
     "T",
+    "N",
     "O",
+    "A",
     "X",
-    "O",
-    "D"
+    "O"
   ],
   "bestSolution": {
     "board": [
       [
-        "",
-        "",
+        "C",
         "",
         "",
         "",
@@ -214,268 +178,192 @@
         ""
       ],
       [
-        "",
-        "",
-        "",
-        "V",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "T",
-        "O",
+        "L",
         "A",
+        "T",
+        "E",
+        "",
+        "",
+        ""
+      ],
+      [
+        "U",
+        "",
+        "",
+        "N",
+        "",
+        "",
+        ""
+      ],
+      [
+        "N",
+        "",
+        "O",
         "D",
         "",
         "",
         ""
       ],
       [
+        "G",
         "",
-        "",
-        "W",
-        "H",
-        "E",
-        "Y",
-        "S",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "I",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "P",
-        "L",
-        "I",
-        "N",
-        "K",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "A",
-        "N",
-        "E",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "O",
         "X",
-        "",
-        "S",
-        "",
+        "I",
         "",
         "",
         ""
+      ],
+      [
+        "",
+        "",
+        "O",
+        "N",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "G",
+        "N",
+        "A",
+        "T"
       ]
     ],
     "newKeys": [
-      "6,1",
-      "7,1",
-      "7,0",
-      "2,1",
-      "2,2",
-      "2,4",
-      "6,2"
+      "3,2",
+      "4,2",
+      "5,2",
+      "6,4",
+      "6,5",
+      "6,6"
     ],
-    "score": 103,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "LAX",
-      "OX",
-      "TOAD",
-      "OW",
-      "DE",
-      "ANE",
-      "IN"
+      "OD",
+      "XI",
+      "ON",
+      "OXO",
+      "GNAT"
     ],
     "scoringWords": [
       {
-        "word": "LAX",
-        "row": 5,
-        "col": 1,
-        "direction": "vertical",
-        "score": 18,
+        "word": "OD",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 3,
         "move": 1
       },
       {
-        "word": "OX",
-        "row": 7,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 17,
-        "move": 2
-      },
-      {
-        "word": "TOAD",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 3
-      },
-      {
-        "word": "OW",
-        "row": 2,
+        "word": "XI",
+        "row": 4,
         "col": 2,
-        "direction": "vertical",
-        "score": 5,
-        "move": 3
-      },
-      {
-        "word": "DE",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
-        "score": 3,
-        "move": 3
-      },
-      {
-        "word": "ANE",
-        "row": 6,
-        "col": 1,
         "direction": "horizontal",
-        "score": 3,
-        "move": 4
+        "score": 9,
+        "move": 1
       },
       {
-        "word": "IN",
+        "word": "ON",
         "row": 5,
         "col": 2,
-        "direction": "vertical",
+        "direction": "horizontal",
         "score": 2,
-        "move": 4
+        "move": 1
+      },
+      {
+        "word": "OXO",
+        "row": 3,
+        "col": 2,
+        "direction": "vertical",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "GNAT",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "LAX",
-        "row": 5,
-        "col": 1,
+        "word": "OXO",
+        "row": 3,
+        "col": 2,
         "direction": "vertical",
-        "score": 18,
-        "usedTiles": 2,
+        "score": 24,
+        "usedTiles": 3,
         "newKeys": [
-          "6,1",
-          "7,1"
+          "3,2",
+          "4,2",
+          "5,2"
         ],
         "scoringWords": [
           {
-            "word": "LAX",
+            "word": "OD",
+            "row": 3,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "XI",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "ON",
             "row": 5,
-            "col": 1,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "OXO",
+            "row": 3,
+            "col": 2,
             "direction": "vertical",
-            "score": 18
+            "score": 10
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OX",
-        "row": 7,
-        "col": 0,
+        "word": "GNAT",
+        "row": 6,
+        "col": 3,
         "direction": "horizontal",
-        "score": 17,
-        "usedTiles": 1,
-        "newKeys": [
-          "7,0"
-        ],
-        "scoringWords": [
-          {
-            "word": "OX",
-            "row": 7,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 17
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "TOAD",
-        "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 13,
+        "score": 6,
         "usedTiles": 3,
         "newKeys": [
-          "2,1",
-          "2,2",
-          "2,4"
+          "6,4",
+          "6,5",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "TOAD",
-            "row": 2,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "OW",
-            "row": 2,
-            "col": 2,
-            "direction": "vertical",
-            "score": 5
-          },
-          {
-            "word": "DE",
-            "row": 2,
-            "col": 4,
-            "direction": "vertical",
-            "score": 3
-          }
-        ]
-      },
-      {
-        "turn": 4,
-        "word": "ANE",
-        "row": 6,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 1,
-        "newKeys": [
-          "6,2"
-        ],
-        "scoringWords": [
-          {
-            "word": "ANE",
+            "word": "GNAT",
             "row": 6,
-            "col": 1,
+            "col": 3,
             "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "IN",
-            "row": 5,
-            "col": 2,
-            "direction": "vertical",
-            "score": 2
+            "score": 6
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2630
+    "visitedCandidates": 942
   }
 }

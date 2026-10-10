@@ -1,408 +1,353 @@
 {
   "date": "2026-10-31",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
+      "G",
       "E",
+      "T",
       "",
       "",
-      "W"
+      ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "P",
-      "",
-      "",
-      "A"
-    ],
-    [
-      "",
       "",
       "",
       "",
       "I",
       "",
       "",
-      "R"
+      ""
+    ],
+    [
+      "",
+      "T",
+      "I",
+      "M",
+      "E",
+      "D",
+      ""
     ],
     [
       "",
       "",
       "",
+      "I",
       "",
-      "C",
       "",
-      "",
-      "D"
+      ""
     ],
     [
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
       "",
       "G",
-      "Y",
-      "P",
-      "S",
-      "I",
-      "E",
-      "S"
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
   ],
   "originalBoard": [
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
+      "G",
       "E",
+      "T",
       "",
       "",
-      "W"
+      ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "P",
-      "",
-      "",
-      "A"
-    ],
-    [
-      "",
       "",
       "",
       "",
       "I",
       "",
       "",
-      "R"
+      ""
+    ],
+    [
+      "",
+      "T",
+      "I",
+      "M",
+      "E",
+      "D",
+      ""
     ],
     [
       "",
       "",
       "",
+      "I",
       "",
-      "C",
       "",
-      "",
-      "D"
+      ""
     ],
     [
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
       "",
       "G",
-      "Y",
-      "P",
-      "S",
-      "I",
-      "E",
-      "S"
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
   ],
   "bonusSquares": {
-    "0,1": "triple-word",
-    "2,1": "double-word",
+    "6,6": "triple-word",
+    "6,1": "double-word",
+    "4,5": "triple-letter",
     "4,0": "triple-letter",
-    "1,4": "double-letter",
-    "5,2": "double-letter",
-    "0,6": "triple-letter"
+    "0,5": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "GYPSIES",
-      "row": 7,
+      "word": "TIMING",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "TIMED",
+      "row": 2,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "WARDS",
-      "row": 3,
-      "col": 7,
-      "direction": "vertical"
-    },
-    {
-      "word": "EPICS",
-      "row": 3,
-      "col": 4,
-      "direction": "vertical"
+      "word": "GET",
+      "row": 0,
+      "col": 1,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
+    "D",
+    "T",
+    "W",
     "O",
     "E",
-    "T",
-    "D",
-    "B",
-    "E",
-    "W"
+    "E"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
+        "G",
         "E",
-        "",
-        "",
-        "W"
-      ],
-      [
-        "B",
-        "E",
-        "W",
-        "E",
-        "P",
         "T",
         "",
-        "A"
+        "",
+        ""
       ],
       [
-        "O",
-        "D",
+        "",
         "",
         "",
         "I",
         "",
         "",
-        "R"
+        ""
+      ],
+      [
+        "",
+        "T",
+        "I",
+        "M",
+        "E",
+        "D",
+        ""
       ],
       [
         "",
         "",
         "",
+        "I",
         "",
-        "C",
-        "",
-        "",
-        "D"
+        "E",
+        "T"
       ],
       [
+        "",
+        "",
+        "",
+        "N",
+        "",
+        "W",
+        "O"
+      ],
+      [
+        "",
+        "",
         "",
         "G",
-        "Y",
-        "P",
-        "S",
-        "I",
+        "",
         "E",
-        "S"
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "D",
+        ""
       ]
     ],
     "newKeys": [
-      "4,0",
-      "4,1",
-      "4,2",
-      "4,3",
+      "3,5",
       "4,5",
-      "5,0",
-      "5,1"
+      "5,5",
+      "6,5",
+      "3,6",
+      "4,6"
     ],
     "score": 85,
     "completionBonus": 50,
     "words": [
-      "BEWEPT",
-      "OD",
-      "BO",
-      "ED"
+      "DEWED",
+      "ET",
+      "WO",
+      "TO"
     ],
     "scoringWords": [
       {
-        "word": "BEWEPT",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 19,
+        "word": "DEWED",
+        "row": 2,
+        "col": 5,
+        "direction": "vertical",
+        "score": 18,
         "move": 1
       },
       {
-        "word": "OD",
-        "row": 5,
-        "col": 0,
+        "word": "ET",
+        "row": 3,
+        "col": 5,
         "direction": "horizontal",
-        "score": 3,
+        "score": 2,
         "move": 2
       },
       {
-        "word": "BO",
+        "word": "WO",
         "row": 4,
-        "col": 0,
-        "direction": "vertical",
-        "score": 10,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 13,
         "move": 2
       },
       {
-        "word": "ED",
-        "row": 4,
-        "col": 1,
+        "word": "TO",
+        "row": 3,
+        "col": 6,
         "direction": "vertical",
-        "score": 3,
+        "score": 2,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BEWEPT",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 19,
-        "usedTiles": 5,
+        "word": "DEWED",
+        "row": 2,
+        "col": 5,
+        "direction": "vertical",
+        "score": 18,
+        "usedTiles": 4,
         "newKeys": [
-          "4,0",
-          "4,1",
-          "4,2",
-          "4,3",
-          "4,5"
+          "3,5",
+          "4,5",
+          "5,5",
+          "6,5"
         ],
         "scoringWords": [
           {
-            "word": "BEWEPT",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 19
+            "word": "DEWED",
+            "row": 2,
+            "col": 5,
+            "direction": "vertical",
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OD",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 16,
+        "word": "TO",
+        "row": 3,
+        "col": 6,
+        "direction": "vertical",
+        "score": 17,
         "usedTiles": 2,
         "newKeys": [
-          "5,0",
-          "5,1"
+          "3,6",
+          "4,6"
         ],
         "scoringWords": [
           {
-            "word": "OD",
-            "row": 5,
-            "col": 0,
+            "word": "ET",
+            "row": 3,
+            "col": 5,
             "direction": "horizontal",
-            "score": 3
+            "score": 2
           },
           {
-            "word": "BO",
+            "word": "WO",
             "row": 4,
-            "col": 0,
-            "direction": "vertical",
-            "score": 10
+            "col": 5,
+            "direction": "horizontal",
+            "score": 13
           },
           {
-            "word": "ED",
-            "row": 4,
-            "col": 1,
+            "word": "TO",
+            "row": 3,
+            "col": 6,
             "direction": "vertical",
-            "score": 3
+            "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1812
+    "visitedCandidates": 1208
   }
 }

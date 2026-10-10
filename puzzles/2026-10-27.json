@@ -1,81 +1,64 @@
 {
   "date": "2026-10-27",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
       "",
       "",
       "",
       "",
-      "B",
       "",
       "",
       ""
     ],
     [
       "",
+      "L",
       "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "I",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "I",
+      "N",
+      "E",
+      "R",
+      "T",
+      "",
+      ""
+    ],
+    [
+      "",
+      "G",
       "",
       "",
       "O",
       "",
-      "",
       ""
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "L",
       "A",
       "",
-      ""
-    ],
-    [
-      "C",
-      "H",
-      "I",
-      "V",
-      "A",
-      "R",
-      "I",
-      ""
-    ],
-    [
       "",
-      "",
-      "",
-      "",
-      "S",
-      "I",
+      "O",
       "",
       ""
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "D",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
+      "M",
       "",
       "",
       "",
@@ -89,75 +72,58 @@
       "",
       "",
       "",
-      "B",
       "",
       "",
       ""
     ],
     [
       "",
+      "L",
       "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "I",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "I",
+      "N",
+      "E",
+      "R",
+      "T",
+      "",
+      ""
+    ],
+    [
+      "",
+      "G",
       "",
       "",
       "O",
       "",
-      "",
       ""
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "L",
       "A",
       "",
-      ""
-    ],
-    [
-      "C",
-      "H",
-      "I",
-      "V",
-      "A",
-      "R",
-      "I",
-      ""
-    ],
-    [
       "",
-      "",
-      "",
-      "",
-      "S",
-      "I",
+      "O",
       "",
       ""
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "D",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
+      "M",
       "",
       "",
       "",
@@ -166,119 +132,100 @@
     ]
   ],
   "bonusSquares": {
-    "6,0": "triple-word",
-    "7,7": "double-word",
-    "1,7": "double-letter",
-    "5,2": "double-letter",
-    "0,0": "triple-letter",
-    "5,7": "triple-letter"
+    "0,6": "triple-word",
+    "6,6": "double-word",
+    "2,6": "double-letter",
+    "1,3": "triple-letter",
+    "4,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "CHIVARI",
+      "word": "LINGAM",
+      "row": 1,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "INERT",
       "row": 3,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "ARID",
-      "row": 2,
-      "col": 5,
-      "direction": "vertical"
-    },
-    {
-      "word": "BOLAS",
-      "row": 0,
+      "word": "TOO",
+      "row": 3,
       "col": 4,
       "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "H",
+    "T",
     "U",
-    "Y",
+    "E",
     "A",
     "R",
-    "E",
-    "T"
+    "H"
   ],
   "bestSolution": {
     "board": [
       [
-        "E",
-        "U",
-        "R",
-        "Y",
-        "B",
-        "A",
-        "T",
-        "H"
-      ],
-      [
         "",
         "",
         "",
         "",
-        "O",
         "",
         "",
         ""
       ],
       [
-        "",
-        "",
-        "",
         "",
         "L",
-        "A",
         "",
-        ""
-      ],
-      [
-        "C",
-        "H",
-        "I",
-        "V",
-        "A",
+        "E",
         "R",
-        "I",
+        "",
         ""
       ],
       [
         "",
-        "",
-        "",
-        "",
-        "S",
         "I",
         "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "D",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
+        "A",
         "",
         "",
         ""
       ],
       [
+        "I",
+        "N",
+        "E",
+        "R",
+        "T",
         "",
+        ""
+      ],
+      [
         "",
+        "G",
         "",
+        "T",
+        "O",
         "",
+        ""
+      ],
+      [
+        "",
+        "A",
+        "",
+        "H",
+        "O",
+        "",
+        ""
+      ],
+      [
+        "",
+        "M",
+        "U",
         "",
         "",
         "",
@@ -286,62 +233,150 @@
       ]
     ],
     "newKeys": [
-      "0,0",
-      "0,1",
-      "0,2",
-      "0,3",
-      "0,5",
-      "0,6",
-      "0,7"
+      "1,3",
+      "2,3",
+      "4,3",
+      "5,3",
+      "6,2",
+      "1,4"
     ],
-    "score": 118,
-    "completionBonus": 0,
+    "score": 75,
+    "completionBonus": 50,
     "words": [
-      "EURYBATH"
+      "TO",
+      "HO",
+      "EARTH",
+      "MU",
+      "ER"
     ],
     "scoringWords": [
       {
-        "word": "EURYBATH",
-        "row": 0,
-        "col": 0,
+        "word": "TO",
+        "row": 4,
+        "col": 3,
         "direction": "horizontal",
-        "score": 18,
+        "score": 2,
         "move": 1
+      },
+      {
+        "word": "HO",
+        "row": 5,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "EARTH",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "MU",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "ER",
+        "row": 1,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "EURYBATH",
-        "row": 0,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 118,
-        "usedTiles": 7,
+        "word": "EARTH",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 17,
+        "usedTiles": 4,
         "newKeys": [
-          "0,0",
-          "0,1",
-          "0,2",
-          "0,3",
-          "0,5",
-          "0,6",
-          "0,7"
+          "1,3",
+          "2,3",
+          "4,3",
+          "5,3"
         ],
         "scoringWords": [
           {
-            "word": "EURYBATH",
-            "row": 0,
-            "col": 0,
+            "word": "TO",
+            "row": 4,
+            "col": 3,
             "direction": "horizontal",
-            "score": 18
+            "score": 2
+          },
+          {
+            "word": "HO",
+            "row": 5,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "EARTH",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 10
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "MU",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "MU",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "ER",
+        "row": 1,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "ER",
+            "row": 1,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 4
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2860
+    "visitedCandidates": 1581
   }
 }

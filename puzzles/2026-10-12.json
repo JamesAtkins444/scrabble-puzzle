@@ -1,79 +1,62 @@
 {
   "date": "2026-10-12",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
       "",
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "M"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "I"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "B",
-      "",
-      "C"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "O",
-      "",
-      "K"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "L",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "D",
-      "R",
-      "Y"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "S",
-      "",
+      "M",
+      "I",
+      "F",
+      "F",
       "S"
     ],
     [
       "",
+      "",
+      "A",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "Z",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "I",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "G",
+      "E",
+      "A",
+      "R",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "",
       "",
       "",
@@ -87,75 +70,58 @@
     [
       "",
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "M"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "I"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "B",
-      "",
-      "C"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "O",
-      "",
-      "K"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "L",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "D",
-      "R",
-      "Y"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "S",
-      "",
+      "M",
+      "I",
+      "F",
+      "F",
       "S"
     ],
     [
       "",
+      "",
+      "A",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "Z",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "I",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "G",
+      "E",
+      "A",
+      "R",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "",
       "",
       "",
@@ -166,116 +132,97 @@
     ]
   ],
   "bonusSquares": {
-    "3,1": "triple-word",
-    "1,1": "double-word",
-    "5,2": "double-letter",
-    "5,0": "triple-letter",
-    "2,3": "double-letter",
-    "7,0": "triple-letter"
+    "1,0": "double-word",
+    "6,6": "triple-letter",
+    "2,5": "double-letter",
+    "6,0": "double-letter",
+    "6,4": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "MICKEYS",
+      "word": "MAZIER",
       "row": 0,
-      "col": 7,
+      "col": 2,
       "direction": "vertical"
     },
     {
-      "word": "DRY",
-      "row": 5,
-      "col": 5,
+      "word": "GEARS",
+      "row": 4,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "BOLDS",
-      "row": 2,
-      "col": 5,
-      "direction": "vertical"
+      "word": "MIFFS",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "D",
-    "T",
+    "F",
+    "P",
+    "E",
+    "E",
     "H",
-    "O",
-    "S",
-    "U",
-    "E"
+    "A"
   ],
   "bestSolution": {
     "board": [
       [
         "",
         "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "M"
-      ],
-      [
-        "",
-        "S",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "I"
-      ],
-      [
-        "",
-        "H",
-        "",
-        "",
-        "",
-        "B",
-        "",
-        "C"
-      ],
-      [
-        "",
-        "O",
-        "U",
-        "T",
-        "D",
-        "O",
-        "",
-        "K"
-      ],
-      [
-        "",
-        "E",
-        "",
-        "",
-        "",
-        "L",
-        "",
-        "E"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "D",
-        "R",
-        "Y"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "S",
-        "",
+        "M",
+        "I",
+        "F",
+        "F",
         "S"
       ],
       [
+        "H",
+        "A",
+        "A",
+        "F",
         "",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "",
+        "Z",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "P",
+        "",
+        "I",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "G",
+        "E",
+        "A",
+        "R",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "R",
+        "E",
+        "",
+        "",
+        ""
+      ],
+      [
         "",
         "",
         "",
@@ -286,91 +233,150 @@
       ]
     ],
     "newKeys": [
-      "3,1",
-      "3,2",
-      "3,3",
-      "3,4",
+      "1,0",
       "1,1",
-      "2,1",
-      "4,1"
+      "1,3",
+      "2,0",
+      "3,0",
+      "5,3"
     ],
-    "score": 110,
+    "score": 95,
     "completionBonus": 50,
     "words": [
-      "OUTDO",
-      "SHOE"
+      "HAAF",
+      "IF",
+      "HEP",
+      "RE",
+      "AE"
     ],
     "scoringWords": [
       {
-        "word": "OUTDO",
-        "row": 3,
-        "col": 1,
+        "word": "HAAF",
+        "row": 1,
+        "col": 0,
         "direction": "horizontal",
-        "score": 18,
+        "score": 20,
         "move": 1
       },
       {
-        "word": "SHOE",
-        "row": 1,
-        "col": 1,
+        "word": "IF",
+        "row": 0,
+        "col": 3,
         "direction": "vertical",
-        "score": 42,
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "HEP",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 16,
         "move": 2
+      },
+      {
+        "word": "RE",
+        "row": 5,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "AE",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "OUTDO",
-        "row": 3,
-        "col": 1,
+        "word": "HAAF",
+        "row": 1,
+        "col": 0,
         "direction": "horizontal",
-        "score": 18,
-        "usedTiles": 4,
+        "score": 25,
+        "usedTiles": 3,
         "newKeys": [
-          "3,1",
-          "3,2",
-          "3,3",
-          "3,4"
+          "1,0",
+          "1,1",
+          "1,3"
         ],
         "scoringWords": [
           {
-            "word": "OUTDO",
-            "row": 3,
-            "col": 1,
+            "word": "HAAF",
+            "row": 1,
+            "col": 0,
             "direction": "horizontal",
-            "score": 18
+            "score": 20
+          },
+          {
+            "word": "IF",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
           }
         ]
       },
       {
         "turn": 2,
-        "word": "SHOE",
+        "word": "HEP",
         "row": 1,
-        "col": 1,
+        "col": 0,
         "direction": "vertical",
-        "score": 42,
-        "usedTiles": 3,
+        "score": 16,
+        "usedTiles": 2,
         "newKeys": [
-          "1,1",
-          "2,1",
-          "4,1"
+          "2,0",
+          "3,0"
         ],
         "scoringWords": [
           {
-            "word": "SHOE",
+            "word": "HEP",
             "row": 1,
-            "col": 1,
+            "col": 0,
             "direction": "vertical",
-            "score": 42
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AE",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "5,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "RE",
+            "row": 5,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "AE",
+            "row": 4,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3018
+    "visitedCandidates": 878
   }
 }

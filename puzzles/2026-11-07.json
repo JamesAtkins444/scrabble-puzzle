@@ -1,85 +1,68 @@
 {
   "date": "2026-11-07",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
       "",
       "",
       "",
       "",
-      "T",
       "",
       "",
       ""
     ],
     [
       "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "W",
-      "",
-      "",
-      "I",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
       "O",
-      "",
-      "",
-      "P",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "V",
-      "",
-      "",
-      "P",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "E",
-      "L",
       "V",
       "E",
-      "S",
-      "",
-      ""
-    ],
-    [
-      "",
       "N",
       "",
+      ""
+    ],
+    [
+      "E",
       "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "F",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "T",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "S",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "E",
+      "A",
+      "C",
+      "U",
+      "P",
       ""
     ]
   ],
@@ -89,116 +72,98 @@
       "",
       "",
       "",
-      "T",
       "",
       "",
       ""
     ],
     [
       "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "W",
-      "",
-      "",
-      "I",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
       "O",
-      "",
-      "",
-      "P",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "V",
-      "",
-      "",
-      "P",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "E",
-      "L",
       "V",
       "E",
-      "S",
-      "",
-      ""
-    ],
-    [
-      "",
       "N",
       "",
+      ""
+    ],
+    [
+      "E",
       "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "F",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "T",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "S",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "E",
+      "A",
+      "C",
+      "U",
+      "P",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,7": "triple-word",
-    "5,7": "double-word",
-    "2,7": "triple-letter",
-    "7,1": "double-letter",
-    "7,6": "double-letter"
+    "0,5": "triple-word",
+    "2,6": "double-word",
+    "0,2": "triple-letter",
+    "1,0": "triple-letter",
+    "4,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "TIPPETS",
-      "row": 0,
-      "col": 4,
-      "direction": "vertical"
-    },
-    {
-      "word": "ELVES",
-      "row": 4,
-      "col": 1,
+      "word": "TEACUP",
+      "row": 6,
+      "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "WOVEN",
-      "row": 1,
-      "col": 1,
+      "word": "WEFT",
+      "row": 3,
+      "col": 0,
       "direction": "vertical"
+    },
+    {
+      "word": "WOVEN",
+      "row": 3,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "K",
-    "I",
-    "R",
     "G",
-    "A",
     "N",
+    "R",
+    "A",
+    "I",
     "O"
   ],
   "bestSolution": {
@@ -206,170 +171,183 @@
       [
         "",
         "",
-        "K",
-        "A",
-        "T",
-        "I",
-        "O",
-        "N"
-      ],
-      [
-        "",
-        "W",
         "",
         "",
-        "I",
-        "",
-        "",
-        ""
-      ],
-      [
-        "G",
-        "O",
-        "R",
-        "",
-        "P",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "V",
-        "",
-        "",
-        "P",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "E",
-        "L",
-        "V",
-        "E",
-        "S",
-        "",
-        ""
-      ],
-      [
         "",
         "N",
+        ""
+      ],
+      [
         "",
         "",
+        "",
+        "",
+        "",
+        "O",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "R",
+        "A",
+        "G",
+        "I"
+      ],
+      [
+        "W",
+        "O",
+        "V",
+        "E",
+        "N",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "F",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
         "T",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "S",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        "E",
+        "A",
+        "C",
+        "U",
+        "P",
         ""
       ]
     ],
     "newKeys": [
-      "0,2",
-      "0,3",
+      "2,3",
+      "2,4",
+      "2,5",
+      "2,6",
       "0,5",
-      "0,6",
-      "0,7",
-      "2,0",
-      "2,2"
+      "1,5"
     ],
-    "score": 84,
+    "score": 76,
     "completionBonus": 50,
     "words": [
-      "KATION",
-      "GOR"
+      "RAGI",
+      "RE",
+      "AN",
+      "NOG"
     ],
     "scoringWords": [
       {
-        "word": "KATION",
-        "row": 0,
-        "col": 2,
+        "word": "RAGI",
+        "row": 2,
+        "col": 3,
         "direction": "horizontal",
-        "score": 30,
+        "score": 10,
         "move": 1
       },
       {
-        "word": "GOR",
+        "word": "RE",
         "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "AN",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "NOG",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 12,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "KATION",
-        "row": 0,
-        "col": 2,
+        "word": "RAGI",
+        "row": 2,
+        "col": 3,
         "direction": "horizontal",
-        "score": 30,
-        "usedTiles": 5,
+        "score": 14,
+        "usedTiles": 4,
         "newKeys": [
-          "0,2",
-          "0,3",
-          "0,5",
-          "0,6",
-          "0,7"
+          "2,3",
+          "2,4",
+          "2,5",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "KATION",
-            "row": 0,
-            "col": 2,
+            "word": "RAGI",
+            "row": 2,
+            "col": 3,
             "direction": "horizontal",
-            "score": 30
+            "score": 10
+          },
+          {
+            "word": "RE",
+            "row": 2,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "AN",
+            "row": 2,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       },
       {
         "turn": 2,
-        "word": "GOR",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 4,
+        "word": "NOG",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 12,
         "usedTiles": 2,
         "newKeys": [
-          "2,0",
-          "2,2"
+          "0,5",
+          "1,5"
         ],
         "scoringWords": [
           {
-            "word": "GOR",
-            "row": 2,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 4
+            "word": "NOG",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 12
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2971
+    "visitedCandidates": 1454
   }
 }

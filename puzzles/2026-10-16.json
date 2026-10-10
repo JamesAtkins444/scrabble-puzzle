@@ -1,79 +1,62 @@
 {
   "date": "2026-10-16",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "G",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
       "L",
-      "O",
-      "T",
       "A",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "D",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "O",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "Z",
       "I",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "D",
-      ""
-    ],
-    [
-      "",
-      "",
-      "D",
       "E",
-      "V",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
       "A",
-      "S",
+      "",
+      "",
       ""
     ],
     [
       "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "W",
+      "O",
+      "L",
+      "F",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "",
       "",
       "",
@@ -86,76 +69,59 @@
   "originalBoard": [
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "G",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
       "L",
-      "O",
-      "T",
       "A",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "D",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "O",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "Z",
       "I",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "D",
-      ""
-    ],
-    [
-      "",
-      "",
-      "D",
       "E",
-      "V",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
       "A",
-      "S",
+      "",
+      "",
       ""
     ],
     [
       "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "W",
+      "O",
+      "L",
+      "F",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "",
       "",
       "",
@@ -166,117 +132,98 @@
     ]
   ],
   "bonusSquares": {
-    "1,0": "triple-word",
-    "3,1": "double-word",
-    "4,3": "double-letter",
-    "7,0": "triple-letter",
-    "5,0": "triple-letter"
+    "6,1": "triple-word",
+    "6,3": "double-word",
+    "6,5": "triple-letter",
+    "3,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "GADOIDS",
+      "word": "LAZIED",
       "row": 0,
-      "col": 6,
-      "direction": "vertical"
-    },
-    {
-      "word": "DEVAS",
-      "row": 6,
-      "col": 2,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "LOTA",
-      "row": 1,
+      "word": "ZARF",
+      "row": 0,
       "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "WOLFS",
+      "row": 3,
+      "col": 0,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "N",
-    "U",
+    "O",
     "F",
     "U",
-    "O",
-    "T",
+    "U",
+    "N",
     "T"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "",
-        "",
-        "",
-        "T",
-        "U",
-        "G",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
         "L",
-        "O",
-        "T",
         "A",
+        "Z",
+        "I",
+        "E",
+        "D"
+      ],
+      [
+        "",
+        "",
+        "",
+        "A",
+        "",
+        "",
         ""
       ],
       [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "D",
-        "O"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
         "O",
-        "F"
+        "F",
+        "",
+        "R",
+        "",
+        "",
+        ""
       ],
       [
+        "W",
+        "O",
+        "L",
+        "F",
+        "S",
         "",
-        "",
-        "",
+        ""
+      ],
+      [
         "",
         "U",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
         "N",
-        "I",
-        "T"
-      ],
-      [
         "",
         "",
         "",
         "",
-        "",
-        "",
-        "D",
         ""
       ],
       [
-        "",
-        "",
-        "D",
-        "E",
-        "V",
-        "A",
-        "S",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
+        "U",
+        "T",
         "",
         "",
         "",
@@ -285,200 +232,134 @@
       ]
     ],
     "newKeys": [
-      "2,7",
-      "3,7",
-      "4,7",
-      "0,4",
-      "0,5",
-      "4,4",
-      "4,5"
+      "2,1",
+      "4,1",
+      "5,1",
+      "6,1",
+      "2,0",
+      "6,0"
     ],
-    "score": 76,
+    "score": 90,
     "completionBonus": 50,
     "words": [
-      "DO",
+      "FOUNT",
       "OF",
-      "IT",
-      "OFT",
-      "TUG",
-      "TO",
-      "UT",
-      "UNIT"
+      "OW",
+      "UT"
     ],
     "scoringWords": [
       {
-        "word": "DO",
+        "word": "FOUNT",
         "row": 2,
-        "col": 6,
-        "direction": "horizontal",
-        "score": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 24,
         "move": 1
       },
       {
         "word": "OF",
-        "row": 3,
-        "col": 6,
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
         "score": 5,
-        "move": 1
-      },
-      {
-        "word": "IT",
-        "row": 4,
-        "col": 6,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "OFT",
-        "row": 2,
-        "col": 7,
-        "direction": "vertical",
-        "score": 6,
-        "move": 1
-      },
-      {
-        "word": "TUG",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 4,
         "move": 2
       },
       {
-        "word": "TO",
-        "row": 0,
-        "col": 4,
+        "word": "OW",
+        "row": 2,
+        "col": 0,
         "direction": "vertical",
-        "score": 2,
+        "score": 5,
         "move": 2
       },
       {
         "word": "UT",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "UNIT",
-        "row": 4,
-        "col": 4,
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
+        "score": 6,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "OFT",
+        "word": "FOUNT",
         "row": 2,
-        "col": 7,
+        "col": 1,
         "direction": "vertical",
-        "score": 16,
-        "usedTiles": 3,
+        "score": 24,
+        "usedTiles": 4,
         "newKeys": [
-          "2,7",
-          "3,7",
-          "4,7"
+          "2,1",
+          "4,1",
+          "5,1",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "DO",
+            "word": "FOUNT",
             "row": 2,
-            "col": 6,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "OF",
-            "row": 3,
-            "col": 6,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "IT",
-            "row": 4,
-            "col": 6,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OFT",
-            "row": 2,
-            "col": 7,
+            "col": 1,
             "direction": "vertical",
-            "score": 6
+            "score": 24
           }
         ]
       },
       {
         "turn": 2,
-        "word": "TUG",
-        "row": 0,
-        "col": 4,
+        "word": "OF",
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 8,
-        "usedTiles": 2,
+        "score": 10,
+        "usedTiles": 1,
         "newKeys": [
-          "0,4",
-          "0,5"
+          "2,0"
         ],
         "scoringWords": [
           {
-            "word": "TUG",
-            "row": 0,
-            "col": 4,
+            "word": "OF",
+            "row": 2,
+            "col": 0,
             "direction": "horizontal",
-            "score": 4
+            "score": 5
           },
           {
-            "word": "TO",
-            "row": 0,
-            "col": 4,
+            "word": "OW",
+            "row": 2,
+            "col": 0,
             "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "UT",
-            "row": 0,
-            "col": 5,
-            "direction": "vertical",
-            "score": 2
+            "score": 5
           }
         ]
       },
       {
         "turn": 3,
-        "word": "UNIT",
-        "row": 4,
-        "col": 4,
+        "word": "UT",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 2,
+        "score": 6,
+        "usedTiles": 1,
         "newKeys": [
-          "4,4",
-          "4,5"
+          "6,0"
         ],
         "scoringWords": [
           {
-            "word": "UNIT",
-            "row": 4,
-            "col": 4,
+            "word": "UT",
+            "row": 6,
+            "col": 0,
             "direction": "horizontal",
-            "score": 2
+            "score": 6
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1403
+    "visitedCandidates": 562
   }
 }

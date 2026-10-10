@@ -1,6 +1,6 @@
 {
   "date": "2026-10-18",
-  "boardSize": 8,
+  "boardSize": 7,
   "board": [
     [
       "",
@@ -8,78 +8,61 @@
       "",
       "",
       "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "R",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "P",
-      "I",
-      "L",
-      "E",
-      "A",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "M",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "R",
-      "E",
-      "N",
-      "T",
-      "I",
-      "N",
       "G",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "S",
+      "L",
+      "U",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "C",
+      "A",
+      "V",
+      "E",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
     ]
   ],
@@ -90,332 +73,247 @@
       "",
       "",
       "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "R",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "P",
-      "I",
-      "L",
-      "E",
-      "A",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "M",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "R",
-      "E",
-      "N",
-      "T",
-      "I",
-      "N",
       "G",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "S",
+      "L",
+      "U",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "C",
+      "A",
+      "V",
+      "E",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
     ]
   ],
   "bonusSquares": {
-    "1,6": "triple-word",
-    "0,0": "double-word",
-    "2,3": "triple-letter",
-    "4,7": "triple-letter",
-    "3,5": "double-letter",
-    "0,3": "double-letter"
+    "0,2": "triple-word",
+    "1,0": "double-word",
+    "3,0": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "RENTING",
-      "row": 7,
-      "col": 0,
-      "direction": "horizontal"
-    },
-    {
-      "word": "RIME",
-      "row": 4,
-      "col": 1,
+      "word": "GLEBES",
+      "row": 0,
+      "col": 5,
       "direction": "vertical"
     },
     {
-      "word": "PILEA",
+      "word": "SLUB",
+      "row": 3,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "CAVES",
       "row": 5,
-      "col": 0,
+      "col": 1,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "N",
-    "C",
-    "A",
     "D",
-    "J",
+    "E",
+    "C",
     "U",
-    "E"
+    "N",
+    "A"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "J",
-        "E",
         "U",
+        "N",
+        "C",
+        "A",
+        "G",
+        "E"
+      ],
+      [
         "",
+        "",
+        "",
+        "",
+        "",
+        "L",
         ""
       ],
       [
         "",
+        "",
+        "",
+        "",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "S",
+        "L",
+        "U",
+        "B",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "E",
+        ""
+      ],
+      [
         "",
         "C",
         "A",
-        "N",
-        "",
-        "",
+        "V",
+        "E",
+        "S",
         ""
       ],
       [
         "",
-        "R",
         "",
         "D",
         "",
         "",
         "",
         ""
-      ],
-      [
-        "P",
-        "I",
-        "L",
-        "E",
-        "A",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "M",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "R",
-        "E",
-        "N",
-        "T",
-        "I",
-        "N",
-        "G",
-        ""
       ]
     ],
     "newKeys": [
-      "2,3",
-      "3,3",
-      "4,3",
-      "2,4",
-      "2,5",
-      "3,2",
-      "3,4"
+      "0,1",
+      "0,2",
+      "0,3",
+      "0,4",
+      "0,6",
+      "6,2"
     ],
-    "score": 111,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "JADE",
-      "JEU",
-      "CAN",
-      "EN"
+      "UNCAGE",
+      "AD"
     ],
     "scoringWords": [
       {
-        "word": "JADE",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 28,
+        "word": "UNCAGE",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 27,
         "move": 1
       },
       {
-        "word": "JEU",
-        "row": 2,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 26,
-        "move": 2
-      },
-      {
-        "word": "CAN",
-        "row": 3,
+        "word": "AD",
+        "row": 5,
         "col": 2,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 3
-      },
-      {
-        "word": "EN",
-        "row": 2,
-        "col": 4,
         "direction": "vertical",
-        "score": 2,
-        "move": 3
+        "score": 3,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "JADE",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 28,
-        "usedTiles": 3,
+        "word": "UNCAGE",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 27,
+        "usedTiles": 5,
         "newKeys": [
-          "2,3",
-          "3,3",
-          "4,3"
+          "0,1",
+          "0,2",
+          "0,3",
+          "0,4",
+          "0,6"
         ],
         "scoringWords": [
           {
-            "word": "JADE",
-            "row": 2,
-            "col": 3,
-            "direction": "vertical",
-            "score": 28
+            "word": "UNCAGE",
+            "row": 0,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 27
           }
         ]
       },
       {
         "turn": 2,
-        "word": "JEU",
-        "row": 2,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 26,
-        "usedTiles": 2,
-        "newKeys": [
-          "2,4",
-          "2,5"
-        ],
-        "scoringWords": [
-          {
-            "word": "JEU",
-            "row": 2,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 26
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "CAN",
-        "row": 3,
+        "word": "AD",
+        "row": 5,
         "col": 2,
-        "direction": "horizontal",
-        "score": 7,
-        "usedTiles": 2,
+        "direction": "vertical",
+        "score": 3,
+        "usedTiles": 1,
         "newKeys": [
-          "3,2",
-          "3,4"
+          "6,2"
         ],
         "scoringWords": [
           {
-            "word": "CAN",
-            "row": 3,
+            "word": "AD",
+            "row": 5,
             "col": 2,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "EN",
-            "row": 2,
-            "col": 4,
             "direction": "vertical",
-            "score": 2
+            "score": 3
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1327
+    "visitedCandidates": 1140
   }
 }
