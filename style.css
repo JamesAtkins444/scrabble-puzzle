@@ -531,7 +531,7 @@ user-select: none;
     transform: translate(-50%, -50%) !important;
     z-index: 2;
     display: block;
-    font-size: clamp(12px, 2.5vw, 19px) !important;
+    font-size: clamp(20px, 4vw, 32px) !important;
     line-height: 1;
     padding: 0 !important;
     border-radius: 0 !important;
