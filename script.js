@@ -14,6 +14,10 @@ let answerRevealed = false;
 
 let bonusSquares = {};
 
+// Pointer-drag state for placing rack tiles directly onto the board.
+let rackTileDrag = null;
+let suppressNextRackTileClick = false;
+
 /* ==================================================
 SCRABBLE VALUES
 ================================================== */
@@ -2182,9 +2186,92 @@ function displayTileRack() {
             );
 
 
+            tile.addEventListener("pointerdown", event => {
+                // Only start a drag with the primary mouse button or a touch/pen pointer.
+                if (event.pointerType === "mouse" && event.button !== 0) return;
+                rackTileDrag = {
+                    index,
+                    startX: event.clientX,
+                    startY: event.clientY,
+                    pointerId: event.pointerId,
+                    moved: false,
+                    target: null
+                };
+                suppressNextRackTileClick = false;
+
+                const onMove = moveEvent => {
+                    if (!rackTileDrag || moveEvent.pointerId !== rackTileDrag.pointerId) return;
+
+                    const dx = moveEvent.clientX - rackTileDrag.startX;
+                    const dy = moveEvent.clientY - rackTileDrag.startY;
+                    if (!rackTileDrag.moved && Math.hypot(dx, dy) < 8) return;
+
+                    rackTileDrag.moved = true;
+                    moveEvent.preventDefault();
+
+                    const element = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY);
+                    const cell = element && element.closest ? element.closest(".cell") : null;
+
+                    if (rackTileDrag.target && rackTileDrag.target !== cell) {
+                        rackTileDrag.target.classList.remove("drag-over");
+                    }
+
+                    const validCell = cell &&
+                        cell.dataset.row !== undefined &&
+                        cell.dataset.col !== undefined &&
+                        originalBoard[Number(cell.dataset.row)] &&
+                        originalBoard[Number(cell.dataset.row)][Number(cell.dataset.col)] === "" &&
+                        board[Number(cell.dataset.row)][Number(cell.dataset.col)] === "" &&
+                        !playerPlacedTiles[keyForCell(Number(cell.dataset.row), Number(cell.dataset.col))];
+
+                    rackTileDrag.target = validCell ? cell : null;
+                    if (rackTileDrag.target) rackTileDrag.target.classList.add("drag-over");
+                };
+
+                const onUp = upEvent => {
+                    if (!rackTileDrag || upEvent.pointerId !== rackTileDrag.pointerId) return;
+
+                    const drag = rackTileDrag;
+                    if (drag.target) drag.target.classList.remove("drag-over");
+
+                    document.removeEventListener("pointermove", onMove);
+                    document.removeEventListener("pointerup", onUp);
+                    document.removeEventListener("pointercancel", onCancel);
+
+                    rackTileDrag = null;
+
+                    if (drag.moved) {
+                        suppressNextRackTileClick = true;
+                        if (drag.target) {
+                            const row = Number(drag.target.dataset.row);
+                            const col = Number(drag.target.dataset.col);
+                            selectedBoardCell = null;
+                            selectedRackTile = drag.index;
+                            handleBoardClick(row, col);
+                        }
+                        // Prevent the synthetic click after a drag from selecting the rack tile.
+                        setTimeout(() => { suppressNextRackTileClick = false; }, 0);
+                    }
+                };
+
+                const onCancel = cancelEvent => {
+                    if (!rackTileDrag || cancelEvent.pointerId !== rackTileDrag.pointerId) return;
+                    if (rackTileDrag.target) rackTileDrag.target.classList.remove("drag-over");
+                    rackTileDrag = null;
+                    document.removeEventListener("pointermove", onMove);
+                    document.removeEventListener("pointerup", onUp);
+                    document.removeEventListener("pointercancel", onCancel);
+                };
+
+                document.addEventListener("pointermove", onMove, { passive: false });
+                document.addEventListener("pointerup", onUp);
+                document.addEventListener("pointercancel", onCancel);
+            });
+
             tile.addEventListener(
                 "click",
                 () => {
+                    if (suppressNextRackTileClick) return;
                     // If the player selected a board cell first, place this tile there.
                     if (selectedBoardCell) {
                         selectedRackTile = index;
