@@ -2209,6 +2209,20 @@ function displayTileRack() {
                     rackTileDrag.moved = true;
                     moveEvent.preventDefault();
 
+                    // Create a floating copy once the pointer has moved far enough to count as a drag.
+                    if (!rackTileDrag.visual) {
+                        const visual = tile.cloneNode(true);
+                        visual.classList.remove("selected");
+                        visual.classList.add("rack-tile-drag-visual");
+                        visual.setAttribute("aria-hidden", "true");
+                        document.body.appendChild(visual);
+                        rackTileDrag.visual = visual;
+                    }
+
+                    const visual = rackTileDrag.visual;
+                    visual.style.left = `${moveEvent.clientX - visual.offsetWidth / 2}px`;
+                    visual.style.top = `${moveEvent.clientY - visual.offsetHeight / 2}px`;
+
                     const element = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY);
                     const cell = element && element.closest ? element.closest(".cell") : null;
 
@@ -2233,6 +2247,7 @@ function displayTileRack() {
 
                     const drag = rackTileDrag;
                     if (drag.target) drag.target.classList.remove("drag-over");
+                    if (drag.visual) drag.visual.remove();
 
                     document.removeEventListener("pointermove", onMove);
                     document.removeEventListener("pointerup", onUp);
@@ -2257,6 +2272,7 @@ function displayTileRack() {
                 const onCancel = cancelEvent => {
                     if (!rackTileDrag || cancelEvent.pointerId !== rackTileDrag.pointerId) return;
                     if (rackTileDrag.target) rackTileDrag.target.classList.remove("drag-over");
+                    if (rackTileDrag.visual) rackTileDrag.visual.remove();
                     rackTileDrag = null;
                     document.removeEventListener("pointermove", onMove);
                     document.removeEventListener("pointerup", onUp);
