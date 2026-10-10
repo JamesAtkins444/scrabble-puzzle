@@ -637,8 +637,8 @@ flex-wrap: wrap;
 
 }
 
-.rack-tile-drag-visual {
-    position: fixed;
+.rack-tile.rack-tile-drag-visual {
+    position: fixed !important;
     z-index: 9999;
     pointer-events: none;
     margin: 0;
