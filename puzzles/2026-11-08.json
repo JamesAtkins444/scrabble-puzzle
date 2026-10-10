@@ -1,0 +1,408 @@
+{
+  "date": "2026-11-08",
+  "boardSize": 8,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "",
+      "",
+      "U",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "T",
+      "E",
+      "N",
+      "A",
+      "N",
+      "C",
+      "Y"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "",
+      "",
+      "U",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "T",
+      "E",
+      "N",
+      "A",
+      "N",
+      "C",
+      "Y"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,3": "triple-word",
+    "2,6": "double-word",
+    "0,1": "double-letter",
+    "0,5": "double-letter",
+    "2,1": "triple-letter",
+    "4,6": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "TENANCY",
+      "row": 6,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "AURAR",
+      "row": 3,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "MOTE",
+      "row": 4,
+      "col": 1,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "R",
+    "A",
+    "S",
+    "B",
+    "W",
+    "E",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "M",
+        "A",
+        "",
+        "U",
+        "",
+        "B",
+        ""
+      ],
+      [
+        "",
+        "O",
+        "W",
+        "",
+        "R",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "T",
+        "E",
+        "N",
+        "A",
+        "N",
+        "C",
+        "Y"
+      ],
+      [
+        "",
+        "E",
+        "",
+        "",
+        "R",
+        "",
+        "S",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "2,6",
+      "3,6",
+      "4,6",
+      "5,6",
+      "7,6",
+      "4,2",
+      "5,2"
+    ],
+    "score": 97,
+    "completionBonus": 50,
+    "words": [
+      "REBECS",
+      "MA",
+      "OW",
+      "AWE"
+    ],
+    "scoringWords": [
+      {
+        "word": "REBECS",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 32,
+        "move": 1
+      },
+      {
+        "word": "MA",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "OW",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 2
+      },
+      {
+        "word": "AWE",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "REBECS",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 32,
+        "usedTiles": 5,
+        "newKeys": [
+          "2,6",
+          "3,6",
+          "4,6",
+          "5,6",
+          "7,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "REBECS",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 32
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "AWE",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 15,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,2",
+          "5,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "MA",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "OW",
+            "row": 5,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "AWE",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 3062
+  }
+}
