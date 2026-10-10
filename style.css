@@ -521,32 +521,42 @@ user-select: none;
 
 }
 
-.bonus-badge {
+/* Empty premium squares show a large, centred abbreviation. */
+.cell.bonus-empty .bonus-badge {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
     z-index: 2;
-    font-size: clamp(12px, 2.5vw, 19px);
+    display: block;
+    font-size: clamp(12px, 2.5vw, 19px) !important;
     line-height: 1;
-    padding: 0;
-    border-radius: 0;
-    background: transparent;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
     color: #222;
     font-weight: 800;
     letter-spacing: -0.04em;
     pointer-events: none;
 }
 
-/* Once a letter is placed, keep the premium marker small in the corner. */
+/* Premium squares with a letter retain the small top-left badge. */
 .cell.has-letter .bonus-badge {
-    top: 3px;
-    left: 4px;
-    transform: none;
-    font-size: clamp(7px, 1.5vw, 11px);
-    padding: 2px 3px;
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.85);
+    position: absolute;
+    top: 3px !important;
+    left: 4px !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    z-index: 4;
+    display: block;
+    font-size: clamp(7px, 1.5vw, 11px) !important;
+    line-height: 1;
+    padding: 2px 3px !important;
+    border-radius: 3px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
     letter-spacing: 0;
 }
 
