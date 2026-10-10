@@ -542,6 +542,24 @@ user-select: none;
     pointer-events: none;
 }
 
+/* Darker, high-contrast labels for empty premium squares.
+   Each foreground/background pair exceeds WCAG AA's 4.5:1 text contrast target. */
+.cell.bonus-empty.double-letter .bonus-badge {
+    color: #174c66;
+}
+
+.cell.bonus-empty.triple-letter .bonus-badge {
+    color: #102538;
+}
+
+.cell.bonus-empty.double-word .bonus-badge {
+    color: #76203f;
+}
+
+.cell.bonus-empty.triple-word .bonus-badge {
+    color: #501010;
+}
+
 /* Premium squares with a letter retain the small top-left badge. */
 .cell.has-letter .bonus-badge {
     position: absolute;
