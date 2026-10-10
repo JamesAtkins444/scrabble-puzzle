@@ -1759,7 +1759,7 @@ function displayBoard() {
                 ) {
 
                     bonusBadge.textContent =
-                        "2x L";
+                        "2L";
                 }
 
 
@@ -1769,7 +1769,7 @@ function displayBoard() {
                 ) {
 
                     bonusBadge.textContent =
-                        "3x L";
+                        "3L";
                 }
 
 
@@ -1779,7 +1779,7 @@ function displayBoard() {
                 ) {
 
                     bonusBadge.textContent =
-                        "2x W";
+                        "2W";
                 }
 
 
@@ -1789,7 +1789,7 @@ function displayBoard() {
                 ) {
 
                     bonusBadge.textContent =
-                        "3x W";
+                        "3W";
                 }
 
 
@@ -1805,6 +1805,10 @@ function displayBoard() {
 
             const letter =
                 board[row][col];
+
+            if (letter !== "") {
+                cell.classList.add("has-letter");
+            }
 
 
             if (
