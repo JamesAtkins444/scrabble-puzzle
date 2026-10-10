@@ -522,31 +522,32 @@ user-select: none;
 }
 
 .bonus-badge {
-position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: clamp(12px, 2.5vw, 19px);
+    line-height: 1;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #222;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    pointer-events: none;
+}
 
-top: 3px;
-left: 4px;
-
-z-index: 2;
-
-font-size:
-    clamp(7px, 1.5vw, 11px);
-
-line-height: 1;
-
-padding: 2px 3px;
-
-border-radius: 3px;
-
-background:
-    rgba(255, 255, 255, 0.85);
-
-color: #222;
-
-font-weight: bold;
-
-pointer-events: none;
-
+/* Once a letter is placed, keep the premium marker small in the corner. */
+.cell.has-letter .bonus-badge {
+    top: 3px;
+    left: 4px;
+    transform: none;
+    font-size: clamp(7px, 1.5vw, 11px);
+    padding: 2px 3px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0;
 }
 
 /* -------------------------------- */
