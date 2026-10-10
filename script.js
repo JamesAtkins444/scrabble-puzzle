@@ -1808,6 +1808,10 @@ function displayBoard() {
 
             if (letter !== "") {
                 cell.classList.add("has-letter");
+                cell.classList.remove("bonus-empty");
+            } else if (bonus) {
+                cell.classList.add("bonus-empty");
+                cell.classList.remove("has-letter");
             }
 
 
