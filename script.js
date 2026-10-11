@@ -581,7 +581,8 @@ function getRandomWord(
                     word.length >=
                         minLength &&
                     word.length <=
-                        maxLength
+                        maxLength &&
+                    !word.endsWith("S")
             );
 
     if (
@@ -2098,6 +2099,9 @@ function drawRandomTiles(count = 6) {
             tiles[i]
         ];
     }
+
+    // The rack always includes a seventh tile: a guaranteed S.
+    tiles.push("S");
 
     return tiles;
 }
