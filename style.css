@@ -1092,6 +1092,37 @@ body {
     margin: 0;
 }
 
+/* Compact square shuffle control, matching the rack tile dimensions. */
+#shuffleRackButton.shuffle-rack-button {
+    flex: 0 0 55px;
+    width: 55px;
+    min-width: 55px;
+    height: 55px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #c7a76a;
+    border-radius: 6px;
+    background: #f5e6c8;
+    color: #222;
+}
+
+#shuffleRackButton.shuffle-rack-button svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#shuffleRackButton.shuffle-rack-button:hover:not(:disabled) {
+    background: #ead5aa;
+    transform: translateY(-2px);
+}
+
 #revealPuzzleButton {
     display: inline-block;
     min-width: 190px;
