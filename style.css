@@ -642,7 +642,7 @@ flex-wrap: wrap;
     z-index: 9999;
     pointer-events: none;
     margin: 0;
-    transform: rotate(-4deg) scale(1.35);
+    transform: rotate(-4deg) scale(1.8225);
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.18);
     opacity: 0.98;
     cursor: grabbing;
