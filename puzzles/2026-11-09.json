@@ -1,0 +1,384 @@
+{
+  "date": "2026-11-09",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "B",
+      "",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "T",
+      "U",
+      "D",
+      "L",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "T",
+      "",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "U",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "B",
+      "",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "T",
+      "U",
+      "D",
+      "L",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "T",
+      "",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "U",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "5,0": "double-word",
+    "6,4": "triple-letter",
+    "0,0": "triple-letter",
+    "6,6": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "STUDLY",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SOLS",
+      "row": 1,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "BATTU",
+      "row": 1,
+      "col": 2,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "I",
+    "E",
+    "N",
+    "M",
+    "D",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "B",
+        "",
+        "I",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "",
+        "N",
+        "O",
+        "M"
+      ],
+      [
+        "",
+        "S",
+        "T",
+        "U",
+        "D",
+        "L",
+        "Y"
+      ],
+      [
+        "",
+        "",
+        "T",
+        "",
+        "E",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "U",
+        "",
+        "E",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "D",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "1,4",
+      "2,4",
+      "4,4",
+      "5,4",
+      "6,4",
+      "2,6"
+    ],
+    "score": 78,
+    "completionBonus": 50,
+    "words": [
+      "IS",
+      "NO",
+      "ES",
+      "INDEED",
+      "NOM",
+      "MY"
+    ],
+    "scoringWords": [
+      {
+        "word": "IS",
+        "row": 1,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "NO",
+        "row": 2,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "ES",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "INDEED",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "NOM",
+        "row": 2,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "MY",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 7,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "INDEED",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 18,
+        "usedTiles": 5,
+        "newKeys": [
+          "1,4",
+          "2,4",
+          "4,4",
+          "5,4",
+          "6,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "IS",
+            "row": 1,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "NO",
+            "row": 2,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "ES",
+            "row": 4,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "INDEED",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 12
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "NOM",
+        "row": 2,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 10,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "NOM",
+            "row": 2,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "MY",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 7
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1048
+  }
+}
