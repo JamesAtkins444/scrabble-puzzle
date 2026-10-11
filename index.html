@@ -198,7 +198,6 @@
                 <path d="M8.7 10.6 15.3 6.4M8.7 13.4l6.6 4.2"></path>
             </svg>
         </button>
-        </div>
     </div>
 
 
@@ -214,18 +213,7 @@
     ></div>
 
 
-    <div id="tileRackGrid">
-        <div id="tileRack">
-        <button id="shuffleRackButton" class="shuffle-rack-button" type="button" aria-label="Shuffle rack" title="Shuffle rack">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M17 3h4v4"></path>
-                <path d="M3 7h2.5a5 5 0 0 1 4 2l5 6a5 5 0 0 0 4 2H21"></path>
-                <path d="m17 17 4 0-4 4"></path>
-                <path d="M3 17h2.5a5 5 0 0 0 3-1"></path>
-                <path d="M14 8a5 5 0 0 1 4-2h3"></path>
-            </svg>
-        </button>
-    </div>
+    <div id="tileRack"></div>
 
     <section id="bestScoreBox" class="best-score-box" aria-live="polite" hidden>
         <div class="best-score-title">Full-Rack Solution</div>
@@ -236,7 +224,7 @@
     </section>
 
     <div id="rackActions" class="rack-actions">
-
+        <button id="shuffleRackButton" type="button">Shuffle</button>
         <button id="clearBoardButton" type="button">Clear Board</button>
         <button id="revealPuzzleButton" type="button" class="reveal-answer-button">
             Reveal Puzzle
