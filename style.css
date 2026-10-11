@@ -1642,3 +1642,10 @@ body {
         padding: 3px;
     }
 }
+
+
+/* The board and rack both use seven equal columns. */
+#tileRackGrid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    aspect-ratio: 7 / 1;
+}
