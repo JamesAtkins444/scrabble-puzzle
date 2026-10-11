@@ -1558,3 +1558,47 @@ body {
         outline-offset: 3px;
     }
 }
+
+
+/* Align the six rack tiles and shuffle control to the board's eight-column grid. */
+#tileRack {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 3px;
+    padding: 3px;
+    align-items: stretch;
+}
+
+#tileRack .rack-tile {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+}
+
+#tileRack #shuffleRackButton.shuffle-rack-button {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    margin: 0;
+    align-self: stretch;
+}
+
+@media (max-width: 420px) {
+    #tileRack .rack-tile .tile-letter {
+        font-size: clamp(16px, 5vw, 24px);
+    }
+
+    #tileRack .rack-tile .tile-value {
+        bottom: 3px;
+        right: 3px;
+        font-size: 9px;
+    }
+
+    #tileRack #shuffleRackButton.shuffle-rack-button svg {
+        width: 65%;
+        height: 65%;
+    }
+}
