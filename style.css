@@ -655,6 +655,12 @@ flex-wrap: wrap;
     visibility: hidden;
 }
 
+/* Show which rack slot a dragged letter will move in front of/behind. */
+.rack-tile.rack-reorder-target {
+    outline: 3px solid #4b8df8;
+    outline-offset: 2px;
+}
+
 .rack-tile {
 touch-action: none;
 user-select: none;
