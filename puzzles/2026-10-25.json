@@ -4,46 +4,46 @@
   "board": [
     [
       "S",
-      "W",
-      "I",
-      "N",
-      "K",
-      "S",
-      ""
-    ],
-    [
-      "",
+      "Y",
+      "P",
       "H",
-      "",
-      "",
-      "",
-      "",
+      "O",
+      "N",
       ""
     ],
     [
-      "W",
-      "E",
-      "A",
+      "",
+      "",
       "R",
       "",
       "",
-      ""
-    ],
-    [
-      "",
-      "N",
-      "E",
-      "E",
-      "M",
       "",
       ""
     ],
     [
+      "P",
+      "R",
+      "E",
+      "E",
+      "D",
+      "",
+      ""
+    ],
+    [
+      "",
       "",
       "S",
       "",
+      "U",
+      "",
+      ""
+    ],
+    [
       "",
       "",
+      "E",
+      "",
+      "D",
       "",
       ""
     ],
@@ -52,7 +52,7 @@
       "",
       "",
       "",
-      "",
+      "E",
       "",
       ""
     ],
@@ -61,7 +61,7 @@
       "",
       "",
       "",
-      "",
+      "D",
       "",
       ""
     ]
@@ -69,46 +69,46 @@
   "originalBoard": [
     [
       "S",
-      "W",
-      "I",
-      "N",
-      "K",
-      "S",
-      ""
-    ],
-    [
-      "",
+      "Y",
+      "P",
       "H",
-      "",
-      "",
-      "",
-      "",
+      "O",
+      "N",
       ""
     ],
     [
-      "W",
-      "E",
-      "A",
+      "",
+      "",
       "R",
       "",
       "",
-      ""
-    ],
-    [
-      "",
-      "N",
-      "E",
-      "E",
-      "M",
       "",
       ""
     ],
     [
+      "P",
+      "R",
+      "E",
+      "E",
+      "D",
+      "",
+      ""
+    ],
+    [
+      "",
       "",
       "S",
       "",
+      "U",
+      "",
+      ""
+    ],
+    [
       "",
       "",
+      "E",
+      "",
+      "D",
       "",
       ""
     ],
@@ -117,7 +117,7 @@
       "",
       "",
       "",
-      "",
+      "E",
       "",
       ""
     ],
@@ -126,41 +126,42 @@
       "",
       "",
       "",
-      "",
+      "D",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,6": "triple-word",
-    "3,6": "double-word",
-    "5,3": "double-letter",
-    "6,0": "double-letter"
+    "6,6": "double-word",
+    "4,6": "double-letter",
+    "4,0": "triple-letter",
+    "6,1": "triple-letter",
+    "2,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "SWINKS",
+      "word": "SYPHON",
       "row": 0,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "WHENS",
+      "word": "PRESE",
       "row": 0,
-      "col": 1,
+      "col": 2,
       "direction": "vertical"
     },
     {
-      "word": "WEAR",
+      "word": "PREED",
       "row": 2,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "NEEM",
-      "row": 3,
-      "col": 1,
-      "direction": "horizontal"
+      "word": "DUDED",
+      "row": 2,
+      "col": 4,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -169,235 +170,206 @@
     "E",
     "L",
     "W",
-    "M"
+    "M",
+    "S"
   ],
   "bestSolution": {
     "board": [
       [
         "S",
-        "W",
-        "I",
-        "N",
-        "K",
-        "S",
-        ""
-      ],
-      [
-        "E",
+        "Y",
+        "P",
         "H",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "W",
-        "E",
-        "A",
-        "R",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
+        "O",
         "N",
-        "E",
-        "E",
-        "M",
-        "",
         ""
       ],
       [
         "U",
-        "S",
         "",
-        "M",
-        "E",
-        "W",
-        "L"
-      ],
-      [
-        "",
-        "",
-        "",
+        "R",
         "",
         "",
         "",
         ""
       ],
       [
+        "P",
+        "R",
+        "E",
+        "E",
+        "D",
+        "",
+        ""
+      ],
+      [
         "",
         "",
+        "S",
+        "",
+        "U",
+        "",
+        ""
+      ],
+      [
+        "",
+        "M",
+        "E",
+        "",
+        "D",
+        "",
+        ""
+      ],
+      [
+        "",
+        "E",
         "",
         "",
+        "E",
         "",
+        ""
+      ],
+      [
         "",
+        "W",
+        "E",
+        "L",
+        "D",
+        "S",
         ""
       ]
     ],
     "newKeys": [
-      "4,3",
-      "4,4",
-      "4,5",
-      "4,6",
-      "1,0",
-      "4,0"
+      "4,1",
+      "5,1",
+      "6,1",
+      "6,2",
+      "6,3",
+      "6,5",
+      "1,0"
     ],
-    "score": 79,
+    "score": 92,
     "completionBonus": 50,
     "words": [
-      "MEWL",
-      "REM",
       "ME",
-      "EH",
-      "SEW",
-      "US"
+      "MEW",
+      "WELDS",
+      "SUP"
     ],
     "scoringWords": [
       {
-        "word": "MEWL",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "REM",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 3,
-        "move": 1
-      },
-      {
         "word": "ME",
-        "row": 3,
-        "col": 4,
-        "direction": "vertical",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
         "score": 4,
         "move": 1
       },
       {
-        "word": "EH",
-        "row": 1,
-        "col": 0,
+        "word": "MEW",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 16,
+        "move": 1
+      },
+      {
+        "word": "WELDS",
+        "row": 6,
+        "col": 1,
         "direction": "horizontal",
-        "score": 5,
+        "score": 17,
         "move": 2
       },
       {
-        "word": "SEW",
+        "word": "SUP",
         "row": 0,
         "col": 0,
         "direction": "vertical",
-        "score": 6,
-        "move": 2
-      },
-      {
-        "word": "US",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
+        "score": 5,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "MEWL",
+        "word": "MEW",
         "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 16,
-        "usedTiles": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 20,
+        "usedTiles": 3,
         "newKeys": [
-          "4,3",
-          "4,4",
-          "4,5",
-          "4,6"
+          "4,1",
+          "5,1",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "MEWL",
-            "row": 4,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 9
-          },
-          {
-            "word": "REM",
-            "row": 2,
-            "col": 3,
-            "direction": "vertical",
-            "score": 3
-          },
-          {
             "word": "ME",
-            "row": 3,
-            "col": 4,
-            "direction": "vertical",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
             "score": 4
+          },
+          {
+            "word": "MEW",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 16
           }
         ]
       },
       {
         "turn": 2,
-        "word": "SEW",
+        "word": "WELDS",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 17,
+        "usedTiles": 3,
+        "newKeys": [
+          "6,2",
+          "6,3",
+          "6,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "WELDS",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 17
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "SUP",
         "row": 0,
         "col": 0,
         "direction": "vertical",
-        "score": 11,
+        "score": 5,
         "usedTiles": 1,
         "newKeys": [
           "1,0"
         ],
         "scoringWords": [
           {
-            "word": "EH",
-            "row": 1,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "SEW",
+            "word": "SUP",
             "row": 0,
             "col": 0,
             "direction": "vertical",
-            "score": 6
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "US",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 1,
-        "newKeys": [
-          "4,0"
-        ],
-        "scoringWords": [
-          {
-            "word": "US",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 2
+            "score": 5
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 555
+    "visitedCandidates": 1484
   }
 }

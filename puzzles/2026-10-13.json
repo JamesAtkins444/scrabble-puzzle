@@ -7,62 +7,62 @@
       "",
       "",
       "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "O",
+      "Q",
       "",
       ""
     ],
     [
-      "",
-      "",
-      "B",
-      "",
-      "D",
-      "O",
-      ""
-    ],
-    [
-      "B",
-      "R",
-      "A",
-      "V",
-      "E",
-      "R",
-      ""
-    ],
-    [
-      "",
-      "",
-      "R",
-      "",
-      "",
       "C",
+      "",
+      "T",
+      "",
+      "U",
+      "",
       ""
     ],
     [
+      "U",
       "",
+      "R",
       "",
-      "D",
+      "O",
       "",
-      "",
+      ""
+    ],
+    [
+      "B",
+      "R",
       "A",
+      "Z",
+      "I",
+      "L",
+      ""
+    ],
+    [
+      "E",
+      "",
+      "Y",
+      "",
+      "N",
+      "",
       ""
     ],
     [
       "",
       "",
-      "S",
       "",
       "",
-      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
     ]
   ],
@@ -72,94 +72,94 @@
       "",
       "",
       "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "O",
+      "Q",
       "",
       ""
     ],
     [
-      "",
-      "",
-      "B",
-      "",
-      "D",
-      "O",
-      ""
-    ],
-    [
-      "B",
-      "R",
-      "A",
-      "V",
-      "E",
-      "R",
-      ""
-    ],
-    [
-      "",
-      "",
-      "R",
-      "",
-      "",
       "C",
+      "",
+      "T",
+      "",
+      "U",
+      "",
       ""
     ],
     [
+      "U",
       "",
+      "R",
       "",
-      "D",
+      "O",
       "",
-      "",
+      ""
+    ],
+    [
+      "B",
+      "R",
       "A",
+      "Z",
+      "I",
+      "L",
+      ""
+    ],
+    [
+      "E",
+      "",
+      "Y",
+      "",
+      "N",
+      "",
       ""
     ],
     [
       "",
       "",
-      "S",
       "",
       "",
-      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,2": "double-word",
-    "1,0": "triple-letter",
-    "5,0": "double-letter",
-    "0,6": "triple-letter"
+    "6,1": "double-word",
+    "1,6": "triple-letter",
+    "6,5": "triple-letter",
+    "6,3": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "BRAVER",
+      "word": "BRAZIL",
       "row": 3,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "ODE",
-      "row": 1,
+      "word": "QUOIN",
+      "row": 0,
       "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "BARDS",
-      "row": 2,
-      "col": 2,
+      "word": "CUBE",
+      "row": 1,
+      "col": 0,
       "direction": "vertical"
     },
     {
-      "word": "ORCAS",
-      "row": 2,
-      "col": 5,
+      "word": "TRAY",
+      "row": 1,
+      "col": 2,
       "direction": "vertical"
     }
   ],
@@ -169,174 +169,177 @@
     "N",
     "D",
     "N",
-    "I"
+    "I",
+    "S"
   ],
   "bestSolution": {
     "board": [
       [
         "",
         "",
-        "I",
-        "N",
-        "N",
-        "E",
+        "",
+        "",
+        "Q",
+        "",
         "D"
       ],
       [
+        "C",
         "",
+        "T",
         "",
-        "",
-        "",
-        "O",
+        "U",
         "",
         "O"
       ],
       [
+        "U",
         "",
+        "R",
         "",
-        "B",
-        "",
-        "D",
         "O",
-        ""
+        "",
+        "N"
       ],
       [
         "B",
         "R",
         "A",
-        "V",
+        "Z",
+        "I",
+        "L",
+        "S"
+      ],
+      [
         "E",
-        "R",
-        ""
+        "",
+        "Y",
+        "",
+        "N",
+        "",
+        "I"
       ],
       [
         "",
         "",
-        "R",
         "",
         "",
-        "C",
-        ""
+        "",
+        "N",
+        "E"
       ],
       [
         "",
         "",
-        "D",
         "",
         "",
-        "A",
-        ""
-      ],
-      [
         "",
         "",
-        "S",
-        "",
-        "",
-        "S",
         ""
       ]
     ],
     "newKeys": [
-      "0,2",
-      "0,3",
-      "0,4",
-      "0,5",
       "0,6",
-      "1,6"
+      "1,6",
+      "2,6",
+      "3,6",
+      "4,6",
+      "5,6",
+      "5,5"
     ],
-    "score": 78,
+    "score": 162,
     "completionBonus": 50,
     "words": [
-      "INNED",
-      "NODE",
-      "DO"
+      "BRAZILS",
+      "DONSIE",
+      "NE"
     ],
     "scoringWords": [
       {
-        "word": "INNED",
-        "row": 0,
-        "col": 2,
+        "word": "BRAZILS",
+        "row": 3,
+        "col": 0,
         "direction": "horizontal",
-        "score": 20,
-        "move": 1
-      },
-      {
-        "word": "NODE",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
         "score": 1,
         "move": 1
       },
       {
-        "word": "DO",
+        "word": "DONSIE",
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 7,
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "NE",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "INNED",
+        "word": "DONSIE",
         "row": 0,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 21,
-        "usedTiles": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 110,
+        "usedTiles": 6,
         "newKeys": [
-          "0,2",
-          "0,3",
-          "0,4",
-          "0,5",
-          "0,6"
+          "0,6",
+          "1,6",
+          "2,6",
+          "3,6",
+          "4,6",
+          "5,6"
         ],
         "scoringWords": [
           {
-            "word": "INNED",
-            "row": 0,
-            "col": 2,
+            "word": "BRAZILS",
+            "row": 3,
+            "col": 0,
             "direction": "horizontal",
-            "score": 20
+            "score": 1
           },
           {
-            "word": "NODE",
+            "word": "DONSIE",
             "row": 0,
-            "col": 4,
+            "col": 6,
             "direction": "vertical",
-            "score": 1
+            "score": 9
           }
         ]
       },
       {
         "turn": 2,
-        "word": "DO",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 7,
+        "word": "NE",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "1,6"
+          "5,5"
         ],
         "scoringWords": [
           {
-            "word": "DO",
-            "row": 0,
-            "col": 6,
-            "direction": "vertical",
-            "score": 7
+            "word": "NE",
+            "row": 5,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 882
+    "visitedCandidates": 1570
   }
 }

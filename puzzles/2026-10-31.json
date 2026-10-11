@@ -4,8 +4,8 @@
   "board": [
     [
       "",
-      "G",
-      "E",
+      "",
+      "",
       "T",
       "",
       "",
@@ -14,63 +14,63 @@
     [
       "",
       "",
-      "",
-      "I",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
       "T",
       "I",
-      "M",
-      "E",
-      "D",
-      ""
-    ],
-    [
-      "",
       "E",
       "",
-      "I",
-      "",
-      "",
       ""
     ],
     [
       "",
-      "A",
       "",
-      "N",
-      "",
-      "",
-      ""
-    ],
-    [
       "",
       "R",
       "",
-      "G",
-      "",
-      "",
+      "A",
       ""
     ],
     [
       "",
-      "S",
+      "",
+      "",
+      "I",
+      "",
+      "G",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "Y",
+      "N",
+      "E",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "E",
+      ""
+    ],
+    [
       "",
       "",
       "",
       "",
+      "",
+      "Y",
       ""
     ]
   ],
   "originalBoard": [
     [
       "",
-      "G",
-      "E",
+      "",
+      "",
       "T",
       "",
       "",
@@ -79,86 +79,87 @@
     [
       "",
       "",
-      "",
-      "I",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
       "T",
       "I",
-      "M",
-      "E",
-      "D",
-      ""
-    ],
-    [
-      "",
       "E",
       "",
-      "I",
-      "",
-      "",
       ""
     ],
     [
       "",
-      "A",
       "",
-      "N",
-      "",
-      "",
-      ""
-    ],
-    [
       "",
       "R",
       "",
-      "G",
-      "",
-      "",
+      "A",
       ""
     ],
     [
       "",
-      "S",
+      "",
+      "",
+      "I",
+      "",
+      "G",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "Y",
+      "N",
+      "E",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "E",
+      ""
+    ],
+    [
       "",
       "",
       "",
       "",
+      "",
+      "Y",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,6": "triple-word",
-    "4,5": "double-word",
-    "0,5": "triple-letter"
+    "6,1": "double-word",
+    "0,6": "double-letter",
+    "0,0": "triple-letter",
+    "2,0": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "TIMING",
+      "word": "TIRING",
       "row": 0,
       "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "TIMED",
-      "row": 2,
+      "word": "TIE",
+      "row": 1,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "DYNEL",
+      "row": 4,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "GET",
-      "row": 0,
-      "col": 1,
-      "direction": "horizontal"
-    },
-    {
-      "word": "TEARS",
+      "word": "AGLEY",
       "row": 2,
-      "col": 1,
+      "col": 5,
       "direction": "vertical"
     }
   ],
@@ -168,58 +169,59 @@
     "W",
     "O",
     "E",
-    "E"
+    "E",
+    "S"
   ],
   "bestSolution": {
     "board": [
       [
-        "",
-        "G",
-        "E",
-        "T",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "I",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "T",
-        "I",
-        "M",
-        "E",
         "D",
+        "E",
+        "E",
+        "T",
+        "",
+        "",
         ""
       ],
       [
         "",
-        "E",
         "",
+        "T",
         "I",
-        "",
         "E",
+        "",
         ""
       ],
       [
         "",
-        "A",
         "",
-        "N",
-        "",
-        "W",
-        ""
-      ],
-      [
         "",
         "R",
+        "",
+        "A",
+        "W"
+      ],
+      [
+        "",
+        "",
+        "",
+        "I",
+        "",
+        "G",
+        "O"
+      ],
+      [
+        "",
+        "D",
+        "Y",
+        "N",
+        "E",
+        "L",
+        "S"
+      ],
+      [
+        "",
+        "",
         "",
         "G",
         "",
@@ -228,37 +230,57 @@
       ],
       [
         "",
-        "S",
         "",
         "",
         "",
-        "D",
-        "O"
+        "",
+        "Y",
+        ""
       ]
     ],
     "newKeys": [
-      "3,5",
-      "4,5",
-      "5,5",
-      "6,5",
+      "2,6",
+      "3,6",
+      "4,6",
       "5,6",
-      "6,6"
+      "0,0",
+      "0,1",
+      "0,2"
     ],
-    "score": 87,
+    "score": 79,
     "completionBonus": 50,
     "words": [
-      "DEWED",
+      "AW",
+      "GO",
+      "DYNELS",
       "ET",
-      "DO",
-      "TO"
+      "WOST",
+      "DEET",
+      "ET"
     ],
     "scoringWords": [
       {
-        "word": "DEWED",
+        "word": "AW",
         "row": 2,
         "col": 5,
-        "direction": "vertical",
-        "score": 20,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "GO",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 1
+      },
+      {
+        "word": "DYNELS",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 1,
         "move": 1
       },
       {
@@ -267,63 +289,70 @@
         "col": 5,
         "direction": "horizontal",
         "score": 2,
-        "move": 2
+        "move": 1
       },
       {
-        "word": "DO",
-        "row": 6,
-        "col": 5,
+        "word": "WOST",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 7,
+        "move": 1
+      },
+      {
+        "word": "DEET",
+        "row": 0,
+        "col": 0,
         "direction": "horizontal",
         "score": 9,
         "move": 2
       },
       {
-        "word": "TO",
-        "row": 5,
-        "col": 6,
+        "word": "ET",
+        "row": 0,
+        "col": 2,
         "direction": "vertical",
-        "score": 6,
+        "score": 2,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DEWED",
+        "word": "WOST",
         "row": 2,
-        "col": 5,
+        "col": 6,
         "direction": "vertical",
-        "score": 20,
+        "score": 18,
         "usedTiles": 4,
         "newKeys": [
-          "3,5",
-          "4,5",
-          "5,5",
-          "6,5"
+          "2,6",
+          "3,6",
+          "4,6",
+          "5,6"
         ],
         "scoringWords": [
           {
-            "word": "DEWED",
+            "word": "AW",
             "row": 2,
             "col": 5,
-            "direction": "vertical",
-            "score": 20
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "TO",
-        "row": 5,
-        "col": 6,
-        "direction": "vertical",
-        "score": 17,
-        "usedTiles": 2,
-        "newKeys": [
-          "5,6",
-          "6,6"
-        ],
-        "scoringWords": [
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "GO",
+            "row": 3,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "DYNELS",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 1
+          },
           {
             "word": "ET",
             "row": 5,
@@ -332,26 +361,49 @@
             "score": 2
           },
           {
-            "word": "DO",
-            "row": 6,
-            "col": 5,
+            "word": "WOST",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 7
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "DEET",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 11,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,0",
+          "0,1",
+          "0,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "DEET",
+            "row": 0,
+            "col": 0,
             "direction": "horizontal",
             "score": 9
           },
           {
-            "word": "TO",
-            "row": 5,
-            "col": 6,
+            "word": "ET",
+            "row": 0,
+            "col": 2,
             "direction": "vertical",
-            "score": 6
+            "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1115
+    "visitedCandidates": 1921
   }
 }

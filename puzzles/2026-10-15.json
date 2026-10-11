@@ -7,61 +7,61 @@
       "",
       "",
       "",
-      "S",
+      "",
       "",
       ""
     ],
     [
+      "O",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "C",
+      "R",
+      "U",
       "O",
       "R",
-      "T",
-      "H",
-      "O",
       "",
       ""
     ],
     [
-      "D",
+      "T",
       "",
       "",
       "",
-      "J",
+      "",
+      "",
+      ""
+    ],
+    [
+      "R",
+      "I",
+      "V",
+      "E",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "O",
+      "",
+      "",
+      "",
+      "",
       "",
       ""
     ],
     [
       "I",
-      "",
-      "",
-      "",
-      "A",
-      "",
-      ""
-    ],
-    [
-      "U",
-      "",
-      "",
-      "",
-      "S",
-      "",
-      ""
-    ],
-    [
-      "M",
-      "E",
-      "A",
       "N",
-      "",
-      "",
-      ""
-    ],
-    [
-      "S",
-      "",
-      "",
-      "",
-      "",
+      "P",
+      "U",
+      "T",
       "",
       ""
     ]
@@ -72,95 +72,96 @@
       "",
       "",
       "",
-      "S",
+      "",
       "",
       ""
     ],
     [
+      "O",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "C",
+      "R",
+      "U",
       "O",
       "R",
-      "T",
-      "H",
-      "O",
       "",
       ""
     ],
     [
-      "D",
+      "T",
       "",
       "",
       "",
-      "J",
+      "",
+      "",
+      ""
+    ],
+    [
+      "R",
+      "I",
+      "V",
+      "E",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "O",
+      "",
+      "",
+      "",
+      "",
       "",
       ""
     ],
     [
       "I",
-      "",
-      "",
-      "",
-      "A",
-      "",
-      ""
-    ],
-    [
-      "U",
-      "",
-      "",
-      "",
-      "S",
-      "",
-      ""
-    ],
-    [
-      "M",
-      "E",
-      "A",
       "N",
-      "",
-      "",
-      ""
-    ],
-    [
-      "S",
-      "",
-      "",
-      "",
-      "",
+      "P",
+      "U",
+      "T",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "1,6": "double-word",
-    "5,6": "triple-letter",
-    "3,6": "triple-letter",
-    "3,2": "double-letter"
+    "0,5": "double-word",
+    "0,3": "double-letter",
+    "4,6": "triple-letter",
+    "6,6": "double-letter",
+    "2,6": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "ODIUMS",
+      "word": "OCTROI",
       "row": 1,
       "col": 0,
       "direction": "vertical"
     },
     {
-      "word": "ORTHO",
-      "row": 1,
+      "word": "CRUOR",
+      "row": 2,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "MEAN",
-      "row": 5,
+      "word": "RIVER",
+      "row": 4,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "SOJAS",
-      "row": 0,
-      "col": 4,
-      "direction": "vertical"
+      "word": "INPUT",
+      "row": 6,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -169,7 +170,8 @@
     "B",
     "T",
     "F",
-    "O"
+    "O",
+    "S"
   ],
   "bestSolution": {
     "board": [
@@ -177,227 +179,184 @@
         "",
         "",
         "",
-        "O",
-        "S",
+        "",
+        "",
         "",
         ""
       ],
       [
+        "O",
+        "",
+        "",
+        "B",
+        "O",
+        "O",
+        "S"
+      ],
+      [
+        "C",
+        "R",
+        "U",
         "O",
         "R",
-        "T",
-        "H",
-        "O",
         "",
-        ""
+        "O"
       ],
       [
-        "D",
+        "T",
         "",
         "",
         "",
-        "J",
+        "",
+        "",
+        "F"
+      ],
+      [
+        "R",
+        "I",
+        "V",
+        "E",
+        "R",
+        "",
+        "T"
+      ],
+      [
         "O",
-        "B"
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
       ],
       [
         "I",
-        "",
-        "",
-        "F",
-        "A",
-        "",
-        ""
-      ],
-      [
-        "U",
-        "",
-        "",
-        "O",
-        "S",
-        "",
-        ""
-      ],
-      [
-        "M",
-        "E",
-        "A",
         "N",
-        "",
-        "",
-        ""
-      ],
-      [
-        "S",
-        "",
-        "",
+        "P",
+        "U",
         "T",
-        "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "3,3",
-      "4,3",
-      "6,3",
-      "2,5",
+      "1,3",
+      "1,4",
+      "1,5",
+      "1,6",
       "2,6",
-      "0,3"
+      "3,6",
+      "4,6"
     ],
-    "score": 83,
+    "score": 73,
     "completionBonus": 50,
     "words": [
-      "FA",
-      "OS",
-      "FONT",
-      "JOB",
-      "OS",
-      "OH"
+      "BOOS",
+      "BO",
+      "OR",
+      "SOFT"
     ],
     "scoringWords": [
       {
-        "word": "FA",
-        "row": 3,
+        "word": "BOOS",
+        "row": 1,
         "col": 3,
         "direction": "horizontal",
-        "score": 5,
+        "score": 6,
         "move": 1
       },
       {
-        "word": "OS",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "FONT",
-        "row": 3,
+        "word": "BO",
+        "row": 1,
         "col": 3,
         "direction": "vertical",
-        "score": 7,
+        "score": 4,
         "move": 1
       },
       {
-        "word": "JOB",
-        "row": 2,
+        "word": "OR",
+        "row": 1,
         "col": 4,
-        "direction": "horizontal",
-        "score": 12,
-        "move": 2
-      },
-      {
-        "word": "OS",
-        "row": 0,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
-      },
-      {
-        "word": "OH",
-        "row": 0,
-        "col": 3,
         "direction": "vertical",
-        "score": 5,
-        "move": 3
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "SOFT",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 11,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FONT",
-        "row": 3,
+        "word": "BOOS",
+        "row": 1,
         "col": 3,
-        "direction": "vertical",
-        "score": 14,
-        "usedTiles": 3,
+        "direction": "horizontal",
+        "score": 12,
+        "usedTiles": 4,
         "newKeys": [
-          "3,3",
-          "4,3",
-          "6,3"
+          "1,3",
+          "1,4",
+          "1,5",
+          "1,6"
         ],
         "scoringWords": [
           {
-            "word": "FA",
-            "row": 3,
+            "word": "BOOS",
+            "row": 1,
             "col": 3,
             "direction": "horizontal",
-            "score": 5
+            "score": 6
           },
           {
-            "word": "OS",
-            "row": 4,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "FONT",
-            "row": 3,
+            "word": "BO",
+            "row": 1,
             "col": 3,
             "direction": "vertical",
-            "score": 7
+            "score": 4
+          },
+          {
+            "word": "OR",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       },
       {
         "turn": 2,
-        "word": "JOB",
-        "row": 2,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 12,
-        "usedTiles": 2,
-        "newKeys": [
-          "2,5",
-          "2,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "JOB",
-            "row": 2,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 12
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "OH",
-        "row": 0,
-        "col": 3,
+        "word": "SOFT",
+        "row": 1,
+        "col": 6,
         "direction": "vertical",
-        "score": 7,
-        "usedTiles": 1,
+        "score": 11,
+        "usedTiles": 3,
         "newKeys": [
-          "0,3"
+          "2,6",
+          "3,6",
+          "4,6"
         ],
         "scoringWords": [
           {
-            "word": "OS",
-            "row": 0,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OH",
-            "row": 0,
-            "col": 3,
+            "word": "SOFT",
+            "row": 1,
+            "col": 6,
             "direction": "vertical",
-            "score": 5
+            "score": 11
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 443
+    "visitedCandidates": 727
   }
 }

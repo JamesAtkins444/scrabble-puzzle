@@ -5,42 +5,51 @@
     [
       "",
       "L",
+      "E",
       "A",
-      "Z",
-      "I",
+      "S",
       "E",
       "D"
     ],
     [
       "",
+      "O",
+      "",
+      "",
+      "T",
+      "",
+      ""
+    ],
+    [
+      "",
+      "F",
+      "",
+      "D",
+      "E",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "T",
       "",
       "",
       "A",
       "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "K",
       "",
       ""
     ],
     [
       "",
-      "B",
       "",
-      "R",
-      "",
-      "",
-      ""
-    ],
-    [
-      "W",
-      "O",
-      "L",
-      "F",
-      "S",
-      "",
-      ""
-    ],
-    [
-      "",
-      "F",
       "",
       "",
       "",
@@ -49,16 +58,7 @@
     ],
     [
       "",
-      "F",
       "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "S",
       "",
       "",
       "",
@@ -70,42 +70,51 @@
     [
       "",
       "L",
+      "E",
       "A",
-      "Z",
-      "I",
+      "S",
       "E",
       "D"
     ],
     [
       "",
+      "O",
+      "",
+      "",
+      "T",
+      "",
+      ""
+    ],
+    [
+      "",
+      "F",
+      "",
+      "D",
+      "E",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "T",
       "",
       "",
       "A",
       "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "K",
       "",
       ""
     ],
     [
       "",
-      "B",
       "",
-      "R",
-      "",
-      "",
-      ""
-    ],
-    [
-      "W",
-      "O",
-      "L",
-      "F",
-      "S",
-      "",
-      ""
-    ],
-    [
-      "",
-      "F",
       "",
       "",
       "",
@@ -114,16 +123,7 @@
     ],
     [
       "",
-      "F",
       "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "S",
       "",
       "",
       "",
@@ -132,34 +132,35 @@
     ]
   ],
   "bonusSquares": {
-    "6,4": "triple-word",
-    "2,6": "double-word",
-    "5,6": "triple-letter"
+    "6,1": "triple-word",
+    "6,4": "double-word",
+    "6,6": "triple-letter",
+    "4,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "LAZIED",
+      "word": "LEASED",
       "row": 0,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "ZARF",
+      "word": "STEAK",
       "row": 0,
-      "col": 3,
+      "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "WOLFS",
-      "row": 3,
-      "col": 0,
-      "direction": "horizontal"
+      "word": "LOFT",
+      "row": 0,
+      "col": 1,
+      "direction": "vertical"
     },
     {
-      "word": "BOFFS",
+      "word": "DEL",
       "row": 2,
-      "col": 1,
-      "direction": "vertical"
+      "col": 3,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -168,187 +169,206 @@
     "U",
     "U",
     "N",
-    "T"
+    "T",
+    "S"
   ],
   "bestSolution": {
     "board": [
       [
         "",
         "L",
+        "E",
         "A",
-        "Z",
-        "I",
+        "S",
         "E",
         "D"
       ],
       [
         "",
+        "O",
+        "",
+        "",
+        "T",
+        "",
+        ""
+      ],
+      [
+        "",
+        "F",
+        "",
+        "D",
+        "E",
+        "L",
+        "F"
+      ],
+      [
+        "U",
+        "T",
         "",
         "",
         "A",
         "",
-        "",
-        "U"
+        "O"
       ],
       [
         "",
-        "B",
         "",
-        "R",
         "",
+        "",
+        "K",
         "",
         "N"
       ],
       [
-        "W",
-        "O",
-        "L",
-        "F",
-        "S",
         "",
-        ""
+        "",
+        "",
+        "",
+        "",
+        "",
+        "T"
       ],
       [
         "",
-        "F",
         "",
         "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "F",
         "",
         "",
         "U",
-        "",
-        ""
-      ],
-      [
-        "",
-        "S",
-        "O",
-        "F",
-        "T",
-        "",
-        ""
+        "S"
       ]
     ],
     "newKeys": [
-      "6,2",
-      "6,3",
-      "6,4",
-      "1,6",
       "2,6",
-      "5,4"
+      "3,6",
+      "4,6",
+      "5,6",
+      "6,6",
+      "6,5",
+      "3,0"
     ],
-    "score": 85,
+    "score": 71,
     "completionBonus": 50,
     "words": [
-      "SOFT",
-      "DUN",
+      "DELF",
+      "FONTS",
+      "US",
       "UT"
     ],
     "scoringWords": [
       {
-        "word": "SOFT",
-        "row": 6,
-        "col": 1,
+        "word": "DELF",
+        "row": 2,
+        "col": 3,
         "direction": "horizontal",
-        "score": 21,
+        "score": 4,
         "move": 1
       },
       {
-        "word": "DUN",
-        "row": 0,
+        "word": "FONTS",
+        "row": 2,
         "col": 6,
         "direction": "vertical",
-        "score": 8,
+        "score": 11,
+        "move": 1
+      },
+      {
+        "word": "US",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
         "move": 2
       },
       {
         "word": "UT",
-        "row": 5,
-        "col": 4,
-        "direction": "vertical",
-        "score": 6,
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "SOFT",
-        "row": 6,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 21,
-        "usedTiles": 3,
+        "word": "FONTS",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 15,
+        "usedTiles": 5,
         "newKeys": [
-          "6,2",
-          "6,3",
-          "6,4"
+          "2,6",
+          "3,6",
+          "4,6",
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "SOFT",
-            "row": 6,
-            "col": 1,
+            "word": "DELF",
+            "row": 2,
+            "col": 3,
             "direction": "horizontal",
-            "score": 21
+            "score": 4
+          },
+          {
+            "word": "FONTS",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 11
           }
         ]
       },
       {
         "turn": 2,
-        "word": "DUN",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 8,
-        "usedTiles": 2,
+        "word": "US",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
         "newKeys": [
-          "1,6",
-          "2,6"
+          "6,5"
         ],
         "scoringWords": [
           {
-            "word": "DUN",
-            "row": 0,
-            "col": 6,
-            "direction": "vertical",
-            "score": 8
+            "word": "US",
+            "row": 6,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
           }
         ]
       },
       {
         "turn": 3,
         "word": "UT",
-        "row": 5,
-        "col": 4,
-        "direction": "vertical",
-        "score": 6,
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "5,4"
+          "3,0"
         ],
         "scoringWords": [
           {
             "word": "UT",
-            "row": 5,
-            "col": 4,
-            "direction": "vertical",
-            "score": 6
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 587
+    "visitedCandidates": 1123
   }
 }

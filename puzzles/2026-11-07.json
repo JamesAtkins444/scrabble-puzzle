@@ -6,7 +6,7 @@
       "",
       "",
       "",
-      "D",
+      "",
       "",
       "",
       ""
@@ -15,54 +15,54 @@
       "",
       "",
       "",
-      "O",
+      "",
       "",
       "",
       ""
     ],
     [
-      "",
-      "",
       "",
       "G",
       "",
       "",
-      ""
-    ],
-    [
       "W",
+      "",
+      ""
+    ],
+    [
+      "",
       "O",
+      "",
+      "",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "R",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "",
+      "",
       "V",
-      "E",
-      "N",
-      "",
-      ""
-    ],
-    [
-      "E",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "F",
-      "",
-      "",
-      "",
-      "",
       "",
       ""
     ],
     [
       "T",
       "E",
-      "A",
-      "C",
-      "U",
+      "E",
       "P",
+      "E",
+      "E",
       ""
     ]
   ],
@@ -71,7 +71,7 @@
       "",
       "",
       "",
-      "D",
+      "",
       "",
       "",
       ""
@@ -80,86 +80,86 @@
       "",
       "",
       "",
-      "O",
+      "",
       "",
       "",
       ""
     ],
     [
-      "",
-      "",
       "",
       "G",
       "",
       "",
-      ""
-    ],
-    [
       "W",
+      "",
+      ""
+    ],
+    [
+      "",
       "O",
+      "",
+      "",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "R",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "",
+      "",
       "V",
-      "E",
-      "N",
-      "",
-      ""
-    ],
-    [
-      "E",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "F",
-      "",
-      "",
-      "",
-      "",
       "",
       ""
     ],
     [
       "T",
       "E",
-      "A",
-      "C",
-      "U",
+      "E",
       "P",
+      "E",
+      "E",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,6": "triple-word",
-    "2,6": "double-word",
-    "0,1": "triple-letter",
-    "4,6": "double-letter"
+    "0,1": "double-word",
+    "0,4": "triple-letter",
+    "4,6": "double-letter",
+    "1,6": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "TEACUP",
+      "word": "TEEPEE",
       "row": 6,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "WEFT",
-      "row": 3,
-      "col": 0,
+      "word": "WEAVE",
+      "row": 2,
+      "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "WOVEN",
-      "row": 3,
-      "col": 0,
-      "direction": "horizontal"
+      "word": "AVE",
+      "row": 4,
+      "col": 4,
+      "direction": "vertical"
     },
     {
-      "word": "DOGE",
-      "row": 0,
-      "col": 3,
+      "word": "GORSE",
+      "row": 2,
+      "col": 1,
       "direction": "vertical"
     }
   ],
@@ -169,158 +169,193 @@
     "R",
     "A",
     "I",
-    "O"
+    "O",
+    "S"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "O",
-        "R",
-        "D",
-        "A",
-        "I",
-        "N"
-      ],
-      [
         "",
         "",
         "",
-        "O",
         "",
         "",
         ""
       ],
       [
         "",
-        "G",
-        "",
-        "G",
         "",
         "",
-        ""
+        "",
+        "",
+        "",
+        "G"
       ],
       [
+        "",
+        "G",
+        "",
+        "",
         "W",
+        "",
+        "I"
+      ],
+      [
+        "",
         "O",
+        "",
+        "",
+        "E",
+        "",
+        "R"
+      ],
+      [
+        "",
+        "R",
+        "",
+        "",
+        "A",
+        "",
+        "O"
+      ],
+      [
+        "",
+        "S",
+        "",
+        "",
         "V",
-        "E",
-        "N",
-        "",
-        ""
-      ],
-      [
-        "E",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "F",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "A",
+        "N"
       ],
       [
         "T",
         "E",
-        "A",
-        "C",
-        "U",
+        "E",
         "P",
-        ""
+        "E",
+        "E",
+        "S"
       ]
     ],
     "newKeys": [
-      "0,1",
-      "0,2",
-      "0,4",
-      "0,5",
-      "0,6",
-      "2,1"
+      "1,6",
+      "2,6",
+      "3,6",
+      "4,6",
+      "5,6",
+      "6,6",
+      "5,5"
     ],
-    "score": 80,
+    "score": 171,
     "completionBonus": 50,
     "words": [
-      "ORDAIN",
-      "GO"
+      "TEEPEES",
+      "GIRONS",
+      "VAN",
+      "AE"
     ],
     "scoringWords": [
       {
-        "word": "ORDAIN",
-        "row": 0,
-        "col": 1,
+        "word": "TEEPEES",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 27,
+        "score": 1,
         "move": 1
       },
       {
-        "word": "GO",
-        "row": 2,
-        "col": 1,
+        "word": "GIRONS",
+        "row": 1,
+        "col": 6,
         "direction": "vertical",
-        "score": 3,
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "VAN",
+        "row": 5,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "AE",
+        "row": 5,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "ORDAIN",
-        "row": 0,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 27,
-        "usedTiles": 5,
+        "word": "GIRONS",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 113,
+        "usedTiles": 6,
         "newKeys": [
-          "0,1",
-          "0,2",
-          "0,4",
-          "0,5",
-          "0,6"
+          "1,6",
+          "2,6",
+          "3,6",
+          "4,6",
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "ORDAIN",
-            "row": 0,
-            "col": 1,
+            "word": "TEEPEES",
+            "row": 6,
+            "col": 0,
             "direction": "horizontal",
-            "score": 27
+            "score": 1
+          },
+          {
+            "word": "GIRONS",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 12
           }
         ]
       },
       {
         "turn": 2,
-        "word": "GO",
-        "row": 2,
-        "col": 1,
-        "direction": "vertical",
-        "score": 3,
+        "word": "VAN",
+        "row": 5,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 8,
         "usedTiles": 1,
         "newKeys": [
-          "2,1"
+          "5,5"
         ],
         "scoringWords": [
           {
-            "word": "GO",
-            "row": 2,
-            "col": 1,
+            "word": "VAN",
+            "row": 5,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "AE",
+            "row": 5,
+            "col": 5,
             "direction": "vertical",
-            "score": 3
+            "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1373
+    "visitedCandidates": 3090
   }
 }

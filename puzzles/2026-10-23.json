@@ -13,7 +13,43 @@
     ],
     [
       "",
+      "G",
       "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "B",
+      "E",
+      "A",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "M",
+      "I",
+      "C",
+      "H",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "N",
       "",
       "",
       "",
@@ -22,48 +58,12 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "R"
-    ],
-    [
-      "E",
-      "K",
-      "E",
-      "S",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "",
-      "",
-      "",
-      "P",
-      "",
-      "",
-      "P"
-    ],
-    [
-      "",
-      "",
-      "",
+      "G",
       "I",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "E",
-      "N",
-      "T",
+      "V",
       "E",
       "R",
-      "S"
+      ""
     ]
   ],
   "originalBoard": [
@@ -78,7 +78,43 @@
     ],
     [
       "",
+      "G",
       "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "B",
+      "E",
+      "A",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "M",
+      "I",
+      "C",
+      "H",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "N",
       "",
       "",
       "",
@@ -87,141 +123,79 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "R"
-    ],
-    [
-      "E",
-      "K",
-      "E",
-      "S",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "",
-      "",
-      "",
-      "P",
-      "",
-      "",
-      "P"
-    ],
-    [
-      "",
-      "",
-      "",
+      "G",
       "I",
-      "",
-      "",
-      "E"
-    ],
-    [
-      "",
-      "E",
-      "N",
-      "T",
+      "V",
       "E",
       "R",
-      "S"
+      ""
     ]
   ],
   "bonusSquares": {
-    "0,1": "triple-word",
-    "0,5": "double-word",
-    "0,3": "triple-letter"
+    "1,6": "triple-word",
+    "0,4": "double-word",
+    "4,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "ENTERS",
-      "row": 6,
+      "word": "GEEING",
+      "row": 1,
       "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "BEAR",
+      "row": 2,
+      "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "ROPES",
-      "row": 2,
-      "col": 6,
-      "direction": "vertical"
-    },
-    {
-      "word": "SPIT",
-      "row": 3,
-      "col": 3,
-      "direction": "vertical"
-    },
-    {
-      "word": "EKES",
-      "row": 3,
+      "word": "MICHE",
+      "row": 4,
       "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "GIVER",
+      "row": 6,
+      "col": 1,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "O",
-    "A",
     "T",
-    "B",
-    "D",
-    "E"
+    "U",
+    "E",
+    "L",
+    "O",
+    "N",
+    "S"
   ],
   "bestSolution": {
     "board": [
       [
         "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "G",
+        "",
+        "",
+        "",
+        "",
+        "L"
+      ],
+      [
         "B",
-        "O",
-        "D",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
         "E",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
         "A",
-        "",
-        "",
-        "",
-        "",
-        "R"
-      ],
-      [
-        "E",
-        "K",
-        "E",
-        "S",
-        "",
-        "",
-        "O"
-      ],
-      [
-        "T",
-        "",
-        "",
-        "P",
-        "",
-        "",
-        "P"
-      ],
-      [
-        "",
-        "",
-        "",
-        "I",
+        "R",
         "",
         "",
         "E"
@@ -229,126 +203,158 @@
       [
         "",
         "E",
+        "",
+        "",
+        "",
+        "",
+        "N"
+      ],
+      [
+        "M",
+        "I",
+        "C",
+        "H",
+        "E",
+        "",
+        "T"
+      ],
+      [
+        "U",
         "N",
-        "T",
+        "",
+        "",
+        "",
+        "",
+        "O"
+      ],
+      [
+        "",
+        "G",
+        "I",
+        "V",
         "E",
         "R",
         "S"
       ]
     ],
     "newKeys": [
-      "0,1",
-      "1,1",
-      "2,1",
-      "0,2",
-      "0,3",
-      "4,0"
+      "1,6",
+      "2,6",
+      "3,6",
+      "4,6",
+      "5,6",
+      "6,6",
+      "5,0"
     ],
-    "score": 112,
+    "score": 178,
     "completionBonus": 50,
     "words": [
-      "BEAK",
-      "BOD",
-      "ET"
+      "GIVERS",
+      "LENTOS",
+      "UN",
+      "MU"
     ],
     "scoringWords": [
       {
-        "word": "BEAK",
-        "row": 0,
+        "word": "GIVERS",
+        "row": 6,
         "col": 1,
-        "direction": "vertical",
-        "score": 30,
+        "direction": "horizontal",
+        "score": 1,
         "move": 1
       },
       {
-        "word": "BOD",
-        "row": 0,
-        "col": 1,
+        "word": "LENTOS",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 21,
+        "move": 1
+      },
+      {
+        "word": "UN",
+        "row": 5,
+        "col": 0,
         "direction": "horizontal",
-        "score": 30,
+        "score": 2,
         "move": 2
       },
       {
-        "word": "ET",
-        "row": 3,
+        "word": "MU",
+        "row": 4,
         "col": 0,
         "direction": "vertical",
-        "score": 2,
-        "move": 3
+        "score": 4,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BEAK",
-        "row": 0,
-        "col": 1,
+        "word": "LENTOS",
+        "row": 1,
+        "col": 6,
         "direction": "vertical",
-        "score": 30,
-        "usedTiles": 3,
+        "score": 122,
+        "usedTiles": 6,
         "newKeys": [
-          "0,1",
-          "1,1",
-          "2,1"
+          "1,6",
+          "2,6",
+          "3,6",
+          "4,6",
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "BEAK",
-            "row": 0,
+            "word": "GIVERS",
+            "row": 6,
             "col": 1,
+            "direction": "horizontal",
+            "score": 1
+          },
+          {
+            "word": "LENTOS",
+            "row": 1,
+            "col": 6,
             "direction": "vertical",
-            "score": 30
+            "score": 21
           }
         ]
       },
       {
         "turn": 2,
-        "word": "BOD",
-        "row": 0,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 30,
-        "usedTiles": 2,
-        "newKeys": [
-          "0,2",
-          "0,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "BOD",
-            "row": 0,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 30
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "ET",
-        "row": 3,
+        "word": "MU",
+        "row": 4,
         "col": 0,
         "direction": "vertical",
-        "score": 2,
+        "score": 6,
         "usedTiles": 1,
         "newKeys": [
-          "4,0"
+          "5,0"
         ],
         "scoringWords": [
           {
-            "word": "ET",
-            "row": 3,
+            "word": "UN",
+            "row": 5,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "MU",
+            "row": 4,
             "col": 0,
             "direction": "vertical",
-            "score": 2
+            "score": 4
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1776
+    "visitedCandidates": 2294
   }
 }

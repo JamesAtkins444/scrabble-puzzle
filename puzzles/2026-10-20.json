@@ -5,63 +5,63 @@
     [
       "",
       "F",
+      "R",
       "O",
-      "X",
-      "I",
-      "L",
+      "W",
+      "Z",
       "Y"
     ],
     [
       "",
       "",
       "",
+      "V",
       "",
       "",
-      "O",
       ""
     ],
     [
       "",
       "",
-      "",
-      "",
-      "",
-      "G",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
+      "P",
+      "A",
       "T",
-      "A",
-      ""
-    ],
-    [
-      "",
-      "",
       "C",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
       "R",
-      "A",
-      "N",
-      "K"
+      "",
+      "",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "Y",
+      "",
+      "",
+      "L"
     ],
     [
       "",
       "",
       "",
       "",
-      "E",
       "",
-      ""
+      "",
+      "A"
     ],
     [
       "",
       "",
       "",
       "",
-      "L",
+      "",
       "",
       ""
     ]
@@ -70,96 +70,95 @@
     [
       "",
       "F",
+      "R",
       "O",
-      "X",
-      "I",
-      "L",
+      "W",
+      "Z",
       "Y"
     ],
     [
       "",
       "",
       "",
+      "V",
       "",
       "",
-      "O",
       ""
     ],
     [
       "",
       "",
-      "",
-      "",
-      "",
-      "G",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
+      "P",
+      "A",
       "T",
-      "A",
-      ""
-    ],
-    [
-      "",
-      "",
       "C",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
       "R",
-      "A",
-      "N",
-      "K"
+      "",
+      "",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "Y",
+      "",
+      "",
+      "L"
     ],
     [
       "",
       "",
       "",
       "",
-      "E",
       "",
-      ""
+      "",
+      "A"
     ],
     [
       "",
       "",
       "",
       "",
-      "L",
+      "",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,6": "double-word",
-    "5,0": "triple-letter",
-    "2,1": "double-letter",
-    "6,2": "triple-letter"
+    "5,0": "triple-word",
+    "2,0": "double-word",
+    "6,3": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "FOXILY",
+      "word": "FROWZY",
       "row": 0,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "LOGAN",
+      "word": "OVARY",
       "row": 0,
-      "col": 5,
+      "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "CRANK",
-      "row": 4,
+      "word": "PATCH",
+      "row": 2,
       "col": 2,
       "direction": "horizontal"
     },
     {
-      "word": "TAEL",
-      "row": 3,
-      "col": 4,
+      "word": "HYLA",
+      "row": 2,
+      "col": 6,
       "direction": "vertical"
     }
   ],
@@ -169,118 +168,138 @@
     "S",
     "N",
     "O",
-    "I"
+    "I",
+    "S"
   ],
   "bestSolution": {
     "board": [
       [
         "",
         "F",
+        "R",
         "O",
-        "X",
-        "I",
-        "L",
+        "W",
+        "Z",
+        "Y"
+      ],
+      [
+        "",
+        "",
+        "A",
+        "V",
+        "O",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "P",
+        "A",
+        "T",
+        "C",
+        "H"
+      ],
+      [
+        "",
+        "",
+        "",
+        "R",
+        "",
+        "",
         "Y"
       ],
       [
         "",
         "",
         "",
+        "Y",
         "",
-        "N",
-        "O",
-        ""
+        "",
+        "L"
       ],
       [
         "",
         "",
         "",
         "",
-        "",
-        "G",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "T",
-        "A",
-        ""
-      ],
-      [
-        "",
-        "",
-        "C",
-        "R",
-        "A",
-        "N",
-        "K"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "E",
+        "S",
         "",
         "A"
       ],
       [
         "",
         "",
+        "",
         "F",
         "I",
-        "L",
-        "O",
+        "N",
         "S"
       ]
     ],
     "newKeys": [
-      "6,2",
+      "1,2",
+      "1,4",
       "6,3",
+      "6,4",
       "6,5",
       "6,6",
-      "5,6",
-      "1,4"
+      "5,4"
     ],
-    "score": 100,
+    "score": 85,
     "completionBonus": 50,
     "words": [
-      "FILOS",
-      "KAS",
-      "NO",
-      "IN"
+      "AVO",
+      "RAP",
+      "WOT",
+      "FINS",
+      "HYLAS",
+      "SI"
     ],
     "scoringWords": [
       {
-        "word": "FILOS",
-        "row": 6,
+        "word": "AVO",
+        "row": 1,
         "col": 2,
         "direction": "horizontal",
-        "score": 32,
+        "score": 6,
         "move": 1
       },
       {
-        "word": "KAS",
-        "row": 4,
-        "col": 6,
+        "word": "RAP",
+        "row": 0,
+        "col": 2,
         "direction": "vertical",
-        "score": 14,
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "WOT",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 6,
+        "move": 1
+      },
+      {
+        "word": "FINS",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 15,
         "move": 2
       },
       {
-        "word": "NO",
-        "row": 1,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
+        "word": "HYLAS",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 1,
+        "move": 2
       },
       {
-        "word": "IN",
-        "row": 0,
+        "word": "SI",
+        "row": 5,
         "col": 4,
         "direction": "vertical",
         "score": 2,
@@ -290,71 +309,86 @@
     "moves": [
       {
         "turn": 1,
-        "word": "FILOS",
-        "row": 6,
+        "word": "AVO",
+        "row": 1,
         "col": 2,
         "direction": "horizontal",
-        "score": 32,
-        "usedTiles": 4,
+        "score": 17,
+        "usedTiles": 2,
         "newKeys": [
-          "6,2",
-          "6,3",
-          "6,5",
-          "6,6"
+          "1,2",
+          "1,4"
         ],
         "scoringWords": [
           {
-            "word": "FILOS",
-            "row": 6,
+            "word": "AVO",
+            "row": 1,
             "col": 2,
             "direction": "horizontal",
-            "score": 32
+            "score": 6
+          },
+          {
+            "word": "RAP",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "WOT",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 6
           }
         ]
       },
       {
         "turn": 2,
-        "word": "KAS",
-        "row": 4,
-        "col": 6,
-        "direction": "vertical",
-        "score": 14,
-        "usedTiles": 1,
+        "word": "FINS",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 16,
+        "usedTiles": 4,
         "newKeys": [
-          "5,6"
+          "6,3",
+          "6,4",
+          "6,5",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "KAS",
-            "row": 4,
+            "word": "FINS",
+            "row": 6,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 15
+          },
+          {
+            "word": "HYLAS",
+            "row": 2,
             "col": 6,
             "direction": "vertical",
-            "score": 14
+            "score": 1
           }
         ]
       },
       {
         "turn": 3,
-        "word": "IN",
-        "row": 0,
+        "word": "SI",
+        "row": 5,
         "col": 4,
         "direction": "vertical",
-        "score": 4,
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "1,4"
+          "5,4"
         ],
         "scoringWords": [
           {
-            "word": "NO",
-            "row": 1,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "IN",
-            "row": 0,
+            "word": "SI",
+            "row": 5,
             "col": 4,
             "direction": "vertical",
             "score": 2
@@ -362,10 +396,10 @@
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1271
+    "visitedCandidates": 1455
   }
 }

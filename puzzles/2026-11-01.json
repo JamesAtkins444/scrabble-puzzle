@@ -23,17 +23,26 @@
     [
       "",
       "",
-      "T",
       "",
-      "",
+      "S",
+      "P",
       "I",
+      "K"
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "A",
       ""
     ],
     [
       "",
       "",
-      "O",
       "",
+      "T",
       "",
       "L",
       ""
@@ -41,28 +50,19 @@
     [
       "",
       "",
-      "D",
+      "",
+      "",
+      "",
       "I",
-      "V",
-      "V",
-      "Y"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "A",
       ""
     ],
     [
       "",
-      "",
-      "P",
-      "A",
-      "N",
+      "D",
+      "O",
+      "S",
       "E",
+      "D",
       ""
     ]
   ],
@@ -88,17 +88,26 @@
     [
       "",
       "",
-      "T",
       "",
-      "",
+      "S",
+      "P",
       "I",
+      "K"
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "A",
       ""
     ],
     [
       "",
       "",
-      "O",
       "",
+      "T",
       "",
       "L",
       ""
@@ -106,62 +115,52 @@
     [
       "",
       "",
-      "D",
+      "",
+      "",
+      "",
       "I",
-      "V",
-      "V",
-      "Y"
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "A",
       ""
     ],
     [
       "",
-      "",
-      "P",
-      "A",
-      "N",
+      "D",
+      "O",
+      "S",
       "E",
+      "D",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,2": "double-word",
-    "6,0": "double-letter",
-    "0,0": "triple-letter",
-    "2,0": "triple-letter",
-    "4,0": "double-letter"
+    "0,0": "triple-word",
+    "4,0": "double-word",
+    "0,2": "double-letter",
+    "2,0": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "SILVAE",
+      "word": "SIALID",
       "row": 1,
       "col": 5,
       "direction": "vertical"
     },
     {
-      "word": "DIVVY",
-      "row": 4,
-      "col": 2,
-      "direction": "horizontal"
-    },
-    {
-      "word": "TOD",
+      "word": "SPIK",
       "row": 2,
-      "col": 2,
-      "direction": "vertical"
+      "col": 3,
+      "direction": "horizontal"
     },
     {
-      "word": "PANE",
+      "word": "DOSED",
       "row": 6,
-      "col": 2,
+      "col": 1,
       "direction": "horizontal"
+    },
+    {
+      "word": "SAT",
+      "row": 2,
+      "col": 3,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -170,7 +169,8 @@
     "R",
     "O",
     "U",
-    "P"
+    "P",
+    "S"
   ],
   "bestSolution": {
     "board": [
@@ -178,8 +178,8 @@
         "",
         "",
         "",
-        "U",
-        "P",
+        "",
+        "",
         "",
         ""
       ],
@@ -188,201 +188,248 @@
         "",
         "",
         "",
-        "O",
+        "U",
         "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "S",
+        "P",
+        "I",
+        "K"
+      ],
+      [
+        "",
+        "",
+        "",
+        "A",
+        "",
+        "A",
         ""
       ],
       [
         "R",
         "U",
+        "S",
         "T",
         "",
-        "X",
-        "I",
-        ""
-      ],
-      [
-        "",
-        "",
-        "O",
-        "",
-        "",
         "L",
-        ""
+        "O"
       ],
       [
         "",
         "",
-        "D",
-        "I",
-        "V",
-        "V",
-        "Y"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "A",
-        ""
-      ],
-      [
         "",
         "",
         "P",
-        "A",
-        "N",
+        "I",
+        "X"
+      ],
+      [
+        "",
+        "D",
+        "O",
+        "S",
         "E",
+        "D",
         ""
       ]
     ],
     "newKeys": [
-      "0,4",
-      "1,4",
-      "2,4",
-      "2,0",
-      "2,1",
-      "0,3"
+      "5,4",
+      "5,6",
+      "4,6",
+      "4,0",
+      "4,1",
+      "4,2",
+      "1,4"
     ],
-    "score": 82,
+    "score": 91,
     "completionBonus": 50,
     "words": [
-      "OS",
-      "XI",
-      "POX",
-      "RUT",
+      "PIX",
+      "PE",
+      "LO",
+      "OX",
+      "RUST",
+      "US",
       "UP"
     ],
     "scoringWords": [
       {
-        "word": "OS",
-        "row": 1,
+        "word": "PIX",
+        "row": 5,
         "col": 4,
         "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "XI",
-        "row": 2,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "POX",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
         "score": 12,
         "move": 1
       },
       {
-        "word": "RUT",
-        "row": 2,
-        "col": 0,
+        "word": "PE",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "LO",
+        "row": 4,
+        "col": 5,
         "direction": "horizontal",
-        "score": 5,
+        "score": 2,
         "move": 2
       },
       {
-        "word": "UP",
-        "row": 0,
-        "col": 3,
+        "word": "OX",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 9,
+        "move": 2
+      },
+      {
+        "word": "RUST",
+        "row": 4,
+        "col": 0,
         "direction": "horizontal",
-        "score": 4,
+        "score": 8,
         "move": 3
+      },
+      {
+        "word": "US",
+        "row": 1,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 4
+      },
+      {
+        "word": "UP",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "POX",
-        "row": 0,
+        "word": "PIX",
+        "row": 5,
         "col": 4,
-        "direction": "vertical",
-        "score": 23,
-        "usedTiles": 3,
+        "direction": "horizontal",
+        "score": 16,
+        "usedTiles": 2,
         "newKeys": [
-          "0,4",
-          "1,4",
-          "2,4"
+          "5,4",
+          "5,6"
         ],
         "scoringWords": [
           {
-            "word": "OS",
+            "word": "PIX",
+            "row": 5,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 12
+          },
+          {
+            "word": "PE",
+            "row": 5,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "OX",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 11,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "LO",
+            "row": 4,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "OX",
+            "row": 4,
+            "col": 6,
+            "direction": "vertical",
+            "score": 9
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "RUST",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 8,
+        "usedTiles": 3,
+        "newKeys": [
+          "4,0",
+          "4,1",
+          "4,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "RUST",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 8
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "UP",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 6,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "US",
             "row": 1,
             "col": 4,
             "direction": "horizontal",
             "score": 2
           },
           {
-            "word": "XI",
-            "row": 2,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 9
-          },
-          {
-            "word": "POX",
-            "row": 0,
+            "word": "UP",
+            "row": 1,
             "col": 4,
             "direction": "vertical",
-            "score": 12
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "RUT",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 2,
-        "newKeys": [
-          "2,0",
-          "2,1"
-        ],
-        "scoringWords": [
-          {
-            "word": "RUT",
-            "row": 2,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 5
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "UP",
-        "row": 0,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 4,
-        "usedTiles": 1,
-        "newKeys": [
-          "0,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "UP",
-            "row": 0,
-            "col": 3,
-            "direction": "horizontal",
             "score": 4
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 422
+    "visitedCandidates": 1185
   }
 }

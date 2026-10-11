@@ -13,57 +13,57 @@
     ],
     [
       "",
+      "C",
       "",
       "",
       "",
+      "",
+      ""
+    ],
+    [
+      "N",
+      "O",
+      "T",
+      "C",
       "H",
       "",
       ""
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "O",
-      "",
-      "M"
-    ],
-    [
-      "R",
-      "I",
-      "M",
-      "E",
       "R",
       "",
-      "A"
-    ],
-    [
       "",
-      "",
-      "",
-      "R",
       "A",
-      "I",
-      "L"
+      "",
+      ""
     ],
     [
       "",
+      "V",
       "",
       "",
+      "R",
       "",
-      "H",
-      "",
-      "E"
+      ""
     ],
     [
       "",
+      "E",
       "",
       "",
+      "E",
       "",
-      "S",
+      ""
+    ],
+    [
+      "D",
+      "E",
+      "X",
+      "Y",
       "",
-      "S"
+      "",
+      ""
     ]
   ],
   "originalBoard": [
@@ -78,220 +78,252 @@
     ],
     [
       "",
+      "C",
       "",
       "",
       "",
+      "",
+      ""
+    ],
+    [
+      "N",
+      "O",
+      "T",
+      "C",
       "H",
       "",
       ""
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "O",
-      "",
-      "M"
-    ],
-    [
-      "R",
-      "I",
-      "M",
-      "E",
       "R",
       "",
-      "A"
-    ],
-    [
       "",
-      "",
-      "",
-      "R",
       "A",
-      "I",
-      "L"
+      "",
+      ""
     ],
     [
       "",
+      "V",
       "",
       "",
+      "R",
       "",
-      "H",
-      "",
-      "E"
+      ""
     ],
     [
       "",
+      "E",
       "",
       "",
+      "E",
       "",
-      "S",
+      ""
+    ],
+    [
+      "D",
+      "E",
+      "X",
+      "Y",
       "",
-      "S"
+      "",
+      ""
     ]
   ],
   "bonusSquares": {
-    "0,1": "triple-word",
-    "5,0": "double-word",
-    "6,2": "double-letter",
-    "0,6": "triple-letter"
+    "1,6": "double-word",
+    "6,6": "double-letter",
+    "0,4": "double-letter",
+    "4,6": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "HORAHS",
+      "word": "CORVEE",
       "row": 1,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "NOTCH",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "HARE",
+      "row": 2,
       "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "RAIL",
-      "row": 4,
-      "col": 3,
-      "direction": "horizontal"
-    },
-    {
-      "word": "MALES",
-      "row": 2,
-      "col": 6,
-      "direction": "vertical"
-    },
-    {
-      "word": "RIMER",
-      "row": 3,
+      "word": "DEXY",
+      "row": 6,
       "col": 0,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "B",
-    "G",
-    "A",
-    "N",
-    "I",
-    "E"
+    "E",
+    "V",
+    "D",
+    "O",
+    "R",
+    "E",
+    "S"
   ],
   "bestSolution": {
     "board": [
       [
-        "B",
         "",
         "",
         "",
         "",
         "",
-        ""
-      ],
-      [
-        "E",
-        "",
-        "",
-        "",
-        "H",
         "",
         ""
       ],
       [
-        "A",
+        "",
+        "C",
         "",
         "",
         "",
-        "O",
         "",
-        "M"
-      ],
-      [
-        "R",
-        "I",
-        "M",
-        "E",
-        "R",
-        "",
-        "A"
-      ],
-      [
-        "I",
-        "",
-        "",
-        "R",
-        "A",
-        "I",
-        "L"
+        "D"
       ],
       [
         "N",
-        "",
-        "",
-        "",
+        "O",
+        "T",
+        "C",
         "H",
+        "",
+        "R"
+      ],
+      [
+        "",
+        "R",
+        "",
+        "",
+        "A",
+        "",
+        "O"
+      ],
+      [
+        "",
+        "V",
+        "",
+        "",
+        "R",
+        "E",
+        "V"
+      ],
+      [
+        "",
+        "E",
+        "",
+        "",
+        "E",
         "",
         "E"
       ],
       [
-        "G",
+        "D",
+        "E",
+        "X",
+        "Y",
         "",
-        "",
-        "",
-        "S",
         "",
         "S"
       ]
     ],
     "newKeys": [
-      "0,0",
-      "1,0",
-      "2,0",
-      "4,0",
-      "5,0",
-      "6,0"
+      "4,5",
+      "4,6",
+      "1,6",
+      "2,6",
+      "3,6",
+      "5,6",
+      "6,6"
     ],
-    "score": 120,
-    "completionBonus": 0,
+    "score": 102,
+    "completionBonus": 50,
     "words": [
-      "BEARING"
+      "REV",
+      "DROVES"
     ],
     "scoringWords": [
       {
-        "word": "BEARING",
-        "row": 0,
-        "col": 0,
-        "direction": "vertical",
-        "score": 20,
+        "word": "REV",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 14,
         "move": 1
+      },
+      {
+        "word": "DROVES",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 38,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BEARING",
-        "row": 0,
-        "col": 0,
-        "direction": "vertical",
-        "score": 120,
-        "usedTiles": 6,
+        "word": "REV",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 14,
+        "usedTiles": 2,
         "newKeys": [
-          "0,0",
-          "1,0",
-          "2,0",
-          "4,0",
-          "5,0",
-          "6,0"
+          "4,5",
+          "4,6"
         ],
         "scoringWords": [
           {
-            "word": "BEARING",
-            "row": 0,
-            "col": 0,
+            "word": "REV",
+            "row": 4,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 14
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "DROVES",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 38,
+        "usedTiles": 5,
+        "newKeys": [
+          "1,6",
+          "2,6",
+          "3,6",
+          "5,6",
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "DROVES",
+            "row": 1,
+            "col": 6,
             "direction": "vertical",
-            "score": 20
+            "score": 38
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1180
+    "visitedCandidates": 2598
   }
 }

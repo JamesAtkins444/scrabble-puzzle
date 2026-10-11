@@ -6,10 +6,10 @@
       "",
       "",
       "P",
-      "A",
-      "S",
-      "T",
-      "A"
+      "R",
+      "I",
+      "O",
+      "N"
     ],
     [
       "",
@@ -23,37 +23,37 @@
     [
       "",
       "",
-      "N",
+      "L",
       "",
-      "B",
       "",
+      "F",
       ""
     ],
     [
       "",
       "",
-      "N",
+      "P",
       "",
-      "O",
       "",
+      "R",
       ""
     ],
     [
       "",
       "P",
       "E",
-      "E",
+      "A",
       "S",
-      "",
+      "E",
       ""
     ],
     [
       "",
       "",
-      "T",
+      "R",
       "",
       "",
-      "",
+      "A",
       ""
     ],
     [
@@ -62,7 +62,7 @@
       "",
       "",
       "",
-      "",
+      "K",
       ""
     ]
   ],
@@ -71,10 +71,10 @@
       "",
       "",
       "P",
-      "A",
-      "S",
-      "T",
-      "A"
+      "R",
+      "I",
+      "O",
+      "N"
     ],
     [
       "",
@@ -88,37 +88,37 @@
     [
       "",
       "",
-      "N",
+      "L",
       "",
-      "B",
       "",
+      "F",
       ""
     ],
     [
       "",
       "",
-      "N",
+      "P",
       "",
-      "O",
       "",
+      "R",
       ""
     ],
     [
       "",
       "P",
       "E",
-      "E",
+      "A",
       "S",
-      "",
+      "E",
       ""
     ],
     [
       "",
       "",
-      "T",
+      "R",
       "",
       "",
-      "",
+      "A",
       ""
     ],
     [
@@ -127,41 +127,39 @@
       "",
       "",
       "",
-      "",
+      "K",
       ""
     ]
   ],
   "bonusSquares": {
-    "4,6": "double-word",
-    "6,4": "triple-letter",
-    "2,0": "double-letter",
-    "6,6": "double-letter",
-    "6,0": "triple-letter"
+    "0,0": "double-word",
+    "2,0": "triple-letter",
+    "6,0": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "PUNNET",
+      "word": "PULPER",
       "row": 0,
       "col": 2,
       "direction": "vertical"
     },
     {
-      "word": "PASTA",
-      "row": 0,
-      "col": 2,
-      "direction": "horizontal"
-    },
-    {
-      "word": "PEES",
+      "word": "PEASE",
       "row": 4,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "BOS",
+      "word": "FREAK",
       "row": 2,
-      "col": 4,
+      "col": 5,
       "direction": "vertical"
+    },
+    {
+      "word": "PRION",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -170,7 +168,8 @@
     "S",
     "F",
     "L",
-    "E"
+    "E",
+    "S"
   ],
   "bestSolution": {
     "board": [
@@ -178,51 +177,15 @@
         "",
         "",
         "P",
-        "A",
-        "S",
-        "T",
-        "A"
+        "R",
+        "I",
+        "O",
+        "N"
       ],
       [
-        "",
+        "E",
         "",
         "U",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "N",
-        "A",
-        "B",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "N",
-        "",
-        "O",
-        "",
-        ""
-      ],
-      [
-        "",
-        "P",
-        "E",
-        "E",
-        "S",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "T",
         "",
         "",
         "",
@@ -230,114 +193,181 @@
       ],
       [
         "F",
-        "U",
-        "S",
-        "E",
+        "A",
+        "L",
         "L",
         "",
+        "F",
+        ""
+      ],
+      [
+        "S",
+        "",
+        "P",
+        "",
+        "",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "P",
+        "E",
+        "A",
+        "S",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "R",
+        "",
+        "",
+        "A",
+        ""
+      ],
+      [
+        "",
+        "U",
+        "S",
+        "",
+        "",
+        "K",
         ""
       ]
     ],
     "newKeys": [
-      "6,0",
+      "2,0",
+      "2,1",
+      "2,3",
+      "1,0",
+      "3,0",
       "6,1",
-      "6,2",
-      "6,3",
-      "6,4",
-      "2,3"
+      "6,2"
     ],
-    "score": 74,
+    "score": 82,
     "completionBonus": 50,
     "words": [
-      "FUSEL",
-      "PUNNETS",
-      "NAB"
+      "FALL",
+      "EFS",
+      "US",
+      "PULPERS"
     ],
     "scoringWords": [
       {
-        "word": "FUSEL",
-        "row": 6,
+        "word": "FALL",
+        "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 18,
+        "score": 15,
         "move": 1
       },
       {
-        "word": "PUNNETS",
+        "word": "EFS",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 14,
+        "move": 2
+      },
+      {
+        "word": "US",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "PULPERS",
         "row": 0,
         "col": 2,
         "direction": "vertical",
         "score": 1,
-        "move": 1
-      },
-      {
-        "word": "NAB",
-        "row": 2,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FUSEL",
-        "row": 6,
+        "word": "FALL",
+        "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 19,
-        "usedTiles": 5,
+        "score": 15,
+        "usedTiles": 3,
         "newKeys": [
-          "6,0",
-          "6,1",
-          "6,2",
-          "6,3",
-          "6,4"
+          "2,0",
+          "2,1",
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "FUSEL",
-            "row": 6,
+            "word": "FALL",
+            "row": 2,
             "col": 0,
             "direction": "horizontal",
-            "score": 18
+            "score": 15
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "EFS",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 14,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,0",
+          "3,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "EFS",
+            "row": 1,
+            "col": 0,
+            "direction": "vertical",
+            "score": 14
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "US",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 3,
+        "usedTiles": 2,
+        "newKeys": [
+          "6,1",
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "US",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 2
           },
           {
-            "word": "PUNNETS",
+            "word": "PULPERS",
             "row": 0,
             "col": 2,
             "direction": "vertical",
             "score": 1
           }
         ]
-      },
-      {
-        "turn": 2,
-        "word": "NAB",
-        "row": 2,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 1,
-        "newKeys": [
-          "2,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "NAB",
-            "row": 2,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 5
-          }
-        ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1336
+    "visitedCandidates": 1726
   }
 }

@@ -7,7 +7,7 @@
       "",
       "",
       "",
-      "",
+      "N",
       "",
       ""
     ],
@@ -15,9 +15,9 @@
       "",
       "",
       "",
-      "",
-      "",
-      "",
+      "P",
+      "O",
+      "O",
       "R"
     ],
     [
@@ -25,45 +25,45 @@
       "",
       "",
       "",
-      "M",
+      "I",
       "",
-      "O"
+      "I"
     ],
     [
       "",
       "",
       "",
-      "M",
-      "A",
-      "C",
-      "S"
+      "",
+      "S",
+      "",
+      "P"
     ],
     [
-      "L",
-      "A",
-      "C",
+      "",
+      "",
+      "",
+      "",
       "E",
-      "R",
       "",
-      "T"
+      "P"
     ],
     [
       "",
       "",
       "",
       "",
-      "R",
       "",
-      "R"
+      "",
+      "L"
     ],
     [
       "",
       "",
-      "",
-      "",
-      "Y",
-      "",
-      "A"
+      "M",
+      "E",
+      "T",
+      "R",
+      "E"
     ]
   ],
   "originalBoard": [
@@ -72,7 +72,7 @@
       "",
       "",
       "",
-      "",
+      "N",
       "",
       ""
     ],
@@ -80,9 +80,9 @@
       "",
       "",
       "",
-      "",
-      "",
-      "",
+      "P",
+      "O",
+      "O",
       "R"
     ],
     [
@@ -90,78 +90,77 @@
       "",
       "",
       "",
-      "M",
+      "I",
       "",
-      "O"
+      "I"
     ],
     [
       "",
       "",
       "",
-      "M",
-      "A",
-      "C",
-      "S"
+      "",
+      "S",
+      "",
+      "P"
     ],
     [
-      "L",
-      "A",
-      "C",
+      "",
+      "",
+      "",
+      "",
       "E",
-      "R",
       "",
-      "T"
+      "P"
     ],
     [
       "",
       "",
       "",
       "",
-      "R",
       "",
-      "R"
+      "",
+      "L"
     ],
     [
       "",
       "",
-      "",
-      "",
-      "Y",
-      "",
-      "A"
+      "M",
+      "E",
+      "T",
+      "R",
+      "E"
     ]
   ],
   "bonusSquares": {
-    "0,1": "triple-word",
-    "6,2": "double-word",
-    "2,1": "double-letter",
-    "6,0": "triple-letter",
-    "0,4": "triple-letter"
+    "1,0": "triple-word",
+    "3,0": "double-word",
+    "6,0": "double-letter",
+    "4,2": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "ROSTRA",
+      "word": "RIPPLE",
       "row": 1,
       "col": 6,
       "direction": "vertical"
     },
     {
-      "word": "MACS",
-      "row": 3,
+      "word": "METRE",
+      "row": 6,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "POOR",
+      "row": 1,
       "col": 3,
       "direction": "horizontal"
     },
     {
-      "word": "MARRY",
-      "row": 2,
+      "word": "NOISE",
+      "row": 0,
       "col": 4,
       "direction": "vertical"
-    },
-    {
-      "word": "LACER",
-      "row": 4,
-      "col": 0,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -170,7 +169,8 @@
     "E",
     "B",
     "P",
-    "K"
+    "K",
+    "S"
   ],
   "bestSolution": {
     "board": [
@@ -179,7 +179,7 @@
         "",
         "",
         "",
-        "",
+        "N",
         "",
         ""
       ],
@@ -187,141 +187,204 @@
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "R"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "M",
-        "",
-        "O"
-      ],
-      [
         "P",
-        "",
-        "",
-        "M",
-        "A",
-        "C",
-        "S"
-      ],
-      [
-        "L",
-        "A",
-        "C",
-        "E",
-        "R",
-        "",
-        "T"
-      ],
-      [
-        "E",
-        "",
-        "",
-        "",
-        "R",
-        "",
+        "O",
+        "O",
         "R"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "I",
+        "",
+        "I"
       ],
       [
         "B",
-        "E",
         "A",
         "K",
-        "Y",
+        "E",
+        "S",
         "",
-        "A"
+        "P"
+      ],
+      [
+        "E",
+        "S",
+        "",
+        "",
+        "E",
+        "",
+        "P"
+      ],
+      [
+        "",
+        "",
+        "",
+        "P",
+        "",
+        "",
+        "L"
+      ],
+      [
+        "",
+        "",
+        "M",
+        "E",
+        "T",
+        "R",
+        "E"
       ]
     ],
     "newKeys": [
-      "6,0",
-      "6,1",
-      "6,2",
-      "6,3",
       "3,0",
-      "5,0"
+      "3,1",
+      "3,2",
+      "3,3",
+      "4,0",
+      "4,1",
+      "5,3"
     ],
-    "score": 104,
+    "score": 88,
     "completionBonus": 50,
     "words": [
-      "BEAKY",
-      "PLEB"
+      "BAKES",
+      "ES",
+      "BE",
+      "AS",
+      "PE"
     ],
     "scoringWords": [
       {
-        "word": "BEAKY",
-        "row": 6,
+        "word": "BAKES",
+        "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 40,
+        "score": 22,
         "move": 1
       },
       {
-        "word": "PLEB",
+        "word": "ES",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "BE",
         "row": 3,
         "col": 0,
         "direction": "vertical",
-        "score": 14,
+        "score": 8,
         "move": 2
+      },
+      {
+        "word": "AS",
+        "row": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "PE",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BEAKY",
-        "row": 6,
+        "word": "BAKES",
+        "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 40,
+        "score": 22,
         "usedTiles": 4,
         "newKeys": [
-          "6,0",
-          "6,1",
-          "6,2",
-          "6,3"
+          "3,0",
+          "3,1",
+          "3,2",
+          "3,3"
         ],
         "scoringWords": [
           {
-            "word": "BEAKY",
-            "row": 6,
+            "word": "BAKES",
+            "row": 3,
             "col": 0,
             "direction": "horizontal",
-            "score": 40
+            "score": 22
           }
         ]
       },
       {
         "turn": 2,
-        "word": "PLEB",
-        "row": 3,
+        "word": "ES",
+        "row": 4,
         "col": 0,
-        "direction": "vertical",
-        "score": 14,
+        "direction": "horizontal",
+        "score": 12,
         "usedTiles": 2,
         "newKeys": [
-          "3,0",
-          "5,0"
+          "4,0",
+          "4,1"
         ],
         "scoringWords": [
           {
-            "word": "PLEB",
+            "word": "ES",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "BE",
             "row": 3,
             "col": 0,
             "direction": "vertical",
-            "score": 14
+            "score": 8
+          },
+          {
+            "word": "AS",
+            "row": 3,
+            "col": 1,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "PE",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "5,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "PE",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 641
+    "visitedCandidates": 1608
   }
 }

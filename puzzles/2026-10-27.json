@@ -26,44 +26,44 @@
       "",
       "",
       "",
-      "",
-      ""
-    ],
-    [
-      "I",
-      "N",
       "E",
-      "R",
-      "T",
-      "",
       ""
     ],
     [
+      "",
+      "S",
+      "",
+      "",
       "",
       "G",
-      "",
-      "",
-      "O",
-      "",
       ""
     ],
     [
       "",
+      "T",
+      "W",
       "A",
-      "",
-      "M",
-      "O",
-      "L",
-      "L"
+      "N",
+      "G",
+      ""
     ],
     [
       "",
-      "M",
+      "E",
       "",
       "",
       "",
-      "",
+      "E",
       ""
+    ],
+    [
+      "",
+      "E",
+      "",
+      "C",
+      "U",
+      "R",
+      "E"
     ]
   ],
   "originalBoard": [
@@ -91,73 +91,73 @@
       "",
       "",
       "",
-      "",
-      ""
-    ],
-    [
-      "I",
-      "N",
       "E",
-      "R",
-      "T",
-      "",
       ""
     ],
     [
+      "",
+      "S",
+      "",
+      "",
       "",
       "G",
-      "",
-      "",
-      "O",
-      "",
       ""
     ],
     [
       "",
+      "T",
+      "W",
       "A",
-      "",
-      "M",
-      "O",
-      "L",
-      "L"
+      "N",
+      "G",
+      ""
     ],
     [
       "",
-      "M",
+      "E",
       "",
       "",
       "",
-      "",
+      "E",
       ""
+    ],
+    [
+      "",
+      "E",
+      "",
+      "C",
+      "U",
+      "R",
+      "E"
     ]
   ],
   "bonusSquares": {
-    "0,5": "triple-word",
-    "2,6": "double-word",
-    "1,3": "double-letter"
+    "0,3": "double-word",
+    "2,3": "triple-letter",
+    "0,5": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "LINGAM",
+      "word": "LISTEE",
       "row": 1,
       "col": 1,
       "direction": "vertical"
     },
     {
-      "word": "INERT",
-      "row": 3,
-      "col": 0,
+      "word": "TWANG",
+      "row": 4,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "TOO",
-      "row": 3,
-      "col": 4,
+      "word": "EGGER",
+      "row": 2,
+      "col": 5,
       "direction": "vertical"
     },
     {
-      "word": "MOLL",
-      "row": 5,
+      "word": "CURE",
+      "row": 6,
       "col": 3,
       "direction": "horizontal"
     }
@@ -168,7 +168,8 @@
     "E",
     "A",
     "R",
-    "H"
+    "H",
+    "S"
   ],
   "bestSolution": {
     "board": [
@@ -188,154 +189,233 @@
         "",
         "",
         "",
-        "H"
-      ],
-      [
-        "",
-        "I",
-        "",
-        "",
-        "",
-        "",
         "U"
       ],
       [
+        "",
         "I",
-        "N",
+        "",
+        "",
+        "",
         "E",
-        "R",
-        "T",
-        "",
-        "R"
-      ],
-      [
-        "",
-        "G",
-        "",
-        "",
-        "O",
-        "A",
         "T"
       ],
       [
         "",
-        "A",
+        "S",
         "",
-        "M",
-        "O",
-        "L",
-        "L"
+        "H",
+        "A",
+        "G",
+        "S"
       ],
       [
         "",
-        "M",
+        "T",
+        "W",
+        "A",
+        "N",
+        "G",
+        ""
+      ],
+      [
+        "R",
+        "E",
+        "E",
         "",
         "",
+        "E",
+        ""
+      ],
+      [
         "",
+        "E",
         "",
+        "C",
+        "U",
+        "R",
         "E"
       ]
     ],
     "newKeys": [
-      "1,6",
-      "2,6",
+      "3,3",
+      "3,4",
       "3,6",
-      "4,6",
-      "6,6",
-      "4,5"
+      "5,0",
+      "5,2",
+      "1,6",
+      "2,6"
     ],
-    "score": 73,
+    "score": 78,
     "completionBonus": 50,
     "words": [
-      "HURTLE",
-      "OAT",
-      "AL"
+      "HAGS",
+      "HA",
+      "AN",
+      "REE",
+      "WE",
+      "ET",
+      "UTS"
     ],
     "scoringWords": [
       {
-        "word": "HURTLE",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 18,
+        "word": "HAGS",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 8,
         "move": 1
       },
       {
-        "word": "OAT",
-        "row": 4,
+        "word": "HA",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "AN",
+        "row": 3,
         "col": 4,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "REE",
+        "row": 5,
+        "col": 0,
         "direction": "horizontal",
         "score": 3,
         "move": 2
       },
       {
-        "word": "AL",
+        "word": "WE",
         "row": 4,
-        "col": 5,
+        "col": 2,
         "direction": "vertical",
-        "score": 2,
+        "score": 5,
         "move": 2
+      },
+      {
+        "word": "ET",
+        "row": 2,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "UTS",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 3,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "HURTLE",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 18,
-        "usedTiles": 5,
+        "word": "HAGS",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 15,
+        "usedTiles": 3,
         "newKeys": [
-          "1,6",
-          "2,6",
-          "3,6",
-          "4,6",
-          "6,6"
+          "3,3",
+          "3,4",
+          "3,6"
         ],
         "scoringWords": [
           {
-            "word": "HURTLE",
-            "row": 1,
-            "col": 6,
+            "word": "HAGS",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 8
+          },
+          {
+            "word": "HA",
+            "row": 3,
+            "col": 3,
             "direction": "vertical",
-            "score": 18
+            "score": 5
+          },
+          {
+            "word": "AN",
+            "row": 3,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OAT",
-        "row": 4,
-        "col": 4,
+        "word": "REE",
+        "row": 5,
+        "col": 0,
         "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 1,
+        "score": 8,
+        "usedTiles": 2,
         "newKeys": [
-          "4,5"
+          "5,0",
+          "5,2"
         ],
         "scoringWords": [
           {
-            "word": "OAT",
-            "row": 4,
-            "col": 4,
+            "word": "REE",
+            "row": 5,
+            "col": 0,
             "direction": "horizontal",
             "score": 3
           },
           {
-            "word": "AL",
+            "word": "WE",
             "row": 4,
-            "col": 5,
+            "col": 2,
             "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "UTS",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 5,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,6",
+          "2,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "ET",
+            "row": 2,
+            "col": 5,
+            "direction": "horizontal",
             "score": 2
+          },
+          {
+            "word": "UTS",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 3
           }
         ]
       }
     ],
-    "tilesUsed": 6,
+    "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1445
+    "visitedCandidates": 3882
   }
 }
