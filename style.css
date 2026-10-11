@@ -1527,3 +1527,17 @@ body {
         outline-offset: 3px;
     }
 }
+
+
+/* Prevent accidental mobile pull-to-refresh while playing and dragging tiles. */
+html,
+body {
+    overscroll-behavior-y: none;
+}
+
+/* Let rack tiles use custom pointer dragging instead of starting page scrolling. */
+.rack-tile {
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
