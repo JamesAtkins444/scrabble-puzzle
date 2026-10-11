@@ -3,19 +3,28 @@
   "boardSize": 7,
   "board": [
     [
-      "F",
-      "U",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "M",
+      "O",
+      "N",
       "S",
-      "T",
-      "Y",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "A",
-      "",
       "",
       "",
       ""
@@ -23,64 +32,64 @@
     [
       "",
       "",
-      "C",
       "",
+      "W",
       "",
       "",
       ""
     ],
     [
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "D"
+    ],
+    [
+      "",
+      "S",
+      "L",
+      "U",
       "D",
-      "Y",
-      "K",
-      "E",
-      "D",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "E",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "R",
-      "",
-      "",
-      "",
-      ""
+      "G",
+      "E"
     ],
     [
       "",
       "",
       "",
+      "N",
       "",
       "",
-      "",
-      ""
+      "Y"
     ]
   ],
   "originalBoard": [
     [
-      "F",
-      "U",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "M",
+      "O",
+      "N",
       "S",
-      "T",
-      "Y",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "A",
-      "",
       "",
       "",
       ""
@@ -88,270 +97,221 @@
     [
       "",
       "",
-      "C",
       "",
+      "W",
       "",
       "",
       ""
     ],
     [
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "D"
+    ],
+    [
+      "",
+      "S",
+      "L",
+      "U",
       "D",
-      "Y",
-      "K",
-      "E",
-      "D",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "E",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "R",
-      "",
-      "",
-      "",
-      ""
+      "G",
+      "E"
     ],
     [
       "",
       "",
       "",
+      "N",
       "",
       "",
-      "",
-      ""
+      "Y"
     ]
   ],
   "bonusSquares": {
-    "6,5": "triple-word",
-    "1,6": "double-word",
-    "4,6": "double-letter",
-    "5,0": "triple-letter"
+    "1,6": "triple-word",
+    "0,1": "double-word",
+    "0,3": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "SACKER",
-      "row": 0,
-      "col": 2,
-      "direction": "vertical"
-    },
-    {
-      "word": "FUSTY",
-      "row": 0,
-      "col": 0,
+      "word": "SLUDGE",
+      "row": 5,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "DYKED",
-      "row": 3,
+      "word": "DEY",
+      "row": 4,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "SWOUN",
+      "row": 2,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "MONS",
+      "row": 2,
       "col": 0,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "N",
-    "E",
+    "A",
+    "S",
+    "D",
     "I",
-    "J",
-    "N",
-    "A"
+    "A",
+    "V"
   ],
   "bestSolution": {
     "board": [
       [
-        "F",
-        "U",
-        "S",
-        "T",
-        "Y",
-        "",
-        ""
-      ],
-      [
-        "E",
         "",
         "A",
+        "A",
+        "S",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "V",
+        "",
         "",
         "",
         "",
         ""
       ],
       [
+        "M",
+        "O",
         "N",
+        "S",
         "",
-        "C",
+        "",
+        ""
+      ],
+      [
         "",
         "I",
+        "",
+        "W",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "D",
+        "",
+        "O",
+        "",
+        "",
+        "D"
+      ],
+      [
+        "",
+        "S",
+        "L",
+        "U",
+        "D",
+        "G",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
         "N",
-        ""
-      ],
-      [
-        "D",
-        "Y",
-        "K",
-        "E",
-        "D",
-        "",
-        ""
-      ],
-      [
         "",
         "",
-        "E",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "J",
-        "A",
-        "R",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Y"
       ]
     ],
     "newKeys": [
-      "5,0",
-      "5,1",
-      "1,0",
-      "2,0",
-      "2,4",
-      "2,5"
+      "0,1",
+      "1,1",
+      "3,1",
+      "4,1",
+      "0,2",
+      "0,3"
     ],
-    "score": 89,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "JAR",
-      "FEND",
-      "IN",
-      "ID"
+      "AVOIDS",
+      "AAS"
     ],
     "scoringWords": [
       {
-        "word": "JAR",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 26,
+        "word": "AVOIDS",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 20,
         "move": 1
       },
       {
-        "word": "FEND",
+        "word": "AAS",
         "row": 0,
-        "col": 0,
-        "direction": "vertical",
-        "score": 8,
-        "move": 2
-      },
-      {
-        "word": "IN",
-        "row": 2,
-        "col": 4,
+        "col": 1,
         "direction": "horizontal",
-        "score": 2,
-        "move": 3
-      },
-      {
-        "word": "ID",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
-        "score": 3,
-        "move": 3
+        "score": 10,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "JAR",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 26,
-        "usedTiles": 2,
+        "word": "AVOIDS",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 20,
+        "usedTiles": 4,
         "newKeys": [
-          "5,0",
-          "5,1"
+          "0,1",
+          "1,1",
+          "3,1",
+          "4,1"
         ],
         "scoringWords": [
           {
-            "word": "JAR",
-            "row": 5,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 26
+            "word": "AVOIDS",
+            "row": 0,
+            "col": 1,
+            "direction": "vertical",
+            "score": 20
           }
         ]
       },
       {
         "turn": 2,
-        "word": "FEND",
+        "word": "AAS",
         "row": 0,
-        "col": 0,
-        "direction": "vertical",
-        "score": 8,
-        "usedTiles": 2,
-        "newKeys": [
-          "1,0",
-          "2,0"
-        ],
-        "scoringWords": [
-          {
-            "word": "FEND",
-            "row": 0,
-            "col": 0,
-            "direction": "vertical",
-            "score": 8
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "IN",
-        "row": 2,
-        "col": 4,
+        "col": 1,
         "direction": "horizontal",
-        "score": 5,
+        "score": 10,
         "usedTiles": 2,
         "newKeys": [
-          "2,4",
-          "2,5"
+          "0,2",
+          "0,3"
         ],
         "scoringWords": [
           {
-            "word": "IN",
-            "row": 2,
-            "col": 4,
+            "word": "AAS",
+            "row": 0,
+            "col": 1,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "ID",
-            "row": 2,
-            "col": 4,
-            "direction": "vertical",
-            "score": 3
+            "score": 10
           }
         ]
       }
@@ -360,6 +320,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 770
+    "visitedCandidates": 756
   }
 }

@@ -22,7 +22,7 @@
     ],
     [
       "",
-      "",
+      "B",
       "",
       "R",
       "",
@@ -40,16 +40,7 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
+      "F",
       "",
       "",
       "",
@@ -58,7 +49,16 @@
     ],
     [
       "",
+      "F",
       "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "S",
       "",
       "",
       "",
@@ -87,7 +87,7 @@
     ],
     [
       "",
-      "",
+      "B",
       "",
       "R",
       "",
@@ -105,16 +105,7 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
+      "F",
       "",
       "",
       "",
@@ -123,7 +114,16 @@
     ],
     [
       "",
+      "F",
       "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "S",
       "",
       "",
       "",
@@ -132,10 +132,9 @@
     ]
   ],
   "bonusSquares": {
-    "6,1": "triple-word",
-    "6,3": "double-word",
-    "6,5": "triple-letter",
-    "3,6": "double-letter"
+    "6,4": "triple-word",
+    "2,6": "double-word",
+    "5,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +154,12 @@
       "row": 3,
       "col": 0,
       "direction": "horizontal"
+    },
+    {
+      "word": "BOFFS",
+      "row": 2,
+      "col": 1,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -183,16 +188,16 @@
         "A",
         "",
         "",
-        ""
+        "U"
       ],
       [
-        "O",
-        "F",
+        "",
+        "B",
         "",
         "R",
         "",
         "",
-        ""
+        "N"
       ],
       [
         "W",
@@ -205,7 +210,7 @@
       ],
       [
         "",
-        "U",
+        "F",
         "",
         "",
         "",
@@ -214,69 +219,60 @@
       ],
       [
         "",
-        "N",
+        "F",
         "",
         "",
-        "",
+        "U",
         "",
         ""
       ],
       [
-        "U",
+        "",
+        "S",
+        "O",
+        "F",
         "T",
-        "",
-        "",
-        "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "2,1",
-      "4,1",
-      "5,1",
-      "6,1",
-      "2,0",
-      "6,0"
+      "6,2",
+      "6,3",
+      "6,4",
+      "1,6",
+      "2,6",
+      "5,4"
     ],
-    "score": 90,
+    "score": 85,
     "completionBonus": 50,
     "words": [
-      "FOUNT",
-      "OF",
-      "OW",
+      "SOFT",
+      "DUN",
       "UT"
     ],
     "scoringWords": [
       {
-        "word": "FOUNT",
-        "row": 2,
+        "word": "SOFT",
+        "row": 6,
         "col": 1,
-        "direction": "vertical",
-        "score": 24,
+        "direction": "horizontal",
+        "score": 21,
         "move": 1
       },
       {
-        "word": "OF",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "OW",
-        "row": 2,
-        "col": 0,
+        "word": "DUN",
+        "row": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 5,
+        "score": 8,
         "move": 2
       },
       {
         "word": "UT",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
         "score": 6,
         "move": 3
       }
@@ -284,73 +280,66 @@
     "moves": [
       {
         "turn": 1,
-        "word": "FOUNT",
-        "row": 2,
+        "word": "SOFT",
+        "row": 6,
         "col": 1,
-        "direction": "vertical",
-        "score": 24,
-        "usedTiles": 4,
+        "direction": "horizontal",
+        "score": 21,
+        "usedTiles": 3,
         "newKeys": [
-          "2,1",
-          "4,1",
-          "5,1",
-          "6,1"
+          "6,2",
+          "6,3",
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "FOUNT",
-            "row": 2,
+            "word": "SOFT",
+            "row": 6,
             "col": 1,
-            "direction": "vertical",
-            "score": 24
+            "direction": "horizontal",
+            "score": 21
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OF",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 10,
-        "usedTiles": 1,
+        "word": "DUN",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 2,
         "newKeys": [
-          "2,0"
+          "1,6",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "OF",
-            "row": 2,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "OW",
-            "row": 2,
-            "col": 0,
+            "word": "DUN",
+            "row": 0,
+            "col": 6,
             "direction": "vertical",
-            "score": 5
+            "score": 8
           }
         ]
       },
       {
         "turn": 3,
         "word": "UT",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
         "score": 6,
         "usedTiles": 1,
         "newKeys": [
-          "6,0"
+          "5,4"
         ],
         "scoringWords": [
           {
             "word": "UT",
-            "row": 6,
-            "col": 0,
-            "direction": "horizontal",
+            "row": 5,
+            "col": 4,
+            "direction": "vertical",
             "score": 6
           }
         ]
@@ -360,6 +349,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 562
+    "visitedCandidates": 587
   }
 }

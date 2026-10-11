@@ -22,11 +22,11 @@
     ],
     [
       "",
-      "",
-      "",
+      "N",
+      "A",
       "R",
-      "",
-      "",
+      "K",
+      "Y",
       ""
     ],
     [
@@ -87,11 +87,11 @@
     ],
     [
       "",
-      "",
-      "",
+      "N",
+      "A",
       "R",
-      "",
-      "",
+      "K",
+      "Y",
       ""
     ],
     [
@@ -132,10 +132,8 @@
     ]
   ],
   "bonusSquares": {
-    "0,0": "triple-word",
-    "3,1": "double-word",
-    "3,5": "triple-letter",
-    "0,6": "double-letter"
+    "0,6": "double-word",
+    "0,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +153,12 @@
       "row": 6,
       "col": 0,
       "direction": "horizontal"
+    },
+    {
+      "word": "NARKY",
+      "row": 2,
+      "col": 1,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -169,47 +173,47 @@
     "board": [
       [
         "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "B",
-        "A",
-        "P",
-        "",
-        "U",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "R",
-        "",
-        "N",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "U",
-        "",
         "W",
+        "",
+        "",
+        "",
+        "",
         ""
       ],
       [
-        "",
-        "",
-        "",
-        "N",
         "",
         "I",
+        "",
+        "P",
+        "",
+        "B",
+        "A"
+      ],
+      [
+        "",
+        "N",
+        "A",
+        "R",
+        "K",
+        "Y",
+        ""
+      ],
+      [
+        "",
+        "",
+        "N",
+        "U",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "N",
+        "",
+        "U",
         ""
       ],
       [
@@ -233,80 +237,170 @@
     ],
     "newKeys": [
       "1,5",
-      "2,5",
-      "3,5",
-      "4,5",
+      "1,6",
+      "0,1",
       "1,1",
-      "1,2"
+      "3,2",
+      "4,5"
     ],
     "score": 73,
     "completionBonus": 50,
     "words": [
-      "UNWIT",
-      "BAP"
+      "BA",
+      "BY",
+      "WIN",
+      "NU",
+      "AN",
+      "UT"
     ],
     "scoringWords": [
       {
-        "word": "UNWIT",
+        "word": "BA",
         "row": 1,
         "col": 5,
-        "direction": "vertical",
-        "score": 16,
+        "direction": "horizontal",
+        "score": 4,
         "move": 1
       },
       {
-        "word": "BAP",
+        "word": "BY",
         "row": 1,
-        "col": 1,
-        "direction": "horizontal",
+        "col": 5,
+        "direction": "vertical",
         "score": 7,
+        "move": 1
+      },
+      {
+        "word": "WIN",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 6,
         "move": 2
+      },
+      {
+        "word": "NU",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "AN",
+        "row": 2,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "UT",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "UNWIT",
+        "word": "BA",
         "row": 1,
         "col": 5,
-        "direction": "vertical",
-        "score": 16,
-        "usedTiles": 4,
+        "direction": "horizontal",
+        "score": 11,
+        "usedTiles": 2,
         "newKeys": [
           "1,5",
-          "2,5",
-          "3,5",
-          "4,5"
+          "1,6"
         ],
         "scoringWords": [
           {
-            "word": "UNWIT",
+            "word": "BA",
+            "row": 1,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "BY",
             "row": 1,
             "col": 5,
             "direction": "vertical",
-            "score": 16
+            "score": 7
           }
         ]
       },
       {
         "turn": 2,
-        "word": "BAP",
-        "row": 1,
+        "word": "WIN",
+        "row": 0,
         "col": 1,
-        "direction": "horizontal",
-        "score": 7,
+        "direction": "vertical",
+        "score": 6,
         "usedTiles": 2,
         "newKeys": [
-          "1,1",
-          "1,2"
+          "0,1",
+          "1,1"
         ],
         "scoringWords": [
           {
-            "word": "BAP",
-            "row": 1,
+            "word": "WIN",
+            "row": 0,
             "col": 1,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AN",
+        "row": 2,
+        "col": 2,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "NU",
+            "row": 3,
+            "col": 2,
             "direction": "horizontal",
-            "score": 7
+            "score": 2
+          },
+          {
+            "word": "AN",
+            "row": 2,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "UT",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "UT",
+            "row": 4,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -315,6 +409,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 881
+    "visitedCandidates": 1071
   }
 }

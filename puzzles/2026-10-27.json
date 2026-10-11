@@ -51,10 +51,10 @@
       "",
       "A",
       "",
-      "",
+      "M",
       "O",
-      "",
-      ""
+      "L",
+      "L"
     ],
     [
       "",
@@ -116,10 +116,10 @@
       "",
       "A",
       "",
-      "",
+      "M",
       "O",
-      "",
-      ""
+      "L",
+      "L"
     ],
     [
       "",
@@ -132,11 +132,9 @@
     ]
   ],
   "bonusSquares": {
-    "0,6": "triple-word",
-    "6,6": "double-word",
-    "2,6": "double-letter",
-    "1,3": "triple-letter",
-    "4,6": "double-letter"
+    "0,5": "triple-word",
+    "2,6": "double-word",
+    "1,3": "double-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +154,12 @@
       "row": 3,
       "col": 4,
       "direction": "vertical"
+    },
+    {
+      "word": "MOLL",
+      "row": 5,
+      "col": 3,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -181,19 +185,19 @@
         "",
         "L",
         "",
-        "E",
-        "R",
         "",
-        ""
+        "",
+        "",
+        "H"
       ],
       [
         "",
         "I",
         "",
-        "A",
         "",
         "",
-        ""
+        "",
+        "U"
       ],
       [
         "I",
@@ -202,173 +206,128 @@
         "R",
         "T",
         "",
-        ""
+        "R"
       ],
       [
         "",
         "G",
         "",
-        "T",
-        "O",
         "",
-        ""
+        "O",
+        "A",
+        "T"
       ],
       [
         "",
         "A",
         "",
-        "H",
+        "M",
         "O",
-        "",
-        ""
+        "L",
+        "L"
       ],
       [
         "",
         "M",
-        "U",
         "",
         "",
         "",
-        ""
+        "",
+        "E"
       ]
     ],
     "newKeys": [
-      "1,3",
-      "2,3",
-      "4,3",
-      "5,3",
-      "6,2",
-      "1,4"
+      "1,6",
+      "2,6",
+      "3,6",
+      "4,6",
+      "6,6",
+      "4,5"
     ],
-    "score": 75,
+    "score": 73,
     "completionBonus": 50,
     "words": [
-      "TO",
-      "HO",
-      "EARTH",
-      "MU",
-      "ER"
+      "HURTLE",
+      "OAT",
+      "AL"
     ],
     "scoringWords": [
       {
-        "word": "TO",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "HO",
-        "row": 5,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "EARTH",
+        "word": "HURTLE",
         "row": 1,
-        "col": 3,
+        "col": 6,
         "direction": "vertical",
-        "score": 10,
+        "score": 18,
         "move": 1
       },
       {
-        "word": "MU",
-        "row": 6,
-        "col": 1,
+        "word": "OAT",
+        "row": 4,
+        "col": 4,
         "direction": "horizontal",
-        "score": 4,
+        "score": 3,
         "move": 2
       },
       {
-        "word": "ER",
-        "row": 1,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 3
+        "word": "AL",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "EARTH",
+        "word": "HURTLE",
         "row": 1,
-        "col": 3,
+        "col": 6,
         "direction": "vertical",
-        "score": 17,
-        "usedTiles": 4,
+        "score": 18,
+        "usedTiles": 5,
         "newKeys": [
-          "1,3",
-          "2,3",
-          "4,3",
-          "5,3"
+          "1,6",
+          "2,6",
+          "3,6",
+          "4,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "TO",
-            "row": 4,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "HO",
-            "row": 5,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "EARTH",
+            "word": "HURTLE",
             "row": 1,
-            "col": 3,
+            "col": 6,
             "direction": "vertical",
-            "score": 10
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "MU",
-        "row": 6,
-        "col": 1,
+        "word": "OAT",
+        "row": 4,
+        "col": 4,
         "direction": "horizontal",
-        "score": 4,
+        "score": 5,
         "usedTiles": 1,
         "newKeys": [
-          "6,2"
+          "4,5"
         ],
         "scoringWords": [
           {
-            "word": "MU",
-            "row": 6,
-            "col": 1,
+            "word": "OAT",
+            "row": 4,
+            "col": 4,
             "direction": "horizontal",
-            "score": 4
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "ER",
-        "row": 1,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 4,
-        "usedTiles": 1,
-        "newKeys": [
-          "1,4"
-        ],
-        "scoringWords": [
+            "score": 3
+          },
           {
-            "word": "ER",
-            "row": 1,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 4
+            "word": "AL",
+            "row": 4,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -377,6 +336,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1581
+    "visitedCandidates": 1445
   }
 }

@@ -59,9 +59,9 @@
     [
       "",
       "",
-      "",
-      "",
-      "",
+      "P",
+      "A",
+      "N",
       "E",
       ""
     ]
@@ -124,19 +124,19 @@
     [
       "",
       "",
-      "",
-      "",
-      "",
+      "P",
+      "A",
+      "N",
       "E",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,0": "double-word",
-    "3,0": "triple-letter",
-    "6,1": "double-letter",
-    "0,3": "triple-letter",
-    "6,3": "double-letter"
+    "0,2": "double-word",
+    "6,0": "double-letter",
+    "0,0": "triple-letter",
+    "2,0": "triple-letter",
+    "4,0": "double-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +156,12 @@
       "row": 2,
       "col": 2,
       "direction": "vertical"
+    },
+    {
+      "word": "PANE",
+      "row": 6,
+      "col": 2,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -187,8 +193,8 @@
         ""
       ],
       [
-        "",
-        "",
+        "R",
+        "U",
         "T",
         "",
         "X",
@@ -225,9 +231,9 @@
       [
         "",
         "",
-        "",
-        "R",
-        "U",
+        "P",
+        "A",
+        "N",
         "E",
         ""
       ]
@@ -236,18 +242,18 @@
       "0,4",
       "1,4",
       "2,4",
-      "0,3",
-      "6,3",
-      "6,4"
+      "2,0",
+      "2,1",
+      "0,3"
     ],
-    "score": 83,
+    "score": 82,
     "completionBonus": 50,
     "words": [
       "OS",
       "XI",
       "POX",
-      "UP",
-      "RUE"
+      "RUT",
+      "UP"
     ],
     "scoringWords": [
       {
@@ -275,16 +281,16 @@
         "move": 1
       },
       {
-        "word": "UP",
-        "row": 0,
-        "col": 3,
+        "word": "RUT",
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 6,
+        "score": 5,
         "move": 2
       },
       {
-        "word": "RUE",
-        "row": 6,
+        "word": "UP",
+        "row": 0,
         "col": 3,
         "direction": "horizontal",
         "score": 4,
@@ -331,11 +337,33 @@
       },
       {
         "turn": 2,
+        "word": "RUT",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 2,
+        "newKeys": [
+          "2,0",
+          "2,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "RUT",
+            "row": 2,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 3,
         "word": "UP",
         "row": 0,
         "col": 3,
         "direction": "horizontal",
-        "score": 6,
+        "score": 4,
         "usedTiles": 1,
         "newKeys": [
           "0,3"
@@ -344,28 +372,6 @@
           {
             "word": "UP",
             "row": 0,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 6
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "RUE",
-        "row": 6,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 4,
-        "usedTiles": 2,
-        "newKeys": [
-          "6,3",
-          "6,4"
-        ],
-        "scoringWords": [
-          {
-            "word": "RUE",
-            "row": 6,
             "col": 3,
             "direction": "horizontal",
             "score": 4
@@ -377,6 +383,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 453
+    "visitedCandidates": 422
   }
 }

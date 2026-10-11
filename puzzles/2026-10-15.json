@@ -7,7 +7,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       ""
     ],
@@ -25,7 +25,7 @@
       "",
       "",
       "",
-      "",
+      "J",
       "",
       ""
     ],
@@ -34,7 +34,7 @@
       "",
       "",
       "",
-      "",
+      "A",
       "",
       ""
     ],
@@ -43,7 +43,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       ""
     ],
@@ -72,7 +72,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       ""
     ],
@@ -90,7 +90,7 @@
       "",
       "",
       "",
-      "",
+      "J",
       "",
       ""
     ],
@@ -99,7 +99,7 @@
       "",
       "",
       "",
-      "",
+      "A",
       "",
       ""
     ],
@@ -108,7 +108,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       ""
     ],
@@ -132,10 +132,10 @@
     ]
   ],
   "bonusSquares": {
-    "5,6": "triple-word",
-    "3,3": "double-word",
-    "0,6": "double-letter",
-    "3,5": "triple-letter"
+    "1,6": "double-word",
+    "5,6": "triple-letter",
+    "3,6": "triple-letter",
+    "3,2": "double-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +155,12 @@
       "row": 5,
       "col": 0,
       "direction": "horizontal"
+    },
+    {
+      "word": "SOJAS",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -171,8 +177,8 @@
         "",
         "",
         "",
-        "",
-        "",
+        "O",
+        "S",
         "",
         ""
       ],
@@ -189,27 +195,27 @@
         "D",
         "",
         "",
+        "",
+        "J",
         "O",
-        "",
-        "",
-        ""
+        "B"
       ],
       [
         "I",
         "",
         "",
-        "B",
-        "O",
-        "O",
-        "T"
+        "F",
+        "A",
+        "",
+        ""
       ],
       [
         "U",
         "",
         "",
+        "O",
+        "S",
         "",
-        "",
-        "F",
         ""
       ],
       [
@@ -225,117 +231,165 @@
         "S",
         "",
         "",
-        "",
+        "T",
         "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "2,3",
       "3,3",
-      "3,4",
-      "3,5",
-      "3,6",
-      "4,5"
+      "4,3",
+      "6,3",
+      "2,5",
+      "2,6",
+      "0,3"
     ],
-    "score": 89,
+    "score": 83,
     "completionBonus": 50,
     "words": [
-      "HOB",
-      "BOOT",
-      "OF"
+      "FA",
+      "OS",
+      "FONT",
+      "JOB",
+      "OS",
+      "OH"
     ],
     "scoringWords": [
       {
-        "word": "HOB",
-        "row": 1,
-        "col": 3,
-        "direction": "vertical",
-        "score": 16,
-        "move": 1
-      },
-      {
-        "word": "BOOT",
+        "word": "FA",
         "row": 3,
         "col": 3,
         "direction": "horizontal",
-        "score": 16,
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "OS",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "FONT",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 7,
+        "move": 1
+      },
+      {
+        "word": "JOB",
+        "row": 2,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 12,
         "move": 2
       },
       {
-        "word": "OF",
-        "row": 3,
-        "col": 5,
+        "word": "OS",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "OH",
+        "row": 0,
+        "col": 3,
         "direction": "vertical",
-        "score": 7,
+        "score": 5,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "HOB",
-        "row": 1,
+        "word": "FONT",
+        "row": 3,
         "col": 3,
         "direction": "vertical",
-        "score": 16,
-        "usedTiles": 2,
+        "score": 14,
+        "usedTiles": 3,
         "newKeys": [
-          "2,3",
-          "3,3"
+          "3,3",
+          "4,3",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "HOB",
-            "row": 1,
+            "word": "FA",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "OS",
+            "row": 4,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "FONT",
+            "row": 3,
             "col": 3,
             "direction": "vertical",
-            "score": 16
+            "score": 7
           }
         ]
       },
       {
         "turn": 2,
-        "word": "BOOT",
-        "row": 3,
-        "col": 3,
+        "word": "JOB",
+        "row": 2,
+        "col": 4,
         "direction": "horizontal",
-        "score": 16,
-        "usedTiles": 3,
+        "score": 12,
+        "usedTiles": 2,
         "newKeys": [
-          "3,4",
-          "3,5",
-          "3,6"
+          "2,5",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "BOOT",
-            "row": 3,
-            "col": 3,
+            "word": "JOB",
+            "row": 2,
+            "col": 4,
             "direction": "horizontal",
-            "score": 16
+            "score": 12
           }
         ]
       },
       {
         "turn": 3,
-        "word": "OF",
-        "row": 3,
-        "col": 5,
+        "word": "OH",
+        "row": 0,
+        "col": 3,
         "direction": "vertical",
         "score": 7,
         "usedTiles": 1,
         "newKeys": [
-          "4,5"
+          "0,3"
         ],
         "scoringWords": [
           {
-            "word": "OF",
-            "row": 3,
-            "col": 5,
+            "word": "OS",
+            "row": 0,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "OH",
+            "row": 0,
+            "col": 3,
             "direction": "vertical",
-            "score": 7
+            "score": 5
           }
         ]
       }
@@ -344,6 +398,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 587
+    "visitedCandidates": 443
   }
 }

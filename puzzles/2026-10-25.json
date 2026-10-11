@@ -32,9 +32,9 @@
     [
       "",
       "N",
-      "",
-      "",
-      "",
+      "E",
+      "E",
+      "M",
       "",
       ""
     ],
@@ -97,9 +97,9 @@
     [
       "",
       "N",
-      "",
-      "",
-      "",
+      "E",
+      "E",
+      "M",
       "",
       ""
     ],
@@ -132,11 +132,10 @@
     ]
   ],
   "bonusSquares": {
-    "5,6": "triple-word",
-    "6,4": "double-word",
-    "6,1": "triple-letter",
-    "4,4": "double-letter",
-    "3,6": "double-letter"
+    "6,6": "triple-word",
+    "3,6": "double-word",
+    "5,3": "double-letter",
+    "6,0": "double-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +154,12 @@
       "word": "WEAR",
       "row": 2,
       "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "NEEM",
+      "row": 3,
+      "col": 1,
       "direction": "horizontal"
     }
   ],
@@ -178,7 +183,7 @@
         ""
       ],
       [
-        "",
+        "E",
         "H",
         "",
         "",
@@ -198,28 +203,28 @@
       [
         "",
         "N",
-        "",
-        "",
-        "",
+        "E",
+        "E",
+        "M",
         "",
         ""
       ],
       [
-        "",
+        "U",
         "S",
+        "",
         "M",
         "E",
         "W",
-        "",
-        ""
+        "L"
       ],
       [
         "",
         "",
         "",
-        "L",
-        "E",
-        "U",
+        "",
+        "",
+        "",
         ""
       ],
       [
@@ -233,113 +238,158 @@
       ]
     ],
     "newKeys": [
-      "4,2",
       "4,3",
       "4,4",
-      "5,3",
-      "5,4",
-      "5,5"
+      "4,5",
+      "4,6",
+      "1,0",
+      "4,0"
     ],
-    "score": 77,
+    "score": 79,
     "completionBonus": 50,
     "words": [
-      "SMEW",
-      "LEU",
-      "EL",
-      "WE"
+      "MEWL",
+      "REM",
+      "ME",
+      "EH",
+      "SEW",
+      "US"
     ],
     "scoringWords": [
       {
-        "word": "SMEW",
+        "word": "MEWL",
         "row": 4,
-        "col": 1,
+        "col": 3,
         "direction": "horizontal",
-        "score": 13,
+        "score": 9,
         "move": 1
       },
       {
-        "word": "LEU",
-        "row": 5,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "EL",
-        "row": 4,
+        "word": "REM",
+        "row": 2,
         "col": 3,
         "direction": "vertical",
-        "score": 2,
-        "move": 2
+        "score": 3,
+        "move": 1
       },
       {
-        "word": "WE",
-        "row": 4,
+        "word": "ME",
+        "row": 3,
         "col": 4,
         "direction": "vertical",
-        "score": 9,
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "EH",
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5,
         "move": 2
+      },
+      {
+        "word": "SEW",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "US",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "SMEW",
+        "word": "MEWL",
         "row": 4,
-        "col": 1,
+        "col": 3,
         "direction": "horizontal",
-        "score": 13,
-        "usedTiles": 3,
+        "score": 16,
+        "usedTiles": 4,
         "newKeys": [
-          "4,2",
           "4,3",
-          "4,4"
+          "4,4",
+          "4,5",
+          "4,6"
         ],
         "scoringWords": [
           {
-            "word": "SMEW",
+            "word": "MEWL",
             "row": 4,
-            "col": 1,
+            "col": 3,
             "direction": "horizontal",
-            "score": 13
+            "score": 9
+          },
+          {
+            "word": "REM",
+            "row": 2,
+            "col": 3,
+            "direction": "vertical",
+            "score": 3
+          },
+          {
+            "word": "ME",
+            "row": 3,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       },
       {
         "turn": 2,
-        "word": "LEU",
-        "row": 5,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 14,
-        "usedTiles": 3,
+        "word": "SEW",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 11,
+        "usedTiles": 1,
         "newKeys": [
-          "5,3",
-          "5,4",
-          "5,5"
+          "1,0"
         ],
         "scoringWords": [
           {
-            "word": "LEU",
-            "row": 5,
-            "col": 3,
+            "word": "EH",
+            "row": 1,
+            "col": 0,
             "direction": "horizontal",
-            "score": 3
+            "score": 5
           },
           {
-            "word": "EL",
-            "row": 4,
-            "col": 3,
+            "word": "SEW",
+            "row": 0,
+            "col": 0,
             "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "US",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "US",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
             "score": 2
-          },
-          {
-            "word": "WE",
-            "row": 4,
-            "col": 4,
-            "direction": "vertical",
-            "score": 9
           }
         ]
       }
@@ -348,6 +398,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 588
+    "visitedCandidates": 555
   }
 }

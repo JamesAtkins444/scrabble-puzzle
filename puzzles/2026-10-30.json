@@ -5,7 +5,7 @@
     [
       "",
       "",
-      "",
+      "P",
       "",
       "",
       "",
@@ -14,7 +14,7 @@
     [
       "",
       "",
-      "",
+      "O",
       "",
       "",
       "",
@@ -32,7 +32,7 @@
     [
       "",
       "I",
-      "",
+      "F",
       "",
       "",
       "",
@@ -41,7 +41,7 @@
     [
       "",
       "E",
-      "",
+      "S",
       "",
       "",
       "",
@@ -70,7 +70,7 @@
     [
       "",
       "",
-      "",
+      "P",
       "",
       "",
       "",
@@ -79,7 +79,7 @@
     [
       "",
       "",
-      "",
+      "O",
       "",
       "",
       "",
@@ -97,7 +97,7 @@
     [
       "",
       "I",
-      "",
+      "F",
       "",
       "",
       "",
@@ -106,7 +106,7 @@
     [
       "",
       "E",
-      "",
+      "S",
       "",
       "",
       "",
@@ -132,11 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "0,1": "double-word",
-    "1,6": "double-letter",
-    "0,4": "triple-letter",
+    "4,4": "double-word",
+    "0,6": "triple-letter",
+    "0,0": "triple-letter",
     "4,6": "double-letter",
-    "4,3": "triple-letter"
+    "0,4": "double-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +156,12 @@
       "row": 2,
       "col": 0,
       "direction": "horizontal"
+    },
+    {
+      "word": "POOFS",
+      "row": 0,
+      "col": 2,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -171,7 +177,7 @@
       [
         "",
         "",
-        "",
+        "P",
         "",
         "",
         "",
@@ -180,9 +186,9 @@
       [
         "",
         "",
-        "T",
-        "U",
-        "I",
+        "O",
+        "",
+        "",
         "",
         ""
       ],
@@ -198,20 +204,20 @@
       [
         "",
         "I",
+        "F",
         "",
-        "",
-        "",
+        "T",
         "",
         ""
       ],
       [
         "",
         "E",
-        "",
+        "S",
         "",
         "A",
-        "R",
-        ""
+        "I",
+        "R"
       ],
       [
         "",
@@ -220,7 +226,7 @@
         "",
         "R",
         "",
-        ""
+        "U"
       ],
       [
         "",
@@ -233,158 +239,110 @@
       ]
     ],
     "newKeys": [
-      "1,2",
-      "1,3",
-      "1,4",
+      "3,4",
       "4,4",
       "5,4",
-      "4,5"
+      "4,5",
+      "4,6",
+      "5,6"
     ],
-    "score": 70,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "TUI",
-      "TO",
-      "UP",
-      "IS",
-      "ARK",
-      "AR"
+      "STARK",
+      "AIR",
+      "RUN"
     ],
     "scoringWords": [
       {
-        "word": "TUI",
-        "row": 1,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 1
-      },
-      {
-        "word": "TO",
-        "row": 1,
-        "col": 2,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "UP",
-        "row": 1,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "IS",
-        "row": 1,
+        "word": "STARK",
+        "row": 2,
         "col": 4,
         "direction": "vertical",
-        "score": 2,
+        "score": 18,
         "move": 1
       },
       {
-        "word": "ARK",
+        "word": "AIR",
         "row": 4,
         "col": 4,
-        "direction": "vertical",
-        "score": 7,
+        "direction": "horizontal",
+        "score": 8,
         "move": 2
       },
       {
-        "word": "AR",
+        "word": "RUN",
         "row": 4,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 4,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "TUI",
-        "row": 1,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 11,
-        "usedTiles": 3,
-        "newKeys": [
-          "1,2",
-          "1,3",
-          "1,4"
-        ],
-        "scoringWords": [
-          {
-            "word": "TUI",
-            "row": 1,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "TO",
-            "row": 1,
-            "col": 2,
-            "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "UP",
-            "row": 1,
-            "col": 3,
-            "direction": "vertical",
-            "score": 4
-          },
-          {
-            "word": "IS",
-            "row": 1,
-            "col": 4,
-            "direction": "vertical",
-            "score": 2
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "ARK",
-        "row": 4,
+        "word": "STARK",
+        "row": 2,
         "col": 4,
         "direction": "vertical",
-        "score": 7,
-        "usedTiles": 2,
+        "score": 18,
+        "usedTiles": 3,
         "newKeys": [
+          "3,4",
           "4,4",
           "5,4"
         ],
         "scoringWords": [
           {
-            "word": "ARK",
-            "row": 4,
+            "word": "STARK",
+            "row": 2,
             "col": 4,
             "direction": "vertical",
-            "score": 7
+            "score": 18
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "AIR",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 8,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,5",
+          "4,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "AIR",
+            "row": 4,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 8
           }
         ]
       },
       {
         "turn": 3,
-        "word": "AR",
+        "word": "RUN",
         "row": 4,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 4,
         "usedTiles": 1,
         "newKeys": [
-          "4,5"
+          "5,6"
         ],
         "scoringWords": [
           {
-            "word": "AR",
+            "word": "RUN",
             "row": 4,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
+            "col": 6,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }
@@ -393,6 +351,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 758
+    "visitedCandidates": 708
   }
 }

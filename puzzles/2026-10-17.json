@@ -49,10 +49,10 @@
     ],
     [
       "",
-      "",
-      "",
+      "L",
+      "A",
       "N",
-      "",
+      "K",
       "",
       ""
     ],
@@ -114,10 +114,10 @@
     ],
     [
       "",
-      "",
-      "",
+      "L",
+      "A",
       "N",
-      "",
+      "K",
       "",
       ""
     ],
@@ -132,11 +132,9 @@
     ]
   ],
   "bonusSquares": {
-    "0,6": "triple-word",
-    "2,5": "double-word",
-    "6,1": "triple-letter",
-    "6,6": "double-letter",
-    "4,5": "double-letter"
+    "2,6": "triple-word",
+    "5,6": "double-word",
+    "0,5": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +154,12 @@
       "row": 0,
       "col": 0,
       "direction": "vertical"
+    },
+    {
+      "word": "LANK",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -172,9 +176,9 @@
         "C",
         "",
         "",
-        "",
-        "",
-        "",
+        "T",
+        "A",
+        "X",
         ""
       ],
       [
@@ -191,14 +195,14 @@
         "",
         "",
         "N",
-        "",
-        "",
-        ""
+        "O",
+        "O",
+        "N"
       ],
       [
         "N",
         "",
-        "O",
+        "",
         "D",
         "",
         "",
@@ -207,7 +211,7 @@
       [
         "G",
         "",
-        "X",
+        "",
         "I",
         "",
         "",
@@ -215,10 +219,10 @@
       ],
       [
         "",
-        "",
-        "O",
+        "L",
+        "A",
         "N",
-        "",
+        "K",
         "",
         ""
       ],
@@ -227,135 +231,103 @@
         "",
         "",
         "G",
-        "N",
-        "A",
-        "T"
+        "",
+        "",
+        ""
       ]
     ],
     "newKeys": [
-      "3,2",
-      "4,2",
-      "5,2",
-      "6,4",
-      "6,5",
-      "6,6"
+      "0,3",
+      "0,4",
+      "0,5",
+      "2,4",
+      "2,5",
+      "2,6"
     ],
-    "score": 80,
+    "score": 89,
     "completionBonus": 50,
     "words": [
-      "OD",
-      "XI",
-      "ON",
-      "OXO",
-      "GNAT"
+      "TAX",
+      "TENDING",
+      "NOON"
     ],
     "scoringWords": [
       {
-        "word": "OD",
-        "row": 3,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 1
-      },
-      {
-        "word": "XI",
-        "row": 4,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "ON",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "OXO",
-        "row": 3,
-        "col": 2,
-        "direction": "vertical",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "GNAT",
-        "row": 6,
+        "word": "TAX",
+        "row": 0,
         "col": 3,
         "direction": "horizontal",
-        "score": 6,
+        "score": 26,
+        "move": 1
+      },
+      {
+        "word": "TENDING",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 1,
+        "move": 1
+      },
+      {
+        "word": "NOON",
+        "row": 2,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 12,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "OXO",
-        "row": 3,
-        "col": 2,
-        "direction": "vertical",
-        "score": 24,
+        "word": "TAX",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 27,
         "usedTiles": 3,
         "newKeys": [
-          "3,2",
-          "4,2",
-          "5,2"
+          "0,3",
+          "0,4",
+          "0,5"
         ],
         "scoringWords": [
           {
-            "word": "OD",
-            "row": 3,
-            "col": 2,
+            "word": "TAX",
+            "row": 0,
+            "col": 3,
             "direction": "horizontal",
-            "score": 3
+            "score": 26
           },
           {
-            "word": "XI",
-            "row": 4,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 9
-          },
-          {
-            "word": "ON",
-            "row": 5,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OXO",
-            "row": 3,
-            "col": 2,
+            "word": "TENDING",
+            "row": 0,
+            "col": 3,
             "direction": "vertical",
-            "score": 10
+            "score": 1
           }
         ]
       },
       {
         "turn": 2,
-        "word": "GNAT",
-        "row": 6,
+        "word": "NOON",
+        "row": 2,
         "col": 3,
         "direction": "horizontal",
-        "score": 6,
+        "score": 12,
         "usedTiles": 3,
         "newKeys": [
-          "6,4",
-          "6,5",
-          "6,6"
+          "2,4",
+          "2,5",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "GNAT",
-            "row": 6,
+            "word": "NOON",
+            "row": 2,
             "col": 3,
             "direction": "horizontal",
-            "score": 6
+            "score": 12
           }
         ]
       }
@@ -364,6 +336,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 942
+    "visitedCandidates": 740
   }
 }

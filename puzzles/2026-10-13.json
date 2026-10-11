@@ -26,7 +26,7 @@
       "B",
       "",
       "D",
-      "",
+      "O",
       ""
     ],
     [
@@ -44,7 +44,7 @@
       "R",
       "",
       "",
-      "",
+      "C",
       ""
     ],
     [
@@ -53,7 +53,7 @@
       "D",
       "",
       "",
-      "",
+      "A",
       ""
     ],
     [
@@ -62,7 +62,7 @@
       "S",
       "",
       "",
-      "",
+      "S",
       ""
     ]
   ],
@@ -91,7 +91,7 @@
       "B",
       "",
       "D",
-      "",
+      "O",
       ""
     ],
     [
@@ -109,7 +109,7 @@
       "R",
       "",
       "",
-      "",
+      "C",
       ""
     ],
     [
@@ -118,7 +118,7 @@
       "D",
       "",
       "",
-      "",
+      "A",
       ""
     ],
     [
@@ -127,17 +127,15 @@
       "S",
       "",
       "",
-      "",
+      "S",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,6": "triple-word",
-    "0,0": "double-word",
+    "0,2": "double-word",
+    "1,0": "triple-letter",
     "5,0": "double-letter",
-    "1,6": "triple-letter",
-    "0,2": "triple-letter",
-    "6,4": "double-letter"
+    "0,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -157,6 +155,12 @@
       "row": 2,
       "col": 2,
       "direction": "vertical"
+    },
+    {
+      "word": "ORCAS",
+      "row": 2,
+      "col": 5,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -172,11 +176,11 @@
       [
         "",
         "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "I",
+        "N",
+        "N",
+        "E",
+        "D"
       ],
       [
         "",
@@ -185,7 +189,7 @@
         "",
         "O",
         "",
-        ""
+        "O"
       ],
       [
         "",
@@ -193,7 +197,7 @@
         "B",
         "",
         "D",
-        "",
+        "O",
         ""
       ],
       [
@@ -211,7 +215,7 @@
         "R",
         "",
         "",
-        "",
+        "C",
         ""
       ],
       [
@@ -220,127 +224,111 @@
         "D",
         "",
         "",
-        "O",
-        "N"
+        "A",
+        ""
       ],
       [
         "",
         "",
         "S",
-        "N",
-        "I",
-        "D",
-        "E"
+        "",
+        "",
+        "S",
+        ""
       ]
     ],
     "newKeys": [
-      "6,3",
-      "6,4",
-      "6,5",
-      "6,6",
-      "5,5",
-      "5,6"
+      "0,2",
+      "0,3",
+      "0,4",
+      "0,5",
+      "0,6",
+      "1,6"
     ],
-    "score": 82,
+    "score": 78,
     "completionBonus": 50,
     "words": [
-      "SNIDE",
-      "ON",
-      "OD",
-      "NE"
+      "INNED",
+      "NODE",
+      "DO"
     ],
     "scoringWords": [
       {
-        "word": "SNIDE",
-        "row": 6,
+        "word": "INNED",
+        "row": 0,
         "col": 2,
         "direction": "horizontal",
-        "score": 21,
+        "score": 20,
         "move": 1
       },
       {
-        "word": "ON",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "OD",
-        "row": 5,
-        "col": 5,
+        "word": "NODE",
+        "row": 0,
+        "col": 4,
         "direction": "vertical",
-        "score": 3,
-        "move": 2
+        "score": 1,
+        "move": 1
       },
       {
-        "word": "NE",
-        "row": 5,
+        "word": "DO",
+        "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 6,
+        "score": 7,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "SNIDE",
-        "row": 6,
+        "word": "INNED",
+        "row": 0,
         "col": 2,
         "direction": "horizontal",
         "score": 21,
-        "usedTiles": 4,
+        "usedTiles": 5,
         "newKeys": [
-          "6,3",
-          "6,4",
-          "6,5",
-          "6,6"
+          "0,2",
+          "0,3",
+          "0,4",
+          "0,5",
+          "0,6"
         ],
         "scoringWords": [
           {
-            "word": "SNIDE",
-            "row": 6,
+            "word": "INNED",
+            "row": 0,
             "col": 2,
             "direction": "horizontal",
-            "score": 21
+            "score": 20
+          },
+          {
+            "word": "NODE",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 1
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ON",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 11,
-        "usedTiles": 2,
+        "word": "DO",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 7,
+        "usedTiles": 1,
         "newKeys": [
-          "5,5",
-          "5,6"
+          "1,6"
         ],
         "scoringWords": [
           {
-            "word": "ON",
-            "row": 5,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OD",
-            "row": 5,
-            "col": 5,
-            "direction": "vertical",
-            "score": 3
-          },
-          {
-            "word": "NE",
-            "row": 5,
+            "word": "DO",
+            "row": 0,
             "col": 6,
             "direction": "vertical",
-            "score": 6
+            "score": 7
           }
         ]
       }
@@ -349,6 +337,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1078
+    "visitedCandidates": 882
   }
 }

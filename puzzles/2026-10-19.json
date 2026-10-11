@@ -25,7 +25,7 @@
       "",
       "",
       "",
-      "",
+      "M",
       "",
       "T"
     ],
@@ -43,7 +43,7 @@
       "",
       "",
       "",
-      "",
+      "Y",
       "",
       "D"
     ],
@@ -52,7 +52,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       ""
     ],
@@ -90,7 +90,7 @@
       "",
       "",
       "",
-      "",
+      "M",
       "",
       "T"
     ],
@@ -108,7 +108,7 @@
       "",
       "",
       "",
-      "",
+      "Y",
       "",
       "D"
     ],
@@ -117,7 +117,7 @@
       "",
       "",
       "",
-      "",
+      "S",
       "",
       ""
     ],
@@ -132,11 +132,10 @@
     ]
   ],
   "bonusSquares": {
-    "6,1": "triple-word",
-    "5,3": "double-word",
-    "2,1": "double-letter",
-    "6,5": "triple-letter",
-    "4,0": "double-letter"
+    "5,0": "triple-word",
+    "2,0": "double-word",
+    "6,6": "triple-letter",
+    "5,2": "double-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +155,12 @@
       "row": 3,
       "col": 3,
       "direction": "horizontal"
+    },
+    {
+      "word": "MAYS",
+      "row": 2,
+      "col": 4,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -190,8 +195,8 @@
         "",
         "",
         "",
-        "F",
         "",
+        "M",
         "",
         "T"
       ],
@@ -207,76 +212,76 @@
       [
         "",
         "",
-        "A",
-        "A",
         "",
+        "",
+        "Y",
         "",
         "D"
       ],
       [
-        "",
-        "",
+        "F",
+        "A",
         "M",
-        "M",
-        "",
+        "E",
+        "S",
         "",
         ""
       ],
       [
+        "A",
+        "M",
         "",
         "",
-        "",
-        "E",
         "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "2,3",
-      "4,3",
+      "5,0",
+      "5,1",
+      "5,2",
       "5,3",
-      "6,3",
-      "4,2",
-      "5,2"
+      "6,0",
+      "6,1"
     ],
-    "score": 88,
+    "score": 112,
     "completionBonus": 50,
     "words": [
-      "FLAME",
-      "AA",
-      "MM",
+      "FAMES",
+      "AM",
+      "FA",
       "AM"
     ],
     "scoringWords": [
       {
-        "word": "FLAME",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 20,
+        "word": "FAMES",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 39,
         "move": 1
       },
       {
-        "word": "AA",
-        "row": 4,
-        "col": 2,
+        "word": "AM",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
+        "score": 4,
         "move": 2
       },
       {
-        "word": "MM",
+        "word": "FA",
         "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 12,
+        "col": 0,
+        "direction": "vertical",
+        "score": 15,
         "move": 2
       },
       {
         "word": "AM",
-        "row": 4,
-        "col": 2,
+        "row": 5,
+        "col": 1,
         "direction": "vertical",
         "score": 4,
         "move": 2
@@ -285,59 +290,59 @@
     "moves": [
       {
         "turn": 1,
-        "word": "FLAME",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 20,
+        "word": "FAMES",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 39,
         "usedTiles": 4,
         "newKeys": [
-          "2,3",
-          "4,3",
-          "5,3",
-          "6,3"
+          "5,0",
+          "5,1",
+          "5,2",
+          "5,3"
         ],
         "scoringWords": [
           {
-            "word": "FLAME",
-            "row": 2,
-            "col": 3,
-            "direction": "vertical",
-            "score": 20
+            "word": "FAMES",
+            "row": 5,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 39
           }
         ]
       },
       {
         "turn": 2,
         "word": "AM",
-        "row": 4,
-        "col": 2,
-        "direction": "vertical",
-        "score": 18,
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 23,
         "usedTiles": 2,
         "newKeys": [
-          "4,2",
-          "5,2"
+          "6,0",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "AA",
-            "row": 4,
-            "col": 2,
+            "word": "AM",
+            "row": 6,
+            "col": 0,
             "direction": "horizontal",
-            "score": 2
+            "score": 4
           },
           {
-            "word": "MM",
+            "word": "FA",
             "row": 5,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 12
+            "col": 0,
+            "direction": "vertical",
+            "score": 15
           },
           {
             "word": "AM",
-            "row": 4,
-            "col": 2,
+            "row": 5,
+            "col": 1,
             "direction": "vertical",
             "score": 4
           }
@@ -348,6 +353,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 542
+    "visitedCandidates": 550
   }
 }

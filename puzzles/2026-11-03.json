@@ -25,7 +25,7 @@
       "",
       "N",
       "",
-      "",
+      "B",
       "",
       ""
     ],
@@ -34,7 +34,7 @@
       "",
       "N",
       "",
-      "",
+      "O",
       "",
       ""
     ],
@@ -90,7 +90,7 @@
       "",
       "N",
       "",
-      "",
+      "B",
       "",
       ""
     ],
@@ -99,7 +99,7 @@
       "",
       "N",
       "",
-      "",
+      "O",
       "",
       ""
     ],
@@ -132,11 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "2,5": "double-word",
-    "1,0": "triple-letter",
-    "6,0": "triple-letter",
-    "4,6": "double-letter",
-    "6,5": "double-letter"
+    "4,6": "double-word",
+    "6,4": "triple-letter",
+    "2,0": "double-letter",
+    "6,6": "double-letter",
+    "6,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +156,12 @@
       "row": 4,
       "col": 1,
       "direction": "horizontal"
+    },
+    {
+      "word": "BOS",
+      "row": 2,
+      "col": 4,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -184,23 +190,23 @@
         "",
         "",
         "",
-        "L"
+        ""
       ],
       [
         "",
-        "U",
+        "",
         "N",
-        "S",
         "A",
-        "F",
-        "E"
+        "B",
+        "",
+        ""
       ],
       [
         "",
         "",
         "N",
         "",
-        "",
+        "O",
         "",
         ""
       ],
@@ -223,91 +229,107 @@
         ""
       ],
       [
-        "",
-        "",
-        "",
-        "",
-        "",
+        "F",
+        "U",
+        "S",
+        "E",
+        "L",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "2,1",
-      "2,3",
-      "2,4",
-      "2,5",
-      "2,6",
-      "1,6"
+      "6,0",
+      "6,1",
+      "6,2",
+      "6,3",
+      "6,4",
+      "2,3"
     ],
-    "score": 71,
+    "score": 74,
     "completionBonus": 50,
     "words": [
-      "UNSAFE",
-      "ALE"
+      "FUSEL",
+      "PUNNETS",
+      "NAB"
     ],
     "scoringWords": [
       {
-        "word": "UNSAFE",
-        "row": 2,
-        "col": 1,
+        "word": "FUSEL",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
         "score": 18,
         "move": 1
       },
       {
-        "word": "ALE",
+        "word": "PUNNETS",
         "row": 0,
-        "col": 6,
+        "col": 2,
         "direction": "vertical",
-        "score": 3,
+        "score": 1,
+        "move": 1
+      },
+      {
+        "word": "NAB",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 5,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "UNSAFE",
-        "row": 2,
-        "col": 1,
+        "word": "FUSEL",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 18,
+        "score": 19,
         "usedTiles": 5,
         "newKeys": [
-          "2,1",
-          "2,3",
-          "2,4",
-          "2,5",
-          "2,6"
+          "6,0",
+          "6,1",
+          "6,2",
+          "6,3",
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "UNSAFE",
-            "row": 2,
-            "col": 1,
+            "word": "FUSEL",
+            "row": 6,
+            "col": 0,
             "direction": "horizontal",
             "score": 18
+          },
+          {
+            "word": "PUNNETS",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 1
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ALE",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 3,
+        "word": "NAB",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 5,
         "usedTiles": 1,
         "newKeys": [
-          "1,6"
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "ALE",
-            "row": 0,
-            "col": 6,
-            "direction": "vertical",
-            "score": 3
+            "word": "NAB",
+            "row": 2,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 5
           }
         ]
       }
@@ -316,6 +338,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1490
+    "visitedCandidates": 1336
   }
 }

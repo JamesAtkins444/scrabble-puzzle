@@ -26,44 +26,44 @@
       "",
       "",
       "",
-      "G",
-      ""
+      "",
+      "R"
     ],
     [
+      "E",
+      "K",
+      "E",
+      "S",
+      "",
+      "",
+      "O"
+    ],
+    [
+      "",
       "",
       "",
       "P",
-      "A",
-      "L",
-      "L",
-      "Y"
+      "",
+      "",
+      "P"
     ],
     [
       "",
       "",
       "",
-      "",
-      "",
-      "O",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "B",
-      ""
-    ],
-    [
-      "F",
-      "A",
-      "Q",
       "I",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "E",
+      "N",
+      "T",
+      "E",
       "R",
-      "S",
-      ""
+      "S"
     ]
   ],
   "originalBoard": [
@@ -91,255 +91,256 @@
       "",
       "",
       "",
-      "G",
-      ""
+      "",
+      "R"
     ],
     [
+      "E",
+      "K",
+      "E",
+      "S",
+      "",
+      "",
+      "O"
+    ],
+    [
+      "",
       "",
       "",
       "P",
-      "A",
-      "L",
-      "L",
-      "Y"
+      "",
+      "",
+      "P"
     ],
     [
       "",
       "",
       "",
-      "",
-      "",
-      "O",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "B",
-      ""
-    ],
-    [
-      "F",
-      "A",
-      "Q",
       "I",
+      "",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "E",
+      "N",
+      "T",
+      "E",
       "R",
-      "S",
-      ""
+      "S"
     ]
   ],
   "bonusSquares": {
     "0,1": "triple-word",
-    "0,6": "double-word",
-    "2,0": "double-letter",
-    "0,4": "triple-letter",
-    "4,0": "double-letter"
+    "0,5": "double-word",
+    "0,3": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "FAQIRS",
+      "word": "ENTERS",
       "row": 6,
-      "col": 0,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "GLOBS",
+      "word": "ROPES",
       "row": 2,
-      "col": 5,
+      "col": 6,
       "direction": "vertical"
     },
     {
-      "word": "PALLY",
+      "word": "SPIT",
       "row": 3,
-      "col": 2,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "EKES",
+      "row": 3,
+      "col": 0,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "S",
+    "O",
     "A",
-    "R",
-    "N",
-    "E",
-    "A"
+    "T",
+    "B",
+    "D",
+    "E"
   ],
   "bestSolution": {
     "board": [
       [
         "",
+        "B",
+        "O",
+        "D",
         "",
         "",
-        "",
-        "R",
-        "A",
-        "N"
+        ""
       ],
       [
-        "",
-        "",
-        "",
         "",
         "E",
         "",
+        "",
+        "",
+        "",
         ""
       ],
       [
-        "",
-        "",
-        "",
         "",
         "A",
-        "G",
-        ""
+        "",
+        "",
+        "",
+        "",
+        "R"
       ],
       [
+        "E",
+        "K",
+        "E",
+        "S",
+        "",
+        "",
+        "O"
+      ],
+      [
+        "T",
         "",
         "",
         "P",
-        "A",
-        "L",
-        "L",
-        "Y"
+        "",
+        "",
+        "P"
       ],
       [
         "",
         "",
         "",
-        "",
-        "S",
-        "O",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "B",
-        ""
-      ],
-      [
-        "F",
-        "A",
-        "Q",
         "I",
+        "",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "E",
+        "N",
+        "T",
+        "E",
         "R",
-        "S",
-        ""
+        "S"
       ]
     ],
     "newKeys": [
-      "0,4",
-      "1,4",
-      "2,4",
-      "4,4",
-      "0,5",
-      "0,6"
+      "0,1",
+      "1,1",
+      "2,1",
+      "0,2",
+      "0,3",
+      "4,0"
     ],
-    "score": 72,
+    "score": 112,
     "completionBonus": 50,
     "words": [
-      "AG",
-      "SO",
-      "REALS",
-      "RAN"
+      "BEAK",
+      "BOD",
+      "ET"
     ],
     "scoringWords": [
       {
-        "word": "AG",
-        "row": 2,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 1
-      },
-      {
-        "word": "SO",
-        "row": 4,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "REALS",
+        "word": "BEAK",
         "row": 0,
-        "col": 4,
+        "col": 1,
         "direction": "vertical",
-        "score": 7,
+        "score": 30,
         "move": 1
       },
       {
-        "word": "RAN",
+        "word": "BOD",
         "row": 0,
-        "col": 4,
+        "col": 1,
         "direction": "horizontal",
-        "score": 10,
+        "score": 30,
         "move": 2
+      },
+      {
+        "word": "ET",
+        "row": 3,
+        "col": 0,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "REALS",
+        "word": "BEAK",
         "row": 0,
-        "col": 4,
+        "col": 1,
         "direction": "vertical",
-        "score": 12,
-        "usedTiles": 4,
+        "score": 30,
+        "usedTiles": 3,
         "newKeys": [
-          "0,4",
-          "1,4",
-          "2,4",
-          "4,4"
+          "0,1",
+          "1,1",
+          "2,1"
         ],
         "scoringWords": [
           {
-            "word": "AG",
-            "row": 2,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "SO",
-            "row": 4,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "REALS",
+            "word": "BEAK",
             "row": 0,
-            "col": 4,
+            "col": 1,
             "direction": "vertical",
-            "score": 7
+            "score": 30
           }
         ]
       },
       {
         "turn": 2,
-        "word": "RAN",
+        "word": "BOD",
         "row": 0,
-        "col": 4,
+        "col": 1,
         "direction": "horizontal",
-        "score": 10,
+        "score": 30,
         "usedTiles": 2,
         "newKeys": [
-          "0,5",
-          "0,6"
+          "0,2",
+          "0,3"
         ],
         "scoringWords": [
           {
-            "word": "RAN",
+            "word": "BOD",
             "row": 0,
-            "col": 4,
+            "col": 1,
             "direction": "horizontal",
-            "score": 10
+            "score": 30
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "ET",
+        "row": 3,
+        "col": 0,
+        "direction": "vertical",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "ET",
+            "row": 3,
+            "col": 0,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -348,6 +349,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1283
+    "visitedCandidates": 1776
   }
 }

@@ -6,16 +6,7 @@
       "",
       "",
       "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
+      "D",
       "",
       "",
       ""
@@ -24,7 +15,16 @@
       "",
       "",
       "",
+      "O",
       "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "G",
       "",
       "",
       ""
@@ -71,16 +71,7 @@
       "",
       "",
       "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
+      "D",
       "",
       "",
       ""
@@ -89,7 +80,16 @@
       "",
       "",
       "",
+      "O",
       "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "G",
       "",
       "",
       ""
@@ -132,10 +132,9 @@
     ]
   ],
   "bonusSquares": {
-    "0,5": "triple-word",
+    "0,6": "triple-word",
     "2,6": "double-word",
-    "0,2": "triple-letter",
-    "1,0": "triple-letter",
+    "0,1": "triple-letter",
     "4,6": "double-letter"
   },
   "puzzleWords": [
@@ -156,6 +155,12 @@
       "row": 3,
       "col": 0,
       "direction": "horizontal"
+    },
+    {
+      "word": "DOGE",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -170,30 +175,30 @@
     "board": [
       [
         "",
-        "",
-        "",
-        "",
-        "",
-        "N",
-        ""
+        "O",
+        "R",
+        "D",
+        "A",
+        "I",
+        "N"
       ],
       [
-        "",
-        "",
         "",
         "",
         "",
         "O",
+        "",
+        "",
         ""
       ],
       [
         "",
-        "",
-        "",
-        "R",
-        "A",
         "G",
-        "I"
+        "",
+        "G",
+        "",
+        "",
+        ""
       ],
       [
         "W",
@@ -233,113 +238,81 @@
       ]
     ],
     "newKeys": [
-      "2,3",
-      "2,4",
-      "2,5",
-      "2,6",
+      "0,1",
+      "0,2",
+      "0,4",
       "0,5",
-      "1,5"
+      "0,6",
+      "2,1"
     ],
-    "score": 76,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "RAGI",
-      "RE",
-      "AN",
-      "NOG"
+      "ORDAIN",
+      "GO"
     ],
     "scoringWords": [
       {
-        "word": "RAGI",
-        "row": 2,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "RE",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "AN",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "NOG",
+        "word": "ORDAIN",
         "row": 0,
-        "col": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 27,
+        "move": 1
+      },
+      {
+        "word": "GO",
+        "row": 2,
+        "col": 1,
         "direction": "vertical",
-        "score": 12,
+        "score": 3,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "RAGI",
-        "row": 2,
-        "col": 3,
+        "word": "ORDAIN",
+        "row": 0,
+        "col": 1,
         "direction": "horizontal",
-        "score": 14,
-        "usedTiles": 4,
+        "score": 27,
+        "usedTiles": 5,
         "newKeys": [
-          "2,3",
-          "2,4",
-          "2,5",
-          "2,6"
+          "0,1",
+          "0,2",
+          "0,4",
+          "0,5",
+          "0,6"
         ],
         "scoringWords": [
           {
-            "word": "RAGI",
-            "row": 2,
-            "col": 3,
+            "word": "ORDAIN",
+            "row": 0,
+            "col": 1,
             "direction": "horizontal",
-            "score": 10
-          },
-          {
-            "word": "RE",
-            "row": 2,
-            "col": 3,
-            "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "AN",
-            "row": 2,
-            "col": 4,
-            "direction": "vertical",
-            "score": 2
+            "score": 27
           }
         ]
       },
       {
         "turn": 2,
-        "word": "NOG",
-        "row": 0,
-        "col": 5,
+        "word": "GO",
+        "row": 2,
+        "col": 1,
         "direction": "vertical",
-        "score": 12,
-        "usedTiles": 2,
+        "score": 3,
+        "usedTiles": 1,
         "newKeys": [
-          "0,5",
-          "1,5"
+          "2,1"
         ],
         "scoringWords": [
           {
-            "word": "NOG",
-            "row": 0,
-            "col": 5,
+            "word": "GO",
+            "row": 2,
+            "col": 1,
             "direction": "vertical",
-            "score": 12
+            "score": 3
           }
         ]
       }
@@ -348,6 +321,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1454
+    "visitedCandidates": 1373
   }
 }

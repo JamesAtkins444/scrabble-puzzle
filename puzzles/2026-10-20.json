@@ -34,7 +34,7 @@
       "",
       "",
       "",
-      "",
+      "T",
       "A",
       ""
     ],
@@ -52,7 +52,7 @@
       "",
       "",
       "",
-      "",
+      "E",
       "",
       ""
     ],
@@ -61,7 +61,7 @@
       "",
       "",
       "",
-      "",
+      "L",
       "",
       ""
     ]
@@ -99,7 +99,7 @@
       "",
       "",
       "",
-      "",
+      "T",
       "A",
       ""
     ],
@@ -117,7 +117,7 @@
       "",
       "",
       "",
-      "",
+      "E",
       "",
       ""
     ],
@@ -126,17 +126,16 @@
       "",
       "",
       "",
-      "",
+      "L",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,0": "double-word",
-    "2,0": "double-letter",
-    "6,3": "triple-letter",
-    "2,3": "triple-letter",
-    "4,0": "double-letter"
+    "6,6": "double-word",
+    "5,0": "triple-letter",
+    "2,1": "double-letter",
+    "6,2": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +155,12 @@
       "row": 4,
       "col": 2,
       "direction": "horizontal"
+    },
+    {
+      "word": "TAEL",
+      "row": 3,
+      "col": 4,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -180,8 +185,8 @@
       [
         "",
         "",
-        "F",
-        "I",
+        "",
+        "",
         "N",
         "O",
         ""
@@ -193,16 +198,16 @@
         "",
         "",
         "G",
-        "O"
+        ""
       ],
       [
         "",
         "",
         "",
         "",
-        "",
+        "T",
         "A",
-        "A"
+        ""
       ],
       [
         "",
@@ -218,63 +223,60 @@
         "",
         "",
         "",
+        "E",
         "",
-        "",
-        "S"
+        "A"
       ],
       [
         "",
         "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "F",
+        "I",
+        "L",
+        "O",
+        "S"
       ]
     ],
     "newKeys": [
-      "1,2",
-      "1,3",
-      "1,4",
-      "2,6",
-      "3,6",
-      "5,6"
+      "6,2",
+      "6,3",
+      "6,5",
+      "6,6",
+      "5,6",
+      "1,4"
     ],
-    "score": 86,
+    "score": 100,
     "completionBonus": 50,
     "words": [
-      "FINO",
-      "OF",
-      "XI",
-      "IN",
-      "GO",
-      "AA",
-      "OAKS"
+      "FILOS",
+      "KAS",
+      "NO",
+      "IN"
     ],
     "scoringWords": [
       {
-        "word": "FINO",
-        "row": 1,
+        "word": "FILOS",
+        "row": 6,
         "col": 2,
         "direction": "horizontal",
-        "score": 7,
+        "score": 32,
         "move": 1
       },
       {
-        "word": "OF",
-        "row": 0,
-        "col": 2,
+        "word": "KAS",
+        "row": 4,
+        "col": 6,
         "direction": "vertical",
-        "score": 5,
-        "move": 1
+        "score": 14,
+        "move": 2
       },
       {
-        "word": "XI",
-        "row": 0,
-        "col": 3,
-        "direction": "vertical",
-        "score": 9,
-        "move": 1
+        "word": "NO",
+        "row": 1,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
       },
       {
         "word": "IN",
@@ -282,68 +284,73 @@
         "col": 4,
         "direction": "vertical",
         "score": 2,
-        "move": 1
-      },
-      {
-        "word": "GO",
-        "row": 2,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "AA",
-        "row": 3,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "OAKS",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
-        "score": 8,
-        "move": 2
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FINO",
-        "row": 1,
+        "word": "FILOS",
+        "row": 6,
         "col": 2,
         "direction": "horizontal",
-        "score": 23,
-        "usedTiles": 3,
+        "score": 32,
+        "usedTiles": 4,
         "newKeys": [
-          "1,2",
-          "1,3",
+          "6,2",
+          "6,3",
+          "6,5",
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "FILOS",
+            "row": 6,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 32
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "KAS",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 14,
+        "usedTiles": 1,
+        "newKeys": [
+          "5,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "KAS",
+            "row": 4,
+            "col": 6,
+            "direction": "vertical",
+            "score": 14
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "IN",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
           "1,4"
         ],
         "scoringWords": [
           {
-            "word": "FINO",
+            "word": "NO",
             "row": 1,
-            "col": 2,
+            "col": 4,
             "direction": "horizontal",
-            "score": 7
-          },
-          {
-            "word": "OF",
-            "row": 0,
-            "col": 2,
-            "direction": "vertical",
-            "score": 5
-          },
-          {
-            "word": "XI",
-            "row": 0,
-            "col": 3,
-            "direction": "vertical",
-            "score": 9
+            "score": 2
           },
           {
             "word": "IN",
@@ -353,49 +360,12 @@
             "score": 2
           }
         ]
-      },
-      {
-        "turn": 2,
-        "word": "OAKS",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
-        "score": 13,
-        "usedTiles": 3,
-        "newKeys": [
-          "2,6",
-          "3,6",
-          "5,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "GO",
-            "row": 2,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "AA",
-            "row": 3,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OAKS",
-            "row": 2,
-            "col": 6,
-            "direction": "vertical",
-            "score": 8
-          }
-        ]
       }
     ],
     "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1406
+    "visitedCandidates": 1271
   }
 }

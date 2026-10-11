@@ -48,10 +48,10 @@
       "H"
     ],
     [
-      "",
-      "",
-      "",
-      "",
+      "F",
+      "U",
+      "L",
+      "L",
       "S",
       "",
       "I"
@@ -113,10 +113,10 @@
       "H"
     ],
     [
-      "",
-      "",
-      "",
-      "",
+      "F",
+      "U",
+      "L",
+      "L",
       "S",
       "",
       "I"
@@ -132,11 +132,10 @@
     ]
   ],
   "bonusSquares": {
-    "1,0": "triple-word",
-    "5,1": "double-word",
-    "3,2": "double-letter",
-    "3,0": "triple-letter",
-    "0,2": "double-letter"
+    "2,0": "triple-word",
+    "3,2": "double-word",
+    "0,2": "triple-letter",
+    "0,0": "double-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +155,12 @@
       "row": 1,
       "col": 4,
       "direction": "vertical"
+    },
+    {
+      "word": "FULLS",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -178,7 +183,7 @@
         ""
       ],
       [
-        "",
+        "A",
         "",
         "",
         "",
@@ -187,10 +192,10 @@
         "M"
       ],
       [
-        "",
-        "",
-        "",
-        "",
+        "D",
+        "U",
+        "R",
+        "R",
         "A",
         "",
         "Y"
@@ -198,10 +203,10 @@
       [
         "",
         "",
-        "A",
-        "R",
-        "F",
         "",
+        "",
+        "F",
+        "A",
         "T"
       ],
       [
@@ -214,10 +219,10 @@
         "H"
       ],
       [
-        "D",
+        "F",
         "U",
-        "R",
-        "A",
+        "L",
+        "L",
         "S",
         "",
         "I"
@@ -233,81 +238,110 @@
       ]
     ],
     "newKeys": [
-      "5,0",
-      "5,1",
-      "5,2",
-      "5,3",
-      "3,2",
-      "3,3"
+      "2,0",
+      "2,1",
+      "2,2",
+      "2,3",
+      "1,0",
+      "3,5"
     ],
-    "score": 69,
+    "score": 83,
     "completionBonus": 50,
     "words": [
-      "DURAS",
-      "ARF"
+      "DURRA",
+      "AD",
+      "FAT"
     ],
     "scoringWords": [
       {
-        "word": "DURAS",
-        "row": 5,
+        "word": "DURRA",
+        "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 12,
+        "score": 18,
         "move": 1
       },
       {
-        "word": "ARF",
-        "row": 3,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 7,
+        "word": "AD",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 9,
         "move": 2
+      },
+      {
+        "word": "FAT",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DURAS",
-        "row": 5,
+        "word": "DURRA",
+        "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 12,
+        "score": 18,
         "usedTiles": 4,
         "newKeys": [
-          "5,0",
-          "5,1",
-          "5,2",
-          "5,3"
+          "2,0",
+          "2,1",
+          "2,2",
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "DURAS",
-            "row": 5,
+            "word": "DURRA",
+            "row": 2,
             "col": 0,
             "direction": "horizontal",
-            "score": 12
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ARF",
-        "row": 3,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 7,
-        "usedTiles": 2,
+        "word": "AD",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 9,
+        "usedTiles": 1,
         "newKeys": [
-          "3,2",
-          "3,3"
+          "1,0"
         ],
         "scoringWords": [
           {
-            "word": "ARF",
+            "word": "AD",
+            "row": 1,
+            "col": 0,
+            "direction": "vertical",
+            "score": 9
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "FAT",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 6,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "FAT",
             "row": 3,
-            "col": 2,
+            "col": 4,
             "direction": "horizontal",
-            "score": 7
+            "score": 6
           }
         ]
       }
@@ -316,6 +350,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 273
+    "visitedCandidates": 333
   }
 }

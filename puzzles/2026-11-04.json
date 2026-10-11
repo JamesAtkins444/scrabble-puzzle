@@ -23,11 +23,11 @@
     [
       "H",
       "",
-      "",
+      "J",
       "A",
-      "",
-      "",
-      ""
+      "T",
+      "O",
+      "S"
     ],
     [
       "S",
@@ -88,11 +88,11 @@
     [
       "H",
       "",
-      "",
+      "J",
       "A",
-      "",
-      "",
-      ""
+      "T",
+      "O",
+      "S"
     ],
     [
       "S",
@@ -133,11 +133,8 @@
   ],
   "bonusSquares": {
     "6,0": "triple-word",
-    "6,4": "double-word",
-    "2,6": "triple-letter",
-    "4,5": "triple-letter",
-    "6,6": "double-letter",
-    "6,2": "double-letter"
+    "5,5": "double-word",
+    "6,2": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -157,6 +154,12 @@
       "row": 0,
       "col": 3,
       "direction": "vertical"
+    },
+    {
+      "word": "JATOS",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -180,7 +183,7 @@
       ],
       [
         "A",
-        "N",
+        "",
         "",
         "E",
         "",
@@ -190,11 +193,11 @@
       [
         "H",
         "",
-        "F",
+        "J",
         "A",
-        "",
-        "",
-        ""
+        "T",
+        "O",
+        "S"
       ],
       [
         "S",
@@ -217,16 +220,16 @@
       [
         "",
         "",
-        "S",
+        "N",
         "",
         "",
         "",
         ""
       ],
       [
-        "",
-        "",
         "E",
+        "F",
+        "S",
         "",
         "",
         "",
@@ -234,32 +237,22 @@
       ]
     ],
     "newKeys": [
-      "2,2",
       "3,2",
       "4,2",
       "5,2",
       "6,2",
-      "1,1"
+      "6,0",
+      "6,1"
     ],
-    "score": 77,
+    "score": 97,
     "completionBonus": 50,
     "words": [
-      "FA",
       "EM",
       "AY",
-      "FEASE",
-      "AN",
-      "IN"
+      "JEANS",
+      "EFS"
     ],
     "scoringWords": [
-      {
-        "word": "FA",
-        "row": 2,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
       {
         "word": "EM",
         "row": 3,
@@ -277,54 +270,38 @@
         "move": 1
       },
       {
-        "word": "FEASE",
+        "word": "JEANS",
         "row": 2,
         "col": 2,
         "direction": "vertical",
-        "score": 9,
+        "score": 14,
         "move": 1
       },
       {
-        "word": "AN",
-        "row": 1,
+        "word": "EFS",
+        "row": 6,
         "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "IN",
-        "row": 0,
-        "col": 1,
-        "direction": "vertical",
-        "score": 2,
+        "score": 24,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FEASE",
+        "word": "JEANS",
         "row": 2,
         "col": 2,
         "direction": "vertical",
         "score": 23,
-        "usedTiles": 5,
+        "usedTiles": 4,
         "newKeys": [
-          "2,2",
           "3,2",
           "4,2",
           "5,2",
           "6,2"
         ],
         "scoringWords": [
-          {
-            "word": "FA",
-            "row": 2,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 5
-          },
           {
             "word": "EM",
             "row": 3,
@@ -340,39 +317,33 @@
             "score": 5
           },
           {
-            "word": "FEASE",
+            "word": "JEANS",
             "row": 2,
             "col": 2,
             "direction": "vertical",
-            "score": 9
+            "score": 14
           }
         ]
       },
       {
         "turn": 2,
-        "word": "AN",
-        "row": 1,
+        "word": "EFS",
+        "row": 6,
         "col": 0,
         "direction": "horizontal",
-        "score": 4,
-        "usedTiles": 1,
+        "score": 24,
+        "usedTiles": 2,
         "newKeys": [
-          "1,1"
+          "6,0",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "AN",
-            "row": 1,
+            "word": "EFS",
+            "row": 6,
             "col": 0,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "IN",
-            "row": 0,
-            "col": 1,
-            "direction": "vertical",
-            "score": 2
+            "score": 24
           }
         ]
       }
@@ -381,6 +352,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 914
+    "visitedCandidates": 830
   }
 }

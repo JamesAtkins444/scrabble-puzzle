@@ -48,11 +48,11 @@
       ""
     ],
     [
-      "",
-      "",
+      "M",
+      "O",
       "U",
-      "",
-      "",
+      "S",
+      "Y",
       "",
       ""
     ],
@@ -113,11 +113,11 @@
       ""
     ],
     [
-      "",
-      "",
+      "M",
+      "O",
       "U",
-      "",
-      "",
+      "S",
+      "Y",
       "",
       ""
     ],
@@ -132,10 +132,8 @@
     ]
   ],
   "bonusSquares": {
-    "5,0": "double-word",
-    "6,4": "triple-letter",
-    "0,0": "triple-letter",
-    "6,6": "double-letter"
+    "6,6": "double-word",
+    "0,0": "double-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +153,12 @@
       "row": 1,
       "col": 2,
       "direction": "vertical"
+    },
+    {
+      "word": "MOUSY",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -181,7 +185,7 @@
         "",
         "B",
         "",
-        "I",
+        "",
         "S",
         ""
       ],
@@ -189,10 +193,10 @@
         "",
         "",
         "A",
-        "",
         "N",
+        "",
         "O",
-        "M"
+        ""
       ],
       [
         "",
@@ -208,169 +212,198 @@
         "",
         "T",
         "",
-        "E",
+        "",
         "S",
         ""
       ],
       [
-        "",
-        "",
+        "M",
+        "O",
         "U",
-        "",
-        "E",
+        "S",
+        "Y",
         "",
         ""
       ],
       [
-        "",
-        "",
-        "",
-        "",
+        "I",
         "D",
         "",
-        ""
+        "",
+        "E",
+        "M",
+        "E"
       ]
     ],
     "newKeys": [
-      "1,4",
-      "2,4",
-      "4,4",
-      "5,4",
       "6,4",
-      "2,6"
+      "6,5",
+      "6,6",
+      "6,0",
+      "6,1",
+      "2,3"
     ],
-    "score": 78,
+    "score": 79,
     "completionBonus": 50,
     "words": [
-      "IS",
-      "NO",
-      "ES",
-      "INDEED",
-      "NOM",
-      "MY"
+      "EME",
+      "YE",
+      "ID",
+      "MI",
+      "OD",
+      "AN",
+      "NU"
     ],
     "scoringWords": [
       {
-        "word": "IS",
-        "row": 1,
+        "word": "EME",
+        "row": 6,
         "col": 4,
         "direction": "horizontal",
-        "score": 2,
+        "score": 10,
         "move": 1
       },
       {
-        "word": "NO",
-        "row": 2,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "ES",
-        "row": 4,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "INDEED",
-        "row": 1,
+        "word": "YE",
+        "row": 5,
         "col": 4,
         "direction": "vertical",
-        "score": 12,
+        "score": 5,
         "move": 1
       },
       {
-        "word": "NOM",
-        "row": 2,
-        "col": 4,
+        "word": "ID",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
         "score": 3,
         "move": 2
       },
       {
-        "word": "MY",
-        "row": 2,
-        "col": 6,
+        "word": "MI",
+        "row": 5,
+        "col": 0,
         "direction": "vertical",
-        "score": 7,
+        "score": 4,
         "move": 2
+      },
+      {
+        "word": "OD",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "AN",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "NU",
+        "row": 2,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "INDEED",
-        "row": 1,
+        "word": "EME",
+        "row": 6,
         "col": 4,
-        "direction": "vertical",
-        "score": 18,
-        "usedTiles": 5,
+        "direction": "horizontal",
+        "score": 15,
+        "usedTiles": 3,
         "newKeys": [
-          "1,4",
-          "2,4",
-          "4,4",
-          "5,4",
-          "6,4"
+          "6,4",
+          "6,5",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "IS",
-            "row": 1,
+            "word": "EME",
+            "row": 6,
             "col": 4,
             "direction": "horizontal",
-            "score": 2
+            "score": 10
           },
           {
-            "word": "NO",
-            "row": 2,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "ES",
-            "row": 4,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "INDEED",
-            "row": 1,
+            "word": "YE",
+            "row": 5,
             "col": 4,
             "direction": "vertical",
-            "score": 12
+            "score": 5
           }
         ]
       },
       {
         "turn": 2,
-        "word": "NOM",
-        "row": 2,
-        "col": 4,
+        "word": "ID",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
         "score": 10,
-        "usedTiles": 1,
+        "usedTiles": 2,
         "newKeys": [
-          "2,6"
+          "6,0",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "NOM",
-            "row": 2,
-            "col": 4,
+            "word": "ID",
+            "row": 6,
+            "col": 0,
             "direction": "horizontal",
             "score": 3
           },
           {
-            "word": "MY",
-            "row": 2,
-            "col": 6,
+            "word": "MI",
+            "row": 5,
+            "col": 0,
             "direction": "vertical",
-            "score": 7
+            "score": 4
+          },
+          {
+            "word": "OD",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AN",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "AN",
+            "row": 2,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "NU",
+            "row": 2,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -379,6 +412,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1048
+    "visitedCandidates": 1060
   }
 }

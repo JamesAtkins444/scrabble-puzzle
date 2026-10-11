@@ -13,57 +13,57 @@
     ],
     [
       "",
-      "C",
       "",
       "",
       "",
-      "",
-      ""
-    ],
-    [
-      "N",
-      "O",
-      "G",
-      "S",
-      "",
+      "H",
       "",
       ""
     ],
     [
+      "",
+      "",
+      "",
       "",
       "O",
       "",
+      "M"
+    ],
+    [
+      "R",
+      "I",
+      "M",
+      "E",
+      "R",
       "",
-      "",
-      "",
-      ""
+      "A"
     ],
     [
       "",
-      "P",
       "",
       "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "S",
-      "T",
-      "O",
-      "S",
-      "S",
-      "",
-      ""
+      "R",
+      "A",
+      "I",
+      "L"
     ],
     [
       "",
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
       "S",
       "",
-      "",
-      "",
-      "",
-      ""
+      "S"
     ]
   ],
   "originalBoard": [
@@ -78,236 +78,212 @@
     ],
     [
       "",
-      "C",
       "",
       "",
       "",
-      "",
-      ""
-    ],
-    [
-      "N",
-      "O",
-      "G",
-      "S",
-      "",
+      "H",
       "",
       ""
     ],
     [
+      "",
+      "",
+      "",
       "",
       "O",
       "",
+      "M"
+    ],
+    [
+      "R",
+      "I",
+      "M",
+      "E",
+      "R",
       "",
-      "",
-      "",
-      ""
+      "A"
     ],
     [
       "",
-      "P",
       "",
       "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "S",
-      "T",
-      "O",
-      "S",
-      "S",
-      "",
-      ""
+      "R",
+      "A",
+      "I",
+      "L"
     ],
     [
       "",
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
       "S",
       "",
-      "",
-      "",
-      "",
-      ""
+      "S"
     ]
   ],
   "bonusSquares": {
-    "2,6": "triple-word",
-    "6,6": "double-word",
-    "0,5": "double-letter",
-    "4,6": "triple-letter",
-    "0,3": "triple-letter"
+    "0,1": "triple-word",
+    "5,0": "double-word",
+    "6,2": "double-letter",
+    "0,6": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "COOPTS",
+      "word": "HORAHS",
       "row": 1,
-      "col": 1,
+      "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "NOGS",
-      "row": 2,
-      "col": 0,
+      "word": "RAIL",
+      "row": 4,
+      "col": 3,
       "direction": "horizontal"
     },
     {
-      "word": "STOSS",
-      "row": 5,
+      "word": "MALES",
+      "row": 2,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "RIMER",
+      "row": 3,
       "col": 0,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "E",
-    "V",
-    "D",
-    "O",
-    "R",
+    "B",
+    "G",
+    "A",
+    "N",
+    "I",
     "E"
   ],
   "bestSolution": {
     "board": [
       [
+        "B",
         "",
         "",
         "",
-        "D",
-        "E",
-        "V",
+        "",
+        "",
         ""
       ],
       [
+        "E",
         "",
-        "C",
+        "",
+        "",
+        "H",
+        "",
+        ""
+      ],
+      [
+        "A",
+        "",
+        "",
         "",
         "O",
         "",
+        "M"
+      ],
+      [
+        "R",
+        "I",
+        "M",
+        "E",
+        "R",
         "",
-        ""
+        "A"
+      ],
+      [
+        "I",
+        "",
+        "",
+        "R",
+        "A",
+        "I",
+        "L"
       ],
       [
         "N",
-        "O",
+        "",
+        "",
+        "",
+        "H",
+        "",
+        "E"
+      ],
+      [
         "G",
-        "S",
         "",
         "",
-        ""
-      ],
-      [
-        "",
-        "O",
-        "",
-        "E",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "P",
-        "",
-        "R",
-        "",
-        "",
-        ""
-      ],
-      [
-        "S",
-        "T",
-        "O",
-        "S",
-        "S",
-        "",
-        ""
-      ],
-      [
         "",
         "S",
         "",
-        "",
-        "",
-        "",
-        ""
+        "S"
       ]
     ],
     "newKeys": [
-      "0,3",
-      "1,3",
-      "3,3",
-      "4,3",
-      "0,4",
-      "0,5"
+      "0,0",
+      "1,0",
+      "2,0",
+      "4,0",
+      "5,0",
+      "6,0"
     ],
-    "score": 76,
-    "completionBonus": 50,
+    "score": 120,
+    "completionBonus": 0,
     "words": [
-      "DOSERS",
-      "DEV"
+      "BEARING"
     ],
     "scoringWords": [
       {
-        "word": "DOSERS",
+        "word": "BEARING",
         "row": 0,
-        "col": 3,
+        "col": 0,
         "direction": "vertical",
-        "score": 11,
+        "score": 20,
         "move": 1
-      },
-      {
-        "word": "DEV",
-        "row": 0,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 15,
-        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DOSERS",
+        "word": "BEARING",
         "row": 0,
-        "col": 3,
+        "col": 0,
         "direction": "vertical",
-        "score": 11,
-        "usedTiles": 4,
+        "score": 120,
+        "usedTiles": 6,
         "newKeys": [
-          "0,3",
-          "1,3",
-          "3,3",
-          "4,3"
+          "0,0",
+          "1,0",
+          "2,0",
+          "4,0",
+          "5,0",
+          "6,0"
         ],
         "scoringWords": [
           {
-            "word": "DOSERS",
+            "word": "BEARING",
             "row": 0,
-            "col": 3,
+            "col": 0,
             "direction": "vertical",
-            "score": 11
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "DEV",
-        "row": 0,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 15,
-        "usedTiles": 2,
-        "newKeys": [
-          "0,4",
-          "0,5"
-        ],
-        "scoringWords": [
-          {
-            "word": "DEV",
-            "row": 0,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 15
+            "score": 20
           }
         ]
       }
@@ -316,6 +292,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 959
+    "visitedCandidates": 1180
   }
 }

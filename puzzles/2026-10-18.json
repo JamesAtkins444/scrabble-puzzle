@@ -15,10 +15,10 @@
       "",
       "",
       "",
-      "",
-      "",
+      "H",
+      "I",
       "L",
-      ""
+      "I"
     ],
     [
       "",
@@ -80,10 +80,10 @@
       "",
       "",
       "",
-      "",
-      "",
+      "H",
+      "I",
       "L",
-      ""
+      "I"
     ],
     [
       "",
@@ -132,9 +132,8 @@
     ]
   ],
   "bonusSquares": {
-    "0,2": "triple-word",
-    "1,0": "double-word",
-    "3,0": "double-letter"
+    "0,0": "triple-word",
+    "2,0": "double-word"
   },
   "puzzleWords": [
     {
@@ -154,6 +153,12 @@
       "row": 5,
       "col": 1,
       "direction": "horizontal"
+    },
+    {
+      "word": "HILI",
+      "row": 1,
+      "col": 3,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -167,22 +172,22 @@
   "bestSolution": {
     "board": [
       [
-        "",
-        "U",
-        "N",
         "C",
         "A",
+        "D",
+        "E",
+        "",
         "G",
-        "E"
+        ""
       ],
       [
         "",
         "",
         "",
-        "",
-        "",
+        "H",
+        "I",
         "L",
-        ""
+        "I"
       ],
       [
         "",
@@ -191,7 +196,7 @@
         "",
         "",
         "E",
-        ""
+        "N"
       ],
       [
         "",
@@ -206,7 +211,7 @@
         "",
         "",
         "",
-        "",
+        "U",
         "",
         "E",
         ""
@@ -223,7 +228,7 @@
       [
         "",
         "",
-        "D",
+        "",
         "",
         "",
         "",
@@ -231,81 +236,142 @@
       ]
     ],
     "newKeys": [
+      "0,0",
       "0,1",
       "0,2",
       "0,3",
-      "0,4",
-      "0,6",
-      "6,2"
+      "4,3",
+      "2,6"
     ],
-    "score": 80,
+    "score": 86,
     "completionBonus": 50,
     "words": [
-      "UNCAGE",
-      "AD"
+      "CADE",
+      "EH",
+      "LUV",
+      "EN",
+      "IN"
     ],
     "scoringWords": [
       {
-        "word": "UNCAGE",
+        "word": "CADE",
         "row": 0,
-        "col": 1,
+        "col": 0,
         "direction": "horizontal",
-        "score": 27,
+        "score": 21,
         "move": 1
       },
       {
-        "word": "AD",
-        "row": 5,
-        "col": 2,
+        "word": "EH",
+        "row": 0,
+        "col": 3,
         "direction": "vertical",
-        "score": 3,
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "LUV",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 6,
         "move": 2
+      },
+      {
+        "word": "EN",
+        "row": 2,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "IN",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "UNCAGE",
+        "word": "CADE",
         "row": 0,
-        "col": 1,
+        "col": 0,
         "direction": "horizontal",
-        "score": 27,
-        "usedTiles": 5,
+        "score": 26,
+        "usedTiles": 4,
         "newKeys": [
+          "0,0",
           "0,1",
           "0,2",
-          "0,3",
-          "0,4",
-          "0,6"
+          "0,3"
         ],
         "scoringWords": [
           {
-            "word": "UNCAGE",
+            "word": "CADE",
             "row": 0,
-            "col": 1,
+            "col": 0,
             "direction": "horizontal",
-            "score": 27
+            "score": 21
+          },
+          {
+            "word": "EH",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
           }
         ]
       },
       {
         "turn": 2,
-        "word": "AD",
-        "row": 5,
-        "col": 2,
+        "word": "LUV",
+        "row": 3,
+        "col": 3,
         "direction": "vertical",
-        "score": 3,
+        "score": 6,
         "usedTiles": 1,
         "newKeys": [
-          "6,2"
+          "4,3"
         ],
         "scoringWords": [
           {
-            "word": "AD",
-            "row": 5,
-            "col": 2,
+            "word": "LUV",
+            "row": 3,
+            "col": 3,
             "direction": "vertical",
-            "score": 3
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "EN",
+        "row": 2,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "EN",
+            "row": 2,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "IN",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -314,6 +380,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1140
+    "visitedCandidates": 1125
   }
 }
