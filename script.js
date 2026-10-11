@@ -2293,10 +2293,55 @@ function displayTileRack() {
                             if (fromIndex < toIndex) toIndex -= 1;
                             toIndex = Math.max(0, Math.min(playerTiles.length - 1, toIndex));
                             if (fromIndex !== toIndex) {
+                                // Remember the current slot positions so the tiles can slide
+                                // smoothly into their new places after the rack is re-rendered.
+                                const oldTileRects = Array.from(
+                                    tileRackElement.querySelectorAll(".rack-tile")
+                                ).map(rackTile => rackTile.getBoundingClientRect());
+
                                 const [letter] = playerTiles.splice(fromIndex, 1);
                                 playerTiles.splice(toIndex, 0, letter);
                                 selectedRackTile = null;
                                 displayTileRack();
+
+                                const newRackTiles = Array.from(
+                                    tileRackElement.querySelectorAll(".rack-tile")
+                                );
+
+                                newRackTiles.forEach((rackTile, newIndex) => {
+                                    let oldIndex = newIndex;
+
+                                    if (newIndex === toIndex) {
+                                        oldIndex = fromIndex;
+                                    } else if (fromIndex < toIndex &&
+                                               newIndex >= fromIndex &&
+                                               newIndex < toIndex) {
+                                        oldIndex = newIndex + 1;
+                                    } else if (fromIndex > toIndex &&
+                                               newIndex > toIndex &&
+                                               newIndex <= fromIndex) {
+                                        oldIndex = newIndex - 1;
+                                    }
+
+                                    const oldRect = oldTileRects[oldIndex];
+                                    const newRect = rackTile.getBoundingClientRect();
+                                    if (!oldRect) return;
+
+                                    const offsetX = oldRect.left - newRect.left;
+                                    const offsetY = oldRect.top - newRect.top;
+
+                                    rackTile.style.transition = "none";
+                                    rackTile.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+                                });
+
+                                // Allow the starting positions to render before sliding to the
+                                // tiles' new positions.
+                                requestAnimationFrame(() => {
+                                    newRackTiles.forEach(rackTile => {
+                                        rackTile.style.transition = "transform 220ms ease-out";
+                                        rackTile.style.transform = "";
+                                    });
+                                });
                             }
                         }
                         // Prevent the synthetic click after a drag from selecting the rack tile.
