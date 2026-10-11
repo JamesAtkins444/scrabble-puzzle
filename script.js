@@ -2133,6 +2133,7 @@ function displayTileRack() {
 
             tile.className =
                 "rack-tile";
+            tile.dataset.rackIndex = index;
 
 
             if (
@@ -2195,7 +2196,8 @@ function displayTileRack() {
                     startY: event.clientY,
                     pointerId: event.pointerId,
                     moved: false,
-                    target: null
+                    target: null,
+                    rackTarget: null
                 };
                 suppressNextRackTileClick = false;
 
@@ -2227,9 +2229,13 @@ function displayTileRack() {
 
                     const element = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY);
                     const cell = element && element.closest ? element.closest(".cell") : null;
+                    const rackTile = element && element.closest ? element.closest(".rack-tile") : null;
 
                     if (rackTileDrag.target && rackTileDrag.target !== cell) {
                         rackTileDrag.target.classList.remove("drag-over");
+                    }
+                    if (rackTileDrag.rackTarget && rackTileDrag.rackTarget.tile !== rackTile) {
+                        rackTileDrag.rackTarget.tile.classList.remove("rack-reorder-target");
                     }
 
                     const validCell = cell &&
@@ -2242,6 +2248,18 @@ function displayTileRack() {
 
                     rackTileDrag.target = validCell ? cell : null;
                     if (rackTileDrag.target) rackTileDrag.target.classList.add("drag-over");
+
+                    // When released over another rack tile, remember which side it is on.
+                    rackTileDrag.rackTarget = null;
+                    if (!rackTileDrag.target && rackTile && rackTile !== tile) {
+                        const rect = rackTile.getBoundingClientRect();
+                        rackTileDrag.rackTarget = {
+                            tile: rackTile,
+                            index: Number(rackTile.dataset.rackIndex),
+                            before: moveEvent.clientX < rect.left + rect.width / 2
+                        };
+                        rackTile.classList.add("rack-reorder-target");
+                    }
                 };
 
                 const onUp = upEvent => {
@@ -2249,6 +2267,7 @@ function displayTileRack() {
 
                     const drag = rackTileDrag;
                     if (drag.target) drag.target.classList.remove("drag-over");
+                    if (drag.rackTarget) drag.rackTarget.tile.classList.remove("rack-reorder-target");
                     if (drag.visual) drag.visual.remove();
                     tile.classList.remove("rack-tile-drag-source");
 
@@ -2266,6 +2285,19 @@ function displayTileRack() {
                             selectedBoardCell = null;
                             selectedRackTile = drag.index;
                             handleBoardClick(row, col);
+                        } else if (drag.rackTarget) {
+                            // Move the dragged letter to the chosen position in the rack.
+                            const fromIndex = drag.index;
+                            let toIndex = drag.rackTarget.index;
+                            if (!drag.rackTarget.before) toIndex += 1;
+                            if (fromIndex < toIndex) toIndex -= 1;
+                            toIndex = Math.max(0, Math.min(playerTiles.length - 1, toIndex));
+                            if (fromIndex !== toIndex) {
+                                const [letter] = playerTiles.splice(fromIndex, 1);
+                                playerTiles.splice(toIndex, 0, letter);
+                                selectedRackTile = null;
+                                displayTileRack();
+                            }
                         }
                         // Prevent the synthetic click after a drag from selecting the rack tile.
                         setTimeout(() => { suppressNextRackTileClick = false; }, 0);
@@ -2275,6 +2307,7 @@ function displayTileRack() {
                 const onCancel = cancelEvent => {
                     if (!rackTileDrag || cancelEvent.pointerId !== rackTileDrag.pointerId) return;
                     if (rackTileDrag.target) rackTileDrag.target.classList.remove("drag-over");
+                    if (rackTileDrag.rackTarget) rackTileDrag.rackTarget.tile.classList.remove("rack-reorder-target");
                     if (rackTileDrag.visual) rackTileDrag.visual.remove();
                     tile.classList.remove("rack-tile-drag-source");
                     rackTileDrag = null;
