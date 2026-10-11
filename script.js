@@ -2394,11 +2394,6 @@ function displayTileRack() {
             );
         }
     );
-
-    // Keep the shuffle control at the end of the rack row, aligned to the board grid.
-    if (shuffleRackButton) {
-        tileRackElement.appendChild(shuffleRackButton);
-    }
 }
 
 
