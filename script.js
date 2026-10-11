@@ -2216,6 +2216,8 @@ function displayTileRack() {
                         visual.classList.add("rack-tile-drag-visual");
                         visual.setAttribute("aria-hidden", "true");
                         document.body.appendChild(visual);
+                        // Hide the rack tile while its larger floating copy is being dragged.
+                        tile.classList.add("rack-tile-drag-source");
                         rackTileDrag.visual = visual;
                     }
 
@@ -2248,6 +2250,7 @@ function displayTileRack() {
                     const drag = rackTileDrag;
                     if (drag.target) drag.target.classList.remove("drag-over");
                     if (drag.visual) drag.visual.remove();
+                    tile.classList.remove("rack-tile-drag-source");
 
                     document.removeEventListener("pointermove", onMove);
                     document.removeEventListener("pointerup", onUp);
@@ -2273,6 +2276,7 @@ function displayTileRack() {
                     if (!rackTileDrag || cancelEvent.pointerId !== rackTileDrag.pointerId) return;
                     if (rackTileDrag.target) rackTileDrag.target.classList.remove("drag-over");
                     if (rackTileDrag.visual) rackTileDrag.visual.remove();
+                    tile.classList.remove("rack-tile-drag-source");
                     rackTileDrag = null;
                     document.removeEventListener("pointermove", onMove);
                     document.removeEventListener("pointerup", onUp);
