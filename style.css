@@ -1602,3 +1602,43 @@ body {
         height: 65%;
     }
 }
+
+
+/* Rack alignment grid: exactly match the board's 8 columns and outer width. */
+#tileRackGrid {
+    order: 6;
+    width: min(100%, 500px);
+    aspect-ratio: 8 / 1;
+    margin: 10px auto 0;
+    padding: 3px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: 3px;
+    align-items: stretch;
+}
+
+/* Let the letter tiles and shuffle button become direct items of the alignment grid. */
+#tileRack {
+    display: contents;
+}
+
+#tileRack .rack-tile,
+#tileRack #shuffleRackButton.shuffle-rack-button {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 420px) {
+    #tileRackGrid {
+        gap: 3px;
+        padding: 3px;
+    }
+}
