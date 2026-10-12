@@ -91,7 +91,7 @@ let puzzleWords = [];
 
 let score = 0;
 
-// Stores the total value of the original 6-tile rack.
+// Stores the total value of the original rack.
 // This remains unchanged when tiles are placed on the board.
 let startingRackValueTotal = 0;
 
@@ -3273,7 +3273,7 @@ function calculatePlayerScore() {
         playerTiles.length === 0 &&
         Object.keys(
             playerPlacedTiles
-        ).length === 6
+        ).length === initialRackTiles.length
     ) {
 
         const statuses =
@@ -3338,14 +3338,14 @@ function calculatePlayerScore() {
                 bonus = 100;
 
                 bonusText =
-                    "+100 6-tile word bonus";
+                    "+100 all-tiles-in-one-word bonus";
 
             } else {
 
                 bonus = 50;
 
                 bonusText =
-                    "+50 6-tile bonus";
+                    "+50 all-tiles bonus";
             }
 
 
@@ -3476,7 +3476,7 @@ function updateScoreDisplay(
         updateAchievementStars(
             currentScore,
             solverScore,
-            bonusText.includes("6-tile")
+            bonusText.includes("all-tiles")
         );
     }
 
@@ -3754,10 +3754,10 @@ function evaluateSolverPlacement(word, row, col, direction, sourceBoard, rackCou
     }));
     let totalScore = scoredWords.reduce((sum, info) => sum + info.score, 0);
 
-    // Match the game's 6-tile bonus rule.
-    if (usedTiles === 6) {
+    // Match the game's all-tiles bonus rule.
+    if (usedTiles === initialRackTiles.length) {
         const mainWordUsesAllTiles = getWordCells(mainWord.word, mainWord.row, mainWord.col, mainWord.direction)
-            .filter(cell => newKeys.has(keyForCell(cell.row, cell.col))).length === 6;
+            .filter(cell => newKeys.has(keyForCell(cell.row, cell.col))).length === initialRackTiles.length;
         totalScore += mainWordUsesAllTiles ? 100 : 50;
     }
 
@@ -3872,11 +3872,11 @@ function getFullRackSolutionScore(solutionBoard, newKeys) {
 
     const usesAllTilesInOneWord = scoringWords.some(info =>
         getWordCells(info.word, info.row, info.col, info.direction)
-            .filter(cell => keySet.has(keyForCell(cell.row, cell.col))).length === 6
+            .filter(cell => keySet.has(keyForCell(cell.row, cell.col))).length === initialRackTiles.length
     );
 
-    // Keep the game's 6-tile bonus: +100 if one word uses all tiles,
-    // otherwise +50 when all six rack tiles are used in the same placement.
+    // Keep the game's all-tiles bonus: +100 if one word uses all rack tiles,
+    // otherwise +50 when all rack tiles are used in the same placement.
     total += usesAllTilesInOneWord ? 100 : 50;
 
     return { score: total, words: scoringWords };
@@ -4077,7 +4077,7 @@ function findBestSolution() {
             ).join(" · ");
             bestScoreMessageElement.textContent = fullSolution
                 ? moves.length === 1
-                    ? `All ${initialRackTiles.length} tiles placed in one turn, including the +100 6-tile word bonus. ${turnSummary}`
+                    ? `All ${initialRackTiles.length} tiles placed in one turn, including the +100 all-tiles-in-one-word bonus. ${turnSummary}`
                     : `All ${initialRackTiles.length} tiles placed across ${moves.length} turns, including the +50 all-tiles bonus. ${turnSummary}`
                 : searchLimitReached
                     ? `Search limit reached after ${tilesUsed} tile${tilesUsed === 1 ? "" : "s"} placed; ${tilesRemaining} remain. ${turnSummary}`
@@ -4707,7 +4707,7 @@ function updateShareButtonPulse() {
 
     const allTilesUsed =
         playerTiles.length === 0 &&
-        Object.keys(playerPlacedTiles).length === 6;
+        Object.keys(playerPlacedTiles).length === initialRackTiles.length;
 
     shareResultsButton.classList.toggle("needs-sharing", allTilesUsed);
 }
