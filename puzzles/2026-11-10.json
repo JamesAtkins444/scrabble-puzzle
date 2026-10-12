@@ -176,18 +176,18 @@
   "bestSolution": {
     "board": [
       [
-        "J",
-        "U",
-        "L",
+        "",
+        "",
+        "",
         "E",
-        "P",
+        "L",
         "S",
         ""
       ],
       [
         "",
         "",
-        "",
+        "J",
         "",
         "",
         "P",
@@ -196,7 +196,7 @@
       [
         "",
         "",
-        "",
+        "A",
         "",
         "G",
         "A",
@@ -205,7 +205,7 @@
       [
         "",
         "",
-        "",
+        "U",
         "T",
         "",
         "R",
@@ -214,7 +214,7 @@
       [
         "",
         "",
-        "",
+        "P",
         "E",
         "",
         "T",
@@ -234,36 +234,61 @@
         "",
         "",
         "M",
-        "A",
+        "",
         "N",
         ""
       ]
     ],
     "newKeys": [
-      "0,0",
-      "0,1",
-      "0,2",
+      "1,2",
+      "2,2",
+      "3,2",
+      "4,2",
       "0,3",
       "0,4",
-      "0,5",
-      "6,4"
+      "0,5"
     ],
-    "score": 181,
+    "score": 89,
     "completionBonus": 50,
     "words": [
-      "JULEPS",
-      "SPARTAN",
-      "MAN",
-      "LA"
+      "UT",
+      "PE",
+      "JAUP",
+      "ELS",
+      "SPARTAN"
     ],
     "scoringWords": [
       {
-        "word": "JULEPS",
-        "row": 0,
-        "col": 0,
+        "word": "UT",
+        "row": 3,
+        "col": 2,
         "direction": "horizontal",
-        "score": 23,
+        "score": 2,
         "move": 1
+      },
+      {
+        "word": "PE",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "JAUP",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 29,
+        "move": 1
+      },
+      {
+        "word": "ELS",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 2
       },
       {
         "word": "SPARTAN",
@@ -271,49 +296,68 @@
         "col": 5,
         "direction": "vertical",
         "score": 1,
-        "move": 1
-      },
-      {
-        "word": "MAN",
-        "row": 6,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "LA",
-        "row": 5,
-        "col": 4,
-        "direction": "vertical",
-        "score": 2,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "JULEPS",
-        "row": 0,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 124,
-        "usedTiles": 6,
+        "word": "JAUP",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 35,
+        "usedTiles": 4,
         "newKeys": [
-          "0,0",
-          "0,1",
-          "0,2",
+          "1,2",
+          "2,2",
+          "3,2",
+          "4,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "UT",
+            "row": 3,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "PE",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "JAUP",
+            "row": 1,
+            "col": 2,
+            "direction": "vertical",
+            "score": 29
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ELS",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 3,
+        "newKeys": [
           "0,3",
           "0,4",
           "0,5"
         ],
         "scoringWords": [
           {
-            "word": "JULEPS",
+            "word": "ELS",
             "row": 0,
-            "col": 0,
+            "col": 3,
             "direction": "horizontal",
-            "score": 23
+            "score": 3
           },
           {
             "word": "SPARTAN",
@@ -323,40 +367,12 @@
             "score": 1
           }
         ]
-      },
-      {
-        "turn": 2,
-        "word": "MAN",
-        "row": 6,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 7,
-        "usedTiles": 1,
-        "newKeys": [
-          "6,4"
-        ],
-        "scoringWords": [
-          {
-            "word": "MAN",
-            "row": 6,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "LA",
-            "row": 5,
-            "col": 4,
-            "direction": "vertical",
-            "score": 2
-          }
-        ]
       }
     ],
     "tilesUsed": 7,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1620
+    "visitedCandidates": 1752
   }
 }

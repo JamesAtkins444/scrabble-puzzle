@@ -194,7 +194,7 @@
       ],
       [
         "",
-        "",
+        "P",
         "",
         "",
         "I",
@@ -211,7 +211,7 @@
         "P"
       ],
       [
-        "E",
+        "",
         "S",
         "",
         "",
@@ -221,9 +221,9 @@
       ],
       [
         "",
+        "E",
         "",
         "",
-        "P",
         "",
         "",
         "L"
@@ -243,18 +243,15 @@
       "3,1",
       "3,2",
       "3,3",
-      "4,0",
+      "2,1",
       "4,1",
-      "5,3"
+      "5,1"
     ],
-    "score": 88,
+    "score": 78,
     "completionBonus": 50,
     "words": [
       "BAKES",
-      "ES",
-      "BE",
-      "AS",
-      "PE"
+      "PASE"
     ],
     "scoringWords": [
       {
@@ -266,36 +263,12 @@
         "move": 1
       },
       {
-        "word": "ES",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "BE",
-        "row": 3,
-        "col": 0,
-        "direction": "vertical",
-        "score": 8,
-        "move": 2
-      },
-      {
-        "word": "AS",
-        "row": 3,
+        "word": "PASE",
+        "row": 2,
         "col": 1,
         "direction": "vertical",
-        "score": 2,
+        "score": 6,
         "move": 2
-      },
-      {
-        "word": "PE",
-        "row": 5,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "move": 3
       }
     ],
     "moves": [
@@ -325,58 +298,24 @@
       },
       {
         "turn": 2,
-        "word": "ES",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 12,
-        "usedTiles": 2,
+        "word": "PASE",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 6,
+        "usedTiles": 3,
         "newKeys": [
-          "4,0",
-          "4,1"
+          "2,1",
+          "4,1",
+          "5,1"
         ],
         "scoringWords": [
           {
-            "word": "ES",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "BE",
-            "row": 3,
-            "col": 0,
-            "direction": "vertical",
-            "score": 8
-          },
-          {
-            "word": "AS",
-            "row": 3,
+            "word": "PASE",
+            "row": 2,
             "col": 1,
             "direction": "vertical",
-            "score": 2
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "PE",
-        "row": 5,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "usedTiles": 1,
-        "newKeys": [
-          "5,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "PE",
-            "row": 5,
-            "col": 3,
-            "direction": "vertical",
-            "score": 4
+            "score": 6
           }
         ]
       }
@@ -385,6 +324,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1608
+    "visitedCandidates": 1598
   }
 }

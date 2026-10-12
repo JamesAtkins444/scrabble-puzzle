@@ -245,7 +245,7 @@
       "6,3",
       "2,2"
     ],
-    "score": 170,
+    "score": 70,
     "completionBonus": 50,
     "words": [
       "TRET",
@@ -285,7 +285,7 @@
         "row": 0,
         "col": 3,
         "direction": "vertical",
-        "score": 115,
+        "score": 15,
         "usedTiles": 6,
         "newKeys": [
           "0,3",

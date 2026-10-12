@@ -183,17 +183,17 @@
         ""
       ],
       [
-        "",
         "H",
-        "",
-        "",
+        "O",
+        "T",
+        "S",
         "",
         "C",
         ""
       ],
       [
-        "T",
-        "O",
+        "",
+        "",
         "",
         "P",
         "L",
@@ -211,7 +211,7 @@
       ],
       [
         "",
-        "S",
+        "",
         "",
         "",
         "",
@@ -241,20 +241,20 @@
       "6,3",
       "6,4",
       "6,6",
+      "1,0",
       "1,1",
-      "2,1",
-      "4,1",
-      "2,0"
+      "1,2",
+      "1,3"
     ],
-    "score": 75,
+    "score": 73,
     "completionBonus": 50,
     "words": [
       "DUDE",
       "ID",
       "MU",
       "NE",
-      "HODS",
-      "TO"
+      "HOTS",
+      "SPA"
     ],
     "scoringWords": [
       {
@@ -290,20 +290,20 @@
         "move": 1
       },
       {
-        "word": "HODS",
+        "word": "HOTS",
         "row": 1,
-        "col": 1,
-        "direction": "vertical",
-        "score": 8,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 7,
         "move": 2
       },
       {
-        "word": "TO",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
+        "word": "SPA",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 1,
+        "move": 2
       }
     ],
     "moves": [
@@ -353,45 +353,32 @@
       },
       {
         "turn": 2,
-        "word": "HODS",
+        "word": "HOTS",
         "row": 1,
-        "col": 1,
-        "direction": "vertical",
-        "score": 8,
-        "usedTiles": 3,
-        "newKeys": [
-          "1,1",
-          "2,1",
-          "4,1"
-        ],
-        "scoringWords": [
-          {
-            "word": "HODS",
-            "row": 1,
-            "col": 1,
-            "direction": "vertical",
-            "score": 8
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "TO",
-        "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 1,
+        "score": 8,
+        "usedTiles": 4,
         "newKeys": [
-          "2,0"
+          "1,0",
+          "1,1",
+          "1,2",
+          "1,3"
         ],
         "scoringWords": [
           {
-            "word": "TO",
-            "row": 2,
+            "word": "HOTS",
+            "row": 1,
             "col": 0,
             "direction": "horizontal",
-            "score": 2
+            "score": 7
+          },
+          {
+            "word": "SPA",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 1
           }
         ]
       }
@@ -400,6 +387,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2561
+    "visitedCandidates": 2552
   }
 }

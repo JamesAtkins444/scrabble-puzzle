@@ -179,9 +179,9 @@
         "",
         "",
         "F",
+        "A",
         "",
-        "B",
-        "A"
+        ""
       ],
       [
         "N",
@@ -197,8 +197,8 @@
         "",
         "L",
         "O",
+        "B",
         "",
-        "L",
         ""
       ],
       [
@@ -206,116 +206,212 @@
         "",
         "O",
         "N",
+        "E",
         "",
-        "I",
         ""
       ],
       [
         "G",
-        "",
+        "L",
         "U",
         "T",
+        "S",
         "",
-        "N",
         ""
       ],
       [
         "",
-        "",
+        "I",
         "D",
         "",
         "",
-        "E",
+        "",
         ""
       ],
       [
         "",
+        "N",
         "",
         "",
         "",
         "",
-        "S",
         ""
       ]
     ],
     "newKeys": [
-      "0,5",
-      "2,5",
-      "3,5",
-      "4,5",
-      "5,5",
-      "6,5",
-      "0,6"
+      "0,4",
+      "2,4",
+      "3,4",
+      "4,4",
+      "4,1",
+      "5,1",
+      "6,1"
     ],
-    "score": 167,
+    "score": 78,
     "completionBonus": 50,
     "words": [
-      "BYLINES",
-      "BA"
+      "FA",
+      "LOB",
+      "ONE",
+      "UTS",
+      "ABBES",
+      "GLUTS",
+      "ID",
+      "LIN"
     ],
     "scoringWords": [
       {
-        "word": "BYLINES",
+        "word": "FA",
         "row": 0,
-        "col": 5,
-        "direction": "vertical",
-        "score": 13,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
         "move": 1
       },
       {
-        "word": "BA",
-        "row": 0,
-        "col": 5,
+        "word": "LOB",
+        "row": 2,
+        "col": 2,
         "direction": "horizontal",
-        "score": 4,
+        "score": 3,
+        "move": 1
+      },
+      {
+        "word": "ONE",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 1,
+        "move": 1
+      },
+      {
+        "word": "UTS",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 1,
+        "move": 1
+      },
+      {
+        "word": "ABBES",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "GLUTS",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "ID",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "LIN",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 3,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BYLINES",
+        "word": "ABBES",
         "row": 0,
-        "col": 5,
+        "col": 4,
         "direction": "vertical",
-        "score": 113,
-        "usedTiles": 6,
+        "score": 19,
+        "usedTiles": 4,
         "newKeys": [
-          "0,5",
-          "2,5",
-          "3,5",
-          "4,5",
-          "5,5",
-          "6,5"
+          "0,4",
+          "2,4",
+          "3,4",
+          "4,4"
         ],
         "scoringWords": [
           {
-            "word": "BYLINES",
+            "word": "FA",
             "row": 0,
-            "col": 5,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "LOB",
+            "row": 2,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "ONE",
+            "row": 3,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 1
+          },
+          {
+            "word": "UTS",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 1
+          },
+          {
+            "word": "ABBES",
+            "row": 0,
+            "col": 4,
             "direction": "vertical",
-            "score": 13
+            "score": 9
           }
         ]
       },
       {
         "turn": 2,
-        "word": "BA",
-        "row": 0,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 4,
-        "usedTiles": 1,
+        "word": "LIN",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 9,
+        "usedTiles": 3,
         "newKeys": [
-          "0,6"
+          "4,1",
+          "5,1",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "BA",
-            "row": 0,
-            "col": 5,
+            "word": "GLUTS",
+            "row": 4,
+            "col": 0,
             "direction": "horizontal",
-            "score": 4
+            "score": 3
+          },
+          {
+            "word": "ID",
+            "row": 5,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "LIN",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 3
           }
         ]
       }
@@ -324,6 +420,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2565
+    "visitedCandidates": 2657
   }
 }

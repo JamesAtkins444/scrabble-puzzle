@@ -180,8 +180,8 @@
         "",
         "",
         "Q",
-        "",
-        "D"
+        "I",
+        ""
       ],
       [
         "C",
@@ -189,8 +189,8 @@
         "T",
         "",
         "U",
-        "",
-        "O"
+        "N",
+        ""
       ],
       [
         "U",
@@ -199,7 +199,7 @@
         "",
         "O",
         "",
-        "N"
+        ""
       ],
       [
         "B",
@@ -208,130 +208,191 @@
         "Z",
         "I",
         "L",
-        "S"
+        ""
       ],
       [
         "E",
         "",
         "Y",
-        "",
+        "E",
         "N",
         "",
-        "I"
+        ""
       ],
       [
         "",
         "",
         "",
+        "D",
         "",
         "",
-        "N",
-        "E"
+        ""
       ],
       [
         "",
-        "",
-        "",
-        "",
+        "N",
+        "O",
+        "S",
         "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "0,6",
-      "1,6",
-      "2,6",
-      "3,6",
-      "4,6",
-      "5,6",
-      "5,5"
+      "4,3",
+      "5,3",
+      "6,3",
+      "0,5",
+      "1,5",
+      "6,1",
+      "6,2"
     ],
-    "score": 162,
+    "score": 94,
     "completionBonus": 50,
     "words": [
-      "BRAZILS",
-      "DONSIE",
-      "NE"
+      "YEN",
+      "ZEDS",
+      "QI",
+      "UN",
+      "IN",
+      "NOS"
     ],
     "scoringWords": [
       {
-        "word": "BRAZILS",
-        "row": 3,
-        "col": 0,
+        "word": "YEN",
+        "row": 4,
+        "col": 2,
         "direction": "horizontal",
-        "score": 1,
+        "score": 6,
         "move": 1
       },
       {
-        "word": "DONSIE",
-        "row": 0,
-        "col": 6,
+        "word": "ZEDS",
+        "row": 3,
+        "col": 3,
         "direction": "vertical",
-        "score": 9,
+        "score": 15,
         "move": 1
       },
       {
-        "word": "NE",
-        "row": 5,
-        "col": 5,
+        "word": "QI",
+        "row": 0,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 11,
+        "move": 2
+      },
+      {
+        "word": "UN",
+        "row": 1,
+        "col": 4,
         "direction": "horizontal",
         "score": 2,
         "move": 2
+      },
+      {
+        "word": "IN",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "NOS",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 8,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DONSIE",
-        "row": 0,
-        "col": 6,
+        "word": "ZEDS",
+        "row": 3,
+        "col": 3,
         "direction": "vertical",
-        "score": 110,
-        "usedTiles": 6,
+        "score": 21,
+        "usedTiles": 3,
         "newKeys": [
-          "0,6",
-          "1,6",
-          "2,6",
-          "3,6",
-          "4,6",
-          "5,6"
+          "4,3",
+          "5,3",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "BRAZILS",
-            "row": 3,
-            "col": 0,
+            "word": "YEN",
+            "row": 4,
+            "col": 2,
             "direction": "horizontal",
-            "score": 1
+            "score": 6
           },
           {
-            "word": "DONSIE",
-            "row": 0,
-            "col": 6,
+            "word": "ZEDS",
+            "row": 3,
+            "col": 3,
             "direction": "vertical",
-            "score": 9
+            "score": 15
           }
         ]
       },
       {
         "turn": 2,
-        "word": "NE",
-        "row": 5,
+        "word": "IN",
+        "row": 0,
         "col": 5,
-        "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 1,
+        "direction": "vertical",
+        "score": 15,
+        "usedTiles": 2,
         "newKeys": [
-          "5,5"
+          "0,5",
+          "1,5"
         ],
         "scoringWords": [
           {
-            "word": "NE",
-            "row": 5,
-            "col": 5,
+            "word": "QI",
+            "row": 0,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 11
+          },
+          {
+            "word": "UN",
+            "row": 1,
+            "col": 4,
             "direction": "horizontal",
             "score": 2
+          },
+          {
+            "word": "IN",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "NOS",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 8,
+        "usedTiles": 2,
+        "newKeys": [
+          "6,1",
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "NOS",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 8
           }
         ]
       }
@@ -340,6 +401,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1570
+    "visitedCandidates": 1810
   }
 }

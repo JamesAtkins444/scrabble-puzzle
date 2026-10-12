@@ -182,16 +182,16 @@
         "H",
         "O",
         "N",
-        ""
+        "S"
       ],
       [
-        "U",
+        "",
         "",
         "R",
         "",
         "",
         "",
-        ""
+        "L"
       ],
       [
         "P",
@@ -200,7 +200,7 @@
         "E",
         "D",
         "",
-        ""
+        "U"
       ],
       [
         "",
@@ -209,7 +209,7 @@
         "",
         "U",
         "",
-        ""
+        "E"
       ],
       [
         "",
@@ -232,10 +232,10 @@
       [
         "",
         "W",
-        "E",
-        "L",
+        "",
+        "",
         "D",
-        "S",
+        "",
         ""
       ]
     ],
@@ -243,18 +243,18 @@
       "4,1",
       "5,1",
       "6,1",
-      "6,2",
-      "6,3",
-      "6,5",
-      "1,0"
+      "0,6",
+      "1,6",
+      "2,6",
+      "3,6"
     ],
-    "score": 92,
+    "score": 76,
     "completionBonus": 50,
     "words": [
       "ME",
       "MEW",
-      "WELDS",
-      "SUP"
+      "SYPHONS",
+      "SLUE"
     ],
     "scoringWords": [
       {
@@ -274,20 +274,20 @@
         "move": 1
       },
       {
-        "word": "WELDS",
-        "row": 6,
-        "col": 1,
+        "word": "SYPHONS",
+        "row": 0,
+        "col": 0,
         "direction": "horizontal",
-        "score": 17,
+        "score": 1,
         "move": 2
       },
       {
-        "word": "SUP",
+        "word": "SLUE",
         "row": 0,
-        "col": 0,
+        "col": 6,
         "direction": "vertical",
         "score": 5,
-        "move": 3
+        "move": 2
       }
     ],
     "moves": [
@@ -323,43 +323,30 @@
       },
       {
         "turn": 2,
-        "word": "WELDS",
-        "row": 6,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 17,
-        "usedTiles": 3,
-        "newKeys": [
-          "6,2",
-          "6,3",
-          "6,5"
-        ],
-        "scoringWords": [
-          {
-            "word": "WELDS",
-            "row": 6,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 17
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "SUP",
+        "word": "SLUE",
         "row": 0,
-        "col": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 5,
-        "usedTiles": 1,
+        "score": 6,
+        "usedTiles": 4,
         "newKeys": [
-          "1,0"
+          "0,6",
+          "1,6",
+          "2,6",
+          "3,6"
         ],
         "scoringWords": [
           {
-            "word": "SUP",
+            "word": "SYPHONS",
             "row": 0,
             "col": 0,
+            "direction": "horizontal",
+            "score": 1
+          },
+          {
+            "word": "SLUE",
+            "row": 0,
+            "col": 6,
             "direction": "vertical",
             "score": 5
           }
@@ -370,6 +357,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1484
+    "visitedCandidates": 1473
   }
 }

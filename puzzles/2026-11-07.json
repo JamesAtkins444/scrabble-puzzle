@@ -181,7 +181,7 @@
         "",
         "",
         "",
-        ""
+        "O"
       ],
       [
         "",
@@ -190,7 +190,7 @@
         "",
         "",
         "",
-        "G"
+        "R"
       ],
       [
         "",
@@ -208,7 +208,7 @@
         "",
         "E",
         "",
-        "R"
+        "G"
       ],
       [
         "",
@@ -217,7 +217,7 @@
         "",
         "A",
         "",
-        "O"
+        "A"
       ],
       [
         "",
@@ -225,7 +225,7 @@
         "",
         "",
         "V",
-        "A",
+        "",
         "N"
       ],
       [
@@ -239,21 +239,19 @@
       ]
     ],
     "newKeys": [
+      "0,6",
       "1,6",
       "2,6",
       "3,6",
       "4,6",
       "5,6",
-      "6,6",
-      "5,5"
+      "6,6"
     ],
-    "score": 171,
-    "completionBonus": 50,
+    "score": 112,
+    "completionBonus": 0,
     "words": [
       "TEEPEES",
-      "GIRONS",
-      "VAN",
-      "AE"
+      "ORIGANS"
     ],
     "scoringWords": [
       {
@@ -265,40 +263,25 @@
         "move": 1
       },
       {
-        "word": "GIRONS",
-        "row": 1,
+        "word": "ORIGANS",
+        "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 12,
+        "score": 11,
         "move": 1
-      },
-      {
-        "word": "VAN",
-        "row": 5,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 6,
-        "move": 2
-      },
-      {
-        "word": "AE",
-        "row": 5,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
-        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "GIRONS",
-        "row": 1,
+        "word": "ORIGANS",
+        "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 113,
-        "usedTiles": 6,
+        "score": 112,
+        "usedTiles": 7,
         "newKeys": [
+          "0,6",
           "1,6",
           "2,6",
           "3,6",
@@ -315,39 +298,11 @@
             "score": 1
           },
           {
-            "word": "GIRONS",
-            "row": 1,
+            "word": "ORIGANS",
+            "row": 0,
             "col": 6,
             "direction": "vertical",
-            "score": 12
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "VAN",
-        "row": 5,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 8,
-        "usedTiles": 1,
-        "newKeys": [
-          "5,5"
-        ],
-        "scoringWords": [
-          {
-            "word": "VAN",
-            "row": 5,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 6
-          },
-          {
-            "word": "AE",
-            "row": 5,
-            "col": 5,
-            "direction": "vertical",
-            "score": 2
+            "score": 11
           }
         ]
       }
@@ -356,6 +311,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3090
+    "visitedCandidates": 3069
   }
 }
