@@ -3662,33 +3662,11 @@ function scoreWordOnCandidateBoard(candidateBoard, wordInfo, newlyPlacedKeys) {
     return letterTotal * wordMultiplier;
 }
 
-// When a move extends a word that was already on the board, score only the
-// increase from the old word to the new word. Newly formed cross-words still
-// score their full value. This prevents the solver from counting the old
-// crossword's points again every time another letter is added.
+// Score every word formed or extended by this move at its full value.
+// This matches the player's scoring behavior: if a placed tile turns BRAZIL
+// into BRAZILS while also forming SQUEAL, both BRAZILS and SQUEAL are scored.
 function scoreIncrementalWord(candidateBoard, sourceBoard, wordInfo, newKeys) {
-    const newCells = getWordCells(
-        wordInfo.word, wordInfo.row, wordInfo.col, wordInfo.direction
-    );
-    const newCellKeys = new Set(newCells.map(cell => keyForCell(cell.row, cell.col)));
-    const newWordScore = scoreWordOnCandidateBoard(candidateBoard, wordInfo, newKeys);
-
-    const previousWord = getAllWords(sourceBoard).find(oldInfo => {
-        if (oldInfo.direction !== wordInfo.direction) return false;
-        const oldCells = getWordCells(
-            oldInfo.word, oldInfo.row, oldInfo.col, oldInfo.direction
-        );
-        // The old word must sit entirely inside the new run, and the new run
-        // must contain at least one tile placed on this turn.
-        return oldCells.every(cell => newCellKeys.has(keyForCell(cell.row, cell.col))) &&
-            oldCells.some(cell => sourceBoard[cell.row][cell.col] !== "") &&
-            newCells.some(cell => newKeys.has(keyForCell(cell.row, cell.col)));
-    });
-
-    if (!previousWord) return newWordScore;
-
-    const previousWordScore = scoreWordOnCandidateBoard(sourceBoard, previousWord, new Set());
-    return Math.max(0, newWordScore - previousWordScore);
+    return scoreWordOnCandidateBoard(candidateBoard, wordInfo, newKeys);
 }
 
 function candidateTouchesExistingBoard(candidateBoard, newKeys, sourceBoard) {
