@@ -3948,8 +3948,23 @@ function findBestMoveOnBoard(sourceBoard, rackCounts, searchBudget) {
                     const move = evaluateSolverPlacement(
                         word, row, col, direction, sourceBoard, rackCounts
                     );
-                    if (move && (!bestMove || move.score > bestMove.score)) {
-                        bestMove = move;
+                    if (move) {
+                        const rackSize = Object.values(rackCounts)
+                            .reduce((sum, count) => sum + count, 0);
+                        const moveUsesAllTiles = move.usedTiles === rackSize;
+                        const bestUsesAllTiles = bestMove && bestMove.usedTiles === rackSize;
+
+                        // Prefer a move that uses the entire remaining rack.
+                        // Among full-rack moves, choose the highest-scoring one.
+                        // Only compare ordinary moves when no full-rack move has
+                        // been found, or when both moves use the same tile count.
+                        if (
+                            !bestMove ||
+                            (moveUsesAllTiles && !bestUsesAllTiles) ||
+                            (moveUsesAllTiles === bestUsesAllTiles && move.score > bestMove.score)
+                        ) {
+                            bestMove = move;
+                        }
                     }
                 }
             }
@@ -4029,9 +4044,8 @@ function findBestSolution() {
     const tilesRemaining = initialRackTiles.length - tilesUsed;
     const fullSolution = tilesRemaining === 0;
 
-    // The solver awards +100 when all six tiles are played in one turn
-    // (already included in that move's score). If all six are used over
-    // multiple turns, award the normal +50 completion bonus here.
+    // A one-turn full-rack move already includes its +50 or +100 bonus.
+    // If all rack tiles are used across multiple turns, award +50 on completion.
     const completionBonus = fullSolution && moves.length > 1 ? 50 : 0;
     totalScore += completionBonus;
 
@@ -4077,7 +4091,7 @@ function findBestSolution() {
             ).join(" · ");
             bestScoreMessageElement.textContent = fullSolution
                 ? moves.length === 1
-                    ? `All ${initialRackTiles.length} tiles placed in one turn, including the +100 all-tiles-in-one-word bonus. ${turnSummary}`
+                    ? `All ${initialRackTiles.length} tiles placed in one turn; the solver chose the highest-scoring full-rack move. ${turnSummary}`
                     : `All ${initialRackTiles.length} tiles placed across ${moves.length} turns, including the +50 all-tiles bonus. ${turnSummary}`
                 : searchLimitReached
                     ? `Search limit reached after ${tilesUsed} tile${tilesUsed === 1 ? "" : "s"} placed; ${tilesRemaining} remain. ${turnSummary}`
@@ -4428,7 +4442,7 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
             bestScoreMessageElement.textContent =
                 bestSolution.fullSolution
                     ? moves.length === 1
-                        ? `All ${initialRackTiles.length} tiles placed in one turn, including the +100 6-tile word bonus. ${turnSummary}`
+                        ? `All ${initialRackTiles.length} tiles placed in one turn; the solver chose the highest-scoring full-rack move. ${turnSummary}`
                         : `All ${initialRackTiles.length} tiles placed across ${moves.length} turns, including the +50 all-tiles bonus. ${turnSummary}`
                     : bestSolution.searchLimitReached
                         ? `Search limit reached after ${bestSolution.tilesUsed} tile${bestSolution.tilesUsed === 1 ? "" : "s"} placed; ${bestSolution.tilesRemaining} remain. ${turnSummary}`
