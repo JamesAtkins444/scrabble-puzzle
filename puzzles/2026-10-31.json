@@ -247,7 +247,7 @@
       "0,1",
       "0,2"
     ],
-    "score": 79,
+    "score": 88,
     "completionBonus": 50,
     "words": [
       "AW",
@@ -280,7 +280,7 @@
         "row": 4,
         "col": 1,
         "direction": "horizontal",
-        "score": 1,
+        "score": 10,
         "move": 1
       },
       {
@@ -323,7 +323,7 @@
         "row": 2,
         "col": 6,
         "direction": "vertical",
-        "score": 18,
+        "score": 27,
         "usedTiles": 4,
         "newKeys": [
           "2,6",
@@ -351,7 +351,7 @@
             "row": 4,
             "col": 1,
             "direction": "horizontal",
-            "score": 1
+            "score": 10
           },
           {
             "word": "ET",

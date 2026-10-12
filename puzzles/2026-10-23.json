@@ -178,18 +178,18 @@
         "",
         "",
         "",
-        "N",
-        "E",
+        "",
+        "",
         ""
       ],
       [
         "",
         "G",
-        "L",
-        "O",
-        "U",
-        "T",
-        "S"
+        "",
+        "",
+        "",
+        "",
+        "L"
       ],
       [
         "B",
@@ -198,7 +198,7 @@
         "R",
         "",
         "",
-        ""
+        "E"
       ],
       [
         "",
@@ -207,7 +207,7 @@
         "",
         "",
         "",
-        ""
+        "N"
       ],
       [
         "M",
@@ -216,16 +216,16 @@
         "H",
         "E",
         "",
-        ""
+        "T"
       ],
       [
-        "",
+        "U",
         "N",
         "",
         "",
         "",
         "",
-        ""
+        "O"
       ],
       [
         "",
@@ -234,151 +234,119 @@
         "V",
         "E",
         "R",
-        ""
+        "S"
       ]
     ],
     "newKeys": [
-      "1,2",
-      "1,3",
-      "1,4",
-      "1,5",
       "1,6",
-      "0,4",
-      "0,5"
+      "2,6",
+      "3,6",
+      "4,6",
+      "5,6",
+      "6,6",
+      "5,0"
     ],
-    "score": 85,
+    "score": 87,
     "completionBonus": 50,
     "words": [
-      "GLOUTS",
-      "LA",
-      "OR",
-      "NE",
-      "NU",
-      "ET"
+      "GIVERS",
+      "LENTOS",
+      "UN",
+      "MU"
     ],
     "scoringWords": [
       {
-        "word": "GLOUTS",
-        "row": 1,
+        "word": "GIVERS",
+        "row": 6,
         "col": 1,
         "direction": "horizontal",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "LENTOS",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
         "score": 21,
         "move": 1
       },
       {
-        "word": "LA",
-        "row": 1,
-        "col": 2,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "OR",
-        "row": 1,
-        "col": 3,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "NE",
-        "row": 0,
-        "col": 4,
+        "word": "UN",
+        "row": 5,
+        "col": 0,
         "direction": "horizontal",
-        "score": 4,
-        "move": 2
-      },
-      {
-        "word": "NU",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 4,
-        "move": 2
-      },
-      {
-        "word": "ET",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
         "score": 2,
+        "move": 2
+      },
+      {
+        "word": "MU",
+        "row": 4,
+        "col": 0,
+        "direction": "vertical",
+        "score": 4,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "GLOUTS",
+        "word": "LENTOS",
         "row": 1,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 25,
-        "usedTiles": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 31,
+        "usedTiles": 6,
         "newKeys": [
-          "1,2",
-          "1,3",
-          "1,4",
-          "1,5",
-          "1,6"
+          "1,6",
+          "2,6",
+          "3,6",
+          "4,6",
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "GLOUTS",
-            "row": 1,
+            "word": "GIVERS",
+            "row": 6,
             "col": 1,
             "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "LENTOS",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
             "score": 21
-          },
-          {
-            "word": "LA",
-            "row": 1,
-            "col": 2,
-            "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "OR",
-            "row": 1,
-            "col": 3,
-            "direction": "vertical",
-            "score": 2
           }
         ]
       },
       {
         "turn": 2,
-        "word": "NE",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 10,
-        "usedTiles": 2,
+        "word": "MU",
+        "row": 4,
+        "col": 0,
+        "direction": "vertical",
+        "score": 6,
+        "usedTiles": 1,
         "newKeys": [
-          "0,4",
-          "0,5"
+          "5,0"
         ],
         "scoringWords": [
           {
-            "word": "NE",
-            "row": 0,
-            "col": 4,
+            "word": "UN",
+            "row": 5,
+            "col": 0,
             "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "NU",
-            "row": 0,
-            "col": 4,
-            "direction": "vertical",
-            "score": 4
-          },
-          {
-            "word": "ET",
-            "row": 0,
-            "col": 5,
-            "direction": "vertical",
             "score": 2
+          },
+          {
+            "word": "MU",
+            "row": 4,
+            "col": 0,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }
@@ -387,6 +355,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2375
+    "visitedCandidates": 2294
   }
 }

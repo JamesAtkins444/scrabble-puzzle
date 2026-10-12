@@ -188,8 +188,8 @@
         "C",
         "",
         "",
-        "",
-        "",
+        "S",
+        "O",
         "D"
       ],
       [
@@ -199,7 +199,7 @@
         "C",
         "H",
         "",
-        "R"
+        "E"
       ],
       [
         "",
@@ -207,8 +207,8 @@
         "",
         "",
         "A",
-        "",
-        "O"
+        "V",
+        "E"
       ],
       [
         "",
@@ -216,8 +216,8 @@
         "",
         "",
         "R",
-        "E",
-        "V"
+        "",
+        "R"
       ],
       [
         "",
@@ -226,7 +226,7 @@
         "",
         "E",
         "",
-        "E"
+        ""
       ],
       [
         "D",
@@ -235,87 +235,132 @@
         "Y",
         "",
         "",
-        "S"
+        ""
       ]
     ],
     "newKeys": [
-      "4,5",
-      "4,6",
+      "1,4",
+      "1,5",
       "1,6",
       "2,6",
       "3,6",
-      "5,6",
-      "6,6"
+      "4,6",
+      "3,5"
     ],
-    "score": 102,
+    "score": 86,
     "completionBonus": 50,
     "words": [
-      "REV",
-      "DROVES"
+      "SOD",
+      "SHARE",
+      "DEER",
+      "AVE"
     ],
     "scoringWords": [
       {
-        "word": "REV",
-        "row": 4,
+        "word": "SOD",
+        "row": 1,
         "col": 4,
         "direction": "horizontal",
-        "score": 14,
+        "score": 8,
         "move": 1
       },
       {
-        "word": "DROVES",
+        "word": "SHARE",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 8,
+        "move": 1
+      },
+      {
+        "word": "DEER",
         "row": 1,
         "col": 6,
         "direction": "vertical",
-        "score": 38,
+        "score": 14,
         "move": 2
+      },
+      {
+        "word": "AVE",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "REV",
-        "row": 4,
+        "word": "SOD",
+        "row": 1,
         "col": 4,
         "direction": "horizontal",
-        "score": 14,
-        "usedTiles": 2,
+        "score": 16,
+        "usedTiles": 3,
         "newKeys": [
-          "4,5",
-          "4,6"
+          "1,4",
+          "1,5",
+          "1,6"
         ],
         "scoringWords": [
           {
-            "word": "REV",
-            "row": 4,
+            "word": "SOD",
+            "row": 1,
             "col": 4,
             "direction": "horizontal",
-            "score": 14
+            "score": 8
+          },
+          {
+            "word": "SHARE",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 8
           }
         ]
       },
       {
         "turn": 2,
-        "word": "DROVES",
+        "word": "DEER",
         "row": 1,
         "col": 6,
         "direction": "vertical",
-        "score": 38,
-        "usedTiles": 5,
+        "score": 14,
+        "usedTiles": 3,
         "newKeys": [
-          "1,6",
           "2,6",
           "3,6",
-          "5,6",
-          "6,6"
+          "4,6"
         ],
         "scoringWords": [
           {
-            "word": "DROVES",
+            "word": "DEER",
             "row": 1,
             "col": 6,
             "direction": "vertical",
-            "score": 38
+            "score": 14
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AVE",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 6,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "AVE",
+            "row": 3,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 6
           }
         ]
       }
@@ -324,6 +369,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2598
+    "visitedCandidates": 1841
   }
 }

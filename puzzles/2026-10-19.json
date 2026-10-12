@@ -183,7 +183,7 @@
         "R"
       ],
       [
-        "",
+        "M",
         "O",
         "",
         "",
@@ -192,16 +192,16 @@
         "A"
       ],
       [
-        "M",
+        "E",
         "M",
         "",
-        "E",
-        "F",
+        "",
+        "",
         "",
         "T"
       ],
       [
-        "A",
+        "",
         "B",
         "",
         "M",
@@ -210,25 +210,25 @@
         "E"
       ],
       [
-        "M",
+        "",
         "E",
         "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
         "A",
+        "M",
+        "A",
+        "S"
+      ],
+      [
         "",
         "",
         "",
         "",
         "",
+        "F",
         ""
       ],
       [
-        "S",
+        "",
         "",
         "",
         "",
@@ -238,163 +238,208 @@
       ]
     ],
     "newKeys": [
+      "4,3",
+      "4,4",
+      "4,5",
+      "4,6",
+      "1,0",
       "2,0",
-      "3,0",
-      "4,0",
-      "5,0",
-      "6,0",
-      "2,3",
-      "2,4"
+      "5,5"
     ],
-    "score": 88,
+    "score": 97,
     "completionBonus": 50,
     "words": [
-      "MM",
-      "AB",
-      "ME",
-      "MAMAS",
-      "EF",
+      "AMAS",
+      "MA",
+      "AM",
+      "KA",
+      "RATES",
+      "MO",
       "EM",
-      "FA"
+      "ME",
+      "KAF"
     ],
     "scoringWords": [
       {
-        "word": "MM",
-        "row": 2,
-        "col": 0,
+        "word": "AMAS",
+        "row": 4,
+        "col": 3,
         "direction": "horizontal",
         "score": 6,
         "move": 1
       },
       {
-        "word": "AB",
+        "word": "MA",
         "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "ME",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "MAMAS",
-        "row": 2,
-        "col": 0,
-        "direction": "vertical",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "EF",
-        "row": 2,
         "col": 3,
-        "direction": "horizontal",
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "AM",
+        "row": 3,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "KA",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 6,
+        "move": 1
+      },
+      {
+        "word": "RATES",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
         "score": 5,
+        "move": 1
+      },
+      {
+        "word": "MO",
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 4,
         "move": 2
       },
       {
         "word": "EM",
         "row": 2,
-        "col": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "ME",
+        "row": 1,
+        "col": 0,
         "direction": "vertical",
         "score": 4,
         "move": 2
       },
       {
-        "word": "FA",
-        "row": 2,
-        "col": 4,
+        "word": "KAF",
+        "row": 3,
+        "col": 5,
         "direction": "vertical",
-        "score": 5,
-        "move": 2
+        "score": 10,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "MAMAS",
-        "row": 2,
-        "col": 0,
-        "direction": "vertical",
-        "score": 24,
-        "usedTiles": 5,
+        "word": "AMAS",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 25,
+        "usedTiles": 4,
         "newKeys": [
-          "2,0",
-          "3,0",
-          "4,0",
-          "5,0",
-          "6,0"
+          "4,3",
+          "4,4",
+          "4,5",
+          "4,6"
         ],
         "scoringWords": [
           {
-            "word": "MM",
-            "row": 2,
-            "col": 0,
+            "word": "AMAS",
+            "row": 4,
+            "col": 3,
             "direction": "horizontal",
             "score": 6
           },
           {
-            "word": "AB",
+            "word": "MA",
             "row": 3,
+            "col": 3,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "AM",
+            "row": 3,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "KA",
+            "row": 3,
+            "col": 5,
+            "direction": "vertical",
+            "score": 6
+          },
+          {
+            "word": "RATES",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ME",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 12,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,0",
+          "2,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "MO",
+            "row": 1,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "EM",
+            "row": 2,
             "col": 0,
             "direction": "horizontal",
             "score": 4
           },
           {
             "word": "ME",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "MAMAS",
-            "row": 2,
+            "row": 1,
             "col": 0,
             "direction": "vertical",
-            "score": 10
+            "score": 4
           }
         ]
       },
       {
-        "turn": 2,
-        "word": "EF",
-        "row": 2,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 14,
-        "usedTiles": 2,
+        "turn": 3,
+        "word": "KAF",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 10,
+        "usedTiles": 1,
         "newKeys": [
-          "2,3",
-          "2,4"
+          "5,5"
         ],
         "scoringWords": [
           {
-            "word": "EF",
-            "row": 2,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "EM",
-            "row": 2,
-            "col": 3,
+            "word": "KAF",
+            "row": 3,
+            "col": 5,
             "direction": "vertical",
-            "score": 4
-          },
-          {
-            "word": "FA",
-            "row": 2,
-            "col": 4,
-            "direction": "vertical",
-            "score": 5
+            "score": 10
           }
         ]
       }
@@ -403,6 +448,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1059
+    "visitedCandidates": 1199
   }
 }

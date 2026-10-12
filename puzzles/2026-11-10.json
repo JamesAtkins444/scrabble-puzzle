@@ -248,7 +248,7 @@
       "0,4",
       "0,5"
     ],
-    "score": 89,
+    "score": 97,
     "completionBonus": 50,
     "words": [
       "UT",
@@ -295,7 +295,7 @@
         "row": 0,
         "col": 5,
         "direction": "vertical",
-        "score": 1,
+        "score": 9,
         "move": 2
       }
     ],
@@ -344,7 +344,7 @@
         "row": 0,
         "col": 3,
         "direction": "horizontal",
-        "score": 4,
+        "score": 12,
         "usedTiles": 3,
         "newKeys": [
           "0,3",
@@ -364,7 +364,7 @@
             "row": 0,
             "col": 5,
             "direction": "vertical",
-            "score": 1
+            "score": 9
           }
         ]
       }

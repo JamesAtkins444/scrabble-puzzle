@@ -212,7 +212,7 @@
         "Y",
         "",
         "L",
-        "A",
+        "",
         "",
         "G",
         ""
@@ -221,16 +221,16 @@
         "",
         "",
         "E",
-        "S",
+        "",
         "",
         "H",
         ""
       ],
       [
-        "",
-        "",
-        "",
         "T",
+        "A",
+        "S",
+        "",
         "",
         "",
         ""
@@ -241,17 +241,16 @@
       "2,0",
       "3,0",
       "4,0",
-      "4,3",
-      "5,3",
-      "6,3"
+      "6,0",
+      "6,1",
+      "6,2"
     ],
-    "score": 80,
+    "score": 86,
     "completionBonus": 50,
     "words": [
       "HAIRY",
-      "LA",
-      "ES",
-      "OAST"
+      "TAS",
+      "BUNDLES"
     ],
     "scoringWords": [
       {
@@ -263,27 +262,19 @@
         "move": 1
       },
       {
-        "word": "LA",
-        "row": 4,
-        "col": 2,
+        "word": "TAS",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "ES",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "OAST",
-        "row": 3,
-        "col": 3,
-        "direction": "vertical",
         "score": 4,
+        "move": 2
+      },
+      {
+        "word": "BUNDLES",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 10,
         "move": 2
       }
     ],
@@ -314,38 +305,31 @@
       },
       {
         "turn": 2,
-        "word": "OAST",
-        "row": 3,
-        "col": 3,
-        "direction": "vertical",
-        "score": 8,
+        "word": "TAS",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 14,
         "usedTiles": 3,
         "newKeys": [
-          "4,3",
-          "5,3",
-          "6,3"
+          "6,0",
+          "6,1",
+          "6,2"
         ],
         "scoringWords": [
           {
-            "word": "LA",
-            "row": 4,
-            "col": 2,
+            "word": "TAS",
+            "row": 6,
+            "col": 0,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "ES",
-            "row": 5,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OAST",
-            "row": 3,
-            "col": 3,
-            "direction": "vertical",
             "score": 4
+          },
+          {
+            "word": "BUNDLES",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 10
           }
         ]
       }

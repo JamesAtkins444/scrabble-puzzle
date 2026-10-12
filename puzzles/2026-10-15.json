@@ -12,56 +12,56 @@
       ""
     ],
     [
-      "O",
       "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "C",
-      "R",
-      "U",
-      "O",
-      "R",
-      "",
-      ""
-    ],
-    [
-      "T",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "R",
-      "I",
-      "V",
+      "Y",
       "E",
-      "R",
-      "",
-      ""
-    ],
-    [
-      "O",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "I",
-      "N",
       "P",
-      "U",
-      "T",
+      "",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "E",
+      "L",
+      "D",
+      "E",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "K",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
       "",
       ""
     ]
@@ -77,99 +77,96 @@
       ""
     ],
     [
-      "O",
       "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "C",
-      "R",
-      "U",
-      "O",
-      "R",
-      "",
-      ""
-    ],
-    [
-      "T",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "R",
-      "I",
-      "V",
+      "Y",
       "E",
-      "R",
-      "",
-      ""
-    ],
-    [
-      "O",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "I",
-      "N",
       "P",
-      "U",
-      "T",
+      "",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "E",
+      "L",
+      "D",
+      "E",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "K",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,5": "double-word",
-    "0,3": "double-letter",
-    "4,6": "triple-letter",
-    "6,6": "double-letter",
-    "2,6": "triple-letter"
+    "6,0": "triple-word",
+    "6,2": "double-word"
   },
   "puzzleWords": [
     {
-      "word": "OCTROI",
+      "word": "WELDED",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "PILL",
       "row": 1,
-      "col": 0,
+      "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "CRUOR",
-      "row": 2,
-      "col": 0,
-      "direction": "horizontal"
+      "word": "BREAK",
+      "row": 1,
+      "col": 5,
+      "direction": "vertical"
     },
     {
-      "word": "RIVER",
-      "row": 4,
-      "col": 0,
-      "direction": "horizontal"
-    },
-    {
-      "word": "INPUT",
-      "row": 6,
-      "col": 0,
+      "word": "YEP",
+      "row": 1,
+      "col": 1,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "O",
-    "O",
-    "B",
+    "R",
+    "I",
+    "E",
     "T",
-    "F",
+    "R",
     "O",
     "S"
   ],
@@ -185,170 +182,154 @@
         ""
       ],
       [
-        "O",
         "",
+        "Y",
+        "E",
+        "P",
         "",
         "B",
-        "O",
-        "O",
-        "S"
+        "I"
       ],
       [
-        "C",
-        "R",
-        "U",
-        "O",
-        "R",
-        "",
-        "O"
-      ],
-      [
-        "T",
         "",
         "",
         "",
-        "",
-        "",
-        "F"
-      ],
-      [
-        "R",
         "I",
-        "V",
-        "E",
+        "",
         "R",
-        "",
-        "T"
-      ],
-      [
-        "O",
-        "",
-        "",
-        "",
-        "",
-        "",
         ""
       ],
       [
-        "I",
-        "N",
-        "P",
-        "U",
-        "T",
         "",
+        "W",
+        "E",
+        "L",
+        "D",
+        "E",
+        "D"
+      ],
+      [
+        "",
+        "",
+        "",
+        "L",
+        "",
+        "A",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "K",
+        ""
+      ],
+      [
+        "R",
+        "E",
+        "T",
+        "R",
+        "O",
+        "S",
         ""
       ]
     ],
     "newKeys": [
-      "1,3",
-      "1,4",
-      "1,5",
-      "1,6",
-      "2,6",
-      "3,6",
-      "4,6"
+      "6,0",
+      "6,1",
+      "6,2",
+      "6,3",
+      "6,4",
+      "6,5",
+      "1,6"
     ],
-    "score": 73,
+    "score": 102,
     "completionBonus": 50,
     "words": [
-      "BOOS",
-      "BO",
-      "OR",
-      "SOFT"
+      "RETROS",
+      "BREAKS",
+      "BI"
     ],
     "scoringWords": [
       {
-        "word": "BOOS",
-        "row": 1,
-        "col": 3,
+        "word": "RETROS",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 6,
+        "score": 36,
         "move": 1
       },
       {
-        "word": "BO",
+        "word": "BREAKS",
         "row": 1,
-        "col": 3,
+        "col": 5,
         "direction": "vertical",
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "BI",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
         "score": 4,
-        "move": 1
-      },
-      {
-        "word": "OR",
-        "row": 1,
-        "col": 4,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "SOFT",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 11,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BOOS",
-        "row": 1,
-        "col": 3,
+        "word": "RETROS",
+        "row": 6,
+        "col": 0,
         "direction": "horizontal",
-        "score": 12,
-        "usedTiles": 4,
+        "score": 48,
+        "usedTiles": 6,
         "newKeys": [
-          "1,3",
-          "1,4",
-          "1,5",
-          "1,6"
+          "6,0",
+          "6,1",
+          "6,2",
+          "6,3",
+          "6,4",
+          "6,5"
         ],
         "scoringWords": [
           {
-            "word": "BOOS",
-            "row": 1,
-            "col": 3,
+            "word": "RETROS",
+            "row": 6,
+            "col": 0,
             "direction": "horizontal",
-            "score": 6
+            "score": 36
           },
           {
-            "word": "BO",
+            "word": "BREAKS",
             "row": 1,
-            "col": 3,
+            "col": 5,
             "direction": "vertical",
-            "score": 4
-          },
-          {
-            "word": "OR",
-            "row": 1,
-            "col": 4,
-            "direction": "vertical",
-            "score": 2
+            "score": 12
           }
         ]
       },
       {
         "turn": 2,
-        "word": "SOFT",
+        "word": "BI",
         "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 11,
-        "usedTiles": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
         "newKeys": [
-          "2,6",
-          "3,6",
-          "4,6"
+          "1,6"
         ],
         "scoringWords": [
           {
-            "word": "SOFT",
+            "word": "BI",
             "row": 1,
-            "col": 6,
-            "direction": "vertical",
-            "score": 11
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
           }
         ]
       }
@@ -357,6 +338,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 727
+    "visitedCandidates": 1947
   }
 }

@@ -247,7 +247,7 @@
       "5,6",
       "6,6"
     ],
-    "score": 112,
+    "score": 120,
     "completionBonus": 0,
     "words": [
       "TEEPEES",
@@ -259,7 +259,7 @@
         "row": 6,
         "col": 0,
         "direction": "horizontal",
-        "score": 1,
+        "score": 9,
         "move": 1
       },
       {
@@ -278,7 +278,7 @@
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 112,
+        "score": 120,
         "usedTiles": 7,
         "newKeys": [
           "0,6",
@@ -295,7 +295,7 @@
             "row": 6,
             "col": 0,
             "direction": "horizontal",
-            "score": 1
+            "score": 9
           },
           {
             "word": "ORIGANS",

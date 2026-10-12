@@ -13,56 +13,56 @@
     ],
     [
       "",
+      "C",
+      "H",
+      "U",
+      "F",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
       "",
       "",
       "A",
       "",
-      "L",
       ""
     ],
     [
-      "G",
-      "L",
-      "U",
-      "T",
+      "",
+      "",
+      "V",
+      "A",
+      "R",
+      "I",
+      "X"
+    ],
+    [
+      "",
       "",
       "O",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "T",
-      "",
-      "D",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "I",
-      "",
-      "G",
-      ""
-    ],
-    [
-      "",
-      "",
       "",
       "C",
-      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
       "E",
-      "W"
+      "",
+      "E",
+      "",
+      ""
     ],
     [
       "",
       "",
       "",
       "",
+      "D",
       "",
-      "R",
       ""
     ]
   ],
@@ -78,96 +78,97 @@
     ],
     [
       "",
+      "C",
+      "H",
+      "U",
+      "F",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
       "",
       "",
       "A",
       "",
-      "L",
       ""
     ],
     [
-      "G",
-      "L",
-      "U",
-      "T",
+      "",
+      "",
+      "V",
+      "A",
+      "R",
+      "I",
+      "X"
+    ],
+    [
+      "",
       "",
       "O",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "T",
-      "",
-      "D",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "I",
-      "",
-      "G",
-      ""
-    ],
-    [
-      "",
-      "",
       "",
       "C",
-      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
       "E",
-      "W"
+      "",
+      "E",
+      "",
+      ""
     ],
     [
       "",
       "",
       "",
       "",
+      "D",
       "",
-      "R",
       ""
     ]
   ],
   "bonusSquares": {
-    "5,0": "triple-word",
-    "0,0": "double-word"
+    "5,6": "double-word",
+    "4,0": "triple-letter",
+    "6,0": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "LODGER",
+      "word": "FARCED",
       "row": 1,
-      "col": 5,
+      "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "CREW",
-      "row": 5,
-      "col": 3,
+      "word": "VARIX",
+      "row": 3,
+      "col": 2,
       "direction": "horizontal"
     },
     {
-      "word": "ATTIC",
-      "row": 1,
-      "col": 3,
+      "word": "VOE",
+      "row": 3,
+      "col": 2,
       "direction": "vertical"
     },
     {
-      "word": "GLUT",
-      "row": 2,
-      "col": 0,
+      "word": "CHUFA",
+      "row": 1,
+      "col": 1,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "S",
-    "Q",
-    "O",
+    "U",
+    "N",
     "A",
-    "P",
-    "E",
+    "O",
+    "F",
+    "T",
     "S"
   ],
   "bestSolution": {
@@ -175,147 +176,147 @@
       [
         "",
         "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "A",
-        "",
-        "L",
-        ""
-      ],
-      [
-        "G",
-        "L",
         "U",
         "T",
         "",
-        "O",
+        "",
         ""
       ],
       [
-        "A",
-        "",
-        "",
-        "T",
-        "",
-        "D",
-        ""
-      ],
-      [
-        "P",
-        "",
-        "Q",
-        "I",
-        "",
-        "G",
-        ""
-      ],
-      [
-        "E",
-        "S",
         "",
         "C",
-        "R",
-        "E",
-        "W"
+        "H",
+        "U",
+        "F",
+        "A",
+        ""
       ],
       [
-        "S",
+        "",
+        "",
+        "",
+        "F",
+        "A",
+        "",
+        "A"
+      ],
+      [
+        "",
+        "",
+        "V",
+        "A",
+        "R",
+        "I",
+        "X"
+      ],
+      [
+        "",
+        "",
         "O",
         "",
+        "C",
+        "",
+        "O"
+      ],
+      [
         "",
         "",
-        "R",
-        ""
+        "E",
+        "",
+        "E",
+        "",
+        "N"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "D",
+        "",
+        "S"
       ]
     ],
     "newKeys": [
-      "3,0",
-      "4,0",
-      "5,0",
-      "6,0",
-      "4,2",
-      "5,1",
-      "6,1"
+      "2,6",
+      "4,6",
+      "5,6",
+      "6,6",
+      "0,3",
+      "2,3",
+      "0,2"
     ],
-    "score": 95,
+    "score": 93,
     "completionBonus": 50,
     "words": [
-      "GAPES",
-      "QI",
-      "ES",
-      "SO",
-      "SO"
+      "AXONS",
+      "FA",
+      "TUFA",
+      "UT",
+      "UH"
     ],
     "scoringWords": [
       {
-        "word": "GAPES",
+        "word": "AXONS",
         "row": 2,
-        "col": 0,
+        "col": 6,
         "direction": "vertical",
         "score": 24,
         "move": 1
       },
       {
-        "word": "QI",
-        "row": 4,
-        "col": 2,
+        "word": "FA",
+        "row": 2,
+        "col": 3,
         "direction": "horizontal",
-        "score": 11,
+        "score": 5,
         "move": 2
       },
       {
-        "word": "ES",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 6,
-        "move": 3
-      },
-      {
-        "word": "SO",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
-      },
-      {
-        "word": "SO",
-        "row": 5,
-        "col": 1,
+        "word": "TUFA",
+        "row": 0,
+        "col": 3,
         "direction": "vertical",
+        "score": 7,
+        "move": 2
+      },
+      {
+        "word": "UT",
+        "row": 0,
+        "col": 2,
+        "direction": "horizontal",
         "score": 2,
+        "move": 3
+      },
+      {
+        "word": "UH",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 5,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "GAPES",
+        "word": "AXONS",
         "row": 2,
-        "col": 0,
+        "col": 6,
         "direction": "vertical",
         "score": 24,
         "usedTiles": 4,
         "newKeys": [
-          "3,0",
-          "4,0",
-          "5,0",
-          "6,0"
+          "2,6",
+          "4,6",
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "GAPES",
+            "word": "AXONS",
             "row": 2,
-            "col": 0,
+            "col": 6,
             "direction": "vertical",
             "score": 24
           }
@@ -323,58 +324,58 @@
       },
       {
         "turn": 2,
-        "word": "QI",
-        "row": 4,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 11,
-        "usedTiles": 1,
+        "word": "TUFA",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 12,
+        "usedTiles": 2,
         "newKeys": [
-          "4,2"
+          "0,3",
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "QI",
-            "row": 4,
-            "col": 2,
+            "word": "FA",
+            "row": 2,
+            "col": 3,
             "direction": "horizontal",
-            "score": 11
+            "score": 5
+          },
+          {
+            "word": "TUFA",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 7
           }
         ]
       },
       {
         "turn": 3,
-        "word": "SO",
-        "row": 5,
-        "col": 1,
+        "word": "UH",
+        "row": 0,
+        "col": 2,
         "direction": "vertical",
-        "score": 10,
-        "usedTiles": 2,
+        "score": 7,
+        "usedTiles": 1,
         "newKeys": [
-          "5,1",
-          "6,1"
+          "0,2"
         ],
         "scoringWords": [
           {
-            "word": "ES",
-            "row": 5,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 6
-          },
-          {
-            "word": "SO",
-            "row": 6,
-            "col": 0,
+            "word": "UT",
+            "row": 0,
+            "col": 2,
             "direction": "horizontal",
             "score": 2
           },
           {
-            "word": "SO",
-            "row": 5,
-            "col": 1,
+            "word": "UH",
+            "row": 0,
+            "col": 2,
             "direction": "vertical",
-            "score": 2
+            "score": 5
           }
         ]
       }
@@ -383,6 +384,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1522
+    "visitedCandidates": 2084
   }
 }

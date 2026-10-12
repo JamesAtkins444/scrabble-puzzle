@@ -183,7 +183,7 @@
         "N"
       ],
       [
-        "E",
+        "",
         "",
         "U",
         "",
@@ -192,17 +192,17 @@
         ""
       ],
       [
-        "F",
-        "A",
+        "",
+        "",
         "L",
-        "L",
+        "",
         "",
         "F",
         ""
       ],
       [
-        "S",
         "",
+        "U",
         "P",
         "",
         "",
@@ -225,141 +225,189 @@
         "",
         "",
         "A",
-        ""
+        "L"
       ],
       [
-        "",
-        "U",
+        "F",
+        "E",
         "S",
-        "",
+        "S",
         "",
         "K",
-        ""
+        "A"
       ]
     ],
     "newKeys": [
-      "2,0",
-      "2,1",
-      "2,3",
-      "1,0",
-      "3,0",
+      "6,0",
       "6,1",
-      "6,2"
+      "6,2",
+      "6,3",
+      "5,6",
+      "6,6",
+      "3,1"
     ],
-    "score": 82,
+    "score": 90,
     "completionBonus": 50,
     "words": [
-      "FALL",
-      "EFS",
-      "US",
-      "PULPERS"
+      "FESS",
+      "PULPERS",
+      "AL",
+      "KA",
+      "LA",
+      "UP",
+      "UP"
     ],
     "scoringWords": [
       {
-        "word": "FALL",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 15,
-        "move": 1
-      },
-      {
-        "word": "EFS",
-        "row": 1,
-        "col": 0,
-        "direction": "vertical",
-        "score": 14,
-        "move": 2
-      },
-      {
-        "word": "US",
+        "word": "FESS",
         "row": 6,
-        "col": 1,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "move": 3
+        "score": 11,
+        "move": 1
       },
       {
         "word": "PULPERS",
         "row": 0,
         "col": 2,
         "direction": "vertical",
-        "score": 1,
+        "score": 11,
+        "move": 1
+      },
+      {
+        "word": "AL",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "KA",
+        "row": 6,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "LA",
+        "row": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "UP",
+        "row": 3,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 3
+      },
+      {
+        "word": "UP",
+        "row": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FALL",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 15,
-        "usedTiles": 3,
-        "newKeys": [
-          "2,0",
-          "2,1",
-          "2,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "FALL",
-            "row": 2,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 15
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "EFS",
-        "row": 1,
-        "col": 0,
-        "direction": "vertical",
-        "score": 14,
-        "usedTiles": 2,
-        "newKeys": [
-          "1,0",
-          "3,0"
-        ],
-        "scoringWords": [
-          {
-            "word": "EFS",
-            "row": 1,
-            "col": 0,
-            "direction": "vertical",
-            "score": 14
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "US",
+        "word": "FESS",
         "row": 6,
-        "col": 1,
+        "col": 0,
         "direction": "horizontal",
-        "score": 3,
-        "usedTiles": 2,
+        "score": 22,
+        "usedTiles": 4,
         "newKeys": [
+          "6,0",
           "6,1",
-          "6,2"
+          "6,2",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "US",
+            "word": "FESS",
             "row": 6,
-            "col": 1,
+            "col": 0,
             "direction": "horizontal",
-            "score": 2
+            "score": 11
           },
           {
             "word": "PULPERS",
             "row": 0,
             "col": 2,
             "direction": "vertical",
-            "score": 1
+            "score": 11
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "LA",
+        "row": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 10,
+        "usedTiles": 2,
+        "newKeys": [
+          "5,6",
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "AL",
+            "row": 5,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "KA",
+            "row": 6,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "LA",
+            "row": 5,
+            "col": 6,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "UP",
+        "row": 3,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 8,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "UP",
+            "row": 3,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "UP",
+            "row": 3,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }
@@ -368,6 +416,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1726
+    "visitedCandidates": 1583
   }
 }
