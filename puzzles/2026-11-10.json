@@ -1,0 +1,362 @@
+{
+  "date": "2026-11-10",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "P",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "A",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "T",
+      "",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "L",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "M",
+      "",
+      "N",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "P",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "G",
+      "A",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "T",
+      "",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "L",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "M",
+      "",
+      "N",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "2,0": "triple-word",
+    "4,1": "double-word",
+    "1,2": "triple-letter",
+    "6,0": "double-letter",
+    "0,0": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "PARTAN",
+      "row": 1,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "GAT",
+      "row": 2,
+      "col": 4,
+      "direction": "horizontal"
+    },
+    {
+      "word": "ALA",
+      "row": 5,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "TEAM",
+      "row": 3,
+      "col": 3,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "L",
+    "P",
+    "A",
+    "J",
+    "U",
+    "E",
+    "S"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "J",
+        "U",
+        "L",
+        "E",
+        "P",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "P",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "G",
+        "A",
+        "T"
+      ],
+      [
+        "",
+        "",
+        "",
+        "T",
+        "",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "E",
+        "",
+        "T",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "A",
+        "L",
+        "A",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "M",
+        "A",
+        "N",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,0",
+      "0,1",
+      "0,2",
+      "0,3",
+      "0,4",
+      "0,5",
+      "6,4"
+    ],
+    "score": 181,
+    "completionBonus": 50,
+    "words": [
+      "JULEPS",
+      "SPARTAN",
+      "MAN",
+      "LA"
+    ],
+    "scoringWords": [
+      {
+        "word": "JULEPS",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 23,
+        "move": 1
+      },
+      {
+        "word": "SPARTAN",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 1,
+        "move": 1
+      },
+      {
+        "word": "MAN",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 2
+      },
+      {
+        "word": "LA",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "JULEPS",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 124,
+        "usedTiles": 6,
+        "newKeys": [
+          "0,0",
+          "0,1",
+          "0,2",
+          "0,3",
+          "0,4",
+          "0,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "JULEPS",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 23
+          },
+          {
+            "word": "SPARTAN",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "MAN",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 7,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "MAN",
+            "row": 6,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "LA",
+            "row": 5,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1620
+  }
+}
