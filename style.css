@@ -2090,3 +2090,11 @@ body {
     background: rgba(255, 255, 255, 0.85) !important;
     letter-spacing: normal !important;
 }
+
+
+/* Premium labels: increase size by 10% and use Dongle Regular. */
+#board .cell.has-letter .bonus-badge {
+    font-size: clamp(10.395px, 1.782vw, 16.335px) !important;
+    font-family: "Dongle", sans-serif !important;
+    font-weight: 400 !important;
+}
