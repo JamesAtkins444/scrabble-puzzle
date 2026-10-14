@@ -2209,3 +2209,31 @@ textarea {
         font-size: clamp(18px, 4vw, 28px) !important;
     }
 }
+
+
+/* Tile typography correction: Dongle Regular at the requested point sizes. */
+.board-tile .tile-letter,
+.rack-tile .tile-letter {
+    font-family: 'Dongle', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 52pt !important;
+}
+
+.board-tile .tile-value,
+.rack-tile .tile-value {
+    font-family: 'Dongle', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 23pt !important;
+}
+
+@media (max-width: 600px) {
+    .board-tile .tile-letter,
+    .rack-tile .tile-letter {
+        font-size: 52pt !important;
+    }
+
+    .board-tile .tile-value,
+    .rack-tile .tile-value {
+        font-size: 23pt !important;
+    }
+}
