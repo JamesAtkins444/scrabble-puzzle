@@ -2080,3 +2080,13 @@ body {
     background: transparent !important;
     letter-spacing: normal !important;
 }
+
+
+/* Keep the premium-label background and padding, but match the tile-score font size. */
+#board .cell.has-letter .bonus-badge {
+    font-size: clamp(9.45px, 1.62vw, 14.85px) !important;
+    padding: 2px 3px !important;
+    border-radius: 3px !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    letter-spacing: normal !important;
+}
