@@ -1543,3 +1543,54 @@ body {
     -webkit-user-select: none;
     user-select: none;
 }
+
+
+/* =========================================
+   7×7 INDIVIDUAL SQUARE BOARD CELLS
+   Visual-only board styling; game rules and scoring are unchanged.
+========================================= */
+
+#board {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(7, minmax(0, 1fr));
+    gap: 5px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.cell {
+    min-width: 0;
+    min-height: 0;
+    border: 1px solid rgba(100, 116, 139, 0.22);
+    border-radius: 6px;
+    background: #e8edf3;
+    box-shadow: 0 1px 2px rgba(30, 41, 59, 0.08);
+    overflow: hidden;
+}
+
+.cell.original-tile {
+    border-color: #c5ae7b;
+    border-radius: 6px;
+}
+
+.cell.player-valid,
+.cell.player-invalid,
+.cell.player-isolated,
+.cell.double-letter,
+.cell.triple-letter,
+.cell.double-word,
+.cell.triple-word {
+    border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+    #board {
+        gap: 4px;
+        padding: 0;
+    }
+
+    .cell {
+        border-radius: 5px;
+    }
+}
