@@ -2267,3 +2267,45 @@ textarea {
     font-size: 23pt !important;
     font-weight: 400 !important;
 }
+
+
+/* Final tile-letter centring: override earlier absolute-position rules.
+   Dongle has a tall font box, so centre its rendered glyph with flex alignment. */
+.board-tile,
+.rack-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.board-tile .tile-letter,
+.rack-tile .tile-letter {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+    padding: 0 0 0.16em !important;
+    transform: none !important;
+    text-align: center !important;
+    line-height: 0.8 !important;
+    font-family: 'Dongle', sans-serif !important;
+    font-size: 52pt !important;
+    font-weight: 400 !important;
+}
+
+.board-tile .tile-value,
+.rack-tile .tile-value {
+    position: absolute !important;
+    right: 14% !important;
+    bottom: 10% !important;
+    z-index: 2;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0.8 !important;
+    font-family: 'Dongle', sans-serif !important;
+    font-size: 23pt !important;
+    font-weight: 400 !important;
+}
