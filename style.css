@@ -1747,3 +1747,21 @@ body {
         border-radius: 7px;
     }
 }
+
+
+/* Keep rounded corners consistent across board cells and both tile types. */
+#board .cell,
+#board .cell > .board-tile,
+#tileRack .rack-slot,
+#tileRack .rack-slot > .rack-tile {
+    border-radius: 10px !important;
+}
+
+@media (max-width: 600px) {
+    #board .cell,
+    #board .cell > .board-tile,
+    #tileRack .rack-slot,
+    #tileRack .rack-slot > .rack-tile {
+        border-radius: 7px !important;
+    }
+}
