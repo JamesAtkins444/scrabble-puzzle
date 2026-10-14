@@ -1750,60 +1750,37 @@ function displayBoard() {
                     bonus
                 );
 
+                // Keep the premium label visible on empty squares and existing puzzle tiles,
+                // but hide it when a player-placed tile occupies the premium square.
+                if (!playerPlacedTiles[key]) {
+                    const bonusBadge =
+                        document.createElement(
+                            "span"
+                        );
 
-                const bonusBadge =
-                    document.createElement(
-                        "span"
+                    bonusBadge.className =
+                        "bonus-badge";
+
+                    if (bonus === "double-letter") {
+                        bonusBadge.textContent = "2L";
+                    }
+
+                    if (bonus === "triple-letter") {
+                        bonusBadge.textContent = "3L";
+                    }
+
+                    if (bonus === "double-word") {
+                        bonusBadge.textContent = "2W";
+                    }
+
+                    if (bonus === "triple-word") {
+                        bonusBadge.textContent = "3W";
+                    }
+
+                    cell.appendChild(
+                        bonusBadge
                     );
-
-
-                bonusBadge.className =
-                    "bonus-badge";
-
-
-                if (
-                    bonus ===
-                    "double-letter"
-                ) {
-
-                    bonusBadge.textContent =
-                        "2L";
                 }
-
-
-                if (
-                    bonus ===
-                    "triple-letter"
-                ) {
-
-                    bonusBadge.textContent =
-                        "3L";
-                }
-
-
-                if (
-                    bonus ===
-                    "double-word"
-                ) {
-
-                    bonusBadge.textContent =
-                        "2W";
-                }
-
-
-                if (
-                    bonus ===
-                    "triple-word"
-                ) {
-
-                    bonusBadge.textContent =
-                        "3W";
-                }
-
-
-                cell.appendChild(
-                    bonusBadge
-                );
             }
 
 
@@ -1983,10 +1960,23 @@ function displayBoard() {
                     "tile-value";
 
 
+                let displayedTileValue =
+                    letterValues[letter] ?? 0;
+
+                // Show the premium multiplier in the score text on player-placed tiles.
+                if (playerPlacedTiles[key]) {
+                    const premiumMultiplier = {
+                        "double-letter": 2,
+                        "triple-letter": 3,
+                        "double-word": 2,
+                        "triple-word": 3
+                    }[getBonusSquare(row, col)] || 1;
+
+                    displayedTileValue *= premiumMultiplier;
+                }
+
                 valueElement.textContent =
-                    letterValues[
-                        letter
-                    ] ?? 0;
+                    displayedTileValue;
 
 
                 boardTile.appendChild(
