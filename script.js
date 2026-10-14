@@ -1879,48 +1879,44 @@ function displayBoard() {
                             "player-valid"
                         );
 
-                        // Keep the first valid player tile on a generated word orange.
-                        // Remaining valid tiles follow the word-position palette.
+                        // The first player tile placed on each generated word is orange.
+                        // Later player tiles keep the existing colour-by-position palette.
                         const horizontalWord = getWordAt(board, row, col, "horizontal");
                         const verticalWord = getWordAt(board, row, col, "vertical");
                         let wordDirection = null;
+                        let wordStartRow = row;
+                        let wordStartCol = col;
                         let colourIndex = 1;
 
                         if (horizontalWord.length >= 2 && dictionary.has(horizontalWord)) {
                             wordDirection = "horizontal";
+                            while (wordStartCol > 0 && board[row][wordStartCol - 1] !== "") wordStartCol--;
                         } else if (verticalWord.length >= 2 && dictionary.has(verticalWord)) {
                             wordDirection = "vertical";
+                            while (wordStartRow > 0 && board[wordStartRow - 1][col] !== "") wordStartRow--;
                         }
 
-                        if (wordDirection === "horizontal") {
-                            let startCol = col;
-                            while (startCol > 0 && board[row][startCol - 1] !== "") startCol++;
-                            // Find the first player-placed tile in this word, from left to right.
-                            let firstPlayerCol = null;
-                            for (let scanCol = startCol; scanCol < boardSize && board[row][scanCol] !== ""; scanCol++) {
-                                const scanKey = keyForCell(row, scanCol);
-                                if (playerPlacedTiles[scanKey]) {
-                                    firstPlayerCol = scanCol;
-                                    break;
+                        if (wordDirection) {
+                            const playerKeysInWord = [];
+                            const playerPlacementOrder = Object.keys(playerPlacedTiles);
+
+                            if (wordDirection === "horizontal") {
+                                for (let scanCol = wordStartCol; scanCol < boardSize && board[row][scanCol] !== ""; scanCol++) {
+                                    const scanKey = keyForCell(row, scanCol);
+                                    if (playerPlacedTiles[scanKey]) playerKeysInWord.push(scanKey);
                                 }
-                            }
-                            if (firstPlayerCol !== null && col !== firstPlayerCol) {
-                                colourIndex = Math.min(col - firstPlayerCol + 1, 7);
-                            }
-                        } else if (wordDirection === "vertical") {
-                            let startRow = row;
-                            while (startRow > 0 && board[startRow - 1][col] !== "") startRow++;
-                            // Find the first player-placed tile in this word, from top to bottom.
-                            let firstPlayerRow = null;
-                            for (let scanRow = startRow; scanRow < boardSize && board[scanRow][col] !== ""; scanRow++) {
-                                const scanKey = keyForCell(scanRow, col);
-                                if (playerPlacedTiles[scanKey]) {
-                                    firstPlayerRow = scanRow;
-                                    break;
+                                colourIndex = Math.min(col - wordStartCol + 1, 7);
+                            } else {
+                                for (let scanRow = wordStartRow; scanRow < boardSize && board[scanRow][col] !== ""; scanRow++) {
+                                    const scanKey = keyForCell(scanRow, col);
+                                    if (playerPlacedTiles[scanKey]) playerKeysInWord.push(scanKey);
                                 }
+                                colourIndex = Math.min(row - wordStartRow + 1, 7);
                             }
-                            if (firstPlayerRow !== null && row !== firstPlayerRow) {
-                                colourIndex = Math.min(row - firstPlayerRow + 1, 7);
+
+                            const firstPlacedPlayerKey = playerPlacementOrder.find(key => playerKeysInWord.includes(key));
+                            if (firstPlacedPlayerKey === key) {
+                                colourIndex = 1;
                             }
                         }
 
