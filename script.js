@@ -8,6 +8,8 @@ let originalBoard = [];
 
 let playerPlacedTiles = {};
 let playerTiles = [];
+// Original rack slot for each tile currently available to the player.
+let playerRackPositions = [];
 let initialRackTiles = [];
 let bestSolution = null;
 let answerRevealed = false;
@@ -1022,6 +1024,7 @@ function generateBoard() {
 
     playerTiles =
         drawRandomTiles(6);
+    playerRackPositions = playerTiles.map((_, index) => index);
 
     initialRackTiles = [...playerTiles];
     bestSolution = null;
@@ -2401,8 +2404,9 @@ function displayTileRack() {
             );
 
 
-            if (rackSlots[index]) {
-                rackSlots[index].appendChild(tile);
+            const slotIndex = playerRackPositions[index] ?? index;
+            if (rackSlots[slotIndex]) {
+                rackSlots[slotIndex].appendChild(tile);
             }
         }
     );
@@ -2438,9 +2442,16 @@ function handleBoardClick(
             playerPlacedTiles[key];
 
 
-        playerTiles.push(
-            tile.letter
-        );
+        // Return the tile to its original rack slot, keeping the other tiles still.
+        const returnSlot = tile.rackSlot ?? 6;
+        const insertAt = playerRackPositions.findIndex(slot => slot > returnSlot);
+        if (insertAt === -1) {
+            playerTiles.push(tile.letter);
+            playerRackPositions.push(returnSlot);
+        } else {
+            playerTiles.splice(insertAt, 0, tile.letter);
+            playerRackPositions.splice(insertAt, 0, returnSlot);
+        }
 
 
         delete playerPlacedTiles[
@@ -2537,6 +2548,8 @@ function handleBoardClick(
 
         letter: tile,
 
+        rackSlot: playerRackPositions[selectedRackTile] ?? selectedRackTile,
+
         row,
 
         col
@@ -2544,6 +2557,10 @@ function handleBoardClick(
 
 
     playerTiles.splice(
+        selectedRackTile,
+        1
+    );
+    playerRackPositions.splice(
         selectedRackTile,
         1
     );
@@ -4098,6 +4115,7 @@ function revealBestAnswer() {
     }
 
     playerTiles = [];
+    playerRackPositions = [];
     selectedRackTile = null;
     answerRevealed = true;
 
@@ -4143,6 +4161,7 @@ if (clearBoardButton) {
     clearBoardButton.addEventListener("click", () => {
         // Return the original rack letters and restore only the fixed puzzle tiles.
         playerTiles = [...initialRackTiles];
+        playerRackPositions = playerTiles.map((_, index) => index);
         board = cloneBoard(originalBoard);
         playerPlacedTiles = {};
         selectedRackTile = null;
@@ -4376,6 +4395,7 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
 
         initialRackTiles = [...puzzle.initialRackTiles];
         playerTiles = [...initialRackTiles];
+        playerRackPositions = playerTiles.map((_, index) => index);
         playerPlacedTiles = {};
         bestSolution = {
             ...puzzle.bestSolution,
@@ -4612,6 +4632,7 @@ if (
                 drawRandomTiles(
                     6
                 );
+            playerRackPositions = playerTiles.map((_, index) => index);
 
             startingRackValueTotal =
                 playerTiles.reduce(
