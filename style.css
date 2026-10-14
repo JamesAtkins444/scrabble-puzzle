@@ -1681,3 +1681,12 @@ body {
     translate: 0 6px;
     font-weight: 400;
 }
+
+
+/* Move all text in board and rack tiles down by one additional pixel. */
+.board-tile .tile-letter,
+.board-tile .tile-value,
+.rack-tile .tile-letter,
+.rack-tile .tile-value {
+    translate: 0 7px;
+}
