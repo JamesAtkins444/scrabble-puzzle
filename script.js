@@ -1864,6 +1864,11 @@ function displayBoard() {
                     ]
                 ) {
 
+                    const premiumType = getBonusSquare(row, col);
+                    if (premiumType) {
+                        boardTile.classList.add("player-on-" + premiumType);
+                    }
+
                     const status =
                         tileStatuses[
                             key
