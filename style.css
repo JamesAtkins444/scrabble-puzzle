@@ -2053,3 +2053,10 @@ textarea {
         display: none;
     }
 }
+
+
+/* Preserve the game's premium-square colour cues on the redesigned board. */
+.cell.double-letter { background: #9ed8f5; color: #172c33; }
+.cell.triple-letter { background: #4f91c4; color: #ffffff; }
+.cell.double-word { background: #f2a8c4; color: #172c33; }
+.cell.triple-word { background: #e36b6b; color: #ffffff; }
