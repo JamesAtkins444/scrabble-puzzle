@@ -1972,3 +1972,29 @@ body {
     background-color: #ff594b !important;
     border-color: #ff594b !important;
 }
+
+
+/* Updated premium-square palette. */
+#board .cell.double-letter,
+#board .board-tile.player-on-double-letter {
+    background: #03916f !important;
+    background-color: #03916f !important;
+}
+
+#board .cell.triple-letter,
+#board .board-tile.player-on-triple-letter {
+    background: #1aaa87 !important;
+    background-color: #1aaa87 !important;
+}
+
+#board .cell.double-word,
+#board .board-tile.player-on-double-word {
+    background: #e0196a !important;
+    background-color: #e0196a !important;
+}
+
+#board .cell.triple-word,
+#board .board-tile.player-on-triple-word {
+    background: #ff4085 !important;
+    background-color: #ff4085 !important;
+}
