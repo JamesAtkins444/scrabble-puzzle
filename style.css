@@ -1998,3 +1998,46 @@ body {
     background: #ff4085 !important;
     background-color: #ff4085 !important;
 }
+
+
+/* Invalid player tiles on premium squares stay white with red lettering and outline. */
+#board .board-tile.player-invalid.player-on-double-letter,
+#board .board-tile.player-invalid.player-on-triple-letter,
+#board .board-tile.player-invalid.player-on-double-word,
+#board .board-tile.player-invalid.player-on-triple-word,
+#board .board-tile.player-isolated.player-on-double-letter,
+#board .board-tile.player-isolated.player-on-triple-letter,
+#board .board-tile.player-isolated.player-on-double-word,
+#board .board-tile.player-isolated.player-on-triple-word {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 4px solid #ff0000 !important;
+    outline: 4px solid #ff0000 !important;
+}
+
+#board .board-tile.player-invalid.player-on-double-letter .tile-letter,
+#board .board-tile.player-invalid.player-on-double-letter .tile-value,
+#board .board-tile.player-invalid.player-on-triple-letter .tile-letter,
+#board .board-tile.player-invalid.player-on-triple-letter .tile-value,
+#board .board-tile.player-invalid.player-on-double-word .tile-letter,
+#board .board-tile.player-invalid.player-on-double-word .tile-value,
+#board .board-tile.player-invalid.player-on-triple-word .tile-letter,
+#board .board-tile.player-invalid.player-on-triple-word .tile-value,
+#board .board-tile.player-isolated.player-on-double-letter .tile-letter,
+#board .board-tile.player-isolated.player-on-double-letter .tile-value,
+#board .board-tile.player-isolated.player-on-triple-letter .tile-letter,
+#board .board-tile.player-isolated.player-on-triple-letter .tile-value,
+#board .board-tile.player-isolated.player-on-double-word .tile-letter,
+#board .board-tile.player-isolated.player-on-double-word .tile-value,
+#board .board-tile.player-isolated.player-on-triple-word .tile-letter,
+#board .board-tile.player-isolated.player-on-triple-word .tile-value {
+    color: #ff0000 !important;
+}
+
+/* Valid player tiles on premium squares have no outline. */
+#board .board-tile.player-on-double-letter:not(.player-invalid):not(.player-isolated),
+#board .board-tile.player-on-triple-letter:not(.player-invalid):not(.player-isolated),
+#board .board-tile.player-on-double-word:not(.player-invalid):not(.player-isolated),
+#board .board-tile.player-on-triple-word:not(.player-invalid):not(.player-isolated) {
+    outline: none !important;
+}
