@@ -1,4 +1,4 @@
-let boardSize = 8;
+let boardSize = 7;
 
 let dictionary = new Set();
 let solverDictionary = new Set();
