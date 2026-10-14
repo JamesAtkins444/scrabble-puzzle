@@ -1699,3 +1699,10 @@ body {
 .rack-tile .tile-value {
     translate: 0 6px;
 }
+
+
+/* Move only the central letters up by 1px; leave corner score values in place. */
+.board-tile .tile-letter,
+.rack-tile .tile-letter {
+    translate: 0 5px;
+}
