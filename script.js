@@ -2119,9 +2119,17 @@ function displayTileRack() {
     }
 
 
-    tileRackElement.innerHTML =
-        "";
+    tileRackElement.innerHTML = "";
 
+    // Keep seven fixed rack slots, matching the seven columns of the game board.
+    const rackSlots = [];
+    for (let slotIndex = 0; slotIndex < 7; slotIndex += 1) {
+        const slot = document.createElement("div");
+        slot.className = "rack-slot";
+        slot.dataset.slotIndex = slotIndex;
+        rackSlots.push(slot);
+        tileRackElement.appendChild(slot);
+    }
 
     playerTiles.forEach(
         (
@@ -2393,9 +2401,9 @@ function displayTileRack() {
             );
 
 
-            tileRackElement.appendChild(
-                tile
-            );
+            if (rackSlots[index]) {
+                rackSlots[index].appendChild(tile);
+            }
         }
     );
 }
