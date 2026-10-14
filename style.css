@@ -1668,3 +1668,16 @@ body {
     height: 100%;
     border-radius: inherit;
 }
+
+
+/* Fine-tune tile typography: move letters and score values down 1px, and use Dongle Regular for score values. */
+.board-tile .tile-letter,
+.rack-tile .tile-letter {
+    translate: 0 3px;
+}
+
+.board-tile .tile-value,
+.rack-tile .tile-value {
+    translate: 0 6px;
+    font-weight: 400;
+}
