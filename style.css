@@ -2237,3 +2237,33 @@ textarea {
         font-size: 23pt !important;
     }
 }
+
+
+/* Alignment fix: center Dongle's glyph box, not just its line box. */
+.board-tile .tile-letter,
+.rack-tile .tile-letter {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 0 0.08em;
+    transform: none;
+    text-align: center;
+    line-height: 1;
+    font-family: 'Dongle', sans-serif !important;
+    font-size: 52pt !important;
+    font-weight: 400 !important;
+}
+
+.board-tile .tile-value,
+.rack-tile .tile-value {
+    z-index: 1;
+    line-height: 1;
+    font-family: 'Dongle', sans-serif !important;
+    font-size: 23pt !important;
+    font-weight: 400 !important;
+}
