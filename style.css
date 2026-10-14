@@ -2333,3 +2333,10 @@ textarea {
     font-size: 52pt !important;
     font-weight: 400 !important;
 }
+
+
+/* Fine-tune vertical optical alignment: keep horizontal centring unchanged. */
+.board-tile .tile-letter,
+.rack-tile .tile-letter {
+    transform: translate(-50%, -20%) !important;
+}
