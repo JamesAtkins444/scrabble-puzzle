@@ -1876,3 +1876,20 @@ body {
 .board-tile.player-isolated .tile-value {
     color: #ff0000 !important;
 }
+
+
+/* Keep invalid and isolated player tiles white; only their text and outline turn red. */
+.board-tile.player-invalid,
+.board-tile.player-isolated {
+    background: #ffffff !important;
+    border-color: #ff0000 !important;
+    outline: 2px solid #ff0000;
+    outline-offset: 0;
+}
+
+.board-tile.player-invalid .tile-letter,
+.board-tile.player-invalid .tile-value,
+.board-tile.player-isolated .tile-letter,
+.board-tile.player-isolated .tile-value {
+    color: #ff0000 !important;
+}
