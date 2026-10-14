@@ -1690,3 +1690,12 @@ body {
 .rack-tile .tile-value {
     translate: 0 7px;
 }
+
+
+/* Revert the most recent 1px text adjustment inside board and rack tiles. */
+.board-tile .tile-letter,
+.board-tile .tile-value,
+.rack-tile .tile-letter,
+.rack-tile .tile-value {
+    translate: 0 6px;
+}
