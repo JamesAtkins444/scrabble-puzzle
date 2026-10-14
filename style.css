@@ -2041,3 +2041,29 @@ body {
 #board .board-tile.player-on-triple-word:not(.player-invalid):not(.player-isolated) {
     outline: none !important;
 }
+
+
+/* Remove the gradient-colour border that can look like an orange outline on valid premium tiles. */
+#board .board-tile.player-on-double-letter:not(.player-invalid):not(.player-isolated) {
+    border-color: #03916f !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#board .board-tile.player-on-triple-letter:not(.player-invalid):not(.player-isolated) {
+    border-color: #1aaa87 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#board .board-tile.player-on-double-word:not(.player-invalid):not(.player-isolated) {
+    border-color: #e0196a !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#board .board-tile.player-on-triple-word:not(.player-invalid):not(.player-isolated) {
+    border-color: #ff4085 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
