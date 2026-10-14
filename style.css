@@ -1646,10 +1646,10 @@ body {
 }
 
 
-/* Lower the text inside board and rack tiles by 5px. */
+/* Lower the text inside board and rack tiles by 5px without changing their existing positioning. */
 .board-tile .tile-letter,
 .board-tile .tile-value,
 .rack-tile .tile-letter,
 .rack-tile .tile-value {
-    top: calc(var(--tile-text-top, 0px) + 5px);
+    translate: 0 5px;
 }
