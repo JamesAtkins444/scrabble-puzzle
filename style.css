@@ -1765,3 +1765,53 @@ body {
         border-radius: 7px !important;
     }
 }
+
+
+/* Generated puzzle tiles: black with white lettering. */
+#board .board-tile.original-tile {
+    background: #111 !important;
+    border-color: #111 !important;
+    color: #fff !important;
+}
+
+#board .board-tile.original-tile .tile-letter,
+#board .board-tile.original-tile .tile-value {
+    color: #fff !important;
+}
+
+/* Rack tiles: white with black lettering and score values. */
+#tileRack .rack-tile {
+    background: #fff !important;
+    border-color: #222 !important;
+    color: #111 !important;
+}
+
+#tileRack .rack-tile .tile-letter,
+#tileRack .rack-tile .tile-value {
+    color: #111 !important;
+}
+
+/* Player-placed board tiles keep their validity colours. */
+#board .board-tile.player-valid {
+    background: #bfe8c7 !important;
+    border-color: #3b9b4f !important;
+}
+
+#board .board-tile.player-invalid {
+    background: #f3b8b8 !important;
+    border-color: #c43d3d !important;
+}
+
+#board .board-tile.player-isolated {
+    background: #f4df83 !important;
+    border-color: #c4a72c !important;
+}
+
+#board .board-tile.player-valid .tile-letter,
+#board .board-tile.player-valid .tile-value,
+#board .board-tile.player-invalid .tile-letter,
+#board .board-tile.player-invalid .tile-value,
+#board .board-tile.player-isolated .tile-letter,
+#board .board-tile.player-isolated .tile-value {
+    color: #111 !important;
+}
