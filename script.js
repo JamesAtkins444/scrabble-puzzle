@@ -1879,12 +1879,12 @@ function displayBoard() {
                             "player-valid"
                         );
 
-                        // Colour valid tiles by their position in the word:
-                        // horizontal words run left-to-right; vertical words run top-to-bottom.
-                        let colourIndex = 0;
-                        let wordDirection = null;
+                        // Keep the first valid player tile on a generated word orange.
+                        // Remaining valid tiles follow the word-position palette.
                         const horizontalWord = getWordAt(board, row, col, "horizontal");
                         const verticalWord = getWordAt(board, row, col, "vertical");
+                        let wordDirection = null;
+                        let colourIndex = 1;
 
                         if (horizontalWord.length >= 2 && dictionary.has(horizontalWord)) {
                             wordDirection = "horizontal";
@@ -1894,18 +1894,37 @@ function displayBoard() {
 
                         if (wordDirection === "horizontal") {
                             let startCol = col;
-                            while (startCol > 0 && board[row][startCol - 1] !== "") startCol--;
-                            colourIndex = col - startCol + 1;
+                            while (startCol > 0 && board[row][startCol - 1] !== "") startCol++;
+                            // Find the first player-placed tile in this word, from left to right.
+                            let firstPlayerCol = null;
+                            for (let scanCol = startCol; scanCol < boardSize && board[row][scanCol] !== ""; scanCol++) {
+                                const scanKey = keyForCell(row, scanCol);
+                                if (playerPlacedTiles[scanKey]) {
+                                    firstPlayerCol = scanCol;
+                                    break;
+                                }
+                            }
+                            if (firstPlayerCol !== null && col !== firstPlayerCol) {
+                                colourIndex = Math.min(col - firstPlayerCol + 1, 7);
+                            }
                         } else if (wordDirection === "vertical") {
                             let startRow = row;
-                            while (startRow > 0 && board[startRow - 1][col] !== "") startRow--;
-                            colourIndex = row - startRow + 1;
+                            while (startRow > 0 && board[startRow - 1][col] !== "") startRow++;
+                            // Find the first player-placed tile in this word, from top to bottom.
+                            let firstPlayerRow = null;
+                            for (let scanRow = startRow; scanRow < boardSize && board[scanRow][col] !== ""; scanRow++) {
+                                const scanKey = keyForCell(scanRow, col);
+                                if (playerPlacedTiles[scanKey]) {
+                                    firstPlayerRow = scanRow;
+                                    break;
+                                }
+                            }
+                            if (firstPlayerRow !== null && row !== firstPlayerRow) {
+                                colourIndex = Math.min(row - firstPlayerRow + 1, 7);
+                            }
                         }
 
-                        // The palette contains seven colours; longer words use the seventh.
-                        colourIndex = Math.min(Math.max(colourIndex, 1), 7);
                         boardTile.classList.add("player-valid-colour-" + colourIndex);
-
 
                     } else if (
                         status ===
