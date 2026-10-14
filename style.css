@@ -1920,3 +1920,11 @@ body {
     border-width: 3px !important;
     outline: 3px solid #ff0000 !important;
 }
+
+
+/* Make invalid and disconnected tile outlines even thicker. */
+#board .board-tile.player-invalid,
+#board .board-tile.player-isolated {
+    border-width: 4px !important;
+    outline: 4px solid #ff0000 !important;
+}
