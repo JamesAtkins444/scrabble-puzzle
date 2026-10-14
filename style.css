@@ -1815,3 +1815,17 @@ body {
 #board .board-tile.player-isolated .tile-value {
     color: #111 !important;
 }
+
+
+/* Teal game background with darker empty board cells and white rack slots. */
+body {
+    background: #264653 !important;
+}
+
+#board .cell:not(.original-tile):not(.player-valid):not(.player-invalid):not(.player-isolated):not(.double-letter):not(.triple-letter):not(.double-word):not(.triple-word) {
+    background: #172c33 !important;
+}
+
+#tileRack .rack-slot {
+    background: #ffffff !important;
+}
