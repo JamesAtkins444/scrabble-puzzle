@@ -1660,3 +1660,11 @@ body {
 .rack-tile .tile-letter {
     translate: 0 2px;
 }
+
+
+/* Make placed tiles fill their entire board cell, removing the inset margin. */
+#board .cell > .board-tile {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
