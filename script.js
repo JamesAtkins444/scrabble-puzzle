@@ -1752,11 +1752,10 @@ function displayBoard() {
 
                 // Keep the premium label visible on empty squares and existing puzzle tiles,
                 // but hide it when a player-placed tile occupies the premium square.
-                const isPlayerTileOnLetterBonus =
-                    playerPlacedTiles[key] &&
-                    (bonus === "double-letter" || bonus === "triple-letter");
+                const isPlayerTileOnPremiumSquare =
+                    playerPlacedTiles[key];
 
-                if (!isPlayerTileOnLetterBonus) {
+                if (!isPlayerTileOnPremiumSquare) {
                     const bonusBadge =
                         document.createElement(
                             "span"
