@@ -1928,3 +1928,47 @@ body {
     border-width: 4px !important;
     outline: 4px solid #ff0000 !important;
 }
+
+
+/* Valid player tiles use a warm left-to-right / top-to-bottom word gradient. */
+#board .board-tile.player-valid-colour-1 {
+    background: #fbb03b !important;
+    background-color: #fbb03b !important;
+    border-color: #fbb03b !important;
+}
+
+#board .board-tile.player-valid-colour-2 {
+    background: #fca43d !important;
+    background-color: #fca43d !important;
+    border-color: #fca43d !important;
+}
+
+#board .board-tile.player-valid-colour-3 {
+    background: #fc9740 !important;
+    background-color: #fc9740 !important;
+    border-color: #fc9740 !important;
+}
+
+#board .board-tile.player-valid-colour-4 {
+    background: #fd8b42 !important;
+    background-color: #fd8b42 !important;
+    border-color: #fd8b42 !important;
+}
+
+#board .board-tile.player-valid-colour-5 {
+    background: #fe7246 !important;
+    background-color: #fe7246 !important;
+    border-color: #fe7246 !important;
+}
+
+#board .board-tile.player-valid-colour-6 {
+    background: #fe6549 !important;
+    background-color: #fe6549 !important;
+    border-color: #fe6549 !important;
+}
+
+#board .board-tile.player-valid-colour-7 {
+    background: #ff594b !important;
+    background-color: #ff594b !important;
+    border-color: #ff594b !important;
+}
