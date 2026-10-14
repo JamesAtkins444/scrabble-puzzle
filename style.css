@@ -1653,3 +1653,10 @@ body {
 .rack-tile .tile-value {
     translate: 0 5px;
 }
+
+
+/* Move only the tile letters 3px up from their current position; keep point values unchanged. */
+.board-tile .tile-letter,
+.rack-tile .tile-letter {
+    translate: 0 2px;
+}
