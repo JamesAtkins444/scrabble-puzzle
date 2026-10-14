@@ -1912,3 +1912,11 @@ body {
 #board .board-tile.player-isolated .tile-value {
     color: #ff0000 !important;
 }
+
+
+/* Make invalid and disconnected tile outlines thicker. */
+#board .board-tile.player-invalid,
+#board .board-tile.player-isolated {
+    border-width: 3px !important;
+    outline: 3px solid #ff0000 !important;
+}
