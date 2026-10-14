@@ -1879,6 +1879,33 @@ function displayBoard() {
                             "player-valid"
                         );
 
+                        // Colour valid tiles by their position in the word:
+                        // horizontal words run left-to-right; vertical words run top-to-bottom.
+                        let colourIndex = 0;
+                        let wordDirection = null;
+                        const horizontalWord = getWordAt(board, row, col, "horizontal");
+                        const verticalWord = getWordAt(board, row, col, "vertical");
+
+                        if (horizontalWord.length >= 2 && dictionary.has(horizontalWord)) {
+                            wordDirection = "horizontal";
+                        } else if (verticalWord.length >= 2 && dictionary.has(verticalWord)) {
+                            wordDirection = "vertical";
+                        }
+
+                        if (wordDirection === "horizontal") {
+                            let startCol = col;
+                            while (startCol > 0 && board[row][startCol - 1] !== "") startCol--;
+                            colourIndex = col - startCol + 1;
+                        } else if (wordDirection === "vertical") {
+                            let startRow = row;
+                            while (startRow > 0 && board[startRow - 1][col] !== "") startRow--;
+                            colourIndex = row - startRow + 1;
+                        }
+
+                        // The palette contains seven colours; longer words use the seventh.
+                        colourIndex = Math.min(Math.max(colourIndex, 1), 7);
+                        boardTile.classList.add("player-valid-colour-" + colourIndex);
+
 
                     } else if (
                         status ===
