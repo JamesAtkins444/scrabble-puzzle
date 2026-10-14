@@ -2309,3 +2309,27 @@ textarea {
     font-size: 23pt !important;
     font-weight: 400 !important;
 }
+
+
+/* Optical centring for Dongle glyphs.
+   Position the actual letter element at the tile centre and compensate for
+   Dongle's font metrics, which leave the visible glyph above the line-box centre. */
+.board-tile .tile-letter,
+.rack-tile .tile-letter {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    inset: auto auto auto 50% !important;
+    display: block !important;
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translate(-50%, -36%) !important;
+    text-align: center !important;
+    line-height: 0.65 !important;
+    font-family: 'Dongle', sans-serif !important;
+    font-size: 52pt !important;
+    font-weight: 400 !important;
+}
