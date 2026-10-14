@@ -1752,7 +1752,11 @@ function displayBoard() {
 
                 // Keep the premium label visible on empty squares and existing puzzle tiles,
                 // but hide it when a player-placed tile occupies the premium square.
-                if (!playerPlacedTiles[key]) {
+                const isPlayerTileOnLetterBonus =
+                    playerPlacedTiles[key] &&
+                    (bonus === "double-letter" || bonus === "triple-letter");
+
+                if (!isPlayerTileOnLetterBonus) {
                     const bonusBadge =
                         document.createElement(
                             "span"
@@ -1963,13 +1967,12 @@ function displayBoard() {
                 let displayedTileValue =
                     letterValues[letter] ?? 0;
 
-                // Show the premium multiplier in the score text on player-placed tiles.
+                // Show letter-square multipliers in the score text on player-placed tiles.
+                // Word-square labels and displayed tile values remain unchanged.
                 if (playerPlacedTiles[key]) {
                     const premiumMultiplier = {
                         "double-letter": 2,
-                        "triple-letter": 3,
-                        "double-word": 2,
-                        "triple-word": 3
+                        "triple-letter": 3
                     }[getBonusSquare(row, col)] || 1;
 
                     displayedTileValue *= premiumMultiplier;
