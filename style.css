@@ -2067,3 +2067,16 @@ body {
     outline: none !important;
     box-shadow: none !important;
 }
+
+
+/* Premium labels on occupied player tiles match the tile-score typography. */
+#board .cell.has-letter .bonus-badge {
+    font-size: clamp(9.45px, 1.62vw, 14.85px) !important;
+    font-family: inherit !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    letter-spacing: normal !important;
+}
