@@ -1842,3 +1842,20 @@ body {
 .rack-tile.rack-tile-drag-visual .tile-value {
     color: #111111 !important;
 }
+
+
+/* Reduce spacing between board cells and rack tiles to one third. */
+#board {
+    gap: 2.33px !important;
+}
+
+#tileRack {
+    gap: 2.33px !important;
+}
+
+@media (max-width: 600px) {
+    #board,
+    #tileRack {
+        gap: 1.67px !important;
+    }
+}
