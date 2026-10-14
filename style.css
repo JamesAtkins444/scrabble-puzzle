@@ -1859,3 +1859,20 @@ body {
         gap: 1.67px !important;
     }
 }
+
+
+/* Invalid and isolated player tiles: red lettering and outline, without red/yellow fill. */
+.board-tile.player-invalid,
+.board-tile.player-isolated {
+    background: #f4dfad;
+    border-color: #ff0000;
+    outline: 2px solid #ff0000;
+    outline-offset: 0;
+}
+
+.board-tile.player-invalid .tile-letter,
+.board-tile.player-invalid .tile-value,
+.board-tile.player-isolated .tile-letter,
+.board-tile.player-isolated .tile-value {
+    color: #ff0000 !important;
+}
