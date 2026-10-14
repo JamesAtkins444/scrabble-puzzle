@@ -1829,3 +1829,16 @@ body {
 #tileRack .rack-slot {
     background: #ffffff !important;
 }
+
+
+/* Floating drag preview matches the white player-tile appearance. */
+.rack-tile.rack-tile-drag-visual {
+    background: #ffffff !important;
+    border-color: #222222 !important;
+    color: #111111 !important;
+}
+
+.rack-tile.rack-tile-drag-visual .tile-letter,
+.rack-tile.rack-tile-drag-visual .tile-value {
+    color: #111111 !important;
+}
