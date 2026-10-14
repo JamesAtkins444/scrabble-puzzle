@@ -1594,3 +1594,53 @@ body {
         border-radius: 5px;
     }
 }
+
+
+/* FIX: make each board square visibly separate and rounded */
+#board {
+    gap: 7px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+}
+
+#board .cell {
+    border-radius: 10px !important;
+    border: 1px solid rgba(100, 116, 139, 0.28) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    background-clip: padding-box !important;
+}
+
+#board .cell.original-tile {
+    border-radius: 10px !important;
+}
+
+#board .cell.player-valid,
+#board .cell.player-invalid,
+#board .cell.player-isolated,
+#board .cell.double-letter,
+#board .cell.triple-letter,
+#board .cell.double-word,
+#board .cell.triple-word {
+    border-radius: 10px !important;
+}
+
+@media (max-width: 600px) {
+    #board {
+        gap: 5px !important;
+    }
+
+    #board .cell,
+    #board .cell.original-tile,
+    #board .cell.player-valid,
+    #board .cell.player-invalid,
+    #board .cell.player-isolated,
+    #board .cell.double-letter,
+    #board .cell.triple-letter,
+    #board .cell.double-word,
+    #board .cell.triple-word {
+        border-radius: 7px !important;
+    }
+}
