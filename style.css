@@ -1644,3 +1644,12 @@ body {
         border-radius: 7px !important;
     }
 }
+
+
+/* Lower the text inside board and rack tiles by 5px. */
+.board-tile .tile-letter,
+.board-tile .tile-value,
+.rack-tile .tile-letter,
+.rack-tile .tile-value {
+    top: calc(var(--tile-text-top, 0px) + 5px);
+}
