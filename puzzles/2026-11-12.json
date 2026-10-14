@@ -1,0 +1,360 @@
+{
+  "date": "2026-11-12",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "F",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "I",
+      "L",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "H",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "S",
+      "K",
+      "E",
+      "D",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "F",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "I",
+      "L",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "H",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "S",
+      "K",
+      "E",
+      "D",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "3,2": "double-word",
+    "2,0": "double-letter",
+    "0,0": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "FORBAD",
+      "row": 0,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "MILO",
+      "row": 1,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "ASKED",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "HER",
+      "row": 4,
+      "col": 4,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "U",
+    "L",
+    "E",
+    "I",
+    "F",
+    "M",
+    "S"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "F",
+        ""
+      ],
+      [
+        "",
+        "",
+        "M",
+        "I",
+        "L",
+        "O",
+        ""
+      ],
+      [
+        "F",
+        "E",
+        "U",
+        "",
+        "",
+        "R",
+        ""
+      ],
+      [
+        "I",
+        "",
+        "",
+        "",
+        "",
+        "B",
+        ""
+      ],
+      [
+        "L",
+        "",
+        "",
+        "",
+        "H",
+        "A",
+        ""
+      ],
+      [
+        "M",
+        "A",
+        "S",
+        "K",
+        "E",
+        "D",
+        ""
+      ],
+      [
+        "S",
+        "",
+        "",
+        "",
+        "R",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "2,0",
+      "3,0",
+      "4,0",
+      "5,0",
+      "6,0",
+      "2,1",
+      "2,2"
+    ],
+    "score": 91,
+    "completionBonus": 50,
+    "words": [
+      "MASKED",
+      "FILMS",
+      "FEU",
+      "MU"
+    ],
+    "scoringWords": [
+      {
+        "word": "MASKED",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 13,
+        "move": 1
+      },
+      {
+        "word": "FILMS",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 14,
+        "move": 1
+      },
+      {
+        "word": "FEU",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 10,
+        "move": 2
+      },
+      {
+        "word": "MU",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "FILMS",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 27,
+        "usedTiles": 5,
+        "newKeys": [
+          "2,0",
+          "3,0",
+          "4,0",
+          "5,0",
+          "6,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "MASKED",
+            "row": 5,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 13
+          },
+          {
+            "word": "FILMS",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 14
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "FEU",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 14,
+        "usedTiles": 2,
+        "newKeys": [
+          "2,1",
+          "2,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "FEU",
+            "row": 2,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "MU",
+            "row": 1,
+            "col": 2,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 2232
+  }
+}
