@@ -2300,32 +2300,55 @@ body {
     }
 }
 
-/* Align the score and star bottoms with the bottoms of the right-side buttons. */
+/* Precisely align the visible score and star glyphs with the bottom of the icon buttons. */
 .board-top-row {
     align-items: flex-end;
 }
 
+.board-top-row .score-stack {
+    display: flex;
+    align-items: flex-end;
+    min-height: 46px;
+}
+
 .board-top-row .score-box {
     align-items: flex-end;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    min-height: 46px;
+    overflow: visible;
+}
+
+.board-top-row .score-box #scoreValue {
+    position: relative;
+    top: 7px;
+    line-height: 0.9;
+    white-space: nowrap;
 }
 
 .board-top-row .achievement-stars {
+    display: inline-flex;
     align-self: flex-end;
     align-items: flex-end;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    gap: 2px;
+    margin: 0 0 0 3px;
+    padding: 0;
+    min-height: 0;
+    line-height: 0.9;
+    white-space: nowrap;
+    position: relative;
+    top: 7px;
 }
 
 .board-top-row .achievement-star {
     display: inline-block;
     line-height: 0.9;
     vertical-align: bottom;
-}
-
-/* Make earned stars visibly turn yellow as the player's score earns them. */
-.board-top-row .achievement-star {
-    color: #b9c1c5;
+    color: #b9c1c5 !important;
     opacity: 0.7;
+    -webkit-text-stroke: 0.35px currentColor;
 }
 
 .board-top-row .achievement-star.earned {
