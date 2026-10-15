@@ -2138,23 +2138,11 @@ body {
 }
 
 
-/* Premium-square outlines sit inside each tile, matching the 4px invalid-tile outline thickness. */
-#board .cell.double-letter {
-    outline: none !important;
-    box-shadow: inset 0 0 0 4px #03916f !important;
-}
-
-#board .cell.triple-letter {
-    outline: none !important;
-    box-shadow: inset 0 0 0 4px #1aaa87 !important;
-}
-
-#board .cell.double-word {
-    outline: none !important;
-    box-shadow: inset 0 0 0 4px #e0196a !important;
-}
-
+/* Premium squares have no outline; their labels retain their premium colours. */
+#board .cell.double-letter,
+#board .cell.triple-letter,
+#board .cell.double-word,
 #board .cell.triple-word {
     outline: none !important;
-    box-shadow: inset 0 0 0 4px #ff4085 !important;
+    box-shadow: none !important;
 }
