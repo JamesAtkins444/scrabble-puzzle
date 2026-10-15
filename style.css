@@ -2615,14 +2615,3 @@ body {
 #board .cell .bonus-badge {
     translate: 0 3px !important;
 }
-
-
-/* Match player rack score text to the score text on board tiles. */
-#tileRack .rack-tile .tile-value {
-    bottom: 7% !important;
-    right: 8% !important;
-    font-family: inherit !important;
-    font-size: clamp(9.45px, 1.62vw, 14.85px) !important;
-    font-weight: 400 !important;
-    line-height: 1 !important;
-}
