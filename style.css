@@ -2153,3 +2153,38 @@ body {
     outline: none !important;
     box-shadow: none !important;
 }
+
+
+/* Match the reference layout for the three rack action buttons only. */
+#rackActions {
+    width: min(100%, 534px);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    align-items: center;
+}
+
+#rackActions #shuffleRackButton,
+#rackActions #clearBoardButton,
+#rackActions #revealPuzzleButton {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 8px;
+    border: 1px solid #ffffff;
+    border-radius: 999px;
+    background: transparent;
+    color: #ffffff;
+    text-align: center;
+}
+
+#rackActions #shuffleRackButton:hover:not(:disabled),
+#rackActions #clearBoardButton:hover:not(:disabled),
+#rackActions #revealPuzzleButton:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Keep Next Puzzle on its existing separate row and preserve its styling. */
+#rackActions #nextPuzzleButton {
+    grid-column: 1 / -1;
+}
