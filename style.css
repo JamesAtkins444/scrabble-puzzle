@@ -2098,3 +2098,41 @@ body {
     font-family: "Dongle", sans-serif !important;
     font-weight: 400 !important;
 }
+
+
+/* Premium squares use the board colour, with their labels retaining the premium colour. */
+#board .cell.double-letter {
+    background: #172c33 !important;
+    background-color: #172c33 !important;
+}
+
+#board .cell.triple-letter {
+    background: #172c33 !important;
+    background-color: #172c33 !important;
+}
+
+#board .cell.double-word {
+    background: #172c33 !important;
+    background-color: #172c33 !important;
+}
+
+#board .cell.triple-word {
+    background: #172c33 !important;
+    background-color: #172c33 !important;
+}
+
+#board .cell.double-letter .bonus-badge {
+    color: #03916f !important;
+}
+
+#board .cell.triple-letter .bonus-badge {
+    color: #1aaa87 !important;
+}
+
+#board .cell.double-word .bonus-badge {
+    color: #e0196a !important;
+}
+
+#board .cell.triple-word .bonus-badge {
+    color: #ff4085 !important;
+}
