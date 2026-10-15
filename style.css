@@ -2390,3 +2390,24 @@ body {
     opacity: 1;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
 }
+
+
+/* Style the +50 / +100 all-tiles bonus label like the played-word pills. */
+#rackActions #scoreBonus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
+    padding: 4px 24px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    color: #222222;
+    font-size: 24.95px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    box-sizing: border-box;
+}
