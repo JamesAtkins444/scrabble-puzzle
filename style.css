@@ -2543,3 +2543,15 @@ body {
 #tileRack .rack-tile .tile-letter {
     transform: translateY(-0.08em);
 }
+
+
+/* Match the spacing between board cells to the letter-rack tile spacing. */
+#board {
+    gap: 2.33px !important;
+}
+
+@media (max-width: 600px) {
+    #board {
+        gap: 1.67px !important;
+    }
+}
