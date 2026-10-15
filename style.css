@@ -2696,3 +2696,10 @@ body {
         padding: 2px !important;
     }
 }
+
+
+/* Make each visible rack cell 2% smaller than its grid column. */
+#tileRack .rack-slot {
+    width: 98% !important;
+    justify-self: center !important;
+}
