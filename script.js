@@ -3610,7 +3610,7 @@ function updateAchievementStars(
         const star = document.createElement("span");
         const earned = i <= earnedStars;
         star.className = earned ? "achievement-star earned" : "achievement-star";
-        star.innerHTML = '<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><polygon points="50,6 62,35 94,37 70,58 77,90 50,74 23,90 30,58 6,37 38,35" fill="currentColor" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" /></svg>';
+        star.innerHTML = '<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M57.23,14.5l5.87,13.97c1.13,2.69,3.67,4.54,6.58,4.78l15.1,1.26c6.93.58,9.73,9.21,4.47,13.75l-11.48,9.9c-2.21,1.91-3.18,4.89-2.51,7.73l3.47,14.75c1.59,6.77-5.76,12.1-11.7,8.5l-12.96-7.86c-2.5-1.52-5.63-1.52-8.13,0l-12.96,7.86c-5.94,3.6-13.29-1.73-11.7-8.5l3.47-14.75c.67-2.84-.3-5.83-2.51-7.73l-11.48-9.9c-5.26-4.54-2.46-13.17,4.47-13.75l15.1-1.26c2.91-.24,5.45-2.08,6.58-4.78l5.87-13.97c2.69-6.41,11.77-6.41,14.46,0Z" fill="currentColor" /></svg>';
         star.setAttribute("aria-hidden", "true");
         starsElement.appendChild(star);
     }
