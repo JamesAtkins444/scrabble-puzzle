@@ -2388,6 +2388,13 @@ body {
     -webkit-text-stroke: 0.35px currentColor;
 }
 
+.board-top-row .achievement-star svg {
+    display: block;
+    width: 1em;
+    height: 1em;
+    overflow: visible;
+}
+
 .board-top-row .achievement-star.earned {
     color: #ffd43b !important;
     opacity: 1;
