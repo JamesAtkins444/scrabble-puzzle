@@ -168,14 +168,14 @@ text-align: center;
 
 gap: 7px;
 
-padding: 6px 24px;
+padding: 4px 24px;
 
 background: white;
 
 border: 1px solid #ddd;
 border-radius: 999px;
 
-font-size: 22.68px;
+font-size: 24.95px;
 line-height: 1;
 
 box-shadow:
@@ -191,7 +191,7 @@ text-align: center;
 
 .word-pill-score {
 color: #777;
-font-size: 19.44px;
+font-size: 21.38px;
 font-weight: bold;
 text-align: center;
 }
