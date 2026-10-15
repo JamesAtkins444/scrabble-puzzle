@@ -2589,3 +2589,23 @@ body {
     transform: none !important;
     box-sizing: border-box !important;
 }
+
+
+/* Centre premium labels on original puzzle tiles too, unless a player tile occupies the premium square. */
+#board .cell.has-letter:has(.board-tile.original-tile) .bonus-badge {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
