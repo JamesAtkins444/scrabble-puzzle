@@ -2136,3 +2136,21 @@ body {
 #board .cell.triple-word .bonus-badge {
     color: #ff4085 !important;
 }
+
+
+/* Premium-square outlines match each premium label colour and the invalid-tile outline thickness. */
+#board .cell.double-letter {
+    outline: 4px solid #03916f !important;
+}
+
+#board .cell.triple-letter {
+    outline: 4px solid #1aaa87 !important;
+}
+
+#board .cell.double-word {
+    outline: 4px solid #e0196a !important;
+}
+
+#board .cell.triple-word {
+    outline: 4px solid #ff4085 !important;
+}
