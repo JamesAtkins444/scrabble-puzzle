@@ -2192,18 +2192,18 @@ body {
 }
 
 
-/* Make mobile rack action buttons wider while keeping them slightly more compact. */
+/* Make mobile rack action buttons wider with tighter spacing between them. */
 @media (max-width: 600px) {
     #rackActions {
         width: min(100%, 500px);
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
+        gap: 3px;
     }
 
     #rackActions #shuffleRackButton,
     #rackActions #clearBoardButton,
     #rackActions #revealPuzzleButton {
-        width: 96%;
+        width: 100%;
         min-width: 0;
         padding: 6px 5px;
         border: 2px solid #ffffff;
