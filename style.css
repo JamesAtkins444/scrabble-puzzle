@@ -2536,3 +2536,10 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+
+/* Re-centre Dongle letters in the board and rack tiles after the global font adjustment. */
+#board .board-tile .tile-letter,
+#tileRack .rack-tile .tile-letter {
+    transform: translateY(-0.08em);
+}
