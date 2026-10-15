@@ -2615,3 +2615,15 @@ body {
 #board .cell .bonus-badge {
     translate: 0 3px !important;
 }
+
+
+/* Match rack score text to the larger score text used on board tiles. */
+#tileRack .rack-tile .tile-value {
+    font-size: clamp(11.664px, 3.2076vw, 23.328px) !important;
+}
+
+@media (max-width: 600px) {
+    #tileRack .rack-tile .tile-value {
+        font-size: 12.8304px !important;
+    }
+}
