@@ -2627,3 +2627,41 @@ body {
         font-size: 12.8304px !important;
     }
 }
+
+
+/* Use the same shared tile styling and score layout for rack and board tiles. */
+#tileRack .rack-slot {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#tileRack .rack-tile.board-tile {
+    width: 82% !important;
+    height: 82% !important;
+    min-width: 0 !important;
+    font-size: clamp(27px, 7.425vw, 54px) !important;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#tileRack .rack-tile.board-tile .tile-letter {
+    font-size: clamp(27px, 5.4vw, 43.2px) !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+}
+
+#tileRack .rack-tile.board-tile .tile-value {
+    position: absolute !important;
+    bottom: 7% !important;
+    right: 8% !important;
+    font-size: 0.432em !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+}
+
+@media (max-width: 600px) {
+    #tileRack .rack-tile.board-tile {
+        border-radius: 4px;
+    }
+}
