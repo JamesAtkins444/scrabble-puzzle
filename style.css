@@ -2718,11 +2718,11 @@ body {
 @media (max-width: 600px) {
     #board .board-tile .tile-letter,
     #tileRack .rack-tile .tile-letter {
-        translate: 0 2px !important;
+        translate: 0 3px !important;
     }
 
     #board .board-tile .tile-value,
     #tileRack .rack-tile .tile-value {
-        translate: 0 -1px !important;
+        translate: 0 0 !important;
     }
 }
