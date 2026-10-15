@@ -2572,3 +2572,12 @@ body {
 #tileRack .rack-tile .tile-letter {
     translate: 0 7px !important;
 }
+
+
+/* Apply the same 2px-down letter spacing to player tiles on premium squares. */
+#board .board-tile.player-on-double-letter .tile-letter,
+#board .board-tile.player-on-triple-letter .tile-letter,
+#board .board-tile.player-on-double-word .tile-letter,
+#board .board-tile.player-on-triple-word .tile-letter {
+    translate: 0 7px !important;
+}
