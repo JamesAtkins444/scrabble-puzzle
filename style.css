@@ -2572,3 +2572,20 @@ body {
 #tileRack .rack-tile .tile-letter {
     translate: 0 7px !important;
 }
+
+
+/* Centre premium-square labels (3W, 3L, 2W and 2L) inside their cells. */
+#board .cell.bonus-empty .bonus-badge {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+}
