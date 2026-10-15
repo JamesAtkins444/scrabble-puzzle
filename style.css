@@ -2454,12 +2454,12 @@ body {
 }
 
 
-/* Keep the rack-to-buttons and buttons-to-pills spacing consistently at 20px. */
+/* Keep the rack-to-buttons and buttons-to-pills spacing consistently at 15px. */
 #tileRack {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 #rackActions {
     margin-top: 0;
-    row-gap: 20px;
+    row-gap: 15px;
 }
