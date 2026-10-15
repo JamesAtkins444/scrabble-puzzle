@@ -2704,3 +2704,12 @@ body {
     width: 100% !important;
     justify-self: stretch !important;
 }
+
+/* Mobile-only correction: remove the extra downward shift from tile letters.
+   Desktop positioning remains unchanged. */
+@media (max-width: 600px) {
+    #board .board-tile .tile-letter,
+    #tileRack .rack-tile .tile-letter {
+        translate: 0 0 !important;
+    }
+}
