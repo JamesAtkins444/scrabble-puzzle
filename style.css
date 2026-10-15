@@ -2555,3 +2555,13 @@ body {
         gap: 1.67px !important;
     }
 }
+
+
+/* Match rack letter and point-value text sizes to the board tiles. */
+#tileRack .rack-tile .tile-letter {
+    font-size: clamp(27px, 5.4vw, 43.2px) !important;
+}
+
+#tileRack .rack-tile .tile-value {
+    font-size: clamp(9.45px, 1.62vw, 14.85px) !important;
+}
