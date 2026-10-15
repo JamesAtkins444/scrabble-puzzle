@@ -2192,7 +2192,7 @@ body {
 }
 
 
-/* Keep rack action buttons visually consistent between desktop and mobile. */
+/* Make mobile rack action buttons wider while keeping them slightly more compact. */
 @media (max-width: 600px) {
     #rackActions {
         width: min(100%, 500px);
@@ -2203,12 +2203,12 @@ body {
     #rackActions #shuffleRackButton,
     #rackActions #clearBoardButton,
     #rackActions #revealPuzzleButton {
-        width: 90%;
+        width: 96%;
         min-width: 0;
-        padding: 7.29px 6.48px;
+        padding: 6px 5px;
         border: 2px solid #ffffff;
         border-radius: 999px;
-        font-size: 121%;
+        font-size: 115%;
         line-height: normal;
         white-space: nowrap;
     }
