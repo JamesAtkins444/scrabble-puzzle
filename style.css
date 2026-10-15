@@ -2155,9 +2155,9 @@ body {
 }
 
 
-/* Match the reference layout for the three rack action buttons only. */
+/* Match the action-button row exactly to the board's 500px maximum width. */
 #rackActions {
-    width: min(100%, 534px);
+    width: min(100%, 500px);
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
