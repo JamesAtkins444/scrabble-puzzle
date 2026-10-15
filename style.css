@@ -2618,9 +2618,9 @@ body {
 }
 
 
-/* Fine-tune premium-square bonus label position: 1px left and 2px down. */
+/* Fine-tune premium-square bonus label position: 1px left and 1px down. */
 #board .cell .bonus-badge {
-    translate: -1px 5px !important;
+    translate: -1px 4px !important;
 }
 
 
