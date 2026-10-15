@@ -2190,3 +2190,26 @@ body {
 #rackActions #nextPuzzleButton {
     grid-column: 1 / -1;
 }
+
+
+/* Keep rack action buttons visually consistent between desktop and mobile. */
+@media (max-width: 600px) {
+    #rackActions {
+        width: min(100%, 500px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    #rackActions #shuffleRackButton,
+    #rackActions #clearBoardButton,
+    #rackActions #revealPuzzleButton {
+        width: 90%;
+        min-width: 0;
+        padding: 7.29px 6.48px;
+        border: 2px solid #ffffff;
+        border-radius: 999px;
+        font-size: 121%;
+        line-height: normal;
+        white-space: nowrap;
+    }
+}
