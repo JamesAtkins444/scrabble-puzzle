@@ -163,17 +163,19 @@ min-height: 0;
 .word-pill {
 display: inline-flex;
 align-items: center;
+justify-content: center;
+text-align: center;
 
-gap: 6px;
+gap: 7px;
 
-padding: 7px 11px;
+padding: 8px 17px;
 
 background: white;
 
 border: 1px solid #ddd;
 border-radius: 999px;
 
-font-size: 18.9px;
+font-size: 22.68px;
 line-height: 1;
 
 box-shadow:
@@ -184,12 +186,14 @@ box-shadow:
 .word-pill-word {
 font-weight: bold;
 color: #222;
+text-align: center;
 }
 
 .word-pill-score {
 color: #777;
-font-size: 16.2px;
+font-size: 19.44px;
 font-weight: bold;
+text-align: center;
 }
 /* ================================================
    BOARD TILE
