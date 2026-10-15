@@ -2463,3 +2463,9 @@ body {
     margin-top: 0;
     row-gap: 15px;
 }
+
+
+/* Keep 7px of vertical space between wrapped rows of scoring pills. */
+#rackActions #wordList {
+    row-gap: 7px;
+}
