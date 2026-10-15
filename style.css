@@ -2698,8 +2698,9 @@ body {
 }
 
 
-/* Make each visible rack cell 2% smaller than its grid column. */
+/* Keep the rack-cell gaps exactly aligned with the board-cell gaps.
+   The rack grid uses the same gap values as the board at each breakpoint. */
 #tileRack .rack-slot {
-    width: 98% !important;
-    justify-self: center !important;
+    width: 100% !important;
+    justify-self: stretch !important;
 }
