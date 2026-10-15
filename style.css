@@ -2171,10 +2171,11 @@ body {
     width: 100%;
     min-width: 0;
     padding: 10px 8px;
-    border: 1px solid #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 999px;
     background: transparent;
     color: #ffffff;
+    font-size: 110%;
     text-align: center;
 }
 
