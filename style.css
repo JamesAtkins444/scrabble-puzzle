@@ -2420,3 +2420,29 @@ body {
         font-size: 17.55px;
     }
 }
+
+
+/* Keep the bonus description and points aligned like a scoring-word pill. */
+#rackActions #scoreBonus {
+    gap: 7px;
+}
+
+#rackActions #scoreBonus .score-bonus-label {
+    font-size: 24.95px;
+    font-weight: bold;
+    color: #222222;
+}
+
+#rackActions #scoreBonus .word-pill-score {
+    font-size: 21.38px;
+}
+
+@media (max-width: 600px) {
+    #rackActions #scoreBonus .score-bonus-label {
+        font-size: 17.55px;
+    }
+
+    #rackActions #scoreBonus .word-pill-score {
+        font-size: 14.85px;
+    }
+}
