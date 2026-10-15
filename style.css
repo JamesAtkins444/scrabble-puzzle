@@ -2168,9 +2168,10 @@ body {
 #rackActions #clearBoardButton,
 #rackActions #revealPuzzleButton {
     box-sizing: border-box;
-    width: 100%;
+    width: 90%;
     min-width: 0;
-    padding: 8.1px 7.2px;
+    justify-self: center;
+    padding: 7.29px 6.48px;
     border: 2px solid #ffffff;
     border-radius: 999px;
     background: transparent;
