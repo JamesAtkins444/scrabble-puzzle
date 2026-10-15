@@ -2213,3 +2213,12 @@ body {
         white-space: nowrap;
     }
 }
+
+/* Invert rack action buttons while they are being pressed or touched. */
+#rackActions #shuffleRackButton:active:not(:disabled),
+#rackActions #clearBoardButton:active:not(:disabled),
+#rackActions #revealPuzzleButton:active:not(:disabled) {
+    background: #ffffff;
+    color: #264653;
+}
+
