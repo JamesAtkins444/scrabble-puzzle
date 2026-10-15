@@ -2615,3 +2615,17 @@ body {
 #board .cell .bonus-badge {
     translate: 0 3px !important;
 }
+
+
+/* Match player-rack tile scores to the board tile scores in typography and placement. */
+#board .board-tile .tile-value,
+#tileRack .rack-tile .tile-value {
+    position: absolute !important;
+    bottom: 7% !important;
+    right: 8% !important;
+    font-family: inherit !important;
+    font-size: clamp(9.45px, 1.62vw, 14.85px) !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+    transform: translateY(0.08em) !important;
+}
