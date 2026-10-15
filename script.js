@@ -4199,6 +4199,44 @@ function revealBestAnswer() {
     if (bestScoreBoxElement) {
         bestScoreBoxElement.hidden = true;
     }
+
+    // Keep the scoring pills visible under the rack, while hiding rack controls.
+    const rackActionsElement = document.getElementById("rackActions");
+    if (rackActionsElement) rackActionsElement.hidden = false;
+    [shuffleRackButton, clearBoardButton, revealPuzzleButton].forEach(button => {
+        if (button) button.hidden = true;
+    });
+    if (nextPuzzleButton) nextPuzzleButton.hidden = true;
+
+    // Show the solver's all-tiles bonus pill when the revealed solution earns one.
+    if (scoreBonusElement) {
+        let bonus = 0;
+        if (bestSolution.fullSolution) {
+            if (bestSolution.moves.length > 1) {
+                bonus = bestSolution.completionBonus || 50;
+            } else {
+                const move = bestSolution.moves[0];
+                if (move && move.usedTiles === initialRackTiles.length) {
+                    const mainWordUsesAllTiles =
+                        (move.newKeys || []).length === initialRackTiles.length;
+                    bonus = mainWordUsesAllTiles ? 100 : 50;
+                }
+            }
+        }
+
+        if (bonus === 100) {
+            scoreBonusElement.innerHTML =
+                '<span class="score-bonus-label">BINGO!</span>' +
+                '<span class="word-pill-score">+100</span>';
+        } else if (bonus === 50) {
+            scoreBonusElement.innerHTML =
+                '<span class="score-bonus-label">ALL TILE BONUS</span>' +
+                '<span class="word-pill-score">+50</span>';
+        } else {
+            scoreBonusElement.textContent = "";
+        }
+    }
+
     // Keep the board area clear after revealing the solver's answer.
     if (tileMessageElement) {
         tileMessageElement.textContent = "";
@@ -4532,6 +4570,9 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
         if (rackActionsElement) {
             rackActionsElement.hidden = false;
         }
+        [shuffleRackButton, clearBoardButton, revealPuzzleButton, nextPuzzleButton].forEach(button => {
+            if (button) button.hidden = false;
+        });
         if (bestScoreBoxElement) {
             bestScoreBoxElement.hidden = true;
         }
