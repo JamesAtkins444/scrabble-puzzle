@@ -2381,6 +2381,7 @@ body {
 
 .board-top-row .achievement-star {
     display: inline-block;
+    font-size: 36.8px;
     line-height: 0.9;
     vertical-align: bottom;
     color: #b9c1c5 !important;
