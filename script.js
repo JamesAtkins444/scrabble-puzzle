@@ -4203,9 +4203,14 @@ function revealBestAnswer() {
     // Keep the scoring pills visible under the rack, while hiding rack controls.
     const rackActionsElement = document.getElementById("rackActions");
     if (rackActionsElement) rackActionsElement.hidden = false;
-    [shuffleRackButton, clearBoardButton, revealPuzzleButton].forEach(button => {
-        if (button) button.hidden = true;
+    // Keep Shuffle and Clear visible, but disable them after revealing the solution.
+    [shuffleRackButton, clearBoardButton].forEach(button => {
+        if (button) {
+            button.hidden = false;
+            button.disabled = true;
+        }
     });
+    if (revealPuzzleButton) revealPuzzleButton.hidden = true;
     if (nextPuzzleButton) nextPuzzleButton.hidden = true;
 
     // Show the solver's all-tiles bonus pill when the revealed solution earns one.
@@ -4571,7 +4576,10 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
             rackActionsElement.hidden = false;
         }
         [shuffleRackButton, clearBoardButton, revealPuzzleButton, nextPuzzleButton].forEach(button => {
-            if (button) button.hidden = false;
+            if (button) {
+                button.hidden = false;
+                button.disabled = false;
+            }
         });
         if (bestScoreBoxElement) {
             bestScoreBoxElement.hidden = true;
