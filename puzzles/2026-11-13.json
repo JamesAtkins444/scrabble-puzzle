@@ -1,0 +1,361 @@
+{
+  "date": "2026-11-13",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "I",
+      "N",
+      "L",
+      "E",
+      "T",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "",
+      "",
+      "M",
+      "",
+      "",
+      ""
+    ],
+    [
+      "P",
+      "R",
+      "E",
+      "A",
+      "C",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "I",
+      "N",
+      "L",
+      "E",
+      "T",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "",
+      "",
+      "M",
+      "",
+      "",
+      ""
+    ],
+    [
+      "P",
+      "R",
+      "E",
+      "A",
+      "C",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,5": "double-word",
+    "2,6": "triple-letter",
+    "6,5": "double-letter",
+    "6,1": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "PREACT",
+      "row": 4,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "HEMAL",
+      "row": 1,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "INLET",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "LISP",
+      "row": 1,
+      "col": 0,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "V",
+    "X",
+    "E",
+    "R",
+    "I",
+    "S"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "V"
+      ],
+      [
+        "L",
+        "",
+        "",
+        "H",
+        "I",
+        "R",
+        "E"
+      ],
+      [
+        "I",
+        "N",
+        "L",
+        "E",
+        "T",
+        "",
+        "X"
+      ],
+      [
+        "S",
+        "",
+        "",
+        "M",
+        "",
+        "",
+        "E"
+      ],
+      [
+        "P",
+        "R",
+        "E",
+        "A",
+        "C",
+        "T",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "L",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,6",
+      "1,6",
+      "2,6",
+      "3,6",
+      "4,6",
+      "1,4",
+      "1,5"
+    ],
+    "score": 101,
+    "completionBonus": 50,
+    "words": [
+      "PREACTS",
+      "VEXES",
+      "HIRE",
+      "IT"
+    ],
+    "scoringWords": [
+      {
+        "word": "PREACTS",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 11,
+        "move": 1
+      },
+      {
+        "word": "VEXES",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 31,
+        "move": 1
+      },
+      {
+        "word": "HIRE",
+        "row": 1,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 7,
+        "move": 2
+      },
+      {
+        "word": "IT",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "VEXES",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 42,
+        "usedTiles": 5,
+        "newKeys": [
+          "0,6",
+          "1,6",
+          "2,6",
+          "3,6",
+          "4,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "PREACTS",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 11
+          },
+          {
+            "word": "VEXES",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 31
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "HIRE",
+        "row": 1,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 9,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,4",
+          "1,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "HIRE",
+            "row": 1,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "IT",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1218
+  }
+}
