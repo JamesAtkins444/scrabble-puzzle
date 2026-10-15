@@ -2186,7 +2186,7 @@ function displayTileRack() {
 
 
             tile.className =
-                "rack-tile";
+                "board-tile rack-tile";
             tile.dataset.rackIndex = index;
 
 
