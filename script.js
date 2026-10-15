@@ -2460,6 +2460,8 @@ function handleBoardClick(
     row,
     col
 ) {
+    // Once the solver solution is revealed, all board tiles are locked.
+    if (answerRevealed) return;
 
     const key =
         keyForCell(
@@ -3303,7 +3305,7 @@ function calculatePlayerScore() {
     // the displayed total compared with the solver's move summary.
     if (answerRevealed && bestSolution) {
         score = bestSolution.score;
-     //   updateScoreDisplay(score, "Solver turn-by-turn total");
+        updateScoreDisplay(score, "");
         displayScoringWords(bestSolution.scoringWords || []);
         return score;
     }
@@ -4165,6 +4167,7 @@ function findBestSolution() {
 function revealBestAnswer() {
     if (!bestSolution || !bestSolution.newKeys.length) return;
 
+    answerRevealed = true;
     board = cloneBoard(bestSolution.board);
     playerPlacedTiles = {};
 
@@ -4186,6 +4189,15 @@ function revealBestAnswer() {
         revealAnswerButton.textContent = bestSolution.fullSolution
             ? "Full Answer Revealed"
             : "Solver Answer Revealed";
+    }
+    // Sharing is unavailable after revealing the solution.
+    if (shareResultsButton) {
+        shareResultsButton.disabled = true;
+        shareResultsButton.classList.remove("needs-sharing");
+    }
+    // Keep the solver step panel hidden after revealing the solution.
+    if (bestScoreBoxElement) {
+        bestScoreBoxElement.hidden = true;
     }
     // Keep the board area clear after revealing the solver's answer.
     if (tileMessageElement) {
@@ -4282,7 +4294,8 @@ if (revealPuzzleButton && bestScoreBoxElement) {
         if (rackActionsElement) {
             rackActionsElement.hidden = true;
         }
-        bestScoreBoxElement.hidden = false;
+        // Do not show the solver step/details panel when revealing the answer.
+        bestScoreBoxElement.hidden = true;
         revealPuzzleButton.disabled = true;
         revealPuzzleButton.setAttribute("aria-expanded", "true");
 
@@ -4524,7 +4537,12 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
         }
         if (revealPuzzleButton) {
             revealPuzzleButton.disabled = false;
+            revealPuzzleButton.textContent = "Reveal Solver";
+            revealPuzzleButton.removeAttribute("aria-label");
             revealPuzzleButton.setAttribute("aria-expanded", "false");
+        }
+        if (shareResultsButton) {
+            shareResultsButton.disabled = false;
         }
 
         displayBoard();
@@ -4784,6 +4802,10 @@ SHARE RESULTS POPUP
 
 function updateShareButtonPulse() {
     if (!shareResultsButton) return;
+    if (answerRevealed) {
+        shareResultsButton.classList.remove("needs-sharing");
+        return;
+    }
 
     const allTilesUsed =
         playerTiles.length === 0 &&
