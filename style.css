@@ -2446,3 +2446,9 @@ body {
         font-size: 14.85px;
     }
 }
+
+
+/* Hide the bonus pill entirely until a bonus is earned. */
+#rackActions #scoreBonus:empty {
+    display: none;
+}
