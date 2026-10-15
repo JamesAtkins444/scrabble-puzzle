@@ -4200,18 +4200,18 @@ function revealBestAnswer() {
         bestScoreBoxElement.hidden = true;
     }
 
-    // Keep the scoring pills visible under the rack, while hiding rack controls.
+    // Remove the rack controls so the scoring pills move up into their place.
     const rackActionsElement = document.getElementById("rackActions");
-    if (rackActionsElement) rackActionsElement.hidden = false;
-    // Keep Shuffle and Clear visible, but disable them after revealing the solution.
-    [shuffleRackButton, clearBoardButton].forEach(button => {
+    if (rackActionsElement) {
+        rackActionsElement.hidden = false;
+        rackActionsElement.classList.add("solver-revealed");
+    }
+    [shuffleRackButton, clearBoardButton, revealPuzzleButton, nextPuzzleButton].forEach(button => {
         if (button) {
-            button.hidden = false;
+            button.hidden = true;
             button.disabled = true;
         }
     });
-    if (revealPuzzleButton) revealPuzzleButton.hidden = true;
-    if (nextPuzzleButton) nextPuzzleButton.hidden = true;
 
     // Show the solver's all-tiles bonus pill when the revealed solution earns one.
     if (scoreBonusElement) {
@@ -4574,6 +4574,7 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
         const rackActionsElement = document.getElementById("rackActions");
         if (rackActionsElement) {
             rackActionsElement.hidden = false;
+            rackActionsElement.classList.remove("solver-revealed");
         }
         [shuffleRackButton, clearBoardButton, revealPuzzleButton, nextPuzzleButton].forEach(button => {
             if (button) {
