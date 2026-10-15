@@ -3608,7 +3608,7 @@ function updateAchievementStars(
         const star = document.createElement("span");
         const earned = i <= earnedStars;
         star.className = earned ? "achievement-star earned" : "achievement-star";
-        star.textContent = "★";
+        star.innerHTML = '<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><polygon points="50,6 62,35 94,37 70,58 77,90 50,74 23,90 30,58 6,37 38,35" fill="currentColor" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" /></svg>';
         star.setAttribute("aria-hidden", "true");
         starsElement.appendChild(star);
     }
