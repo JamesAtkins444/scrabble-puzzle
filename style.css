@@ -2148,8 +2148,16 @@ body {
 }
 
 
-/* Valid player-placed tiles get a white outline matching the invalid-tile outline thickness. */
+/* Draw the valid-tile white outline inside the tile so it stays visible above the tile fill. */
 #board .board-tile.player-valid:not(.player-invalid):not(.player-isolated) {
-    outline: 4px solid #ffffff !important;
-    outline-offset: 0 !important;
+    outline: none !important;
+    box-shadow: inset 0 0 0 4px #ffffff !important;
+}
+
+#board .board-tile.player-valid.player-on-double-letter:not(.player-invalid):not(.player-isolated),
+#board .board-tile.player-valid.player-on-triple-letter:not(.player-invalid):not(.player-isolated),
+#board .board-tile.player-valid.player-on-double-word:not(.player-invalid):not(.player-isolated),
+#board .board-tile.player-valid.player-on-triple-word:not(.player-invalid):not(.player-isolated) {
+    outline: none !important;
+    box-shadow: inset 0 0 0 4px #ffffff !important;
 }
