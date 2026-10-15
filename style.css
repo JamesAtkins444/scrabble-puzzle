@@ -2756,3 +2756,11 @@ body {
 #rackActions.solver-revealed .played-words-summary {
     margin-top: 0;
 }
+
+
+/* Move premium-square labels 1px up on mobile only. */
+@media (max-width: 600px) {
+    #board .cell .bonus-badge {
+        translate: -1px 3px !important;
+    }
+}
