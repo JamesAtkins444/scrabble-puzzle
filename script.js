@@ -4190,9 +4190,9 @@ function revealBestAnswer() {
             ? "Full Answer Revealed"
             : "Solver Answer Revealed";
     }
-    // Sharing is unavailable after revealing the solution.
+    // Keep sharing available after revealing the solution.
     if (shareResultsButton) {
-        shareResultsButton.disabled = true;
+        shareResultsButton.disabled = false;
         shareResultsButton.classList.remove("needs-sharing");
     }
     // Keep the solver step panel hidden after revealing the solution.
@@ -4865,6 +4865,12 @@ function updateShareButtonPulse() {
 }
 
 function getShareResultsText() {
+    // After the solver is revealed, share a simple acknowledgement instead
+    // of displaying the player's score results.
+    if (answerRevealed) {
+        return "I didnt get it :(";
+    }
+
     const playerScore = Number.isFinite(score) ? score : 0;
     const solverScore =
         bestSolution && Number.isFinite(bestSolution.score)
