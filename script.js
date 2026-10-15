@@ -3569,15 +3569,20 @@ function updateAchievementStars(
         scoreValueElement.insertAdjacentElement("afterend", starsElement);
     }
 
-    let earnedStars = earnedAllTilesBonus ? 1 : 0;
-    const hasSolverScore = Number.isFinite(solverScore);
-    const beatsSolver = hasSolverScore && currentScore > solverScore;
+    const hasSolverScore =
+        Number.isFinite(solverScore) && solverScore > 0;
+    const beatsSolver =
+        hasSolverScore && currentScore > solverScore;
 
-    if (hasSolverScore && currentScore < solverScore && currentScore >= solverScore - 10) {
-        earnedStars = Math.max(earnedStars, 2);
+    // Earn stars progressively from the player's score relative to the solver:
+    // any positive score earns one, half the solver score earns two,
+    // and matching or beating the solver earns all three.
+    let earnedStars = currentScore > 0 || earnedAllTilesBonus ? 1 : 0;
+
+    if (hasSolverScore && currentScore >= solverScore * 0.5) {
+        earnedStars = 2;
     }
 
-    // Matching or beating the solver total earns all three stars.
     if (hasSolverScore && currentScore >= solverScore) {
         earnedStars = 3;
     }
