@@ -2629,17 +2629,6 @@ body {
 }
 
 
-/* Match the rack's overall grid width to the visible board-cell grid. */
-#tileRack {
-    width: min(99%, 495px) !important;
-}
-
-@media (max-width: 600px) {
-    #tileRack {
-        width: 99% !important;
-    }
-}
-
 /* Keep each rack slot exactly the same size as a board cell, and let its tile
    fill the slot just as a placed tile fills its board cell. */
 #tileRack .rack-slot {
@@ -2678,5 +2667,32 @@ body {
 @media (max-width: 600px) {
     #tileRack .rack-tile.board-tile {
         border-radius: inherit !important;
+    }
+}
+
+
+/* Use the same grid sizing formula as the board so rack slots and board cells
+   have identical dimensions: same width, padding, column count, and gap. */
+#tileRack {
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr !important;
+    gap: 2.33px !important;
+    width: min(100%, 500px) !important;
+    padding: 3px !important;
+    box-sizing: border-box !important;
+}
+
+#tileRack .rack-slot {
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+}
+
+@media (max-width: 600px) {
+    #tileRack {
+        gap: 1.67px !important;
+        padding: 2px !important;
     }
 }
