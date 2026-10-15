@@ -2300,3 +2300,36 @@ body {
     }
 }
 
+/* Align the score and star bottoms with the bottoms of the right-side buttons. */
+.board-top-row {
+    align-items: flex-end;
+}
+
+.board-top-row .score-box {
+    align-items: flex-end;
+}
+
+.board-top-row .achievement-stars {
+    align-self: flex-end;
+    align-items: flex-end;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.board-top-row .achievement-star {
+    display: inline-block;
+    line-height: 0.9;
+    vertical-align: bottom;
+}
+
+/* Make earned stars visibly turn yellow as the player's score earns them. */
+.board-top-row .achievement-star {
+    color: #b9c1c5;
+    opacity: 0.7;
+}
+
+.board-top-row .achievement-star.earned {
+    color: #ffd43b !important;
+    opacity: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
