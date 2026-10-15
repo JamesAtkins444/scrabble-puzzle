@@ -3574,13 +3574,18 @@ function updateAchievementStars(
     const beatsSolver =
         hasSolverScore && currentScore > solverScore;
 
-    // Earn stars progressively from the player's score relative to the solver:
-    // any positive score earns one, half the solver score earns two,
-    // and matching or beating the solver earns all three.
-    let earnedStars = currentScore > 0 || earnedAllTilesBonus ? 1 : 0;
+    // One star for using all seven player tiles in valid words.
+    // Two stars for finishing within 10 points below the solver.
+    // Three stars for matching or beating the solver; the crown is
+    // shown separately only when the player beats the solver.
+    let earnedStars = earnedAllTilesBonus ? 1 : 0;
 
-    if (hasSolverScore && currentScore >= solverScore * 0.5) {
-        earnedStars = 2;
+    if (
+        hasSolverScore &&
+        currentScore < solverScore &&
+        solverScore - currentScore <= 10
+    ) {
+        earnedStars = Math.max(earnedStars, 2);
     }
 
     if (hasSolverScore && currentScore >= solverScore) {
