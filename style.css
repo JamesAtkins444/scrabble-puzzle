@@ -2195,15 +2195,18 @@ body {
     grid-column: 1 / -1;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 7px;
     min-width: 0;
 }
 
 #rackActions #wordList {
     order: 0;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     margin: 0;
     justify-content: center;
 }
@@ -2410,4 +2413,10 @@ body {
     line-height: 1;
     text-align: center;
     box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    #rackActions #scoreBonus {
+        font-size: 17.55px;
+    }
 }
