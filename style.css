@@ -2629,19 +2629,23 @@ body {
 }
 
 
-/* Use the same shared tile styling and score layout for rack and board tiles. */
+/* Keep each rack slot exactly the same size as a board cell, and let its tile
+   fill the slot just as a placed tile fills its board cell. */
 #tileRack .rack-slot {
     display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    align-items: stretch !important;
+    justify-content: stretch !important;
+    min-width: 0 !important;
+    aspect-ratio: 1 / 1 !important;
 }
 
 #tileRack .rack-tile.board-tile {
-    width: 82% !important;
-    height: 82% !important;
+    width: 100% !important;
+    height: 100% !important;
     min-width: 0 !important;
+    margin: 0 !important;
     font-size: clamp(27px, 7.425vw, 54px) !important;
-    border-radius: 6px;
+    border-radius: inherit !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -2662,6 +2666,6 @@ body {
 
 @media (max-width: 600px) {
     #tileRack .rack-tile.board-tile {
-        border-radius: 4px;
+        border-radius: inherit !important;
     }
 }
