@@ -2629,6 +2629,17 @@ body {
 }
 
 
+/* Match the rack's overall grid width to the visible board-cell grid. */
+#tileRack {
+    width: min(99%, 495px) !important;
+}
+
+@media (max-width: 600px) {
+    #tileRack {
+        width: 99% !important;
+    }
+}
+
 /* Keep each rack slot exactly the same size as a board cell, and let its tile
    fill the slot just as a placed tile fills its board cell. */
 #tileRack .rack-slot {
