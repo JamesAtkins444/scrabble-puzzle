@@ -2360,7 +2360,7 @@ body {
 
 .board-top-row .score-box #scoreValue {
     position: relative;
-    top: 7px;
+    top: 14px;
     line-height: 0.9;
     white-space: nowrap;
 }
@@ -2727,9 +2727,11 @@ body {
     }
 }
 
-/* On mobile, align the visible bottom of the score with the bottom of the help/share buttons. */
+
+
+/* Keep the score lowered consistently on both desktop and mobile so its visible baseline sits beside the button bottoms. */
 @media (max-width: 600px) {
     .board-top-row .score-box #scoreValue {
-        top: 0;
+        top: 14px;
     }
 }
