@@ -2469,3 +2469,70 @@ body {
 #rackActions #wordList {
     row-gap: 7px;
 }
+
+
+/* Dongle has unusually tall font metrics. Correct the optical vertical alignment
+   of text in the current game layout without changing the layout dimensions. */
+#board .board-tile .tile-letter,
+#tileRack .rack-tile .tile-letter,
+#board .cell.bonus-empty .bonus-badge,
+#board .cell.has-letter .bonus-badge {
+    transform: translateY(0.08em);
+}
+
+#board .board-tile .tile-value,
+#tileRack .rack-tile .tile-value {
+    transform: translateY(0.08em);
+}
+
+#rackActions .word-pill,
+#rackActions #scoreBonus {
+    line-height: 0.8;
+}
+
+#rackActions .word-pill-word,
+#rackActions .word-pill-score,
+#rackActions #scoreBonus .score-bonus-label,
+#rackActions #scoreBonus .word-pill-score {
+    position: relative;
+    top: 0.08em;
+    line-height: 0.8;
+}
+
+#rackActions > button,
+#generatorPanel button,
+#bestScoreBox button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.8;
+}
+
+#rackActions #shuffleRackButton,
+#rackActions #clearBoardButton,
+#rackActions #revealPuzzleButton {
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+#scoreValue,
+.tile-message,
+.best-score-title,
+.best-score-word,
+.best-score-value,
+.best-score-message,
+#generatorPanel h2,
+#generatorPanel .panel-description,
+#generatorPanel .setting label,
+#generatorPanel .setting-help,
+.rules-dialog,
+.share-results-dialog {
+    line-height: 0.85;
+}
+
+.board-top-row .rules-help-button,
+.board-top-row .share-results-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
