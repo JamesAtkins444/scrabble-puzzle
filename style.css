@@ -2602,3 +2602,12 @@ body {
     transform: translateY(-0.08em) !important;
     translate: 0 7px !important;
 }
+
+
+/* Move premium-tile letters an additional 2px down. */
+#board .board-tile.player-on-double-letter .tile-letter,
+#board .board-tile.player-on-triple-letter .tile-letter,
+#board .board-tile.player-on-double-word .tile-letter,
+#board .board-tile.player-on-triple-word .tile-letter {
+    translate: 0 9px !important;
+}
