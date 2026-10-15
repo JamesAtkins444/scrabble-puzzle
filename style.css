@@ -2222,3 +2222,81 @@ body {
     color: #264653;
 }
 
+/* Top section refresh: compact score, rounded stars, and light icon buttons. */
+.board-top-row {
+    align-items: center;
+    margin-bottom: 0;
+    gap: 8px;
+}
+
+.board-top-row .score-box {
+    padding: 0;
+    gap: 6px;
+    align-items: center;
+}
+
+.board-top-row .score-box #scoreValue {
+    color: #ffffff;
+    font-size: 65.61px;
+    line-height: 0.9;
+}
+
+.board-top-row .score-box .score-bonus {
+    color: #ffffff;
+}
+
+.board-top-row .achievement-stars {
+    gap: 2px;
+    margin-left: 3px;
+    line-height: 0.9;
+}
+
+.board-top-row .achievement-star {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 46px;
+    line-height: 0.9;
+    -webkit-text-stroke: 0.35px currentColor;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.board-top-row .rules-help-button,
+.board-top-row .share-results-icon-button {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #264653;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+}
+
+.board-top-row .rules-help-button:hover,
+.board-top-row .share-results-icon-button:hover {
+    background: #eaf0f2;
+    border-color: #eaf0f2;
+    color: #264653;
+}
+
+#wordList {
+    margin-bottom: 2px;
+}
+
+@media (max-width: 600px) {
+    .board-top-row {
+        gap: 6px;
+    }
+
+    .board-top-row .score-box #scoreValue {
+        font-size: 65.61px;
+    }
+
+    .board-top-row .achievement-star {
+        font-size: 46px;
+    }
+
+    .board-top-row .rules-help-button {
+        margin-top: 0;
+    }
+
+    .board-top-row .share-results-icon-button {
+        margin-top: 0;
+    }
+}
+
