@@ -2618,9 +2618,9 @@ body {
 }
 
 
-/* Move premium-square bonus labels down by 3px without changing their horizontal alignment. */
+/* Fine-tune premium-square bonus label position: 1px left and 1px up. */
 #board .cell .bonus-badge {
-    translate: 0 3px !important;
+    translate: -1px 2px !important;
 }
 
 
