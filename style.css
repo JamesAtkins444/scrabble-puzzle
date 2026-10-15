@@ -2146,3 +2146,10 @@ body {
     outline: none !important;
     box-shadow: none !important;
 }
+
+
+/* Valid player-placed tiles get a white outline matching the invalid-tile outline thickness. */
+#board .board-tile.player-valid:not(.player-invalid):not(.player-isolated) {
+    outline: 4px solid #ffffff !important;
+    outline-offset: 0 !important;
+}
