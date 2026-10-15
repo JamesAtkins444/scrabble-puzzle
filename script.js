@@ -3545,7 +3545,17 @@ function updateScoreDisplay(
     }
 
     if (scoreBonusElement) {
-        scoreBonusElement.textContent = bonusText;
+        if (bonusText.includes("+100")) {
+            scoreBonusElement.innerHTML =
+                '<span class="score-bonus-label">ALL TILES IN ONE WORD BONUS</span>' +
+                '<span class="word-pill-score">+100</span>';
+        } else if (bonusText.includes("+50")) {
+            scoreBonusElement.innerHTML =
+                '<span class="score-bonus-label">ALL TILE BONUS</span>' +
+                '<span class="word-pill-score">+50</span>';
+        } else {
+            scoreBonusElement.textContent = "";
+        }
     }
 }
 
