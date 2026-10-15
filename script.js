@@ -3547,7 +3547,7 @@ function updateScoreDisplay(
     if (scoreBonusElement) {
         if (bonusText.includes("+100")) {
             scoreBonusElement.innerHTML =
-                '<span class="score-bonus-label">ALL TILES IN ONE WORD BONUS</span>' +
+                '<span class="score-bonus-label">BINGO!</span>' +
                 '<span class="word-pill-score">+100</span>';
         } else if (bonusText.includes("+50")) {
             scoreBonusElement.innerHTML =
