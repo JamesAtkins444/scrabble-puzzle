@@ -98458,6 +98458,7 @@ nitwit
 nitwits
 nival
 niveous
+niqab
 nix
 nixe
 nixed
@@ -101973,6 +101974,7 @@ ointment
 ointments
 oiticica
 oiticicas
+ok
 oka
 okapi
 okapis
@@ -121394,6 +121396,7 @@ pyxidium
 pyxie
 pyxies
 pyxis
+qadi
 qaid
 qaids
 qanat
@@ -121401,6 +121404,7 @@ qanats
 qat
 qats
 qi
+qibla
 qindar
 qindarka
 qindars
@@ -172291,6 +172295,7 @@ yurt
 yurta
 yurts
 ywis
+za
 zabaglione
 zabagliones
 zabaione
