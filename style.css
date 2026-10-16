@@ -648,11 +648,11 @@ flex-wrap: wrap;
     z-index: 9999;
     pointer-events: none;
     margin: 0;
-    transform: rotate(-4deg) scale(1.458);
-    transition: left 65ms ease-out, top 65ms ease-out;
+    transform: none;
+    transition: none;
     will-change: left, top;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.18);
-    opacity: 0.98;
+    box-shadow: none;
+    opacity: 1;
     cursor: grabbing;
 }
 
