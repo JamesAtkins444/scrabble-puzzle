@@ -168,8 +168,7 @@
     "E",
     "I",
     "F",
-    "M",
-    "S"
+    "M"
   ],
   "bestSolution": {
     "board": [
@@ -193,24 +192,24 @@
       ],
       [
         "F",
-        "E",
-        "U",
+        "",
+        "",
         "",
         "",
         "R",
         ""
       ],
       [
-        "I",
+        "L",
         "",
         "",
         "",
         "",
         "B",
-        ""
+        "I"
       ],
       [
-        "L",
+        "U",
         "",
         "",
         "",
@@ -228,7 +227,7 @@
         ""
       ],
       [
-        "S",
+        "E",
         "",
         "",
         "",
@@ -243,16 +242,14 @@
       "4,0",
       "5,0",
       "6,0",
-      "2,1",
-      "2,2"
+      "3,6"
     ],
-    "score": 91,
+    "score": 81,
     "completionBonus": 50,
     "words": [
       "MASKED",
-      "FILMS",
-      "FEU",
-      "MU"
+      "FLUME",
+      "BI"
     ],
     "scoringWords": [
       {
@@ -264,7 +261,7 @@
         "move": 1
       },
       {
-        "word": "FILMS",
+        "word": "FLUME",
         "row": 2,
         "col": 0,
         "direction": "vertical",
@@ -272,18 +269,10 @@
         "move": 1
       },
       {
-        "word": "FEU",
-        "row": 2,
-        "col": 0,
+        "word": "BI",
+        "row": 3,
+        "col": 5,
         "direction": "horizontal",
-        "score": 10,
-        "move": 2
-      },
-      {
-        "word": "MU",
-        "row": 1,
-        "col": 2,
-        "direction": "vertical",
         "score": 4,
         "move": 2
       }
@@ -291,7 +280,7 @@
     "moves": [
       {
         "turn": 1,
-        "word": "FILMS",
+        "word": "FLUME",
         "row": 2,
         "col": 0,
         "direction": "vertical",
@@ -313,7 +302,7 @@
             "score": 13
           },
           {
-            "word": "FILMS",
+            "word": "FLUME",
             "row": 2,
             "col": 0,
             "direction": "vertical",
@@ -323,38 +312,30 @@
       },
       {
         "turn": 2,
-        "word": "FEU",
-        "row": 2,
-        "col": 0,
+        "word": "BI",
+        "row": 3,
+        "col": 5,
         "direction": "horizontal",
-        "score": 14,
-        "usedTiles": 2,
+        "score": 4,
+        "usedTiles": 1,
         "newKeys": [
-          "2,1",
-          "2,2"
+          "3,6"
         ],
         "scoringWords": [
           {
-            "word": "FEU",
-            "row": 2,
-            "col": 0,
+            "word": "BI",
+            "row": 3,
+            "col": 5,
             "direction": "horizontal",
-            "score": 10
-          },
-          {
-            "word": "MU",
-            "row": 1,
-            "col": 2,
-            "direction": "vertical",
             "score": 4
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2232
+    "visitedCandidates": 1056
   }
 }

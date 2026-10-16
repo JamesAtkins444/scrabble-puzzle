@@ -168,8 +168,7 @@
     "E",
     "L",
     "O",
-    "N",
-    "S"
+    "N"
   ],
   "bestSolution": {
     "board": [
@@ -178,17 +177,17 @@
         "",
         "",
         "",
-        "",
-        "",
+        "U",
+        "T",
         ""
       ],
       [
         "",
         "G",
         "",
-        "",
-        "",
-        "",
+        "E",
+        "N",
+        "O",
         "L"
       ],
       [
@@ -198,7 +197,7 @@
         "R",
         "",
         "",
-        "E"
+        ""
       ],
       [
         "",
@@ -207,7 +206,7 @@
         "",
         "",
         "",
-        "N"
+        ""
       ],
       [
         "M",
@@ -216,16 +215,16 @@
         "H",
         "E",
         "",
-        "T"
+        ""
       ],
       [
-        "U",
+        "",
         "N",
         "",
         "",
         "",
         "",
-        "O"
+        ""
       ],
       [
         "",
@@ -234,127 +233,141 @@
         "V",
         "E",
         "R",
-        "S"
+        ""
       ]
     ],
     "newKeys": [
+      "1,3",
+      "1,4",
+      "1,5",
       "1,6",
-      "2,6",
-      "3,6",
-      "4,6",
-      "5,6",
-      "6,6",
-      "5,0"
+      "0,4",
+      "0,5"
     ],
-    "score": 87,
+    "score": 74,
     "completionBonus": 50,
     "words": [
-      "GIVERS",
-      "LENTOS",
+      "ENOL",
+      "ER",
+      "UT",
       "UN",
-      "MU"
+      "TO"
     ],
     "scoringWords": [
       {
-        "word": "GIVERS",
-        "row": 6,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "LENTOS",
+        "word": "ENOL",
         "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 21,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 12,
         "move": 1
       },
       {
-        "word": "UN",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
+        "word": "ER",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
         "score": 2,
+        "move": 1
+      },
+      {
+        "word": "UT",
+        "row": 0,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 4,
         "move": 2
       },
       {
-        "word": "MU",
-        "row": 4,
-        "col": 0,
+        "word": "UN",
+        "row": 0,
+        "col": 4,
         "direction": "vertical",
         "score": 4,
+        "move": 2
+      },
+      {
+        "word": "TO",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "LENTOS",
+        "word": "ENOL",
         "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 31,
-        "usedTiles": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 14,
+        "usedTiles": 4,
         "newKeys": [
-          "1,6",
-          "2,6",
-          "3,6",
-          "4,6",
-          "5,6",
-          "6,6"
+          "1,3",
+          "1,4",
+          "1,5",
+          "1,6"
         ],
         "scoringWords": [
           {
-            "word": "GIVERS",
-            "row": 6,
-            "col": 1,
+            "word": "ENOL",
+            "row": 1,
+            "col": 3,
             "direction": "horizontal",
-            "score": 10
+            "score": 12
           },
           {
-            "word": "LENTOS",
+            "word": "ER",
             "row": 1,
-            "col": 6,
+            "col": 3,
             "direction": "vertical",
-            "score": 21
+            "score": 2
           }
         ]
       },
       {
         "turn": 2,
-        "word": "MU",
-        "row": 4,
-        "col": 0,
-        "direction": "vertical",
-        "score": 6,
-        "usedTiles": 1,
+        "word": "UT",
+        "row": 0,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 10,
+        "usedTiles": 2,
         "newKeys": [
-          "5,0"
+          "0,4",
+          "0,5"
         ],
         "scoringWords": [
           {
-            "word": "UN",
-            "row": 5,
-            "col": 0,
+            "word": "UT",
+            "row": 0,
+            "col": 4,
             "direction": "horizontal",
-            "score": 2
+            "score": 4
           },
           {
-            "word": "MU",
-            "row": 4,
-            "col": 0,
+            "word": "UN",
+            "row": 0,
+            "col": 4,
             "direction": "vertical",
             "score": 4
+          },
+          {
+            "word": "TO",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2294
+    "visitedCandidates": 1020
   }
 }

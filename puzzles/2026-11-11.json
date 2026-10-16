@@ -168,8 +168,7 @@
     "E",
     "P",
     "O",
-    "F",
-    "S"
+    "F"
   ],
   "bestSolution": {
     "board": [
@@ -177,19 +176,19 @@
         "L",
         "",
         "",
+        "P",
         "",
         "",
-        "O",
-        "F"
+        "E"
       ],
       [
         "E",
         "",
         "J",
+        "O",
         "",
         "",
-        "P",
-        "E"
+        "F"
       ],
       [
         "A",
@@ -204,10 +203,10 @@
         "D",
         "",
         "W",
+        "E",
         "",
         "",
-        "",
-        "S"
+        ""
       ],
       [
         "E",
@@ -216,7 +215,7 @@
         "",
         "",
         "",
-        "E"
+        ""
       ],
       [
         "R",
@@ -238,80 +237,114 @@
       ]
     ],
     "newKeys": [
+      "0,3",
+      "1,3",
+      "3,3",
       "0,6",
       "1,6",
-      "2,6",
-      "3,6",
-      "4,6",
-      "0,5",
-      "1,5"
+      "2,6"
     ],
-    "score": 92,
+    "score": 91,
     "completionBonus": 50,
     "words": [
+      "JO",
+      "WE",
+      "POPE",
       "APSES",
-      "FESSE",
-      "OF",
-      "PE",
-      "OPE"
+      "EFS"
     ],
     "scoringWords": [
+      {
+        "word": "JO",
+        "row": 1,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "WE",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "POPE",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 8,
+        "move": 1
+      },
       {
         "word": "APSES",
         "row": 2,
         "col": 2,
         "direction": "horizontal",
         "score": 7,
-        "move": 1
+        "move": 2
       },
       {
-        "word": "FESSE",
+        "word": "EFS",
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 16,
-        "move": 1
-      },
-      {
-        "word": "OF",
-        "row": 0,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 10,
-        "move": 2
-      },
-      {
-        "word": "PE",
-        "row": 1,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 2
-      },
-      {
-        "word": "OPE",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
-        "score": 5,
+        "score": 12,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FESSE",
+        "word": "POPE",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 22,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,3",
+          "1,3",
+          "3,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "JO",
+            "row": 1,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "WE",
+            "row": 3,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "POPE",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 8
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "EFS",
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 23,
-        "usedTiles": 5,
+        "score": 19,
+        "usedTiles": 3,
         "newKeys": [
           "0,6",
           "1,6",
-          "2,6",
-          "3,6",
-          "4,6"
+          "2,6"
         ],
         "scoringWords": [
           {
@@ -322,55 +355,19 @@
             "score": 7
           },
           {
-            "word": "FESSE",
+            "word": "EFS",
             "row": 0,
             "col": 6,
             "direction": "vertical",
-            "score": 16
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "OPE",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
-        "score": 19,
-        "usedTiles": 2,
-        "newKeys": [
-          "0,5",
-          "1,5"
-        ],
-        "scoringWords": [
-          {
-            "word": "OF",
-            "row": 0,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 10
-          },
-          {
-            "word": "PE",
-            "row": 1,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "OPE",
-            "row": 0,
-            "col": 5,
-            "direction": "vertical",
-            "score": 5
+            "score": 12
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1124
+    "visitedCandidates": 978
   }
 }

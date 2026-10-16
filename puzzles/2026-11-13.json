@@ -12,54 +12,54 @@
       ""
     ],
     [
-      "L",
       "",
       "",
-      "H",
-      "",
-      "",
-      ""
-    ],
-    [
-      "I",
-      "N",
-      "L",
-      "E",
-      "T",
-      "",
-      ""
-    ],
-    [
       "S",
       "",
       "",
-      "M",
-      "",
       "",
       ""
     ],
     [
-      "P",
-      "R",
-      "E",
-      "A",
+      "",
+      "",
       "C",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "B",
+      "",
+      "H",
+      "A",
       "T",
+      "E",
+      "R"
+    ],
+    [
+      "A",
+      "",
+      "R",
+      "",
+      "",
+      "",
       ""
     ],
     [
-      "",
-      "",
-      "",
       "L",
-      "",
+      "A",
+      "I",
+      "G",
+      "H",
       "",
       ""
     ],
     [
+      "K",
       "",
-      "",
-      "",
+      "K",
       "",
       "",
       "",
@@ -77,54 +77,54 @@
       ""
     ],
     [
-      "L",
       "",
       "",
-      "H",
-      "",
-      "",
-      ""
-    ],
-    [
-      "I",
-      "N",
-      "L",
-      "E",
-      "T",
-      "",
-      ""
-    ],
-    [
       "S",
       "",
       "",
-      "M",
-      "",
       "",
       ""
     ],
     [
-      "P",
-      "R",
-      "E",
-      "A",
+      "",
+      "",
       "C",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "B",
+      "",
+      "H",
+      "A",
       "T",
+      "E",
+      "R"
+    ],
+    [
+      "A",
+      "",
+      "R",
+      "",
+      "",
+      "",
       ""
     ],
     [
-      "",
-      "",
-      "",
       "L",
-      "",
+      "A",
+      "I",
+      "G",
+      "H",
       "",
       ""
     ],
     [
+      "K",
       "",
-      "",
-      "",
+      "K",
       "",
       "",
       "",
@@ -132,45 +132,44 @@
     ]
   ],
   "bonusSquares": {
-    "0,5": "double-word",
-    "2,6": "triple-letter",
-    "6,5": "double-letter",
-    "6,1": "double-letter"
+    "0,6": "triple-word",
+    "5,6": "double-word",
+    "0,4": "double-letter",
+    "0,0": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "PREACT",
-      "row": 4,
+      "word": "SCHRIK",
+      "row": 1,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "LAIGH",
+      "row": 5,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "HEMAL",
-      "row": 1,
-      "col": 3,
+      "word": "BALK",
+      "row": 3,
+      "col": 0,
       "direction": "vertical"
     },
     {
-      "word": "INLET",
-      "row": 2,
-      "col": 0,
+      "word": "HATER",
+      "row": 3,
+      "col": 2,
       "direction": "horizontal"
-    },
-    {
-      "word": "LISP",
-      "row": 1,
-      "col": 0,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "E",
-    "V",
-    "X",
-    "E",
-    "R",
-    "I",
-    "S"
+    "T",
+    "A",
+    "S",
+    "O",
+    "P",
+    "I"
   ],
   "bestSolution": {
     "board": [
@@ -181,60 +180,60 @@
         "",
         "",
         "",
-        "V"
+        "A"
       ],
       [
-        "L",
         "",
         "",
-        "H",
-        "I",
-        "R",
-        "E"
-      ],
-      [
-        "I",
-        "N",
-        "L",
-        "E",
-        "T",
-        "",
-        "X"
-      ],
-      [
         "S",
         "",
         "",
-        "M",
         "",
-        "",
-        "E"
+        "P"
       ],
       [
-        "P",
-        "R",
-        "E",
-        "A",
+        "",
+        "",
         "C",
-        "T",
-        "S"
+        "",
+        "",
+        "",
+        "O"
       ],
       [
+        "B",
+        "",
+        "H",
+        "A",
+        "T",
+        "E",
+        "R"
+      ],
+      [
+        "A",
+        "",
+        "R",
         "",
         "",
         "",
+        "T"
+      ],
+      [
         "L",
-        "",
-        "",
+        "A",
+        "I",
+        "G",
+        "H",
+        "S",
         ""
       ],
       [
+        "K",
+        "",
+        "K",
         "",
         "",
-        "",
-        "",
-        "",
-        "",
+        "I",
         ""
       ]
     ],
@@ -242,48 +241,38 @@
       "0,6",
       "1,6",
       "2,6",
-      "3,6",
       "4,6",
-      "1,4",
-      "1,5"
+      "5,5",
+      "6,5"
     ],
-    "score": 101,
+    "score": 83,
     "completionBonus": 50,
     "words": [
-      "PREACTS",
-      "VEXES",
-      "HIRE",
-      "IT"
+      "APORT",
+      "LAIGHS",
+      "SI"
     ],
     "scoringWords": [
       {
-        "word": "PREACTS",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 11,
-        "move": 1
-      },
-      {
-        "word": "VEXES",
+        "word": "APORT",
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 31,
+        "score": 21,
         "move": 1
       },
       {
-        "word": "HIRE",
-        "row": 1,
-        "col": 3,
+        "word": "LAIGHS",
+        "row": 5,
+        "col": 0,
         "direction": "horizontal",
-        "score": 7,
+        "score": 10,
         "move": 2
       },
       {
-        "word": "IT",
-        "row": 1,
-        "col": 4,
+        "word": "SI",
+        "row": 5,
+        "col": 5,
         "direction": "vertical",
         "score": 2,
         "move": 2
@@ -292,70 +281,62 @@
     "moves": [
       {
         "turn": 1,
-        "word": "VEXES",
+        "word": "APORT",
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 42,
-        "usedTiles": 5,
+        "score": 21,
+        "usedTiles": 4,
         "newKeys": [
           "0,6",
           "1,6",
           "2,6",
-          "3,6",
           "4,6"
         ],
         "scoringWords": [
           {
-            "word": "PREACTS",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 11
-          },
-          {
-            "word": "VEXES",
+            "word": "APORT",
             "row": 0,
             "col": 6,
             "direction": "vertical",
-            "score": 31
+            "score": 21
           }
         ]
       },
       {
         "turn": 2,
-        "word": "HIRE",
-        "row": 1,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 9,
+        "word": "SI",
+        "row": 5,
+        "col": 5,
+        "direction": "vertical",
+        "score": 12,
         "usedTiles": 2,
         "newKeys": [
-          "1,4",
-          "1,5"
+          "5,5",
+          "6,5"
         ],
         "scoringWords": [
           {
-            "word": "HIRE",
-            "row": 1,
-            "col": 3,
+            "word": "LAIGHS",
+            "row": 5,
+            "col": 0,
             "direction": "horizontal",
-            "score": 7
+            "score": 10
           },
           {
-            "word": "IT",
-            "row": 1,
-            "col": 4,
+            "word": "SI",
+            "row": 5,
+            "col": 5,
             "direction": "vertical",
             "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1218
+    "visitedCandidates": 1898
   }
 }

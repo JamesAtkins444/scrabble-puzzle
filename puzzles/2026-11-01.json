@@ -169,8 +169,7 @@
     "R",
     "O",
     "U",
-    "P",
-    "S"
+    "P"
   ],
   "bestSolution": {
     "board": [
@@ -211,9 +210,9 @@
         ""
       ],
       [
-        "R",
+        "",
         "U",
-        "S",
+        "",
         "T",
         "",
         "L",
@@ -221,7 +220,7 @@
       ],
       [
         "",
-        "",
+        "R",
         "",
         "",
         "P",
@@ -242,21 +241,20 @@
       "5,4",
       "5,6",
       "4,6",
-      "4,0",
+      "1,4",
       "4,1",
-      "4,2",
-      "1,4"
+      "5,1"
     ],
-    "score": 91,
+    "score": 87,
     "completionBonus": 50,
     "words": [
       "PIX",
       "PE",
       "LO",
       "OX",
-      "RUST",
       "US",
-      "UP"
+      "UP",
+      "URD"
     ],
     "scoringWords": [
       {
@@ -292,25 +290,25 @@
         "move": 2
       },
       {
-        "word": "RUST",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 8,
-        "move": 3
-      },
-      {
         "word": "US",
         "row": 1,
         "col": 4,
         "direction": "horizontal",
         "score": 2,
-        "move": 4
+        "move": 3
       },
       {
         "word": "UP",
         "row": 1,
         "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 3
+      },
+      {
+        "word": "URD",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
         "score": 4,
         "move": 4
@@ -376,29 +374,6 @@
       },
       {
         "turn": 3,
-        "word": "RUST",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 8,
-        "usedTiles": 3,
-        "newKeys": [
-          "4,0",
-          "4,1",
-          "4,2"
-        ],
-        "scoringWords": [
-          {
-            "word": "RUST",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 8
-          }
-        ]
-      },
-      {
-        "turn": 4,
         "word": "UP",
         "row": 1,
         "col": 4,
@@ -424,12 +399,34 @@
             "score": 4
           }
         ]
+      },
+      {
+        "turn": 4,
+        "word": "URD",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,1",
+          "5,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "URD",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1185
+    "visitedCandidates": 510
   }
 }

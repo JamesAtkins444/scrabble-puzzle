@@ -169,8 +169,7 @@
     "D",
     "O",
     "R",
-    "E",
-    "S"
+    "E"
   ],
   "bestSolution": {
     "board": [
@@ -188,8 +187,8 @@
         "C",
         "",
         "",
-        "S",
-        "O",
+        "",
+        "",
         "D"
       ],
       [
@@ -199,7 +198,7 @@
         "C",
         "H",
         "",
-        "E"
+        "R"
       ],
       [
         "",
@@ -207,8 +206,8 @@
         "",
         "",
         "A",
-        "V",
-        "E"
+        "",
+        "O"
       ],
       [
         "",
@@ -216,8 +215,8 @@
         "",
         "",
         "R",
-        "",
-        "R"
+        "E",
+        "V"
       ],
       [
         "",
@@ -226,7 +225,7 @@
         "",
         "E",
         "",
-        ""
+        "E"
       ],
       [
         "D",
@@ -239,136 +238,89 @@
       ]
     ],
     "newKeys": [
-      "1,4",
-      "1,5",
+      "4,5",
+      "4,6",
       "1,6",
       "2,6",
       "3,6",
-      "4,6",
-      "3,5"
+      "5,6"
     ],
-    "score": 86,
+    "score": 98,
     "completionBonus": 50,
     "words": [
-      "SOD",
-      "SHARE",
-      "DEER",
-      "AVE"
+      "REV",
+      "DROVE"
     ],
     "scoringWords": [
       {
-        "word": "SOD",
-        "row": 1,
+        "word": "REV",
+        "row": 4,
         "col": 4,
         "direction": "horizontal",
-        "score": 8,
+        "score": 14,
         "move": 1
       },
       {
-        "word": "SHARE",
-        "row": 1,
-        "col": 4,
-        "direction": "vertical",
-        "score": 8,
-        "move": 1
-      },
-      {
-        "word": "DEER",
+        "word": "DROVE",
         "row": 1,
         "col": 6,
         "direction": "vertical",
-        "score": 14,
+        "score": 34,
         "move": 2
-      },
-      {
-        "word": "AVE",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 6,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "SOD",
-        "row": 1,
+        "word": "REV",
+        "row": 4,
         "col": 4,
         "direction": "horizontal",
-        "score": 16,
-        "usedTiles": 3,
-        "newKeys": [
-          "1,4",
-          "1,5",
-          "1,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "SOD",
-            "row": 1,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 8
-          },
-          {
-            "word": "SHARE",
-            "row": 1,
-            "col": 4,
-            "direction": "vertical",
-            "score": 8
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "DEER",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
         "score": 14,
-        "usedTiles": 3,
+        "usedTiles": 2,
         "newKeys": [
-          "2,6",
-          "3,6",
+          "4,5",
           "4,6"
         ],
         "scoringWords": [
           {
-            "word": "DEER",
-            "row": 1,
-            "col": 6,
-            "direction": "vertical",
+            "word": "REV",
+            "row": 4,
+            "col": 4,
+            "direction": "horizontal",
             "score": 14
           }
         ]
       },
       {
-        "turn": 3,
-        "word": "AVE",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 6,
-        "usedTiles": 1,
+        "turn": 2,
+        "word": "DROVE",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 34,
+        "usedTiles": 4,
         "newKeys": [
-          "3,5"
+          "1,6",
+          "2,6",
+          "3,6",
+          "5,6"
         ],
         "scoringWords": [
           {
-            "word": "AVE",
-            "row": 3,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 6
+            "word": "DROVE",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 34
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1841
+    "visitedCandidates": 1344
   }
 }

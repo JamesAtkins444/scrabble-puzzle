@@ -168,14 +168,13 @@
     "N",
     "M",
     "D",
-    "E",
-    "S"
+    "E"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "D",
+        "",
         "",
         "",
         "",
@@ -193,7 +192,7 @@
       ],
       [
         "",
-        "N",
+        "M",
         "A",
         "",
         "M",
@@ -213,24 +212,24 @@
         "",
         "",
         "P",
-        "",
+        "I",
         "X",
         "",
         "O"
       ],
       [
         "",
-        "",
+        "D",
         "E",
-        "",
+        "N",
         "E",
         "",
         "T"
       ],
       [
-        "M",
-        "I",
-        "S",
+        "",
+        "",
+        "",
         "E",
         "R",
         "",
@@ -238,38 +237,41 @@
       ]
     ],
     "newKeys": [
-      "6,0",
-      "6,1",
-      "6,2",
-      "6,3",
-      "0,1",
+      "4,3",
       "1,1",
-      "2,1"
+      "2,1",
+      "5,1",
+      "5,3",
+      "6,3"
     ],
-    "score": 81,
+    "score": 95,
     "completionBonus": 50,
     "words": [
-      "MISER",
-      "TAUPES",
+      "PIX",
+      "BI",
       "ET",
-      "NA",
-      "DENS"
+      "MA",
+      "EMS",
+      "DENE",
+      "BIN",
+      "ER",
+      "BINE"
     ],
     "scoringWords": [
       {
-        "word": "MISER",
-        "row": 6,
-        "col": 0,
+        "word": "PIX",
+        "row": 4,
+        "col": 2,
         "direction": "horizontal",
-        "score": 14,
+        "score": 12,
         "move": 1
       },
       {
-        "word": "TAUPES",
-        "row": 1,
-        "col": 2,
+        "word": "BI",
+        "row": 3,
+        "col": 3,
         "direction": "vertical",
-        "score": 8,
+        "score": 4,
         "move": 1
       },
       {
@@ -281,64 +283,92 @@
         "move": 2
       },
       {
-        "word": "NA",
+        "word": "MA",
         "row": 2,
         "col": 1,
         "direction": "horizontal",
-        "score": 2,
+        "score": 4,
         "move": 2
       },
       {
-        "word": "DENS",
-        "row": 0,
+        "word": "EMS",
+        "row": 1,
         "col": 1,
         "direction": "vertical",
         "score": 5,
         "move": 2
+      },
+      {
+        "word": "DENE",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 3
+      },
+      {
+        "word": "BIN",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5,
+        "move": 3
+      },
+      {
+        "word": "ER",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 4
+      },
+      {
+        "word": "BINE",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 6,
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "MISER",
-        "row": 6,
-        "col": 0,
+        "word": "PIX",
+        "row": 4,
+        "col": 2,
         "direction": "horizontal",
-        "score": 22,
-        "usedTiles": 4,
+        "score": 16,
+        "usedTiles": 1,
         "newKeys": [
-          "6,0",
-          "6,1",
-          "6,2",
-          "6,3"
+          "4,3"
         ],
         "scoringWords": [
           {
-            "word": "MISER",
-            "row": 6,
-            "col": 0,
+            "word": "PIX",
+            "row": 4,
+            "col": 2,
             "direction": "horizontal",
-            "score": 14
+            "score": 12
           },
           {
-            "word": "TAUPES",
-            "row": 1,
-            "col": 2,
+            "word": "BI",
+            "row": 3,
+            "col": 3,
             "direction": "vertical",
-            "score": 8
+            "score": 4
           }
         ]
       },
       {
         "turn": 2,
-        "word": "DENS",
-        "row": 0,
+        "word": "EMS",
+        "row": 1,
         "col": 1,
         "direction": "vertical",
-        "score": 9,
-        "usedTiles": 3,
+        "score": 11,
+        "usedTiles": 2,
         "newKeys": [
-          "0,1",
           "1,1",
           "2,1"
         ],
@@ -351,26 +381,83 @@
             "score": 2
           },
           {
-            "word": "NA",
+            "word": "MA",
             "row": 2,
             "col": 1,
             "direction": "horizontal",
-            "score": 2
+            "score": 4
           },
           {
-            "word": "DENS",
-            "row": 0,
+            "word": "EMS",
+            "row": 1,
             "col": 1,
             "direction": "vertical",
             "score": 5
           }
         ]
+      },
+      {
+        "turn": 3,
+        "word": "DENE",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 10,
+        "usedTiles": 2,
+        "newKeys": [
+          "5,1",
+          "5,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "DENE",
+            "row": 5,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "BIN",
+            "row": 3,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "BINE",
+        "row": 3,
+        "col": 3,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "ER",
+            "row": 6,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "BINE",
+            "row": 3,
+            "col": 3,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1854
+    "visitedCandidates": 1533
   }
 }

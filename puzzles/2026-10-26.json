@@ -169,8 +169,7 @@
     "I",
     "W",
     "N",
-    "B",
-    "S"
+    "B"
   ],
   "bestSolution": {
     "board": [
@@ -184,7 +183,7 @@
         ""
       ],
       [
-        "S",
+        "",
         "",
         "U",
         "P",
@@ -239,7 +238,6 @@
       ]
     ],
     "newKeys": [
-      "1,0",
       "2,0",
       "3,0",
       "4,0",
@@ -247,10 +245,10 @@
       "5,2",
       "1,2"
     ],
-    "score": 85,
+    "score": 84,
     "completionBonus": 50,
     "words": [
-      "SWAINS",
+      "WAINS",
       "BE",
       "BA",
       "UP",
@@ -258,11 +256,11 @@
     ],
     "scoringWords": [
       {
-        "word": "SWAINS",
-        "row": 1,
+        "word": "WAINS",
+        "row": 2,
         "col": 0,
         "direction": "vertical",
-        "score": 19,
+        "score": 18,
         "move": 1
       },
       {
@@ -301,14 +299,13 @@
     "moves": [
       {
         "turn": 1,
-        "word": "SWAINS",
-        "row": 1,
+        "word": "WAINS",
+        "row": 2,
         "col": 0,
         "direction": "vertical",
-        "score": 19,
-        "usedTiles": 5,
+        "score": 18,
+        "usedTiles": 4,
         "newKeys": [
-          "1,0",
           "2,0",
           "3,0",
           "4,0",
@@ -316,11 +313,11 @@
         ],
         "scoringWords": [
           {
-            "word": "SWAINS",
-            "row": 1,
+            "word": "WAINS",
+            "row": 2,
             "col": 0,
             "direction": "vertical",
-            "score": 19
+            "score": 18
           }
         ]
       },
@@ -381,10 +378,10 @@
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1600
+    "visitedCandidates": 772
   }
 }

@@ -169,19 +169,18 @@
     "W",
     "O",
     "E",
-    "E",
-    "S"
+    "E"
   ],
   "bestSolution": {
     "board": [
       [
-        "D",
+        "W",
         "E",
         "E",
         "T",
         "",
         "",
-        ""
+        "D"
       ],
       [
         "",
@@ -190,7 +189,7 @@
         "I",
         "E",
         "",
-        ""
+        "O"
       ],
       [
         "",
@@ -199,7 +198,7 @@
         "R",
         "",
         "A",
-        "W"
+        "T"
       ],
       [
         "",
@@ -208,7 +207,7 @@
         "I",
         "",
         "G",
-        "O"
+        ""
       ],
       [
         "",
@@ -217,7 +216,7 @@
         "N",
         "E",
         "L",
-        "S"
+        ""
       ],
       [
         "",
@@ -226,7 +225,7 @@
         "G",
         "",
         "E",
-        "T"
+        ""
       ],
       [
         "",
@@ -239,73 +238,29 @@
       ]
     ],
     "newKeys": [
-      "2,6",
-      "3,6",
-      "4,6",
-      "5,6",
       "0,0",
       "0,1",
-      "0,2"
+      "0,2",
+      "0,6",
+      "1,6",
+      "2,6"
     ],
-    "score": 88,
+    "score": 75,
     "completionBonus": 50,
     "words": [
-      "AW",
-      "GO",
-      "DYNELS",
+      "WEET",
       "ET",
-      "WOST",
-      "DEET",
-      "ET"
+      "AT",
+      "DOT"
     ],
     "scoringWords": [
       {
-        "word": "AW",
-        "row": 2,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "GO",
-        "row": 3,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 1
-      },
-      {
-        "word": "DYNELS",
-        "row": 4,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "ET",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "WOST",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
-        "score": 7,
-        "move": 1
-      },
-      {
-        "word": "DEET",
+        "word": "WEET",
         "row": 0,
         "col": 0,
         "direction": "horizontal",
-        "score": 9,
-        "move": 2
+        "score": 15,
+        "move": 1
       },
       {
         "word": "ET",
@@ -313,69 +268,33 @@
         "col": 2,
         "direction": "vertical",
         "score": 2,
+        "move": 1
+      },
+      {
+        "word": "AT",
+        "row": 2,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "DOT",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 6,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "WOST",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
-        "score": 27,
-        "usedTiles": 4,
-        "newKeys": [
-          "2,6",
-          "3,6",
-          "4,6",
-          "5,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "AW",
-            "row": 2,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "GO",
-            "row": 3,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "DYNELS",
-            "row": 4,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 10
-          },
-          {
-            "word": "ET",
-            "row": 5,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "WOST",
-            "row": 2,
-            "col": 6,
-            "direction": "vertical",
-            "score": 7
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "DEET",
+        "word": "WEET",
         "row": 0,
         "col": 0,
         "direction": "horizontal",
-        "score": 11,
+        "score": 17,
         "usedTiles": 3,
         "newKeys": [
           "0,0",
@@ -384,11 +303,11 @@
         ],
         "scoringWords": [
           {
-            "word": "DEET",
+            "word": "WEET",
             "row": 0,
             "col": 0,
             "direction": "horizontal",
-            "score": 9
+            "score": 15
           },
           {
             "word": "ET",
@@ -398,12 +317,42 @@
             "score": 2
           }
         ]
+      },
+      {
+        "turn": 2,
+        "word": "DOT",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,6",
+          "1,6",
+          "2,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "AT",
+            "row": 2,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "DOT",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1921
+    "visitedCandidates": 1156
   }
 }

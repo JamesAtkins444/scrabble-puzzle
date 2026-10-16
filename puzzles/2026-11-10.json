@@ -170,8 +170,7 @@
     "A",
     "J",
     "U",
-    "E",
-    "S"
+    "E"
   ],
   "bestSolution": {
     "board": [
@@ -179,9 +178,9 @@
         "",
         "",
         "",
-        "E",
-        "L",
-        "S",
+        "",
+        "",
+        "",
         ""
       ],
       [
@@ -194,8 +193,8 @@
         ""
       ],
       [
-        "",
-        "",
+        "L",
+        "E",
         "A",
         "",
         "G",
@@ -244,18 +243,16 @@
       "2,2",
       "3,2",
       "4,2",
-      "0,3",
-      "0,4",
-      "0,5"
+      "2,0",
+      "2,1"
     ],
-    "score": 97,
+    "score": 94,
     "completionBonus": 50,
     "words": [
       "UT",
       "PE",
       "JAUP",
-      "ELS",
-      "SPARTAN"
+      "LEA"
     ],
     "scoringWords": [
       {
@@ -283,18 +280,10 @@
         "move": 1
       },
       {
-        "word": "ELS",
-        "row": 0,
-        "col": 3,
+        "word": "LEA",
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "SPARTAN",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
         "score": 9,
         "move": 2
       }
@@ -340,39 +329,31 @@
       },
       {
         "turn": 2,
-        "word": "ELS",
-        "row": 0,
-        "col": 3,
+        "word": "LEA",
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 12,
-        "usedTiles": 3,
+        "score": 9,
+        "usedTiles": 2,
         "newKeys": [
-          "0,3",
-          "0,4",
-          "0,5"
+          "2,0",
+          "2,1"
         ],
         "scoringWords": [
           {
-            "word": "ELS",
-            "row": 0,
-            "col": 3,
+            "word": "LEA",
+            "row": 2,
+            "col": 0,
             "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "SPARTAN",
-            "row": 0,
-            "col": 5,
-            "direction": "vertical",
             "score": 9
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1752
+    "visitedCandidates": 740
   }
 }

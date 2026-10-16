@@ -168,8 +168,7 @@
     "C",
     "U",
     "N",
-    "A",
-    "S"
+    "A"
   ],
   "bestSolution": {
     "board": [
@@ -219,7 +218,7 @@
         ""
       ],
       [
-        "S",
+        "",
         "",
         "S",
         "A",
@@ -243,16 +242,15 @@
       "2,2",
       "2,3",
       "3,0",
-      "4,0",
-      "5,0"
+      "4,0"
     ],
-    "score": 93,
+    "score": 80,
     "completionBonus": 50,
     "words": [
       "CUED",
       "ED",
       "DO",
-      "CANS"
+      "CAN"
     ],
     "scoringWords": [
       {
@@ -280,11 +278,11 @@
         "move": 1
       },
       {
-        "word": "CANS",
+        "word": "CAN",
         "row": 2,
         "col": 0,
         "direction": "vertical",
-        "score": 24,
+        "score": 11,
         "move": 2
       }
     ],
@@ -329,32 +327,31 @@
       },
       {
         "turn": 2,
-        "word": "CANS",
+        "word": "CAN",
         "row": 2,
         "col": 0,
         "direction": "vertical",
-        "score": 24,
-        "usedTiles": 3,
+        "score": 11,
+        "usedTiles": 2,
         "newKeys": [
           "3,0",
-          "4,0",
-          "5,0"
+          "4,0"
         ],
         "scoringWords": [
           {
-            "word": "CANS",
+            "word": "CAN",
             "row": 2,
             "col": 0,
             "direction": "vertical",
-            "score": 24
+            "score": 11
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2135
+    "visitedCandidates": 1044
   }
 }

@@ -168,8 +168,7 @@
     "A",
     "R",
     "R",
-    "T",
-    "S"
+    "T"
   ],
   "bestSolution": {
     "board": [
@@ -179,7 +178,7 @@
         "R",
         "",
         "",
-        "R",
+        "",
         ""
       ],
       [
@@ -188,7 +187,7 @@
         "I",
         "",
         "",
-        "U",
+        "",
         ""
       ],
       [
@@ -207,25 +206,25 @@
         "B",
         "",
         "",
-        ""
+        "A"
       ],
       [
         "",
-        "",
+        "T",
         "",
         "M",
         "",
         "",
-        ""
+        "R"
       ],
       [
         "",
         "",
-        "S",
+        "",
         "H",
-        "A",
-        "T",
-        ""
+        "",
+        "",
+        "U"
       ],
       [
         "",
@@ -238,56 +237,28 @@
       ]
     ],
     "newKeys": [
-      "5,2",
-      "5,4",
-      "5,5",
+      "3,6",
+      "4,6",
+      "5,6",
       "0,2",
       "1,2",
-      "0,5",
-      "1,5"
+      "4,1"
     ],
-    "score": 78,
+    "score": 77,
     "completionBonus": 50,
     "words": [
-      "SHAT",
-      "SH",
-      "AL",
-      "TO",
+      "ARUM",
       "BI",
       "RIP",
-      "RUT"
+      "BATT"
     ],
     "scoringWords": [
       {
-        "word": "SHAT",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 7,
-        "move": 1
-      },
-      {
-        "word": "SH",
-        "row": 5,
-        "col": 2,
+        "word": "ARUM",
+        "row": 3,
+        "col": 6,
         "direction": "vertical",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "AL",
-        "row": 5,
-        "col": 4,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "TO",
-        "row": 5,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
+        "score": 12,
         "move": 1
       },
       {
@@ -307,56 +278,35 @@
         "move": 2
       },
       {
-        "word": "RUT",
-        "row": 0,
-        "col": 5,
+        "word": "BATT",
+        "row": 1,
+        "col": 1,
         "direction": "vertical",
-        "score": 3,
+        "score": 6,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "SHAT",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 16,
+        "word": "ARUM",
+        "row": 3,
+        "col": 6,
+        "direction": "vertical",
+        "score": 12,
         "usedTiles": 3,
         "newKeys": [
-          "5,2",
-          "5,4",
-          "5,5"
+          "3,6",
+          "4,6",
+          "5,6"
         ],
         "scoringWords": [
           {
-            "word": "SHAT",
-            "row": 5,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 7
-          },
-          {
-            "word": "SH",
-            "row": 5,
-            "col": 2,
+            "word": "ARUM",
+            "row": 3,
+            "col": 6,
             "direction": "vertical",
-            "score": 5
-          },
-          {
-            "word": "AL",
-            "row": 5,
-            "col": 4,
-            "direction": "vertical",
-            "score": 2
-          },
-          {
-            "word": "TO",
-            "row": 5,
-            "col": 5,
-            "direction": "vertical",
-            "score": 2
+            "score": 12
           }
         ]
       },
@@ -391,31 +341,30 @@
       },
       {
         "turn": 3,
-        "word": "RUT",
-        "row": 0,
-        "col": 5,
+        "word": "BATT",
+        "row": 1,
+        "col": 1,
         "direction": "vertical",
-        "score": 3,
-        "usedTiles": 2,
+        "score": 6,
+        "usedTiles": 1,
         "newKeys": [
-          "0,5",
-          "1,5"
+          "4,1"
         ],
         "scoringWords": [
           {
-            "word": "RUT",
-            "row": 0,
-            "col": 5,
+            "word": "BATT",
+            "row": 1,
+            "col": 1,
             "direction": "vertical",
-            "score": 3
+            "score": 6
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1732
+    "visitedCandidates": 831
   }
 }

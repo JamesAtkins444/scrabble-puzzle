@@ -4,39 +4,30 @@
   "board": [
     [
       "",
-      "F",
+      "",
+      "",
+      "",
+      "",
       "R",
-      "O",
-      "W",
-      "Z",
-      "Y"
-    ],
-    [
-      "",
-      "",
-      "",
-      "V",
-      "",
-      "",
       ""
     ],
     [
       "",
       "",
-      "P",
-      "A",
-      "T",
-      "C",
-      "H"
+      "",
+      "K",
+      "",
+      "U",
+      ""
     ],
     [
       "",
-      "",
-      "",
+      "B",
       "R",
-      "",
-      "",
-      "Y"
+      "E",
+      "A",
+      "M",
+      ""
     ],
     [
       "",
@@ -44,24 +35,33 @@
       "",
       "Y",
       "",
-      "",
-      "L"
+      "O",
+      ""
     ],
     [
       "",
       "",
       "",
+      "S",
       "",
-      "",
-      "",
-      "A"
+      "R",
+      ""
     ],
     [
       "",
       "",
       "",
+      "E",
       "",
       "",
+      ""
+    ],
+    [
+      "C",
+      "H",
+      "E",
+      "T",
+      "H",
       "",
       ""
     ]
@@ -69,39 +69,30 @@
   "originalBoard": [
     [
       "",
-      "F",
+      "",
+      "",
+      "",
+      "",
       "R",
-      "O",
-      "W",
-      "Z",
-      "Y"
-    ],
-    [
-      "",
-      "",
-      "",
-      "V",
-      "",
-      "",
       ""
     ],
     [
       "",
       "",
-      "P",
-      "A",
-      "T",
-      "C",
-      "H"
+      "",
+      "K",
+      "",
+      "U",
+      ""
     ],
     [
       "",
-      "",
-      "",
+      "B",
       "R",
-      "",
-      "",
-      "Y"
+      "E",
+      "A",
+      "M",
+      ""
     ],
     [
       "",
@@ -109,281 +100,258 @@
       "",
       "Y",
       "",
-      "",
-      "L"
+      "O",
+      ""
     ],
     [
       "",
       "",
       "",
+      "S",
       "",
-      "",
-      "",
-      "A"
+      "R",
+      ""
     ],
     [
       "",
       "",
       "",
+      "E",
       "",
       "",
+      ""
+    ],
+    [
+      "C",
+      "H",
+      "E",
+      "T",
+      "H",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "5,0": "triple-word",
-    "2,0": "double-word",
-    "6,3": "triple-letter"
+    "6,6": "double-word",
+    "0,1": "triple-letter",
+    "4,0": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "FROWZY",
-      "row": 0,
-      "col": 1,
-      "direction": "horizontal"
-    },
-    {
-      "word": "OVARY",
-      "row": 0,
+      "word": "KEYSET",
+      "row": 1,
       "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "PATCH",
+      "word": "BREAM",
       "row": 2,
-      "col": 2,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "HYLA",
-      "row": 2,
-      "col": 6,
+      "word": "CHETH",
+      "row": 6,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RUMOR",
+      "row": 0,
+      "col": 5,
       "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "F",
-    "A",
-    "S",
+    "T",
+    "D",
     "N",
-    "O",
-    "I",
-    "S"
+    "A",
+    "E",
+    "I"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "F",
+        "",
+        "",
+        "",
+        "",
         "R",
-        "O",
-        "W",
-        "Z",
-        "Y"
-      ],
-      [
-        "",
-        "",
-        "",
-        "V",
-        "",
-        "",
         ""
       ],
       [
         "",
         "",
-        "P",
-        "A",
-        "T",
-        "C",
-        "H"
+        "",
+        "K",
+        "",
+        "U",
+        ""
       ],
       [
         "",
-        "S",
-        "I",
+        "B",
         "R",
-        "",
-        "",
-        "Y"
+        "E",
+        "A",
+        "M",
+        ""
       ],
       [
         "",
         "",
         "",
         "Y",
-        "O",
         "",
-        "L"
+        "O",
+        "D"
       ],
       [
+        "T",
         "",
         "",
+        "S",
+        "",
+        "R",
+        "E"
+      ],
+      [
+        "I",
         "",
         "",
+        "E",
         "",
         "",
         "A"
       ],
       [
+        "C",
+        "H",
+        "E",
+        "T",
+        "H",
         "",
-        "",
-        "",
-        "F",
-        "A",
-        "N",
-        "S"
+        "N"
       ]
     ],
     "newKeys": [
-      "6,3",
-      "6,4",
-      "6,5",
+      "3,6",
+      "4,6",
+      "5,6",
       "6,6",
-      "3,1",
-      "3,2",
-      "4,4"
+      "4,0",
+      "5,0"
     ],
-    "score": 88,
+    "score": 71,
     "completionBonus": 50,
     "words": [
-      "FANS",
-      "HYLAS",
-      "SIR",
-      "PI",
-      "YO"
+      "OD",
+      "RE",
+      "DEAN",
+      "TIC"
     ],
     "scoringWords": [
       {
-        "word": "FANS",
-        "row": 6,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 15,
-        "move": 1
-      },
-      {
-        "word": "HYLAS",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
-        "score": 11,
-        "move": 1
-      },
-      {
-        "word": "SIR",
+        "word": "OD",
         "row": 3,
-        "col": 1,
+        "col": 5,
         "direction": "horizontal",
         "score": 3,
-        "move": 2
+        "move": 1
       },
       {
-        "word": "PI",
-        "row": 2,
-        "col": 2,
-        "direction": "vertical",
-        "score": 4,
-        "move": 2
-      },
-      {
-        "word": "YO",
+        "word": "RE",
         "row": 4,
-        "col": 3,
+        "col": 5,
         "direction": "horizontal",
-        "score": 5,
-        "move": 3
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "DEAN",
+        "row": 3,
+        "col": 6,
+        "direction": "vertical",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "TIC",
+        "row": 4,
+        "col": 0,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FANS",
-        "row": 6,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 26,
+        "word": "DEAN",
+        "row": 3,
+        "col": 6,
+        "direction": "vertical",
+        "score": 15,
         "usedTiles": 4,
         "newKeys": [
-          "6,3",
-          "6,4",
-          "6,5",
+          "3,6",
+          "4,6",
+          "5,6",
           "6,6"
         ],
         "scoringWords": [
           {
-            "word": "FANS",
-            "row": 6,
-            "col": 3,
+            "word": "OD",
+            "row": 3,
+            "col": 5,
             "direction": "horizontal",
-            "score": 15
+            "score": 3
           },
           {
-            "word": "HYLAS",
-            "row": 2,
+            "word": "RE",
+            "row": 4,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "DEAN",
+            "row": 3,
             "col": 6,
             "direction": "vertical",
-            "score": 11
+            "score": 10
           }
         ]
       },
       {
         "turn": 2,
-        "word": "SIR",
-        "row": 3,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 7,
+        "word": "TIC",
+        "row": 4,
+        "col": 0,
+        "direction": "vertical",
+        "score": 6,
         "usedTiles": 2,
         "newKeys": [
-          "3,1",
-          "3,2"
+          "4,0",
+          "5,0"
         ],
         "scoringWords": [
           {
-            "word": "SIR",
-            "row": 3,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "PI",
-            "row": 2,
-            "col": 2,
-            "direction": "vertical",
-            "score": 4
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "YO",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 1,
-        "newKeys": [
-          "4,4"
-        ],
-        "scoringWords": [
-          {
-            "word": "YO",
+            "word": "TIC",
             "row": 4,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 5
+            "col": 0,
+            "direction": "vertical",
+            "score": 6
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1377
+    "visitedCandidates": 1761
   }
 }

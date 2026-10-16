@@ -169,8 +169,7 @@
     "O",
     "A",
     "X",
-    "O",
-    "S"
+    "O"
   ],
   "bestSolution": {
     "board": [
@@ -179,9 +178,9 @@
         "",
         "",
         "",
-        "T",
-        "O",
-        "N"
+        "",
+        "",
+        ""
       ],
       [
         "",
@@ -189,8 +188,8 @@
         "",
         "E",
         "",
-        "",
-        "O"
+        "O",
+        "N"
       ],
       [
         "",
@@ -199,14 +198,14 @@
         "N",
         "C",
         "H",
-        "S"
+        ""
       ],
       [
         "",
         "",
         "",
         "S",
-        "",
+        "O",
         "",
         ""
       ],
@@ -225,7 +224,7 @@
         "",
         "R",
         "",
-        "",
+        "T",
         "A"
       ],
       [
@@ -241,19 +240,21 @@
     "newKeys": [
       "5,6",
       "6,6",
-      "0,6",
+      "3,4",
+      "1,5",
       "1,6",
-      "2,6",
-      "0,4",
-      "0,5"
+      "5,5"
     ],
-    "score": 99,
+    "score": 95,
     "completionBonus": 50,
     "words": [
       "RAX",
-      "CONCHS",
-      "NOS",
-      "TON"
+      "SO",
+      "COG",
+      "ON",
+      "OH",
+      "TA",
+      "ET"
     ],
     "scoringWords": [
       {
@@ -265,28 +266,52 @@
         "move": 1
       },
       {
-        "word": "CONCHS",
-        "row": 2,
-        "col": 1,
+        "word": "SO",
+        "row": 3,
+        "col": 3,
         "direction": "horizontal",
-        "score": 13,
+        "score": 2,
         "move": 2
       },
       {
-        "word": "NOS",
-        "row": 0,
-        "col": 6,
+        "word": "COG",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "ON",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "OH",
+        "row": 1,
+        "col": 5,
         "direction": "vertical",
         "score": 5,
-        "move": 2
+        "move": 3
       },
       {
-        "word": "TON",
-        "row": 0,
-        "col": 4,
+        "word": "TA",
+        "row": 5,
+        "col": 5,
         "direction": "horizontal",
-        "score": 5,
-        "move": 3
+        "score": 2,
+        "move": 4
+      },
+      {
+        "word": "ET",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 4
       }
     ],
     "moves": [
@@ -314,61 +339,94 @@
       },
       {
         "turn": 2,
-        "word": "NOS",
-        "row": 0,
-        "col": 6,
+        "word": "COG",
+        "row": 2,
+        "col": 4,
         "direction": "vertical",
-        "score": 18,
-        "usedTiles": 3,
+        "score": 8,
+        "usedTiles": 1,
         "newKeys": [
-          "0,6",
-          "1,6",
-          "2,6"
+          "3,4"
         ],
         "scoringWords": [
           {
-            "word": "CONCHS",
-            "row": 2,
-            "col": 1,
+            "word": "SO",
+            "row": 3,
+            "col": 3,
             "direction": "horizontal",
-            "score": 13
+            "score": 2
           },
           {
-            "word": "NOS",
-            "row": 0,
-            "col": 6,
+            "word": "COG",
+            "row": 2,
+            "col": 4,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "ON",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 7,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,5",
+          "1,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "ON",
+            "row": 1,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "OH",
+            "row": 1,
+            "col": 5,
             "direction": "vertical",
             "score": 5
           }
         ]
       },
       {
-        "turn": 3,
-        "word": "TON",
-        "row": 0,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 2,
+        "turn": 4,
+        "word": "ET",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
         "newKeys": [
-          "0,4",
-          "0,5"
+          "5,5"
         ],
         "scoringWords": [
           {
-            "word": "TON",
-            "row": 0,
-            "col": 4,
+            "word": "TA",
+            "row": 5,
+            "col": 5,
             "direction": "horizontal",
-            "score": 5
+            "score": 2
+          },
+          {
+            "word": "ET",
+            "row": 4,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1765
+    "visitedCandidates": 1122
   }
 }

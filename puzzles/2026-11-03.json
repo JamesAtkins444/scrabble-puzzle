@@ -168,8 +168,7 @@
     "S",
     "F",
     "L",
-    "E",
-    "S"
+    "E"
   ],
   "bestSolution": {
     "board": [
@@ -202,7 +201,7 @@
       ],
       [
         "",
-        "U",
+        "",
         "P",
         "",
         "",
@@ -229,9 +228,9 @@
       ],
       [
         "F",
+        "U",
+        "S",
         "E",
-        "S",
-        "S",
         "",
         "K",
         "A"
@@ -243,23 +242,20 @@
       "6,2",
       "6,3",
       "5,6",
-      "6,6",
-      "3,1"
+      "6,6"
     ],
-    "score": 90,
+    "score": 82,
     "completionBonus": 50,
     "words": [
-      "FESS",
+      "FUSE",
       "PULPERS",
       "AL",
       "KA",
-      "LA",
-      "UP",
-      "UP"
+      "LA"
     ],
     "scoringWords": [
       {
-        "word": "FESS",
+        "word": "FUSE",
         "row": 6,
         "col": 0,
         "direction": "horizontal",
@@ -297,28 +293,12 @@
         "direction": "vertical",
         "score": 2,
         "move": 2
-      },
-      {
-        "word": "UP",
-        "row": 3,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 3
-      },
-      {
-        "word": "UP",
-        "row": 3,
-        "col": 1,
-        "direction": "vertical",
-        "score": 4,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FESS",
+        "word": "FUSE",
         "row": 6,
         "col": 0,
         "direction": "horizontal",
@@ -332,7 +312,7 @@
         ],
         "scoringWords": [
           {
-            "word": "FESS",
+            "word": "FUSE",
             "row": 6,
             "col": 0,
             "direction": "horizontal",
@@ -382,40 +362,12 @@
             "score": 2
           }
         ]
-      },
-      {
-        "turn": 3,
-        "word": "UP",
-        "row": 3,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 8,
-        "usedTiles": 1,
-        "newKeys": [
-          "3,1"
-        ],
-        "scoringWords": [
-          {
-            "word": "UP",
-            "row": 3,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "UP",
-            "row": 3,
-            "col": 1,
-            "direction": "vertical",
-            "score": 4
-          }
-        ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1583
+    "visitedCandidates": 1336
   }
 }

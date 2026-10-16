@@ -169,8 +169,7 @@
     "D",
     "I",
     "A",
-    "V",
-    "S"
+    "V"
   ],
   "bestSolution": {
     "board": [
@@ -187,16 +186,16 @@
         "I",
         "",
         "",
-        "",
+        "A",
         "",
         "",
         ""
       ],
       [
         "V",
-        "A",
-        "C",
         "",
+        "C",
+        "A",
         "D",
         "",
         ""
@@ -207,7 +206,7 @@
         "H",
         "",
         "O",
-        "S",
+        "",
         ""
       ],
       [
@@ -216,7 +215,7 @@
         "E",
         "",
         "Y",
-        "A",
+        "",
         ""
       ],
       [
@@ -243,18 +242,14 @@
       "1,0",
       "2,0",
       "4,0",
-      "3,5",
-      "4,5",
-      "2,1"
+      "1,3",
+      "2,3"
     ],
-    "score": 90,
+    "score": 76,
     "completionBonus": 50,
     "words": [
       "DIVAS",
-      "OS",
-      "YA",
-      "SAP",
-      "VAC",
+      "CAD",
       "AA"
     ],
     "scoringWords": [
@@ -267,44 +262,20 @@
         "move": 1
       },
       {
-        "word": "OS",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "YA",
-        "row": 4,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "SAP",
-        "row": 3,
-        "col": 5,
-        "direction": "vertical",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "VAC",
+        "word": "CAD",
         "row": 2,
-        "col": 0,
+        "col": 2,
         "direction": "horizontal",
-        "score": 8,
-        "move": 3
+        "score": 6,
+        "move": 2
       },
       {
         "word": "AA",
-        "row": 2,
-        "col": 1,
+        "row": 1,
+        "col": 3,
         "direction": "vertical",
         "score": 2,
-        "move": 3
+        "move": 2
       }
     ],
     "moves": [
@@ -334,73 +305,38 @@
       },
       {
         "turn": 2,
-        "word": "SAP",
-        "row": 3,
-        "col": 5,
+        "word": "AA",
+        "row": 1,
+        "col": 3,
         "direction": "vertical",
-        "score": 12,
+        "score": 8,
         "usedTiles": 2,
         "newKeys": [
-          "3,5",
-          "4,5"
+          "1,3",
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "OS",
-            "row": 3,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "YA",
-            "row": 4,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "SAP",
-            "row": 3,
-            "col": 5,
-            "direction": "vertical",
-            "score": 5
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "VAC",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 10,
-        "usedTiles": 1,
-        "newKeys": [
-          "2,1"
-        ],
-        "scoringWords": [
-          {
-            "word": "VAC",
+            "word": "CAD",
             "row": 2,
-            "col": 0,
+            "col": 2,
             "direction": "horizontal",
-            "score": 8
+            "score": 6
           },
           {
             "word": "AA",
-            "row": 2,
-            "col": 1,
+            "row": 1,
+            "col": 3,
             "direction": "vertical",
             "score": 2
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 853
+    "visitedCandidates": 665
   }
 }

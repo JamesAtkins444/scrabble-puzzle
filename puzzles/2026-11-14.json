@@ -168,8 +168,7 @@
     "E",
     "E",
     "U",
-    "P",
-    "S"
+    "P"
   ],
   "bestSolution": {
     "board": [
@@ -183,10 +182,10 @@
         "Y"
       ],
       [
-        "K",
+        "R",
         "E",
         "A",
-        "S",
+        "P",
         "",
         "U",
         ""
@@ -211,7 +210,7 @@
       ],
       [
         "",
-        "",
+        "K",
         "A",
         "",
         "",
@@ -220,7 +219,7 @@
       ],
       [
         "",
-        "",
+        "U",
         "",
         "B",
         "E",
@@ -228,10 +227,10 @@
         "U"
       ],
       [
-        "P",
-        "U",
-        "R",
+        "",
         "E",
+        "",
+        "",
         "",
         "",
         ""
@@ -241,61 +240,60 @@
       "1,0",
       "1,1",
       "1,3",
-      "6,0",
-      "6,1",
-      "6,2",
-      "6,3"
+      "4,1",
+      "5,1",
+      "6,1"
     ],
-    "score": 78,
+    "score": 79,
     "completionBonus": 50,
     "words": [
-      "KEAS",
-      "OS",
-      "PURE",
-      "BE"
+      "REAP",
+      "OP",
+      "KA",
+      "KUE"
     ],
     "scoringWords": [
       {
-        "word": "KEAS",
+        "word": "REAP",
         "row": 1,
         "col": 0,
         "direction": "horizontal",
-        "score": 16,
+        "score": 12,
         "move": 1
       },
       {
-        "word": "OS",
+        "word": "OP",
         "row": 0,
         "col": 3,
         "direction": "vertical",
-        "score": 2,
+        "score": 4,
         "move": 1
       },
       {
-        "word": "PURE",
-        "row": 6,
-        "col": 0,
+        "word": "KA",
+        "row": 4,
+        "col": 1,
         "direction": "horizontal",
         "score": 6,
         "move": 2
       },
       {
-        "word": "BE",
-        "row": 5,
-        "col": 3,
+        "word": "KUE",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
-        "score": 4,
+        "score": 7,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "KEAS",
+        "word": "REAP",
         "row": 1,
         "col": 0,
         "direction": "horizontal",
-        "score": 18,
+        "score": 16,
         "usedTiles": 3,
         "newKeys": [
           "1,0",
@@ -304,57 +302,56 @@
         ],
         "scoringWords": [
           {
-            "word": "KEAS",
+            "word": "REAP",
             "row": 1,
             "col": 0,
             "direction": "horizontal",
-            "score": 16
+            "score": 12
           },
           {
-            "word": "OS",
+            "word": "OP",
             "row": 0,
-            "col": 3,
-            "direction": "vertical",
-            "score": 2
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "PURE",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 10,
-        "usedTiles": 4,
-        "newKeys": [
-          "6,0",
-          "6,1",
-          "6,2",
-          "6,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "PURE",
-            "row": 6,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 6
-          },
-          {
-            "word": "BE",
-            "row": 5,
             "col": 3,
             "direction": "vertical",
             "score": 4
           }
         ]
+      },
+      {
+        "turn": 2,
+        "word": "KUE",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 13,
+        "usedTiles": 3,
+        "newKeys": [
+          "4,1",
+          "5,1",
+          "6,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "KA",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "KUE",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 7
+          }
+        ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1804
+    "visitedCandidates": 718
   }
 }

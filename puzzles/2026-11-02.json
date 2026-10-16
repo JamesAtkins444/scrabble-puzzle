@@ -169,8 +169,7 @@
     "N",
     "A",
     "E",
-    "B",
-    "S"
+    "B"
   ],
   "bestSolution": {
     "board": [
@@ -215,7 +214,7 @@
         "L",
         "U",
         "T",
-        "S",
+        "",
         "",
         ""
       ],
@@ -242,20 +241,18 @@
       "0,4",
       "2,4",
       "3,4",
-      "4,4",
       "4,1",
       "5,1",
       "6,1"
     ],
-    "score": 87,
+    "score": 82,
     "completionBonus": 50,
     "words": [
       "FA",
       "LOB",
       "ONE",
-      "UTS",
-      "ABBES",
-      "GLUTS",
+      "ABBE",
+      "GLUT",
       "ID",
       "LIN"
     ],
@@ -285,27 +282,19 @@
         "move": 1
       },
       {
-        "word": "UTS",
-        "row": 4,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 1
-      },
-      {
-        "word": "ABBES",
+        "word": "ABBE",
         "row": 0,
         "col": 4,
         "direction": "vertical",
-        "score": 9,
+        "score": 8,
         "move": 1
       },
       {
-        "word": "GLUTS",
+        "word": "GLUT",
         "row": 4,
         "col": 0,
         "direction": "horizontal",
-        "score": 6,
+        "score": 5,
         "move": 2
       },
       {
@@ -328,17 +317,16 @@
     "moves": [
       {
         "turn": 1,
-        "word": "ABBES",
+        "word": "ABBE",
         "row": 0,
         "col": 4,
         "direction": "vertical",
-        "score": 25,
-        "usedTiles": 4,
+        "score": 21,
+        "usedTiles": 3,
         "newKeys": [
           "0,4",
           "2,4",
-          "3,4",
-          "4,4"
+          "3,4"
         ],
         "scoringWords": [
           {
@@ -363,18 +351,11 @@
             "score": 3
           },
           {
-            "word": "UTS",
-            "row": 4,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "ABBES",
+            "word": "ABBE",
             "row": 0,
             "col": 4,
             "direction": "vertical",
-            "score": 9
+            "score": 8
           }
         ]
       },
@@ -384,7 +365,7 @@
         "row": 4,
         "col": 1,
         "direction": "vertical",
-        "score": 12,
+        "score": 11,
         "usedTiles": 3,
         "newKeys": [
           "4,1",
@@ -393,11 +374,11 @@
         ],
         "scoringWords": [
           {
-            "word": "GLUTS",
+            "word": "GLUT",
             "row": 4,
             "col": 0,
             "direction": "horizontal",
-            "score": 6
+            "score": 5
           },
           {
             "word": "ID",
@@ -416,10 +397,10 @@
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2657
+    "visitedCandidates": 1353
   }
 }

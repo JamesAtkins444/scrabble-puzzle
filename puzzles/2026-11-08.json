@@ -169,8 +169,7 @@
     "S",
     "E",
     "E",
-    "B",
-    "S"
+    "B"
   ],
   "bestSolution": {
     "board": [
@@ -203,7 +202,7 @@
       ],
       [
         "",
-        "",
+        "E",
         "",
         "O",
         "",
@@ -213,7 +212,7 @@
       [
         "",
         "",
-        "E",
+        "",
         "M",
         "",
         "O",
@@ -222,7 +221,7 @@
       [
         "",
         "",
-        "S",
+        "",
         "O",
         "",
         "R",
@@ -244,18 +243,15 @@
       "2,6",
       "3,6",
       "4,6",
-      "4,2",
-      "5,2"
+      "3,1"
     ],
-    "score": 76,
+    "score": 72,
     "completionBonus": 50,
     "words": [
       "WE",
       "OS",
       "BARES",
-      "EM",
-      "SO",
-      "ESS"
+      "WE"
     ],
     "scoringWords": [
       {
@@ -283,27 +279,11 @@
         "move": 1
       },
       {
-        "word": "EM",
-        "row": 4,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 2
-      },
-      {
-        "word": "SO",
-        "row": 5,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "ESS",
-        "row": 4,
-        "col": 2,
+        "word": "WE",
+        "row": 2,
+        "col": 1,
         "direction": "vertical",
-        "score": 3,
+        "score": 5,
         "move": 2
       }
     ],
@@ -349,45 +329,30 @@
       },
       {
         "turn": 2,
-        "word": "ESS",
-        "row": 4,
-        "col": 2,
+        "word": "WE",
+        "row": 2,
+        "col": 1,
         "direction": "vertical",
-        "score": 9,
-        "usedTiles": 2,
+        "score": 5,
+        "usedTiles": 1,
         "newKeys": [
-          "4,2",
-          "5,2"
+          "3,1"
         ],
         "scoringWords": [
           {
-            "word": "EM",
-            "row": 4,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "SO",
-            "row": 5,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "ESS",
-            "row": 4,
-            "col": 2,
+            "word": "WE",
+            "row": 2,
+            "col": 1,
             "direction": "vertical",
-            "score": 3
+            "score": 5
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1604
+    "visitedCandidates": 1317
   }
 }

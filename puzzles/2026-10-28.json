@@ -171,8 +171,7 @@
     "R",
     "R",
     "A",
-    "A",
-    "S"
+    "A"
   ],
   "bestSolution": {
     "board": [
@@ -226,7 +225,7 @@
         "U",
         "R",
         "A",
-        "S",
+        "",
         "",
         "O"
       ],
@@ -245,25 +244,23 @@
       "5,1",
       "5,2",
       "5,3",
-      "5,4",
       "3,0",
       "4,0"
     ],
-    "score": 87,
+    "score": 82,
     "completionBonus": 50,
     "words": [
-      "DURAS",
+      "DURA",
       "YA",
-      "US",
       "RAD"
     ],
     "scoringWords": [
       {
-        "word": "DURAS",
+        "word": "DURA",
         "row": 5,
         "col": 0,
         "direction": "horizontal",
-        "score": 18,
+        "score": 15,
         "move": 1
       },
       {
@@ -272,14 +269,6 @@
         "col": 3,
         "direction": "vertical",
         "score": 5,
-        "move": 1
-      },
-      {
-        "word": "US",
-        "row": 4,
-        "col": 4,
-        "direction": "vertical",
-        "score": 2,
         "move": 1
       },
       {
@@ -294,26 +283,25 @@
     "moves": [
       {
         "turn": 1,
-        "word": "DURAS",
+        "word": "DURA",
         "row": 5,
         "col": 0,
         "direction": "horizontal",
-        "score": 25,
-        "usedTiles": 5,
+        "score": 20,
+        "usedTiles": 4,
         "newKeys": [
           "5,0",
           "5,1",
           "5,2",
-          "5,3",
-          "5,4"
+          "5,3"
         ],
         "scoringWords": [
           {
-            "word": "DURAS",
+            "word": "DURA",
             "row": 5,
             "col": 0,
             "direction": "horizontal",
-            "score": 18
+            "score": 15
           },
           {
             "word": "YA",
@@ -321,13 +309,6 @@
             "col": 3,
             "direction": "vertical",
             "score": 5
-          },
-          {
-            "word": "US",
-            "row": 4,
-            "col": 4,
-            "direction": "vertical",
-            "score": 2
           }
         ]
       },
@@ -354,10 +335,10 @@
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 725
+    "visitedCandidates": 357
   }
 }

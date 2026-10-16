@@ -169,37 +169,36 @@
     "R",
     "A",
     "I",
-    "O",
-    "S"
+    "O"
   ],
   "bestSolution": {
     "board": [
       [
         "",
+        "R",
+        "A",
+        "G",
+        "I",
         "",
-        "",
-        "",
-        "",
-        "",
-        "O"
+        ""
       ],
       [
         "",
         "",
         "",
         "",
+        "N",
         "",
-        "",
-        "R"
+        ""
       ],
       [
         "",
         "G",
         "",
-        "",
+        "O",
         "W",
         "",
-        "I"
+        ""
       ],
       [
         "",
@@ -208,7 +207,7 @@
         "",
         "E",
         "",
-        "G"
+        ""
       ],
       [
         "",
@@ -217,7 +216,7 @@
         "",
         "A",
         "",
-        "A"
+        ""
       ],
       [
         "",
@@ -226,7 +225,7 @@
         "",
         "V",
         "",
-        "N"
+        ""
       ],
       [
         "T",
@@ -235,82 +234,122 @@
         "P",
         "E",
         "E",
-        "S"
+        ""
       ]
     ],
     "newKeys": [
-      "0,6",
-      "1,6",
-      "2,6",
-      "3,6",
-      "4,6",
-      "5,6",
-      "6,6"
+      "0,4",
+      "1,4",
+      "0,1",
+      "0,2",
+      "0,3",
+      "2,3"
     ],
-    "score": 120,
-    "completionBonus": 0,
+    "score": 84,
+    "completionBonus": 50,
     "words": [
-      "TEEPEES",
-      "ORIGANS"
+      "INWEAVE",
+      "RAGI",
+      "OW"
     ],
     "scoringWords": [
       {
-        "word": "TEEPEES",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 9,
+        "word": "INWEAVE",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 15,
         "move": 1
       },
       {
-        "word": "ORIGANS",
+        "word": "RAGI",
         "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 11,
-        "move": 1
+        "col": 1,
+        "direction": "horizontal",
+        "score": 14,
+        "move": 2
+      },
+      {
+        "word": "OW",
+        "row": 2,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "ORIGANS",
+        "word": "INWEAVE",
         "row": 0,
-        "col": 6,
+        "col": 4,
         "direction": "vertical",
-        "score": 120,
-        "usedTiles": 7,
+        "score": 15,
+        "usedTiles": 2,
         "newKeys": [
-          "0,6",
-          "1,6",
-          "2,6",
-          "3,6",
-          "4,6",
-          "5,6",
-          "6,6"
+          "0,4",
+          "1,4"
         ],
         "scoringWords": [
           {
-            "word": "TEEPEES",
-            "row": 6,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 9
-          },
-          {
-            "word": "ORIGANS",
+            "word": "INWEAVE",
             "row": 0,
-            "col": 6,
+            "col": 4,
             "direction": "vertical",
-            "score": 11
+            "score": 15
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "RAGI",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 14,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,1",
+          "0,2",
+          "0,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "RAGI",
+            "row": 0,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 14
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "OW",
+        "row": 2,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "OW",
+            "row": 2,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 5
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 3069
+    "visitedCandidates": 1965
   }
 }

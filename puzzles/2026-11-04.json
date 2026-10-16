@@ -169,8 +169,7 @@
     "E",
     "S",
     "N",
-    "E",
-    "S"
+    "E"
   ],
   "bestSolution": {
     "board": [
@@ -181,19 +180,19 @@
         "G",
         "E",
         "R",
-        ""
+        "S"
       ],
       [
-        "",
-        "",
+        "E",
+        "F",
         "",
         "L",
         "",
         "A",
-        ""
+        "A"
       ],
       [
-        "",
+        "N",
         "",
         "",
         "E",
@@ -208,25 +207,7 @@
         "N",
         "",
         "T",
-        "A"
-      ],
-      [
-        "",
-        "",
-        "F",
-        "",
-        "",
-        "",
-        "S"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "N",
-        "E"
+        ""
       ],
       [
         "",
@@ -235,28 +216,64 @@
         "",
         "",
         "",
-        "S"
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
       ]
     ],
     "newKeys": [
+      "0,6",
+      "1,6",
       "2,6",
-      "3,6",
-      "4,6",
-      "5,6",
-      "6,6",
-      "4,2",
-      "5,5"
+      "1,0",
+      "1,1",
+      "2,0"
     ],
-    "score": 78,
+    "score": 86,
     "completionBonus": 50,
     "words": [
+      "DODGERS",
+      "AA",
       "PE",
-      "TA",
-      "EASES",
+      "SAE",
       "EF",
-      "NE"
+      "DE",
+      "OF",
+      "DEN"
     ],
     "scoringWords": [
+      {
+        "word": "DODGERS",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "AA",
+        "row": 1,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
       {
         "word": "PE",
         "row": 2,
@@ -266,55 +283,75 @@
         "move": 1
       },
       {
-        "word": "TA",
-        "row": 3,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "EASES",
-        "row": 2,
+        "word": "SAE",
+        "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 15,
+        "score": 3,
         "move": 1
       },
       {
         "word": "EF",
-        "row": 3,
-        "col": 2,
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5,
+        "move": 2
+      },
+      {
+        "word": "DE",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "OF",
+        "row": 0,
+        "col": 1,
         "direction": "vertical",
         "score": 5,
         "move": 2
       },
       {
-        "word": "NE",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
+        "word": "DEN",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 4,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "EASES",
-        "row": 2,
+        "word": "SAE",
+        "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 21,
-        "usedTiles": 5,
+        "score": 19,
+        "usedTiles": 3,
         "newKeys": [
-          "2,6",
-          "3,6",
-          "4,6",
-          "5,6",
-          "6,6"
+          "0,6",
+          "1,6",
+          "2,6"
         ],
         "scoringWords": [
+          {
+            "word": "DODGERS",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "AA",
+            "row": 1,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
           {
             "word": "PE",
             "row": 2,
@@ -323,37 +360,45 @@
             "score": 4
           },
           {
-            "word": "TA",
-            "row": 3,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "EASES",
-            "row": 2,
+            "word": "SAE",
+            "row": 0,
             "col": 6,
             "direction": "vertical",
-            "score": 15
+            "score": 3
           }
         ]
       },
       {
         "turn": 2,
         "word": "EF",
-        "row": 3,
-        "col": 2,
-        "direction": "vertical",
-        "score": 5,
-        "usedTiles": 1,
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 13,
+        "usedTiles": 2,
         "newKeys": [
-          "4,2"
+          "1,0",
+          "1,1"
         ],
         "scoringWords": [
           {
             "word": "EF",
-            "row": 3,
-            "col": 2,
+            "row": 1,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "DE",
+            "row": 0,
+            "col": 0,
+            "direction": "vertical",
+            "score": 3
+          },
+          {
+            "word": "OF",
+            "row": 0,
+            "col": 1,
             "direction": "vertical",
             "score": 5
           }
@@ -361,30 +406,30 @@
       },
       {
         "turn": 3,
-        "word": "NE",
-        "row": 5,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
+        "word": "DEN",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 4,
         "usedTiles": 1,
         "newKeys": [
-          "5,5"
+          "2,0"
         ],
         "scoringWords": [
           {
-            "word": "NE",
-            "row": 5,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 2
+            "word": "DEN",
+            "row": 0,
+            "col": 0,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1158
+    "visitedCandidates": 1046
   }
 }

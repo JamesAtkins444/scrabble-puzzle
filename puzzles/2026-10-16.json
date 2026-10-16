@@ -169,8 +169,7 @@
     "U",
     "U",
     "N",
-    "T",
-    "S"
+    "T"
   ],
   "bestSolution": {
     "board": [
@@ -202,7 +201,7 @@
         "F"
       ],
       [
-        "U",
+        "",
         "T",
         "",
         "",
@@ -217,6 +216,15 @@
         "",
         "K",
         "",
+        "U"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "N"
       ],
       [
@@ -225,17 +233,8 @@
         "",
         "",
         "",
-        "",
-        "T"
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
         "U",
-        "S"
+        "T"
       ]
     ],
     "newKeys": [
@@ -244,15 +243,13 @@
       "4,6",
       "5,6",
       "6,6",
-      "6,5",
-      "3,0"
+      "6,5"
     ],
-    "score": 75,
+    "score": 73,
     "completionBonus": 50,
     "words": [
       "DELF",
-      "FONTS",
-      "US",
+      "FOUNT",
       "UT"
     ],
     "scoringWords": [
@@ -265,7 +262,7 @@
         "move": 1
       },
       {
-        "word": "FONTS",
+        "word": "FOUNT",
         "row": 2,
         "col": 6,
         "direction": "vertical",
@@ -273,26 +270,18 @@
         "move": 1
       },
       {
-        "word": "US",
+        "word": "UT",
         "row": 6,
         "col": 5,
         "direction": "horizontal",
         "score": 4,
         "move": 2
-      },
-      {
-        "word": "UT",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FONTS",
+        "word": "FOUNT",
         "row": 2,
         "col": 6,
         "direction": "vertical",
@@ -314,7 +303,7 @@
             "score": 8
           },
           {
-            "word": "FONTS",
+            "word": "FOUNT",
             "row": 2,
             "col": 6,
             "direction": "vertical",
@@ -324,7 +313,7 @@
       },
       {
         "turn": 2,
-        "word": "US",
+        "word": "UT",
         "row": 6,
         "col": 5,
         "direction": "horizontal",
@@ -335,40 +324,19 @@
         ],
         "scoringWords": [
           {
-            "word": "US",
+            "word": "UT",
             "row": 6,
             "col": 5,
             "direction": "horizontal",
             "score": 4
           }
         ]
-      },
-      {
-        "turn": 3,
-        "word": "UT",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "usedTiles": 1,
-        "newKeys": [
-          "3,0"
-        ],
-        "scoringWords": [
-          {
-            "word": "UT",
-            "row": 3,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 2
-          }
-        ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1123
+    "visitedCandidates": 535
   }
 }

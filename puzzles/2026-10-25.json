@@ -170,8 +170,7 @@
     "E",
     "L",
     "W",
-    "M",
-    "S"
+    "M"
   ],
   "bestSolution": {
     "board": [
@@ -182,16 +181,16 @@
         "H",
         "O",
         "N",
-        "S"
+        ""
       ],
       [
-        "",
+        "U",
         "",
         "R",
         "",
         "",
         "",
-        "M"
+        ""
       ],
       [
         "P",
@@ -200,20 +199,20 @@
         "E",
         "D",
         "",
-        "E"
+        ""
       ],
       [
-        "U",
+        "",
         "",
         "S",
         "",
         "U",
         "",
-        "W"
+        ""
       ],
       [
-        "L",
         "",
+        "M",
         "E",
         "",
         "D",
@@ -221,8 +220,8 @@
         ""
       ],
       [
-        "E",
         "",
+        "E",
         "",
         "",
         "E",
@@ -231,116 +230,143 @@
       ],
       [
         "",
-        "",
-        "",
-        "",
+        "W",
+        "E",
+        "L",
         "D",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "0,6",
-      "1,6",
-      "2,6",
-      "3,6",
-      "3,0",
-      "4,0",
-      "5,0"
+      "4,1",
+      "5,1",
+      "6,1",
+      "6,2",
+      "6,3",
+      "1,0"
     ],
-    "score": 83,
+    "score": 91,
     "completionBonus": 50,
     "words": [
-      "SYPHONS",
-      "SMEW",
-      "PULE"
+      "ME",
+      "MEW",
+      "WELD",
+      "SUP"
     ],
     "scoringWords": [
       {
-        "word": "SYPHONS",
-        "row": 0,
-        "col": 0,
+        "word": "ME",
+        "row": 4,
+        "col": 1,
         "direction": "horizontal",
-        "score": 15,
+        "score": 4,
         "move": 1
       },
       {
-        "word": "SMEW",
-        "row": 0,
-        "col": 6,
+        "word": "MEW",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
-        "score": 10,
+        "score": 16,
         "move": 1
       },
       {
-        "word": "PULE",
-        "row": 2,
+        "word": "WELD",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 16,
+        "move": 2
+      },
+      {
+        "word": "SUP",
+        "row": 0,
         "col": 0,
         "direction": "vertical",
-        "score": 8,
-        "move": 2
+        "score": 5,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "SMEW",
-        "row": 0,
-        "col": 6,
+        "word": "MEW",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
-        "score": 25,
-        "usedTiles": 4,
+        "score": 20,
+        "usedTiles": 3,
         "newKeys": [
-          "0,6",
-          "1,6",
-          "2,6",
-          "3,6"
+          "4,1",
+          "5,1",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "SYPHONS",
-            "row": 0,
-            "col": 0,
+            "word": "ME",
+            "row": 4,
+            "col": 1,
             "direction": "horizontal",
-            "score": 15
+            "score": 4
           },
           {
-            "word": "SMEW",
-            "row": 0,
-            "col": 6,
+            "word": "MEW",
+            "row": 4,
+            "col": 1,
             "direction": "vertical",
-            "score": 10
+            "score": 16
           }
         ]
       },
       {
         "turn": 2,
-        "word": "PULE",
-        "row": 2,
-        "col": 0,
-        "direction": "vertical",
-        "score": 8,
-        "usedTiles": 3,
+        "word": "WELD",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 16,
+        "usedTiles": 2,
         "newKeys": [
-          "3,0",
-          "4,0",
-          "5,0"
+          "6,2",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "PULE",
-            "row": 2,
+            "word": "WELD",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "SUP",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "SUP",
+            "row": 0,
             "col": 0,
             "direction": "vertical",
-            "score": 8
+            "score": 5
           }
         ]
       }
     ],
-    "tilesUsed": 7,
+    "tilesUsed": 6,
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1275
+    "visitedCandidates": 693
   }
 }
