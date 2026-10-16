@@ -446,15 +446,15 @@ cursor: pointer;
 }
 
 .cell.drag-over {
-    outline: 3px solid #68d391;
+    outline: 3px solid #ffd43b;
     outline-offset: -3px;
-    box-shadow: inset 0 0 0 2px rgba(104, 211, 145, 0.3);
+    box-shadow: inset 0 0 0 2px rgba(255, 212, 59, 0.3);
 }
 
 .cell.selected-target {
-    outline: 3px solid #68d391;
+    outline: 3px solid #ffd43b;
     outline-offset: -3px;
-    box-shadow: inset 0 0 0 2px rgba(104, 211, 145, 0.3);
+    box-shadow: inset 0 0 0 2px rgba(255, 212, 59, 0.3);
 }
 
 .cell:hover {
@@ -1519,7 +1519,7 @@ body {
     }
     50% {
         transform: scale(1.12);
-        box-shadow: 0 0 0 7px rgba(59, 155, 232, 0.22);
+        box-shadow: 0 0 0 7px rgba(255, 212, 59, 0.35);
     }
 }
 
@@ -1534,7 +1534,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .share-results-icon-button.needs-sharing {
         animation: none;
-        outline: 3px solid rgba(59, 155, 232, 0.45);
+        outline: 3px solid rgba(255, 212, 59, 0.75);
         outline-offset: 3px;
     }
 }
@@ -2769,4 +2769,18 @@ body {
     #board .cell .bonus-badge {
         translate: -1px 3px !important;
     }
+}
+
+
+/* Use the earned-star yellow for the share button and its all-tiles highlight. */
+.board-top-row .share-results-icon-button {
+    background: #ffd43b;
+    border-color: #ffd43b;
+    color: #264653;
+}
+
+.board-top-row .share-results-icon-button:hover {
+    background: #f5c52e;
+    border-color: #f5c52e;
+    color: #264653;
 }
