@@ -2866,7 +2866,7 @@ body {
         0 2px 4px rgba(0, 0, 0, 0.24) !important;
 }
 
-/* Unearned-star bevel is drawn by the SVG path itself, never by its span/content box. */
+/* Unearned stars use the empty-cell colour and a recessed bevel clipped to the star silhouette. */
 .board-top-row .achievement-star:not(.earned) {
     box-shadow: none !important;
     border: 0 !important;
@@ -2883,9 +2883,7 @@ body {
 }
 
 .board-top-row .achievement-star:not(.earned) svg path {
-    fill: url(#unearnedStarBevel) !important;
-    stroke: url(#unearnedStarEdge) !important;
-    stroke-width: 3 !important;
-    stroke-linejoin: round;
-    paint-order: stroke fill;
+    fill: #172c33 !important;
+    stroke: none !important;
+    filter: url(#unearnedStarInsetBevel) !important;
 }
