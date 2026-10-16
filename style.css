@@ -2866,10 +2866,15 @@ body {
         0 2px 4px rgba(0, 0, 0, 0.24) !important;
 }
 
-/* Give unearned (not-yet-yellow) stars the same recessed bevel as empty board cells. */
+/* Keep the star's bevel inside its SVG silhouette, not around its content box. */
 .board-top-row .achievement-star:not(.earned) {
-    box-shadow:
-        inset 2px 2px 4px rgba(0, 0, 0, 0.24),
-        inset -1px -1px 2px rgba(0, 0, 0, 0.10) !important;
-    border-radius: 3px;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.board-top-row .achievement-star:not(.earned) svg path {
+    fill: url(#unearnedStarBevel) !important;
+    stroke: rgba(255, 255, 255, 0.32);
+    stroke-width: 1.5;
+    paint-order: stroke fill;
 }
