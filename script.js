@@ -4675,7 +4675,20 @@ async function generateDailyPuzzle() {
 
             generateBoard();
 
-            if (bestSolution && bestSolution.fullSolution) {
+            const hasFourLetterSolverWord =
+                bestSolution &&
+                Array.isArray(bestSolution.moves) &&
+                bestSolution.moves.some(
+                    move =>
+                        typeof move.word === "string" &&
+                        move.word.length >= 4
+                );
+
+            if (
+                bestSolution &&
+                bestSolution.fullSolution &&
+                hasFourLetterSolverWord
+            ) {
                 solvedWithAllTiles = true;
                 break;
             }
