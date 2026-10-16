@@ -2809,3 +2809,20 @@ body {
         inset 2px 2px 4px rgba(0, 0, 0, 0.24),
         inset -1px -1px 2px rgba(0, 0, 0, 0.10) !important;
 }
+
+
+/* Make the bevel identical and visibly consistent on every tile type.
+   This final rule overrides state-specific rules that previously removed
+   shadows from player-valid and premium-square tiles. */
+#board .board-tile,
+#tileRack .rack-tile,
+#board .cell > .board-tile,
+#tileRack .rack-slot > .rack-tile {
+    border-style: solid !important;
+    box-shadow:
+        inset 1px 1px 0 rgba(255, 255, 255, 0.32),
+        inset -1px -1px 0 rgba(0, 0, 0, 0.10),
+        0 1px 1px rgba(0, 0, 0, 0.14),
+        1px 2px 3px rgba(0, 0, 0, 0.22),
+        2px 3px 5px rgba(0, 0, 0, 0.18) !important;
+}
