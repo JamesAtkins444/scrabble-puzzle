@@ -3057,3 +3057,33 @@ body {
         height: 19px;
     }
 }
+
+
+/* Render Help as an actual SVG icon, never as a text label. */
+.board-utility-row .rules-help-button {
+    font-size: 0 !important;
+    line-height: 0 !important;
+}
+
+.board-utility-row .rules-help-button .help-icon-svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.board-utility-row .share-results-icon-button {
+    font-size: 0 !important;
+    line-height: 0 !important;
+}
+
+@media (max-width: 600px) {
+    .board-utility-row .rules-help-button .help-icon-svg {
+        width: 19px;
+        height: 19px;
+    }
+}
