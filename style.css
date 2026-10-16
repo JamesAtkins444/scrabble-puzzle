@@ -1826,7 +1826,7 @@ body {
 }
 
 
-/* Teal game background with darker empty board cells and white rack slots. */
+/* Teal game background with matching dark empty board cells and rack slots. */
 body {
     background: #264653 !important;
 }
@@ -1836,7 +1836,7 @@ body {
 }
 
 #tileRack .rack-slot {
-    background: #ffffff !important;
+    background: #172c33 !important;
 }
 
 
