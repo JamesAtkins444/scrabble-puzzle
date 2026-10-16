@@ -2885,5 +2885,4 @@ body {
 .board-top-row .achievement-star:not(.earned) svg path {
     fill: #172c33 !important;
     stroke: none !important;
-    filter: url(#unearnedStarInsetBevel) !important;
 }
