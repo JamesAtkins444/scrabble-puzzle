@@ -3122,3 +3122,19 @@ body {
         grid-template-columns: 22px minmax(0, 1fr) 22px;
     }
 }
+
+
+/* Increase both utility icons by 20% while keeping their buttons anchored to the board edges. */
+.board-utility-row .rules-help-button .help-icon-svg,
+.board-utility-row .share-results-icon-button svg {
+    width: 26.4px;
+    height: 26.4px;
+}
+
+@media (max-width: 600px) {
+    .board-utility-row .rules-help-button .help-icon-svg,
+    .board-utility-row .share-results-icon-button svg {
+        width: 22.8px;
+        height: 22.8px;
+    }
+}
