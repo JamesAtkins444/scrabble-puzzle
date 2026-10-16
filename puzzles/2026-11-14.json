@@ -1,0 +1,360 @@
+{
+  "date": "2026-11-14",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "S",
+      "O",
+      "N",
+      "S",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "U",
+      ""
+    ],
+    [
+      "",
+      "",
+      "C",
+      "",
+      "",
+      "M",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "M",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "B",
+      "E",
+      "D",
+      "U"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "S",
+      "O",
+      "N",
+      "S",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "U",
+      ""
+    ],
+    [
+      "",
+      "",
+      "C",
+      "",
+      "",
+      "M",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "M",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "B",
+      "E",
+      "D",
+      "U"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "1,0": "double-word",
+    "5,0": "double-letter",
+    "3,0": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "SUMMED",
+      "row": 0,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "SONSY",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SACRA",
+      "row": 0,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "BEDU",
+      "row": 5,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "R",
+    "K",
+    "E",
+    "E",
+    "U",
+    "P",
+    "S"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "S",
+        "O",
+        "N",
+        "S",
+        "Y"
+      ],
+      [
+        "K",
+        "E",
+        "A",
+        "S",
+        "",
+        "U",
+        ""
+      ],
+      [
+        "",
+        "",
+        "C",
+        "",
+        "",
+        "M",
+        ""
+      ],
+      [
+        "",
+        "",
+        "R",
+        "",
+        "",
+        "M",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "B",
+        "E",
+        "D",
+        "U"
+      ],
+      [
+        "P",
+        "U",
+        "R",
+        "E",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "1,0",
+      "1,1",
+      "1,3",
+      "6,0",
+      "6,1",
+      "6,2",
+      "6,3"
+    ],
+    "score": 78,
+    "completionBonus": 50,
+    "words": [
+      "KEAS",
+      "OS",
+      "PURE",
+      "BE"
+    ],
+    "scoringWords": [
+      {
+        "word": "KEAS",
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 16,
+        "move": 1
+      },
+      {
+        "word": "OS",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "PURE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "BE",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "KEAS",
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 18,
+        "usedTiles": 3,
+        "newKeys": [
+          "1,0",
+          "1,1",
+          "1,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "KEAS",
+            "row": 1,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 16
+          },
+          {
+            "word": "OS",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "PURE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 10,
+        "usedTiles": 4,
+        "newKeys": [
+          "6,0",
+          "6,1",
+          "6,2",
+          "6,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "PURE",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "BE",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 7,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1804
+  }
+}
