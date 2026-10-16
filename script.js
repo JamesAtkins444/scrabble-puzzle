@@ -2142,9 +2142,6 @@ function drawRandomTiles(count = 6) {
         ];
     }
 
-    // The rack always includes a seventh tile: a guaranteed S.
-    tiles.push("S");
-
     return tiles;
 }
 
@@ -3586,7 +3583,7 @@ function updateAchievementStars(
     const beatsSolver =
         hasSolverScore && currentScore > solverScore;
 
-    // One star for using all seven player tiles in valid words.
+    // One star for using all six player tiles in valid words.
     // Two stars for finishing within 10 points below the solver.
     // Three stars for matching or beating the solver; the crown is
     // shown separately only when the player beats the solver.
