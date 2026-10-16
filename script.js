@@ -4445,6 +4445,19 @@ function updateDailyChallengeClock() {
     }
 }
 
+function updateDailyPuzzleNumber(dateKey) {
+    const numberElement = document.getElementById("dailyPuzzleNumber");
+    if (!numberElement || !dateKey) return;
+
+    // Daily puzzle numbering follows the number of daily puzzles in the year:
+    // January 1 is #0001, January 2 is #0002, and so on.
+    const puzzleDate = new Date(dateKey + "T00:00:00Z");
+    const yearStart = Date.UTC(puzzleDate.getUTCFullYear(), 0, 1);
+    const puzzleNumber = Math.floor((puzzleDate.getTime() - yearStart) / 86400000) + 1;
+
+    numberElement.textContent = `Daily Puzzle #${String(puzzleNumber).padStart(4, "0")}`;
+}
+
 function getNextPuzzleDateKey(dateKey) {
     const date = new Date(dateKey + "T00:00:00Z");
     date.setUTCDate(date.getUTCDate() + 1);
@@ -4466,6 +4479,7 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
     }
 
     activeDailyDateKey = dateKey;
+    updateDailyPuzzleNumber(activeDailyDateKey);
     ensureDailyChallengeInfo();
 
     if (dailyClockInterval) clearInterval(dailyClockInterval);
@@ -4656,6 +4670,7 @@ async function generateDailyPuzzle() {
     }
 
     activeDailyDateKey = getUtcDateKey();
+    updateDailyPuzzleNumber(activeDailyDateKey);
     seedDailyRandom(activeDailyDateKey);
     ensureDailyChallengeInfo();
 
