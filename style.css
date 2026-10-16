@@ -2866,15 +2866,26 @@ body {
         0 2px 4px rgba(0, 0, 0, 0.24) !important;
 }
 
-/* Keep the star's bevel inside its SVG silhouette, not around its content box. */
+/* Unearned-star bevel is drawn by the SVG path itself, never by its span/content box. */
 .board-top-row .achievement-star:not(.earned) {
     box-shadow: none !important;
+    border: 0 !important;
+    outline: 0 !important;
     border-radius: 0 !important;
+    text-shadow: none !important;
+    filter: none !important;
+    background: transparent !important;
+}
+
+.board-top-row .achievement-star:not(.earned) svg {
+    overflow: visible;
+    filter: none !important;
 }
 
 .board-top-row .achievement-star:not(.earned) svg path {
     fill: url(#unearnedStarBevel) !important;
-    stroke: rgba(255, 255, 255, 0.32);
-    stroke-width: 1.5;
+    stroke: url(#unearnedStarEdge) !important;
+    stroke-width: 3 !important;
+    stroke-linejoin: round;
     paint-order: stroke fill;
 }
