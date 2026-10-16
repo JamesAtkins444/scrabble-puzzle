@@ -2886,3 +2886,76 @@ body {
     fill: #172c33 !important;
     stroke: none !important;
 }
+
+
+/* Utility buttons sit above the score and align with the board's outer edges. */
+.board-utility-row {
+    width: min(100%, 500px);
+    margin: 0 auto 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.board-utility-row .rules-help-button,
+.board-utility-row .share-results-icon-button {
+    position: static;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #ffffff;
+    box-shadow: none;
+    font: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.board-utility-row .rules-help-button:hover,
+.board-utility-row .share-results-icon-button:hover {
+    background: transparent;
+    border-color: transparent;
+    color: #ffffff;
+    opacity: 0.78;
+    transform: translateY(-1px);
+}
+
+.board-utility-row .share-results-icon-button svg {
+    display: block;
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.board-utility-row .share-results-icon-button.needs-sharing {
+    animation: share-results-pulse 1.15s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+    .board-utility-row .rules-help-button,
+    .board-utility-row .share-results-icon-button {
+        font-size: 18px;
+    }
+
+    .board-utility-row .share-results-icon-button svg {
+        width: 17px;
+        height: 17px;
+    }
+}
