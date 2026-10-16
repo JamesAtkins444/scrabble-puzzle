@@ -2790,3 +2790,22 @@ body {
         1px 1px 2px rgba(0, 0, 0, 0.18),
         2px 3px 4px rgba(0, 0, 0, 0.16) !important;
 }
+
+
+/* Final bevel overrides: player tiles can receive earlier state rules that
+   suppress their shadows, so explicitly restore the raised tile treatment. */
+#board .cell .board-tile[class*="player-"],
+#tileRack .rack-tile {
+    box-shadow:
+        inset 1px 1px 0 rgba(255, 255, 255, 0.28),
+        inset -1px -1px 0 rgba(0, 0, 0, 0.08),
+        1px 1px 2px rgba(0, 0, 0, 0.18),
+        2px 3px 4px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* Empty rack slots should feel like the recessed empty cells on the board. */
+#tileRack .rack-slot:not(:has(.rack-tile)) {
+    box-shadow:
+        inset 2px 2px 4px rgba(0, 0, 0, 0.24),
+        inset -1px -1px 2px rgba(0, 0, 0, 0.10) !important;
+}
