@@ -2826,3 +2826,23 @@ body {
         1px 2px 3px rgba(0, 0, 0, 0.22),
         2px 3px 5px rgba(0, 0, 0, 0.18) !important;
 }
+
+
+/* Player-state selectors need higher specificity than the validity and
+   premium-square rules above, some of which previously removed box shadows.
+   Stronger inset shading makes the bevel visible over the player tile colours. */
+#board .cell > .board-tile.player-valid,
+#board .cell > .board-tile.player-invalid,
+#board .cell > .board-tile.player-isolated,
+#board .cell > .board-tile.player-on-double-letter,
+#board .cell > .board-tile.player-on-triple-letter,
+#board .cell > .board-tile.player-on-double-word,
+#board .cell > .board-tile.player-on-triple-word {
+    box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.48),
+        inset 2px 0 2px rgba(255, 255, 255, 0.16),
+        inset 0 -3px 4px rgba(0, 0, 0, 0.28),
+        inset -2px 0 3px rgba(0, 0, 0, 0.12),
+        0 1px 1px rgba(0, 0, 0, 0.18),
+        1px 3px 4px rgba(0, 0, 0, 0.24) !important;
+}
