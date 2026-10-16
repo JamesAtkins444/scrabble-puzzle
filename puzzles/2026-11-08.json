@@ -21,16 +21,16 @@
       ""
     ],
     [
+      "S",
       "",
-      "W",
-      "I",
+      "",
       "N",
-      "Y",
+      "",
       "",
       ""
     ],
     [
-      "",
+      "H",
       "",
       "",
       "O",
@@ -39,7 +39,7 @@
       ""
     ],
     [
-      "",
+      "R",
       "",
       "",
       "M",
@@ -48,7 +48,7 @@
       ""
     ],
     [
-      "",
+      "U",
       "",
       "",
       "O",
@@ -86,16 +86,16 @@
       ""
     ],
     [
+      "S",
       "",
-      "W",
-      "I",
+      "",
       "N",
-      "Y",
+      "",
       "",
       ""
     ],
     [
-      "",
+      "H",
       "",
       "",
       "O",
@@ -104,7 +104,7 @@
       ""
     ],
     [
-      "",
+      "R",
       "",
       "",
       "M",
@@ -113,7 +113,7 @@
       ""
     ],
     [
-      "",
+      "U",
       "",
       "",
       "O",
@@ -132,10 +132,9 @@
     ]
   ],
   "bonusSquares": {
-    "0,0": "double-word",
-    "0,3": "double-letter",
-    "0,6": "double-letter",
-    "4,0": "triple-letter"
+    "0,6": "triple-word",
+    "0,1": "double-word",
+    "0,4": "double-letter"
   },
   "puzzleWords": [
     {
@@ -157,10 +156,10 @@
       "direction": "vertical"
     },
     {
-      "word": "WINY",
+      "word": "SHRUB",
       "row": 2,
-      "col": 1,
-      "direction": "horizontal"
+      "col": 0,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -192,16 +191,16 @@
         "A"
       ],
       [
+        "S",
         "",
-        "W",
-        "I",
+        "",
         "N",
-        "Y",
+        "",
         "",
         "R"
       ],
       [
-        "",
+        "H",
         "E",
         "",
         "O",
@@ -210,7 +209,7 @@
         "E"
       ],
       [
-        "",
+        "R",
         "",
         "",
         "M",
@@ -219,7 +218,7 @@
         "S"
       ],
       [
-        "",
+        "U",
         "",
         "",
         "O",
@@ -245,13 +244,13 @@
       "4,6",
       "3,1"
     ],
-    "score": 72,
+    "score": 83,
     "completionBonus": 50,
     "words": [
       "WE",
       "OS",
       "BARES",
-      "WE"
+      "HE"
     ],
     "scoringWords": [
       {
@@ -275,14 +274,14 @@
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 10,
+        "score": 21,
         "move": 1
       },
       {
-        "word": "WE",
-        "row": 2,
-        "col": 1,
-        "direction": "vertical",
+        "word": "HE",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
         "score": 5,
         "move": 2
       }
@@ -294,7 +293,7 @@
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 17,
+        "score": 28,
         "usedTiles": 5,
         "newKeys": [
           "0,6",
@@ -323,16 +322,16 @@
             "row": 0,
             "col": 6,
             "direction": "vertical",
-            "score": 10
+            "score": 21
           }
         ]
       },
       {
         "turn": 2,
-        "word": "WE",
-        "row": 2,
-        "col": 1,
-        "direction": "vertical",
+        "word": "HE",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
         "score": 5,
         "usedTiles": 1,
         "newKeys": [
@@ -340,10 +339,10 @@
         ],
         "scoringWords": [
           {
-            "word": "WE",
-            "row": 2,
-            "col": 1,
-            "direction": "vertical",
+            "word": "HE",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
             "score": 5
           }
         ]
@@ -353,6 +352,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1317
+    "visitedCandidates": 1486
   }
 }

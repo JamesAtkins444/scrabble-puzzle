@@ -57,11 +57,11 @@
       ""
     ],
     [
-      "D",
+      "B",
       "E",
-      "X",
-      "Y",
-      "",
+      "D",
+      "I",
+      "M",
       "",
       ""
     ]
@@ -122,20 +122,21 @@
       ""
     ],
     [
-      "D",
+      "B",
       "E",
-      "X",
-      "Y",
-      "",
+      "D",
+      "I",
+      "M",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "1,6": "double-word",
+    "4,6": "double-word",
+    "0,6": "triple-letter",
+    "2,6": "triple-letter",
     "6,6": "double-letter",
-    "0,4": "double-letter",
-    "4,6": "triple-letter"
+    "0,3": "double-letter"
   },
   "puzzleWords": [
     {
@@ -157,7 +158,7 @@
       "direction": "vertical"
     },
     {
-      "word": "DEXY",
+      "word": "BEDIM",
       "row": 6,
       "col": 0,
       "direction": "horizontal"
@@ -189,7 +190,7 @@
         "",
         "",
         "",
-        "D"
+        ""
       ],
       [
         "N",
@@ -197,8 +198,8 @@
         "T",
         "C",
         "H",
-        "",
-        "R"
+        "E",
+        "D"
       ],
       [
         "",
@@ -207,7 +208,7 @@
         "",
         "A",
         "",
-        "O"
+        "R"
       ],
       [
         "",
@@ -215,104 +216,104 @@
         "",
         "",
         "R",
+        "",
+        "O"
+      ],
+      [
+        "",
         "E",
+        "",
+        "",
+        "E",
+        "",
         "V"
       ],
       [
-        "",
+        "B",
         "E",
-        "",
-        "",
-        "E",
+        "D",
+        "I",
+        "M",
         "",
         "E"
-      ],
-      [
-        "D",
-        "E",
-        "X",
-        "Y",
-        "",
-        "",
-        ""
       ]
     ],
     "newKeys": [
-      "4,5",
-      "4,6",
-      "1,6",
+      "2,5",
       "2,6",
       "3,6",
-      "5,6"
+      "4,6",
+      "5,6",
+      "6,6"
     ],
-    "score": 98,
+    "score": 95,
     "completionBonus": 50,
     "words": [
-      "REV",
+      "NOTCHED",
       "DROVE"
     ],
     "scoringWords": [
       {
-        "word": "REV",
-        "row": 4,
-        "col": 4,
+        "word": "NOTCHED",
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 14,
+        "score": 17,
         "move": 1
       },
       {
         "word": "DROVE",
-        "row": 1,
+        "row": 2,
         "col": 6,
         "direction": "vertical",
-        "score": 34,
+        "score": 28,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "REV",
-        "row": 4,
-        "col": 4,
+        "word": "NOTCHED",
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 14,
+        "score": 17,
         "usedTiles": 2,
         "newKeys": [
-          "4,5",
-          "4,6"
+          "2,5",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "REV",
-            "row": 4,
-            "col": 4,
+            "word": "NOTCHED",
+            "row": 2,
+            "col": 0,
             "direction": "horizontal",
-            "score": 14
+            "score": 17
           }
         ]
       },
       {
         "turn": 2,
         "word": "DROVE",
-        "row": 1,
+        "row": 2,
         "col": 6,
         "direction": "vertical",
-        "score": 34,
+        "score": 28,
         "usedTiles": 4,
         "newKeys": [
-          "1,6",
-          "2,6",
           "3,6",
-          "5,6"
+          "4,6",
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
             "word": "DROVE",
-            "row": 1,
+            "row": 2,
             "col": 6,
             "direction": "vertical",
-            "score": 34
+            "score": 28
           }
         ]
       }
@@ -321,6 +322,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1344
+    "visitedCandidates": 1112
   }
 }

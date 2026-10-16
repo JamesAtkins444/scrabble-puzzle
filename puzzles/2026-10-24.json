@@ -26,14 +26,32 @@
       "",
       "",
       "",
-      "A",
+      "S",
       ""
     ],
     [
-      "B",
-      "A",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "G",
+      "O",
+      "O",
+      "I",
+      "E",
+      "R"
+    ],
+    [
+      "S",
+      "O",
       "R",
-      "K",
+      "T",
       "",
       "P",
       ""
@@ -41,28 +59,10 @@
     [
       "",
       "",
-      "I",
-      "",
-      "",
-      "I",
-      ""
-    ],
-    [
-      "",
-      "T",
-      "A",
-      "M",
-      "I",
-      "N",
-      "G"
-    ],
-    [
       "",
       "",
       "",
-      "",
-      "",
-      "G",
+      "Y",
       ""
     ]
   ],
@@ -91,14 +91,32 @@
       "",
       "",
       "",
-      "A",
+      "S",
       ""
     ],
     [
-      "B",
-      "A",
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "G",
+      "O",
+      "O",
+      "I",
+      "E",
+      "R"
+    ],
+    [
+      "S",
+      "O",
       "R",
-      "K",
+      "T",
       "",
       "P",
       ""
@@ -106,69 +124,52 @@
     [
       "",
       "",
-      "I",
-      "",
-      "",
-      "I",
-      ""
-    ],
-    [
-      "",
-      "T",
-      "A",
-      "M",
-      "I",
-      "N",
-      "G"
-    ],
-    [
       "",
       "",
       "",
-      "",
-      "",
-      "G",
+      "Y",
       ""
     ]
   ],
   "bonusSquares": {
     "0,1": "triple-word",
-    "0,6": "double-word",
-    "1,3": "triple-letter"
+    "2,1": "double-word",
+    "0,4": "double-letter",
+    "0,6": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "TAMING",
-      "row": 5,
+      "word": "GOOIER",
+      "row": 4,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "RIA",
-      "row": 3,
-      "col": 2,
-      "direction": "vertical"
-    },
-    {
-      "word": "APING",
+      "word": "SEEPY",
       "row": 2,
       "col": 5,
       "direction": "vertical"
     },
     {
-      "word": "BARK",
+      "word": "GOT",
       "row": 3,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "SORT",
+      "row": 5,
       "col": 0,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "I",
-    "M",
-    "I",
-    "H",
-    "X",
-    "E"
+    "O",
+    "O",
+    "W",
+    "E",
+    "L",
+    "T"
   ],
   "bestSolution": {
     "board": [
@@ -179,7 +180,7 @@
         "",
         "",
         "",
-        "H"
+        "W"
       ],
       [
         "",
@@ -188,51 +189,51 @@
         "",
         "",
         "",
+        "O"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "S",
+        "O"
+      ],
+      [
+        "",
+        "",
+        "",
+        "G",
+        "L",
+        "E",
         "E"
       ],
       [
         "",
-        "",
-        "",
-        "",
-        "M",
-        "A",
-        "X"
+        "G",
+        "O",
+        "O",
+        "I",
+        "E",
+        "R"
       ],
       [
-        "B",
-        "A",
+        "S",
+        "O",
         "R",
-        "K",
+        "T",
         "",
         "P",
         ""
       ],
       [
-        "I",
-        "",
-        "I",
-        "",
-        "",
-        "I",
-        ""
-      ],
-      [
         "",
         "T",
-        "A",
-        "M",
-        "I",
-        "N",
-        "G"
-      ],
-      [
         "",
         "",
         "",
-        "I",
-        "",
-        "G",
+        "Y",
         ""
       ]
     ],
@@ -240,69 +241,78 @@
       "0,6",
       "1,6",
       "2,6",
-      "2,4",
-      "4,0",
-      "6,3"
+      "3,4",
+      "3,6",
+      "6,1"
     ],
-    "score": 105,
+    "score": 93,
     "completionBonus": 50,
     "words": [
-      "AX",
-      "HEX",
-      "MAX",
-      "BI",
-      "MI"
+      "SO",
+      "WOO",
+      "GLEE",
+      "LI",
+      "WOOER",
+      "GOT"
     ],
     "scoringWords": [
       {
-        "word": "AX",
+        "word": "SO",
         "row": 2,
         "col": 5,
         "direction": "horizontal",
-        "score": 9,
+        "score": 2,
         "move": 1
       },
       {
-        "word": "HEX",
+        "word": "WOO",
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 26,
+        "score": 14,
         "move": 1
       },
       {
-        "word": "MAX",
-        "row": 2,
-        "col": 4,
+        "word": "GLEE",
+        "row": 3,
+        "col": 3,
         "direction": "horizontal",
-        "score": 12,
+        "score": 5,
         "move": 2
       },
       {
-        "word": "BI",
+        "word": "LI",
         "row": 3,
-        "col": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "WOOER",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 16,
+        "move": 2
+      },
+      {
+        "word": "GOT",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
         "score": 4,
         "move": 3
-      },
-      {
-        "word": "MI",
-        "row": 5,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "HEX",
+        "word": "WOO",
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 35,
+        "score": 16,
         "usedTiles": 3,
         "newKeys": [
           "0,6",
@@ -311,79 +321,73 @@
         ],
         "scoringWords": [
           {
-            "word": "AX",
+            "word": "SO",
             "row": 2,
             "col": 5,
             "direction": "horizontal",
-            "score": 9
+            "score": 2
           },
           {
-            "word": "HEX",
+            "word": "WOO",
             "row": 0,
             "col": 6,
             "direction": "vertical",
-            "score": 26
+            "score": 14
           }
         ]
       },
       {
         "turn": 2,
-        "word": "MAX",
-        "row": 2,
-        "col": 4,
+        "word": "GLEE",
+        "row": 3,
+        "col": 3,
         "direction": "horizontal",
-        "score": 12,
-        "usedTiles": 1,
+        "score": 23,
+        "usedTiles": 2,
         "newKeys": [
-          "2,4"
+          "3,4",
+          "3,6"
         ],
         "scoringWords": [
           {
-            "word": "MAX",
-            "row": 2,
-            "col": 4,
+            "word": "GLEE",
+            "row": 3,
+            "col": 3,
             "direction": "horizontal",
-            "score": 12
+            "score": 5
+          },
+          {
+            "word": "LI",
+            "row": 3,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "WOOER",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 16
           }
         ]
       },
       {
         "turn": 3,
-        "word": "BI",
-        "row": 3,
-        "col": 0,
+        "word": "GOT",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
         "score": 4,
         "usedTiles": 1,
         "newKeys": [
-          "4,0"
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "BI",
-            "row": 3,
-            "col": 0,
-            "direction": "vertical",
-            "score": 4
-          }
-        ]
-      },
-      {
-        "turn": 4,
-        "word": "MI",
-        "row": 5,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "usedTiles": 1,
-        "newKeys": [
-          "6,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "MI",
-            "row": 5,
-            "col": 3,
+            "word": "GOT",
+            "row": 4,
+            "col": 1,
             "direction": "vertical",
             "score": 4
           }
@@ -394,6 +398,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 486
+    "visitedCandidates": 906
   }
 }

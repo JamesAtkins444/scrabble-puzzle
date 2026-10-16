@@ -18,41 +18,41 @@
       "",
       "",
       "",
-      ""
+      "B"
     ],
     [
       "",
-      "G",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O"
+    ],
+    [
+      "",
+      "",
+      "",
+      "Y",
+      "",
+      "",
+      "N"
+    ],
+    [
       "",
       "",
       "W",
-      "",
-      ""
-    ],
-    [
-      "",
-      "O",
-      "",
-      "",
       "E",
-      "",
-      ""
-    ],
-    [
-      "",
-      "R",
-      "",
-      "",
       "A",
-      "",
-      ""
+      "L",
+      "D"
     ],
     [
       "",
-      "S",
       "",
       "",
-      "V",
+      "L",
+      "",
       "",
       ""
     ],
@@ -83,41 +83,41 @@
       "",
       "",
       "",
-      ""
+      "B"
     ],
     [
       "",
-      "G",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O"
+    ],
+    [
+      "",
+      "",
+      "",
+      "Y",
+      "",
+      "",
+      "N"
+    ],
+    [
       "",
       "",
       "W",
-      "",
-      ""
-    ],
-    [
-      "",
-      "O",
-      "",
-      "",
       "E",
-      "",
-      ""
-    ],
-    [
-      "",
-      "R",
-      "",
-      "",
       "A",
-      "",
-      ""
+      "L",
+      "D"
     ],
     [
       "",
-      "S",
       "",
       "",
-      "V",
+      "L",
+      "",
       "",
       ""
     ],
@@ -132,10 +132,10 @@
     ]
   ],
   "bonusSquares": {
-    "0,1": "double-word",
-    "0,4": "triple-letter",
-    "4,6": "double-letter",
-    "1,6": "triple-letter"
+    "0,0": "triple-word",
+    "1,3": "double-word",
+    "2,1": "triple-letter",
+    "4,0": "double-letter"
   },
   "puzzleWords": [
     {
@@ -145,21 +145,21 @@
       "direction": "horizontal"
     },
     {
-      "word": "WEAVE",
-      "row": 2,
-      "col": 4,
+      "word": "YELP",
+      "row": 3,
+      "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "AVE",
+      "word": "WEALD",
       "row": 4,
-      "col": 4,
-      "direction": "vertical"
+      "col": 2,
+      "direction": "horizontal"
     },
     {
-      "word": "GORSE",
-      "row": 2,
-      "col": 1,
+      "word": "BOND",
+      "row": 1,
+      "col": 6,
       "direction": "vertical"
     }
   ],
@@ -175,10 +175,10 @@
     "board": [
       [
         "",
-        "R",
-        "A",
-        "G",
-        "I",
+        "",
+        "",
+        "",
+        "",
         "",
         ""
       ],
@@ -186,44 +186,44 @@
         "",
         "",
         "",
+        "G",
+        "A",
+        "R",
+        "B"
+      ],
+      [
         "",
+        "I",
         "N",
         "",
-        ""
+        "",
+        "",
+        "O"
       ],
       [
         "",
-        "G",
         "",
         "O",
+        "Y",
+        "",
+        "",
+        "N"
+      ],
+      [
+        "",
+        "",
         "W",
-        "",
-        ""
-      ],
-      [
-        "",
-        "O",
-        "",
-        "",
         "E",
-        "",
-        ""
-      ],
-      [
-        "",
-        "R",
-        "",
-        "",
         "A",
-        "",
-        ""
+        "L",
+        "D"
       ],
       [
         "",
-        "S",
         "",
         "",
-        "V",
+        "L",
+        "",
         "",
         ""
       ],
@@ -238,110 +238,126 @@
       ]
     ],
     "newKeys": [
-      "0,4",
+      "1,3",
       "1,4",
-      "0,1",
-      "0,2",
-      "0,3",
-      "2,3"
+      "1,5",
+      "2,2",
+      "3,2",
+      "2,1"
     ],
-    "score": 84,
+    "score": 79,
     "completionBonus": 50,
     "words": [
-      "INWEAVE",
-      "RAGI",
-      "OW"
+      "GARB",
+      "OY",
+      "NOW",
+      "IN"
     ],
     "scoringWords": [
       {
-        "word": "INWEAVE",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 15,
+        "word": "GARB",
+        "row": 1,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 14,
         "move": 1
       },
       {
-        "word": "RAGI",
-        "row": 0,
-        "col": 1,
+        "word": "OY",
+        "row": 3,
+        "col": 2,
         "direction": "horizontal",
-        "score": 14,
+        "score": 5,
         "move": 2
       },
       {
-        "word": "OW",
+        "word": "NOW",
         "row": 2,
-        "col": 3,
+        "col": 2,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "IN",
+        "row": 2,
+        "col": 1,
         "direction": "horizontal",
-        "score": 5,
+        "score": 4,
         "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "INWEAVE",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 15,
-        "usedTiles": 2,
-        "newKeys": [
-          "0,4",
-          "1,4"
-        ],
-        "scoringWords": [
-          {
-            "word": "INWEAVE",
-            "row": 0,
-            "col": 4,
-            "direction": "vertical",
-            "score": 15
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "RAGI",
-        "row": 0,
-        "col": 1,
+        "word": "GARB",
+        "row": 1,
+        "col": 3,
         "direction": "horizontal",
         "score": 14,
         "usedTiles": 3,
         "newKeys": [
-          "0,1",
-          "0,2",
-          "0,3"
+          "1,3",
+          "1,4",
+          "1,5"
         ],
         "scoringWords": [
           {
-            "word": "RAGI",
-            "row": 0,
-            "col": 1,
+            "word": "GARB",
+            "row": 1,
+            "col": 3,
             "direction": "horizontal",
             "score": 14
           }
         ]
       },
       {
-        "turn": 3,
-        "word": "OW",
+        "turn": 2,
+        "word": "NOW",
         "row": 2,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 11,
+        "usedTiles": 2,
         "newKeys": [
-          "2,3"
+          "2,2",
+          "3,2"
         ],
         "scoringWords": [
           {
-            "word": "OW",
-            "row": 2,
-            "col": 3,
+            "word": "OY",
+            "row": 3,
+            "col": 2,
             "direction": "horizontal",
             "score": 5
+          },
+          {
+            "word": "NOW",
+            "row": 2,
+            "col": 2,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "IN",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "IN",
+            "row": 2,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
           }
         ]
       }
@@ -350,6 +366,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1965
+    "visitedCandidates": 1306
   }
 }

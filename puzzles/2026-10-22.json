@@ -15,16 +15,16 @@
       "",
       "",
       "",
-      "A",
-      "",
+      "O",
+      "I",
       "L",
-      ""
+      "Y"
     ],
     [
-      "G",
-      "L",
-      "U",
-      "T",
+      "",
+      "",
+      "",
+      "",
       "",
       "O",
       ""
@@ -32,9 +32,9 @@
     [
       "",
       "",
-      "",
-      "T",
-      "",
+      "S",
+      "H",
+      "A",
       "D",
       ""
     ],
@@ -42,7 +42,7 @@
       "",
       "",
       "",
-      "I",
+      "",
       "",
       "G",
       ""
@@ -51,19 +51,19 @@
       "",
       "",
       "",
-      "C",
-      "R",
+      "",
+      "",
       "E",
-      "W"
+      ""
     ],
     [
       "",
       "",
       "",
-      "",
-      "",
+      "A",
+      "C",
       "R",
-      ""
+      "E"
     ]
   ],
   "originalBoard": [
@@ -80,16 +80,16 @@
       "",
       "",
       "",
-      "A",
-      "",
+      "O",
+      "I",
       "L",
-      ""
+      "Y"
     ],
     [
-      "G",
-      "L",
-      "U",
-      "T",
+      "",
+      "",
+      "",
+      "",
       "",
       "O",
       ""
@@ -97,9 +97,9 @@
     [
       "",
       "",
-      "",
-      "T",
-      "",
+      "S",
+      "H",
+      "A",
       "D",
       ""
     ],
@@ -107,7 +107,7 @@
       "",
       "",
       "",
-      "I",
+      "",
       "",
       "G",
       ""
@@ -116,24 +116,25 @@
       "",
       "",
       "",
-      "C",
-      "R",
+      "",
+      "",
       "E",
-      "W"
+      ""
     ],
     [
       "",
       "",
       "",
-      "",
-      "",
+      "A",
+      "C",
       "R",
-      ""
+      "E"
     ]
   ],
   "bonusSquares": {
-    "5,0": "triple-word",
-    "0,0": "double-word"
+    "0,0": "triple-word",
+    "5,0": "double-word",
+    "2,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -143,21 +144,21 @@
       "direction": "vertical"
     },
     {
-      "word": "CREW",
-      "row": 5,
+      "word": "ACRE",
+      "row": 6,
       "col": 3,
       "direction": "horizontal"
     },
     {
-      "word": "ATTIC",
-      "row": 1,
-      "col": 3,
-      "direction": "vertical"
+      "word": "SHAD",
+      "row": 3,
+      "col": 2,
+      "direction": "horizontal"
     },
     {
-      "word": "GLUT",
-      "row": 2,
-      "col": 0,
+      "word": "OILY",
+      "row": 1,
+      "col": 3,
       "direction": "horizontal"
     }
   ],
@@ -176,186 +177,247 @@
         "",
         "",
         "",
+        "Q",
         "",
-        "",
-        ""
+        "P"
       ],
       [
         "",
         "",
-        "",
-        "A",
-        "",
-        "L",
-        ""
-      ],
-      [
-        "G",
-        "L",
-        "U",
-        "T",
         "",
         "O",
-        ""
-      ],
-      [
-        "A",
-        "",
-        "",
-        "T",
-        "",
-        "D",
-        ""
-      ],
-      [
-        "P",
-        "",
-        "Q",
         "I",
-        "",
-        "G",
-        "O"
+        "L",
+        "Y"
       ],
       [
+        "",
+        "",
+        "",
+        "O",
+        "",
+        "O",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "S",
+        "H",
+        "A",
+        "D",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "G",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
         "E",
+        ""
+      ],
+      [
         "",
         "",
+        "",
+        "A",
         "C",
         "R",
-        "E",
-        "W"
-      ],
-      [
-        "S",
-        "",
-        "",
-        "",
-        "",
-        "R",
-        ""
+        "E"
       ]
     ],
     "newKeys": [
-      "3,0",
-      "4,0",
-      "5,0",
-      "6,0",
-      "4,2",
-      "4,6"
+      "0,6",
+      "2,6",
+      "3,6",
+      "0,4",
+      "2,3",
+      "4,4"
     ],
-    "score": 93,
+    "score": 92,
     "completionBonus": 50,
     "words": [
-      "GAPES",
+      "OE",
+      "SHADS",
+      "PYES",
       "QI",
-      "GO",
-      "OW"
+      "OOH",
+      "AG",
+      "AA"
     ],
     "scoringWords": [
       {
-        "word": "GAPES",
+        "word": "OE",
         "row": 2,
-        "col": 0,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "SHADS",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "PYES",
+        "row": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 24,
+        "score": 9,
         "move": 1
       },
       {
         "word": "QI",
-        "row": 4,
-        "col": 2,
-        "direction": "horizontal",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
         "score": 11,
         "move": 2
       },
       {
-        "word": "GO",
-        "row": 4,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 3,
+        "word": "OOH",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 6,
         "move": 3
       },
       {
-        "word": "OW",
+        "word": "AG",
         "row": 4,
-        "col": 6,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 3,
+        "move": 4
+      },
+      {
+        "word": "AA",
+        "row": 3,
+        "col": 4,
         "direction": "vertical",
-        "score": 5,
-        "move": 3
+        "score": 2,
+        "move": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "GAPES",
-        "row": 2,
-        "col": 0,
+        "word": "PYES",
+        "row": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 24,
-        "usedTiles": 4,
+        "score": 20,
+        "usedTiles": 3,
         "newKeys": [
-          "3,0",
-          "4,0",
-          "5,0",
-          "6,0"
+          "0,6",
+          "2,6",
+          "3,6"
         ],
         "scoringWords": [
           {
-            "word": "GAPES",
+            "word": "OE",
             "row": 2,
-            "col": 0,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "SHADS",
+            "row": 3,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "PYES",
+            "row": 0,
+            "col": 6,
             "direction": "vertical",
-            "score": 24
+            "score": 9
           }
         ]
       },
       {
         "turn": 2,
         "word": "QI",
-        "row": 4,
-        "col": 2,
-        "direction": "horizontal",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
         "score": 11,
         "usedTiles": 1,
         "newKeys": [
-          "4,2"
+          "0,4"
         ],
         "scoringWords": [
           {
             "word": "QI",
-            "row": 4,
-            "col": 2,
-            "direction": "horizontal",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
             "score": 11
           }
         ]
       },
       {
         "turn": 3,
-        "word": "OW",
-        "row": 4,
-        "col": 6,
+        "word": "OOH",
+        "row": 1,
+        "col": 3,
         "direction": "vertical",
-        "score": 8,
+        "score": 6,
         "usedTiles": 1,
         "newKeys": [
-          "4,6"
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "GO",
+            "word": "OOH",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 4,
+        "word": "AG",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "AG",
             "row": 4,
-            "col": 5,
+            "col": 4,
             "direction": "horizontal",
             "score": 3
           },
           {
-            "word": "OW",
-            "row": 4,
-            "col": 6,
+            "word": "AA",
+            "row": 3,
+            "col": 4,
             "direction": "vertical",
-            "score": 5
+            "score": 2
           }
         ]
       }
@@ -364,6 +426,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1052
+    "visitedCandidates": 1013
   }
 }

@@ -3,55 +3,55 @@
   "boardSize": 7,
   "board": [
     [
+      "",
+      "",
+      "",
+      "S",
+      "I",
+      "Z",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "P",
+      "O",
       "I",
       "",
-      "",
-      "F",
-      "",
-      "",
       ""
     ],
     [
-      "N",
-      "E",
-      "A",
-      "R",
+      "",
+      "",
+      "",
       "B",
-      "Y",
-      ""
-    ],
-    [
-      "C",
-      "",
-      "L",
-      "O",
       "",
       "",
       ""
     ],
     [
-      "O",
       "",
-      "O",
-      "N",
+      "",
+      "",
+      "B",
       "",
       "",
       ""
     ],
     [
-      "G",
-      "",
+      "Q",
       "U",
-      "T",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "D",
-      "",
+      "E",
+      "Y",
       "",
       "",
       ""
@@ -68,55 +68,55 @@
   ],
   "originalBoard": [
     [
+      "",
+      "",
+      "",
+      "S",
+      "I",
+      "Z",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "P",
+      "O",
       "I",
       "",
-      "",
-      "F",
-      "",
-      "",
       ""
     ],
     [
-      "N",
-      "E",
-      "A",
-      "R",
+      "",
+      "",
+      "",
       "B",
-      "Y",
-      ""
-    ],
-    [
-      "C",
-      "",
-      "L",
-      "O",
       "",
       "",
       ""
     ],
     [
-      "O",
       "",
-      "O",
-      "N",
+      "",
+      "",
+      "B",
       "",
       "",
       ""
     ],
     [
-      "G",
-      "",
+      "Q",
       "U",
-      "T",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "D",
-      "",
+      "E",
+      "Y",
       "",
       "",
       ""
@@ -133,103 +133,103 @@
   ],
   "bonusSquares": {
     "5,6": "triple-word",
-    "6,4": "double-word",
-    "3,5": "double-letter",
-    "6,0": "triple-letter"
+    "0,0": "double-word",
+    "3,6": "triple-letter",
+    "2,0": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "NEARBY",
-      "row": 1,
-      "col": 0,
-      "direction": "horizontal"
-    },
-    {
-      "word": "INCOG",
-      "row": 0,
-      "col": 0,
-      "direction": "vertical"
-    },
-    {
-      "word": "FRONT",
+      "word": "SNOBBY",
       "row": 0,
       "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "ALOUD",
-      "row": 1,
+      "word": "POI",
+      "row": 2,
       "col": 2,
-      "direction": "vertical"
+      "direction": "horizontal"
+    },
+    {
+      "word": "QUEY",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SIZE",
+      "row": 0,
+      "col": 3,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "I",
-    "L",
-    "N",
-    "A",
+    "V",
+    "F",
     "E",
+    "E",
+    "A",
     "B"
   ],
   "bestSolution": {
     "board": [
       [
+        "",
+        "",
+        "",
+        "S",
+        "I",
+        "Z",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "N",
+        "",
+        "",
+        "V"
+      ],
+      [
+        "",
+        "",
+        "P",
+        "O",
         "I",
         "",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "B",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "B",
+        "B",
+        "E",
+        ""
+      ],
+      [
+        "Q",
+        "U",
+        "E",
+        "Y",
         "",
         "F",
-        "A",
-        "",
-        ""
-      ],
-      [
-        "N",
-        "E",
-        "A",
-        "R",
-        "B",
-        "Y",
-        ""
-      ],
-      [
-        "C",
-        "",
-        "L",
-        "O",
-        "B",
-        "",
-        ""
-      ],
-      [
-        "O",
-        "",
-        "O",
-        "N",
-        "E",
-        "",
-        ""
-      ],
-      [
-        "G",
-        "L",
-        "U",
-        "T",
-        "",
-        "",
         ""
       ],
       [
         "",
-        "I",
-        "D",
         "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "N",
         "",
         "",
         "",
@@ -238,161 +238,126 @@
       ]
     ],
     "newKeys": [
-      "0,4",
-      "2,4",
-      "3,4",
-      "4,1",
-      "5,1",
-      "6,1"
+      "4,2",
+      "4,4",
+      "4,5",
+      "1,6",
+      "2,6",
+      "5,5"
     ],
-    "score": 82,
+    "score": 71,
     "completionBonus": 50,
     "words": [
-      "FA",
-      "LOB",
-      "ONE",
       "ABBE",
-      "GLUT",
-      "ID",
-      "LIN"
+      "AE",
+      "EVE",
+      "EF"
     ],
     "scoringWords": [
       {
-        "word": "FA",
-        "row": 0,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "LOB",
-        "row": 2,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "ONE",
-        "row": 3,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 1
-      },
-      {
         "word": "ABBE",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
         "score": 8,
         "move": 1
       },
       {
-        "word": "GLUT",
+        "word": "AE",
         "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "ID",
-        "row": 5,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
-      },
-      {
-        "word": "LIN",
-        "row": 4,
-        "col": 1,
+        "col": 2,
         "direction": "vertical",
-        "score": 3,
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "EVE",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 6,
         "move": 2
+      },
+      {
+        "word": "EF",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 5,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
         "word": "ABBE",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 21,
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 10,
         "usedTiles": 3,
         "newKeys": [
-          "0,4",
-          "2,4",
-          "3,4"
+          "4,2",
+          "4,4",
+          "4,5"
         ],
         "scoringWords": [
           {
-            "word": "FA",
-            "row": 0,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "LOB",
-            "row": 2,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "ONE",
-            "row": 3,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
             "word": "ABBE",
-            "row": 0,
-            "col": 4,
-            "direction": "vertical",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
             "score": 8
+          },
+          {
+            "word": "AE",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       },
       {
         "turn": 2,
-        "word": "LIN",
-        "row": 4,
-        "col": 1,
+        "word": "EVE",
+        "row": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 11,
-        "usedTiles": 3,
+        "score": 6,
+        "usedTiles": 2,
         "newKeys": [
-          "4,1",
-          "5,1",
-          "6,1"
+          "1,6",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "GLUT",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "ID",
-            "row": 5,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 3
-          },
-          {
-            "word": "LIN",
-            "row": 4,
-            "col": 1,
+            "word": "EVE",
+            "row": 0,
+            "col": 6,
             "direction": "vertical",
-            "score": 3
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "EF",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "5,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "EF",
+            "row": 4,
+            "col": 5,
+            "direction": "vertical",
+            "score": 5
           }
         ]
       }
@@ -401,6 +366,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1353
+    "visitedCandidates": 484
   }
 }

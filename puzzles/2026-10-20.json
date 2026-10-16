@@ -8,7 +8,7 @@
       "",
       "",
       "",
-      "R",
+      "",
       ""
     ],
     [
@@ -17,7 +17,7 @@
       "",
       "K",
       "",
-      "U",
+      "",
       ""
     ],
     [
@@ -25,31 +25,31 @@
       "B",
       "R",
       "E",
-      "A",
-      "M",
+      "D",
+      "",
       ""
     ],
     [
       "",
-      "",
+      "R",
       "",
       "Y",
       "",
-      "O",
+      "",
       ""
     ],
     [
       "",
-      "",
+      "U",
       "",
       "S",
       "",
-      "R",
+      "",
       ""
     ],
     [
       "",
-      "",
+      "S",
       "",
       "E",
       "",
@@ -73,7 +73,7 @@
       "",
       "",
       "",
-      "R",
+      "",
       ""
     ],
     [
@@ -82,7 +82,7 @@
       "",
       "K",
       "",
-      "U",
+      "",
       ""
     ],
     [
@@ -90,31 +90,31 @@
       "B",
       "R",
       "E",
-      "A",
-      "M",
+      "D",
+      "",
       ""
     ],
     [
       "",
-      "",
+      "R",
       "",
       "Y",
       "",
-      "O",
+      "",
       ""
     ],
     [
       "",
-      "",
+      "U",
       "",
       "S",
       "",
-      "R",
+      "",
       ""
     ],
     [
       "",
-      "",
+      "S",
       "",
       "E",
       "",
@@ -132,9 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "6,6": "double-word",
-    "0,1": "triple-letter",
-    "4,0": "double-letter"
+    "4,5": "double-word",
+    "0,5": "triple-letter",
+    "0,1": "double-letter",
+    "2,6": "double-letter",
+    "6,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -144,7 +146,7 @@
       "direction": "vertical"
     },
     {
-      "word": "BREAM",
+      "word": "BRED",
       "row": 2,
       "col": 1,
       "direction": "horizontal"
@@ -156,9 +158,9 @@
       "direction": "horizontal"
     },
     {
-      "word": "RUMOR",
-      "row": 0,
-      "col": 5,
+      "word": "BRUSH",
+      "row": 2,
+      "col": 1,
       "direction": "vertical"
     }
   ],
@@ -178,7 +180,7 @@
         "",
         "",
         "",
-        "R",
+        "",
         ""
       ],
       [
@@ -186,8 +188,8 @@
         "",
         "",
         "K",
-        "",
-        "U",
+        "A",
+        "T",
         ""
       ],
       [
@@ -195,36 +197,36 @@
         "B",
         "R",
         "E",
-        "A",
-        "M",
+        "D",
+        "E",
         ""
       ],
       [
         "",
-        "",
+        "R",
         "",
         "Y",
         "",
-        "O",
-        "D"
+        "I",
+        ""
       ],
       [
-        "T",
         "",
+        "U",
         "",
         "S",
         "",
-        "R",
-        "E"
+        "N",
+        ""
       ],
       [
-        "I",
         "",
+        "S",
         "",
         "E",
         "",
-        "",
-        "A"
+        "D",
+        ""
       ],
       [
         "C",
@@ -233,117 +235,117 @@
         "T",
         "H",
         "",
-        "N"
+        ""
       ]
     ],
     "newKeys": [
-      "3,6",
-      "4,6",
-      "5,6",
-      "6,6",
-      "4,0",
-      "5,0"
+      "1,5",
+      "2,5",
+      "3,5",
+      "4,5",
+      "5,5",
+      "1,4"
     ],
-    "score": 71,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "OD",
-      "RE",
-      "DEAN",
-      "TIC"
+      "BREDE",
+      "TEIND",
+      "KAT",
+      "AD"
     ],
     "scoringWords": [
       {
-        "word": "OD",
-        "row": 3,
-        "col": 5,
+        "word": "BREDE",
+        "row": 2,
+        "col": 1,
         "direction": "horizontal",
+        "score": 8,
+        "move": 1
+      },
+      {
+        "word": "TEIND",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "KAT",
+        "row": 1,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 7,
+        "move": 2
+      },
+      {
+        "word": "AD",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
         "score": 3,
-        "move": 1
-      },
-      {
-        "word": "RE",
-        "row": 4,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "DEAN",
-        "row": 3,
-        "col": 6,
-        "direction": "vertical",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "TIC",
-        "row": 4,
-        "col": 0,
-        "direction": "vertical",
-        "score": 6,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DEAN",
-        "row": 3,
-        "col": 6,
+        "word": "TEIND",
+        "row": 1,
+        "col": 5,
         "direction": "vertical",
-        "score": 15,
-        "usedTiles": 4,
+        "score": 20,
+        "usedTiles": 5,
         "newKeys": [
-          "3,6",
-          "4,6",
-          "5,6",
-          "6,6"
+          "1,5",
+          "2,5",
+          "3,5",
+          "4,5",
+          "5,5"
         ],
         "scoringWords": [
           {
-            "word": "OD",
-            "row": 3,
-            "col": 5,
+            "word": "BREDE",
+            "row": 2,
+            "col": 1,
             "direction": "horizontal",
-            "score": 3
+            "score": 8
           },
           {
-            "word": "RE",
-            "row": 4,
+            "word": "TEIND",
+            "row": 1,
             "col": 5,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "DEAN",
-            "row": 3,
-            "col": 6,
             "direction": "vertical",
-            "score": 10
+            "score": 12
           }
         ]
       },
       {
         "turn": 2,
-        "word": "TIC",
-        "row": 4,
-        "col": 0,
-        "direction": "vertical",
-        "score": 6,
-        "usedTiles": 2,
+        "word": "KAT",
+        "row": 1,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 10,
+        "usedTiles": 1,
         "newKeys": [
-          "4,0",
-          "5,0"
+          "1,4"
         ],
         "scoringWords": [
           {
-            "word": "TIC",
-            "row": 4,
-            "col": 0,
+            "word": "KAT",
+            "row": 1,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "AD",
+            "row": 1,
+            "col": 4,
             "direction": "vertical",
-            "score": 6
+            "score": 3
           }
         ]
       }
@@ -352,6 +354,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1761
+    "visitedCandidates": 1531
   }
 }

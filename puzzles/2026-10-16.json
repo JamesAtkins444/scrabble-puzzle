@@ -4,64 +4,64 @@
   "board": [
     [
       "",
-      "L",
-      "E",
-      "A",
-      "S",
-      "E",
-      "D"
-    ],
-    [
-      "",
-      "O",
       "",
       "",
-      "T",
-      "",
-      ""
-    ],
-    [
-      "",
-      "F",
-      "",
-      "D",
-      "E",
-      "L",
-      ""
-    ],
-    [
-      "",
-      "T",
       "",
       "",
-      "A",
       "",
       ""
     ],
     [
       "",
       "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "",
       "",
       "K",
-      "",
-      ""
+      "I",
+      "A",
+      "N",
+      "G"
     ],
     [
       "",
       "",
       "",
       "",
-      "",
+      "P",
       "",
       ""
     ],
     [
       "",
+      "N",
       "",
       "",
+      "H",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "A",
+      "M",
+      "B",
+      "I",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "G",
       "",
       "",
+      "D",
       "",
       ""
     ]
@@ -69,266 +69,266 @@
   "originalBoard": [
     [
       "",
-      "L",
-      "E",
-      "A",
-      "S",
-      "E",
-      "D"
-    ],
-    [
-      "",
-      "O",
       "",
       "",
-      "T",
-      "",
-      ""
-    ],
-    [
-      "",
-      "F",
-      "",
-      "D",
-      "E",
-      "L",
-      ""
-    ],
-    [
-      "",
-      "T",
       "",
       "",
-      "A",
       "",
       ""
     ],
     [
       "",
       "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
       "",
       "",
       "K",
-      "",
-      ""
+      "I",
+      "A",
+      "N",
+      "G"
     ],
     [
       "",
       "",
       "",
       "",
-      "",
+      "P",
       "",
       ""
     ],
     [
       "",
+      "N",
       "",
       "",
+      "H",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "A",
+      "M",
+      "B",
+      "I",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "G",
       "",
       "",
+      "D",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,1": "triple-word",
-    "6,4": "double-word",
-    "6,6": "triple-letter",
-    "4,6": "double-letter"
+    "1,0": "double-word",
+    "0,4": "double-letter",
+    "0,2": "triple-letter",
+    "0,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "LEASED",
-      "row": 0,
-      "col": 1,
+      "word": "LAMBIE",
+      "row": 5,
+      "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "STEAK",
-      "row": 0,
+      "word": "APHID",
+      "row": 2,
       "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "LOFT",
-      "row": 0,
-      "col": 1,
-      "direction": "vertical"
+      "word": "KIANG",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
     },
     {
-      "word": "DEL",
-      "row": 2,
-      "col": 3,
-      "direction": "horizontal"
+      "word": "NAG",
+      "row": 4,
+      "col": 1,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
     "O",
-    "F",
-    "U",
-    "U",
-    "N",
-    "T"
+    "E",
+    "I",
+    "S",
+    "T",
+    "D"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "L",
-        "E",
-        "A",
-        "S",
-        "E",
+        "",
+        "",
+        "",
+        "",
+        "",
         "D"
       ],
       [
         "",
-        "O",
         "",
         "",
         "T",
         "",
-        ""
-      ],
-      [
-        "",
-        "F",
-        "",
-        "D",
-        "E",
-        "L",
-        "F"
-      ],
-      [
-        "",
-        "T",
-        "",
-        "",
-        "A",
         "",
         "O"
       ],
       [
         "",
         "",
-        "",
-        "",
         "K",
-        "",
-        "U"
+        "I",
+        "A",
+        "N",
+        "G"
       ],
       [
         "",
         "",
         "",
         "",
+        "P",
         "",
-        "",
-        "N"
+        "I"
       ],
       [
         "",
+        "N",
         "",
         "",
+        "H",
+        "",
+        "E"
+      ],
+      [
+        "L",
+        "A",
+        "M",
+        "B",
+        "I",
+        "E",
+        "S"
+      ],
+      [
+        "",
+        "G",
         "",
         "",
-        "U",
-        "T"
+        "D",
+        "",
+        ""
       ]
     ],
     "newKeys": [
-      "2,6",
+      "0,6",
+      "1,6",
       "3,6",
       "4,6",
       "5,6",
-      "6,6",
-      "6,5"
+      "1,3"
     ],
     "score": 73,
     "completionBonus": 50,
     "words": [
-      "DELF",
-      "FOUNT",
-      "UT"
+      "LAMBIES",
+      "DOGIES",
+      "TI"
     ],
     "scoringWords": [
       {
-        "word": "DELF",
-        "row": 2,
-        "col": 3,
+        "word": "LAMBIES",
+        "row": 5,
+        "col": 0,
         "direction": "horizontal",
-        "score": 8,
-        "move": 1
-      },
-      {
-        "word": "FOUNT",
-        "row": 2,
-        "col": 6,
-        "direction": "vertical",
         "score": 11,
         "move": 1
       },
       {
-        "word": "UT",
-        "row": 6,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 4,
+        "word": "DOGIES",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "TI",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FOUNT",
-        "row": 2,
+        "word": "DOGIES",
+        "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 19,
+        "score": 21,
         "usedTiles": 5,
         "newKeys": [
-          "2,6",
+          "0,6",
+          "1,6",
           "3,6",
           "4,6",
-          "5,6",
-          "6,6"
+          "5,6"
         ],
         "scoringWords": [
           {
-            "word": "DELF",
-            "row": 2,
-            "col": 3,
+            "word": "LAMBIES",
+            "row": 5,
+            "col": 0,
             "direction": "horizontal",
-            "score": 8
+            "score": 11
           },
           {
-            "word": "FOUNT",
-            "row": 2,
+            "word": "DOGIES",
+            "row": 0,
             "col": 6,
             "direction": "vertical",
-            "score": 11
+            "score": 10
           }
         ]
       },
       {
         "turn": 2,
-        "word": "UT",
-        "row": 6,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 4,
+        "word": "TI",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2,
         "usedTiles": 1,
         "newKeys": [
-          "6,5"
+          "1,3"
         ],
         "scoringWords": [
           {
-            "word": "UT",
-            "row": 6,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 4
+            "word": "TI",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -337,6 +337,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 535
+    "visitedCandidates": 1397
   }
 }

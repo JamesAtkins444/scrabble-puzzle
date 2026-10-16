@@ -9,61 +9,61 @@
       "",
       "",
       "",
-      ""
+      "B"
     ],
     [
       "",
-      "B",
       "",
       "",
       "",
       "",
-      ""
+      "",
+      "O"
     ],
     [
       "",
-      "A",
-      "P",
-      "A",
+      "",
+      "",
       "R",
-      "T",
-      ""
-    ],
-    [
-      "",
-      "T",
-      "",
-      "B",
       "",
       "",
-      ""
+      "L"
     ],
     [
       "",
       "",
       "",
-      "M",
-      "",
-      "",
-      ""
+      "E",
+      "G",
+      "A",
+      "L"
     ],
     [
       "",
       "",
-      "",
-      "H",
-      "",
-      "",
-      ""
-    ],
-    [
       "",
       "S",
-      "H",
-      "O",
-      "L",
-      "O",
-      "M"
+      "",
+      "",
+      "O"
+    ],
+    [
+      "T",
+      "Y",
+      "P",
+      "E",
+      "D",
+      "",
+      "X"
+    ],
+    [
+      "",
+      "",
+      "",
+      "T",
+      "",
+      "",
+      ""
     ]
   ],
   "originalBoard": [
@@ -74,289 +74,260 @@
       "",
       "",
       "",
-      ""
+      "B"
     ],
     [
       "",
-      "B",
       "",
       "",
       "",
       "",
-      ""
+      "",
+      "O"
     ],
     [
       "",
-      "A",
-      "P",
-      "A",
+      "",
+      "",
       "R",
-      "T",
-      ""
-    ],
-    [
-      "",
-      "T",
-      "",
-      "B",
       "",
       "",
-      ""
+      "L"
     ],
     [
       "",
       "",
       "",
-      "M",
-      "",
-      "",
-      ""
+      "E",
+      "G",
+      "A",
+      "L"
     ],
     [
       "",
       "",
-      "",
-      "H",
-      "",
-      "",
-      ""
-    ],
-    [
       "",
       "S",
-      "H",
-      "O",
-      "L",
-      "O",
-      "M"
+      "",
+      "",
+      "O"
+    ],
+    [
+      "T",
+      "Y",
+      "P",
+      "E",
+      "D",
+      "",
+      "X"
+    ],
+    [
+      "",
+      "",
+      "",
+      "T",
+      "",
+      "",
+      ""
     ]
   ],
   "bonusSquares": {
-    "4,6": "double-word",
-    "0,4": "double-letter",
-    "0,6": "triple-letter"
+    "2,0": "triple-word",
+    "0,3": "double-word",
+    "0,0": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "SHOLOM",
-      "row": 6,
-      "col": 1,
+      "word": "BOLLOX",
+      "row": 0,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "EGAL",
+      "row": 3,
+      "col": 3,
       "direction": "horizontal"
     },
     {
-      "word": "ABMHO",
+      "word": "RESET",
       "row": 2,
       "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "APART",
-      "row": 2,
-      "col": 1,
+      "word": "TYPED",
+      "row": 5,
+      "col": 0,
       "direction": "horizontal"
-    },
-    {
-      "word": "BAT",
-      "row": 1,
-      "col": 1,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
+    "N",
+    "E",
+    "M",
     "I",
-    "U",
-    "A",
-    "R",
-    "R",
-    "T"
+    "D",
+    "A"
   ],
   "bestSolution": {
     "board": [
       [
         "",
         "",
-        "R",
         "",
         "",
         "",
-        ""
+        "",
+        "B"
       ],
       [
-        "",
-        "B",
         "I",
         "",
         "",
         "",
-        ""
+        "",
+        "",
+        "O"
       ],
       [
+        "N",
         "",
-        "A",
-        "P",
-        "A",
+        "",
         "R",
-        "T",
-        ""
+        "",
+        "",
+        "L"
       ],
       [
-        "",
-        "T",
-        "",
-        "B",
-        "",
-        "",
-        "A"
-      ],
-      [
-        "",
-        "T",
-        "",
         "M",
         "",
         "",
-        "R"
+        "E",
+        "G",
+        "A",
+        "L"
       ],
       [
+        "A",
         "",
-        "",
-        "",
-        "H",
-        "",
-        "",
-        "U"
-      ],
-      [
         "",
         "S",
-        "H",
-        "O",
-        "L",
-        "O",
-        "M"
+        "",
+        "D",
+        "O"
+      ],
+      [
+        "T",
+        "Y",
+        "P",
+        "E",
+        "D",
+        "",
+        "X"
+      ],
+      [
+        "E",
+        "",
+        "",
+        "T",
+        "",
+        "",
+        ""
       ]
     ],
     "newKeys": [
-      "3,6",
-      "4,6",
-      "5,6",
-      "0,2",
-      "1,2",
-      "4,1"
+      "1,0",
+      "2,0",
+      "3,0",
+      "4,0",
+      "6,0",
+      "4,5"
     ],
-    "score": 77,
+    "score": 80,
     "completionBonus": 50,
     "words": [
-      "ARUM",
-      "BI",
-      "RIP",
-      "BATT"
+      "INMATE",
+      "DO",
+      "AD"
     ],
     "scoringWords": [
       {
-        "word": "ARUM",
-        "row": 3,
-        "col": 6,
+        "word": "INMATE",
+        "row": 1,
+        "col": 0,
         "direction": "vertical",
-        "score": 12,
+        "score": 24,
         "move": 1
       },
       {
-        "word": "BI",
-        "row": 1,
-        "col": 1,
+        "word": "DO",
+        "row": 4,
+        "col": 5,
         "direction": "horizontal",
-        "score": 4,
+        "score": 3,
         "move": 2
       },
       {
-        "word": "RIP",
-        "row": 0,
-        "col": 2,
+        "word": "AD",
+        "row": 3,
+        "col": 5,
         "direction": "vertical",
-        "score": 5,
+        "score": 3,
         "move": 2
-      },
-      {
-        "word": "BATT",
-        "row": 1,
-        "col": 1,
-        "direction": "vertical",
-        "score": 6,
-        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "ARUM",
-        "row": 3,
-        "col": 6,
+        "word": "INMATE",
+        "row": 1,
+        "col": 0,
         "direction": "vertical",
-        "score": 12,
-        "usedTiles": 3,
+        "score": 24,
+        "usedTiles": 5,
         "newKeys": [
-          "3,6",
-          "4,6",
-          "5,6"
+          "1,0",
+          "2,0",
+          "3,0",
+          "4,0",
+          "6,0"
         ],
         "scoringWords": [
           {
-            "word": "ARUM",
-            "row": 3,
-            "col": 6,
+            "word": "INMATE",
+            "row": 1,
+            "col": 0,
             "direction": "vertical",
-            "score": 12
+            "score": 24
           }
         ]
       },
       {
         "turn": 2,
-        "word": "RIP",
-        "row": 0,
-        "col": 2,
-        "direction": "vertical",
-        "score": 9,
-        "usedTiles": 2,
-        "newKeys": [
-          "0,2",
-          "1,2"
-        ],
-        "scoringWords": [
-          {
-            "word": "BI",
-            "row": 1,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "RIP",
-            "row": 0,
-            "col": 2,
-            "direction": "vertical",
-            "score": 5
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "BATT",
-        "row": 1,
-        "col": 1,
+        "word": "AD",
+        "row": 3,
+        "col": 5,
         "direction": "vertical",
         "score": 6,
         "usedTiles": 1,
         "newKeys": [
-          "4,1"
+          "4,5"
         ],
         "scoringWords": [
           {
-            "word": "BATT",
-            "row": 1,
-            "col": 1,
+            "word": "DO",
+            "row": 4,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "AD",
+            "row": 3,
+            "col": 5,
             "direction": "vertical",
-            "score": 6
+            "score": 3
           }
         ]
       }
@@ -365,6 +336,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 831
+    "visitedCandidates": 1486
   }
 }

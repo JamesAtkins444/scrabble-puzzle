@@ -5,28 +5,28 @@
     [
       "",
       "",
-      "H",
       "",
       "",
+      "L",
       "",
       ""
     ],
     [
       "",
       "",
-      "O",
       "",
       "",
+      "A",
       "",
       "M"
     ],
     [
       "",
       "",
-      "E",
-      "V",
-      "E",
-      "R",
+      "D",
+      "U",
+      "M",
+      "P",
       "Y"
     ],
     [
@@ -70,28 +70,28 @@
     [
       "",
       "",
-      "H",
       "",
       "",
+      "L",
       "",
       ""
     ],
     [
       "",
       "",
-      "O",
       "",
       "",
+      "A",
       "",
       "M"
     ],
     [
       "",
       "",
-      "E",
-      "V",
-      "E",
-      "R",
+      "D",
+      "U",
+      "M",
+      "P",
       "Y"
     ],
     [
@@ -133,11 +133,10 @@
   ],
   "bonusSquares": {
     "5,0": "triple-word",
-    "2,0": "double-word",
-    "6,2": "triple-letter",
-    "6,4": "double-letter",
-    "0,4": "double-letter",
-    "0,0": "triple-letter"
+    "0,0": "double-word",
+    "0,2": "double-letter",
+    "2,0": "triple-letter",
+    "6,3": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -153,15 +152,15 @@
       "direction": "horizontal"
     },
     {
-      "word": "EVERY",
+      "word": "DUMPY",
       "row": 2,
       "col": 2,
       "direction": "horizontal"
     },
     {
-      "word": "HOE",
+      "word": "LAM",
       "row": 0,
-      "col": 2,
+      "col": 4,
       "direction": "vertical"
     }
   ],
@@ -178,28 +177,28 @@
       [
         "",
         "",
-        "H",
         "",
         "",
+        "L",
         "",
         ""
       ],
       [
         "",
         "",
-        "O",
         "",
         "",
+        "A",
         "",
         "M"
       ],
       [
         "",
         "",
-        "E",
-        "V",
-        "E",
-        "R",
+        "D",
+        "U",
+        "M",
+        "P",
         "Y"
       ],
       [
@@ -339,6 +338,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 357
+    "visitedCandidates": 332
   }
 }

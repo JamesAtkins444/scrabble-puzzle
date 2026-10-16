@@ -25,8 +25,8 @@
       "I",
       "",
       "",
+      "I",
       "",
-      "E",
       ""
     ],
     [
@@ -34,8 +34,8 @@
       "S",
       "",
       "",
+      "M",
       "",
-      "G",
       ""
     ],
     [
@@ -43,8 +43,8 @@
       "T",
       "W",
       "A",
+      "I",
       "N",
-      "G",
       ""
     ],
     [
@@ -52,18 +52,18 @@
       "E",
       "",
       "",
+      "D",
       "",
-      "E",
       ""
     ],
     [
       "",
       "E",
       "",
-      "C",
-      "U",
-      "R",
-      "E"
+      "V",
+      "E",
+      "A",
+      "L"
     ]
   ],
   "originalBoard": [
@@ -90,8 +90,8 @@
       "I",
       "",
       "",
+      "I",
       "",
-      "E",
       ""
     ],
     [
@@ -99,8 +99,8 @@
       "S",
       "",
       "",
+      "M",
       "",
-      "G",
       ""
     ],
     [
@@ -108,8 +108,8 @@
       "T",
       "W",
       "A",
+      "I",
       "N",
-      "G",
       ""
     ],
     [
@@ -117,24 +117,24 @@
       "E",
       "",
       "",
+      "D",
       "",
-      "E",
       ""
     ],
     [
       "",
       "E",
       "",
-      "C",
-      "U",
-      "R",
-      "E"
+      "V",
+      "E",
+      "A",
+      "L"
     ]
   ],
   "bonusSquares": {
-    "0,3": "double-word",
-    "2,3": "triple-letter",
-    "0,5": "double-letter"
+    "0,4": "double-word",
+    "2,6": "double-letter",
+    "0,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -144,19 +144,19 @@
       "direction": "vertical"
     },
     {
-      "word": "TWANG",
+      "word": "TWAIN",
       "row": 4,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "EGGER",
+      "word": "IMIDE",
       "row": 2,
-      "col": 5,
+      "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "CURE",
+      "word": "VEAL",
       "row": 6,
       "col": 3,
       "direction": "horizontal"
@@ -191,114 +191,132 @@
         ""
       ],
       [
+        "H",
+        "I",
+        "",
         "",
         "I",
-        "R",
-        "A",
         "T",
-        "E",
         ""
       ],
       [
-        "",
+        "E",
         "S",
         "",
-        "H",
+        "",
+        "M",
         "U",
-        "G",
-        "E"
+        ""
       ],
       [
-        "",
+        "A",
         "T",
         "W",
         "A",
+        "I",
         "N",
-        "G",
         ""
       ],
       [
-        "",
-        "E",
-        "",
-        "",
-        "",
-        "E",
-        ""
-      ],
-      [
-        "",
-        "E",
-        "",
-        "C",
-        "U",
         "R",
-        "E"
+        "E",
+        "",
+        "",
+        "D",
+        "",
+        ""
+      ],
+      [
+        "",
+        "E",
+        "",
+        "V",
+        "E",
+        "A",
+        "L"
       ]
     ],
     "newKeys": [
-      "3,3",
-      "3,4",
-      "3,6",
-      "2,2",
-      "2,3",
-      "2,4"
+      "2,0",
+      "3,0",
+      "4,0",
+      "5,0",
+      "2,5",
+      "3,5"
     ],
-    "score": 83,
+    "score": 84,
     "completionBonus": 50,
     "words": [
-      "HUGE",
-      "HA",
-      "UN",
-      "IRATE",
-      "AHA",
+      "HI",
+      "ES",
+      "ATWAIN",
+      "RE",
+      "HEAR",
+      "IT",
+      "MU",
       "TUN"
     ],
     "scoringWords": [
       {
-        "word": "HUGE",
-        "row": 3,
-        "col": 3,
+        "word": "HI",
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 8,
-        "move": 1
-      },
-      {
-        "word": "HA",
-        "row": 3,
-        "col": 3,
-        "direction": "vertical",
         "score": 5,
         "move": 1
       },
       {
-        "word": "UN",
+        "word": "ES",
         "row": 3,
-        "col": 4,
-        "direction": "vertical",
+        "col": 0,
+        "direction": "horizontal",
         "score": 2,
         "move": 1
       },
       {
-        "word": "IRATE",
-        "row": 2,
-        "col": 1,
+        "word": "ATWAIN",
+        "row": 4,
+        "col": 0,
         "direction": "horizontal",
+        "score": 9,
+        "move": 1
+      },
+      {
+        "word": "RE",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "HEAR",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
         "score": 7,
+        "move": 1
+      },
+      {
+        "word": "IT",
+        "row": 2,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2,
         "move": 2
       },
       {
-        "word": "AHA",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 8,
+        "word": "MU",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 4,
         "move": 2
       },
       {
         "word": "TUN",
         "row": 2,
-        "col": 4,
+        "col": 5,
         "direction": "vertical",
         "score": 3,
         "move": 2
@@ -307,73 +325,87 @@
     "moves": [
       {
         "turn": 1,
-        "word": "HUGE",
-        "row": 3,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 15,
-        "usedTiles": 3,
+        "word": "HEAR",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 25,
+        "usedTiles": 4,
         "newKeys": [
-          "3,3",
-          "3,4",
-          "3,6"
+          "2,0",
+          "3,0",
+          "4,0",
+          "5,0"
         ],
         "scoringWords": [
           {
-            "word": "HUGE",
-            "row": 3,
-            "col": 3,
+            "word": "HI",
+            "row": 2,
+            "col": 0,
             "direction": "horizontal",
-            "score": 8
-          },
-          {
-            "word": "HA",
-            "row": 3,
-            "col": 3,
-            "direction": "vertical",
             "score": 5
           },
           {
-            "word": "UN",
+            "word": "ES",
             "row": 3,
-            "col": 4,
-            "direction": "vertical",
+            "col": 0,
+            "direction": "horizontal",
             "score": 2
+          },
+          {
+            "word": "ATWAIN",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "RE",
+            "row": 5,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "HEAR",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 7
           }
         ]
       },
       {
         "turn": 2,
-        "word": "IRATE",
+        "word": "TUN",
         "row": 2,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 18,
-        "usedTiles": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 9,
+        "usedTiles": 2,
         "newKeys": [
-          "2,2",
-          "2,3",
-          "2,4"
+          "2,5",
+          "3,5"
         ],
         "scoringWords": [
           {
-            "word": "IRATE",
+            "word": "IT",
             "row": 2,
-            "col": 1,
+            "col": 4,
             "direction": "horizontal",
-            "score": 7
+            "score": 2
           },
           {
-            "word": "AHA",
-            "row": 2,
-            "col": 3,
-            "direction": "vertical",
-            "score": 8
+            "word": "MU",
+            "row": 3,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 4
           },
           {
             "word": "TUN",
             "row": 2,
-            "col": 4,
+            "col": 5,
             "direction": "vertical",
             "score": 3
           }
@@ -384,6 +416,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1876
+    "visitedCandidates": 1498
   }
 }

@@ -13,8 +13,26 @@
     ],
     [
       "",
+      "",
+      "N",
+      "",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "K",
+      "O",
+      "L",
       "O",
       "",
+      "",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "E",
       "",
       "",
       "",
@@ -22,30 +40,12 @@
     ],
     [
       "",
-      "M",
+      "",
+      "T",
       "",
       "",
       "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "B",
-      "",
-      "M",
-      "A",
-      "K",
-      "E"
-    ],
-    [
-      "",
-      "E",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "N"
     ],
     [
       "",
@@ -78,8 +78,26 @@
     ],
     [
       "",
+      "",
+      "N",
+      "",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "K",
+      "O",
+      "L",
       "O",
       "",
+      "",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "E",
       "",
       "",
       "",
@@ -87,30 +105,12 @@
     ],
     [
       "",
-      "M",
+      "",
+      "T",
       "",
       "",
       "",
-      "",
-      "T"
-    ],
-    [
-      "",
-      "B",
-      "",
-      "M",
-      "A",
-      "K",
-      "E"
-    ],
-    [
-      "",
-      "E",
-      "",
-      "",
-      "",
-      "",
-      ""
+      "N"
     ],
     [
       "",
@@ -132,9 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "6,6": "triple-word",
-    "6,3": "double-word",
-    "6,0": "double-letter"
+    "5,4": "double-word",
+    "6,2": "double-letter",
+    "6,0": "triple-letter",
+    "6,6": "triple-letter",
+    "4,0": "double-letter"
   },
   "puzzleWords": [
     {
@@ -144,22 +146,22 @@
       "direction": "horizontal"
     },
     {
-      "word": "RATE",
+      "word": "RATAN",
       "row": 0,
       "col": 6,
       "direction": "vertical"
     },
     {
-      "word": "MAKE",
-      "row": 3,
-      "col": 3,
-      "direction": "horizontal"
+      "word": "INLET",
+      "row": 0,
+      "col": 2,
+      "direction": "vertical"
     },
     {
-      "word": "BOMBE",
-      "row": 0,
-      "col": 1,
-      "direction": "vertical"
+      "word": "KOLO",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -183,47 +185,47 @@
       ],
       [
         "",
-        "O",
         "",
+        "N",
         "",
         "",
         "",
         "A"
       ],
       [
-        "M",
-        "M",
+        "K",
+        "O",
+        "L",
+        "O",
         "",
-        "E",
-        "F",
         "",
         "T"
       ],
       [
-        "A",
-        "B",
         "",
-        "M",
-        "A",
-        "K",
-        "E"
-      ],
-      [
+        "F",
+        "E",
         "M",
         "E",
         "",
-        "",
-        "",
-        "",
-        ""
+        "A"
       ],
       [
+        "",
+        "",
+        "T",
+        "",
+        "",
         "A",
+        "N"
+      ],
+      [
         "",
         "",
         "",
         "",
         "",
+        "M",
         ""
       ],
       [
@@ -232,82 +234,64 @@
         "",
         "",
         "",
-        "",
+        "A",
         ""
       ]
     ],
     "newKeys": [
-      "2,0",
-      "3,0",
-      "4,0",
-      "5,0",
-      "2,3",
-      "2,4"
+      "3,1",
+      "3,3",
+      "3,4",
+      "4,5",
+      "5,5",
+      "6,5"
     ],
-    "score": 86,
+    "score": 75,
     "completionBonus": 50,
     "words": [
-      "MM",
-      "AB",
-      "ME",
-      "MAMA",
-      "EF",
-      "EM",
-      "FA"
+      "FEME",
+      "OF",
+      "OM",
+      "AN",
+      "AMA"
     ],
     "scoringWords": [
       {
-        "word": "MM",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 6,
-        "move": 1
-      },
-      {
-        "word": "AB",
+        "word": "FEME",
         "row": 3,
-        "col": 0,
+        "col": 1,
         "direction": "horizontal",
-        "score": 4,
+        "score": 9,
         "move": 1
       },
       {
-        "word": "ME",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "MAMA",
+        "word": "OF",
         "row": 2,
-        "col": 0,
+        "col": 1,
         "direction": "vertical",
-        "score": 8,
-        "move": 1
-      },
-      {
-        "word": "EF",
-        "row": 2,
-        "col": 3,
-        "direction": "horizontal",
         "score": 5,
-        "move": 2
+        "move": 1
       },
       {
-        "word": "EM",
+        "word": "OM",
         "row": 2,
         "col": 3,
         "direction": "vertical",
         "score": 4,
+        "move": 1
+      },
+      {
+        "word": "AN",
+        "row": 4,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2,
         "move": 2
       },
       {
-        "word": "FA",
-        "row": 2,
-        "col": 4,
+        "word": "AMA",
+        "row": 4,
+        "col": 5,
         "direction": "vertical",
         "score": 5,
         "move": 2
@@ -316,80 +300,66 @@
     "moves": [
       {
         "turn": 1,
-        "word": "MAMA",
-        "row": 2,
-        "col": 0,
-        "direction": "vertical",
-        "score": 22,
-        "usedTiles": 4,
+        "word": "FEME",
+        "row": 3,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 18,
+        "usedTiles": 3,
         "newKeys": [
-          "2,0",
-          "3,0",
-          "4,0",
-          "5,0"
+          "3,1",
+          "3,3",
+          "3,4"
         ],
         "scoringWords": [
           {
-            "word": "MM",
-            "row": 2,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 6
-          },
-          {
-            "word": "AB",
+            "word": "FEME",
             "row": 3,
-            "col": 0,
+            "col": 1,
             "direction": "horizontal",
-            "score": 4
+            "score": 9
           },
           {
-            "word": "ME",
-            "row": 4,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "MAMA",
+            "word": "OF",
             "row": 2,
-            "col": 0,
+            "col": 1,
             "direction": "vertical",
-            "score": 8
+            "score": 5
+          },
+          {
+            "word": "OM",
+            "row": 2,
+            "col": 3,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       },
       {
         "turn": 2,
-        "word": "EF",
-        "row": 2,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 14,
-        "usedTiles": 2,
+        "word": "AMA",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 7,
+        "usedTiles": 3,
         "newKeys": [
-          "2,3",
-          "2,4"
+          "4,5",
+          "5,5",
+          "6,5"
         ],
         "scoringWords": [
           {
-            "word": "EF",
-            "row": 2,
-            "col": 3,
+            "word": "AN",
+            "row": 4,
+            "col": 5,
             "direction": "horizontal",
-            "score": 5
+            "score": 2
           },
           {
-            "word": "EM",
-            "row": 2,
-            "col": 3,
-            "direction": "vertical",
-            "score": 4
-          },
-          {
-            "word": "FA",
-            "row": 2,
-            "col": 4,
+            "word": "AMA",
+            "row": 4,
+            "col": 5,
             "direction": "vertical",
             "score": 5
           }
@@ -400,6 +370,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 582
+    "visitedCandidates": 624
   }
 }

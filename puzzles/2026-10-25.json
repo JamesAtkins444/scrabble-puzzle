@@ -34,16 +34,25 @@
       "",
       "S",
       "",
-      "U",
+      "",
       "",
       ""
     ],
     [
       "",
       "",
-      "E",
+      "T",
+      "A",
+      "B",
+      "O",
+      "O"
+    ],
+    [
       "",
-      "D",
+      "",
+      "",
+      "",
+      "",
       "",
       ""
     ],
@@ -52,16 +61,7 @@
       "",
       "",
       "",
-      "E",
       "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "D",
       "",
       ""
     ]
@@ -99,16 +99,25 @@
       "",
       "S",
       "",
-      "U",
+      "",
       "",
       ""
     ],
     [
       "",
       "",
-      "E",
+      "T",
+      "A",
+      "B",
+      "O",
+      "O"
+    ],
+    [
       "",
-      "D",
+      "",
+      "",
+      "",
+      "",
       "",
       ""
     ],
@@ -117,26 +126,17 @@
       "",
       "",
       "",
-      "E",
       "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "",
-      "D",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,6": "double-word",
-    "4,6": "double-letter",
-    "4,0": "triple-letter",
+    "2,6": "double-word",
+    "4,0": "double-letter",
     "6,1": "triple-letter",
-    "2,6": "double-letter"
+    "6,3": "triple-letter",
+    "6,5": "double-letter"
   },
   "puzzleWords": [
     {
@@ -146,7 +146,7 @@
       "direction": "horizontal"
     },
     {
-      "word": "PRESE",
+      "word": "PREST",
       "row": 0,
       "col": 2,
       "direction": "vertical"
@@ -158,10 +158,10 @@
       "direction": "horizontal"
     },
     {
-      "word": "DUDED",
-      "row": 2,
-      "col": 4,
-      "direction": "vertical"
+      "word": "TABOO",
+      "row": 4,
+      "col": 2,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -184,12 +184,12 @@
         ""
       ],
       [
-        "U",
+        "",
         "",
         "R",
-        "",
-        "",
-        "",
+        "U",
+        "L",
+        "E",
         ""
       ],
       [
@@ -206,159 +206,210 @@
         "",
         "S",
         "",
-        "U",
+        "",
         "",
         ""
       ],
       [
+        "",
+        "",
+        "T",
+        "A",
+        "B",
+        "O",
+        "O"
+      ],
+      [
+        "",
+        "",
         "",
         "M",
         "E",
-        "",
-        "D",
-        "",
-        ""
-      ],
-      [
-        "",
-        "E",
-        "",
-        "",
-        "E",
-        "",
-        ""
-      ],
-      [
-        "",
         "W",
-        "E",
-        "L",
-        "D",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "4,1",
-      "5,1",
-      "6,1",
-      "6,2",
-      "6,3",
-      "1,0"
+      "5,3",
+      "5,4",
+      "5,5",
+      "1,3",
+      "1,4",
+      "1,5"
     ],
-    "score": 91,
+    "score": 87,
     "completionBonus": 50,
     "words": [
-      "ME",
       "MEW",
-      "WELD",
-      "SUP"
+      "AM",
+      "BE",
+      "OW",
+      "RULE",
+      "HUE",
+      "OLD",
+      "NE"
     ],
     "scoringWords": [
       {
-        "word": "ME",
-        "row": 4,
-        "col": 1,
+        "word": "MEW",
+        "row": 5,
+        "col": 3,
         "direction": "horizontal",
+        "score": 8,
+        "move": 1
+      },
+      {
+        "word": "AM",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
         "score": 4,
         "move": 1
       },
       {
-        "word": "MEW",
+        "word": "BE",
         "row": 4,
-        "col": 1,
+        "col": 4,
         "direction": "vertical",
-        "score": 16,
+        "score": 4,
         "move": 1
       },
       {
-        "word": "WELD",
-        "row": 6,
-        "col": 1,
+        "word": "OW",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "RULE",
+        "row": 1,
+        "col": 2,
         "direction": "horizontal",
-        "score": 16,
+        "score": 4,
         "move": 2
       },
       {
-        "word": "SUP",
+        "word": "HUE",
         "row": 0,
-        "col": 0,
+        "col": 3,
         "direction": "vertical",
-        "score": 5,
-        "move": 3
+        "score": 6,
+        "move": 2
+      },
+      {
+        "word": "OLD",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "NE",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
         "word": "MEW",
-        "row": 4,
-        "col": 1,
-        "direction": "vertical",
-        "score": 20,
+        "row": 5,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 21,
         "usedTiles": 3,
         "newKeys": [
-          "4,1",
-          "5,1",
-          "6,1"
+          "5,3",
+          "5,4",
+          "5,5"
         ],
         "scoringWords": [
           {
-            "word": "ME",
-            "row": 4,
-            "col": 1,
+            "word": "MEW",
+            "row": 5,
+            "col": 3,
             "direction": "horizontal",
+            "score": 8
+          },
+          {
+            "word": "AM",
+            "row": 4,
+            "col": 3,
+            "direction": "vertical",
             "score": 4
           },
           {
-            "word": "MEW",
+            "word": "BE",
             "row": 4,
-            "col": 1,
+            "col": 4,
             "direction": "vertical",
-            "score": 16
+            "score": 4
+          },
+          {
+            "word": "OW",
+            "row": 4,
+            "col": 5,
+            "direction": "vertical",
+            "score": 5
           }
         ]
       },
       {
         "turn": 2,
-        "word": "WELD",
-        "row": 6,
-        "col": 1,
+        "word": "RULE",
+        "row": 1,
+        "col": 2,
         "direction": "horizontal",
         "score": 16,
-        "usedTiles": 2,
+        "usedTiles": 3,
         "newKeys": [
-          "6,2",
-          "6,3"
+          "1,3",
+          "1,4",
+          "1,5"
         ],
         "scoringWords": [
           {
-            "word": "WELD",
-            "row": 6,
-            "col": 1,
+            "word": "RULE",
+            "row": 1,
+            "col": 2,
             "direction": "horizontal",
-            "score": 16
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "SUP",
-        "row": 0,
-        "col": 0,
-        "direction": "vertical",
-        "score": 5,
-        "usedTiles": 1,
-        "newKeys": [
-          "1,0"
-        ],
-        "scoringWords": [
+            "score": 4
+          },
           {
-            "word": "SUP",
+            "word": "HUE",
             "row": 0,
-            "col": 0,
+            "col": 3,
             "direction": "vertical",
-            "score": 5
+            "score": 6
+          },
+          {
+            "word": "OLD",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "NE",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -367,6 +418,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 693
+    "visitedCandidates": 656
   }
 }

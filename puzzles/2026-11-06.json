@@ -3,8 +3,8 @@
   "boardSize": 7,
   "board": [
     [
-      "H",
-      "U",
+      "",
+      "",
       "B",
       "",
       "",
@@ -17,17 +17,17 @@
       "U",
       "",
       "",
-      "F",
-      ""
+      "",
+      "F"
     ],
     [
-      "",
-      "",
+      "C",
+      "O",
       "N",
       "",
       "",
-      "A",
-      ""
+      "",
+      "A"
     ],
     [
       "",
@@ -44,8 +44,8 @@
       "L",
       "",
       "",
-      "G",
-      ""
+      "",
+      "W"
     ],
     [
       "",
@@ -53,8 +53,8 @@
       "E",
       "",
       "",
-      "H",
-      ""
+      "",
+      "A"
     ],
     [
       "",
@@ -68,8 +68,8 @@
   ],
   "originalBoard": [
     [
-      "H",
-      "U",
+      "",
+      "",
       "B",
       "",
       "",
@@ -82,17 +82,17 @@
       "U",
       "",
       "",
-      "F",
-      ""
+      "",
+      "F"
     ],
     [
-      "",
-      "",
+      "C",
+      "O",
       "N",
       "",
       "",
-      "A",
-      ""
+      "",
+      "A"
     ],
     [
       "",
@@ -109,8 +109,8 @@
       "L",
       "",
       "",
-      "G",
-      ""
+      "",
+      "W"
     ],
     [
       "",
@@ -118,8 +118,8 @@
       "E",
       "",
       "",
-      "H",
-      ""
+      "",
+      "A"
     ],
     [
       "",
@@ -132,8 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "3,0": "double-word",
-    "6,0": "double-letter"
+    "0,0": "double-word",
+    "1,4": "double-letter",
+    "6,0": "double-letter",
+    "5,4": "triple-letter",
+    "4,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -149,14 +152,14 @@
       "direction": "horizontal"
     },
     {
-      "word": "FAUGH",
+      "word": "FATWA",
       "row": 1,
-      "col": 5,
+      "col": 6,
       "direction": "vertical"
     },
     {
-      "word": "HUB",
-      "row": 0,
+      "word": "CON",
+      "row": 2,
       "col": 0,
       "direction": "horizontal"
     }
@@ -172,34 +175,34 @@
   "bestSolution": {
     "board": [
       [
-        "H",
-        "U",
+        "",
+        "",
         "B",
-        "",
-        "",
-        "",
+        "A",
+        "I",
+        "T",
         ""
       ],
       [
-        "A",
+        "",
         "",
         "U",
         "",
         "",
-        "F",
-        "A"
+        "",
+        "F"
       ],
       [
-        "I",
-        "",
+        "C",
+        "O",
         "N",
         "",
         "",
-        "A",
-        "T"
+        "",
+        "A"
       ],
       [
-        "R",
+        "",
         "",
         "D",
         "O",
@@ -208,13 +211,13 @@
         "T"
       ],
       [
-        "Y",
+        "",
         "",
         "L",
         "",
         "",
-        "G",
-        ""
+        "",
+        "W"
       ],
       [
         "",
@@ -222,13 +225,13 @@
         "E",
         "",
         "",
-        "H",
-        ""
+        "",
+        "A"
       ],
       [
-        "",
-        "",
-        "",
+        "Y",
+        "A",
+        "R",
         "",
         "",
         "",
@@ -236,113 +239,97 @@
       ]
     ],
     "newKeys": [
-      "1,0",
-      "2,0",
-      "3,0",
-      "4,0",
-      "1,6",
-      "2,6"
+      "6,0",
+      "6,1",
+      "6,2",
+      "0,3",
+      "0,4",
+      "0,5"
     ],
-    "score": 82,
+    "score": 76,
     "completionBonus": 50,
     "words": [
-      "HAIRY",
-      "FA",
-      "AT",
-      "ATT"
+      "YAR",
+      "BUNDLER",
+      "BAIT"
     ],
     "scoringWords": [
       {
-        "word": "HAIRY",
-        "row": 0,
+        "word": "YAR",
+        "row": 6,
         "col": 0,
-        "direction": "vertical",
-        "score": 22,
+        "direction": "horizontal",
+        "score": 10,
         "move": 1
       },
       {
-        "word": "FA",
-        "row": 1,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "AT",
-        "row": 2,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "ATT",
-        "row": 1,
-        "col": 6,
+        "word": "BUNDLER",
+        "row": 0,
+        "col": 2,
         "direction": "vertical",
-        "score": 3,
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "BAIT",
+        "row": 0,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 6,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "HAIRY",
-        "row": 0,
+        "word": "YAR",
+        "row": 6,
         "col": 0,
-        "direction": "vertical",
-        "score": 22,
-        "usedTiles": 4,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 3,
         "newKeys": [
-          "1,0",
-          "2,0",
-          "3,0",
-          "4,0"
+          "6,0",
+          "6,1",
+          "6,2"
         ],
         "scoringWords": [
           {
-            "word": "HAIRY",
-            "row": 0,
+            "word": "YAR",
+            "row": 6,
             "col": 0,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "BUNDLER",
+            "row": 0,
+            "col": 2,
             "direction": "vertical",
-            "score": 22
+            "score": 10
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ATT",
-        "row": 1,
-        "col": 6,
-        "direction": "vertical",
-        "score": 10,
-        "usedTiles": 2,
+        "word": "BAIT",
+        "row": 0,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 6,
+        "usedTiles": 3,
         "newKeys": [
-          "1,6",
-          "2,6"
+          "0,3",
+          "0,4",
+          "0,5"
         ],
         "scoringWords": [
           {
-            "word": "FA",
-            "row": 1,
-            "col": 5,
+            "word": "BAIT",
+            "row": 0,
+            "col": 2,
             "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "AT",
-            "row": 2,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "ATT",
-            "row": 1,
-            "col": 6,
-            "direction": "vertical",
-            "score": 3
+            "score": 6
           }
         ]
       }
@@ -351,6 +338,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 935
+    "visitedCandidates": 1069
   }
 }

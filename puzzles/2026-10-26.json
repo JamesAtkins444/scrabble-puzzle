@@ -61,7 +61,7 @@
       "M",
       "A",
       "L",
-      "T",
+      "L",
       "",
       ""
     ]
@@ -126,7 +126,7 @@
       "M",
       "A",
       "L",
-      "T",
+      "L",
       "",
       ""
     ]
@@ -151,7 +151,7 @@
       "direction": "horizontal"
     },
     {
-      "word": "SMALT",
+      "word": "SMALL",
       "row": 6,
       "col": 0,
       "direction": "horizontal"
@@ -232,7 +232,7 @@
         "M",
         "A",
         "L",
-        "T",
+        "L",
         "",
         ""
       ]
@@ -382,6 +382,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 772
+    "visitedCandidates": 753
   }
 }
