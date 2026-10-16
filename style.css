@@ -3087,3 +3087,38 @@ body {
         height: 19px;
     }
 }
+
+
+/* Keep the icon-only Help button at the board's left edge and Share at its right edge,
+   while the game title remains precisely centred between them. */
+.board-utility-row {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr) 24px;
+    width: min(100%, 500px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.board-utility-row > .rules-help-button {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+}
+
+.board-utility-row > .game-branding {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+}
+
+.board-utility-row > .share-results-icon-button {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+}
+
+@media (max-width: 600px) {
+    .board-utility-row {
+        grid-template-columns: 22px minmax(0, 1fr) 22px;
+    }
+}
