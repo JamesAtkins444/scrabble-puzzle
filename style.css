@@ -2959,3 +2959,63 @@ body {
         height: 17px;
     }
 }
+
+
+/* Center the Toucanagrams title between the utility buttons. */
+.board-utility-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+}
+
+.board-utility-row > .rules-help-button {
+    justify-self: start;
+}
+
+.board-utility-row > .share-results-icon-button {
+    justify-self: end;
+}
+
+.game-branding {
+    min-width: 0;
+    text-align: center;
+    line-height: 0.82;
+    color: #ffffff;
+}
+
+.game-brand-title {
+    font-family: "Dongle", sans-serif;
+    font-size: 43px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.daily-puzzle-number {
+    margin-top: 1px;
+    font-family: "Dongle", sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 0.9;
+    white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+    .game-brand-title {
+        font-size: 36px;
+    }
+
+    .daily-puzzle-number {
+        font-size: 20px;
+    }
+
+    .board-utility-row .rules-help-button,
+    .board-utility-row .share-results-icon-button {
+        font-size: 16px;
+        gap: 4px;
+    }
+
+    .board-utility-row .share-results-icon-button svg {
+        width: 15px;
+        height: 15px;
+    }
+}
