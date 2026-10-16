@@ -2859,7 +2859,7 @@ body {
 #board .cell > .board-tile.player-on-double-word,
 #board .cell > .board-tile.player-on-triple-word {
     background-image: linear-gradient(
-        to bottom,
+        to bottom right,
         rgba(255, 255, 255, 0.34) 0%,
         rgba(255, 255, 255, 0.10) 14%,
         rgba(255, 255, 255, 0) 36%,
