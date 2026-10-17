@@ -3172,3 +3172,22 @@ body {
         width: min(100%, 500px) !important;
     }
 }
+
+
+/* Make Share and How to Play fill the same vertical space as the two-line game title. */
+.board-utility-row > .rules-help-button,
+.board-utility-row > .share-results-icon-button {
+    height: 100% !important;
+    min-height: 0 !important;
+    align-self: stretch !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.board-utility-row > .game-branding {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
