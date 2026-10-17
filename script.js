@@ -97,6 +97,9 @@ let score = 0;
 // This remains unchanged when tiles are placed on the board.
 let startingRackValueTotal = 0;
 
+// Tracks star progress so the share popup opens only on the moment three stars are earned.
+let previousAchievementStars = 0;
+
 let isGenerating = false;
 
 
@@ -3632,6 +3635,19 @@ function updateAchievementStars(
         "aria-label",
         `${earnedStars} of 3 stars earned${beatsSolver ? "; solver beaten" : ""}`
     );
+
+    // Open the share dialog only when the player newly reaches three stars.
+    if (earnedStars === 3 && previousAchievementStars < 3) {
+        refreshShareResultsSummary();
+        if (shareResultsDialog && !shareResultsDialog.open) {
+            if (typeof shareResultsDialog.showModal === "function") {
+                shareResultsDialog.showModal();
+            } else {
+                shareResultsDialog.setAttribute("open", "");
+            }
+        }
+    }
+    previousAchievementStars = earnedStars;
 }
 
 function displayScoringWords(
@@ -5036,6 +5052,28 @@ async function initialise() {
         await generateDailyPuzzle();
     } else {
         await loadDailyPuzzle();
+
+        // Show How to Play once per browser on the player's first visit.
+        try {
+            const rulesSeenKey = "toucanagramsHowToPlaySeen";
+            if (!localStorage.getItem(rulesSeenKey) && rulesDialog) {
+                if (typeof rulesDialog.showModal === "function") {
+                    rulesDialog.showModal();
+                } else {
+                    rulesDialog.setAttribute("open", "");
+                }
+                localStorage.setItem(rulesSeenKey, "true");
+            }
+        } catch (error) {
+            // If storage is unavailable, still show the first-visit help popup.
+            if (rulesDialog && !rulesDialog.open) {
+                if (typeof rulesDialog.showModal === "function") {
+                    rulesDialog.showModal();
+                } else {
+                    rulesDialog.setAttribute("open", "");
+                }
+            }
+        }
     }
 }
 
