@@ -3309,3 +3309,53 @@ body {
 .board-utility-row > .game-branding {
     grid-column: 2 !important;
 }
+
+
+/* Final utility layout fix: use grid columns, not absolute offsets, so Share and Help
+   cannot collapse onto the same side on mobile. Their centres match board cells 1 and 7. */
+.board-utility-row {
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    align-items: center !important;
+    width: min(100%, 500px) !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+    box-sizing: border-box !important;
+}
+
+.board-utility-row > .share-results-icon-button {
+    position: static !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: center !important;
+    align-self: center !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+}
+
+.board-utility-row > .game-branding {
+    position: static !important;
+    grid-column: 2 / 7 !important;
+    grid-row: 1 !important;
+    justify-self: center !important;
+    align-self: stretch !important;
+}
+
+.board-utility-row > .rules-help-button {
+    position: static !important;
+    grid-column: 7 !important;
+    grid-row: 1 !important;
+    justify-self: center !important;
+    align-self: center !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+}
+
+@media (max-width: 600px) {
+    .board-utility-row {
+        width: 100% !important;
+    }
+}
