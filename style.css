@@ -3191,3 +3191,21 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
+
+/* Let the grid row define button height, rather than a percentage height on an auto-sized row. */
+.board-utility-row {
+    align-items: stretch !important;
+}
+
+.board-utility-row > .rules-help-button,
+.board-utility-row > .share-results-icon-button {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: stretch !important;
+    box-sizing: border-box !important;
+}
+
+.board-utility-row > .game-branding {
+    align-self: stretch !important;
+}
