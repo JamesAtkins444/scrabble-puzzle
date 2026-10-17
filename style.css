@@ -3163,3 +3163,12 @@ body {
         gap: 2.67px !important;
     }
 }
+
+
+/* Revert the extra 1px mobile rack gap; match the board's mobile cell spacing again. */
+@media (max-width: 600px) {
+    #tileRack {
+        gap: 1.67px !important;
+        width: min(100%, 500px) !important;
+    }
+}
