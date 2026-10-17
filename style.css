@@ -3400,3 +3400,17 @@ body {
     outline-offset: 3px;
     box-shadow: none !important;
 }
+
+
+/* Prevent a persistent native focus ring around the popup close cross after it is tapped. */
+.rules-close-button:focus,
+.rules-close-button:focus-visible,
+.rules-close-button:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+.rules-close-button {
+    -webkit-tap-highlight-color: transparent !important;
+}
