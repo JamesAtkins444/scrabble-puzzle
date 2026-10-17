@@ -3359,3 +3359,21 @@ body {
         width: 100% !important;
     }
 }
+
+
+/* Reduce the gap below the game board by moving the rack and everything after it up 20px. */
+#tileRack,
+#rackActions {
+    position: relative;
+    top: -20px;
+}
+
+#tileMessage {
+    position: relative;
+    top: -20px;
+}
+
+#bestScoreBox {
+    position: relative;
+    top: -20px;
+}
