@@ -3146,3 +3146,20 @@ body {
         gap: 2.67px !important;
     }
 }
+
+
+/* Match rack-cell dimensions to board cells while preserving the extra 1px mobile gap. */
+#tileRack {
+    width: min(100%, 500px) !important;
+    padding: 0 !important;
+    gap: 2.33px !important;
+}
+
+@media (max-width: 600px) {
+    #tileRack {
+        width: calc(min(100%, 500px) + 6px) !important;
+        max-width: none !important;
+        padding: 0 !important;
+        gap: 2.67px !important;
+    }
+}
