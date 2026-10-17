@@ -3256,3 +3256,31 @@ body {
         padding-right: 3px !important;
     }
 }
+
+
+/* Align the utility icon centres with the centres of the board's outermost cells,
+   without changing their vertical position or the centred title. */
+.board-utility-row {
+    position: relative !important;
+}
+
+.board-utility-row > .share-results-icon-button,
+.board-utility-row > .rules-help-button {
+    position: absolute !important;
+    top: 50% !important;
+    margin: 0 !important;
+    transform: translateY(-50%);
+}
+
+.board-utility-row > .share-results-icon-button {
+    left: calc(100% / 14) !important;
+}
+
+.board-utility-row > .rules-help-button {
+    right: calc(100% / 14) !important;
+}
+
+.board-utility-row > .share-results-icon-button:hover,
+.board-utility-row > .rules-help-button:hover {
+    transform: translateY(calc(-50% - 1px)) !important;
+}
