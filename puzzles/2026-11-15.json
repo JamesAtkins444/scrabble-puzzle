@@ -1,0 +1,375 @@
+{
+  "date": "2026-11-15",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "E",
+      "P",
+      "T",
+      "E",
+      "T"
+    ],
+    [
+      "",
+      "Y",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "R",
+      "",
+      "T",
+      "A",
+      "L",
+      "K"
+    ],
+    [
+      "",
+      "U",
+      "",
+      "",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "P",
+      "",
+      "",
+      "K",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "E",
+      "P",
+      "T",
+      "E",
+      "T"
+    ],
+    [
+      "",
+      "Y",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "R",
+      "",
+      "T",
+      "A",
+      "L",
+      "K"
+    ],
+    [
+      "",
+      "U",
+      "",
+      "",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "P",
+      "",
+      "",
+      "K",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,6": "double-word",
+    "0,0": "triple-letter",
+    "6,6": "double-letter",
+    "0,2": "triple-letter",
+    "0,4": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "SEPTET",
+      "row": 2,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "TRANK",
+      "row": 2,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "SYRUP",
+      "row": 2,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "TALK",
+      "row": 4,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "R",
+    "O",
+    "S",
+    "I",
+    "E",
+    "S"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "S",
+        "E",
+        "P",
+        "T",
+        "E",
+        "T"
+      ],
+      [
+        "",
+        "Y",
+        "",
+        "I",
+        "R",
+        "E",
+        "S"
+      ],
+      [
+        "",
+        "R",
+        "",
+        "T",
+        "A",
+        "L",
+        "K"
+      ],
+      [
+        "",
+        "U",
+        "",
+        "",
+        "N",
+        "",
+        ""
+      ],
+      [
+        "",
+        "P",
+        "O",
+        "R",
+        "K",
+        "S",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "3,3",
+      "3,5",
+      "3,6",
+      "6,2",
+      "6,3",
+      "6,5"
+    ],
+    "score": 80,
+    "completionBonus": 50,
+    "words": [
+      "IRES",
+      "PIT",
+      "EEL",
+      "TSK",
+      "PORKS"
+    ],
+    "scoringWords": [
+      {
+        "word": "IRES",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "PIT",
+        "row": 2,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "EEL",
+        "row": 2,
+        "col": 5,
+        "direction": "vertical",
+        "score": 3,
+        "move": 1
+      },
+      {
+        "word": "TSK",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 7,
+        "move": 1
+      },
+      {
+        "word": "PORKS",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 11,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "IRES",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 19,
+        "usedTiles": 3,
+        "newKeys": [
+          "3,3",
+          "3,5",
+          "3,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "IRES",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "PIT",
+            "row": 2,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "EEL",
+            "row": 2,
+            "col": 5,
+            "direction": "vertical",
+            "score": 3
+          },
+          {
+            "word": "TSK",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 7
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "PORKS",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 11,
+        "usedTiles": 3,
+        "newKeys": [
+          "6,2",
+          "6,3",
+          "6,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "PORKS",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 11
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1131
+  }
+}
