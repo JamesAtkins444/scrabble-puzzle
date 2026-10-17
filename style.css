@@ -3138,3 +3138,11 @@ body {
         height: 22.8px;
     }
 }
+
+
+/* Increase the spacing between rack cells by 1px on mobile only. */
+@media (max-width: 600px) {
+    #tileRack {
+        gap: 2.67px !important;
+    }
+}
