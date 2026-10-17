@@ -3284,3 +3284,28 @@ body {
 .board-utility-row > .rules-help-button:hover {
     transform: translateY(calc(-50% - 1px)) !important;
 }
+
+
+/* Correct utility icon placement: pin each button to its own board-edge cell centre.
+   The utility row is the containing block; keep the branding in the middle. */
+.board-utility-row {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    position: relative !important;
+}
+
+.board-utility-row > .share-results-icon-button {
+    left: calc((100% - 6px) / 14 + 3px) !important;
+    right: auto !important;
+    justify-self: start !important;
+}
+
+.board-utility-row > .rules-help-button {
+    left: auto !important;
+    right: calc((100% - 6px) / 14 + 3px) !important;
+    justify-self: end !important;
+}
+
+.board-utility-row > .game-branding {
+    grid-column: 2 !important;
+}
