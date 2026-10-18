@@ -3688,14 +3688,14 @@ body {
 }
 
 .rules-content {
-    padding: 8px 12px 24px;
+    padding: 8px 22px 24px;
     font-size: 24px;
     line-height: 0.95;
     text-align: center;
 }
 
 .rules-content .how-to-play-intro {
-    max-width: 100%;
+    max-width: 390px;
     margin: 0 auto 18px;
     font-size: 25px;
     line-height: 0.95;
@@ -3797,7 +3797,7 @@ body {
 }
 
 .rules-content .how-to-play-word-rules {
-    max-width: 100%;
+    max-width: 390px;
     margin: 0 auto 20px;
     font-size: 24px;
     line-height: 0.95;
@@ -3806,7 +3806,7 @@ body {
 }
 
 .rules-content .how-to-play-bonuses-copy {
-    max-width: 100%;
+    max-width: 390px;
     margin: 0 auto 14px;
     font-size: 24px;
     line-height: 0.95;
@@ -3874,8 +3874,8 @@ body {
     }
 
     .rules-content {
-        padding-right: 10px;
-        padding-left: 10px;
+        padding-right: 16px;
+        padding-left: 16px;
     }
 
     .rules-content .how-to-play-intro {
