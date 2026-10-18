@@ -3564,3 +3564,57 @@ body {
         font-size: 22px;
     }
 }
+
+
+/* Keep the score, stars, and optional crown together on one centred line. */
+.share-results-achievements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin: 8px auto 0;
+    text-align: center;
+}
+
+.share-results-achievements .share-results-score,
+.share-results-achievements .share-results-stars,
+.share-results-achievements .share-results-crown {
+    display: block;
+    flex: 0 0 auto;
+    margin: 0;
+    min-height: 0;
+    line-height: 1;
+}
+
+.share-results-achievements .share-results-score {
+    font-size: 58px;
+}
+
+.share-results-achievements .share-results-stars {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.share-results-achievements .share-results-crown {
+    font-size: 28px;
+}
+
+.share-results-achievements .share-results-crown[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 360px) {
+    .share-results-achievements {
+        gap: 7px;
+    }
+
+    .share-results-achievements .share-results-score {
+        font-size: 52px;
+    }
+
+    .share-results-achievements .share-results-stars {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+}
