@@ -24,43 +24,57 @@
     </div>
 
     <div class="rules-content">
-        <h3 class="how-to-play-bonuses-title">Scoring</h3>
-        <p class="how-to-play-intro">Create words by placing the white tiles from your rack onto board. You cannot move the black tiles.</p>
-
-        <div class="how-to-play-example" role="img" aria-label="A 3 by 3 game board. A white Z tile with red text and a red outline is in the top-left cell. A white H tile is in the top-right cell and a white A tile is directly below it. Black tiles C, A and T fill the bottom row.">
-            <div class="how-to-play-example-cell">
-                <div class="how-to-play-tile how-to-play-invalid"><span class="tile-letter">Z</span><span class="tile-value">10</span></div>
-            </div>
-            <div class="how-to-play-example-cell"></div>
-            <div class="how-to-play-example-cell">
-                <div class="how-to-play-tile how-to-play-white"><span class="tile-letter">H</span><span class="tile-value">4</span></div>
-            </div>
-            <div class="how-to-play-example-cell"></div>
-            <div class="how-to-play-example-cell"></div>
-            <div class="how-to-play-example-cell">
-                <div class="how-to-play-tile how-to-play-white"><span class="tile-letter">A</span><span class="tile-value">1</span></div>
-            </div>
-            <div class="how-to-play-example-cell">
-                <div class="how-to-play-tile how-to-play-black"><span class="tile-letter">C</span><span class="tile-value">3</span></div>
-            </div>
-            <div class="how-to-play-example-cell">
-                <div class="how-to-play-tile how-to-play-black"><span class="tile-letter">A</span><span class="tile-value">1</span></div>
-            </div>
-            <div class="how-to-play-example-cell">
-                <div class="how-to-play-tile how-to-play-black"><span class="tile-letter">T</span><span class="tile-value">1</span></div>
-            </div>
+        <div class="rules-tabs" role="tablist" aria-label="How to Play sections">
+            <button class="rules-tab is-active" id="rulesTabGeneral" type="button" role="tab" aria-selected="true" aria-controls="rulesPanelGeneral" data-rules-tab="general">General</button>
+            <button class="rules-tab" id="rulesTabScoring" type="button" role="tab" aria-selected="false" aria-controls="rulesPanelScoring" data-rules-tab="scoring" tabindex="-1">Scoring</button>
+            <button class="rules-tab" id="rulesTabBonuses" type="button" role="tab" aria-selected="false" aria-controls="rulesPanelBonuses" data-rules-tab="bonuses" tabindex="-1">Bonuses</button>
         </div>
 
-        <p class="how-to-play-word-rules">All words must be connected to each other and be a valid word vertically and horizontally. Words are scored using the tile value in the bottom right corner of each tile.<br><br>More information on the valid word list here</p>
+        <section class="rules-tab-panel is-active" id="rulesPanelGeneral" role="tabpanel" aria-labelledby="rulesTabGeneral" data-rules-panel="general">
+            <p class="how-to-play-intro">Create words by placing the white tiles from your rack onto the board. You cannot move the black tiles.</p>
+            <div class="how-to-play-example" role="img" aria-label="A 3 by 3 game board. A white Z tile with red text and a red outline is in the top-left cell. A white H tile is in the top-right cell and a white A tile is directly below it. Black tiles C, A and T fill the bottom row.">
+                <div class="how-to-play-example-cell">
+                    <div class="how-to-play-tile how-to-play-invalid"><span class="tile-letter">Z</span><span class="tile-value">10</span></div>
+                </div>
+                <div class="how-to-play-example-cell"></div>
+                <div class="how-to-play-example-cell">
+                    <div class="how-to-play-tile how-to-play-white"><span class="tile-letter">H</span><span class="tile-value">4</span></div>
+                </div>
+                <div class="how-to-play-example-cell"></div>
+                <div class="how-to-play-example-cell"></div>
+                <div class="how-to-play-example-cell">
+                    <div class="how-to-play-tile how-to-play-white"><span class="tile-letter">A</span><span class="tile-value">1</span></div>
+                </div>
+                <div class="how-to-play-example-cell">
+                    <div class="how-to-play-tile how-to-play-black"><span class="tile-letter">C</span><span class="tile-value">3</span></div>
+                </div>
+                <div class="how-to-play-example-cell">
+                    <div class="how-to-play-tile how-to-play-black"><span class="tile-letter">A</span><span class="tile-value">1</span></div>
+                </div>
+                <div class="how-to-play-example-cell">
+                    <div class="how-to-play-tile how-to-play-black"><span class="tile-letter">T</span><span class="tile-value">1</span></div>
+                </div>
+            </div>
+            <p class="how-to-play-word-rules">All words must be connected to each other and be a valid word vertically and horizontally.</p>
+        </section>
 
-        <h3 class="how-to-play-bonuses-title">Bonuses</h3>
-        <p class="how-to-play-bonuses-copy">Letters placed on bonus tiles increase the score of either the individual tile value (2L, 3L) or the whole word (2W, 3W).<br><br>A bonus tile can be used multiple times on multiple words.</p>
-        <div class="how-to-play-bonus-tiles" role="img" aria-label="Four bonus tiles: double letter, triple letter, double word and triple word.">
-            <div class="how-to-play-bonus-tile how-to-play-double-letter">2L</div>
-            <div class="how-to-play-bonus-tile how-to-play-triple-letter">3L</div>
-            <div class="how-to-play-bonus-tile how-to-play-double-word">2W</div>
-            <div class="how-to-play-bonus-tile how-to-play-triple-word">3W</div>
-        </div>
+        <section class="rules-tab-panel" id="rulesPanelScoring" role="tabpanel" aria-labelledby="rulesTabScoring" data-rules-panel="scoring" hidden>
+            <h3 class="how-to-play-bonuses-title">Scoring</h3>
+            <p class="how-to-play-word-rules">Words are scored using the tile value in the bottom right corner of each tile.</p>
+        </section>
+
+        <section class="rules-tab-panel" id="rulesPanelBonuses" role="tabpanel" aria-labelledby="rulesTabBonuses" data-rules-panel="bonuses" hidden>
+            <h3 class="how-to-play-bonuses-title">Bonuses</h3>
+            <p class="how-to-play-bonuses-copy">Letters placed on bonus tiles increase the score of either the individual tile value (2L, 3L) or the whole word (2W, 3W).<br><br>A bonus tile can be used multiple times on multiple words.</p>
+            <div class="how-to-play-bonus-tiles" role="img" aria-label="Four bonus tiles: double letter, triple letter, double word and triple word.">
+                <div class="how-to-play-bonus-tile how-to-play-double-letter">2L</div>
+                <div class="how-to-play-bonus-tile how-to-play-triple-letter">3L</div>
+                <div class="how-to-play-bonus-tile how-to-play-double-word">2W</div>
+                <div class="how-to-play-bonus-tile how-to-play-triple-word">3W</div>
+            </div>
+        </section>
+
+        <p class="how-to-play-dictionary-note">More information on the valid word list here</p>
     </div>
 </dialog>
 
