@@ -3667,7 +3667,9 @@ function updateAchievementStars(
         }
     }
 
-    if (shouldOpenShareDialog) {
+    // Revealing the solver answer should never trigger the share popup.
+    // After revealing, the player can still open it manually with the share icon.
+    if (shouldOpenShareDialog && !answerRevealed) {
         refreshShareResultsSummary();
         if (shareResultsDialog && !shareResultsDialog.open) {
             if (typeof shareResultsDialog.showModal === "function") {
