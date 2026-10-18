@@ -42,13 +42,16 @@
 </dialog>
 
 <dialog id="shareResultsDialog" class="share-results-dialog" aria-labelledby="shareResultsTitle">
-    <div class="rules-dialog-header">
-        <h2 id="shareResultsTitle">Puzzle Results</h2>
+    <div class="share-results-header">
         <button id="closeShareResultsButton" class="rules-close-button" type="button" aria-label="Close results">×</button>
+        <h2 id="shareResultsTitle">Nice!</h2>
     </div>
     <div class="share-results-content">
-        <p id="shareResultsSummary" class="share-results-summary">Results: 0/—</p>
-        <button id="copyShareResultsButton" class="copy-share-results-button" type="button">Share results</button>
+        <p id="shareResultsSubtitle" class="share-results-subtitle">Sharing copy goes in this spots when I write it</p>
+        <p id="shareResultsSummary" class="share-results-score">0/—</p>
+        <p id="shareResultsStars" class="share-results-stars" aria-label="0 stars earned"></p>
+        <p id="shareResultsCrown" class="share-results-crown" hidden aria-label="Crown awarded">👑</p>
+        <button id="copyShareResultsButton" class="copy-share-results-button" type="button">Share</button>
         <p id="shareResultsStatus" class="share-results-status" role="status" aria-live="polite"></p>
     </div>
 </dialog>
