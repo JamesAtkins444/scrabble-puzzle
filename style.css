@@ -3431,3 +3431,11 @@ body {
 .board-utility-row .rules-help-button .help-icon-svg {
     display: none !important;
 }
+
+
+/* Keep the two top utility buttons visually unchanged on hover. */
+.board-utility-row > .share-results-icon-button:hover,
+.board-utility-row > .rules-help-button:hover {
+    transform: none !important;
+    filter: none !important;
+}
