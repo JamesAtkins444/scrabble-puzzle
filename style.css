@@ -3861,9 +3861,11 @@ body {
 }
 
 .rules-content .how-to-play-bonuses-copy {
-    margin: 0;
+    max-width: 390px;
+    margin: 0 auto 14px;
     font-size: 24px;
     line-height: 0.95;
+    text-align: center;
 }
 
 @media (max-width: 480px) {
