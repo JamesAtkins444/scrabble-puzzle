@@ -3971,3 +3971,78 @@ body {
         min-height: 195px;
     }
 }
+
+
+/* How to Play: controls and scoring example */
+.rules-content .how-to-play-controls-copy {
+    margin-top: -8px;
+    margin-bottom: 18px;
+}
+
+.how-to-play-score-example {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: max-content;
+    max-width: 100%;
+    margin: 16px auto;
+    padding: 7px 14px;
+    border: 1px solid #e3e6e8;
+    border-radius: 12px;
+    background: #f7f8f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.how-to-play-score-number {
+    color: #172c33;
+    font-size: 32px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.how-to-play-score-stars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.how-to-play-score-star {
+    display: block;
+    width: 27px;
+    height: 27px;
+    fill: #cbd0d3;
+}
+
+.how-to-play-score-star.is-earned {
+    fill: #fbbf24;
+}
+
+.rules-content .how-to-play-score-note {
+    max-width: 390px;
+    margin: 0 auto 8px;
+    font-size: 23px;
+    line-height: 0.95;
+    color: #526168;
+}
+
+.rules-content .how-to-play-bonuses-after {
+    margin-top: 14px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 480px) {
+    .how-to-play-score-example {
+        gap: 10px;
+        padding: 7px 11px;
+    }
+
+    .how-to-play-score-number {
+        font-size: 29px;
+    }
+
+    .how-to-play-score-star {
+        width: 24px;
+        height: 24px;
+    }
+}
