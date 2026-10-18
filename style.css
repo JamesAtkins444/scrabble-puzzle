@@ -3567,6 +3567,11 @@ body {
 
 
 /* Keep the score, stars, and optional crown together on one centred line. */
+/* Respect the hidden state when the reveal-solver popup suppresses achievements. */
+.share-results-achievements[hidden] {
+    display: none !important;
+}
+
 .share-results-achievements {
     display: flex;
     align-items: center;
