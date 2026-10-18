@@ -4905,38 +4905,63 @@ function updateShareButtonPulse() {
     shareResultsButton.classList.toggle("needs-sharing", allTilesUsed);
 }
 
-function getShareResultsText() {
-    // After the solver is revealed, share a simple acknowledgement instead
-    // of displaying the player's score results.
-    if (answerRevealed) {
-        return "I didnt get it :(";
-    }
-
+function getShareResultDetails() {
     const playerScore = Number.isFinite(score) ? score : 0;
     const solverScore =
         bestSolution && Number.isFinite(bestSolution.score)
             ? bestSolution.score
             : null;
 
-    let stars = 0;
-    if (playerTiles.length === 0 && Object.keys(playerPlacedTiles).length === 6) {
-        stars = 1;
-    }
-    if (solverScore !== null && playerScore < solverScore && playerScore >= solverScore - 10) {
+    const allTilesUsed =
+        playerTiles.length === 0 &&
+        Object.keys(playerPlacedTiles).length === initialRackTiles.length;
+
+    let stars = allTilesUsed ? 1 : 0;
+    if (
+        solverScore !== null &&
+        playerScore < solverScore &&
+        solverScore - playerScore <= 10
+    ) {
         stars = Math.max(stars, 2);
     }
     if (solverScore !== null && playerScore >= solverScore) {
         stars = 3;
     }
 
-    const crown = solverScore !== null && playerScore > solverScore ? " 👑" : "";
-    const starEmojis = "⭐".repeat(stars);
-    return `Results: ${playerScore}/${solverScore === null ? "—" : solverScore}${starEmojis ? " " + starEmojis : ""}${crown}`;
+    const crown = solverScore !== null && playerScore > solverScore;
+    const puzzleLabel = document.getElementById("dailyPuzzleNumber")?.textContent || "";
+    const puzzleMatch = puzzleLabel.match(/#(\d+)/);
+    const puzzleNumber = puzzleMatch ? puzzleMatch[1] : "0000";
+
+    return {
+        playerScore,
+        solverScore,
+        stars,
+        crown,
+        puzzleNumber
+    };
+}
+
+function getShareResultsText() {
+    const result = getShareResultDetails();
+    const scoreLine = `${result.playerScore}/${result.solverScore === null ? "—" : result.solverScore}`;
+    const starLine = "⭐".repeat(result.stars) + (result.crown ? " 👑" : "");
+    return `Toucanagram #${result.puzzleNumber}\n\n${scoreLine}\n\n${starLine}\n\nPlay now at https://scrabble-puzzle.onrender.com/`;
 }
 
 function refreshShareResultsSummary() {
+    const result = getShareResultDetails();
     if (shareResultsSummary) {
-        shareResultsSummary.textContent = getShareResultsText();
+        shareResultsSummary.textContent = `${result.playerScore}/${result.solverScore === null ? "—" : result.solverScore}`;
+    }
+    const starsElement = document.getElementById("shareResultsStars");
+    if (starsElement) {
+        starsElement.textContent = "⭐".repeat(result.stars);
+        starsElement.setAttribute("aria-label", `${result.stars} of 3 stars earned`);
+    }
+    const crownElement = document.getElementById("shareResultsCrown");
+    if (crownElement) {
+        crownElement.hidden = !result.crown;
     }
     if (shareResultsStatus) {
         shareResultsStatus.textContent = "";
