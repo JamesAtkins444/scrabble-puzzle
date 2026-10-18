@@ -31,7 +31,8 @@
         </div>
 
         <section class="rules-tab-panel is-active" id="rulesPanelGeneral" role="tabpanel" aria-labelledby="rulesTabGeneral" data-rules-panel="general">
-            <p class="how-to-play-intro">Create words by placing the white tiles from your rack onto the board. You cannot move the black tiles.</p>
+            <p class="how-to-play-intro">Create words by placing the white tiles from your rack onto the board.</p>
+            <p class="how-to-play-intro how-to-play-controls-copy">You can drag tiles, click on the tile and where you want it to go or click on a board space and then letter you want to place there. You cannot move black tiles.</p>
             <div class="how-to-play-example" role="img" aria-label="A 3 by 3 game board. A white Z tile with red text and a red outline is in the top-left cell. A white H tile is in the top-right cell and a white A tile is directly below it. Black tiles C, A and T fill the bottom row.">
                 <div class="how-to-play-example-cell">
                     <div class="how-to-play-tile how-to-play-invalid"><span class="tile-letter">Z</span><span class="tile-value">10</span></div>
@@ -61,18 +62,28 @@
 
         <section class="rules-tab-panel" id="rulesPanelScoring" role="tabpanel" aria-labelledby="rulesTabScoring" data-rules-panel="scoring" hidden>
             <h3 class="how-to-play-bonuses-title">Scoring</h3>
-            <p class="how-to-play-word-rules">Words are scored using the tile value in the bottom right corner of each tile.</p>
+            <p class="how-to-play-word-rules">Words are scored using the tile value in the bottom right corner of each tile. Every day the Toucanagram solver bot will complete the puzzle which you to give you a target score.</p>
+            <div class="how-to-play-score-example" role="img" aria-label="Example score bar showing 98 out of 105 points and three stars, with two stars filled yellow and one star grey.">
+                <span class="how-to-play-score-number">98/105</span>
+                <span class="how-to-play-score-stars" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" class="how-to-play-score-star is-earned"><path d="M12 2.5 14.9 8.4 21.4 9.35 16.7 13.95 17.8 20.45 12 17.4 6.2 20.45 7.3 13.95 2.6 9.35 9.1 8.4Z"/></svg>
+                    <svg viewBox="0 0 24 24" class="how-to-play-score-star is-earned"><path d="M12 2.5 14.9 8.4 21.4 9.35 16.7 13.95 17.8 20.45 12 17.4 6.2 20.45 7.3 13.95 2.6 9.35 9.1 8.4Z"/></svg>
+                    <svg viewBox="0 0 24 24" class="how-to-play-score-star"><path d="M12 2.5 14.9 8.4 21.4 9.35 16.7 13.95 17.8 20.45 12 17.4 6.2 20.45 7.3 13.95 2.6 9.35 9.1 8.4Z"/></svg>
+                </span>
+            </div>
+            <p class="how-to-play-score-note">The solver score isn't perfect. It can be beaten.</p>
         </section>
 
         <section class="rules-tab-panel" id="rulesPanelBonuses" role="tabpanel" aria-labelledby="rulesTabBonuses" data-rules-panel="bonuses" hidden>
             <h3 class="how-to-play-bonuses-title">Bonuses</h3>
-            <p class="how-to-play-bonuses-copy">Letters placed on bonus tiles increase the score of either the individual tile value (2L, 3L) or the whole word (2W, 3W).<br><br>A bonus tile can be used multiple times on multiple words.</p>
+            <p class="how-to-play-bonuses-copy">Letters placed on bonus tiles increase the score of either the individual tile value (2L, 3L) or the whole word (2W, 3W).</p>
             <div class="how-to-play-bonus-tiles" role="img" aria-label="Four bonus tiles: double letter, triple letter, double word and triple word.">
                 <div class="how-to-play-bonus-tile how-to-play-double-letter">2L</div>
                 <div class="how-to-play-bonus-tile how-to-play-triple-letter">3L</div>
                 <div class="how-to-play-bonus-tile how-to-play-double-word">2W</div>
                 <div class="how-to-play-bonus-tile how-to-play-triple-word">3W</div>
             </div>
+            <p class="how-to-play-bonuses-copy how-to-play-bonuses-after">A bonus tile can be used multiple times on multiple words.</p>
         </section>
 
     </div>
