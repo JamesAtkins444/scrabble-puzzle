@@ -3796,6 +3796,15 @@ body {
     font-weight: 400 !important;
 }
 
+.rules-content .how-to-play-word-rules {
+    max-width: 390px;
+    margin: 0 auto 20px;
+    font-size: 24px;
+    line-height: 0.95;
+    font-weight: 400 !important;
+    text-align: center;
+}
+
 .rules-content .how-to-play-bonuses-title {
     margin: 0 0 5px;
     font-size: 36px;
