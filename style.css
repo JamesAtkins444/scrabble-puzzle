@@ -3439,3 +3439,128 @@ body {
     transform: none !important;
     filter: none !important;
 }
+
+
+/* Share popup redesign: centred layout with Dongle Regular typography throughout. */
+.share-results-dialog {
+    width: min(420px, calc(100% - 32px));
+    max-width: 420px;
+    padding: 24px 22px 18px !important;
+    border: 1px solid #d8d8d8;
+    border-radius: 14px;
+    background: #fff;
+    color: #222;
+    font-family: "Dongle", sans-serif !important;
+    font-weight: 400 !important;
+    text-align: center;
+}
+
+.share-results-dialog *,
+.share-results-dialog button {
+    font-family: "Dongle", sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.share-results-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 2px;
+}
+
+.share-results-header #shareResultsTitle {
+    margin: 0;
+    font-size: 52px;
+    line-height: 0.9;
+    font-weight: 400 !important;
+    text-align: center;
+}
+
+.share-results-header .rules-close-button {
+    position: absolute;
+    top: -14px;
+    right: -12px;
+    font-size: 34px;
+}
+
+.share-results-content {
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+.share-results-subtitle {
+    margin: 8px 0 10px;
+    font-size: 24px;
+    line-height: 0.95;
+    text-align: center;
+}
+
+.share-results-score {
+    margin: 4px 0 0;
+    font-size: 58px;
+    line-height: 0.9;
+    text-align: center;
+}
+
+.share-results-stars {
+    margin: 8px 0 0;
+    min-height: 35px;
+    font-family: Arial, sans-serif !important;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.share-results-crown {
+    margin: 3px 0 10px;
+    font-family: Arial, sans-serif !important;
+    font-size: 32px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.share-results-crown[hidden] {
+    display: none !important;
+}
+
+.copy-share-results-button {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 14px;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 9px;
+    background: #264653;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    transition: none !important;
+}
+
+.copy-share-results-button:hover,
+.copy-share-results-button:active {
+    background: #264653 !important;
+    color: #fff !important;
+}
+
+.share-results-status {
+    min-height: 18px;
+    margin: 8px 0 0;
+    color: #39734a;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .share-results-dialog {
+        padding: 22px 18px 16px !important;
+    }
+
+    .share-results-subtitle {
+        font-size: 22px;
+    }
+}
