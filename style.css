@@ -3414,3 +3414,18 @@ body {
 .rules-close-button {
     -webkit-tap-highlight-color: transparent !important;
 }
+
+
+/* Use a simple Dongle Bold question mark for the How to Play control,
+   matching the score's displayed type size. */
+.board-utility-row > .rules-help-button {
+    font-family: "Dongle", sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 34px !important;
+    line-height: 1 !important;
+    color: #ffffff !important;
+}
+
+.board-utility-row .rules-help-button .help-icon-svg {
+    display: none !important;
+}
