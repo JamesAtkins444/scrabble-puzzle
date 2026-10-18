@@ -3882,3 +3882,92 @@ body {
         font-size: 23px;
     }
 }
+
+
+/* How to Play section tabs */
+.rules-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin: 0 auto 18px;
+    padding: 4px;
+    max-width: 390px;
+    background: #f1f3f4;
+    border-radius: 12px;
+}
+
+.rules-tab {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 5px 8px 3px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #526168;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+
+.rules-tab.is-active {
+    background: #172c33;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14);
+}
+
+.rules-tab:focus-visible {
+    outline: 2px solid #e0196a;
+    outline-offset: 2px;
+}
+
+.rules-tab-panel {
+    min-height: 210px;
+    padding: 8px 0 12px;
+    animation: rules-panel-in 140ms ease-out;
+}
+
+.rules-tab-panel[hidden] {
+    display: none !important;
+}
+
+.rules-tab-panel .how-to-play-intro {
+    margin-bottom: 16px;
+}
+
+.rules-tab-panel .how-to-play-example {
+    margin-bottom: 16px;
+}
+
+.rules-tab-panel .how-to-play-word-rules {
+    margin-bottom: 8px;
+}
+
+.rules-content .how-to-play-dictionary-note {
+    max-width: 390px;
+    margin: 8px auto 0;
+    font-size: 20px;
+    line-height: 0.95;
+    color: #666;
+}
+
+@keyframes rules-panel-in {
+    from { opacity: 0.75; transform: translateY(3px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    .rules-tabs {
+        gap: 4px;
+        margin-bottom: 12px;
+    }
+
+    .rules-tab {
+        font-size: 22px;
+        padding: 5px 4px 3px;
+    }
+
+    .rules-tab-panel {
+        min-height: 195px;
+    }
+}
