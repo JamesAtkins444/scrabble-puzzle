@@ -97,8 +97,9 @@ let score = 0;
 // This remains unchanged when tiles are placed on the board.
 let startingRackValueTotal = 0;
 
-// Tracks star progress so the share popup opens only on the moment three stars are earned.
+// Tracks achievement changes so the share popup can react to first-time milestones.
 let previousAchievementStars = 0;
+let previousAchievementCrown = false;
 
 let isGenerating = false;
 
@@ -3636,8 +3637,37 @@ function updateAchievementStars(
         `${earnedStars} of 3 stars earned${beatsSolver ? "; solver beaten" : ""}`
     );
 
-    // Open the share dialog only when the player newly reaches three stars.
-    if (earnedStars === 3 && previousAchievementStars < 3) {
+    // Show the share dialog automatically only for the first three-star
+    // achievement and the first crown achievement for this daily puzzle.
+    const puzzleKey =
+        typeof activeDailyDateKey === "string" && activeDailyDateKey
+            ? activeDailyDateKey
+            : (document.getElementById("dailyPuzzleNumber")?.textContent || "unknown-puzzle");
+    const starsSeenKey = `toucanagram-share-popup-three-stars-${puzzleKey}`;
+    const crownSeenKey = `toucanagram-share-popup-crown-${puzzleKey}`;
+    const newlyEarnedThreeStars =
+        earnedStars === 3 && previousAchievementStars < 3;
+    const newlyEarnedCrown = beatsSolver && !previousAchievementCrown;
+    let shouldOpenShareDialog = false;
+
+    try {
+        if (newlyEarnedThreeStars && !localStorage.getItem(starsSeenKey)) {
+            localStorage.setItem(starsSeenKey, "true");
+            shouldOpenShareDialog = true;
+        }
+
+        if (newlyEarnedCrown && !localStorage.getItem(crownSeenKey)) {
+            localStorage.setItem(crownSeenKey, "true");
+            shouldOpenShareDialog = true;
+        }
+    } catch (error) {
+        // If browser storage is unavailable, keep first-time behavior for this page.
+        if (newlyEarnedThreeStars || newlyEarnedCrown) {
+            shouldOpenShareDialog = true;
+        }
+    }
+
+    if (shouldOpenShareDialog) {
         refreshShareResultsSummary();
         if (shareResultsDialog && !shareResultsDialog.open) {
             if (typeof shareResultsDialog.showModal === "function") {
@@ -3647,7 +3677,9 @@ function updateAchievementStars(
             }
         }
     }
+
     previousAchievementStars = earnedStars;
+    previousAchievementCrown = beatsSolver;
 }
 
 function displayScoringWords(
