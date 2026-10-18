@@ -101,6 +101,9 @@ let startingRackValueTotal = 0;
 let previousAchievementStars = 0;
 let previousAchievementCrown = false;
 
+// Controls which message is shown in the share popup.
+let shareResultsMode = "normal";
+
 let isGenerating = false;
 
 
@@ -4294,6 +4297,17 @@ function revealBestAnswer() {
         tileMessageElement.textContent = "";
         tileMessageElement.className = "tile-message";
     }
+
+    // Show a special share popup when the player chooses to reveal the solver.
+    shareResultsMode = "reveal";
+    refreshShareResultsSummary();
+    if (shareResultsDialog && !shareResultsDialog.open) {
+        if (typeof shareResultsDialog.showModal === "function") {
+            shareResultsDialog.showModal();
+        } else {
+            shareResultsDialog.setAttribute("open", "");
+        }
+    }
 }
 
 if (revealAnswerButton) {
@@ -5020,6 +5034,21 @@ function getShareResultsText() {
 
 function refreshShareResultsSummary() {
     const result = getShareResultDetails();
+    const shareResultsTitle = document.getElementById("shareResultsTitle");
+    const shareResultsSubtitle = document.getElementById("shareResultsSubtitle");
+    const isRevealMode = shareResultsMode === "reveal";
+
+    if (shareResultsTitle) {
+        shareResultsTitle.textContent = isRevealMode ? "I didn't get it :(" : "Nice!";
+    }
+    if (shareResultsSubtitle) {
+        shareResultsSubtitle.hidden = isRevealMode;
+    }
+
+    const shareResultsAchievements = document.querySelector(".share-results-achievements");
+    if (shareResultsAchievements) {
+        shareResultsAchievements.hidden = isRevealMode;
+    }
     if (shareResultsSummary) {
         shareResultsSummary.textContent = `${result.playerScore}/${result.solverScore === null ? "—" : result.solverScore}`;
     }
@@ -5048,6 +5077,7 @@ function refreshShareResultsSummary() {
 if (shareResultsButton && shareResultsDialog) {
     shareResultsButton.addEventListener("click", () => {
         shareResultsButton.classList.remove("needs-sharing");
+        shareResultsMode = "normal";
         refreshShareResultsSummary();
         if (typeof shareResultsDialog.showModal === "function") {
             shareResultsDialog.showModal();
@@ -5079,7 +5109,9 @@ if (shareResultsButton && shareResultsDialog) {
 
 if (copyShareResultsButton) {
     copyShareResultsButton.addEventListener("click", async () => {
-        const textToCopy = getShareResultsText();
+        const textToCopy = shareResultsMode === "reveal"
+            ? `Toucanagram #${getShareResultDetails().puzzleNumber}\nI didn't get it, but you might!\nTry at https://scrabble-puzzle.onrender.com/`
+            : getShareResultsText();
 
         try {
             if (navigator.clipboard && window.isSecureContext) {
