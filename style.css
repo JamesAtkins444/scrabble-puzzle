@@ -3421,9 +3421,11 @@ body {
 .board-utility-row > .rules-help-button {
     font-family: "Dongle", sans-serif !important;
     font-weight: 700 !important;
-    font-size: 65.61px !important;
+    font-size: 72.17px !important;
     line-height: 1 !important;
     color: #ffffff !important;
+    position: relative !important;
+    top: 2px !important;
 }
 
 .board-utility-row .rules-help-button .help-icon-svg {
