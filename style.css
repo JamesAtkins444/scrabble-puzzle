@@ -3656,3 +3656,136 @@ body {
         height: 22px;
     }
 }
+
+
+/* How to Play popup refresh */
+.rules-dialog,
+.rules-dialog * {
+    font-family: "Dongle", sans-serif !important;
+    font-weight: 400 !important;
+}
+
+.rules-dialog-header {
+    position: relative;
+    justify-content: center;
+    padding: 18px 42px 8px;
+    border-bottom: 0;
+    background: #fff;
+}
+
+.rules-dialog-header h2 {
+    margin: 0;
+    font-size: 52px;
+    line-height: 0.9;
+    font-weight: 400 !important;
+    text-align: center;
+}
+
+.rules-dialog-header .rules-close-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.rules-content {
+    padding: 8px 22px 24px;
+    font-size: 24px;
+    line-height: 0.95;
+    text-align: center;
+}
+
+.rules-content .how-to-play-intro {
+    max-width: 390px;
+    margin: 0 auto 18px;
+    font-size: 25px;
+    line-height: 0.95;
+}
+
+.how-to-play-example {
+    display: grid;
+    grid-template-columns: repeat(3, 54px);
+    grid-template-rows: repeat(3, 54px);
+    gap: 4px;
+    width: max-content;
+    margin: 0 auto 20px;
+}
+
+.how-to-play-example-cell {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 54px;
+    height: 54px;
+}
+
+.how-to-play-example-cell.empty {
+    visibility: hidden;
+}
+
+.how-to-play-example .how-to-play-tile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.how-to-play-example .how-to-play-black {
+    background: #172c33;
+    border: 1px solid #172c33;
+    color: #fff;
+}
+
+.how-to-play-example .how-to-play-white {
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    color: #172c33;
+}
+
+.how-to-play-example .tile-letter {
+    font-size: 39px;
+    line-height: 0.8;
+    font-weight: 400 !important;
+    transform: translateY(-2px);
+}
+
+.how-to-play-example .tile-value {
+    position: absolute;
+    right: 4px;
+    bottom: 2px;
+    font-size: 17px;
+    line-height: 0.8;
+    font-weight: 400 !important;
+}
+
+.rules-content .how-to-play-bonuses-title {
+    margin: 0 0 5px;
+    font-size: 36px;
+    line-height: 0.9;
+    font-weight: 400 !important;
+}
+
+.rules-content .how-to-play-bonuses-copy {
+    margin: 0;
+    font-size: 24px;
+    line-height: 0.95;
+}
+
+@media (max-width: 480px) {
+    .rules-dialog-header h2 {
+        font-size: 48px;
+    }
+
+    .rules-content {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .rules-content .how-to-play-intro {
+        font-size: 23px;
+    }
+}
