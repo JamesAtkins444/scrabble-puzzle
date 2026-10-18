@@ -3618,3 +3618,41 @@ body {
         letter-spacing: 1px;
     }
 }
+
+
+/* Use the same SVG achievement stars in the share popup; clipboard sharing remains emoji-based. */
+.share-results-achievements .share-results-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    letter-spacing: 0;
+    min-height: 0;
+}
+
+.share-results-achievements .share-results-stars .achievement-star {
+    display: inline-flex;
+    width: 25px;
+    height: 25px;
+    color: #d0d0d0;
+    opacity: 0.7;
+    text-shadow: none;
+}
+
+.share-results-achievements .share-results-stars .achievement-star.earned {
+    color: #e3ad22;
+    opacity: 1;
+}
+
+.share-results-achievements .share-results-stars .achievement-star svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 360px) {
+    .share-results-achievements .share-results-stars .achievement-star {
+        width: 22px;
+        height: 22px;
+    }
+}
