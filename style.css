@@ -3705,21 +3705,25 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 54px);
     grid-template-rows: repeat(3, 54px);
-    gap: 4px;
+    gap: 3px;
     width: max-content;
+    padding: 3px;
     margin: 0 auto 20px;
+    box-sizing: border-box;
+    background: #999;
+    border-radius: 3px;
 }
 
 .how-to-play-example-cell {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 54px;
     height: 54px;
-}
-
-.how-to-play-example-cell.empty {
-    visibility: hidden;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #ccc;
 }
 
 .how-to-play-example .how-to-play-tile {
