@@ -1,0 +1,369 @@
+{
+  "date": "2026-11-16",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "F",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "",
+      "",
+      "",
+      "",
+      "C"
+    ],
+    [
+      "",
+      "K",
+      "",
+      "C",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "O",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "D",
+      "U",
+      "R",
+      "I",
+      "A",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "M",
+      "",
+      "",
+      "K"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "F",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "",
+      "",
+      "",
+      "",
+      "C"
+    ],
+    [
+      "",
+      "K",
+      "",
+      "C",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "O",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "D",
+      "U",
+      "R",
+      "I",
+      "A",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "M",
+      "",
+      "",
+      "K"
+    ]
+  ],
+  "bonusSquares": {
+    "1,3": "double-word",
+    "0,5": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "DURIAN",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "CRANK",
+      "row": 2,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "CORM",
+      "row": 3,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "FAKED",
+      "row": 1,
+      "col": 1,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "S",
+    "B",
+    "E",
+    "R",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "F",
+        "O",
+        "R",
+        "B",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "A",
+        "E",
+        "",
+        "E",
+        "",
+        "C"
+      ],
+      [
+        "",
+        "K",
+        "",
+        "C",
+        "",
+        "",
+        "R"
+      ],
+      [
+        "",
+        "E",
+        "",
+        "O",
+        "",
+        "",
+        "A"
+      ],
+      [
+        "",
+        "D",
+        "U",
+        "R",
+        "I",
+        "A",
+        "N"
+      ],
+      [
+        "",
+        "",
+        "",
+        "M",
+        "",
+        "",
+        "K"
+      ]
+    ],
+    "newKeys": [
+      "1,2",
+      "1,3",
+      "1,4",
+      "1,5",
+      "2,4",
+      "2,2"
+    ],
+    "score": 78,
+    "completionBonus": 50,
+    "words": [
+      "FORBS",
+      "BE",
+      "AE",
+      "OE"
+    ],
+    "scoringWords": [
+      {
+        "word": "FORBS",
+        "row": 1,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 20,
+        "move": 1
+      },
+      {
+        "word": "BE",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "AE",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "OE",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2,
+        "move": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "FORBS",
+        "row": 1,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 4,
+        "newKeys": [
+          "1,2",
+          "1,3",
+          "1,4",
+          "1,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "FORBS",
+            "row": 1,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 20
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "BE",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "BE",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AE",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "AE",
+            "row": 2,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "OE",
+            "row": 1,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1279
+  }
+}
