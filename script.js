@@ -4298,16 +4298,8 @@ function revealBestAnswer() {
         tileMessageElement.className = "tile-message";
     }
 
-    // Show a special share popup when the player chooses to reveal the solver.
+    // Prepare the special share popup for when the player clicks Share.
     shareResultsMode = "reveal";
-    refreshShareResultsSummary();
-    if (shareResultsDialog && !shareResultsDialog.open) {
-        if (typeof shareResultsDialog.showModal === "function") {
-            shareResultsDialog.showModal();
-        } else {
-            shareResultsDialog.setAttribute("open", "");
-        }
-    }
 }
 
 if (revealAnswerButton) {
@@ -5077,7 +5069,7 @@ function refreshShareResultsSummary() {
 if (shareResultsButton && shareResultsDialog) {
     shareResultsButton.addEventListener("click", () => {
         shareResultsButton.classList.remove("needs-sharing");
-        shareResultsMode = "normal";
+        shareResultsMode = answerRevealed ? "reveal" : "normal";
         refreshShareResultsSummary();
         if (typeof shareResultsDialog.showModal === "function") {
             shareResultsDialog.showModal();
