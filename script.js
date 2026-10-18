@@ -4848,6 +4848,41 @@ RULES POPUP
 ================================================== */
 
 if (rulesHelpButton && rulesDialog) {
+    const rulesTabs = Array.from(rulesDialog.querySelectorAll("[data-rules-tab]"));
+    const rulesPanels = Array.from(rulesDialog.querySelectorAll("[data-rules-panel]"));
+
+    function activateRulesTab(tabName, moveFocus = false) {
+        rulesTabs.forEach(tab => {
+            const isActive = tab.dataset.rulesTab === tabName;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+            tab.tabIndex = isActive ? 0 : -1;
+            if (isActive && moveFocus) tab.focus();
+        });
+
+        rulesPanels.forEach(panel => {
+            const isActive = panel.dataset.rulesPanel === tabName;
+            panel.hidden = !isActive;
+            panel.classList.toggle("is-active", isActive);
+        });
+    }
+
+    rulesTabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => activateRulesTab(tab.dataset.rulesTab));
+
+        tab.addEventListener("keydown", event => {
+            let nextIndex = index;
+            if (event.key === "ArrowRight") nextIndex = (index + 1) % rulesTabs.length;
+            else if (event.key === "ArrowLeft") nextIndex = (index - 1 + rulesTabs.length) % rulesTabs.length;
+            else if (event.key === "Home") nextIndex = 0;
+            else if (event.key === "End") nextIndex = rulesTabs.length - 1;
+            else return;
+
+            event.preventDefault();
+            activateRulesTab(rulesTabs[nextIndex].dataset.rulesTab, true);
+        });
+    });
+
     rulesHelpButton.addEventListener("click", () => {
         if (typeof rulesDialog.showModal === "function") {
             rulesDialog.showModal();
