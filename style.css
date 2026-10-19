@@ -4256,3 +4256,14 @@ body {
 .rack-tile .tile-letter {
     scale: 1.1;
 }
+
+/* Keep board-cell clicks working on premium squares, even when the pointer is over
+   the premium label or the contents of a tile. Clicks should reach the cell handler. */
+#board .cell {
+    pointer-events: auto !important;
+}
+
+#board .cell > *,
+#board .cell > * * {
+    pointer-events: none !important;
+}
