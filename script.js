@@ -3435,6 +3435,7 @@ function calculatePlayerScore() {
         scoringWords
     );
 
+    saveDailyBestScore();
     updateShareButtonPulse();
 
 
@@ -4980,33 +4981,85 @@ function updateShareButtonPulse() {
     shareResultsButton.classList.toggle("needs-sharing", allTilesUsed);
 }
 
-function getShareResultDetails() {
-    const playerScore = Number.isFinite(score) ? score : 0;
+function getDailyPuzzleNumber() {
+    const puzzleLabel = document.getElementById("dailyPuzzleNumber")?.textContent || "";
+    const puzzleMatch = puzzleLabel.match(/#(\d+)/);
+    return puzzleMatch ? puzzleMatch[1] : "0000";
+}
+
+function getDailyBestScoreKey() {
+    return `toucanagram-best-score-${getDailyPuzzleNumber()}`;
+}
+
+function getDailyBestResult() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(getDailyBestScoreKey()) || "null");
+        return saved && Number.isFinite(saved.score)
+            ? saved
+            : { score: 0, stars: 0, crown: false };
+    } catch (error) {
+        return { score: 0, stars: 0, crown: false };
+    }
+}
+
+function saveDailyBestScore() {
+    // The solver's revealed answer must never overwrite the player's personal best.
+    if (answerRevealed || !Number.isFinite(score)) return;
+
+    const current = getDailyBestResult();
+    if (score <= current.score) return;
+
     const solverScore =
         bestSolution && Number.isFinite(bestSolution.score)
             ? bestSolution.score
             : null;
+    const allTilesUsed =
+        playerTiles.length === 0 &&
+        Object.keys(playerPlacedTiles).length === initialRackTiles.length;
+
+    let stars = allTilesUsed ? 1 : 0;
+    if (solverScore !== null && score < solverScore && solverScore - score <= 10) {
+        stars = Math.max(stars, 2);
+    }
+    if (solverScore !== null && score >= solverScore) {
+        stars = 3;
+    }
+
+    try {
+        localStorage.setItem(getDailyBestScoreKey(), JSON.stringify({
+            score,
+            stars,
+            crown: solverScore !== null && score > solverScore
+        }));
+    } catch (error) {
+        // The game still works if browser storage is unavailable.
+    }
+}
+
+function getShareResultDetails() {
+    const currentScore = Number.isFinite(score) ? score : 0;
+    const solverScore =
+        bestSolution && Number.isFinite(bestSolution.score)
+            ? bestSolution.score
+            : null;
+    const savedBest = getDailyBestResult();
+    const playerScore = Math.max(currentScore, savedBest.score);
 
     const allTilesUsed =
         playerTiles.length === 0 &&
         Object.keys(playerPlacedTiles).length === initialRackTiles.length;
 
     let stars = allTilesUsed ? 1 : 0;
-    if (
-        solverScore !== null &&
-        playerScore < solverScore &&
-        solverScore - playerScore <= 10
-    ) {
+    if (solverScore !== null && playerScore < solverScore && solverScore - playerScore <= 10) {
         stars = Math.max(stars, 2);
     }
     if (solverScore !== null && playerScore >= solverScore) {
         stars = 3;
     }
+    stars = Math.max(stars, savedBest.stars || 0);
 
-    const crown = solverScore !== null && playerScore > solverScore;
-    const puzzleLabel = document.getElementById("dailyPuzzleNumber")?.textContent || "";
-    const puzzleMatch = puzzleLabel.match(/#(\d+)/);
-    const puzzleNumber = puzzleMatch ? puzzleMatch[1] : "0000";
+    const crown = (solverScore !== null && playerScore > solverScore) || !!savedBest.crown;
+    const puzzleNumber = getDailyPuzzleNumber();
 
     return {
         playerScore,
@@ -5080,6 +5133,17 @@ if (shareResultsButton && shareResultsDialog) {
 
     if (closeShareResultsButton) {
         closeShareResultsButton.addEventListener("click", () => {
+            if (typeof shareResultsDialog.close === "function") {
+                shareResultsDialog.close();
+            } else {
+                shareResultsDialog.removeAttribute("open");
+            }
+        });
+    }
+
+    const continuePlayingButton = document.getElementById("continuePlayingButton");
+    if (continuePlayingButton) {
+        continuePlayingButton.addEventListener("click", () => {
             if (typeof shareResultsDialog.close === "function") {
                 shareResultsDialog.close();
             } else {
