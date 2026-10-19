@@ -3379,10 +3379,11 @@ function calculatePlayerScore() {
     // reusable premium squares to all historical turns at once and inflate
     // the displayed total compared with the solver's move summary.
     if (answerRevealed && bestSolution) {
-        score = bestSolution.score;
-        updateScoreDisplay(score, "");
+        // Show the solver's score on the board without overwriting the player's
+        // own score, which is used by the share popup and personal-best tracking.
+        updateScoreDisplay(bestSolution.score, "");
         displayScoringWords(bestSolution.scoringWords || []);
-        return score;
+        return bestSolution.score;
     }
 
     const scoringWords =
