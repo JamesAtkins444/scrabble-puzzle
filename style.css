@@ -4251,8 +4251,8 @@ body {
 }
 
 
-/* Reduce the central letters on board and rack tiles by 10%; keep corner score text unchanged. */
+/* Reduce the central letters on board and rack tiles by 50%; keep corner score text unchanged. */
 #board .board-tile .tile-letter,
 #tileRack .rack-tile .tile-letter {
-    font-size: clamp(42.693156px, 8.5386312vw, 68.3090496px) !important;
+    font-size: clamp(21.346578px, 4.2693156vw, 34.1545248px) !important;
 }
