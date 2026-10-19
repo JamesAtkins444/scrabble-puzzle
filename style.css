@@ -4108,3 +4108,41 @@ body {
         font-size: 25px;
     }
 }
+
+
+/* Keep popup outer spacing and padding consistent between How to Play and Share. */
+.rules-dialog,
+.share-results-dialog {
+    width: min(520px, calc(100% - 32px));
+    max-width: 520px;
+    padding: 0 !important;
+    border-radius: 14px;
+}
+
+.rules-dialog-header,
+.share-results-header {
+    padding: 18px 42px 8px;
+}
+
+.rules-content,
+.share-results-content {
+    padding: 8px 22px 24px !important;
+}
+
+.rules-dialog-header .rules-close-button,
+.share-results-header .rules-close-button {
+    top: 12px;
+    right: 12px;
+}
+
+@media (max-width: 600px) {
+    .rules-dialog-header,
+    .share-results-header {
+        padding: 15px 38px 8px;
+    }
+
+    .rules-content,
+    .share-results-content {
+        padding: 8px 16px 19px !important;
+    }
+}
