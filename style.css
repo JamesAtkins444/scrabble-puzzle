@@ -1490,6 +1490,26 @@ body {
     background: #444;
 }
 
+.continue-playing-button {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 10px;
+    padding: 12px 18px;
+    border: 2px solid #222;
+    border-radius: 9px;
+    background: transparent;
+    color: #222;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 150ms ease, color 150ms ease;
+}
+
+.continue-playing-button:hover {
+    background: #222;
+    color: #fff;
+}
+
 .share-results-status {
     min-height: 18px;
     margin: 10px 0 0;
