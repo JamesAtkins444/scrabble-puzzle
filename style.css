@@ -4213,3 +4213,9 @@ body {
 .share-results-subtitle {
     margin-top: 16px;
 }
+
+
+/* Move the score section and all following share-popup content up by 5px. */
+.share-results-content {
+    transform: translateY(-5px);
+}
