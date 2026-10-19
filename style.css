@@ -3500,8 +3500,8 @@ body {
 
 .share-results-header .rules-close-button {
     position: absolute;
-    top: -14px;
-    right: -12px;
+    top: 12px;
+    right: 12px;
     font-size: 34px;
 }
 
