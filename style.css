@@ -4146,3 +4146,26 @@ body {
         padding: 8px 16px 19px !important;
     }
 }
+
+
+/* Enlarge popup close controls and vertically align them with the headline. */
+.rules-dialog-header .rules-close-button,
+.share-results-header .rules-close-button {
+    top: 50%;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 46px;
+    line-height: 1;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+    .rules-dialog-header .rules-close-button,
+    .share-results-header .rules-close-button {
+        right: 10px;
+        width: 42px;
+        height: 42px;
+        font-size: 44px;
+    }
+}
