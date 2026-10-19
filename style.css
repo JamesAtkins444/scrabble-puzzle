@@ -3463,9 +3463,9 @@ body {
 
 /* Share popup redesign: centred layout with Dongle Regular typography throughout. */
 .share-results-dialog {
-    width: min(420px, calc(100% - 32px));
-    max-width: 420px;
-    padding: 24px 22px 18px !important;
+    width: min(520px, calc(100% - 32px));
+    max-width: 520px;
+    padding: 0 !important;
     border: 1px solid #d8d8d8;
     border-radius: 14px;
     background: #fff;
@@ -3486,7 +3486,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 2px;
+    margin: 0;
+    padding: 18px 42px 8px;
 }
 
 .share-results-header #shareResultsTitle {
@@ -3505,7 +3506,7 @@ body {
 }
 
 .share-results-content {
-    padding: 0 !important;
+    padding: 8px 22px 24px !important;
     text-align: center !important;
 }
 
@@ -3577,7 +3578,15 @@ body {
 
 @media (max-width: 600px) {
     .share-results-dialog {
-        padding: 22px 18px 16px !important;
+        padding: 0 !important;
+    }
+
+    .share-results-header {
+        padding: 15px 38px 8px;
+    }
+
+    .share-results-content {
+        padding: 8px 16px 19px !important;
     }
 
     .share-results-subtitle {
