@@ -4268,11 +4268,15 @@ body {
     pointer-events: none !important;
 }
 
-/* Premium squares should show the same green selection outline as other cells. */
+/* Premium squares should show the same green square when clicked or dragged over. */
 #board .cell.selected-target.double-letter,
 #board .cell.selected-target.triple-letter,
 #board .cell.selected-target.double-word,
-#board .cell.selected-target.triple-word {
+#board .cell.selected-target.triple-word,
+#board .cell.drag-over.double-letter,
+#board .cell.drag-over.triple-letter,
+#board .cell.drag-over.double-word,
+#board .cell.drag-over.triple-word {
     outline: 3px solid #68d391 !important;
     outline-offset: -3px !important;
     box-shadow: inset 0 0 0 2px rgba(104, 211, 145, 0.3) !important;
