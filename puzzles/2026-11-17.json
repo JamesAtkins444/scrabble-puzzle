@@ -1,0 +1,406 @@
+{
+  "date": "2026-11-17",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "M",
+      "A",
+      "D",
+      "M",
+      "A",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Z",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Z",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "T",
+      "Y",
+      "P",
+      "P",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "M",
+      "A",
+      "D",
+      "M",
+      "A",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Z",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Z",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "",
+      "T",
+      "Y",
+      "P",
+      "P",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,0": "double-word",
+    "4,0": "triple-letter",
+    "6,3": "double-letter",
+    "2,1": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "MADMAN",
+      "row": 0,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "DIZZY",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "TYPP",
+      "row": 4,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SPAR",
+      "row": 3,
+      "col": 5,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "S",
+    "N",
+    "O",
+    "A",
+    "E",
+    "R"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "M",
+        "A",
+        "D",
+        "M",
+        "A",
+        "N"
+      ],
+      [
+        "",
+        "A",
+        "R",
+        "I",
+        "O",
+        "S",
+        "E"
+      ],
+      [
+        "",
+        "N",
+        "",
+        "Z",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "Z",
+        "",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "",
+        "T",
+        "Y",
+        "P",
+        "P",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "R",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "1,1",
+      "1,2",
+      "1,4",
+      "1,5",
+      "1,6",
+      "2,1"
+    ],
+    "score": 76,
+    "completionBonus": 50,
+    "words": [
+      "ARIOSE",
+      "MA",
+      "AR",
+      "MO",
+      "AS",
+      "NE",
+      "MAN"
+    ],
+    "scoringWords": [
+      {
+        "word": "ARIOSE",
+        "row": 1,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 6,
+        "move": 1
+      },
+      {
+        "word": "MA",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "AR",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "MO",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "AS",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "NE",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "MAN",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "ARIOSE",
+        "row": 1,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 5,
+        "newKeys": [
+          "1,1",
+          "1,2",
+          "1,4",
+          "1,5",
+          "1,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "ARIOSE",
+            "row": 1,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "MA",
+            "row": 0,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "AR",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "MO",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "AS",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "NE",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "MAN",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 6,
+        "usedTiles": 1,
+        "newKeys": [
+          "2,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "MAN",
+            "row": 0,
+            "col": 1,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1969
+  }
+}
