@@ -4225,3 +4225,27 @@ body {
 .share-results-content {
     transform: translateY(-10px);
 }
+
+
+/* Keep the top and bottom inner padding consistent across the How to Play and Share popups. */
+.rules-dialog-header,
+.share-results-header {
+    padding-top: 18px !important;
+}
+
+.rules-content,
+.share-results-content {
+    padding-bottom: 18px !important;
+}
+
+@media (max-width: 600px) {
+    .rules-dialog-header,
+    .share-results-header {
+        padding-top: 15px !important;
+    }
+
+    .rules-content,
+    .share-results-content {
+        padding-bottom: 15px !important;
+    }
+}
