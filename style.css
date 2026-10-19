@@ -3492,10 +3492,14 @@ body {
 
 .share-results-header #shareResultsTitle {
     margin: 0;
-    font-size: 52px;
+    font-size: 41.6px;
     line-height: 0.9;
     font-weight: 400 !important;
     text-align: center;
+}
+
+.share-results-dialog {
+    position: relative;
 }
 
 .share-results-header .rules-close-button {
