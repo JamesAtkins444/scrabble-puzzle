@@ -5083,10 +5083,44 @@ function refreshShareResultsSummary() {
     const shareResultsSubtitle = document.getElementById("shareResultsSubtitle");
     const isRevealMode = shareResultsMode === "reveal";
 
+    let popupMessage;
+    if (isRevealMode) {
+        popupMessage = {
+            title: "Solver used",
+            subtitle: "That is how the solver did it, \"Know your enemy and know yourself\" and all that jazz. But your best score is below to share."
+        };
+    } else if (result.stars === 3 && result.crown) {
+        popupMessage = {
+            title: "You dropped this...",
+            subtitle: "I think it was the philosopher Cady Heron who once said, \"The limit does not exist\" and she was probably thinking about this exact moment."
+        };
+    } else if (result.stars === 3) {
+        popupMessage = {
+            title: "2 can play at this game",
+            subtitle: "That was like watching the train station fight in The Matrix, only with a word-based puzzle game."
+        };
+    } else if (result.stars === 2) {
+        popupMessage = {
+            title: "🤏 This close",
+            subtitle: "You're hot on the heels, within reach, down in extra time, this is your moment. They will make a plucky, underdog movie about this one day "
+        };
+    } else if (result.stars === 1) {
+        popupMessage = {
+            title: "Nice!",
+            subtitle: "Channeling a bathroom decorator you used up your tiles, but now need to manifest your inner postman and move some letters around."
+        };
+    } else {
+        popupMessage = {
+            title: "Keep going",
+            subtitle: "Coldplay was going to write a song about this. But a song about grey stars had less commercial potential than yellow. Don't be put off though, I believe in you."
+        };
+    }
+
     if (shareResultsTitle) {
-        shareResultsTitle.textContent = isRevealMode ? "I didn't get it :(" : "Nice!";
+        shareResultsTitle.textContent = popupMessage.title;
     }
     if (shareResultsSubtitle) {
+        shareResultsSubtitle.textContent = popupMessage.subtitle;
         shareResultsSubtitle.hidden = false;
     }
 
