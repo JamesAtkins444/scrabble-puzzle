@@ -4207,3 +4207,9 @@ body {
         top: 2px;
     }
 }
+
+
+/* Match the gap above the score section with the gap below it before the body copy. */
+.share-results-subtitle {
+    margin-top: 16px;
+}
