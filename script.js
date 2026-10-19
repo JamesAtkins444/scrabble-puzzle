@@ -2464,6 +2464,12 @@ function handleBoardClick(
     row,
     col
 ) {
+    // Tile interactions should not display instructional prompts.
+    if (tileMessageElement && !tileMessageElement.classList.contains("error")) {
+        tileMessageElement.textContent = "";
+        tileMessageElement.className = "tile-message";
+    }
+
     // Once the solver solution is revealed, all board tiles are locked.
     if (answerRevealed) return;
 
