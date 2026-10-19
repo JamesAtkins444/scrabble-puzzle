@@ -4169,3 +4169,27 @@ body {
         font-size: 44px;
     }
 }
+
+
+/* Move only the × glyph down 3px in every popup close button. */
+.rules-close-button {
+    font-size: 0 !important;
+}
+
+.rules-close-button::after {
+    content: "×";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    right: 0;
+    font-family: "Dongle", sans-serif;
+    font-size: 46px;
+    line-height: 1;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .rules-close-button::after {
+        font-size: 44px;
+    }
+}
