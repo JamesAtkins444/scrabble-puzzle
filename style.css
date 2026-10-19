@@ -4251,8 +4251,8 @@ body {
 }
 
 
-/* Increase the central letters on board and rack tiles by a further 10%; keep corner score text unchanged. */
+/* Increase the central letters on board and rack tiles by another 10%; keep corner score text unchanged. */
 #board .board-tile .tile-letter,
 #tileRack .rack-tile .tile-letter {
-    font-size: clamp(35.937px, 7.1874vw, 57.4992px) !important;
+    font-size: clamp(39.5307px, 7.90614vw, 63.24912px) !important;
 }
