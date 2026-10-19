@@ -4080,3 +4080,31 @@ body {
         height: 24px;
     }
 }
+
+
+/* Make all popup body copy consistent with the How to Play intro text. */
+.rules-content {
+    font-size: 25px;
+}
+
+.rules-content .how-to-play-intro,
+.rules-content .how-to-play-word-rules,
+.rules-content .how-to-play-bonuses-copy,
+.rules-content .how-to-play-dictionary-note,
+.rules-content .how-to-play-score-note {
+    font-size: 25px;
+}
+
+.share-results-subtitle {
+    font-size: 25px;
+}
+
+.share-results-status {
+    font-size: 25px;
+}
+
+@media (max-width: 600px) {
+    .share-results-subtitle {
+        font-size: 25px;
+    }
+}
