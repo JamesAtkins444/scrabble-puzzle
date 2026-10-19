@@ -2555,8 +2555,8 @@ function handleBoardClick(
             selectedBoardCell = { row, col };
 
             if (tileMessageElement) {
-                tileMessageElement.textContent =
-                    "Now select a tile from the rack.";
+                tileMessageElement.textContent = "";
+                tileMessageElement.className = "tile-message";
             }
         }
 
