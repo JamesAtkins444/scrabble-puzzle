@@ -4193,3 +4193,17 @@ body {
         font-size: 44px;
     }
 }
+
+
+/* Fine-tune the close glyph position by screen size. */
+@media (min-width: 601px) {
+    .rules-close-button::after {
+        left: -1px;
+    }
+}
+
+@media (max-width: 600px) {
+    .rules-close-button::after {
+        top: 2px;
+    }
+}
