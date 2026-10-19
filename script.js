@@ -2296,15 +2296,23 @@ function displayTileRack() {
                         rackTileDrag.rackTarget.tile.classList.remove("rack-reorder-target");
                     }
 
-                    const validCell = cell &&
+                    const cellRow = cell ? Number(cell.dataset.row) : -1;
+                    const cellCol = cell ? Number(cell.dataset.col) : -1;
+                    const cellKey = cell ? keyForCell(cellRow, cellCol) : null;
+                    const isEmptyCell = cell &&
                         cell.dataset.row !== undefined &&
                         cell.dataset.col !== undefined &&
-                        originalBoard[Number(cell.dataset.row)] &&
-                        originalBoard[Number(cell.dataset.row)][Number(cell.dataset.col)] === "" &&
-                        board[Number(cell.dataset.row)][Number(cell.dataset.col)] === "" &&
-                        !playerPlacedTiles[keyForCell(Number(cell.dataset.row), Number(cell.dataset.col))];
+                        originalBoard[cellRow] &&
+                        originalBoard[cellRow][cellCol] === "" &&
+                        board[cellRow][cellCol] === "" &&
+                        !playerPlacedTiles[cellKey];
+                    const isPlayerTileCell = cell &&
+                        cell.dataset.row !== undefined &&
+                        cell.dataset.col !== undefined &&
+                        !!playerPlacedTiles[cellKey];
 
-                    rackTileDrag.target = validCell ? cell : null;
+                    // Rack tiles can be dropped on empty cells or on another player tile to swap them.
+                    rackTileDrag.target = (isEmptyCell || isPlayerTileCell) ? cell : null;
                     if (rackTileDrag.target) rackTileDrag.target.classList.add("drag-over");
 
                     // When released over another rack tile, remember which side it is on.
@@ -2340,9 +2348,15 @@ function displayTileRack() {
                         if (drag.target) {
                             const row = Number(drag.target.dataset.row);
                             const col = Number(drag.target.dataset.col);
-                            selectedBoardCell = null;
-                            selectedRackTile = drag.index;
-                            handleBoardClick(row, col);
+                            const key = keyForCell(row, col);
+
+                            if (playerPlacedTiles[key]) {
+                                swapRackTileWithBoardTile(drag.index, row, col);
+                            } else {
+                                selectedBoardCell = null;
+                                selectedRackTile = drag.index;
+                                handleBoardClick(row, col);
+                            }
                         } else if (drag.rackTarget) {
                             // Move the dragged letter to the chosen position in the rack.
                             const fromIndex = drag.index;
@@ -2453,6 +2467,57 @@ function displayTileRack() {
             }
         }
     );
+}
+
+
+/* ==================================================
+SWAP A RACK TILE WITH A PLAYER TILE ON THE BOARD
+================================================== */
+
+function swapRackTileWithBoardTile(rackIndex, row, col) {
+    if (answerRevealed) return;
+
+    const key = keyForCell(row, col);
+    const boardTile = playerPlacedTiles[key];
+    const incomingLetter = playerTiles[rackIndex];
+
+    if (!boardTile || incomingLetter === undefined) return;
+
+    const incomingRackSlot = playerRackPositions[rackIndex] ?? rackIndex;
+    const displacedLetter = boardTile.letter;
+    const displacedRackSlot = boardTile.rackSlot ?? 6;
+
+    // Put the dragged rack tile in the board position.
+    boardTile.letter = incomingLetter;
+    boardTile.rackSlot = incomingRackSlot;
+    board[row][col] = incomingLetter;
+
+    // Remove the incoming tile from the rack.
+    playerTiles.splice(rackIndex, 1);
+    playerRackPositions.splice(rackIndex, 1);
+
+    // Return the displaced tile to its original rack slot, keeping all other
+    // rack tiles in their existing slots.
+    const insertAt = playerRackPositions.findIndex(slot => slot > displacedRackSlot);
+    if (insertAt === -1) {
+        playerTiles.push(displacedLetter);
+        playerRackPositions.push(displacedRackSlot);
+    } else {
+        playerTiles.splice(insertAt, 0, displacedLetter);
+        playerRackPositions.splice(insertAt, 0, displacedRackSlot);
+    }
+
+    selectedRackTile = null;
+    selectedBoardCell = null;
+
+    if (tileMessageElement) {
+        tileMessageElement.textContent = "";
+        tileMessageElement.className = "tile-message";
+    }
+
+    displayTileRack();
+    displayBoard();
+    calculatePlayerScore();
 }
 
 
