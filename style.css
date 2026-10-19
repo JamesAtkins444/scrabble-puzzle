@@ -4251,8 +4251,8 @@ body {
 }
 
 
-/* Increase only the centred letter on board and rack tiles by 10%; leave score text unchanged. */
+/* Increase the centred letter on board and rack tiles by a further 10%; leave score text unchanged. */
 .board-tile .tile-letter,
 .rack-tile .tile-letter {
-    scale: 1.1;
+    scale: 1.21;
 }
