@@ -5087,12 +5087,17 @@ function refreshShareResultsSummary() {
         shareResultsTitle.textContent = isRevealMode ? "I didn't get it :(" : "Nice!";
     }
     if (shareResultsSubtitle) {
-        shareResultsSubtitle.hidden = isRevealMode;
+        shareResultsSubtitle.hidden = false;
     }
 
     const shareResultsAchievements = document.querySelector(".share-results-achievements");
     if (shareResultsAchievements) {
-        shareResultsAchievements.hidden = isRevealMode;
+        shareResultsAchievements.hidden = false;
+    }
+
+    const continuePlayingButton = document.getElementById("continuePlayingButton");
+    if (continuePlayingButton) {
+        continuePlayingButton.hidden = isRevealMode;
     }
     if (shareResultsSummary) {
         shareResultsSummary.textContent = `${result.playerScore}/${result.solverScore === null ? "—" : result.solverScore}`;
