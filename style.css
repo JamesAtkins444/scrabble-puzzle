@@ -4343,3 +4343,27 @@ body {
         font-size: 18px;
     }
 }
+
+
+/* Give the Word List popup more room and add a wider text inset for readability. */
+.word-list-dialog {
+    width: min(600px, calc(100% - 32px));
+    max-width: 600px;
+    max-height: 85vh;
+}
+
+.word-list-content {
+    padding: 8px 34px 24px !important;
+}
+
+@media (max-width: 600px) {
+    .word-list-dialog {
+        width: calc(100% - 24px);
+        max-width: none;
+        max-height: 85vh;
+    }
+
+    .word-list-content {
+        padding: 8px 22px 20px !important;
+    }
+}
