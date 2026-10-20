@@ -4282,3 +4282,37 @@ body {
     box-shadow: inset 0 0 0 2px rgba(104, 211, 145, 0.3) !important;
 }
 
+
+
+/* Word List link and nested information popup */
+.rules-content .word-list-link {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.rules-content .word-list-link:hover {
+    color: #444;
+}
+
+.word-list-dialog {
+    z-index: 2;
+}
+
+.word-list-content a {
+    color: #245f8a;
+    overflow-wrap: anywhere;
+}
+
+.word-list-content p:last-child {
+    margin-bottom: 0;
+}
