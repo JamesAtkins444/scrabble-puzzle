@@ -4316,3 +4316,30 @@ body {
 .word-list-content p:last-child {
     margin-bottom: 0;
 }
+
+
+/* Match Word List text inset to the other popup content and de-emphasise source attributions. */
+.word-list-content {
+    padding: 8px 22px 18px !important;
+}
+
+.word-list-content .word-list-attribution {
+    margin-top: 18px;
+    font-size: 20px;
+    line-height: 1.35;
+    color: #777;
+}
+
+.word-list-content .word-list-attribution a {
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    .word-list-content {
+        padding: 8px 16px 15px !important;
+    }
+
+    .word-list-content .word-list-attribution {
+        font-size: 18px;
+    }
+}
