@@ -1,0 +1,342 @@
+{
+  "date": "2026-11-18",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "C",
+      "O",
+      "O",
+      "T",
+      "I",
+      "E"
+    ],
+    [
+      "",
+      "R",
+      "",
+      "",
+      "A",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "A",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "C",
+      "O",
+      "O",
+      "T",
+      "I",
+      "E"
+    ],
+    [
+      "",
+      "R",
+      "",
+      "",
+      "A",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "A",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,2": "double-word",
+    "6,5": "double-letter",
+    "0,0": "triple-letter",
+    "6,3": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "COOTIE",
+      "row": 2,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "CRAW",
+      "row": 2,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "STAR",
+      "row": 1,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "SEN",
+      "row": 1,
+      "col": 6,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "D",
+    "T",
+    "A",
+    "I",
+    "E",
+    "G"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "S",
+        "",
+        "S"
+      ],
+      [
+        "",
+        "C",
+        "O",
+        "O",
+        "T",
+        "I",
+        "E"
+      ],
+      [
+        "",
+        "R",
+        "",
+        "",
+        "A",
+        "",
+        "N"
+      ],
+      [
+        "",
+        "A",
+        "",
+        "",
+        "R",
+        "",
+        ""
+      ],
+      [
+        "",
+        "W",
+        "A",
+        "I",
+        "T",
+        "E",
+        "D"
+      ],
+      [
+        "",
+        "",
+        "G",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "5,2",
+      "5,3",
+      "5,4",
+      "5,5",
+      "5,6",
+      "6,2"
+    ],
+    "score": 68,
+    "completionBonus": 50,
+    "words": [
+      "WAITED",
+      "START",
+      "AG"
+    ],
+    "scoringWords": [
+      {
+        "word": "WAITED",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 10,
+        "move": 1
+      },
+      {
+        "word": "START",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "AG",
+        "row": 5,
+        "col": 2,
+        "direction": "vertical",
+        "score": 3,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "WAITED",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 15,
+        "usedTiles": 5,
+        "newKeys": [
+          "5,2",
+          "5,3",
+          "5,4",
+          "5,5",
+          "5,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "WAITED",
+            "row": 5,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "START",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "AG",
+        "row": 5,
+        "col": 2,
+        "direction": "vertical",
+        "score": 3,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "AG",
+            "row": 5,
+            "col": 2,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1629
+  }
+}
