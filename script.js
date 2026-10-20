@@ -5014,6 +5014,43 @@ if (rulesHelpButton && rulesDialog) {
         });
     }
 
+
+
+    // Open the Word List information as a separate dialog above How to Play.
+    const wordListDialog = document.getElementById("wordListDialog");
+    const openWordListButton = document.getElementById("openWordListButton");
+    const closeWordListButton = document.getElementById("closeWordListButton");
+
+    if (wordListDialog && openWordListButton) {
+        openWordListButton.addEventListener("click", () => {
+            if (typeof wordListDialog.showModal === "function") {
+                wordListDialog.showModal();
+            } else {
+                wordListDialog.setAttribute("open", "");
+            }
+        });
+
+        if (closeWordListButton) {
+            closeWordListButton.addEventListener("click", () => {
+                if (typeof wordListDialog.close === "function") {
+                    wordListDialog.close();
+                } else {
+                    wordListDialog.removeAttribute("open");
+                }
+            });
+        }
+
+        wordListDialog.addEventListener("click", event => {
+            if (event.target === wordListDialog) {
+                if (typeof wordListDialog.close === "function") {
+                    wordListDialog.close();
+                } else {
+                    wordListDialog.removeAttribute("open");
+                }
+            }
+        });
+    }
+
     rulesDialog.addEventListener("click", event => {
         // Clicking the dimmed backdrop closes the rules; clicks inside the panel do not.
         if (event.target === rulesDialog) {
