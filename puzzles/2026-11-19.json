@@ -1,0 +1,389 @@
+{
+  "date": "2026-11-19",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "I",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "R",
+      "U",
+      "M",
+      "A",
+      "K",
+      "I",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "H",
+      "O",
+      "V",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "I",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "R",
+      "U",
+      "M",
+      "A",
+      "K",
+      "I",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "H",
+      "O",
+      "V",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "R",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,6": "double-word",
+    "0,3": "double-letter",
+    "6,0": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "RUMAKI",
+      "row": 3,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "IMBUE",
+      "row": 0,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "LITER",
+      "row": 2,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "HOVE",
+      "row": 5,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "O",
+    "H",
+    "D",
+    "N",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "I",
+        "N",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "M",
+        "O",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "B",
+        "",
+        "",
+        "",
+        "L",
+        ""
+      ],
+      [
+        "R",
+        "U",
+        "M",
+        "A",
+        "K",
+        "I",
+        ""
+      ],
+      [
+        "",
+        "E",
+        "",
+        "",
+        "",
+        "T",
+        ""
+      ],
+      [
+        "",
+        "",
+        "H",
+        "O",
+        "V",
+        "E",
+        ""
+      ],
+      [
+        "H",
+        "O",
+        "E",
+        "D",
+        "",
+        "R",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "6,0",
+      "6,1",
+      "6,2",
+      "6,3",
+      "0,2",
+      "1,2"
+    ],
+    "score": 78,
+    "completionBonus": 50,
+    "words": [
+      "HOED",
+      "HE",
+      "OD",
+      "IN",
+      "MO",
+      "NO"
+    ],
+    "scoringWords": [
+      {
+        "word": "HOED",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 12,
+        "move": 1
+      },
+      {
+        "word": "HE",
+        "row": 5,
+        "col": 2,
+        "direction": "vertical",
+        "score": 5,
+        "move": 1
+      },
+      {
+        "word": "OD",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 3,
+        "move": 1
+      },
+      {
+        "word": "IN",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "MO",
+        "row": 1,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 2
+      },
+      {
+        "word": "NO",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "HOED",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 4,
+        "newKeys": [
+          "6,0",
+          "6,1",
+          "6,2",
+          "6,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "HOED",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 12
+          },
+          {
+            "word": "HE",
+            "row": 5,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "OD",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "NO",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,2",
+          "1,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "IN",
+            "row": 0,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "MO",
+            "row": 1,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "NO",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1061
+  }
+}
