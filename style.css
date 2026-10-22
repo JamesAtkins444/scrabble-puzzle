@@ -1327,7 +1327,7 @@ dialog::backdrop {
     align-items: baseline;
     gap: 3px;
     margin: 0;
-    font-size: 43.2px;
+    font-size: 36.72px;
     line-height: 1;
     white-space: nowrap;
     transform: translateY(0.08em);
@@ -1339,6 +1339,6 @@ dialog::backdrop {
     }
 
     #scoreBox .achievement-stars {
-        font-size: 37.2px;
+        font-size: 31.62px;
     }
 }
