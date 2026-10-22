@@ -930,7 +930,7 @@ dialog::backdrop {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2.5px;
     width: min(225px, 100%);
-    margin: 6px auto;
+    margin: 6px auto 12px;
     padding: 0;
     background: transparent;
     box-shadow: none;
