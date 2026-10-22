@@ -4941,3 +4941,26 @@ body {
         transition: none;
     }
 }
+
+
+/* The left header control keeps its share action; its reference-matched
+   star silhouette is a presentation-only icon treatment. */
+.board-utility-row > .share-results-icon-button svg {
+    display: none !important;
+}
+
+.board-utility-row > .share-results-icon-button::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: var(--toucan-white);
+    clip-path: polygon(50% 3%, 63% 34%, 97% 38%, 72% 61%, 79% 95%, 50% 78%, 21% 95%, 28% 61%, 3% 38%, 37% 34%);
+}
+
+@media (max-width: 560px) {
+    .board-utility-row > .share-results-icon-button::after {
+        width: 29px;
+        height: 29px;
+    }
+}
