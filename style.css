@@ -4398,7 +4398,7 @@ body {
     padding: 0 !important;
     border: 0 !important;
     border-radius: 6px !important;
-    background: #172c33 !important;
+    background: #3c5965 !important;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.10),
                 inset -1px -1px 0 rgba(0, 0, 0, 0.20) !important;
     display: flex !important;
@@ -4441,7 +4441,7 @@ body {
 
 .board-utility-row > .share-results-icon-button:hover,
 .board-utility-row > .rules-help-button:hover {
-    background: #172c33 !important;
+    background: #3c5965 !important;
     opacity: 0.9 !important;
     transform: none !important;
 }
@@ -4477,7 +4477,7 @@ body {
     padding: 0 !important;
     border: 0 !important;
     border-radius: 6px !important;
-    background-color: #172c33 !important;
+    background-color: #3c5965 !important;
     background-image: none !important;
     box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.10),
                 inset -1px -1px 0 rgba(0, 0, 0, 0.20) !important;
