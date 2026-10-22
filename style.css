@@ -455,6 +455,7 @@ button:focus-visible {
 .board-tile.player-valid.player-on-triple-word,
 .cell.player-valid .board-tile.player-on-triple-word { background: #ff4085; color: #172c33; }
 
+/* Highlight the individual target cell while a tile is being placed. */
 .cell.drag-over,
 .cell.selected-target,
 .cell.drag-over.double-letter,
@@ -465,7 +466,8 @@ button:focus-visible {
 .cell.selected-target.triple-letter,
 .cell.selected-target.double-word,
 .cell.selected-target.triple-word {
-    outline: 0 !important;
+    outline: 2px solid #1aaa87 !important;
+    outline-offset: -2px;
     border: 0 !important;
     box-shadow: none !important;
 }
