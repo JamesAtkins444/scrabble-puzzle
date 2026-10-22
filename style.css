@@ -1252,7 +1252,7 @@ dialog::backdrop {
     width: max-content;
     max-width: none;
     position: relative;
-    left: 50%;
+    left: 0;
     transform: none;
     margin: 0;
     padding: 0;
