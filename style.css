@@ -4461,3 +4461,50 @@ body {
         font-size: 40px !important;
     }
 }
+
+
+/* Ensure the utility buttons themselves render as visible board-cell-sized squares.
+   ID selectors are intentional here to override older button rules in this stylesheet. */
+#shareResultsButton,
+#rulesHelpButton {
+    box-sizing: border-box !important;
+    width: calc((500px - 27px) / 8) !important;
+    min-width: calc((500px - 27px) / 8) !important;
+    max-width: calc((500px - 27px) / 8) !important;
+    height: calc((500px - 27px) / 8) !important;
+    min-height: calc((500px - 27px) / 8) !important;
+    max-height: calc((500px - 27px) / 8) !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 6px !important;
+    background-color: #172c33 !important;
+    background-image: none !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.10),
+                inset -1px -1px 0 rgba(0, 0, 0, 0.20) !important;
+    overflow: hidden;
+}
+
+#shareResultsButton {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#rulesHelpButton {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+@media (max-width: 600px) {
+    #shareResultsButton,
+    #rulesHelpButton {
+        width: calc((100vw - 20px - 21px) / 8) !important;
+        min-width: calc((100vw - 20px - 21px) / 8) !important;
+        max-width: calc((100vw - 20px - 21px) / 8) !important;
+        height: calc((100vw - 20px - 21px) / 8) !important;
+        min-height: calc((100vw - 20px - 21px) / 8) !important;
+        max-height: calc((100vw - 20px - 21px) / 8) !important;
+        border-radius: 5px !important;
+    }
+}
