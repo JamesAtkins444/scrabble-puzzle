@@ -1228,3 +1228,50 @@ dialog::backdrop {
         animation: none !important;
     }
 }
+
+
+/* Align the score and achievement stars over the centre of board column one. */
+.board-top-row {
+    display: block;
+    width: 100%;
+    margin: 0 auto 12px;
+}
+
+.score-stack {
+    display: block;
+    width: calc((100% - 6 * var(--gap)) / 7);
+    margin: 0;
+}
+
+#scoreBox.score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#scoreValue {
+    font-size: clamp(39px, 8vw, 52px);
+    line-height: .9;
+}
+
+#scoreBox .achievement-stars {
+    justify-content: center;
+    gap: 3px;
+    margin: 0;
+    font-size: 36px;
+}
+
+@media (max-width: 600px) {
+    #scoreValue {
+        font-size: clamp(35px, 9vw, 44px);
+    }
+
+    #scoreBox .achievement-stars {
+        font-size: 31px;
+    }
+}
