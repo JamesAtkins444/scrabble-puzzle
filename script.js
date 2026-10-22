@@ -4584,7 +4584,7 @@ function updateDailyPuzzleNumber(dateKey) {
     const yearStart = Date.UTC(puzzleDate.getUTCFullYear(), 0, 1);
     const puzzleNumber = Math.floor((puzzleDate.getTime() - yearStart) / 86400000) + 1;
 
-    numberElement.textContent = `Daily Puzzle #${String(puzzleNumber).padStart(4, "0")}`;
+    numberElement.textContent = `#${String(puzzleNumber).padStart(4, "0")}`;
 }
 
 function getNextPuzzleDateKey(dateKey) {
