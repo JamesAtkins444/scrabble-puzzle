@@ -125,6 +125,17 @@ DOM ELEMENTS
 const boardElement =
     document.getElementById("board");
 
+function syncBoardPlacementOutline() {
+    if (!boardElement) return;
+
+    const placementActive =
+        selectedRackTile !== null ||
+        selectedBoardCell !== null ||
+        Boolean(rackTileDrag && rackTileDrag.moved);
+
+    boardElement.classList.toggle("board-placement-active", placementActive);
+}
+
 const tileRackElement =
     document.getElementById("tileRack");
 
@@ -1671,6 +1682,8 @@ BOARD DISPLAY
 
 function displayBoard() {
 
+    syncBoardPlacementOutline();
+
     if (!boardElement) {
 
         return;
@@ -2159,6 +2172,8 @@ TILE RACK DISPLAY
 
 function displayTileRack() {
 
+    syncBoardPlacementOutline();
+
     if (!tileRackElement) {
 
         return;
@@ -2267,6 +2282,7 @@ function displayTileRack() {
                     if (!rackTileDrag.moved && Math.hypot(dx, dy) < 8) return;
 
                     rackTileDrag.moved = true;
+                    syncBoardPlacementOutline();
                     moveEvent.preventDefault();
 
                     // Create a floating copy once the pointer has moved far enough to count as a drag.
@@ -2419,6 +2435,8 @@ function displayTileRack() {
                         // Prevent the synthetic click after a drag from selecting the rack tile.
                         setTimeout(() => { suppressNextRackTileClick = false; }, 0);
                     }
+
+                    syncBoardPlacementOutline();
                 };
 
                 const onCancel = cancelEvent => {
@@ -2428,6 +2446,7 @@ function displayTileRack() {
                     if (rackTileDrag.visual) rackTileDrag.visual.remove();
                     tile.classList.remove("rack-tile-drag-source");
                     rackTileDrag = null;
+                    syncBoardPlacementOutline();
                     document.removeEventListener("pointermove", onMove);
                     document.removeEventListener("pointerup", onUp);
                     document.removeEventListener("pointercancel", onCancel);
