@@ -584,6 +584,7 @@ button:focus-visible {
     gap: 2px;
     width: 100%;
     margin: 15px auto 0;
+    padding: 0;
 }
 
 .rack-actions > button {
