@@ -1317,7 +1317,7 @@ dialog::backdrop {
 }
 
 #scoreValue {
-    font-size: clamp(39px, 8vw, 52px);
+    font-size: clamp(46.8px, 9.6vw, 62.4px);
     line-height: .9;
 }
 
@@ -1326,7 +1326,7 @@ dialog::backdrop {
     align-items: baseline;
     gap: 3px;
     margin: 0;
-    font-size: 36px;
+    font-size: 43.2px;
     line-height: 1;
     white-space: nowrap;
     transform: translateY(0.08em);
@@ -1334,10 +1334,10 @@ dialog::backdrop {
 
 @media (max-width: 600px) {
     #scoreValue {
-        font-size: clamp(35px, 9vw, 44px);
+        font-size: clamp(42px, 10.8vw, 52.8px);
     }
 
     #scoreBox .achievement-stars {
-        font-size: 31px;
+        font-size: 37.2px;
     }
 }
