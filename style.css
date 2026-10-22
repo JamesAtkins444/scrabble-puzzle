@@ -4566,3 +4566,20 @@ body {
         border-radius: 7px !important;
     }
 }
+
+
+/* Keep rack slots dark while player letter tiles stay white with dark text. */
+#tileRack .rack-slot {
+    background-color: #3c5965 !important;
+}
+
+#tileRack .rack-tile {
+    background-color: #ffffff !important;
+    color: #222222 !important;
+    border-color: #d7d7d7 !important;
+}
+
+#tileRack .rack-tile .tile-letter,
+#tileRack .rack-tile .tile-value {
+    color: #222222 !important;
+}
