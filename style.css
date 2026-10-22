@@ -1330,7 +1330,7 @@ dialog::backdrop {
     font-size: 36.72px;
     line-height: 1;
     white-space: nowrap;
-    transform: translateY(calc(0.08em + 3px));
+    transform: translateY(calc(0.08em + 2px));
 }
 
 @media (max-width: 600px) {
