@@ -879,20 +879,29 @@ dialog::backdrop {
 
 .rules-tabs {
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin: 0 0 10px;
+    width: 100%;
+    margin: 0 0 12px;
+    border: 1px solid #264653;
+    background: #edf1f2;
 }
 
 .rules-tab {
-    padding: 4px 15px 5px;
-    border: 1px solid #264653;
-    border-radius: 999px;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 46px;
+    padding: 7px 8px 8px;
+    border: 0;
+    border-right: 1px solid #264653;
+    border-radius: 0;
     background: transparent;
     color: #264653;
-    font-size: 21px;
+    font-size: 25px;
     line-height: .9;
     cursor: pointer;
+}
+
+.rules-tab:last-child {
+    border-right: 0;
 }
 
 .rules-tab.is-active {
@@ -1240,12 +1249,13 @@ dialog::backdrop {
     }
 
     .rules-tabs {
-        gap: 5px;
+        margin-bottom: 10px;
     }
 
     .rules-tab {
-        padding: 4px 12px 5px;
-        font-size: 19px;
+        min-height: 42px;
+        padding: 6px 4px 7px;
+        font-size: 22px;
     }
 
     .rules-close-button {
