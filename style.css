@@ -919,6 +919,7 @@ dialog::backdrop {
 .how-to-play-scoring-tile {
     width: 54px;
     height: 54px;
+    border: 2px solid #172c33 !important;
     margin: 8px auto 12px;
     cursor: default;
     touch-action: auto;
