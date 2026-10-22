@@ -286,19 +286,23 @@ button:focus-visible {
 }
 
 .cell.double-letter {
-    background: #1aaa87;
+    background: var(--cell);
+    color: #1aaa87;
 }
 
 .cell.triple-letter {
-    background: #03916f;
+    background: var(--cell);
+    color: #03916f;
 }
 
 .cell.double-word {
-    background: #e0196a;
+    background: var(--cell);
+    color: #e0196a;
 }
 
 .cell.triple-word {
-    background: #ff4085;
+    background: var(--cell);
+    color: #ff4085;
 }
 
 .bonus-badge {
@@ -314,7 +318,7 @@ button:focus-visible {
     border: 0 !important;
     border-radius: 0 !important;
     background: transparent !important;
-    color: var(--white);
+    color: inherit;
     font-size: clamp(19px, 4.2vw, 29px);
     font-weight: 700;
     line-height: .8;
@@ -330,7 +334,7 @@ button:focus-visible {
     transform: none !important;
     padding: 0 !important;
     background: transparent !important;
-    color: var(--white);
+    color: inherit;
     font-size: clamp(9px, 1.8vw, 13px) !important;
     line-height: 1;
 }
