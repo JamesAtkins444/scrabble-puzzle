@@ -409,6 +409,15 @@ button:focus-visible {
     color: #ff0000;
 }
 
+/* Invalid and isolated player tiles have a matching red outline. */
+.board-tile.player-invalid,
+.board-tile.player-isolated,
+.cell.player-invalid .board-tile,
+.cell.player-isolated .board-tile {
+    outline: 4px solid #ff0000 !important;
+    outline-offset: -4px;
+}
+
 .cell.player-valid,
 .cell.player-invalid,
 .cell.player-isolated {
