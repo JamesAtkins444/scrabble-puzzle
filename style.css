@@ -423,6 +423,27 @@ button:focus-visible {
     background: inherit;
 }
 
+/* Invalid player tiles stay white with red lettering, including on premium cells. */
+.board-tile.player-invalid.player-on-double-letter,
+.board-tile.player-invalid.player-on-triple-letter,
+.board-tile.player-invalid.player-on-double-word,
+.board-tile.player-invalid.player-on-triple-word,
+.board-tile.player-isolated.player-on-double-letter,
+.board-tile.player-isolated.player-on-triple-letter,
+.board-tile.player-isolated.player-on-double-word,
+.board-tile.player-isolated.player-on-triple-word,
+.cell.player-invalid .board-tile.player-on-double-letter,
+.cell.player-invalid .board-tile.player-on-triple-letter,
+.cell.player-invalid .board-tile.player-on-double-word,
+.cell.player-invalid .board-tile.player-on-triple-word,
+.cell.player-isolated .board-tile.player-on-double-letter,
+.cell.player-isolated .board-tile.player-on-triple-letter,
+.cell.player-isolated .board-tile.player-on-double-word,
+.cell.player-isolated .board-tile.player-on-triple-word {
+    background: var(--white);
+    color: #ff0000;
+}
+
 .cell.player-valid .board-tile.player-on-double-letter { background: #1aaa87; color: var(--white); }
 .cell.player-valid .board-tile.player-on-triple-letter { background: #03916f; color: var(--white); }
 .cell.player-valid .board-tile.player-on-double-word { background: #e0196a; color: var(--white); }
