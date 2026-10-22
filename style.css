@@ -4367,3 +4367,97 @@ body {
         padding: 8px 22px 20px !important;
     }
 }
+
+
+/* Visual-only update: darken the rack slots and frame the two utility icons
+   in square buttons sized to match the board's individual cells. */
+#tileRack .rack-slot {
+    background-color: #3c5965 !important;
+}
+
+#tileRack .rack-slot:not(:has(.rack-tile)) {
+    background-color: #3c5965 !important;
+}
+
+#tileRack .rack-tile {
+    background-color: #3c5965 !important;
+}
+
+/* Match the utility row's eight columns to the eight board columns. */
+.board-utility-row {
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+}
+
+.board-utility-row > .share-results-icon-button {
+    grid-column: 1 !important;
+    width: calc((100% - 21px) / 8) !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    justify-self: center !important;
+    align-self: center !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 6px !important;
+    background: #172c33 !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.10),
+                inset -1px -1px 0 rgba(0, 0, 0, 0.20) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.board-utility-row > .rules-help-button {
+    grid-column: 8 !important;
+    width: calc((100% - 21px) / 8) !important;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+    justify-self: center !important;
+    align-self: center !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 6px !important;
+    background: #172c33 !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.10),
+                inset -1px -1px 0 rgba(0, 0, 0, 0.20) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    top: 0 !important;
+}
+
+.board-utility-row > .game-branding {
+    grid-column: 2 / 8 !important;
+}
+
+.board-utility-row .share-results-icon-button svg {
+    width: 30% !important;
+    height: 30% !important;
+}
+
+.board-utility-row > .rules-help-button {
+    font-size: 48px !important;
+    line-height: 1 !important;
+}
+
+.board-utility-row > .share-results-icon-button:hover,
+.board-utility-row > .rules-help-button:hover {
+    background: #172c33 !important;
+    opacity: 0.9 !important;
+    transform: none !important;
+}
+
+@media (max-width: 600px) {
+    .board-utility-row {
+        grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    }
+
+    .board-utility-row > .share-results-icon-button,
+    .board-utility-row > .rules-help-button {
+        width: calc((100% - 14px) / 8) !important;
+        border-radius: 5px !important;
+    }
+
+    .board-utility-row > .rules-help-button {
+        font-size: 40px !important;
+    }
+}
