@@ -1292,7 +1292,7 @@ dialog::backdrop {
 .board-top-row {
     display: block;
     width: 100%;
-    margin: 0 auto 12px;
+    margin: 5px auto 12px;
 }
 
 .score-stack {
