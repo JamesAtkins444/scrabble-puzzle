@@ -4508,3 +4508,47 @@ body {
         border-radius: 5px !important;
     }
 }
+
+
+/* Final alignment: the board is 7x7 with 7px gaps (4px on mobile).
+   Use the same seven-column grid for the utility row so each icon square
+   matches one actual board cell at every viewport width. */
+.board-utility-row {
+    display: grid !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+    width: min(100%, 500px) !important;
+    align-items: center !important;
+}
+
+#shareResultsButton,
+#rulesHelpButton {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 1 / 1 !important;
+    justify-self: stretch !important;
+    align-self: stretch !important;
+}
+
+#shareResultsButton {
+    grid-column: 1 !important;
+}
+
+#rulesHelpButton {
+    grid-column: 7 !important;
+    position: static !important;
+}
+
+.board-utility-row > .game-branding {
+    grid-column: 2 / 7 !important;
+}
+
+@media (max-width: 600px) {
+    .board-utility-row {
+        gap: 4px !important;
+    }
+}
