@@ -4622,3 +4622,48 @@ body {
 #board .cell.drag-over.triple-word {
     box-shadow: none !important;
 }
+
+
+/* Remove outlines from all game squares and tile elements across the project. */
+#board .cell,
+#board .cell.drag-over,
+#board .cell.selected-target,
+#board .cell.original-tile,
+#board .cell.player-valid,
+#board .cell.player-invalid,
+#board .cell.player-isolated,
+#board .cell.double-letter,
+#board .cell.triple-letter,
+#board .cell.double-word,
+#board .cell.triple-word,
+#board .board-tile,
+#tileRack .rack-slot,
+#tileRack .rack-tile,
+#shareResultsButton,
+#rulesHelpButton,
+.how-to-play-example-cell,
+.how-to-play-example .how-to-play-tile,
+.how-to-play-bonus-tile {
+    outline: none !important;
+}
+
+/* Remove border strokes from the squares as well, leaving their existing fills intact. */
+#board .cell,
+#board .cell.original-tile,
+#board .cell.player-valid,
+#board .cell.player-invalid,
+#board .cell.player-isolated,
+#board .cell.double-letter,
+#board .cell.triple-letter,
+#board .cell.double-word,
+#board .cell.triple-word,
+#board .board-tile,
+#tileRack .rack-slot,
+#tileRack .rack-tile,
+#shareResultsButton,
+#rulesHelpButton,
+.how-to-play-example-cell,
+.how-to-play-example .how-to-play-tile,
+.how-to-play-bonus-tile {
+    border-color: transparent !important;
+}
