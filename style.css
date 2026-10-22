@@ -1102,19 +1102,9 @@ dialog::backdrop {
     font-size: 18px;
 }
 
-/* Generator remains usable for development without dominating the game layout. */
+/* Keep the development generator panel hidden from players. */
 #generatorPanel {
-    position: fixed;
-    z-index: 100;
-    top: 14px;
-    left: 14px;
-    width: 220px;
-    padding: 14px;
-    border: 0;
-    border-radius: 10px;
-    background: #ffffff;
-    color: #264653;
-    box-shadow: none;
+    display: none !important;
 }
 
 #generatorPanel h2 {
