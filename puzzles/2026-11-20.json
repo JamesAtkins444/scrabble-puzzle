@@ -1,0 +1,356 @@
+{
+  "date": "2026-11-20",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "L",
+      "O",
+      "O",
+      "P",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "",
+      "P",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "I",
+      "",
+      "G",
+      "",
+      ""
+    ],
+    [
+      "B",
+      "A",
+      "N",
+      "Y",
+      "A",
+      "N",
+      ""
+    ],
+    [
+      "",
+      "",
+      "G",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "L",
+      "O",
+      "O",
+      "P",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "",
+      "P",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "I",
+      "",
+      "G",
+      "",
+      ""
+    ],
+    [
+      "B",
+      "A",
+      "N",
+      "Y",
+      "A",
+      "N",
+      ""
+    ],
+    [
+      "",
+      "",
+      "G",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,6": "double-word",
+    "6,0": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "BANYAN",
+      "row": 4,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "OPING",
+      "row": 1,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "LOOPY",
+      "row": 1,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "GAMA",
+      "row": 3,
+      "col": 4,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "R",
+    "A",
+    "C",
+    "E",
+    "P"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "P",
+        "A",
+        "C",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "L",
+        "O",
+        "O",
+        "P",
+        "Y",
+        ""
+      ],
+      [
+        "R",
+        "",
+        "P",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "O",
+        "",
+        "I",
+        "",
+        "G",
+        "",
+        ""
+      ],
+      [
+        "B",
+        "A",
+        "N",
+        "Y",
+        "A",
+        "N",
+        ""
+      ],
+      [
+        "E",
+        "",
+        "G",
+        "",
+        "M",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "A",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,0",
+      "0,1",
+      "0,2",
+      "2,0",
+      "3,0",
+      "5,0"
+    ],
+    "score": 76,
+    "completionBonus": 50,
+    "words": [
+      "PAC",
+      "AL",
+      "COPING",
+      "ROBE"
+    ],
+    "scoringWords": [
+      {
+        "word": "PAC",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 7,
+        "move": 1
+      },
+      {
+        "word": "AL",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 2,
+        "move": 1
+      },
+      {
+        "word": "COPING",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 11,
+        "move": 1
+      },
+      {
+        "word": "ROBE",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 6,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "PAC",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,0",
+          "0,1",
+          "0,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "PAC",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "AL",
+            "row": 0,
+            "col": 1,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "COPING",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 11
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ROBE",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 6,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,0",
+          "3,0",
+          "5,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "ROBE",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1655
+  }
+}
