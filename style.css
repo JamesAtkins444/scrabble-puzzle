@@ -252,13 +252,6 @@ button:focus-visible {
     box-shadow: none;
 }
 
-/* Show that the board is ready to receive a rack tile. */
-#board.board-placement-active {
-    outline: 4px solid #1aaa87;
-    outline-offset: 5px;
-    border-radius: 12px;
-}
-
 .cell {
     position: relative;
     display: flex;
