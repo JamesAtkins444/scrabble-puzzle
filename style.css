@@ -4667,3 +4667,76 @@ body {
 .how-to-play-bonus-tile {
     border-color: transparent !important;
 }
+
+
+/* Definitive flat styling: override every earlier rule that reintroduces
+   outlines, borders, shadows, gradients, or pseudo-element bevels on game squares. */
+#board .cell,
+#board .cell *,
+#board .cell::before,
+#board .cell::after,
+#board .cell *::before,
+#board .cell *::after,
+#tileRack .rack-slot,
+#tileRack .rack-slot *,
+#tileRack .rack-slot::before,
+#tileRack .rack-slot::after,
+#tileRack .rack-slot *::before,
+#tileRack .rack-slot *::after,
+#shareResultsButton,
+#shareResultsButton *,
+#shareResultsButton::before,
+#shareResultsButton::after,
+#rulesHelpButton,
+#rulesHelpButton *,
+#rulesHelpButton::before,
+#rulesHelpButton::after,
+.how-to-play-example,
+.how-to-play-example *,
+.how-to-play-example::before,
+.how-to-play-example::after,
+.how-to-play-example *::before,
+.how-to-play-example *::after,
+.how-to-play-bonus-tile,
+.how-to-play-bonus-tile::before,
+.how-to-play-bonus-tile::after,
+.how-to-play-score-example,
+.how-to-play-score-example::before,
+.how-to-play-score-example::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    outline: none !important;
+    border-style: none !important;
+    border-width: 0 !important;
+    background-image: none !important;
+    filter: none !important;
+}
+
+/* Placement highlights must also stay flat, including on premium squares. */
+#board .cell.drag-over,
+#board .cell.selected-target,
+#board .cell.drag-over.double-letter,
+#board .cell.drag-over.triple-letter,
+#board .cell.drag-over.double-word,
+#board .cell.drag-over.triple-word,
+#board .cell.selected-target.double-letter,
+#board .cell.selected-target.triple-letter,
+#board .cell.selected-target.double-word,
+#board .cell.selected-target.triple-word {
+    box-shadow: none !important;
+    outline: none !important;
+    border: 0 !important;
+}
+
+/* Remove any bevels implemented using pseudo-elements on rack and board tiles. */
+#board .cell::before,
+#board .cell::after,
+#board .board-tile::before,
+#board .board-tile::after,
+#tileRack .rack-slot::before,
+#tileRack .rack-slot::after,
+#tileRack .rack-tile::before,
+#tileRack .rack-tile::after {
+    content: none !important;
+    display: none !important;
+}
