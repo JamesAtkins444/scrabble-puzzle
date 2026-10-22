@@ -936,6 +936,10 @@ dialog::backdrop {
     touch-action: auto;
 }
 
+.how-to-play-example .how-to-play-example-white-tile {
+    border: 2px solid #172c33 !important;
+}
+
 
 
 .how-to-play-bonus-tiles {
