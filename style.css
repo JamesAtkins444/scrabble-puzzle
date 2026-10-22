@@ -1,4291 +1,965 @@
-* {
-  box-sizing: border-box;
-  }
+/* Toucanagrams — clean, flat stylesheet
+   The game logic remains in script.js. This file controls presentation only. */
+
+:root {
+    --page: #264653;
+    --cell: #172c33;
+    --rack-slot: #3c5965;
+    --white: #ffffff;
+    --ink: #172c33;
+    --gap: 7px;
+    --board-size: 500px;
+    --round: 10px;
+    --font: 'Dongle', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--page);
+}
 
 body {
-margin: 0;
-padding: 20px;
-font-family: 'Dongle', sans-serif;
-background: #f3f3f3;
-color: #222;
+    min-height: 100vh;
+    margin: 0;
+    padding: 18px 16px 28px;
+    background: var(--page);
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 24px;
+    line-height: 1;
+}
 
-font-size: 135%;
+button,
+input {
+    font: inherit;
 }
 
 button {
-font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 .container {
-width: 100%;
-max-width: 900px;
-margin: 0 auto;
-
-display: flex;
-flex-direction: column;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: var(--board-size);
+    margin: 0 auto;
 }
-
-/* -------------------------------- */
-/* CONTROLS */
-/* -------------------------------- */
 
 .controls {
-order: 1;
-
-display: flex;
-justify-content: center;
-
-margin-bottom: 16px;
-
+    display: none;
 }
 
-.controls button,
-#generateButton,
-#revealAnswerButton,
-#revealPuzzleButton,
-.rack-actions button,
-#generatorPanel #generateButton {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 7px;
-    background: #222;
-    color: #fff;
-    font-family: inherit;
-    font-size: 20.25px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 150ms ease, transform 150ms ease;
+/* Header: Share star | title and puzzle number | How-to-play question mark */
+.board-utility-row {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: center;
+    gap: var(--gap);
+    width: 100%;
+    margin: 0 auto 12px;
 }
 
-.controls button:hover:not(:disabled),
-#generateButton:hover:not(:disabled),
-#revealAnswerButton:hover:not(:disabled),
-#revealPuzzleButton:hover:not(:disabled),
-#generatorPanel #generateButton:hover:not(:disabled) {
-    background: #444;
-}
-
-.controls button:disabled,
-#generateButton:disabled,
-#revealAnswerButton:disabled,
-#revealPuzzleButton:disabled,
-#generatorPanel #generateButton:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-
-
-/* ================================================
-   SCORE ROW
-================================================ */
-
-.score-row {
+#shareResultsButton,
+#rulesHelpButton {
+    position: static;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    justify-self: stretch;
+    align-self: center;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: 0;
+    border-radius: var(--round);
+    background: var(--rack-slot);
+    color: var(--white);
+    box-shadow: none;
+    filter: none;
+    cursor: pointer;
+    transition: opacity 120ms ease;
 }
 
-/* -------------------------------- */
-/* SCORE */
-/* -------------------------------- */
+#shareResultsButton {
+    grid-column: 1;
+}
+
+#rulesHelpButton {
+    grid-column: 7;
+    font-family: var(--font);
+    font-size: clamp(36px, 8vw, 48px);
+    font-weight: 700;
+    line-height: .8;
+}
+
+#shareResultsButton svg {
+    display: block;
+    width: 53%;
+    height: 53%;
+}
+
+#shareResultsButton:hover,
+#rulesHelpButton:hover {
+    opacity: .85;
+    transform: none;
+}
+
+.game-branding {
+    grid-column: 2 / 7;
+    min-width: 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.game-brand-title {
+    margin: 0;
+    font-size: clamp(42px, 8.5vw, 58px);
+    font-weight: 700;
+    line-height: .78;
+    white-space: nowrap;
+}
+
+.daily-puzzle-number {
+    margin-top: 5px;
+    font-size: clamp(22px, 4.8vw, 28px);
+    font-weight: 400;
+    line-height: .9;
+    white-space: nowrap;
+}
+
+/* Score and the three achievement stars */
+.board-top-row {
+    order: 2;
+    width: 100%;
+    margin: 0 auto 12px;
+}
+
+.score-stack,
+.score-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
 
 .score-box {
-order: 2;
-
-width: min(100%, 500px);
-
-margin: 0 auto 4px auto;
-padding: 8px 16px;
-
-display: flex;
-justify-content: center;
-align-items: baseline;
-
-gap: 8px;
-flex-wrap: wrap;
-
-background: transparent;
-
-}
-
-.score-label {
-font-size: 21.6px;
-color: #777;
-font-weight: bold;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 #scoreValue {
-font-size: 48.6px;
-line-height: 1;
-font-weight: 800;
-color: #222;
+    color: var(--white);
+    font-size: clamp(35px, 7.2vw, 46px);
+    font-weight: 700;
+    line-height: .9;
+    white-space: nowrap;
 }
 
-.score-bonus {
-width: 100%;
-
-text-align: center;
-
-font-size: 17.55px;
-font-weight: bold;
-
-color: #666;
-
-margin-top: 2px;
-
+.achievement-stars {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 28px;
+    margin: 0;
+    font-size: 32px;
+    line-height: 1;
 }
 
-/* -------------------------------- */
-/* SCORING WORDS */
-/* -------------------------------- */
-
-#wordList {
-order: 3;
-
-width: min(100%, 500px);
-
-margin: 0 auto 14px auto;
-
-display: flex;
-justify-content: center;
-align-items: center;
-
-flex-wrap: wrap;
-gap: 7px;
-
-min-height: 0;
-
+.achievement-star {
+    display: inline-flex;
+    width: .85em;
+    height: .85em;
+    align-items: center;
+    justify-content: center;
+    color: #172c33;
+    opacity: 1;
 }
 
-.word-pill {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-
-gap: 7px;
-
-padding: 4px 24px;
-
-background: white;
-
-border: 1px solid #ddd;
-border-radius: 999px;
-
-font-size: 24.95px;
-line-height: 1;
-
-box-shadow:
-    0 1px 3px rgba(0, 0, 0, 0.08);
-
+.achievement-star svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
 }
 
-.word-pill-word {
-font-weight: bold;
-color: #222;
-text-align: center;
+.achievement-star svg path {
+    fill: currentColor;
 }
 
-.word-pill-score {
-color: #777;
-font-size: 21.38px;
-font-weight: bold;
-text-align: center;
+.achievement-star.earned {
+    color: #fbb03b;
+    text-shadow: none;
 }
-/* ================================================
-   BOARD TILE
-================================================ */
 
-.board-tile {
+.achievement-crown {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+/* Main 7 × 7 board. Grid sizing can still be set by the generator. */
+#board {
+    order: 3;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(7, minmax(0, 1fr));
+    gap: var(--gap);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.cell {
     position: relative;
-    width: 82%;
-    height: 82%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    box-sizing: border-box;
-
-    background: #f4dfad;
-    border: 2px solid #c5ae7b;
-    border-radius: 6px;
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    border: 0 !important;
+    border-radius: var(--round);
+    outline: 0 !important;
+    background: var(--cell);
+    color: var(--white);
+    cursor: pointer;
     user-select: none;
-    z-index: 1;
+    box-shadow: none !important;
+    filter: none !important;
+    transition: background-color 100ms ease;
 }
 
-/* BOARD LETTER */
-
-.board-tile .tile-letter {
-    font-size: clamp(27px, 5.4vw, 43.2px);
-    font-weight: bold;
-    line-height: 1;
-}
-
-/* BOARD TILE SCORE */
-
-.board-tile .tile-value {
-    position: absolute;
-
-    bottom: 5%;
-    right: 8%;
-
-    font-size: clamp(9.45px, 1.62vw, 14.85px);
-    font-weight: bold;
-    line-height: 1;
-}
-
-
-/* ================================================
-   ORIGINAL PUZZLE TILE
-================================================ */
-
-.board-tile.original-tile {
-
-    background: #f4dfad;
-
-    border-color: #c5ae7b;
-}
-
-
-/* ================================================
-   PLAYER TILE - VALID
-================================================ */
-
-.board-tile.player-valid {
-
-    background: #bfe8c7;
-
-    border-color: #3b9b4f;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-
-/* ================================================
-   PLAYER TILE - INVALID
-================================================ */
-
-.board-tile.player-invalid {
-
-    background: #f3b8b8;
-
-    border-color: #c43d3d;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-
-/* ================================================
-   PLAYER TILE - ISOLATED
-================================================ */
-
-.board-tile.player-isolated {
-
-    background: #f4df83;
-
-    border-color: #c4a72c;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-
-/* ================================================
-   BOARD TILE LETTER
-================================================ */
-
-.board-tile .tile-letter {
-
-    position: relative;
-
-    z-index: 2;
-
-    line-height: 1;
-}
-
-
-/* ================================================
-   BOARD TILE VALUE
-================================================ */
-
-.board-tile .tile-value {
-    position: absolute;
-    bottom: 7%;
-    right: 8%;
-    font-size: 0.432em;
-    font-weight: bold;
-    line-height: 1;
-    z-index: 3;
-}
-
-
-/* ================================================
-   BONUS BADGE
-================================================ */
-
-.bonus-badge {
-
-    position: absolute;
-
-    top: 3px;
-    left: 4px;
-
-    z-index: 4;
-
-    font-size: clamp(
-        9.45px,
-        2.025vw,
-        14.85px
-    );
-
-    line-height: 1;
-
-    padding: 2px 3px;
-
-    border-radius: 3px;
-
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.85
-        );
-
-    color: #222;
-
-    font-weight: bold;
-
-    pointer-events: none;
-}
-
-
-/* ================================================
-   MAKE SURE BONUS COLOUR STAYS ON CELL
-================================================ */
-
-.cell.double-letter {
-    background: #b9dcf5;
-}
-
-.cell.triple-letter {
-    background: #6fa8dc;
-}
-
-.cell.double-word {
-    background: #f4b6c2;
-}
-
-.cell.triple-word {
-    background: #e57373;
-}
-/* -------------------------------- */
-/* BOARD */
-/* -------------------------------- */
-
-#board {
-order: 4;
-
-width: min(100%, 500px);
-
-aspect-ratio: 1 / 1;
-
-margin: 0 auto;
-
-display: grid;
-
-grid-template-columns:
-    repeat(8, 1fr);
-
-grid-template-rows:
-    repeat(8, 1fr);
-
-gap: 3px;
-
-background: #999;
-
-padding: 3px;
-
-border-radius: 3px;
-
-}
-
-/* -------------------------------- */
-/* BOARD CELLS */
-/* -------------------------------- */
-
-.cell {
-position: relative;
-
-display: flex;
-align-items: center;
-justify-content: center;
-
-background: white;
-
-border: 1px solid #ccc;
-
-font-size:
-    clamp(27px, 7.425vw, 54px);
-
-font-weight: bold;
-
-user-select: none;
-
-cursor: pointer;
-
-}
-
-.cell.drag-over {
-    outline: 3px solid #68d391;
-    outline-offset: -3px;
-    box-shadow: inset 0 0 0 2px rgba(104, 211, 145, 0.3);
-}
-
-.cell.selected-target {
-    outline: 3px solid #68d391;
-    outline-offset: -3px;
-    box-shadow: inset 0 0 0 2px rgba(104, 211, 145, 0.3);
+.cell::before,
+.cell::after,
+.cell *::before,
+.cell *::after {
+    content: none !important;
+    display: none !important;
+    box-shadow: none !important;
+    filter: none !important;
 }
 
 .cell:hover {
-filter: brightness(0.97);
+    filter: none;
 }
-
-/* Original puzzle tiles */
-
-.cell.original-tile {
-background: #ddd;
-color: #222;
-cursor: default;
-}
-
-/* Player tiles */
-
-.cell.player-valid {
-background: #b8e6b8;
-border: 2px solid #4a9f4a;
-color: #174d17;
-}
-
-.cell.player-invalid {
-background: #f3b0b0;
-border: 2px solid #c94c4c;
-color: #681717;
-}
-
-.cell.player-isolated {
-background: #f3df8b;
-border: 2px solid #d2ae35;
-color: #66500c;
-}
-
-/* -------------------------------- */
-/* BONUS SQUARES */
-/* -------------------------------- */
 
 .cell.double-letter {
-background: #9ed8f5;
-border: 1px solid #4aa8d8;
+    background: #1aaa87;
 }
 
 .cell.triple-letter {
-background: #4f91c4;
-border: 1px solid #28638e;
-color: white;
+    background: #03916f;
 }
 
 .cell.double-word {
-background: #f2a8c4;
-border: 1px solid #d86c99;
+    background: #e0196a;
 }
 
 .cell.triple-word {
-background: #e36b6b;
-border: 1px solid #b73535;
-color: white;
+    background: #ff4085;
 }
 
-/* Keep letter tiles' text dark, even when their cell is a premium square. */
-.board-tile .tile-letter,
-.board-tile .tile-value {
-    color: #222;
-}
-
-.bonus-label {
-font-size:
-clamp(13.5px, 3.105vw, 21.6px);
-
-font-weight: bold;
-
-line-height: 1;
-
-user-select: none;
-
-}
-
-/* Empty premium squares show a large, centred abbreviation. */
-.cell.bonus-empty .bonus-badge {
+.bonus-badge {
     position: absolute;
+    z-index: 2;
     top: 50% !important;
     left: 50% !important;
     right: auto !important;
     bottom: auto !important;
-    transform: translate(-50%, -50%) !important;
-    z-index: 2;
     display: block;
-    font-size: clamp(27px, 5.4vw, 43.2px) !important;
-    line-height: 1;
+    transform: translate(-50%, -50%) !important;
     padding: 0 !important;
+    border: 0 !important;
     border-radius: 0 !important;
     background: transparent !important;
-    color: #222;
-    font-weight: 800;
-    letter-spacing: -0.04em;
+    color: var(--white);
+    font-size: clamp(19px, 4.2vw, 29px);
+    font-weight: 700;
+    line-height: .8;
+    letter-spacing: 0;
     pointer-events: none;
 }
 
-/* Darker, high-contrast labels for empty premium squares.
-   Each foreground/background pair exceeds WCAG AA's 4.5:1 text contrast target. */
-.cell.bonus-empty.double-letter .bonus-badge {
-    color: #174c66;
-}
-
-.cell.bonus-empty.triple-letter .bonus-badge {
-    color: #102538;
-}
-
-.cell.bonus-empty.double-word .bonus-badge {
-    color: #76203f;
-}
-
-.cell.bonus-empty.triple-word .bonus-badge {
-    color: #501010;
-}
-
-/* Premium squares with a letter retain the small top-left badge. */
 .cell.has-letter .bonus-badge {
-    position: absolute;
     top: 3px !important;
     left: 4px !important;
     right: auto !important;
     bottom: auto !important;
     transform: none !important;
-    z-index: 4;
-    display: block;
-    font-size: clamp(9.45px, 2.025vw, 14.85px) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    color: var(--white);
+    font-size: clamp(9px, 1.8vw, 13px) !important;
     line-height: 1;
-    padding: 2px 3px !important;
-    border-radius: 3px !important;
-    background: rgba(255, 255, 255, 0.85) !important;
-    letter-spacing: 0;
 }
 
-/* -------------------------------- */
-/* TILE MESSAGE */
-/* -------------------------------- */
-
-.tile-message {
-order: 5;
-
-width: min(100%, 500px);
-
-min-height: 20px;
-
-margin: 0 auto 10px auto;
-
-text-align: center;
-
-font-size: 17.55px;
-
-color: #777;
-
+.board-tile {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 0 !important;
+    border-radius: var(--round);
+    outline: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    user-select: none;
 }
 
-.tile-message.success {
-color: #39803b;
-font-weight: bold;
+.board-tile::before,
+.board-tile::after {
+    content: none !important;
+    display: none !important;
 }
 
-.tile-message.error {
-color: #b33b3b;
-font-weight: bold;
+.board-tile .tile-letter {
+    position: relative;
+    z-index: 2;
+    color: inherit;
+    font-size: clamp(28px, 6vw, 43px);
+    font-weight: 700;
+    line-height: .8;
 }
 
-/* -------------------------------- */
-/* TILE RACK */
-/* -------------------------------- */
+.board-tile .tile-value {
+    position: absolute;
+    z-index: 3;
+    right: 7%;
+    bottom: 6%;
+    color: inherit;
+    font-size: clamp(10px, 1.9vw, 14px);
+    font-weight: 700;
+    line-height: .8;
+}
+
+/* Existing puzzle letters are dark tiles with white lettering. */
+.board-tile.original-tile {
+    background: #000000;
+    color: var(--white);
+}
+
+/* Player tiles retain the previous validation and tile-colour behavior. */
+.board-tile.player-valid {
+    background: #fbb03b;
+    color: #172c33;
+}
+
+.board-tile.player-valid.player-valid-colour-1 { background: #fca43d; }
+.board-tile.player-valid.player-valid-colour-2 { background: #fc9740; }
+.board-tile.player-valid.player-valid-colour-3 { background: #fd8b42; }
+.board-tile.player-valid.player-valid-colour-4 { background: #fe7246; }
+.board-tile.player-valid.player-valid-colour-5 { background: #fe6549; }
+.board-tile.player-valid.player-valid-colour-6 { background: #ff594b; }
+
+.board-tile.player-invalid,
+.cell.player-invalid .board-tile,
+.board-tile.player-isolated,
+.cell.player-isolated .board-tile {
+    background: var(--white);
+    color: #ff0000;
+}
+
+.cell.player-valid,
+.cell.player-invalid,
+.cell.player-isolated {
+    background: var(--cell);
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.board-tile.player-on-double-letter,
+.board-tile.player-on-triple-letter,
+.board-tile.player-on-double-word,
+.board-tile.player-on-triple-word {
+    background: inherit;
+}
+
+.cell.player-valid .board-tile.player-on-double-letter { background: #1aaa87; color: var(--white); }
+.cell.player-valid .board-tile.player-on-triple-letter { background: #03916f; color: var(--white); }
+.cell.player-valid .board-tile.player-on-double-word { background: #e0196a; color: var(--white); }
+.cell.player-valid .board-tile.player-on-triple-word { background: #ff4085; color: var(--white); }
+
+.cell.drag-over,
+.cell.selected-target,
+.cell.drag-over.double-letter,
+.cell.drag-over.triple-letter,
+.cell.drag-over.double-word,
+.cell.drag-over.triple-word,
+.cell.selected-target.double-letter,
+.cell.selected-target.triple-letter,
+.cell.selected-target.double-word,
+.cell.selected-target.triple-word {
+    outline: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Rack: seven equal squares, aligned exactly to the board columns. */
+#tileMessage {
+    order: 4;
+    width: 100%;
+    min-height: 0;
+    margin: 5px auto 0;
+    color: var(--white);
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.05;
+}
+
+#tileMessage:empty {
+    display: none;
+}
+
+#tileMessage.success {
+    color: #fbb03b;
+    font-weight: 700;
+}
+
+#tileMessage.error {
+    color: #ffb4b4;
+    font-weight: 700;
+}
 
 #tileRack {
-order: 6;
+    order: 5;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    align-items: stretch;
+    gap: var(--gap);
+    width: 100%;
+    margin: 14px auto 0;
+}
 
-width: min(100%, 500px);
+.rack-slot {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    overflow: visible;
+    border: 0 !important;
+    border-radius: var(--round);
+    background: var(--rack-slot);
+    box-shadow: none !important;
+}
 
-margin: 10px auto 0 auto;
+.rack-slot::before,
+.rack-slot::after {
+    content: none !important;
+    display: none !important;
+}
 
-display: flex;
+.rack-tile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0 !important;
+    border-radius: var(--round);
+    outline: 0 !important;
+    background: var(--white);
+    color: #172c33;
+    box-shadow: none !important;
+    filter: none !important;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
 
-justify-content: center;
-align-items: center;
+.rack-tile::before,
+.rack-tile::after {
+    content: none !important;
+    display: none !important;
+}
 
-gap: 8px;
+.rack-tile .tile-letter {
+    color: #172c33;
+    font-size: clamp(28px, 6vw, 43px);
+    font-weight: 700;
+    line-height: .8;
+}
 
-flex-wrap: wrap;
+.rack-tile .tile-value {
+    position: absolute;
+    right: 7%;
+    bottom: 6%;
+    color: #172c33;
+    font-size: clamp(10px, 1.9vw, 14px);
+    font-weight: 700;
+    line-height: .8;
+}
 
+.rack-tile.selected {
+    outline: 0 !important;
+    border: 0 !important;
+    transform: none;
+    box-shadow: none !important;
 }
 
 .rack-tile.rack-tile-drag-visual {
     position: fixed !important;
     z-index: 9999;
+    width: var(--drag-tile-size, 64px);
+    height: var(--drag-tile-size, 64px);
     pointer-events: none;
     margin: 0;
-    transform: rotate(-4deg) scale(1.458);
+    transform: rotate(-4deg) scale(1.05);
     transition: left 65ms ease-out, top 65ms ease-out;
     will-change: left, top;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.18);
-    opacity: 0.98;
+    opacity: .98;
     cursor: grabbing;
+    box-shadow: none !important;
 }
 
-/* Keep the preview's score label at the same apparent size and position as the rack tile. */
 .rack-tile.rack-tile-drag-visual .tile-value {
     display: none !important;
 }
 
-/* Keep the rack layout in place without showing a duplicate tile. */
 .rack-tile.rack-tile-drag-source {
     visibility: hidden;
 }
 
-/* Show which rack slot a dragged letter will move in front of/behind. */
 .rack-tile.rack-reorder-target {
-    outline: 3px solid #4b8df8;
-    outline-offset: 2px;
+    outline: 0 !important;
+    box-shadow: none !important;
 }
 
-.rack-tile {
-touch-action: none;
-user-select: none;
--webkit-user-select: none;
-cursor: grab;
-position: relative;
-
-width: 55px;
-height: 55px;
-
-display: flex;
-
-align-items: center;
-justify-content: center;
-
-background: #f5e6c8;
-
-border:
-    2px solid #c7a76a;
-
-border-radius: 6px;
-
-cursor: pointer;
-
-box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.15);
-
-}
-
-.rack-tile:hover {
-transform: translateY(-2px);
-}
-
-.rack-tile.selected {
-border: 3px solid #222;
-
-transform:
-    translateY(-5px);
-
-box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.2);
-
-}
-
-.tile-letter {
-font-size: 37.8px;
-font-weight: bold;
-}
-
-.tile-value {
-position: absolute;
-
-bottom: 4px;
-right: 5px;
-
-font-size: 14.85px;
-
-font-weight: bold;
-
-}
-
-/* -------------------------------- */
-/* FULL-RACK SOLUTION */
-/* -------------------------------- */
-
-.best-score-box {
-order: 8;
-
-width: min(100%, 500px);
-
-margin: 28px auto 0 auto;
-
-padding: 14px 18px;
-
-background: white;
-
-border:
-    1px solid #ddd;
-
-border-radius: 10px;
-
-text-align: center;
-
-box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.06);
-
-}
-
-.best-score-title {
-font-size: 17.55px;
-
-color: #777;
-
-font-weight: bold;
-
-margin-bottom: 6px;
-
-}
-
-.best-score-word {
-font-size: 32.4px;
-
-font-weight: 800;
-
-letter-spacing: 0.5px;
-
-}
-
-.best-score-value {
-margin-top: 3px;
-
-font-size: 21.6px;
-
-color: #555;
-
-font-weight: bold;
-
-}
-
-/* -------------------------------- */
-/* MOBILE */
-/* -------------------------------- */
-
-@media (max-width: 600px) {
-
-body {
-    padding: 10px;
-}
-
-.controls {
-    margin-bottom: 12px;
-}
-
-#board {
-    gap: 2px;
-    padding: 2px;
-}
-
-.cell {
-    font-size: 29.7px;
-}
-
-.rack-tile {
-    width: 45px;
-    height: 45px;
-}
-
-.tile-letter {
-    font-size: 31.05px;
-}
-
-.tile-value {
-    font-size: 12.15px;
-
-    bottom: 2px;
-    right: 3px;
-}
-
-#scoreValue {
-    font-size: 40.5px;
-}
-
-.word-pill {
-    padding: 6px 24px;
-    font-size: 17.55px;
-}
-
-.word-pill-score {
-    font-size: 14.85px;
-}
-
-.best-score-box {
-    margin-top: 22px;
-}
-
-.best-score-word {
-    font-size: 28.35px;
-}
-
-}
-
-
-/* =========================================
-   PUZZLE GENERATOR PANEL
-========================================= */
-
-#generatorPanel {
-    position: fixed;
-
-    left: 20px;
-    top: 20px;
-
-    width: 230px;
-
-    padding: 18px;
-
-    background: white;
-
-    border: 1px solid #ddd;
-    border-radius: 10px;
-
-    box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.1);
-
-    z-index: 100;
-}
-
-#generatorPanel h2 {
-    margin: 0 0 8px 0;
-
-    font-size: 24.3px;
-    font-weight: bold;
-
-    color: #222;
-}
-
-.panel-description {
-    margin: 0 0 18px 0;
-
-    font-size: 16.2px;
-    line-height: 1.4;
-
-    color: #777;
-}
-
-
-/* -----------------------------------------
-   SETTINGS
------------------------------------------ */
-
-.setting {
-    margin-bottom: 16px;
-}
-
-.setting label {
-    display: block;
-
-    margin-bottom: 6px;
-
-    font-size: 17.55px;
-    font-weight: bold;
-
-    color: #333;
-}
-
-.setting input {
-    width: 100%;
-
-    padding: 9px 10px;
-
-    border: 1px solid #ccc;
-    border-radius: 6px;
-
-    background: #fafafa;
-
-    font-family: inherit;
-    font-size: 20.25px;
-
-    box-sizing: border-box;
-}
-
-.setting input:focus {
-    outline: none;
-
-    border-color: #555;
-
-    background: white;
-}
-
-.setting-help {
-    display: block;
-
-    margin-top: 4px;
-
-    font-size: 14.85px;
-
-    color: #999;
-}
-
-
-/* -----------------------------------------
-   PANEL BUTTON
------------------------------------------ */
-
-#generatorPanel #generateButton {
-    width: 100%;
-
-    padding: 10px 12px;
-
-    border: none;
-    border-radius: 7px;
-
-    background: #222;
-    color: white;
-
-    font-size: 18.9px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-#generatorPanel #generateButton:hover {
-    background: #444;
-}
-
-#generatorPanel #generateButton:disabled {
-    opacity: 0.6;
-
-    cursor: default;
-}
-
-
-/* -----------------------------------------
-   PANEL MESSAGE
------------------------------------------ */
-
-.generator-message {
-    min-height: 18px;
-
-    margin: -4px 0 10px 0;
-
-    font-size: 16.2px;
-    line-height: 1.3;
-
-    color: #b33b3b;
-}
-
-
-/* =========================================
-   DESKTOP GAME POSITION
-========================================= */
-
-@media (min-width: 1000px) {
-
-    .container {
-        max-width: 900px;
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 999px) {
-
-    #generatorPanel {
-        position: static;
-
-        width: min(
-            calc(100% - 20px),
-            500px
-        );
-
-        margin: 0 auto 20px auto;
-
-        box-sizing: border-box;
-    }
-
-    .container {
-        margin: 0 auto;
-    }
-
-}
-
-
-/* ================================================
-   HIDDEN SCORE ACHIEVEMENT STARS
-================================================ */
-
-.achievement-stars {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin: 0 auto 8px;
-    min-height: 28px;
-    font-size: 36.45px;
-    line-height: 1;
-}
-
-.achievement-star {
-    color: #d0d0d0;
-    opacity: 0.7;
-    transition: color 160ms ease, opacity 160ms ease, transform 160ms ease;
-}
-
-.achievement-star.earned {
-    color: #e3ad22;
-    opacity: 1;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
-}
-
-
-/* ================================================
-   FULL-RACK SOLVER / REVEAL ANSWER
-================================================ */
-.best-score-message {
-    margin: 7px 0 12px;
-    color: #777;
-    font-size: 16.2px;
-    line-height: 1.4;
-}
-
-#revealAnswerButton {
-    display: inline-block;
-}
-
-/* Keep the rack controls together directly beneath the tile rack. */
+/* Three primary controls, followed by the scoring-word tags and Next Puzzle. */
 .rack-actions {
-    order: 7;
-    width: min(100%, 500px);
-    margin: 14px auto 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.rack-actions button {
-    /* Match the dimensions and typography of the other game controls. */
-       display: inline-block;
-    min-width: 190px;
-    margin: 0;
-}
-
-#revealPuzzleButton {
-    display: inline-block;
-    min-width: 190px;
-    margin: 0;
-}
-
-
-/* ================================================
-   RULES HELP BUTTON AND POPUP
-================================================ */
-
-.rules-help-button {
-    position: fixed;
-    top: 18px;
-    right: 18px;
-    z-index: 1001;
-    width: 38px;
-    height: 38px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #222;
-    border-radius: 50%;
-    background: #222;
-    color: #fff;
-    font-family: inherit;
-    font-size: 31.05px;
-    font-weight: 700;
-    line-height: 1;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-    transition: background 150ms ease, transform 150ms ease;
-}
-
-.rules-help-button:hover {
-    background: #444;
-    transform: scale(1.04);
-}
-
-.rules-dialog {
-    width: min(520px, calc(100% - 32px));
-    max-width: 520px;
-    max-height: min(80vh, 720px);
-    padding: 0;
-    border: 1px solid #d8d8d8;
-    border-radius: 14px;
-    background: #fff;
-    color: #222;
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
-    overflow: auto;
-}
-
-.rules-dialog::backdrop {
-    background: rgba(20, 24, 30, 0.58);
-    backdrop-filter: blur(3px);
-}
-
-.rules-dialog[open] {
-    animation: rules-dialog-in 160ms ease-out;
-}
-
-@keyframes rules-dialog-in {
-    from {
-        opacity: 0;
-        transform: translateY(8px) scale(0.98);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.rules-dialog-header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 18px 22px;
-    background: #fff;
-    border-bottom: 1px solid #e8e8e8;
-}
-
-.rules-dialog-header h2 {
-    margin: 0;
-    font-size: 31.05px;
-    line-height: 1.2;
-}
-
-.rules-close-button {
-    flex: 0 0 34px;
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    border: none;
-    border-radius: 50%;
-    background: #f0f0f0;
-    color: #222;
-    font-family: inherit;
-    font-size: 33.75px;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.rules-close-button:hover {
-    background: #e2e2e2;
-}
-
-.rules-content {
-    padding: 18px 22px 22px;
-    font-size: 20.25px;
-    line-height: 1.55;
-}
-
-.rules-content p {
-    margin: 0 0 15px;
-}
-
-.rules-content h3 {
-    margin: 22px 0 10px;
-    font-size: 22.95px;
-}
-
-.rules-content h3 span {
-    display: block;
-    margin-top: 3px;
-    color: #666;
-    font-size: 16.2px;
-    font-weight: 400;
-}
-
-.rules-bonus-list {
-    display: grid;
-    gap: 10px;
-    margin: 0 0 22px;
-    padding-left: 20px;
-}
-
-.rules-bonus-list li {
-    padding-left: 2px;
-}
-
-.rules-bonus-list strong {
-    white-space: nowrap;
-}
-
-.rules-content .rules-bonus-points {
-    margin-top: 13px;
-    margin-bottom: 0;
-    padding: 11px 12px;
-    border-radius: 8px;
-    background: #f3f5f7;
-}
-
-@media (max-width: 600px) {
-    .rules-help-button {
-        top: 10px;
-        right: 10px;
-        width: 36px;
-        height: 36px;
-    }
-
-    .rules-dialog {
-        max-height: 85vh;
-        border-radius: 12px;
-    }
-
-    .rules-dialog-header {
-        padding: 15px 17px;
-    }
-
-    .rules-content {
-        padding: 16px 17px 19px;
-        font-size: 18.9px;
-    }
-}
-
-
-/* ================================================
-   BOARD TOP ROW LAYOUT
-================================================ */
-
-.board-top-row {
-    width: min(100%, 500px);
-    margin: 0 auto 4px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.score-stack {
-    flex: 1 1 auto;
-    min-width: 0;
-}
-
-.board-top-row .score-stack {
-    flex: 1 1 auto;
-    min-width: 0;
-}
-
-.board-top-row .score-box {
-    width: 100%;
-    margin: 0;
-    padding: 8px 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    gap: 8px;
-}
-
-.board-top-row .score-box .score-label,
-.board-top-row .score-box #scoreValue,
-.board-top-row .score-box .achievement-stars {
-    flex: 0 0 auto;
-}
-
-.board-top-row .achievement-stars {
-    display: inline-flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 3px;
-    margin: 0 0 0 2px;
-    min-height: 0;
-    width: auto;
-}
-
-.board-top-row .score-box .score-bonus {
-    flex-basis: 100%;
-    width: 100%;
-    text-align: left;
-}
-
-.board-top-row .rules-help-button {
-    position: static;
-    flex: 0 0 38px;
-    margin-top: 8px;
-    z-index: 1;
-}
-
-@media (max-width: 600px) {
-    .board-top-row {
-        gap: 8px;
-    }
-
-    .board-top-row .rules-help-button {
-        flex-basis: 36px;
-        margin-top: 8px;
-    }
-
-}
-
-
-/* Temporarily hide the puzzle generator UI while keeping it in the DOM for debugging. */
-#generatorPanel {
-    display: none !important;
-}
-
-
-/* Keep the solver panel hidden until the player reveals the puzzle. */
-#bestScoreBox[hidden],
-#rackActions[hidden] {
-    display: none !important;
-}
-
-
-/* Remove the extra space above the Full-Rack Solution panel. */
-#bestScoreBox {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-
-/* Test-only puzzle navigation */
-.next-puzzle-button {
-    width: 100%;
-    margin-top: 8px;
-    padding: 10px 14px;
-    border: 1px solid #64748b;
-    border-radius: 8px;
-    background: transparent;
-    color: #64748b;
-    font: inherit;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.next-puzzle-button:hover {
-    background: rgba(100, 116, 139, 0.08);
-}
-
-.next-puzzle-button:disabled {
-    opacity: 0.55;
-    cursor: wait;
-}
-
-
-/* ================================================
-   SHARE RESULTS BUTTON AND POPUP
-================================================ */
-
-.board-top-row .share-results-icon-button {
-    flex: 0 0 38px;
-    width: 38px;
-    height: 38px;
-    margin-top: 8px;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #222;
-    border-radius: 50%;
-    background: #222;
-    color: #fff;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-    transition: background 150ms ease, transform 150ms ease;
-}
-
-.share-results-icon-button:hover {
-    background: #444;
-    transform: scale(1.04);
-}
-
-.share-results-icon-button svg {
-    width: 100%;
-    height: 100%;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.share-results-dialog {
-    width: min(420px, calc(100% - 32px));
-    max-width: 420px;
-    padding: 0;
-    border: 1px solid #d8d8d8;
-    border-radius: 14px;
-    background: #fff;
-    color: #222;
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
-    overflow: hidden;
-}
-
-.share-results-dialog::backdrop {
-    background: rgba(20, 24, 30, 0.58);
-    backdrop-filter: blur(3px);
-}
-
-.share-results-content {
-    padding: 24px 22px 22px;
-    text-align: center;
-}
-
-.share-results-summary {
-    margin: 0 0 24px;
-    font-size: clamp(28.35px, 6.75vw, 36.45px);
-    line-height: 1.4;
-    font-weight: 750;
-    overflow-wrap: anywhere;
-}
-
-.copy-share-results-button {
-    width: 100%;
-    min-height: 46px;
-    padding: 12px 18px;
-    border: none;
-    border-radius: 9px;
-    background: #222;
-    color: #fff;
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 150ms ease;
-}
-
-.copy-share-results-button:hover {
-    background: #444;
-}
-
-.continue-playing-button {
-    width: 100%;
-    min-height: 46px;
-    margin-top: 10px;
-    padding: 12px 18px;
-    border: 2px solid #222;
-    border-radius: 9px;
-    background: transparent;
-    color: #222;
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 150ms ease, color 150ms ease;
-}
-
-.continue-playing-button:hover {
-    background: #222;
-    color: #fff;
-}
-
-.share-results-status {
-    min-height: 18px;
-    margin: 10px 0 0;
-    color: #39734a;
-    font-size: 17.55px;
-}
-
-@media (max-width: 600px) {
-    .board-top-row .share-results-icon-button {
-        flex-basis: 36px;
-        width: 36px;
-        height: 36px;
-        padding: 7px;
-    }
-
-    .share-results-content {
-        padding: 21px 17px 18px;
-    }
-}
-
-
-/* Pulse the share button when the player has used all seven rack tiles. */
-@keyframes share-results-pulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-    }
-    50% {
-        transform: scale(1.12);
-        box-shadow: 0 0 0 7px rgba(59, 155, 232, 0.22);
-    }
-}
-
-.share-results-icon-button.needs-sharing {
-    animation: share-results-pulse 1.15s ease-in-out infinite;
-}
-
-.share-results-icon-button.needs-sharing:hover {
-    animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .share-results-icon-button.needs-sharing {
-        animation: none;
-        outline: 3px solid rgba(59, 155, 232, 0.45);
-        outline-offset: 3px;
-    }
-}
-
-
-/* Prevent accidental mobile pull-to-refresh while playing and dragging tiles. */
-html,
-body {
-    overscroll-behavior-y: none;
-}
-
-/* Let rack tiles use custom pointer dragging instead of starting page scrolling. */
-.rack-tile {
-    touch-action: none;
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-
-/* =========================================
-   7×7 INDIVIDUAL SQUARE BOARD CELLS
-   Visual-only board styling; game rules and scoring are unchanged.
-========================================= */
-
-#board {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    grid-template-rows: repeat(7, minmax(0, 1fr));
-    gap: 5px;
-    padding: 0;
-    background: transparent;
-    border-radius: 0;
-}
-
-.cell {
-    min-width: 0;
-    min-height: 0;
-    border: 1px solid rgba(100, 116, 139, 0.22);
-    border-radius: 6px;
-    background: #e8edf3;
-    box-shadow: 0 1px 2px rgba(30, 41, 59, 0.08);
-    overflow: hidden;
-}
-
-.cell.original-tile {
-    border-color: #c5ae7b;
-    border-radius: 6px;
-}
-
-.cell.player-valid,
-.cell.player-invalid,
-.cell.player-isolated,
-.cell.double-letter,
-.cell.triple-letter,
-.cell.double-word,
-.cell.triple-word {
-    border-radius: 6px;
-}
-
-@media (max-width: 600px) {
-    #board {
-        gap: 4px;
-        padding: 0;
-    }
-
-    .cell {
-        border-radius: 5px;
-    }
-}
-
-
-/* FIX: make each board square visibly separate and rounded */
-#board {
-    gap: 7px !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-    overflow: visible !important;
-}
-
-#board .cell {
-    border-radius: 10px !important;
-    border: 1px solid rgba(100, 116, 139, 0.28) !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    background-clip: padding-box !important;
-}
-
-#board .cell.original-tile {
-    border-radius: 10px !important;
-}
-
-#board .cell.player-valid,
-#board .cell.player-invalid,
-#board .cell.player-isolated,
-#board .cell.double-letter,
-#board .cell.triple-letter,
-#board .cell.double-word,
-#board .cell.triple-word {
-    border-radius: 10px !important;
-}
-
-@media (max-width: 600px) {
-    #board {
-        gap: 5px !important;
-    }
-
-    #board .cell,
-    #board .cell.original-tile,
-    #board .cell.player-valid,
-    #board .cell.player-invalid,
-    #board .cell.player-isolated,
-    #board .cell.double-letter,
-    #board .cell.triple-letter,
-    #board .cell.double-word,
-    #board .cell.triple-word {
-        border-radius: 7px !important;
-    }
-}
-
-
-/* Lower the text inside board and rack tiles by 5px without changing their existing positioning. */
-.board-tile .tile-letter,
-.board-tile .tile-value,
-.rack-tile .tile-letter,
-.rack-tile .tile-value {
-    translate: 0 5px;
-}
-
-
-/* Move only the tile letters 3px up from their current position; keep point values unchanged. */
-.board-tile .tile-letter,
-.rack-tile .tile-letter {
-    translate: 0 2px;
-}
-
-
-/* Make placed tiles fill their entire board cell, removing the inset margin. */
-#board .cell > .board-tile {
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-}
-
-
-/* Fine-tune tile typography: move letters and score values down 1px, and use Dongle Regular for score values. */
-.board-tile .tile-letter,
-.rack-tile .tile-letter {
-    translate: 0 3px;
-}
-
-.board-tile .tile-value,
-.rack-tile .tile-value {
-    translate: 0 6px;
-    font-weight: 400;
-}
-
-
-/* Move all text in board and rack tiles down by one additional pixel. */
-.board-tile .tile-letter,
-.board-tile .tile-value,
-.rack-tile .tile-letter,
-.rack-tile .tile-value {
-    translate: 0 7px;
-}
-
-
-/* Revert the most recent 1px text adjustment inside board and rack tiles. */
-.board-tile .tile-letter,
-.board-tile .tile-value,
-.rack-tile .tile-letter,
-.rack-tile .tile-value {
-    translate: 0 6px;
-}
-
-
-/* Move only the central letters up by 1px; leave corner score values in place. */
-.board-tile .tile-letter,
-.rack-tile .tile-letter {
-    translate: 0 5px;
-}
-
-
-/* Seven rack slots aligned to the game board's seven columns. */
-#tileRack {
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 7px;
-    width: min(100%, 500px);
-    margin: 10px auto 0;
-    align-items: stretch;
-}
-
-#tileRack .rack-slot {
-    position: relative;
-    min-width: 0;
-    aspect-ratio: 1 / 1;
-    border: 1px solid rgba(100, 116, 139, 0.28);
-    border-radius: 10px;
-    background: #e8edf3;
-    box-shadow: 0 1px 2px rgba(30, 41, 59, 0.08);
-    overflow: visible;
-}
-
-#tileRack .rack-tile {
-    width: 100%;
-    height: 100%;
-    min-width: 0;
-    margin: 0;
-    border-radius: inherit;
-    box-sizing: border-box;
-}
-
-@media (max-width: 600px) {
-    #tileRack {
-        gap: 5px;
-    }
-
-    #tileRack .rack-slot {
-        border-radius: 7px;
-    }
-}
-
-
-/* Keep rounded corners consistent across board cells and both tile types. */
-#board .cell,
-#board .cell > .board-tile,
-#tileRack .rack-slot,
-#tileRack .rack-slot > .rack-tile {
-    border-radius: 10px !important;
-}
-
-@media (max-width: 600px) {
-    #board .cell,
-    #board .cell > .board-tile,
-    #tileRack .rack-slot,
-    #tileRack .rack-slot > .rack-tile {
-        border-radius: 7px !important;
-    }
-}
-
-
-/* Generated puzzle tiles: black with white lettering. */
-#board .board-tile.original-tile {
-    background: #111 !important;
-    border-color: #111 !important;
-    color: #fff !important;
-}
-
-#board .board-tile.original-tile .tile-letter,
-#board .board-tile.original-tile .tile-value {
-    color: #fff !important;
-}
-
-/* Rack tiles: white with black lettering and score values. */
-#tileRack .rack-tile {
-    background: #fff !important;
-    border-color: #222 !important;
-    color: #111 !important;
-}
-
-#tileRack .rack-tile .tile-letter,
-#tileRack .rack-tile .tile-value {
-    color: #111 !important;
-}
-
-/* Player-placed board tiles keep their validity colours. */
-#board .board-tile.player-valid {
-    background: #bfe8c7 !important;
-    border-color: #3b9b4f !important;
-}
-
-#board .board-tile.player-invalid {
-    background: #f3b8b8 !important;
-    border-color: #c43d3d !important;
-}
-
-#board .board-tile.player-isolated {
-    background: #f4df83 !important;
-    border-color: #c4a72c !important;
-}
-
-#board .board-tile.player-valid .tile-letter,
-#board .board-tile.player-valid .tile-value,
-#board .board-tile.player-invalid .tile-letter,
-#board .board-tile.player-invalid .tile-value,
-#board .board-tile.player-isolated .tile-letter,
-#board .board-tile.player-isolated .tile-value {
-    color: #111 !important;
-}
-
-
-/* Teal game background with matching dark empty board cells and rack slots. */
-body {
-    background: #264653 !important;
-}
-
-#board .cell:not(.original-tile):not(.player-valid):not(.player-invalid):not(.player-isolated):not(.double-letter):not(.triple-letter):not(.double-word):not(.triple-word) {
-    background: #172c33 !important;
-}
-
-#tileRack .rack-slot {
-    background: #172c33 !important;
-}
-
-
-/* Floating drag preview matches the white player-tile appearance. */
-.rack-tile.rack-tile-drag-visual {
-    background: #ffffff !important;
-    border-color: #222222 !important;
-    color: #111111 !important;
-}
-
-.rack-tile.rack-tile-drag-visual .tile-letter,
-.rack-tile.rack-tile-drag-visual .tile-value {
-    color: #111111 !important;
-}
-
-
-/* Reduce spacing between board cells and rack tiles to one third. */
-#board {
-    gap: 2.33px !important;
-}
-
-#tileRack {
-    gap: 2.33px !important;
-}
-
-@media (max-width: 600px) {
-    #board,
-    #tileRack {
-        gap: 1.67px !important;
-    }
-}
-
-
-/* Invalid and isolated player tiles: red lettering and outline, without red/yellow fill. */
-.board-tile.player-invalid,
-.board-tile.player-isolated {
-    background: #f4dfad;
-    border-color: #ff0000;
-    outline: 2px solid #ff0000;
-    outline-offset: 0;
-}
-
-.board-tile.player-invalid .tile-letter,
-.board-tile.player-invalid .tile-value,
-.board-tile.player-isolated .tile-letter,
-.board-tile.player-isolated .tile-value {
-    color: #ff0000 !important;
-}
-
-
-/* Keep invalid and isolated player tiles white; only their text and outline turn red. */
-.board-tile.player-invalid,
-.board-tile.player-isolated {
-    background: #ffffff !important;
-    border-color: #ff0000 !important;
-    outline: 2px solid #ff0000;
-    outline-offset: 0;
-}
-
-.board-tile.player-invalid .tile-letter,
-.board-tile.player-invalid .tile-value,
-.board-tile.player-isolated .tile-letter,
-.board-tile.player-isolated .tile-value {
-    color: #ff0000 !important;
-}
-
-
-/* Final override: invalid and disconnected player tiles stay white.
-   The #board selector overrides the earlier validity-colour rules above. */
-#board .board-tile.player-invalid,
-#board .board-tile.player-isolated {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    border: 2px solid #ff0000 !important;
-    outline: 2px solid #ff0000 !important;
-    outline-offset: 0 !important;
-}
-
-#board .board-tile.player-invalid .tile-letter,
-#board .board-tile.player-invalid .tile-value,
-#board .board-tile.player-isolated .tile-letter,
-#board .board-tile.player-isolated .tile-value {
-    color: #ff0000 !important;
-}
-
-
-/* Make invalid and disconnected tile outlines thicker. */
-#board .board-tile.player-invalid,
-#board .board-tile.player-isolated {
-    border-width: 3px !important;
-    outline: 3px solid #ff0000 !important;
-}
-
-
-/* Make invalid and disconnected tile outlines even thicker. */
-#board .board-tile.player-invalid,
-#board .board-tile.player-isolated {
-    border-width: 4px !important;
-    outline: 4px solid #ff0000 !important;
-}
-
-
-/* Valid player tiles use a warm left-to-right / top-to-bottom word gradient. */
-#board .board-tile.player-valid-colour-1 {
-    background: #fbb03b !important;
-    background-color: #fbb03b !important;
-    border-color: #fbb03b !important;
-}
-
-#board .board-tile.player-valid-colour-2 {
-    background: #fca43d !important;
-    background-color: #fca43d !important;
-    border-color: #fca43d !important;
-}
-
-#board .board-tile.player-valid-colour-3 {
-    background: #fc9740 !important;
-    background-color: #fc9740 !important;
-    border-color: #fc9740 !important;
-}
-
-#board .board-tile.player-valid-colour-4 {
-    background: #fd8b42 !important;
-    background-color: #fd8b42 !important;
-    border-color: #fd8b42 !important;
-}
-
-#board .board-tile.player-valid-colour-5 {
-    background: #fe7246 !important;
-    background-color: #fe7246 !important;
-    border-color: #fe7246 !important;
-}
-
-#board .board-tile.player-valid-colour-6 {
-    background: #fe6549 !important;
-    background-color: #fe6549 !important;
-    border-color: #fe6549 !important;
-}
-
-#board .board-tile.player-valid-colour-7 {
-    background: #ff594b !important;
-    background-color: #ff594b !important;
-    border-color: #ff594b !important;
-}
-
-
-/* Updated premium-square palette. */
-#board .cell.double-letter,
-#board .board-tile.player-on-double-letter {
-    background: #03916f !important;
-    background-color: #03916f !important;
-}
-
-#board .cell.triple-letter,
-#board .board-tile.player-on-triple-letter {
-    background: #1aaa87 !important;
-    background-color: #1aaa87 !important;
-}
-
-#board .cell.double-word,
-#board .board-tile.player-on-double-word {
-    background: #e0196a !important;
-    background-color: #e0196a !important;
-}
-
-#board .cell.triple-word,
-#board .board-tile.player-on-triple-word {
-    background: #ff4085 !important;
-    background-color: #ff4085 !important;
-}
-
-
-/* Invalid player tiles on premium squares stay white with red lettering and outline. */
-#board .board-tile.player-invalid.player-on-double-letter,
-#board .board-tile.player-invalid.player-on-triple-letter,
-#board .board-tile.player-invalid.player-on-double-word,
-#board .board-tile.player-invalid.player-on-triple-word,
-#board .board-tile.player-isolated.player-on-double-letter,
-#board .board-tile.player-isolated.player-on-triple-letter,
-#board .board-tile.player-isolated.player-on-double-word,
-#board .board-tile.player-isolated.player-on-triple-word {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    border: 4px solid #ff0000 !important;
-    outline: 4px solid #ff0000 !important;
-}
-
-#board .board-tile.player-invalid.player-on-double-letter .tile-letter,
-#board .board-tile.player-invalid.player-on-double-letter .tile-value,
-#board .board-tile.player-invalid.player-on-triple-letter .tile-letter,
-#board .board-tile.player-invalid.player-on-triple-letter .tile-value,
-#board .board-tile.player-invalid.player-on-double-word .tile-letter,
-#board .board-tile.player-invalid.player-on-double-word .tile-value,
-#board .board-tile.player-invalid.player-on-triple-word .tile-letter,
-#board .board-tile.player-invalid.player-on-triple-word .tile-value,
-#board .board-tile.player-isolated.player-on-double-letter .tile-letter,
-#board .board-tile.player-isolated.player-on-double-letter .tile-value,
-#board .board-tile.player-isolated.player-on-triple-letter .tile-letter,
-#board .board-tile.player-isolated.player-on-triple-letter .tile-value,
-#board .board-tile.player-isolated.player-on-double-word .tile-letter,
-#board .board-tile.player-isolated.player-on-double-word .tile-value,
-#board .board-tile.player-isolated.player-on-triple-word .tile-letter,
-#board .board-tile.player-isolated.player-on-triple-word .tile-value {
-    color: #ff0000 !important;
-}
-
-/* Valid player tiles on premium squares have no outline. */
-#board .board-tile.player-on-double-letter:not(.player-invalid):not(.player-isolated),
-#board .board-tile.player-on-triple-letter:not(.player-invalid):not(.player-isolated),
-#board .board-tile.player-on-double-word:not(.player-invalid):not(.player-isolated),
-#board .board-tile.player-on-triple-word:not(.player-invalid):not(.player-isolated) {
-    outline: none !important;
-}
-
-
-/* Remove the gradient-colour border that can look like an orange outline on valid premium tiles. */
-#board .board-tile.player-on-double-letter:not(.player-invalid):not(.player-isolated) {
-    border-color: #03916f !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-#board .board-tile.player-on-triple-letter:not(.player-invalid):not(.player-isolated) {
-    border-color: #1aaa87 !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-#board .board-tile.player-on-double-word:not(.player-invalid):not(.player-isolated) {
-    border-color: #e0196a !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-#board .board-tile.player-on-triple-word:not(.player-invalid):not(.player-isolated) {
-    border-color: #ff4085 !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-
-/* Premium labels on occupied player tiles match the tile-score typography. */
-#board .cell.has-letter .bonus-badge {
-    font-size: clamp(9.45px, 1.62vw, 14.85px) !important;
-    font-family: inherit !important;
-    font-weight: 400 !important;
-    line-height: 1 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    letter-spacing: normal !important;
-}
-
-
-/* Keep the premium-label background and padding, but match the tile-score font size. */
-#board .cell.has-letter .bonus-badge {
-    font-size: clamp(9.45px, 1.62vw, 14.85px) !important;
-    padding: 2px 3px !important;
-    border-radius: 3px !important;
-    background: rgba(255, 255, 255, 0.85) !important;
-    letter-spacing: normal !important;
-}
-
-
-/* Premium labels: increase size by 10% and use Dongle Regular. */
-#board .cell.has-letter .bonus-badge {
-    font-size: clamp(10.395px, 1.782vw, 16.335px) !important;
-    font-family: "Dongle", sans-serif !important;
-    font-weight: 400 !important;
-}
-
-
-/* Premium squares use the board colour, with their labels retaining the premium colour. */
-#board .cell.double-letter {
-    background: #172c33 !important;
-    background-color: #172c33 !important;
-}
-
-#board .cell.triple-letter {
-    background: #172c33 !important;
-    background-color: #172c33 !important;
-}
-
-#board .cell.double-word {
-    background: #172c33 !important;
-    background-color: #172c33 !important;
-}
-
-#board .cell.triple-word {
-    background: #172c33 !important;
-    background-color: #172c33 !important;
-}
-
-#board .cell.double-letter .bonus-badge {
-    color: #03916f !important;
-}
-
-#board .cell.triple-letter .bonus-badge {
-    color: #1aaa87 !important;
-}
-
-#board .cell.double-word .bonus-badge {
-    color: #e0196a !important;
-}
-
-#board .cell.triple-word .bonus-badge {
-    color: #ff4085 !important;
-}
-
-
-/* Premium squares have no outline; their labels retain their premium colours. */
-#board .cell.double-letter,
-#board .cell.triple-letter,
-#board .cell.double-word,
-#board .cell.triple-word {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-
-/* Valid player tiles have no outline. */
-#board .board-tile.player-valid:not(.player-invalid):not(.player-isolated) {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-
-/* Match the action-button row exactly to the board's 500px maximum width. */
-#rackActions {
-    width: min(100%, 500px);
+    order: 6;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-    align-items: center;
+    align-items: stretch;
+    gap: 9px;
+    width: 100%;
+    margin: 15px auto 0;
 }
 
-#rackActions #shuffleRackButton,
-#rackActions #clearBoardButton,
-#rackActions #revealPuzzleButton {
-    box-sizing: border-box;
-    width: 90%;
+.rack-actions > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 0;
-    justify-self: center;
-    padding: 7.29px 6.48px;
-    border: 2px solid #ffffff;
+    min-height: 42px;
+    margin: 0;
+    padding: 6px 8px;
+    border: 1px solid var(--white);
     border-radius: 999px;
     background: transparent;
-    color: #ffffff;
-    font-size: 121%;
+    color: var(--white);
+    box-shadow: none;
+    font-size: clamp(19px, 3.9vw, 25px);
+    font-weight: 700;
+    line-height: .85;
     text-align: center;
+    cursor: pointer;
+    transition: background-color 120ms ease, color 120ms ease;
 }
 
-#rackActions #shuffleRackButton:hover:not(:disabled),
-#rackActions #clearBoardButton:hover:not(:disabled),
-#rackActions #revealPuzzleButton:hover:not(:disabled) {
-    background: rgba(255, 255, 255, 0.1);
+.rack-actions > button:hover:not(:disabled),
+.rack-actions > button:active:not(:disabled) {
+    background: var(--white);
+    color: var(--page);
 }
 
-/* Place the played-word pills and bonus label between the rack controls and Next Puzzle. */
-#rackActions .played-words-summary {
+.rack-actions > button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+#shuffleRackButton { grid-column: 1; }
+#clearBoardButton { grid-column: 2; }
+#revealPuzzleButton { grid-column: 3; }
+
+.played-words-summary {
     grid-column: 1 / -1;
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 7px;
-    min-width: 0;
-}
-
-#rackActions #wordList {
-    order: 0;
-    width: auto;
-    max-width: 100%;
-    margin: 0;
-    justify-content: center;
-}
-
-#rackActions #scoreBonus {
-    display: block;
     width: 100%;
-    min-height: 0;
-    margin: 0;
-    color: #ffffff;
-    text-align: center;
-    font-size: 17.55px;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-/* Keep Next Puzzle on its existing separate row and preserve its styling. */
-#rackActions #nextPuzzleButton {
-    grid-column: 1 / -1;
-}
-
-
-/* Make mobile rack action buttons wider with tighter spacing between them. */
-@media (max-width: 600px) {
-    #rackActions {
-        width: min(100%, 500px);
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 3px;
-    }
-
-    #rackActions #shuffleRackButton,
-    #rackActions #clearBoardButton,
-    #rackActions #revealPuzzleButton {
-        width: 100%;
-        min-width: 0;
-        padding: 6px 5px;
-        border: 2px solid #ffffff;
-        border-radius: 999px;
-        font-size: 103.5%;
-        line-height: normal;
-        white-space: nowrap;
-    }
-}
-
-/* Invert rack action buttons while they are being pressed or touched. */
-#rackActions #shuffleRackButton:active:not(:disabled),
-#rackActions #clearBoardButton:active:not(:disabled),
-#rackActions #revealPuzzleButton:active:not(:disabled) {
-    background: #ffffff;
-    color: #264653;
-}
-
-/* Top section refresh: compact score, rounded stars, and light icon buttons. */
-.board-top-row {
-    align-items: center;
-    margin-bottom: 0;
-    gap: 8px;
-}
-
-.board-top-row .score-box {
-    padding: 0;
-    gap: 6px;
-    align-items: center;
-}
-
-.board-top-row .score-box #scoreValue {
-    color: #ffffff;
-    font-size: 65.61px;
-    line-height: 0.9;
-}
-
-.board-top-row .score-box .score-bonus {
-    color: #ffffff;
-}
-
-.board-top-row .achievement-stars {
-    gap: 2px;
-    margin-left: 3px;
-    line-height: 0.9;
-}
-
-.board-top-row .achievement-star {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 46px;
-    line-height: 0.9;
-    -webkit-text-stroke: 0.35px currentColor;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
-}
-
-.board-top-row .rules-help-button,
-.board-top-row .share-results-icon-button {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #264653;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
-}
-
-.board-top-row .rules-help-button:hover,
-.board-top-row .share-results-icon-button:hover {
-    background: #eaf0f2;
-    border-color: #eaf0f2;
-    color: #264653;
+    margin: 1px auto 0;
 }
 
 #wordList {
-    margin-bottom: 2px;
-}
-
-@media (max-width: 600px) {
-    .board-top-row {
-        gap: 6px;
-    }
-
-    .board-top-row .score-box #scoreValue {
-        font-size: 65.61px;
-    }
-
-    .board-top-row .achievement-star {
-        font-size: 46px;
-    }
-
-    .board-top-row .rules-help-button {
-        margin-top: 0;
-    }
-
-    .board-top-row .share-results-icon-button {
-        margin-top: 0;
-    }
-}
-
-/* Precisely align the visible score and star glyphs with the bottom of the icon buttons. */
-.board-top-row {
-    align-items: flex-end;
-}
-
-.board-top-row .score-stack {
     display: flex;
-    align-items: flex-end;
-    min-height: 46px;
-}
-
-.board-top-row .score-box {
-    align-items: flex-end;
-    align-content: flex-end;
-    flex-wrap: nowrap;
-    padding: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
     margin: 0;
-    min-height: 46px;
-    overflow: visible;
 }
 
-.board-top-row .score-box #scoreValue {
-    position: relative;
-    top: 14px;
-    line-height: 0.9;
-    white-space: nowrap;
-}
-
-.board-top-row .achievement-stars {
-    display: inline-flex;
-    align-self: flex-end;
-    align-items: flex-end;
-    gap: 2px;
-    margin: 0 0 0 3px;
-    padding: 0;
-    min-height: 0;
-    line-height: 0.9;
-    white-space: nowrap;
-    position: relative;
-    top: -3px;
-}
-
-.board-top-row .achievement-star {
-    display: inline-block;
-    font-size: 36.8px;
-    line-height: 0.9;
-    vertical-align: bottom;
-    color: #b9c1c5 !important;
-    opacity: 0.7;
-    -webkit-text-stroke: 0.35px currentColor;
-}
-
-.board-top-row .achievement-star svg {
-    display: block;
-    width: 1em;
-    height: 1em;
-    overflow: visible;
-}
-
-.board-top-row .achievement-star.earned {
-    color: #ffd43b !important;
-    opacity: 1;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
-}
-
-
-/* Style the +50 / +100 all-tiles bonus label like the played-word pills. */
-#rackActions #scoreBonus {
+.word-pill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    max-width: 100%;
-    padding: 4px 24px;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 999px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    color: #222222;
-    font-size: 24.95px;
-    font-weight: bold;
-    line-height: 1;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-@media (max-width: 600px) {
-    #rackActions #scoreBonus {
-        font-size: 17.55px;
-    }
-}
-
-
-/* Keep the bonus description and points aligned like a scoring-word pill. */
-#rackActions #scoreBonus {
     gap: 7px;
+    padding: 3px 13px 4px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--page);
+    box-shadow: none;
+    font-size: 23px;
+    line-height: .85;
 }
 
-#rackActions #scoreBonus .score-bonus-label {
-    font-size: 24.95px;
-    font-weight: bold;
-    color: #222222;
+.word-pill-word {
+    color: var(--page);
+    font-weight: 700;
 }
 
-#rackActions #scoreBonus .word-pill-score {
-    font-size: 21.38px;
+.word-pill-score {
+    color: #54717a;
+    font-size: .88em;
+    font-weight: 700;
 }
 
-@media (max-width: 600px) {
-    #rackActions #scoreBonus .score-bonus-label {
-        font-size: 17.55px;
-    }
-
-    #rackActions #scoreBonus .word-pill-score {
-        font-size: 14.85px;
-    }
+.score-bonus {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 700;
+    line-height: .9;
+    text-align: center;
 }
 
+.score-bonus-label {
+    color: var(--white);
+}
 
-/* Hide the bonus pill entirely until a bonus is earned. */
-#rackActions #scoreBonus:empty {
+#nextPuzzleButton {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 260px);
+    min-height: 44px;
+    margin-top: 2px;
+    border: 0;
+    background: var(--white);
+    color: var(--page);
+}
+
+#nextPuzzleButton:hover:not(:disabled),
+#nextPuzzleButton:active:not(:disabled) {
+    background: #fbb03b;
+    color: var(--page);
+}
+
+#nextPuzzleButton:disabled {
     display: none;
 }
 
-
-/* Keep the rack-to-buttons and buttons-to-pills spacing consistently at 15px. */
-#tileRack {
-    margin-bottom: 15px;
+/* Optional solver panel remains available with the same game behavior. */
+.best-score-box {
+    order: 7;
+    width: 100%;
+    margin: 18px auto 0;
+    padding: 12px;
+    border: 0;
+    border-radius: var(--round);
+    background: var(--rack-slot);
+    color: var(--white);
+    text-align: center;
+    box-shadow: none;
 }
 
-#rackActions {
-    margin-top: 0;
-    row-gap: 15px;
-}
-
-
-/* Keep 7px of vertical space between wrapped rows of scoring pills. */
-#rackActions #wordList {
-    row-gap: 7px;
-}
-
-
-/* Dongle has unusually tall font metrics. Correct the optical vertical alignment
-   of text in the current game layout without changing the layout dimensions. */
-#board .board-tile .tile-letter,
-#tileRack .rack-tile .tile-letter,
-#board .cell.bonus-empty .bonus-badge,
-#board .cell.has-letter .bonus-badge {
-    transform: translateY(0.08em);
-}
-
-#board .board-tile .tile-value,
-#tileRack .rack-tile .tile-value {
-    transform: translateY(0.08em);
-}
-
-#rackActions .word-pill,
-#rackActions #scoreBonus {
-    line-height: 0.8;
-}
-
-#rackActions .word-pill-word,
-#rackActions .word-pill-score,
-#rackActions #scoreBonus .score-bonus-label,
-#rackActions #scoreBonus .word-pill-score {
-    position: relative;
-    top: 0.08em;
-    line-height: 0.8;
-}
-
-#rackActions > button,
-#generatorPanel button,
-#bestScoreBox button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 0.8;
-}
-
-#rackActions #shuffleRackButton,
-#rackActions #clearBoardButton,
-#rackActions #revealPuzzleButton {
-    padding-top: 8px;
-    padding-bottom: 6px;
-}
-
-#scoreValue,
-.tile-message,
 .best-score-title,
-.best-score-word,
-.best-score-value,
-.best-score-message,
-#generatorPanel h2,
-#generatorPanel .panel-description,
-#generatorPanel .setting label,
-#generatorPanel .setting-help,
+.best-score-message {
+    color: var(--white);
+}
+
+.best-score-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.best-score-word {
+    margin-top: 4px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.best-score-value {
+    margin-top: 3px;
+    font-size: 23px;
+}
+
+.best-score-message {
+    margin: 7px 0 12px;
+    font-size: 19px;
+    line-height: 1.1;
+}
+
+#revealAnswerButton {
+    border: 1px solid var(--white);
+    border-radius: 999px;
+    padding: 5px 16px;
+    background: transparent;
+    color: var(--white);
+    box-shadow: none;
+    cursor: pointer;
+}
+
+/* Dialogs keep their existing IDs and JavaScript behavior. */
+dialog {
+    color: #264653;
+    font-family: var(--font);
+}
+
 .rules-dialog,
 .share-results-dialog {
-    line-height: 0.85;
-}
-
-.board-top-row .rules-help-button,
-.board-top-row .share-results-icon-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* Re-centre Dongle letters in the board and rack tiles after the global font adjustment. */
-#board .board-tile .tile-letter,
-#tileRack .rack-tile .tile-letter {
-    transform: translateY(-0.08em);
-}
-
-
-/* Match the spacing between board cells to the letter-rack tile spacing. */
-#board {
-    gap: 2.33px !important;
-}
-
-@media (max-width: 600px) {
-    #board {
-        gap: 1.67px !important;
-    }
-}
-
-
-/* Match rack letter and point-value text sizes to the board tiles. */
-#tileRack .rack-tile .tile-letter {
-    font-size: clamp(27px, 5.4vw, 43.2px) !important;
-}
-
-#tileRack .rack-tile .tile-value {
-    font-size: clamp(9.45px, 1.62vw, 14.85px) !important;
-}
-
-
-/* Move only the central tile letters 2px down on both the board and rack. */
-#board .board-tile .tile-letter,
-#tileRack .rack-tile .tile-letter {
-    translate: 0 7px !important;
-}
-
-
-/* Centre premium-square labels (3W, 3L, 2W and 2L) inside their cells. */
-#board .cell.bonus-empty .bonus-badge {
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    transform: none !important;
-    box-sizing: border-box !important;
-}
-
-
-/* Centre premium labels on original puzzle tiles too, unless a player tile occupies the premium square. */
-#board .cell.has-letter:has(.board-tile.original-tile) .bonus-badge {
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    transform: none !important;
-    box-sizing: border-box !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-}
-
-
-/* Fine-tune premium-square bonus label position: 1px left and 1px down. */
-#board .cell .bonus-badge {
-    translate: -1px 4px !important;
-}
-
-
-/* Match rack score text to the larger score text used on board tiles. */
-#tileRack .rack-tile .tile-value {
-    font-size: clamp(11.664px, 3.2076vw, 23.328px) !important;
-}
-
-@media (max-width: 600px) {
-    #tileRack .rack-tile .tile-value {
-        font-size: 12.8304px !important;
-    }
-}
-
-
-/* Keep each rack slot exactly the same size as a board cell, and let its tile
-   fill the slot just as a placed tile fills its board cell. */
-#tileRack .rack-slot {
-    display: flex !important;
-    align-items: stretch !important;
-    justify-content: stretch !important;
-    min-width: 0 !important;
-    aspect-ratio: 1 / 1 !important;
-}
-
-#tileRack .rack-tile.board-tile {
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    font-size: clamp(27px, 7.425vw, 54px) !important;
-    border-radius: inherit !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-#tileRack .rack-tile.board-tile .tile-letter {
-    font-size: clamp(27px, 5.4vw, 43.2px) !important;
-    font-weight: bold !important;
-    line-height: 1 !important;
-}
-
-#tileRack .rack-tile.board-tile .tile-value {
-    position: absolute !important;
-    bottom: 7% !important;
-    right: 8% !important;
-    font-size: 0.432em !important;
-    font-weight: bold !important;
-    line-height: 1 !important;
-}
-
-@media (max-width: 600px) {
-    #tileRack .rack-tile.board-tile {
-        border-radius: inherit !important;
-    }
-}
-
-
-/* Use the same grid sizing formula as the board so rack slots and board cells
-   have identical dimensions: same width, padding, column count, and gap. */
-#tileRack {
-    display: grid !important;
-    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
-    grid-auto-rows: 1fr !important;
-    gap: 2.33px !important;
-    width: min(100%, 500px) !important;
-    padding: 3px !important;
-    box-sizing: border-box !important;
-}
-
-#tileRack .rack-slot {
-    width: 100% !important;
-    height: auto !important;
-    min-width: 0 !important;
-    aspect-ratio: 1 / 1 !important;
-}
-
-@media (max-width: 600px) {
-    #tileRack {
-        gap: 1.67px !important;
-        padding: 2px !important;
-    }
-}
-
-
-/* Keep the rack-cell gaps exactly aligned with the board-cell gaps.
-   The rack grid uses the same gap values as the board at each breakpoint. */
-#tileRack .rack-slot {
-    width: 100% !important;
-    justify-self: stretch !important;
-}
-
-/* Mobile-only correction: remove the extra downward shift from tile letters.
-   Desktop positioning remains unchanged. */
-@media (max-width: 600px) {
-    #board .board-tile .tile-letter,
-    #tileRack .rack-tile .tile-letter {
-        translate: 0 0 !important;
-    }
-}
-
-/* Fine-tune tile text alignment on mobile only. */
-@media (max-width: 600px) {
-    #board .board-tile .tile-letter,
-    #tileRack .rack-tile .tile-letter {
-        translate: 0 5px !important;
-    }
-
-    #board .board-tile .tile-value,
-    #tileRack .rack-tile .tile-value {
-        translate: 0 2px !important;
-    }
-}
-
-
-
-/* Keep the score lowered consistently on both desktop and mobile so its visible baseline sits beside the button bottoms. */
-@media (max-width: 600px) {
-    .board-top-row .score-box #scoreValue {
-        top: 14px;
-    }
-}
-
-
-/* After revealing the solver, remove the rack controls so the scoring pills
-   move up into the space they occupied. */
-#rackActions.solver-revealed #shuffleRackButton,
-#rackActions.solver-revealed #clearBoardButton,
-#rackActions.solver-revealed #revealPuzzleButton,
-#rackActions.solver-revealed #nextPuzzleButton {
-    display: none !important;
-}
-
-#rackActions.solver-revealed .played-words-summary {
-    margin-top: 0;
-}
-
-
-/* Move premium-square labels 1px up on mobile only. */
-@media (max-width: 600px) {
-    #board .cell .bonus-badge {
-        translate: -1px 3px !important;
-    }
-}
-
-
-/* Empty board cells are recessed: use shadow only, with no bright inner
-   highlight that could make the cells look raised. */
-#board .cell:not(:has(.board-tile)) {
-    box-shadow:
-        inset 2px 2px 4px rgba(0, 0, 0, 0.24),
-        inset -1px -1px 2px rgba(0, 0, 0, 0.10) !important;
-}
-
-/* Give rack tiles and all tiles placed on the board the same subtle raised
-   bevel, so player tiles feel like they sit above the recessed board. */
-#board .board-tile,
-#tileRack .rack-tile {
-    box-shadow:
-        inset 1px 1px 0 rgba(255, 255, 255, 0.28),
-        inset -1px -1px 0 rgba(0, 0, 0, 0.08),
-        1px 1px 2px rgba(0, 0, 0, 0.18),
-        2px 3px 4px rgba(0, 0, 0, 0.16) !important;
-}
-
-
-/* Final bevel overrides: player tiles can receive earlier state rules that
-   suppress their shadows, so explicitly restore the raised tile treatment. */
-#board .cell .board-tile[class*="player-"],
-#tileRack .rack-tile {
-    box-shadow:
-        inset 1px 1px 0 rgba(255, 255, 255, 0.28),
-        inset -1px -1px 0 rgba(0, 0, 0, 0.08),
-        1px 1px 2px rgba(0, 0, 0, 0.18),
-        2px 3px 4px rgba(0, 0, 0, 0.16) !important;
-}
-
-/* Empty rack slots should feel like the recessed empty cells on the board. */
-#tileRack .rack-slot:not(:has(.rack-tile)) {
-    box-shadow:
-        inset 2px 2px 4px rgba(0, 0, 0, 0.24),
-        inset -1px -1px 2px rgba(0, 0, 0, 0.10) !important;
-}
-
-
-/* Make the bevel identical and visibly consistent on every tile type.
-   This final rule overrides state-specific rules that previously removed
-   shadows from player-valid and premium-square tiles. */
-#board .board-tile,
-#tileRack .rack-tile,
-#board .cell > .board-tile,
-#tileRack .rack-slot > .rack-tile {
-    border-style: solid !important;
-    box-shadow:
-        inset 1px 1px 0 rgba(255, 255, 255, 0.32),
-        inset -1px -1px 0 rgba(0, 0, 0, 0.10),
-        0 1px 1px rgba(0, 0, 0, 0.14),
-        1px 2px 3px rgba(0, 0, 0, 0.22),
-        2px 3px 5px rgba(0, 0, 0, 0.18) !important;
-}
-
-
-/* Player-state selectors need higher specificity than the validity and
-   premium-square rules above, some of which previously removed box shadows.
-   Stronger inset shading makes the bevel visible over the player tile colours. */
-#board .cell > .board-tile.player-valid,
-#board .cell > .board-tile.player-invalid,
-#board .cell > .board-tile.player-isolated,
-#board .cell > .board-tile.player-on-double-letter,
-#board .cell > .board-tile.player-on-triple-letter,
-#board .cell > .board-tile.player-on-double-word,
-#board .cell > .board-tile.player-on-triple-word {
-    box-shadow:
-        inset 0 2px 2px rgba(255, 255, 255, 0.48),
-        inset 2px 0 2px rgba(255, 255, 255, 0.16),
-        inset 0 -3px 4px rgba(0, 0, 0, 0.28),
-        inset -2px 0 3px rgba(0, 0, 0, 0.12),
-        0 1px 1px rgba(0, 0, 0, 0.18),
-        1px 3px 4px rgba(0, 0, 0, 0.24) !important;
-}
-
-
-/* Visible bevel overlay for coloured player tiles. Use background-image rather
-   than relying only on shadows: state rules change the tile background colour,
-   but this translucent gradient stays above that colour and keeps it intact. */
-#board .cell > .board-tile.player-valid,
-#board .cell > .board-tile.player-invalid,
-#board .cell > .board-tile.player-isolated,
-#board .cell > .board-tile.player-on-double-letter,
-#board .cell > .board-tile.player-on-triple-letter,
-#board .cell > .board-tile.player-on-double-word,
-#board .cell > .board-tile.player-on-triple-word {
-    background-image: none !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 1),
-        inset 1px 0 0 rgba(255, 255, 255, 1),
-        inset -1px 0 0 rgba(255, 255, 255, 1),
-        0 2px 4px rgba(0, 0, 0, 0.24) !important;
-}
-
-/* Unearned stars use the empty-cell colour and a recessed bevel clipped to the star silhouette. */
-.board-top-row .achievement-star:not(.earned) {
-    box-shadow: none !important;
-    border: 0 !important;
-    outline: 0 !important;
-    border-radius: 0 !important;
-    text-shadow: none !important;
-    filter: none !important;
-    background: transparent !important;
-}
-
-.board-top-row .achievement-star:not(.earned) svg {
-    overflow: visible;
-    filter: none !important;
-}
-
-.board-top-row .achievement-star:not(.earned) svg path {
-    fill: #172c33 !important;
-    stroke: none !important;
-}
-
-
-/* Utility buttons sit above the score and align with the board's outer edges. */
-.board-utility-row {
-    width: min(100%, 500px);
-    margin: 0 auto 2px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.board-utility-row .rules-help-button,
-.board-utility-row .share-results-icon-button {
-    position: static;
-    display: inline-flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    width: auto;
-    height: auto;
-    min-height: 0;
-    margin: 0;
+    width: min(500px, calc(100% - 28px));
+    max-width: 500px;
+    max-height: 85vh;
     padding: 0;
+    overflow: auto;
     border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: #ffffff;
-    box-shadow: none;
-    font: inherit;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1;
-    cursor: pointer;
-    transition: opacity 150ms ease, transform 150ms ease;
-}
-
-.board-utility-row .rules-help-button:hover,
-.board-utility-row .share-results-icon-button:hover {
-    background: transparent;
-    border-color: transparent;
-    color: #ffffff;
-    opacity: 0.78;
-    transform: translateY(-1px);
-}
-
-.board-utility-row .share-results-icon-button svg {
-    display: block;
-    width: 19px;
-    height: 19px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.board-utility-row .share-results-icon-button.needs-sharing {
-    animation: share-results-pulse 1.15s ease-in-out infinite;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row .rules-help-button,
-    .board-utility-row .share-results-icon-button {
-        font-size: 18px;
-    }
-
-    .board-utility-row .share-results-icon-button svg {
-        width: 17px;
-        height: 17px;
-    }
-}
-
-
-/* Center the Toucanagrams title between the utility buttons. */
-.board-utility-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    align-items: center;
-}
-
-.board-utility-row > .rules-help-button {
-    justify-self: start;
-}
-
-.board-utility-row > .share-results-icon-button {
-    justify-self: end;
-}
-
-.game-branding {
-    min-width: 0;
-    text-align: center;
-    line-height: 0.82;
-    color: #ffffff;
-}
-
-.game-brand-title {
-    font-family: "Dongle", sans-serif;
-    font-size: 43px;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.daily-puzzle-number {
-    margin-top: 1px;
-    font-family: "Dongle", sans-serif;
-    font-size: 23px;
-    font-weight: 400;
-    line-height: 0.9;
-    white-space: nowrap;
-}
-
-@media (max-width: 420px) {
-    .game-brand-title {
-        font-size: 36px;
-    }
-
-    .daily-puzzle-number {
-        font-size: 20px;
-    }
-
-    .board-utility-row .rules-help-button,
-    .board-utility-row .share-results-icon-button {
-        font-size: 16px;
-        gap: 4px;
-    }
-
-    .board-utility-row .share-results-icon-button svg {
-        width: 15px;
-        height: 15px;
-    }
-}
-
-
-/* Use compact icon-only utility controls, with Share on the left and Help on the right. */
-.board-utility-row .rules-help-button,
-.board-utility-row .share-results-icon-button {
-    width: 24px;
-    height: 28px;
-    padding: 0;
-    gap: 0;
-}
-
-.board-utility-row .rules-help-button {
-    font-family: "Dongle", sans-serif;
-    font-size: 29px;
-    font-weight: 700;
-}
-
-.board-utility-row .share-results-icon-button svg {
-    width: 22px;
-    height: 22px;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row .rules-help-button,
-    .board-utility-row .share-results-icon-button {
-        width: 22px;
-        height: 26px;
-    }
-
-    .board-utility-row .rules-help-button {
-        font-size: 26px;
-    }
-
-    .board-utility-row .share-results-icon-button svg {
-        width: 19px;
-        height: 19px;
-    }
-}
-
-
-/* Render Help as an actual SVG icon, never as a text label. */
-.board-utility-row .rules-help-button {
-    font-size: 0 !important;
-    line-height: 0 !important;
-}
-
-.board-utility-row .rules-help-button .help-icon-svg {
-    display: block;
-    width: 22px;
-    height: 22px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.board-utility-row .share-results-icon-button {
-    font-size: 0 !important;
-    line-height: 0 !important;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row .rules-help-button .help-icon-svg {
-        width: 19px;
-        height: 19px;
-    }
-}
-
-
-/* Keep the icon-only Help button at the board's left edge and Share at its right edge,
-   while the game title remains precisely centred between them. */
-.board-utility-row {
-    display: grid;
-    grid-template-columns: 24px minmax(0, 1fr) 24px;
-    width: min(100%, 500px);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.board-utility-row > .rules-help-button {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: start;
-}
-
-.board-utility-row > .game-branding {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: center;
-}
-
-.board-utility-row > .share-results-icon-button {
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: end;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row {
-        grid-template-columns: 22px minmax(0, 1fr) 22px;
-    }
-}
-
-
-/* Increase both utility icons by 20% while keeping their buttons anchored to the board edges. */
-.board-utility-row .rules-help-button .help-icon-svg,
-.board-utility-row .share-results-icon-button svg {
-    width: 26.4px;
-    height: 26.4px;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row .rules-help-button .help-icon-svg,
-    .board-utility-row .share-results-icon-button svg {
-        width: 22.8px;
-        height: 22.8px;
-    }
-}
-
-
-/* Increase the spacing between rack cells by 1px on mobile only. */
-@media (max-width: 600px) {
-    #tileRack {
-        gap: 2.67px !important;
-    }
-}
-
-
-/* Match rack-cell dimensions to board cells while preserving the extra 1px mobile gap. */
-#tileRack {
-    width: min(100%, 500px) !important;
-    padding: 0 !important;
-    gap: 2.33px !important;
-}
-
-@media (max-width: 600px) {
-    #tileRack {
-        width: calc(min(100%, 500px) + 6px) !important;
-        max-width: none !important;
-        padding: 0 !important;
-        gap: 2.67px !important;
-    }
-}
-
-
-/* Revert the extra 1px mobile rack gap; match the board's mobile cell spacing again. */
-@media (max-width: 600px) {
-    #tileRack {
-        gap: 1.67px !important;
-        width: min(100%, 500px) !important;
-    }
-}
-
-
-/* Make Share and How to Play fill the same vertical space as the two-line game title. */
-.board-utility-row > .rules-help-button,
-.board-utility-row > .share-results-icon-button {
-    height: 100% !important;
-    min-height: 0 !important;
-    align-self: stretch !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.board-utility-row > .game-branding {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-/* Let the grid row define button height, rather than a percentage height on an auto-sized row. */
-.board-utility-row {
-    align-items: stretch !important;
-}
-
-.board-utility-row > .rules-help-button,
-.board-utility-row > .share-results-icon-button {
-    height: auto !important;
-    min-height: 0 !important;
-    align-self: stretch !important;
-    box-sizing: border-box !important;
-}
-
-.board-utility-row > .game-branding {
-    align-self: stretch !important;
-}
-
-
-/* Explicitly size the utility icons to match the full two-line branding block.
-   Grid stretching alone did not enlarge the SVG artwork itself. */
-.board-utility-row > .rules-help-button,
-.board-utility-row > .share-results-icon-button {
-    height: 52px !important;
-    min-height: 52px !important;
-}
-
-.board-utility-row .rules-help-button .help-icon-svg,
-.board-utility-row .share-results-icon-button svg {
-    width: 42px !important;
-    height: 42px !important;
-    flex: 0 0 42px !important;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row > .rules-help-button,
-    .board-utility-row > .share-results-icon-button {
-        height: 44px !important;
-        min-height: 44px !important;
-    }
-
-    .board-utility-row .rules-help-button .help-icon-svg,
-    .board-utility-row .share-results-icon-button svg {
-        width: 36px !important;
-        height: 36px !important;
-        flex: 0 0 36px !important;
-    }
-}
-
-
-/* Keep a small screen-edge gutter while aligning the utility icons to the board edges. */
-.board-utility-row {
-    width: min(100%, 500px) !important;
-    padding-left: 3px !important;
-    padding-right: 3px !important;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row {
-        width: 100% !important;
-        padding-left: 3px !important;
-        padding-right: 3px !important;
-    }
-}
-
-
-/* Align the utility icon centres with the centres of the board's outermost cells,
-   without changing their vertical position or the centred title. */
-.board-utility-row {
-    position: relative !important;
-}
-
-.board-utility-row > .share-results-icon-button,
-.board-utility-row > .rules-help-button {
-    position: absolute !important;
-    top: 50% !important;
-    margin: 0 !important;
-    transform: translateY(-50%);
-}
-
-.board-utility-row > .share-results-icon-button {
-    left: calc(100% / 14) !important;
-}
-
-.board-utility-row > .rules-help-button {
-    right: calc(100% / 14) !important;
-}
-
-.board-utility-row > .share-results-icon-button:hover,
-.board-utility-row > .rules-help-button:hover {
-    transform: translateY(calc(-50% - 1px)) !important;
-}
-
-
-/* Correct utility icon placement: pin each button to its own board-edge cell centre.
-   The utility row is the containing block; keep the branding in the middle. */
-.board-utility-row {
-    display: grid !important;
-    grid-template-columns: 1fr auto 1fr !important;
-    position: relative !important;
-}
-
-.board-utility-row > .share-results-icon-button {
-    left: calc((100% - 6px) / 14 + 3px) !important;
-    right: auto !important;
-    justify-self: start !important;
-}
-
-.board-utility-row > .rules-help-button {
-    left: auto !important;
-    right: calc((100% - 6px) / 14 + 3px) !important;
-    justify-self: end !important;
-}
-
-.board-utility-row > .game-branding {
-    grid-column: 2 !important;
-}
-
-
-/* Final utility layout fix: use grid columns, not absolute offsets, so Share and Help
-   cannot collapse onto the same side on mobile. Their centres match board cells 1 and 7. */
-.board-utility-row {
-    position: relative !important;
-    display: grid !important;
-    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
-    align-items: center !important;
-    width: min(100%, 500px) !important;
-    padding-left: 3px !important;
-    padding-right: 3px !important;
-    box-sizing: border-box !important;
-}
-
-.board-utility-row > .share-results-icon-button {
-    position: static !important;
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-    justify-self: center !important;
-    align-self: center !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-}
-
-.board-utility-row > .game-branding {
-    position: static !important;
-    grid-column: 2 / 7 !important;
-    grid-row: 1 !important;
-    justify-self: center !important;
-    align-self: stretch !important;
-}
-
-.board-utility-row > .rules-help-button {
-    position: static !important;
-    grid-column: 7 !important;
-    grid-row: 1 !important;
-    justify-self: center !important;
-    align-self: center !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row {
-        width: 100% !important;
-    }
-}
-
-
-/* Reduce the gap below the game board by moving the rack and everything after it up 20px. */
-#tileRack,
-#rackActions {
-    position: relative;
-    top: -20px;
-}
-
-#tileMessage {
-    position: relative;
-    top: -20px;
-}
-
-#bestScoreBox {
-    position: relative;
-    top: -20px;
-}
-
-
-/* Remove the browser's dark focus/selection box from the popup close buttons,
-   while retaining a clear keyboard-focus indicator. */
-.rules-close-button,
-.rules-close-button:active {
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none !important;
-    box-shadow: none !important;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.rules-close-button:focus:not(:focus-visible) {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.rules-close-button:focus-visible {
-    outline: 2px solid #264653 !important;
-    outline-offset: 3px;
-    box-shadow: none !important;
-}
-
-
-/* Prevent a persistent native focus ring around the popup close cross after it is tapped. */
-.rules-close-button:focus,
-.rules-close-button:focus-visible,
-.rules-close-button:active {
-    outline: none !important;
-    box-shadow: none !important;
-    border-color: transparent !important;
-}
-
-.rules-close-button {
-    -webkit-tap-highlight-color: transparent !important;
-}
-
-
-/* Use a simple Dongle Bold question mark for the How to Play control,
-   matching the score's displayed type size. */
-.board-utility-row > .rules-help-button {
-    font-family: "Dongle", sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 72.17px !important;
-    line-height: 1 !important;
-    color: #ffffff !important;
-    position: relative !important;
-    top: 5px !important;
-}
-
-.board-utility-row .rules-help-button .help-icon-svg {
-    display: none !important;
-}
-
-
-/* Keep the two top utility buttons visually unchanged on hover. */
-.board-utility-row > .share-results-icon-button:hover,
-.board-utility-row > .rules-help-button:hover {
-    transform: none !important;
-    filter: none !important;
-}
-
-
-/* Share popup redesign: centred layout with Dongle Regular typography throughout. */
-.share-results-dialog {
-    width: min(520px, calc(100% - 32px));
-    max-width: 520px;
-    padding: 0 !important;
-    border: 1px solid #d8d8d8;
     border-radius: 14px;
-    background: #fff;
-    color: #222;
-    font-family: "Dongle", sans-serif !important;
-    font-weight: 400 !important;
-    text-align: center;
+    background: #ffffff;
+    color: #264653;
+    box-shadow: none;
 }
 
-.share-results-dialog *,
-.share-results-dialog button {
-    font-family: "Dongle", sans-serif !important;
-    font-weight: 400 !important;
+dialog::backdrop {
+    background: rgba(10, 27, 32, .72);
 }
 
+.rules-dialog-header,
 .share-results-header {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 18px 42px 8px;
-}
-
-.share-results-header #shareResultsTitle {
-    margin: 0;
-    font-size: 52px;
-    line-height: 0.9;
-    font-weight: 400 !important;
+    justify-content: center;
+    min-height: 58px;
+    padding: 13px 44px 8px;
+    border: 0;
     text-align: center;
 }
 
-.share-results-header .rules-close-button {
+.rules-dialog-header h2,
+.share-results-header h2 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: .9;
+}
+
+.rules-close-button {
     position: absolute;
-    top: 12px;
+    top: 10px;
     right: 12px;
-    font-size: 34px;
-}
-
-.share-results-content {
-    padding: 8px 22px 24px !important;
-    text-align: center !important;
-}
-
-.share-results-subtitle {
-    margin: 8px 0 10px;
-    font-size: 24px;
-    line-height: 0.95;
-    text-align: center;
-}
-
-.share-results-score {
-    margin: 4px 0 0;
-    font-size: 58px;
-    line-height: 0.9;
-    text-align: center;
-}
-
-.share-results-stars {
-    margin: 8px 0 0;
-    min-height: 35px;
-    font-family: Arial, sans-serif !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #264653;
+    font-family: Arial, sans-serif;
     font-size: 28px;
-    line-height: 1.1;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.share-results-crown {
-    margin: 3px 0 10px;
-    font-family: Arial, sans-serif !important;
-    font-size: 32px;
-    line-height: 1.1;
-    text-align: center;
-}
-
-.share-results-crown[hidden] {
-    display: none !important;
-}
-
-.copy-share-results-button {
-    width: 100%;
-    min-height: 46px;
-    margin-top: 14px;
-    padding: 8px 18px;
-    border: none;
-    border-radius: 9px;
-    background: #264653;
-    color: #fff;
-    font-size: 30px;
     line-height: 1;
     cursor: pointer;
-    transition: none !important;
 }
 
-.copy-share-results-button:hover,
-.copy-share-results-button:active {
-    background: #264653 !important;
-    color: #fff !important;
-}
-
-.share-results-status {
-    min-height: 18px;
-    margin: 8px 0 0;
-    color: #39734a;
-    font-size: 20px;
-    line-height: 1;
+.rules-content,
+.share-results-content {
+    padding: 8px 24px 18px;
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    .share-results-dialog {
-        padding: 0 !important;
-    }
-
-    .share-results-header {
-        padding: 15px 38px 8px;
-    }
-
-    .share-results-content {
-        padding: 8px 16px 19px !important;
-    }
-
-    .share-results-subtitle {
-        font-size: 22px;
-    }
-}
-
-
-/* Keep the score, stars, and optional crown together on one centred line. */
-/* Respect the hidden state when the reveal-solver popup suppresses achievements. */
-.share-results-achievements[hidden] {
-    display: none !important;
-}
-
-.share-results-achievements {
+.rules-tabs {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 12px;
-    width: 100%;
-    margin: 8px auto 0;
-    text-align: center;
+    gap: 8px;
+    margin: 0 0 10px;
 }
 
-.share-results-achievements .share-results-score,
-.share-results-achievements .share-results-stars,
-.share-results-achievements .share-results-crown {
-    display: block;
-    flex: 0 0 auto;
-    margin: 0;
-    min-height: 0;
-    line-height: 1;
+.rules-tab {
+    padding: 4px 15px 5px;
+    border: 1px solid #264653;
+    border-radius: 999px;
+    background: transparent;
+    color: #264653;
+    font-size: 21px;
+    line-height: .9;
+    cursor: pointer;
 }
 
-.share-results-achievements .share-results-score {
-    font-size: 58px;
+.rules-tab.is-active {
+    background: #264653;
+    color: #ffffff;
 }
 
-.share-results-achievements .share-results-stars {
-    font-size: 28px;
-    letter-spacing: 2px;
-}
-
-.share-results-achievements .share-results-crown {
-    font-size: 28px;
-}
-
-.share-results-achievements .share-results-crown[hidden] {
-    display: none !important;
-}
-
-@media (max-width: 360px) {
-    .share-results-achievements {
-        gap: 7px;
-    }
-
-    .share-results-achievements .share-results-score {
-        font-size: 52px;
-    }
-
-    .share-results-achievements .share-results-stars {
-        font-size: 24px;
-        letter-spacing: 1px;
-    }
-}
-
-
-/* Use the same SVG achievement stars in the share popup; clipboard sharing remains emoji-based. */
-.share-results-achievements .share-results-stars {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    letter-spacing: 0;
-    min-height: 0;
-}
-
-.share-results-achievements .share-results-stars .achievement-star {
-    display: inline-flex;
-    width: 25px;
-    height: 25px;
-    color: #d0d0d0;
-    opacity: 0.7;
-    text-shadow: none;
-}
-
-.share-results-achievements .share-results-stars .achievement-star.earned {
-    color: #e3ad22;
-    opacity: 1;
-}
-
-.share-results-achievements .share-results-stars .achievement-star svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-@media (max-width: 360px) {
-    .share-results-achievements .share-results-stars .achievement-star {
-        width: 22px;
-        height: 22px;
-    }
-}
-
-
-/* How to Play popup refresh */
-.rules-dialog,
-.rules-dialog * {
-    font-family: "Dongle", sans-serif !important;
-    font-weight: 400 !important;
-}
-
-.rules-dialog-header {
-    position: relative;
-    justify-content: center;
-    padding: 18px 42px 8px;
-    border-bottom: 0;
-    background: #fff;
-}
-
-.rules-dialog-header h2 {
-    margin: 0;
-    font-size: 52px;
-    line-height: 0.9;
-    font-weight: 400 !important;
-    text-align: center;
-}
-
-.rules-dialog-header .rules-close-button {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-}
-
-.rules-content {
-    padding: 8px 22px 24px;
-    font-size: 24px;
-    line-height: 0.95;
-    text-align: center;
-}
-
-.rules-content .how-to-play-intro {
-    max-width: 390px;
-    margin: 0 auto 18px;
-    font-size: 25px;
-    line-height: 0.95;
+.rules-tab-panel p,
+.word-list-content p {
+    margin: 8px 0 12px;
+    font-size: 22px;
+    line-height: 1.05;
 }
 
 .how-to-play-example {
     display: grid;
-    grid-template-columns: repeat(3, 54px);
-    grid-template-rows: repeat(3, 54px);
-    gap: 2.33px;
-    width: max-content;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    width: min(225px, 100%);
+    margin: 12px auto;
     padding: 0;
-    margin: 0 auto 20px;
-    box-sizing: border-box;
     background: transparent;
-    border-radius: 8px;
+    box-shadow: none;
 }
 
 .how-to-play-example-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    border: 0;
+    border-radius: 6px;
+    background: var(--cell);
+    box-shadow: none;
+}
+
+.how-to-play-tile {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 54px;
-    height: 54px;
-    box-sizing: border-box;
-    background: #172c33;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
-    box-shadow:
-        inset 0 2px 2px rgba(255, 255, 255, 0.08),
-        inset 0 -3px 3px rgba(0, 0, 0, 0.2),
-        0 2px 3px rgba(0, 0, 0, 0.16);
-    overflow: hidden;
-}
-
-.how-to-play-example .how-to-play-tile {
-    position: relative;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 82%;
-    height: 82%;
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    border: 2px solid transparent;
+    width: 100%;
+    height: 100%;
+    border: 0;
     border-radius: 6px;
-    box-shadow:
-        inset 0 2px 1px rgba(255, 255, 255, 0.1),
-        inset 0 -2px 2px rgba(0, 0, 0, 0.25),
-        0 2px 4px rgba(0, 0, 0, 0.28);
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-.how-to-play-example .how-to-play-black {
-    background: #0b171b;
-    border-color: #243b42;
-    color: #fff;
-}
-
-.how-to-play-example .how-to-play-white {
-    background: #fff;
-    border-color: #d7d7d7;
+    background: #ffffff;
     color: #172c33;
+    box-shadow: none;
 }
 
-.how-to-play-example .how-to-play-invalid {
-    background: #fff;
-    border: 2px solid #ff0000;
-    color: #ff0000;
-    outline: 2px solid #ff0000;
-    outline-offset: 0;
+.how-to-play-tile .tile-letter {
+    font-size: 36px;
+    line-height: .8;
 }
 
-.how-to-play-example .how-to-play-invalid .tile-letter,
-.how-to-play-example .how-to-play-invalid .tile-value {
-    color: #ff0000 !important;
-}
-
-.how-to-play-example .tile-letter {
-    position: relative;
-    z-index: 2;
-    font-size: 39px;
-    line-height: 1;
-    font-weight: 400 !important;
-}
-
-.how-to-play-example .tile-value {
+.how-to-play-tile .tile-value {
     position: absolute;
-    right: 8%;
-    bottom: 7%;
-    z-index: 3;
-    font-size: 14px;
-    line-height: 1;
-    font-weight: 400 !important;
+    right: 5%;
+    bottom: 5%;
+    font-size: 12px;
 }
 
-.rules-content .how-to-play-word-rules {
-    max-width: 390px;
-    margin: 0 auto 20px;
-    font-size: 24px;
-    line-height: 0.95;
-    font-weight: 400 !important;
-    text-align: center;
+.how-to-play-tile.how-to-play-black {
+    background: #000000;
+    color: #ffffff;
 }
 
-.rules-content .how-to-play-bonuses-copy {
-    max-width: 390px;
-    margin: 0 auto 14px;
-    font-size: 24px;
-    line-height: 0.95;
-    font-weight: 400 !important;
-    text-align: center;
+.how-to-play-tile.how-to-play-invalid {
+    background: #ffffff;
+    color: #ff0000;
 }
 
 .how-to-play-bonus-tiles {
     display: flex;
     justify-content: center;
-    gap: 7px;
-    margin: 0 auto;
+    gap: 8px;
+    margin: 12px auto;
 }
 
 .how-to-play-bonus-tile {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 54px;
-    height: 54px;
-    box-sizing: border-box;
-    background: #172c33;
-    border: 1px solid rgba(100, 116, 139, 0.28);
-    border-radius: 10px;
-    box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.08), inset 0 -3px 3px rgba(0, 0, 0, 0.2);
-    font-size: 36px;
-    line-height: 1;
-    font-weight: 400;
-}
-
-.how-to-play-double-letter {
-    color: #03916f;
-}
-
-.how-to-play-triple-letter {
-    color: #1aaa87;
-}
-
-.how-to-play-double-word {
-    color: #e0196a;
-}
-
-.how-to-play-triple-word {
-    color: #ff4085;
-}
-
-.rules-content .how-to-play-bonuses-title {
-    margin: 0 0 5px;
-    font-size: 36px;
-    line-height: 0.9;
-    font-weight: 400 !important;
-}
-
-.rules-content .how-to-play-bonuses-copy {
-    max-width: 390px;
-    margin: 0 auto 14px;
-    font-size: 24px;
-    line-height: 0.95;
-    text-align: center;
-}
-
-@media (max-width: 480px) {
-    .rules-dialog-header h2 {
-        font-size: 48px;
-    }
-
-    .rules-content {
-        padding-right: 16px;
-        padding-left: 16px;
-    }
-
-    .rules-content .how-to-play-intro {
-        font-size: 23px;
-    }
-}
-
-
-/* How to Play section tabs */
-.rules-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    margin: 0 auto 18px;
-    padding: 4px;
-    max-width: 390px;
-    background: #f1f3f4;
-    border-radius: 12px;
-}
-
-.rules-tab {
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 5px 8px 3px;
+    width: 48px;
+    aspect-ratio: 1 / 1;
     border: 0;
-    border-radius: 9px;
-    background: transparent;
-    color: #526168;
+    border-radius: 6px;
+    color: #ffffff;
     font-size: 24px;
-    line-height: 1;
-    cursor: pointer;
-    transition: background 150ms ease, color 150ms ease, box-shadow 150ms ease;
+    box-shadow: none;
 }
 
-.rules-tab.is-active {
-    background: #172c33;
-    color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.14);
-}
-
-.rules-tab:focus-visible {
-    outline: 2px solid #e0196a;
-    outline-offset: 2px;
-}
-
-.rules-tab-panel {
-    min-height: 210px;
-    padding: 8px 0 12px;
-    animation: rules-panel-in 140ms ease-out;
-}
-
-.rules-tab-panel[hidden] {
-    display: none !important;
-}
-
-.rules-tab-panel .how-to-play-intro {
-    margin-bottom: 16px;
-}
-
-.rules-tab-panel .how-to-play-example {
-    margin-bottom: 16px;
-}
-
-.rules-tab-panel .how-to-play-word-rules {
-    margin-bottom: 8px;
-}
-
-.rules-content .how-to-play-dictionary-note {
-    max-width: 390px;
-    margin: 8px auto 0;
-    font-size: 20px;
-    line-height: 0.95;
-    color: #666;
-}
-
-@keyframes rules-panel-in {
-    from { opacity: 0.75; transform: translateY(3px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 480px) {
-    .rules-tabs {
-        gap: 4px;
-        margin-bottom: 12px;
-    }
-
-    .rules-tab {
-        font-size: 22px;
-        padding: 5px 4px 3px;
-    }
-
-    .rules-tab-panel {
-        min-height: 195px;
-    }
-}
-
-
-/* How to Play: controls and scoring example */
-.rules-content .how-to-play-controls-copy {
-    margin-top: -8px;
-    margin-bottom: 18px;
-}
+.how-to-play-double-letter { background: #1aaa87; }
+.how-to-play-triple-letter { background: #03916f; }
+.how-to-play-double-word { background: #e0196a; }
+.how-to-play-triple-word { background: #ff4085; }
 
 .how-to-play-score-example {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    width: max-content;
-    max-width: 100%;
-    margin: 16px auto;
-    padding: 7px 14px;
-    border: 1px solid #e3e6e8;
-    border-radius: 12px;
-    background: #f7f8f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    gap: 8px;
+    margin: 12px auto;
+    box-shadow: none;
 }
 
 .how-to-play-score-number {
-    color: #172c33;
-    font-size: 32px;
-    line-height: 1;
-    white-space: nowrap;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .how-to-play-score-stars {
     display: flex;
-    align-items: center;
     gap: 3px;
 }
 
 .how-to-play-score-star {
-    display: block;
-    width: 27px;
-    height: 27px;
-    fill: #cbd0d3;
+    width: 22px;
+    height: 22px;
+    fill: #c9d0d2;
 }
 
 .how-to-play-score-star.is-earned {
-    fill: #fbbf24;
+    fill: #fbb03b;
 }
 
-.rules-content .how-to-play-score-note {
-    max-width: 390px;
-    margin: 0 auto 8px;
-    font-size: 23px;
-    line-height: 0.95;
-    color: #526168;
-}
-
-.rules-content .how-to-play-bonuses-after {
-    margin-top: 14px;
-    margin-bottom: 0;
-}
-
-@media (max-width: 480px) {
-    .how-to-play-score-example {
-        gap: 10px;
-        padding: 7px 11px;
-    }
-
-    .how-to-play-score-number {
-        font-size: 29px;
-    }
-
-    .how-to-play-score-star {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-
-/* Make all popup body copy consistent with the How to Play intro text. */
-.rules-content {
-    font-size: 25px;
-}
-
-.rules-content .how-to-play-intro,
-.rules-content .how-to-play-word-rules,
-.rules-content .how-to-play-bonuses-copy,
-.rules-content .how-to-play-dictionary-note,
-.rules-content .how-to-play-score-note {
-    font-size: 25px;
-}
-
-.share-results-subtitle {
-    font-size: 25px;
-}
-
-.share-results-status {
-    font-size: 25px;
-}
-
-@media (max-width: 600px) {
-    .share-results-subtitle {
-        font-size: 25px;
-    }
-}
-
-
-/* Keep popup outer spacing and padding consistent between How to Play and Share. */
-.rules-dialog,
-.share-results-dialog {
-    width: min(520px, calc(100% - 32px));
-    max-width: 520px;
-    padding: 0 !important;
-    border-radius: 14px;
-}
-
-.rules-dialog-header,
-.share-results-header {
-    padding: 18px 42px 8px;
-}
-
-.rules-content,
-.share-results-content {
-    padding: 8px 22px 24px !important;
-}
-
-.rules-dialog-header .rules-close-button,
-.share-results-header .rules-close-button {
-    top: 12px;
-    right: 12px;
-}
-
-@media (max-width: 600px) {
-    .rules-dialog-header,
-    .share-results-header {
-        padding: 15px 38px 8px;
-    }
-
-    .rules-content,
-    .share-results-content {
-        padding: 8px 16px 19px !important;
-    }
-}
-
-
-/* Enlarge popup close controls and vertically align them with the headline. */
-.rules-dialog-header .rules-close-button,
-.share-results-header .rules-close-button {
-    top: 50%;
-    right: 12px;
-    width: 44px;
-    height: 44px;
-    font-size: 46px;
-    line-height: 1;
-    transform: translateY(-50%);
-}
-
-@media (max-width: 600px) {
-    .rules-dialog-header .rules-close-button,
-    .share-results-header .rules-close-button {
-        right: 10px;
-        width: 42px;
-        height: 42px;
-        font-size: 44px;
-    }
-}
-
-
-/* Move only the × glyph down 3px in every popup close button. */
-.rules-close-button {
-    font-size: 0 !important;
-}
-
-.rules-close-button::after {
-    content: "×";
-    position: absolute;
-    top: 3px;
-    left: 0;
-    right: 0;
-    font-family: "Dongle", sans-serif;
-    font-size: 46px;
-    line-height: 1;
-    text-align: center;
-}
-
-@media (max-width: 600px) {
-    .rules-close-button::after {
-        font-size: 44px;
-    }
-}
-
-
-/* Fine-tune the close glyph position by screen size. */
-@media (min-width: 601px) {
-    .rules-close-button::after {
-        left: -1px;
-    }
-}
-
-@media (max-width: 600px) {
-    .rules-close-button::after {
-        top: 2px;
-    }
-}
-
-
-/* Match the gap above the score section with the gap below it before the body copy. */
-.share-results-subtitle {
-    margin-top: 16px;
-}
-
-
-/* Move the score section and all following share-popup content up by 5px. */
-.share-results-content {
-    transform: translateY(-5px);
-}
-
-
-/* Move the score section and all following share-popup content up another 5px. */
-.share-results-content {
-    transform: translateY(-10px);
-}
-
-
-/* Keep the top and bottom inner padding consistent across the How to Play and Share popups. */
-.rules-dialog-header,
-.share-results-header {
-    padding-top: 18px !important;
-}
-
-.rules-content,
-.share-results-content {
-    padding-bottom: 18px !important;
-}
-
-@media (max-width: 600px) {
-    .rules-dialog-header,
-    .share-results-header {
-        padding-top: 15px !important;
-    }
-
-    .rules-content,
-    .share-results-content {
-        padding-bottom: 15px !important;
-    }
-}
-
-
-/* Restore the original board and rack letter sizing from before the recent size changes. */
-.board-tile .tile-letter,
-.rack-tile .tile-letter {
-    scale: 1.1;
-}
-
-/* Keep board-cell clicks working on premium squares, even when the pointer is over
-   the premium label or the contents of a tile. Clicks should reach the cell handler. */
-#board .cell {
-    pointer-events: auto !important;
-}
-
-#board .cell > *,
-#board .cell > * * {
-    pointer-events: none !important;
-}
-
-/* Premium squares should show the same green square when clicked or dragged over. */
-#board .cell.selected-target.double-letter,
-#board .cell.selected-target.triple-letter,
-#board .cell.selected-target.double-word,
-#board .cell.selected-target.triple-word,
-#board .cell.drag-over.double-letter,
-#board .cell.drag-over.triple-letter,
-#board .cell.drag-over.double-word,
-#board .cell.drag-over.triple-word {
-    outline: 3px solid #68d391 !important;
-    outline-offset: -3px !important;
-    box-shadow: inset 0 0 0 2px rgba(104, 211, 145, 0.3) !important;
-}
-
-
-
-/* Word List link and nested information popup */
-.rules-content .word-list-link {
+.word-list-link {
     display: inline;
     margin: 0;
     padding: 0;
@@ -4293,450 +967,264 @@ body {
     background: transparent;
     color: inherit;
     font: inherit;
-    line-height: inherit;
-    text-align: inherit;
     text-decoration: underline;
     text-underline-offset: 3px;
     cursor: pointer;
 }
 
-.rules-content .word-list-link:hover {
-    color: #444;
-}
-
-.word-list-dialog {
-    z-index: 2;
-}
-
-.word-list-content a {
-    color: #245f8a;
+.word-list-attribution {
+    color: #777;
+    font-size: 18px !important;
+    line-height: 1.05 !important;
     overflow-wrap: anywhere;
 }
 
-.word-list-content p:last-child {
-    margin-bottom: 0;
+.word-list-attribution a,
+.word-list-content a {
+    color: #526d76;
 }
 
-
-/* Match Word List text inset to the other popup content and de-emphasise source attributions. */
-.word-list-content {
-    padding: 8px 22px 18px !important;
+.share-results-achievements {
+    padding: 0 18px;
+    text-align: center;
 }
 
-.word-list-content .word-list-attribution {
-    margin-top: 18px;
+.share-results-score {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: .9;
+}
+
+.share-results-stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 8px 0;
+}
+
+.share-results-stars svg {
+    width: 28px;
+    height: 28px;
+    fill: #fbb03b;
+}
+
+.share-results-crown {
+    margin: 4px 0;
+    font-size: 28px;
+}
+
+.share-results-subtitle {
+    margin: 8px 0 14px;
+    font-size: 23px;
+    line-height: 1.05;
+}
+
+.copy-share-results-button,
+.continue-playing-button {
+    display: block;
+    width: 100%;
+    margin: 8px 0 0;
+    padding: 6px 16px 7px;
+    border: 1px solid #264653;
+    border-radius: 999px;
+    background: #264653;
+    color: #ffffff;
+    font-size: 23px;
+    line-height: .9;
+    cursor: pointer;
+}
+
+.continue-playing-button {
+    background: #ffffff;
+    color: #264653;
+}
+
+.share-results-status {
+    margin: 7px 0 0;
+    font-size: 18px;
+}
+
+/* Generator remains usable for development without dominating the game layout. */
+#generatorPanel {
+    position: fixed;
+    z-index: 100;
+    top: 14px;
+    left: 14px;
+    width: 220px;
+    padding: 14px;
+    border: 0;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #264653;
+    box-shadow: none;
+}
+
+#generatorPanel h2 {
+    margin: 0 0 6px;
+    font-size: 25px;
+    line-height: .9;
+}
+
+.panel-description {
+    margin: 0 0 12px;
+    font-size: 18px;
+    line-height: 1.05;
+}
+
+.setting {
+    margin-bottom: 10px;
+}
+
+.setting label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.setting input {
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid #b7c4c8;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #264653;
+    font-family: var(--font);
     font-size: 20px;
-    line-height: 1.35;
-    color: #777;
 }
 
-.word-list-content .word-list-attribution a {
-    color: #666;
+.setting-help,
+.generator-message {
+    display: block;
+    margin-top: 3px;
+    font-size: 16px;
+    line-height: 1;
+}
+
+#generatorPanel #generateButton {
+    width: 100%;
+    padding: 5px 12px;
+    border: 0;
+    border-radius: 999px;
+    background: #264653;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    #generatorPanel {
+        position: static;
+        width: min(100%, 500px);
+        margin: 0 auto 14px;
+    }
 }
 
 @media (max-width: 600px) {
-    .word-list-content {
-        padding: 8px 16px 15px !important;
+    :root {
+        --gap: 4px;
+        --round: 7px;
     }
 
-    .word-list-content .word-list-attribution {
-        font-size: 18px;
+    body {
+        padding: 12px 10px 22px;
     }
-}
 
+    .board-utility-row {
+        margin-bottom: 10px;
+    }
 
-/* Give the Word List popup more room and add a wider text inset for readability. */
-.word-list-dialog {
-    width: min(600px, calc(100% - 32px));
-    max-width: 600px;
-    max-height: 85vh;
-}
+    .game-brand-title {
+        font-size: clamp(38px, 10vw, 48px);
+    }
 
-.word-list-content {
-    padding: 8px 34px 24px !important;
-}
+    .daily-puzzle-number {
+        margin-top: 4px;
+        font-size: 21px;
+    }
 
-@media (max-width: 600px) {
-    .word-list-dialog {
+    .board-top-row {
+        margin-bottom: 10px;
+    }
+
+    .score-box {
+        gap: 8px;
+    }
+
+    .achievement-stars {
+        gap: 3px;
+        font-size: 29px;
+    }
+
+    #tileRack {
+        margin-top: 10px;
+    }
+
+    .rack-actions {
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .rack-actions > button {
+        min-height: 38px;
+        padding: 5px 4px;
+        font-size: clamp(17px, 4.6vw, 21px);
+    }
+
+    .word-pill {
+        padding: 3px 10px 4px;
+        font-size: 21px;
+    }
+
+    .rules-dialog,
+    .share-results-dialog {
         width: calc(100% - 24px);
-        max-width: none;
-        max-height: 85vh;
+        max-height: 88vh;
     }
 
-    .word-list-content {
-        padding: 8px 22px 20px !important;
-    }
-}
-
-
-/* Visual-only update: darken the rack slots and frame the two utility icons
-   in square buttons sized to match the board's individual cells. */
-#tileRack .rack-slot {
-    background-color: #3c5965 !important;
-}
-
-#tileRack .rack-slot:not(:has(.rack-tile)) {
-    background-color: #3c5965 !important;
-}
-
-#tileRack .rack-tile {
-    background-color: #3c5965 !important;
-}
-
-/* Match the utility row's eight columns to the eight board columns. */
-.board-utility-row {
-    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
-}
-
-.board-utility-row > .share-results-icon-button {
-    grid-column: 1 !important;
-    width: calc((100% - 21px) / 8) !important;
-    aspect-ratio: 1 / 1 !important;
-    height: auto !important;
-    justify-self: center !important;
-    align-self: center !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 6px !important;
-    background: #3c5965 !important;
-    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.10),
-                inset -1px -1px 0 rgba(0, 0, 0, 0.20) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-.board-utility-row > .rules-help-button {
-    grid-column: 8 !important;
-    width: calc((100% - 21px) / 8) !important;
-    aspect-ratio: 1 / 1 !important;
-    height: auto !important;
-    justify-self: center !important;
-    align-self: center !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 6px !important;
-    background: #172c33 !important;
-    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.10),
-                inset -1px -1px 0 rgba(0, 0, 0, 0.20) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    top: 0 !important;
-}
-
-.board-utility-row > .game-branding {
-    grid-column: 2 / 8 !important;
-}
-
-.board-utility-row .share-results-icon-button svg {
-    width: 53% !important;
-    height: 53% !important;
-}
-
-.board-utility-row > .rules-help-button {
-    font-size: 48px !important;
-    line-height: 1 !important;
-}
-
-.board-utility-row > .share-results-icon-button:hover,
-.board-utility-row > .rules-help-button:hover {
-    background: #3c5965 !important;
-    opacity: 0.9 !important;
-    transform: none !important;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row {
-        grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    .rules-dialog-header,
+    .share-results-header {
+        min-height: 52px;
+        padding-top: 12px;
     }
 
-    .board-utility-row > .share-results-icon-button,
-    .board-utility-row > .rules-help-button {
-        width: calc((100% - 14px) / 8) !important;
-        border-radius: 5px !important;
+    .rules-dialog-header h2,
+    .share-results-header h2 {
+        font-size: 34px;
     }
 
-    .board-utility-row > .rules-help-button {
-        font-size: 40px !important;
+    .rules-content,
+    .share-results-content {
+        padding: 7px 16px 15px;
+    }
+
+    .rules-tab-panel p,
+    .word-list-content p {
+        font-size: 20px;
+    }
+
+    .rules-tabs {
+        gap: 5px;
+    }
+
+    .rules-tab {
+        padding: 4px 12px 5px;
+        font-size: 19px;
+    }
+
+    .rules-close-button {
+        top: 8px;
+        right: 8px;
     }
 }
 
-
-/* Ensure the utility buttons themselves render as visible board-cell-sized squares.
-   ID selectors are intentional here to override older button rules in this stylesheet. */
-#shareResultsButton,
-#rulesHelpButton {
-    box-sizing: border-box !important;
-    width: calc((500px - 27px) / 8) !important;
-    min-width: calc((500px - 27px) / 8) !important;
-    max-width: calc((500px - 27px) / 8) !important;
-    height: calc((500px - 27px) / 8) !important;
-    min-height: calc((500px - 27px) / 8) !important;
-    max-height: calc((500px - 27px) / 8) !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 6px !important;
-    background-color: #3c5965 !important;
-    background-image: none !important;
-    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.10),
-                inset -1px -1px 0 rgba(0, 0, 0, 0.20) !important;
-    overflow: hidden;
-}
-
-#shareResultsButton {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-#rulesHelpButton {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-@media (max-width: 600px) {
-    #shareResultsButton,
-    #rulesHelpButton {
-        width: calc((100vw - 20px - 21px) / 8) !important;
-        min-width: calc((100vw - 20px - 21px) / 8) !important;
-        max-width: calc((100vw - 20px - 21px) / 8) !important;
-        height: calc((100vw - 20px - 21px) / 8) !important;
-        min-height: calc((100vw - 20px - 21px) / 8) !important;
-        max-height: calc((100vw - 20px - 21px) / 8) !important;
-        border-radius: 5px !important;
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
     }
-}
-
-
-/* Final alignment: the board is 7x7 with 7px gaps (4px on mobile).
-   Use the same seven-column grid for the utility row so each icon square
-   matches one actual board cell at every viewport width. */
-.board-utility-row {
-    display: grid !important;
-    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
-    gap: 7px !important;
-    width: min(100%, 500px) !important;
-    align-items: center !important;
-}
-
-#shareResultsButton,
-#rulesHelpButton {
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    aspect-ratio: 1 / 1 !important;
-    justify-self: stretch !important;
-    align-self: stretch !important;
-}
-
-#shareResultsButton {
-    grid-column: 1 !important;
-}
-
-#rulesHelpButton {
-    grid-column: 7 !important;
-    position: static !important;
-}
-
-.board-utility-row > .game-branding {
-    grid-column: 2 / 7 !important;
-}
-
-@media (max-width: 600px) {
-    .board-utility-row {
-        gap: 4px !important;
-    }
-}
-
-
-/* Match the utility-button corner radius to the rounded board cells. */
-#shareResultsButton,
-#rulesHelpButton {
-    border-radius: 10px !important;
-}
-
-@media (max-width: 600px) {
-    #shareResultsButton,
-    #rulesHelpButton {
-        border-radius: 7px !important;
-    }
-}
-
-
-/* Keep rack slots dark while player letter tiles stay white with dark text. */
-#tileRack .rack-slot {
-    background-color: #3c5965 !important;
-}
-
-#tileRack .rack-tile {
-    background-color: #ffffff !important;
-    color: #222222 !important;
-    border-color: #d7d7d7 !important;
-}
-
-#tileRack .rack-tile .tile-letter,
-#tileRack .rack-tile .tile-value {
-    color: #222222 !important;
-}
-
-
-/* Flat tile and square styling: remove bevels and shadows throughout the game UI. */
-#board,
-#board .cell,
-#board .cell::before,
-#board .cell::after,
-#board .board-tile,
-#board .board-tile::before,
-#board .board-tile::after,
-#tileRack .rack-slot,
-#tileRack .rack-tile,
-#tileRack .rack-tile::before,
-#tileRack .rack-tile::after,
-.rack-tile.rack-tile-drag-visual,
-#shareResultsButton,
-#rulesHelpButton,
-.how-to-play-example,
-.how-to-play-example-cell,
-.how-to-play-example .how-to-play-tile,
-.how-to-play-bonus-tile,
-.how-to-play-score-example {
-    box-shadow: none !important;
-    filter: none !important;
-}
-
-/* Keep placement feedback outlines, but remove their inset shadow effect. */
-#board .cell.drag-over,
-#board .cell.selected-target,
-#board .cell.selected-target.double-letter,
-#board .cell.selected-target.triple-letter,
-#board .cell.selected-target.double-word,
-#board .cell.selected-target.triple-word,
-#board .cell.drag-over.double-letter,
-#board .cell.drag-over.triple-letter,
-#board .cell.drag-over.double-word,
-#board .cell.drag-over.triple-word {
-    box-shadow: none !important;
-}
-
-
-/* Remove outlines from all game squares and tile elements across the project. */
-#board .cell,
-#board .cell.drag-over,
-#board .cell.selected-target,
-#board .cell.original-tile,
-#board .cell.player-valid,
-#board .cell.player-invalid,
-#board .cell.player-isolated,
-#board .cell.double-letter,
-#board .cell.triple-letter,
-#board .cell.double-word,
-#board .cell.triple-word,
-#board .board-tile,
-#tileRack .rack-slot,
-#tileRack .rack-tile,
-#shareResultsButton,
-#rulesHelpButton,
-.how-to-play-example-cell,
-.how-to-play-example .how-to-play-tile,
-.how-to-play-bonus-tile {
-    outline: none !important;
-}
-
-/* Remove border strokes from the squares as well, leaving their existing fills intact. */
-#board .cell,
-#board .cell.original-tile,
-#board .cell.player-valid,
-#board .cell.player-invalid,
-#board .cell.player-isolated,
-#board .cell.double-letter,
-#board .cell.triple-letter,
-#board .cell.double-word,
-#board .cell.triple-word,
-#board .board-tile,
-#tileRack .rack-slot,
-#tileRack .rack-tile,
-#shareResultsButton,
-#rulesHelpButton,
-.how-to-play-example-cell,
-.how-to-play-example .how-to-play-tile,
-.how-to-play-bonus-tile {
-    border-color: transparent !important;
-}
-
-
-/* Definitive flat styling: override every earlier rule that reintroduces
-   outlines, borders, shadows, gradients, or pseudo-element bevels on game squares. */
-#board .cell,
-#board .cell *,
-#board .cell::before,
-#board .cell::after,
-#board .cell *::before,
-#board .cell *::after,
-#tileRack .rack-slot,
-#tileRack .rack-slot *,
-#tileRack .rack-slot::before,
-#tileRack .rack-slot::after,
-#tileRack .rack-slot *::before,
-#tileRack .rack-slot *::after,
-#shareResultsButton,
-#shareResultsButton *,
-#shareResultsButton::before,
-#shareResultsButton::after,
-#rulesHelpButton,
-#rulesHelpButton *,
-#rulesHelpButton::before,
-#rulesHelpButton::after,
-.how-to-play-example,
-.how-to-play-example *,
-.how-to-play-example::before,
-.how-to-play-example::after,
-.how-to-play-example *::before,
-.how-to-play-example *::after,
-.how-to-play-bonus-tile,
-.how-to-play-bonus-tile::before,
-.how-to-play-bonus-tile::after,
-.how-to-play-score-example,
-.how-to-play-score-example::before,
-.how-to-play-score-example::after {
-    box-shadow: none !important;
-    text-shadow: none !important;
-    outline: none !important;
-    border-style: none !important;
-    border-width: 0 !important;
-    background-image: none !important;
-    filter: none !important;
-}
-
-/* Placement highlights must also stay flat, including on premium squares. */
-#board .cell.drag-over,
-#board .cell.selected-target,
-#board .cell.drag-over.double-letter,
-#board .cell.drag-over.triple-letter,
-#board .cell.drag-over.double-word,
-#board .cell.drag-over.triple-word,
-#board .cell.selected-target.double-letter,
-#board .cell.selected-target.triple-letter,
-#board .cell.selected-target.double-word,
-#board .cell.selected-target.triple-word {
-    box-shadow: none !important;
-    outline: none !important;
-    border: 0 !important;
-}
-
-/* Remove any bevels implemented using pseudo-elements on rack and board tiles. */
-#board .cell::before,
-#board .cell::after,
-#board .board-tile::before,
-#board .board-tile::after,
-#tileRack .rack-slot::before,
-#tileRack .rack-slot::after,
-#tileRack .rack-tile::before,
-#tileRack .rack-tile::after {
-    content: none !important;
-    display: none !important;
 }
