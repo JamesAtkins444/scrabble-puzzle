@@ -1320,6 +1320,7 @@ dialog::backdrop {
 #scoreValue {
     font-size: clamp(46.8px, 9.6vw, 62.4px);
     line-height: .9;
+    transform: translateY(2px);
 }
 
 #scoreBox .achievement-stars {
