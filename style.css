@@ -143,8 +143,8 @@ button:focus-visible {
 
 .daily-puzzle-number {
     margin-top: 5px;
-    font-size: clamp(33px, 7.2vw, 42px);
-    font-weight: 400;
+    font-size: clamp(42px, 8.5vw, 58px);
+    font-weight: 300;
     line-height: .9;
     white-space: nowrap;
 }
@@ -1188,7 +1188,8 @@ dialog::backdrop {
 
     .daily-puzzle-number {
         margin-top: 4px;
-        font-size: 31.5px;
+        font-size: clamp(38px, 10vw, 48px);
+        font-weight: 300;
     }
 
     .board-top-row {
