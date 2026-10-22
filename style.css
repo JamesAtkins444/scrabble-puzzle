@@ -444,9 +444,14 @@ button:focus-visible {
     color: #ff0000;
 }
 
+/* Valid player tiles on premium squares use the premium label colour. */
+.board-tile.player-valid.player-on-double-letter,
 .cell.player-valid .board-tile.player-on-double-letter { background: #1aaa87; color: var(--white); }
+.board-tile.player-valid.player-on-triple-letter,
 .cell.player-valid .board-tile.player-on-triple-letter { background: #03916f; color: var(--white); }
+.board-tile.player-valid.player-on-double-word,
 .cell.player-valid .board-tile.player-on-double-word { background: #e0196a; color: var(--white); }
+.board-tile.player-valid.player-on-triple-word,
 .cell.player-valid .board-tile.player-on-triple-word { background: #ff4085; color: var(--white); }
 
 .cell.drag-over,
