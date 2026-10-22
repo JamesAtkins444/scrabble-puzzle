@@ -4552,3 +4552,17 @@ body {
         gap: 4px !important;
     }
 }
+
+
+/* Match the utility-button corner radius to the rounded board cells. */
+#shareResultsButton,
+#rulesHelpButton {
+    border-radius: 10px !important;
+}
+
+@media (max-width: 600px) {
+    #shareResultsButton,
+    #rulesHelpButton {
+        border-radius: 7px !important;
+    }
+}
