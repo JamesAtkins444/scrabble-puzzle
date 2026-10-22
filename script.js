@@ -3695,17 +3695,12 @@ function updateAchievementStars(
     // The crown is present but hidden until the player beats the solver.
     const crown = document.createElement("span");
     crown.className = "achievement-crown";
-    crown.textContent = "👑";
     crown.title = "Solver beaten!";
     crown.setAttribute("role", "img");
     crown.setAttribute("aria-label", "Solver beaten");
     crown.hidden = !beatsSolver;
     crown.style.display = beatsSolver ? "inline-flex" : "none";
-    crown.style.alignItems = "center";
-    crown.style.marginLeft = "5px";
-    crown.style.fontSize = "22px";
-    crown.style.lineHeight = "1";
-    crown.style.verticalAlign = "middle";
+    crown.innerHTML = '<img src="crown.svg" alt="" aria-hidden="true">';
     starsElement.appendChild(crown);
 
     starsElement.setAttribute(
