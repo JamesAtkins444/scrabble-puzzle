@@ -4583,3 +4583,42 @@ body {
 #tileRack .rack-tile .tile-value {
     color: #222222 !important;
 }
+
+
+/* Flat tile and square styling: remove bevels and shadows throughout the game UI. */
+#board,
+#board .cell,
+#board .cell::before,
+#board .cell::after,
+#board .board-tile,
+#board .board-tile::before,
+#board .board-tile::after,
+#tileRack .rack-slot,
+#tileRack .rack-tile,
+#tileRack .rack-tile::before,
+#tileRack .rack-tile::after,
+.rack-tile.rack-tile-drag-visual,
+#shareResultsButton,
+#rulesHelpButton,
+.how-to-play-example,
+.how-to-play-example-cell,
+.how-to-play-example .how-to-play-tile,
+.how-to-play-bonus-tile,
+.how-to-play-score-example {
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+/* Keep placement feedback outlines, but remove their inset shadow effect. */
+#board .cell.drag-over,
+#board .cell.selected-target,
+#board .cell.selected-target.double-letter,
+#board .cell.selected-target.triple-letter,
+#board .cell.selected-target.double-word,
+#board .cell.selected-target.triple-word,
+#board .cell.drag-over.double-letter,
+#board .cell.drag-over.triple-letter,
+#board .cell.drag-over.double-word,
+#board .cell.drag-over.triple-word {
+    box-shadow: none !important;
+}
