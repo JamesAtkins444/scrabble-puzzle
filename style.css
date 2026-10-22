@@ -1022,7 +1022,14 @@ dialog::backdrop {
 
 .share-results-crown {
     margin: 4px 0;
-    font-size: 28px;
+}
+
+.share-results-crown img {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 .share-results-subtitle {
