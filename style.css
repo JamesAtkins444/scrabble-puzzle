@@ -978,31 +978,41 @@ dialog::backdrop {
 
 .how-to-play-score-example {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     gap: 8px;
+    width: max-content;
+    max-width: 100%;
     margin: 12px auto;
     box-shadow: none;
+    transform: scale(1.2);
+    transform-origin: center;
 }
 
 .how-to-play-score-number {
-    font-size: 28px;
+    color: #264653;
+    font-size: clamp(46.8px, 9.6vw, 62.4px);
     font-weight: 700;
+    line-height: .9;
+    white-space: nowrap;
+    transform: translateY(2px);
 }
 
-.how-to-play-score-stars {
-    display: flex;
+.how-to-play-score-example .achievement-stars {
+    justify-content: center;
+    align-items: baseline;
     gap: 3px;
+    min-height: 0;
+    margin: 0;
+    font-size: 33.048px;
+    line-height: 1;
+    white-space: nowrap;
+    transform: translateY(calc(0.08em + 2px));
 }
 
-.how-to-play-score-star {
-    width: 22px;
-    height: 22px;
-    fill: #c9d0d2;
-}
-
-.how-to-play-score-star.is-earned {
-    fill: #fbb03b;
+.how-to-play-score-example .achievement-star {
+    width: .85em;
+    height: .85em;
 }
 
 .word-list-link {
@@ -1256,6 +1266,14 @@ dialog::backdrop {
         min-height: 42px;
         padding: 6px 4px 7px;
         font-size: 22px;
+    }
+
+    .how-to-play-score-number {
+        font-size: clamp(42px, 10.8vw, 52.8px);
+    }
+
+    .how-to-play-score-example .achievement-stars {
+        font-size: 28.458px;
     }
 
     .rules-close-button {
