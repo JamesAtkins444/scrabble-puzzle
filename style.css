@@ -916,6 +916,14 @@ dialog::backdrop {
     line-height: 1.05;
 }
 
+.how-to-play-scoring-tile {
+    width: 54px;
+    height: 54px;
+    margin: 8px auto 12px;
+    cursor: default;
+    touch-action: auto;
+}
+
 .how-to-play-example {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
