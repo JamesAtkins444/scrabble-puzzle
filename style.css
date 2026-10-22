@@ -594,9 +594,9 @@ button:focus-visible {
     min-height: 42px;
     margin: 0;
     padding: 6px 8px;
-    border: 1px solid var(--white);
-    border-radius: 999px;
-    background: transparent;
+    border: 0;
+    border-radius: 0;
+    background: var(--rack-slot);
     color: var(--white);
     box-shadow: none;
     font-size: clamp(19px, 3.9vw, 25px);
@@ -604,6 +604,8 @@ button:focus-visible {
     line-height: .85;
     text-align: center;
     cursor: pointer;
+    -webkit-mask: url("button-shape.svg") center / 100% 100% no-repeat;
+    mask: url("button-shape.svg") center / 100% 100% no-repeat;
     transition: background-color 120ms ease, color 120ms ease;
 }
 
