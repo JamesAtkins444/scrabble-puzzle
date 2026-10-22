@@ -925,6 +925,10 @@ dialog::backdrop {
     touch-action: auto;
 }
 
+.how-to-play-scoring-tile .tile-letter {
+    font-size: clamp(25.2px, 5.4vw, 38.7px);
+}
+
 .how-to-play-example {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
