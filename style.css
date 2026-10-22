@@ -1240,6 +1240,10 @@ dialog::backdrop {
         font-size: 21px;
     }
 
+    .how-to-play-example {
+        width: min(112.5px, 100%);
+    }
+
     .rules-dialog,
     .share-results-dialog {
         width: calc(100% - 24px);
