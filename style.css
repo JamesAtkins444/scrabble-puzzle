@@ -1311,7 +1311,8 @@ dialog::backdrop {
     max-width: none;
     position: relative;
     left: 0;
-    transform: none;
+    transform: scale(1.2);
+    transform-origin: left center;
     margin: 0;
     padding: 0;
 }
