@@ -604,8 +604,14 @@ button:focus-visible {
     line-height: .85;
     text-align: center;
     cursor: pointer;
-    -webkit-mask: url("button-shape.svg") center / 100% 100% no-repeat;
-    mask: url("button-shape.svg") center / 100% 100% no-repeat;
+    -webkit-mask-image: url("/button-shape.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 100% 100%;
+    mask-image: url("/button-shape.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100% 100%;
     transition: background-color 120ms ease, color 120ms ease;
 }
 
