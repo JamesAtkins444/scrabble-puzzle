@@ -221,8 +221,8 @@ button:focus-visible {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: .935em;
-    height: .935em;
+    width: .85em;
+    height: .85em;
     margin-left: 5px;
     vertical-align: baseline;
 }
