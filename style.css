@@ -1246,8 +1246,8 @@ dialog::backdrop {
 #scoreBox.score-box {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    justify-content: flex-start;
     gap: 8px;
     width: max-content;
     max-width: none;
@@ -1265,11 +1265,13 @@ dialog::backdrop {
 
 #scoreBox .achievement-stars {
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     gap: 3px;
     margin: 0;
     font-size: 36px;
+    line-height: 1;
     white-space: nowrap;
+    transform: translateY(0.08em);
 }
 
 @media (max-width: 600px) {
