@@ -373,13 +373,19 @@ button:focus-visible {
     display: none !important;
 }
 
+.tile-letter {
+    display: block;
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+}
+
 .board-tile .tile-letter {
     position: relative;
     z-index: 2;
     color: inherit;
     font-size: clamp(28px, 6vw, 43px);
     font-weight: 700;
-    line-height: .8;
 }
 
 .board-tile .tile-value {
@@ -580,7 +586,6 @@ button:focus-visible {
     color: #172c33;
     font-size: clamp(28px, 6vw, 43px);
     font-weight: 700;
-    line-height: .8;
 }
 
 .rack-tile .tile-value {
