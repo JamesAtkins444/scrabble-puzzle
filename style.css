@@ -1037,7 +1037,7 @@ dialog::backdrop {
     border: 0;
     border-radius: var(--round);
     background: var(--cell);
-    font-size: 24px;
+    font-size: clamp(31px, 6.6vw, 47px);
     font-weight: 700;
     box-shadow: none;
 }
