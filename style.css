@@ -884,7 +884,8 @@ dialog {
 /* Share and Word List dialogs size to their own content, unlike How to Play. */
 .share-results-dialog,
 .word-list-dialog {
-    height: auto;
+    height: max-content;
+    min-height: 0;
 }
 
 dialog::backdrop {
