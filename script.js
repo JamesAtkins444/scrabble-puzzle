@@ -3397,10 +3397,8 @@ function getPlayerScoringWords() {
 
 function calculatePlayerScore() {
 
-    // When the solver answer is revealed, use the solver's turn-by-turn
-    // scoring total. Re-scoring every tile on the completed board would apply
-    // reusable premium squares to all historical turns at once and inflate
-    // the displayed total compared with the solver's move summary.
+    // When the solver answer is revealed, show its score calculated from
+    // the completed board using the same final-word rules as player scoring.
     if (answerRevealed && bestSolution) {
         // Show the solver's score on the board without overwriting the player's
         // own score, which is used by the share popup and personal-best tracking.
@@ -4249,18 +4247,40 @@ function findBestSolution() {
     const tilesRemaining = initialRackTiles.length - tilesUsed;
     const fullSolution = tilesRemaining === 0;
 
-    // A one-turn full-rack move already includes its +50 or +100 bonus.
-    // If all rack tiles are used across multiple turns, award +50 on completion.
-    const completionBonus = fullSolution && moves.length > 1 ? 50 : 0;
-    totalScore += completionBonus;
+    // Score the completed solver board using the same rule as the player:
+    // each final word containing at least one placed tile is counted once.
+    // This prevents an earlier word (for example WOO) being counted again
+    // after a later move extends it (to WOOER).
+    const allPlacedKeys = new Set(allNewKeys);
+    const finalScoringWords = getAllWords(currentBoard)
+        .filter(info =>
+            getWordCells(info.word, info.row, info.col, info.direction)
+                .some(cell => allPlacedKeys.has(keyForCell(cell.row, cell.col)))
+        )
+        .map(info => ({
+            ...info,
+            score: scoreWordOnCandidateBoard(currentBoard, currentBoard, info, allPlacedKeys)
+        }));
+
+    totalScore = finalScoringWords.reduce((sum, info) => sum + info.score, 0);
+
+    let completionBonus = 0;
+    if (fullSolution) {
+        const usesAllTilesInOneWord = finalScoringWords.some(info =>
+            getWordCells(info.word, info.row, info.col, info.direction)
+                .filter(cell => allPlacedKeys.has(keyForCell(cell.row, cell.col))).length === initialRackTiles.length
+        );
+        completionBonus = usesAllTilesInOneWord ? 100 : 50;
+        totalScore += completionBonus;
+    }
 
     bestSolution = tilesUsed > 0 ? {
         board: cloneBoard(currentBoard),
         newKeys: allNewKeys,
         score: totalScore,
         completionBonus,
-        words: allScoringWords.map(info => info.word),
-        scoringWords: allScoringWords,
+        words: finalScoringWords.map(info => info.word),
+        scoringWords: finalScoringWords,
         moves,
         tilesUsed,
         tilesRemaining,
