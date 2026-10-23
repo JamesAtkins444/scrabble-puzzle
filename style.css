@@ -386,7 +386,7 @@ button:focus-visible {
     position: relative;
     z-index: 2;
     color: inherit;
-    font-size: clamp(28px, 6vw, 43px);
+    font-size: clamp(31px, 6.6vw, 47px);
     font-weight: 700;
 }
 
@@ -586,7 +586,7 @@ button:focus-visible {
 
 .rack-tile .tile-letter {
     color: #172c33;
-    font-size: clamp(28px, 6vw, 43px);
+    font-size: clamp(31px, 6.6vw, 47px);
     font-weight: 700;
 }
 
@@ -945,7 +945,7 @@ dialog::backdrop {
 }
 
 .how-to-play-scoring-tile .tile-letter {
-    font-size: clamp(25.2px, 5.4vw, 38.7px);
+    font-size: clamp(27.7px, 5.94vw, 42.6px);
 }
 
 .how-to-play-example {
