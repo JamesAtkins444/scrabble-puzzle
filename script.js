@@ -3731,33 +3731,20 @@ function updateAchievementStars(
         `${earnedStars} of 3 stars earned${beatsSolver ? "; solver beaten" : ""}`
     );
 
-    // Automatically show Share only when the player reaches a new personal
-    // milestone: three stars once, then the crown once if earned later.
-    // The milestone is stored across daily puzzles in this browser.
+    // Automatically show Share when the player reaches a new milestone
+    // during this page visit. These variables reset on reload, so the popup
+    // can appear again after refreshing the page.
     const newlyEarnedThreeStars =
         earnedStars === 3 && previousAchievementStars < 3;
     const newlyEarnedCrown = beatsSolver && !previousAchievementCrown;
-    const shareMilestoneKey = "toucanagramsSharePopupMilestone";
     const currentMilestone = beatsSolver ? 2 : (earnedStars === 3 ? 1 : 0);
     let shouldOpenShareDialog = false;
 
-    try {
-        const savedMilestone = Number(localStorage.getItem(shareMilestoneKey) || 0);
-        if (
-            ((newlyEarnedThreeStars && currentMilestone > savedMilestone) ||
-            (newlyEarnedCrown && currentMilestone > savedMilestone))
-        ) {
-            localStorage.setItem(shareMilestoneKey, String(currentMilestone));
-            shouldOpenShareDialog = true;
-        }
-    } catch (error) {
-        // If browser storage is unavailable, avoid repeatedly opening on score updates.
-        if (
-            (newlyEarnedThreeStars && currentMilestone > previousAutoShareMilestone) ||
-            (newlyEarnedCrown && currentMilestone > previousAutoShareMilestone)
-        ) {
-            shouldOpenShareDialog = true;
-        }
+    if (
+        ((newlyEarnedThreeStars && currentMilestone > previousAutoShareMilestone) ||
+        (newlyEarnedCrown && currentMilestone > previousAutoShareMilestone))
+    ) {
+        shouldOpenShareDialog = true;
     }
     previousAutoShareMilestone = Math.max(previousAutoShareMilestone, currentMilestone);
 
