@@ -1253,6 +1253,12 @@ dialog::backdrop {
     .share-results-crown {
         font-size: 28.458px;
     }
+
+    .share-results-stars,
+    .share-results-crown {
+        position: relative;
+        top: 3px;
+    }
 }
 
 .share-results-subtitle {
