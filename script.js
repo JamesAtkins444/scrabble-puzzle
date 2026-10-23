@@ -2288,12 +2288,17 @@ function displayTileRack() {
                     const element = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY);
                     const cell = element && element.closest ? element.closest(".cell") : null;
                     const rackTile = element && element.closest ? element.closest(".rack-tile") : null;
+                    const rackSlot = element && element.closest ? element.closest(".rack-slot") : null;
 
                     if (rackTileDrag.target && rackTileDrag.target !== cell) {
                         rackTileDrag.target.classList.remove("drag-over");
                     }
                     if (rackTileDrag.rackTarget && rackTileDrag.rackTarget.tile !== rackTile) {
                         rackTileDrag.rackTarget.tile.classList.remove("rack-reorder-target");
+                    }
+                    if (rackTileDrag.rackSlotTarget && rackTileDrag.rackSlotTarget !== rackSlot) {
+                        rackTileDrag.rackSlotTarget.classList.remove("drag-over");
+                        rackTileDrag.rackSlotTarget = null;
                     }
 
                     const cellRow = cell ? Number(cell.dataset.row) : -1;
@@ -2315,7 +2320,7 @@ function displayTileRack() {
                     rackTileDrag.target = (isEmptyCell || isPlayerTileCell) ? cell : null;
                     if (rackTileDrag.target) rackTileDrag.target.classList.add("drag-over");
 
-                    // When released over another rack tile, remember which side it is on.
+                    // When released over another rack tile, lift it to indicate a swap target.
                     rackTileDrag.rackTarget = null;
                     if (!rackTileDrag.target && rackTile && rackTile !== tile) {
                         const rect = rackTile.getBoundingClientRect();
@@ -2325,6 +2330,10 @@ function displayTileRack() {
                             before: moveEvent.clientX < rect.left + rect.width / 2
                         };
                         rackTile.classList.add("rack-reorder-target");
+                    } else if (!rackTileDrag.target && rackSlot && !rackSlot.querySelector(".rack-tile:not(.rack-tile-drag-source)")) {
+                        // Highlight an empty rack slot with the same green outline as a board target.
+                        rackSlot.classList.add("drag-over");
+                        rackTileDrag.rackSlotTarget = rackSlot;
                     }
                 };
 
@@ -2334,6 +2343,7 @@ function displayTileRack() {
                     const drag = rackTileDrag;
                     if (drag.target) drag.target.classList.remove("drag-over");
                     if (drag.rackTarget) drag.rackTarget.tile.classList.remove("rack-reorder-target");
+                    if (drag.rackSlotTarget) drag.rackSlotTarget.classList.remove("drag-over");
                     if (drag.visual) drag.visual.remove();
                     tile.classList.remove("rack-tile-drag-source");
 
@@ -2425,6 +2435,7 @@ function displayTileRack() {
                     if (!rackTileDrag || cancelEvent.pointerId !== rackTileDrag.pointerId) return;
                     if (rackTileDrag.target) rackTileDrag.target.classList.remove("drag-over");
                     if (rackTileDrag.rackTarget) rackTileDrag.rackTarget.tile.classList.remove("rack-reorder-target");
+                    if (rackTileDrag.rackSlotTarget) rackTileDrag.rackSlotTarget.classList.remove("drag-over");
                     if (rackTileDrag.visual) rackTileDrag.visual.remove();
                     tile.classList.remove("rack-tile-drag-source");
                     rackTileDrag = null;
