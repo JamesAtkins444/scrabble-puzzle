@@ -1035,6 +1035,46 @@ dialog::backdrop {
 
 
 
+
+.how-to-play-bonus-all-tiles-copy {
+    margin-top: 16px;
+}
+
+.how-to-play-bonus-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin: 12px auto 0;
+}
+
+.how-to-play-bonus-pill {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 13px;
+    border-radius: 999px;
+    background: #3c5965;
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.how-to-play-bonus-pill-label,
+.how-to-play-bonus-pill-score {
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+}
+
+.how-to-play-bonus-pill-score {
+    font-size: .88em;
+}
+
 .how-to-play-bonus-tiles {
     display: flex;
     justify-content: center;
