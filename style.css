@@ -131,6 +131,25 @@ button:focus-visible {
     height: 53%;
 }
 
+#shareResultsButton.has-share-achievement svg path {
+    fill: #fbb03b;
+}
+
+#shareResultsButton.has-share-achievement {
+    animation: share-achievement-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes share-achievement-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.045); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #shareResultsButton.has-share-achievement {
+        animation: none;
+    }
+}
+
 #shareResultsButton:hover,
 #rulesHelpButton:hover {
     opacity: .85;
