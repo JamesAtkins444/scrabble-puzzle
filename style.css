@@ -961,6 +961,11 @@ dialog::backdrop {
     touch-action: auto;
 }
 
+/* Hide score values only in the General tab's example board. */
+#rulesPanelGeneral .how-to-play-example .tile-value {
+    display: none;
+}
+
 .how-to-play-example {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
