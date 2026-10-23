@@ -109,9 +109,9 @@ button:focus-visible {
 #rulesHelpButton {
     grid-column: 7;
     font-family: var(--font);
-    font-size: clamp(36px, 8vw, 48px);
+    font-size: clamp(42px, 8.5vw, 58px);
     font-weight: 700;
-    line-height: .8;
+    line-height: .78;
 }
 
 #shareResultsButton svg {
