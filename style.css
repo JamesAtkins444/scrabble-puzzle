@@ -118,6 +118,14 @@ button:focus-visible {
     justify-content: center;
 }
 
+.rules-help-glyph {
+    display: block;
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    transform: translateY(3px);
+}
+
 #shareResultsButton svg {
     display: block;
     width: 53%;
