@@ -4985,14 +4985,50 @@ if (rulesHelpButton && rulesDialog) {
         if (!rulesDialog.open) return;
 
         const activeTab = rulesTabs.find(tab => tab.classList.contains("is-active"))?.dataset.rulesTab || "general";
-        const referenceTab = window.matchMedia("(max-width: 600px)").matches ? "scoring" : "general";
+        const dialogs = [
+            rulesDialog,
+            document.getElementById("wordListDialog"),
+            shareResultsDialog
+        ].filter(Boolean);
+        const root = document.documentElement;
+        const previousHeight = root.style.getPropertyValue("--standard-popup-height");
+        root.style.removeProperty("--standard-popup-height");
 
-        activateRulesTab(referenceTab);
-        const referenceHeight = rulesDialog.getBoundingClientRect().height;
+        const dialogStates = dialogs.map(dialog => ({
+            dialog,
+            wasOpen: dialog.open,
+            height: dialog.style.height,
+            maxHeight: dialog.style.maxHeight
+        }));
+
+        let tallestHeight = 0;
+        dialogs.forEach(dialog => {
+            if (!dialog.open) dialog.setAttribute("open", "");
+            dialog.style.height = "auto";
+            dialog.style.maxHeight = "none";
+        });
+
+        rulesTabs.forEach(tab => {
+            activateRulesTab(tab.dataset.rulesTab);
+            tallestHeight = Math.max(tallestHeight, rulesDialog.getBoundingClientRect().height);
+        });
+
+        dialogs.forEach(dialog => {
+            if (dialog !== rulesDialog) {
+                tallestHeight = Math.max(tallestHeight, dialog.getBoundingClientRect().height);
+            }
+        });
+
+        dialogStates.forEach(({ dialog, wasOpen, height, maxHeight }) => {
+            if (!wasOpen) dialog.removeAttribute("open");
+            dialog.style.height = height;
+            dialog.style.maxHeight = maxHeight;
+        });
         activateRulesTab(activeTab);
 
-        if (referenceHeight > 0) {
-            document.documentElement.style.setProperty("--standard-popup-height", `${referenceHeight}px`);
+        if (previousHeight) root.style.setProperty("--standard-popup-height", previousHeight);
+        if (tallestHeight > 0) {
+            root.style.setProperty("--standard-popup-height", `${tallestHeight}px`);
         }
     }
 
