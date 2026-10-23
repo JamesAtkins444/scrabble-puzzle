@@ -1230,7 +1230,7 @@ dialog::backdrop {
     justify-content: center;
     width: .85em;
     height: .85em;
-    margin: 0 0 0 5px;
+    margin: 0;
     vertical-align: baseline;
 }
 
