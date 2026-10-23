@@ -333,7 +333,9 @@ button:focus-visible {
     color: inherit;
     font-size: clamp(19px, 4.2vw, 29px);
     font-weight: 700;
-    line-height: .8;
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
     letter-spacing: 0;
     pointer-events: none;
 }
