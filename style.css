@@ -952,6 +952,23 @@ dialog::backdrop {
     line-height: 1.05;
 }
 
+/* Subtle pulse draws attention to the Q tile's score in the Scoring tab. */
+#rulesPanelScoring .how-to-play-scoring-tile .tile-value {
+    animation: scoring-value-pulse 2.8s ease-in-out infinite;
+    transform-origin: bottom right;
+}
+
+@keyframes scoring-value-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.78; transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #rulesPanelScoring .how-to-play-scoring-tile .tile-value {
+        animation: none;
+    }
+}
+
 .how-to-play-scoring-tile {
     width: 73.33px;
     height: 73.33px;
