@@ -1368,6 +1368,12 @@ dialog::backdrop {
         font-size: 21px;
     }
 
+    .how-to-play-bonus-pill {
+        gap: 7.0875px;
+        padding: 10.125px 13.1625px;
+        font-size: 23.2875px;
+    }
+
     .how-to-play-example {
         width: min(120px, 100%);
     }
