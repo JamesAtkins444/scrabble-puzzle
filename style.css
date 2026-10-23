@@ -700,7 +700,9 @@ button:focus-visible {
     box-shadow: none;
     font-size: clamp(19px, 3.9vw, 25px);
     font-weight: 700;
-    line-height: .85;
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
     text-align: center;
     cursor: pointer;
     -webkit-mask-image: url("/button-shape.svg");
