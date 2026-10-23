@@ -1,0 +1,320 @@
+{
+  "date": "2026-11-21",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "T",
+      "U",
+      "R",
+      "F",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "I",
+      "K",
+      "I",
+      "N",
+      "G"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "T",
+      "U",
+      "R",
+      "F",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "I",
+      "K",
+      "I",
+      "N",
+      "G"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,1": "triple-word",
+    "6,5": "double-word",
+    "1,0": "triple-letter",
+    "6,3": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "HIKING",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RUSK",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "TURFY",
+      "row": 1,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "T",
+    "A",
+    "R",
+    "N",
+    "U",
+    "O"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "R",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "T",
+        "U",
+        "R",
+        "F",
+        "Y"
+      ],
+      [
+        "",
+        "T",
+        "",
+        "S",
+        "",
+        "",
+        "U"
+      ],
+      [
+        "",
+        "H",
+        "I",
+        "K",
+        "I",
+        "N",
+        "G"
+      ],
+      [
+        "",
+        "O",
+        "",
+        "",
+        "",
+        "",
+        "A"
+      ],
+      [
+        "",
+        "R",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "N",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "2,1",
+      "4,1",
+      "5,1",
+      "6,1",
+      "2,6",
+      "4,6"
+    ],
+    "score": 82,
+    "completionBonus": 50,
+    "words": [
+      "THORN",
+      "YUGA"
+    ],
+    "scoringWords": [
+      {
+        "word": "THORN",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 24,
+        "move": 1
+      },
+      {
+        "word": "YUGA",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 8,
+        "move": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "THORN",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 24,
+        "usedTiles": 4,
+        "newKeys": [
+          "2,1",
+          "4,1",
+          "5,1",
+          "6,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "THORN",
+            "row": 2,
+            "col": 1,
+            "direction": "vertical",
+            "score": 24
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "YUGA",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 8,
+        "usedTiles": 2,
+        "newKeys": [
+          "2,6",
+          "4,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "YUGA",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 8
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1248
+  }
+}
