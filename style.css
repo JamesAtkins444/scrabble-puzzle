@@ -588,7 +588,7 @@ button:focus-visible {
     right: 9%;
     bottom: 6%;
     color: #172c33;
-    font-size: clamp(10px, 1.9vw, 14px);
+    font-size: clamp(18.75px, 3.5625vw, 26.25px);
     font-weight: 700;
     line-height: .8;
 }
@@ -1205,7 +1205,7 @@ dialog::backdrop {
     }
 
     .rack-tile .tile-value {
-        font-size: clamp(7.5px, 1.425vw, 10.5px);
+        font-size: clamp(14.0625px, 2.671875vw, 19.6875px);
     }
 }
 
