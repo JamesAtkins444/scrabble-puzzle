@@ -761,19 +761,27 @@ button:focus-visible {
 
 .score-bonus {
     display: inline-flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    color: var(--white);
+    gap: 7px;
+    padding: 5px 13px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--page);
+    box-shadow: none;
     font-size: 23px;
     font-weight: 700;
-    line-height: .9;
     text-align: center;
 }
 
 .score-bonus-label {
-    color: var(--white);
+    color: var(--page);
+    font-weight: 700;
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
 }
 
 #nextPuzzleButton {
