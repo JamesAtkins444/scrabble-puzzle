@@ -1054,12 +1054,12 @@ dialog::backdrop {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 7px;
-    padding: 10px 13px;
+    gap: 9.45px;
+    padding: 13.5px 17.55px;
     border-radius: 999px;
-    background: #3c5965;
+    background: #172c33;
     color: var(--white);
-    font-size: 23px;
+    font-size: 31.05px;
     font-weight: 700;
     text-align: center;
 }
