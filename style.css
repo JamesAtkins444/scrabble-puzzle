@@ -1033,16 +1033,17 @@ dialog::backdrop {
     width: 48px;
     aspect-ratio: 1 / 1;
     border: 0;
-    border-radius: 6px;
-    color: #ffffff;
+    border-radius: var(--round);
+    background: var(--cell);
     font-size: 24px;
+    font-weight: 700;
     box-shadow: none;
 }
 
-.how-to-play-double-letter { background: #1aaa87; }
-.how-to-play-triple-letter { background: #03916f; }
-.how-to-play-double-word { background: #e0196a; }
-.how-to-play-triple-word { background: #ff4085; }
+.how-to-play-double-letter { color: #1aaa87; }
+.how-to-play-triple-letter { color: #03916f; }
+.how-to-play-double-word { color: #e0196a; }
+.how-to-play-triple-word { color: #ff4085; }
 
 .how-to-play-score-example {
     display: flex;
