@@ -4998,11 +4998,15 @@ if (rulesHelpButton && rulesDialog) {
         root.style.removeProperty("--standard-popup-height");
         const savedStyles = dialogs.map(dialog => ({
             dialog,
+            wasOpen: dialog.open,
             height: dialog.style.height,
             maxHeight: dialog.style.maxHeight
         }));
 
         dialogs.forEach(dialog => {
+            // Closed dialogs are display:none, so open them temporarily to
+            // measure their natural content dimensions.
+            if (!dialog.open) dialog.setAttribute("open", "");
             dialog.style.height = "auto";
             dialog.style.maxHeight = "none";
         });
@@ -5038,7 +5042,8 @@ if (rulesHelpButton && rulesDialog) {
             );
         }
 
-        savedStyles.forEach(({ dialog, height, maxHeight }) => {
+        savedStyles.forEach(({ dialog, wasOpen, height, maxHeight }) => {
+            if (!wasOpen) dialog.removeAttribute("open");
             dialog.style.height = height;
             dialog.style.maxHeight = maxHeight;
         });
@@ -5118,6 +5123,7 @@ if (rulesHelpButton && rulesDialog) {
             } else {
                 wordListDialog.setAttribute("open", "");
             }
+            syncStandardPopupHeight();
         });
 
         if (closeWordListButton) {
@@ -5367,6 +5373,7 @@ if (shareResultsButton && shareResultsDialog) {
         } else {
             shareResultsDialog.setAttribute("open", "");
         }
+        syncStandardPopupHeight();
     });
 
     if (closeShareResultsButton) {
