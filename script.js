@@ -3774,6 +3774,10 @@ function updateAchievementStars(
         }
     }
 
+    if (shareResultsButton) {
+        shareResultsButton.classList.toggle("has-share-achievement", earnedStars >= 2 || beatsSolver);
+    }
+
     previousAchievementStars = earnedStars;
     previousAchievementCrown = beatsSolver;
 }
