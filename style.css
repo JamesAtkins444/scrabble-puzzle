@@ -583,7 +583,8 @@ button:focus-visible {
 }
 
 .rack-tile.selected {
-    outline: 0 !important;
+    outline: 4px solid #1aaa87 !important;
+    outline-offset: -4px;
     border: 0 !important;
     transform: none;
     box-shadow: none !important;
