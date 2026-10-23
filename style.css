@@ -608,11 +608,11 @@ button:focus-visible {
 }
 
 
+/* Selected rack tiles lift slightly instead of showing a green outline. */
 .rack-tile.selected {
-    outline: 4px solid #1aaa87 !important;
-    outline-offset: -4px;
+    outline: 0 !important;
     border: 0 !important;
-    transform: none;
+    transform: translateY(-8px);
     box-shadow: none !important;
 }
 
