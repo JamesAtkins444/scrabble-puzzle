@@ -14,7 +14,7 @@
     [
       "",
       "",
-      "",
+      "B",
       "",
       "D",
       "",
@@ -32,7 +32,7 @@
     [
       "",
       "",
-      "",
+      "N",
       "",
       "L",
       "",
@@ -41,7 +41,7 @@
     [
       "",
       "",
-      "",
+      "A",
       "",
       "V",
       "",
@@ -79,7 +79,7 @@
     [
       "",
       "",
-      "",
+      "B",
       "",
       "D",
       "",
@@ -97,7 +97,7 @@
     [
       "",
       "",
-      "",
+      "N",
       "",
       "L",
       "",
@@ -106,7 +106,7 @@
     [
       "",
       "",
-      "",
+      "A",
       "",
       "V",
       "",
@@ -133,8 +133,7 @@
   ],
   "bonusSquares": {
     "0,6": "double-word",
-    "0,0": "triple-letter",
-    "0,2": "double-letter"
+    "0,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -154,6 +153,12 @@
       "row": 2,
       "col": 1,
       "direction": "horizontal"
+    },
+    {
+      "word": "BANAL",
+      "row": 1,
+      "col": 2,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -178,7 +183,7 @@
       [
         "A",
         "",
-        "",
+        "B",
         "",
         "D",
         "",
@@ -196,7 +201,7 @@
       [
         "A",
         "I",
-        "D",
+        "N",
         "",
         "L",
         "",
@@ -205,7 +210,7 @@
       [
         "",
         "",
-        "",
+        "A",
         "",
         "V",
         "",
@@ -225,7 +230,7 @@
         "",
         "",
         "",
-        "",
+        "D",
         "",
         ""
       ]
@@ -235,17 +240,17 @@
       "1,0",
       "2,0",
       "3,0",
-      "3,1",
-      "3,2"
+      "6,4",
+      "3,1"
     ],
-    "score": 83,
+    "score": 90,
     "completionBonus": 50,
     "words": [
       "SLAVER",
-      "AID",
+      "AIN",
       "VASA",
       "LI",
-      "AD"
+      "DELVED"
     ],
     "scoringWords": [
       {
@@ -256,11 +261,11 @@
         "score": 9
       },
       {
-        "word": "AID",
+        "word": "AIN",
         "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 4
+        "score": 3
       },
       {
         "word": "VASA",
@@ -277,11 +282,11 @@
         "score": 2
       },
       {
-        "word": "AD",
-        "row": 2,
-        "col": 2,
+        "word": "DELVED",
+        "row": 1,
+        "col": 4,
         "direction": "vertical",
-        "score": 3
+        "score": 11
       }
     ],
     "moves": [
@@ -318,23 +323,43 @@
       },
       {
         "turn": 2,
-        "word": "AID",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 9,
-        "usedTiles": 2,
+        "word": "DELVED",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 11,
+        "usedTiles": 1,
         "newKeys": [
-          "3,1",
-          "3,2"
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "AID",
+            "word": "DELVED",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 11
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "AIN",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "AIN",
             "row": 3,
             "col": 0,
             "direction": "horizontal",
-            "score": 4
+            "score": 3
           },
           {
             "word": "LI",
@@ -342,13 +367,6 @@
             "col": 1,
             "direction": "vertical",
             "score": 2
-          },
-          {
-            "word": "AD",
-            "row": 2,
-            "col": 2,
-            "direction": "vertical",
-            "score": 3
           }
         ]
       }
@@ -357,6 +375,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 940
+    "visitedCandidates": 833
   }
 }

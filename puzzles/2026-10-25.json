@@ -42,10 +42,10 @@
       "",
       "",
       "T",
-      "",
-      "",
-      "",
-      ""
+      "A",
+      "B",
+      "O",
+      "O"
     ],
     [
       "",
@@ -107,10 +107,10 @@
       "",
       "",
       "T",
-      "",
-      "",
-      "",
-      ""
+      "A",
+      "B",
+      "O",
+      "O"
     ],
     [
       "",
@@ -132,11 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "5,5": "triple-word",
-    "6,2": "double-word",
-    "2,6": "double-letter",
-    "4,0": "triple-letter",
-    "6,0": "triple-letter"
+    "2,6": "double-word",
+    "4,0": "double-letter",
+    "6,1": "triple-letter",
+    "6,3": "triple-letter",
+    "6,5": "double-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +155,12 @@
       "word": "PREED",
       "row": 2,
       "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "TABOO",
+      "row": 4,
+      "col": 2,
       "direction": "horizontal"
     }
   ],
@@ -181,9 +187,9 @@
         "",
         "",
         "R",
-        "",
-        "",
-        "",
+        "U",
+        "L",
+        "E",
         ""
       ],
       [
@@ -199,27 +205,27 @@
         "",
         "",
         "S",
-        "M",
-        "E",
-        "W",
+        "",
+        "",
+        "",
         ""
       ],
       [
         "",
         "",
         "T",
-        "U",
-        "L",
-        "E",
-        ""
+        "A",
+        "B",
+        "O",
+        "O"
       ],
       [
         "",
         "",
         "",
-        "",
-        "",
-        "",
+        "M",
+        "E",
+        "W",
         ""
       ],
       [
@@ -233,54 +239,78 @@
       ]
     ],
     "newKeys": [
-      "3,3",
-      "3,4",
-      "3,5",
-      "4,3",
-      "4,4",
-      "4,5"
+      "5,3",
+      "5,4",
+      "5,5",
+      "1,3",
+      "1,4",
+      "1,5"
     ],
-    "score": 77,
+    "score": 87,
     "completionBonus": 50,
     "words": [
-      "SMEW",
-      "TULE",
-      "EMU",
-      "DEL",
-      "WE"
+      "RULE",
+      "MEW",
+      "HUE",
+      "AM",
+      "OLD",
+      "BE",
+      "NE",
+      "OW"
     ],
     "scoringWords": [
       {
-        "word": "SMEW",
-        "row": 3,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 9
-      },
-      {
-        "word": "TULE",
-        "row": 4,
+        "word": "RULE",
+        "row": 1,
         "col": 2,
         "direction": "horizontal",
         "score": 4
       },
       {
-        "word": "EMU",
-        "row": 2,
+        "word": "MEW",
+        "row": 5,
         "col": 3,
-        "direction": "vertical",
-        "score": 5
+        "direction": "horizontal",
+        "score": 8
       },
       {
-        "word": "DEL",
-        "row": 2,
+        "word": "HUE",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 6
+      },
+      {
+        "word": "AM",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "OLD",
+        "row": 0,
         "col": 4,
         "direction": "vertical",
         "score": 4
       },
       {
-        "word": "WE",
-        "row": 3,
+        "word": "BE",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "NE",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "OW",
+        "row": 4,
         "col": 5,
         "direction": "vertical",
         "score": 5
@@ -289,82 +319,89 @@
     "moves": [
       {
         "turn": 1,
-        "word": "SMEW",
-        "row": 3,
-        "col": 2,
+        "word": "MEW",
+        "row": 5,
+        "col": 3,
         "direction": "horizontal",
-        "score": 16,
+        "score": 21,
         "usedTiles": 3,
         "newKeys": [
-          "3,3",
-          "3,4",
-          "3,5"
+          "5,3",
+          "5,4",
+          "5,5"
         ],
         "scoringWords": [
           {
-            "word": "SMEW",
-            "row": 3,
-            "col": 2,
+            "word": "MEW",
+            "row": 5,
+            "col": 3,
             "direction": "horizontal",
-            "score": 9
+            "score": 8
           },
           {
-            "word": "EM",
-            "row": 2,
+            "word": "AM",
+            "row": 4,
             "col": 3,
             "direction": "vertical",
             "score": 4
           },
           {
-            "word": "DE",
-            "row": 2,
+            "word": "BE",
+            "row": 4,
             "col": 4,
             "direction": "vertical",
-            "score": 3
+            "score": 4
+          },
+          {
+            "word": "OW",
+            "row": 4,
+            "col": 5,
+            "direction": "vertical",
+            "score": 5
           }
         ]
       },
       {
         "turn": 2,
-        "word": "TULE",
-        "row": 4,
+        "word": "RULE",
+        "row": 1,
         "col": 2,
         "direction": "horizontal",
-        "score": 18,
+        "score": 16,
         "usedTiles": 3,
         "newKeys": [
-          "4,3",
-          "4,4",
-          "4,5"
+          "1,3",
+          "1,4",
+          "1,5"
         ],
         "scoringWords": [
           {
-            "word": "TULE",
-            "row": 4,
+            "word": "RULE",
+            "row": 1,
             "col": 2,
             "direction": "horizontal",
             "score": 4
           },
           {
-            "word": "EMU",
-            "row": 2,
+            "word": "HUE",
+            "row": 0,
             "col": 3,
             "direction": "vertical",
-            "score": 5
+            "score": 6
           },
           {
-            "word": "DEL",
-            "row": 2,
+            "word": "OLD",
+            "row": 0,
             "col": 4,
             "direction": "vertical",
             "score": 4
           },
           {
-            "word": "WE",
-            "row": 3,
+            "word": "NE",
+            "row": 0,
             "col": 5,
             "direction": "vertical",
-            "score": 5
+            "score": 2
           }
         ]
       }
@@ -373,6 +410,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 607
+    "visitedCandidates": 656
   }
 }

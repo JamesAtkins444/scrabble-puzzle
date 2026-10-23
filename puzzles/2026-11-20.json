@@ -13,46 +13,46 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "R",
-      "E",
-      "D",
+      "L",
+      "O",
+      "O",
+      "P",
       "Y",
-      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "P",
+      "",
+      "",
       "",
       ""
     ],
     [
       "",
-      "T",
       "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "Q",
-      "U",
       "I",
+      "",
+      "G",
+      "",
+      ""
+    ],
+    [
+      "B",
+      "A",
       "N",
-      "I",
+      "Y",
+      "A",
       "N",
       ""
     ],
     [
       "",
-      "I",
       "",
+      "G",
       "",
-      "",
+      "M",
       "",
       ""
     ],
@@ -61,7 +61,7 @@
       "",
       "",
       "",
-      "",
+      "A",
       "",
       ""
     ]
@@ -78,46 +78,46 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "R",
-      "E",
-      "D",
+      "L",
+      "O",
+      "O",
+      "P",
       "Y",
-      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "P",
+      "",
+      "",
       "",
       ""
     ],
     [
       "",
-      "T",
       "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "Q",
-      "U",
       "I",
+      "",
+      "G",
+      "",
+      ""
+    ],
+    [
+      "B",
+      "A",
       "N",
-      "I",
+      "Y",
+      "A",
       "N",
       ""
     ],
     [
       "",
-      "I",
       "",
+      "G",
       "",
-      "",
+      "M",
       "",
       ""
     ],
@@ -126,99 +126,102 @@
       "",
       "",
       "",
-      "",
+      "A",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,6": "double-word",
-    "0,1": "double-letter",
-    "0,3": "double-letter",
-    "6,6": "triple-letter",
-    "2,6": "triple-letter"
+    "6,6": "double-word",
+    "6,0": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "QUININ",
+      "word": "BANYAN",
       "row": 4,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "ETUI",
-      "row": 2,
-      "col": 1,
+      "word": "OPING",
+      "row": 1,
+      "col": 2,
       "direction": "vertical"
     },
     {
-      "word": "REDYE",
-      "row": 2,
-      "col": 0,
+      "word": "LOOPY",
+      "row": 1,
+      "col": 1,
       "direction": "horizontal"
+    },
+    {
+      "word": "GAMA",
+      "row": 3,
+      "col": 4,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "N",
+    "O",
+    "R",
+    "A",
+    "C",
     "E",
-    "S",
-    "E",
-    "G",
-    "O"
+    "P"
   ],
   "bestSolution": {
     "board": [
       [
+        "P",
+        "A",
+        "C",
         "",
         "",
         "",
-        "",
-        "",
-        "",
-        "G"
+        ""
       ],
       [
         "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "E"
+        "L",
+        "O",
+        "O",
+        "P",
+        "Y",
+        ""
       ],
       [
         "R",
-        "E",
-        "D",
-        "Y",
-        "E",
         "",
-        "N"
+        "P",
+        "",
+        "",
+        "",
+        ""
       ],
       [
-        "",
-        "T",
-        "",
         "O",
         "",
+        "I",
         "",
-        "E"
+        "G",
+        "",
+        ""
       ],
       [
-        "Q",
-        "U",
-        "I",
+        "B",
+        "A",
         "N",
-        "I",
+        "Y",
+        "A",
         "N",
-        "S"
+        ""
       ],
       [
+        "E",
         "",
-        "I",
+        "G",
         "",
-        "",
-        "",
+        "M",
         "",
         ""
       ],
@@ -227,98 +230,113 @@
         "",
         "",
         "",
-        "",
+        "A",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "0,6",
-      "1,6",
-      "2,6",
-      "3,6",
-      "4,6",
-      "3,3"
+      "0,0",
+      "0,1",
+      "0,2",
+      "2,0",
+      "3,0",
+      "5,0"
     ],
-    "score": 88,
+    "score": 76,
     "completionBonus": 50,
     "words": [
-      "QUININS",
-      "YON",
-      "GENES"
+      "PAC",
+      "ROBE",
+      "AL",
+      "COPING"
     ],
     "scoringWords": [
       {
-        "word": "QUININS",
-        "row": 4,
+        "word": "PAC",
+        "row": 0,
         "col": 0,
         "direction": "horizontal",
-        "score": 16
+        "score": 7
       },
       {
-        "word": "YON",
+        "word": "ROBE",
         "row": 2,
-        "col": 3,
+        "col": 0,
         "direction": "vertical",
         "score": 6
       },
       {
-        "word": "GENES",
+        "word": "AL",
         "row": 0,
-        "col": 6,
+        "col": 1,
         "direction": "vertical",
-        "score": 16
+        "score": 2
+      },
+      {
+        "word": "COPING",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 11
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "GENES",
+        "word": "PAC",
         "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 32,
-        "usedTiles": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 3,
         "newKeys": [
-          "0,6",
-          "1,6",
-          "2,6",
-          "3,6",
-          "4,6"
+          "0,0",
+          "0,1",
+          "0,2"
         ],
         "scoringWords": [
           {
-            "word": "QUININS",
-            "row": 4,
+            "word": "PAC",
+            "row": 0,
             "col": 0,
             "direction": "horizontal",
-            "score": 16
+            "score": 7
           },
           {
-            "word": "GENES",
+            "word": "AL",
             "row": 0,
-            "col": 6,
+            "col": 1,
             "direction": "vertical",
-            "score": 16
+            "score": 2
+          },
+          {
+            "word": "COPING",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 11
           }
         ]
       },
       {
         "turn": 2,
-        "word": "YON",
+        "word": "ROBE",
         "row": 2,
-        "col": 3,
+        "col": 0,
         "direction": "vertical",
         "score": 6,
-        "usedTiles": 1,
+        "usedTiles": 3,
         "newKeys": [
-          "3,3"
+          "2,0",
+          "3,0",
+          "5,0"
         ],
         "scoringWords": [
           {
-            "word": "YON",
+            "word": "ROBE",
             "row": 2,
-            "col": 3,
+            "col": 0,
             "direction": "vertical",
             "score": 6
           }
@@ -329,6 +347,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1113
+    "visitedCandidates": 1655
   }
 }

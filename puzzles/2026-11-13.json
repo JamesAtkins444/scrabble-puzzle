@@ -4,54 +4,54 @@
   "board": [
     [
       "",
+      "S",
+      "K",
+      "Y",
+      "M",
+      "A",
+      "N"
+    ],
+    [
       "",
-      "N",
       "",
       "",
+      "",
+      "A",
       "",
       ""
     ],
     [
       "",
       "",
-      "E",
+      "F",
+      "",
+      "S",
+      "",
+      ""
+    ],
+    [
       "",
       "",
+      "L",
+      "",
+      "O",
       "",
       ""
     ],
     [
       "",
       "D",
-      "A",
-      "T",
-      "A",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "T",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "W",
-      "E",
-      "K",
-      "A",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
+      "U",
+      "R",
       "N",
       "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "",
       "",
       "",
       ""
@@ -59,7 +59,7 @@
     [
       "",
       "",
-      "",
+      "E",
       "",
       "",
       "",
@@ -69,54 +69,54 @@
   "originalBoard": [
     [
       "",
+      "S",
+      "K",
+      "Y",
+      "M",
+      "A",
+      "N"
+    ],
+    [
       "",
-      "N",
       "",
       "",
+      "",
+      "A",
       "",
       ""
     ],
     [
       "",
       "",
-      "E",
+      "F",
+      "",
+      "S",
+      "",
+      ""
+    ],
+    [
       "",
       "",
+      "L",
+      "",
+      "O",
       "",
       ""
     ],
     [
       "",
       "D",
-      "A",
-      "T",
-      "A",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "T",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "W",
-      "E",
-      "K",
-      "A",
-      "",
-      ""
-    ],
-    [
-      "",
-      "",
+      "U",
+      "R",
       "N",
       "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "",
       "",
       "",
       ""
@@ -124,7 +124,7 @@
     [
       "",
       "",
-      "",
+      "E",
       "",
       "",
       "",
@@ -132,65 +132,62 @@
     ]
   ],
   "bonusSquares": {
-    "3,6": "double-word",
-    "0,4": "double-letter",
-    "1,6": "double-letter",
-    "6,4": "triple-letter",
+    "6,4": "double-word",
+    "3,6": "triple-letter",
+    "2,0": "double-letter",
+    "6,0": "double-letter",
     "6,6": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "NEATEN",
+      "word": "SKYMAN",
       "row": 0,
-      "col": 2,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "MASON",
+      "row": 0,
+      "col": 4,
       "direction": "vertical"
     },
     {
-      "word": "WEKA",
+      "word": "DURN",
       "row": 4,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "DATA",
+      "word": "FLUME",
       "row": 2,
-      "col": 1,
-      "direction": "horizontal"
+      "col": 2,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
+    "B",
+    "P",
+    "A",
+    "E",
     "D",
-    "O",
-    "E",
-    "E",
-    "Y",
-    "K"
+    "E"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "",
-        "N",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "E",
-        "",
+        "S",
         "K",
-        "E",
-        "Y"
+        "Y",
+        "M",
+        "A",
+        "N"
       ],
       [
         "",
-        "D",
-        "A",
-        "T",
+        "",
+        "",
+        "",
         "A",
         "",
         ""
@@ -198,90 +195,83 @@
       [
         "",
         "",
-        "T",
+        "F",
+        "",
+        "S",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "L",
+        "",
         "O",
         "",
-        "",
         ""
       ],
       [
-        "",
-        "W",
-        "E",
-        "K",
-        "A",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "N",
-        "E",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
         "",
         "D",
+        "U",
+        "R",
+        "N",
+        "",
+        ""
+      ],
+      [
+        "",
+        "A",
+        "M",
+        "",
         "",
         "",
         ""
+      ],
+      [
+        "",
+        "B",
+        "E",
+        "E",
+        "P",
+        "E",
+        "D"
       ]
     ],
     "newKeys": [
-      "1,4",
-      "1,5",
-      "1,6",
-      "3,3",
-      "5,3",
-      "6,3"
+      "6,1",
+      "6,3",
+      "6,4",
+      "6,5",
+      "6,6",
+      "5,1"
     ],
-    "score": 84,
+    "score": 90,
     "completionBonus": 50,
     "words": [
-      "KEY",
-      "TO",
-      "NE",
-      "TOKED",
-      "KA"
+      "AM",
+      "BEEPED",
+      "DAB"
     ],
     "scoringWords": [
       {
-        "word": "KEY",
-        "row": 1,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 14
-      },
-      {
-        "word": "TO",
-        "row": 3,
-        "col": 2,
-        "direction": "horizontal",
-        "score": 2
-      },
-      {
-        "word": "NE",
+        "word": "AM",
         "row": 5,
-        "col": 2,
+        "col": 1,
         "direction": "horizontal",
-        "score": 2
+        "score": 4
       },
       {
-        "word": "TOKED",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 10
+        "word": "BEEPED",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 30
       },
       {
-        "word": "KA",
-        "row": 1,
-        "col": 4,
+        "word": "DAB",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
         "score": 6
       }
@@ -289,68 +279,54 @@
     "moves": [
       {
         "turn": 1,
-        "word": "KEY",
-        "row": 1,
-        "col": 4,
+        "word": "BEEPED",
+        "row": 6,
+        "col": 1,
         "direction": "horizontal",
-        "score": 20,
-        "usedTiles": 3,
+        "score": 30,
+        "usedTiles": 5,
         "newKeys": [
-          "1,4",
-          "1,5",
-          "1,6"
+          "6,1",
+          "6,3",
+          "6,4",
+          "6,5",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "KEY",
-            "row": 1,
-            "col": 4,
+            "word": "BEEPED",
+            "row": 6,
+            "col": 1,
             "direction": "horizontal",
-            "score": 14
-          },
-          {
-            "word": "KA",
-            "row": 1,
-            "col": 4,
-            "direction": "vertical",
-            "score": 6
+            "score": 30
           }
         ]
       },
       {
         "turn": 2,
-        "word": "TOKED",
-        "row": 2,
-        "col": 3,
+        "word": "DAB",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
-        "score": 14,
-        "usedTiles": 3,
+        "score": 10,
+        "usedTiles": 1,
         "newKeys": [
-          "3,3",
-          "5,3",
-          "6,3"
+          "5,1"
         ],
         "scoringWords": [
           {
-            "word": "TO",
-            "row": 3,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "NE",
+            "word": "AM",
             "row": 5,
-            "col": 2,
+            "col": 1,
             "direction": "horizontal",
-            "score": 2
+            "score": 4
           },
           {
-            "word": "TOKED",
-            "row": 2,
-            "col": 3,
+            "word": "DAB",
+            "row": 4,
+            "col": 1,
             "direction": "vertical",
-            "score": 10
+            "score": 6
           }
         ]
       }
@@ -359,6 +335,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1022
+    "visitedCandidates": 833
   }
 }

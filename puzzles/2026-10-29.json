@@ -57,11 +57,11 @@
       ""
     ],
     [
-      "",
+      "B",
       "E",
-      "",
-      "",
-      "",
+      "D",
+      "I",
+      "M",
       "",
       ""
     ]
@@ -122,21 +122,21 @@
       ""
     ],
     [
-      "",
+      "B",
       "E",
-      "",
-      "",
-      "",
+      "D",
+      "I",
+      "M",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,3": "double-word",
-    "4,6": "triple-letter",
-    "2,6": "double-letter",
+    "4,6": "double-word",
+    "0,6": "triple-letter",
+    "2,6": "triple-letter",
     "6,6": "double-letter",
-    "0,6": "triple-letter"
+    "0,3": "double-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +156,12 @@
       "row": 2,
       "col": 4,
       "direction": "vertical"
+    },
+    {
+      "word": "BEDIM",
+      "row": 6,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -193,16 +199,16 @@
         "C",
         "H",
         "E",
-        "R"
+        "D"
       ],
       [
-        "O",
+        "",
         "R",
         "",
         "",
         "A",
         "",
-        ""
+        "R"
       ],
       [
         "",
@@ -211,7 +217,7 @@
         "",
         "R",
         "",
-        ""
+        "O"
       ],
       [
         "",
@@ -220,110 +226,56 @@
         "",
         "E",
         "",
-        ""
-      ],
-      [
-        "",
-        "E",
-        "",
-        "",
-        "D",
-        "E",
         "V"
+      ],
+      [
+        "B",
+        "E",
+        "D",
+        "I",
+        "M",
+        "",
+        "E"
       ]
     ],
     "newKeys": [
-      "6,4",
-      "6,5",
-      "6,6",
       "2,5",
       "2,6",
-      "3,0"
+      "3,6",
+      "4,6",
+      "5,6",
+      "6,6"
     ],
-    "score": 87,
+    "score": 95,
     "completionBonus": 50,
     "words": [
-      "NOTCHER",
-      "OR",
-      "DEV",
-      "NO",
-      "HARED"
+      "NOTCHED",
+      "DROVE"
     ],
     "scoringWords": [
       {
-        "word": "NOTCHER",
+        "word": "NOTCHED",
         "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 13
+        "score": 17
       },
       {
-        "word": "OR",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2
-      },
-      {
-        "word": "DEV",
-        "row": 6,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 11
-      },
-      {
-        "word": "NO",
+        "word": "DROVE",
         "row": 2,
-        "col": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 2
-      },
-      {
-        "word": "HARED",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
-        "score": 9
+        "score": 28
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DEV",
-        "row": 6,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 20,
-        "usedTiles": 3,
-        "newKeys": [
-          "6,4",
-          "6,5",
-          "6,6"
-        ],
-        "scoringWords": [
-          {
-            "word": "DEV",
-            "row": 6,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 11
-          },
-          {
-            "word": "HARED",
-            "row": 2,
-            "col": 4,
-            "direction": "vertical",
-            "score": 9
-          }
-        ]
-      },
-      {
-        "turn": 2,
-        "word": "NOTCHER",
+        "word": "NOTCHED",
         "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 13,
+        "score": 17,
         "usedTiles": 2,
         "newKeys": [
           "2,5",
@@ -331,39 +283,35 @@
         ],
         "scoringWords": [
           {
-            "word": "NOTCHER",
+            "word": "NOTCHED",
             "row": 2,
             "col": 0,
             "direction": "horizontal",
-            "score": 13
+            "score": 17
           }
         ]
       },
       {
-        "turn": 3,
-        "word": "NO",
+        "turn": 2,
+        "word": "DROVE",
         "row": 2,
-        "col": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 4,
-        "usedTiles": 1,
+        "score": 28,
+        "usedTiles": 4,
         "newKeys": [
-          "3,0"
+          "3,6",
+          "4,6",
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "OR",
-            "row": 3,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "NO",
+            "word": "DROVE",
             "row": 2,
-            "col": 0,
+            "col": 6,
             "direction": "vertical",
-            "score": 2
+            "score": 28
           }
         ]
       }
@@ -372,6 +320,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1280
+    "visitedCandidates": 1112
   }
 }

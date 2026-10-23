@@ -21,9 +21,9 @@
       ""
     ],
     [
-      "",
-      "",
-      "",
+      "R",
+      "I",
+      "D",
       "E",
       "",
       "P",
@@ -86,9 +86,9 @@
       ""
     ],
     [
-      "",
-      "",
-      "",
+      "R",
+      "I",
+      "D",
       "E",
       "",
       "P",
@@ -132,10 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "5,0": "triple-word",
-    "6,3": "double-word",
-    "2,0": "double-letter",
-    "6,6": "double-letter"
+    "6,0": "triple-word",
+    "6,2": "double-word",
+    "6,4": "double-letter",
+    "4,1": "triple-letter",
+    "6,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +156,12 @@
       "row": 0,
       "col": 5,
       "direction": "vertical"
+    },
+    {
+      "word": "RIDE",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -177,7 +184,7 @@
         ""
       ],
       [
-        "E",
+        "",
         "",
         "",
         "L",
@@ -186,16 +193,16 @@
         ""
       ],
       [
-        "A",
-        "",
-        "",
+        "R",
+        "I",
+        "D",
         "E",
         "",
         "P",
         ""
       ],
       [
-        "F",
+        "E",
         "",
         "",
         "G",
@@ -205,7 +212,7 @@
       ],
       [
         "E",
-        "",
+        "N",
         "",
         "",
         "",
@@ -213,8 +220,8 @@
         ""
       ],
       [
-        "N",
-        "",
+        "F",
+        "A",
         "",
         "",
         "",
@@ -232,39 +239,61 @@
       ]
     ],
     "newKeys": [
-      "1,0",
-      "2,0",
       "3,0",
       "4,0",
       "5,0",
-      "6,0"
+      "6,0",
+      "4,1",
+      "5,1"
     ],
-    "score": 136,
-    "completionBonus": 100,
+    "score": 87,
+    "completionBonus": 50,
     "words": [
-      "DEAFENS"
+      "EN",
+      "FA",
+      "REEFS",
+      "NA"
     ],
     "scoringWords": [
       {
-        "word": "DEAFENS",
-        "row": 0,
+        "word": "EN",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "FA",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5
+      },
+      {
+        "word": "REEFS",
+        "row": 2,
         "col": 0,
         "direction": "vertical",
-        "score": 36
+        "score": 24
+      },
+      {
+        "word": "NA",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DEAFENS",
-        "row": 0,
+        "word": "REEFS",
+        "row": 2,
         "col": 0,
         "direction": "vertical",
-        "score": 136,
-        "usedTiles": 6,
+        "score": 24,
+        "usedTiles": 4,
         "newKeys": [
-          "1,0",
-          "2,0",
           "3,0",
           "4,0",
           "5,0",
@@ -272,11 +301,47 @@
         ],
         "scoringWords": [
           {
-            "word": "DEAFENS",
-            "row": 0,
+            "word": "REEFS",
+            "row": 2,
             "col": 0,
             "direction": "vertical",
-            "score": 36
+            "score": 24
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "NA",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 13,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,1",
+          "5,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "EN",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "FA",
+            "row": 5,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "NA",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
           }
         ]
       }
@@ -285,6 +350,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 885
+    "visitedCandidates": 904
   }
 }

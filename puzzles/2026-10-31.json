@@ -30,11 +30,11 @@
       ""
     ],
     [
-      "",
-      "",
-      "",
+      "T",
+      "R",
+      "A",
       "I",
-      "",
+      "L",
       "",
       ""
     ],
@@ -95,11 +95,11 @@
       ""
     ],
     [
-      "",
-      "",
-      "",
+      "T",
+      "R",
+      "A",
       "I",
-      "",
+      "L",
       "",
       ""
     ],
@@ -132,10 +132,9 @@
     ]
   ],
   "bonusSquares": {
-    "6,0": "triple-word",
-    "4,5": "double-word",
-    "6,6": "triple-letter",
-    "3,1": "triple-letter"
+    "6,6": "triple-word",
+    "5,0": "double-word",
+    "4,6": "double-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +154,12 @@
       "row": 0,
       "col": 1,
       "direction": "horizontal"
+    },
+    {
+      "word": "TRAIL",
+      "row": 3,
+      "col": 0,
+      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -173,11 +178,11 @@
         "A",
         "T",
         "",
-        "W",
+        "O",
         ""
       ],
       [
-        "",
+        "W",
         "",
         "T",
         "I",
@@ -186,34 +191,34 @@
         ""
       ],
       [
-        "",
+        "E",
         "",
         "",
         "R",
         "",
+        "",
+        ""
+      ],
+      [
         "T",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
+        "R",
+        "A",
         "I",
+        "L",
         "",
-        "E",
         ""
       ],
       [
-        "",
+        "T",
         "",
         "",
         "N",
-        "O",
-        "D",
-        "E"
+        "",
+        "",
+        ""
       ],
       [
-        "",
+        "E",
         "",
         "",
         "G",
@@ -222,7 +227,7 @@
         ""
       ],
       [
-        "",
+        "D",
         "",
         "",
         "",
@@ -232,79 +237,79 @@
       ]
     ],
     "newKeys": [
-      "0,5",
-      "2,5",
-      "3,5",
-      "4,5",
-      "4,4",
-      "4,6"
+      "1,0",
+      "2,0",
+      "4,0",
+      "5,0",
+      "6,0",
+      "0,5"
     ],
-    "score": 84,
+    "score": 75,
     "completionBonus": 50,
     "words": [
-      "NODE",
-      "WYTED"
+      "WETTED",
+      "OY"
     ],
     "scoringWords": [
       {
-        "word": "NODE",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 10
+        "word": "WETTED",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 20
       },
       {
-        "word": "WYTED",
+        "word": "OY",
         "row": 0,
         "col": 5,
         "direction": "vertical",
-        "score": 24
+        "score": 5
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "WYTED",
-        "row": 0,
-        "col": 5,
+        "word": "WETTED",
+        "row": 1,
+        "col": 0,
         "direction": "vertical",
-        "score": 24,
-        "usedTiles": 4,
+        "score": 20,
+        "usedTiles": 5,
         "newKeys": [
-          "0,5",
-          "2,5",
-          "3,5",
-          "4,5"
+          "1,0",
+          "2,0",
+          "4,0",
+          "5,0",
+          "6,0"
         ],
         "scoringWords": [
           {
-            "word": "WYTED",
-            "row": 0,
-            "col": 5,
+            "word": "WETTED",
+            "row": 1,
+            "col": 0,
             "direction": "vertical",
-            "score": 24
+            "score": 20
           }
         ]
       },
       {
         "turn": 2,
-        "word": "NODE",
-        "row": 4,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 10,
-        "usedTiles": 2,
+        "word": "OY",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 5,
+        "usedTiles": 1,
         "newKeys": [
-          "4,4",
-          "4,6"
+          "0,5"
         ],
         "scoringWords": [
           {
-            "word": "NODE",
-            "row": 4,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 10
+            "word": "OY",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 5
           }
         ]
       }
@@ -313,6 +318,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1166
+    "visitedCandidates": 1066
   }
 }

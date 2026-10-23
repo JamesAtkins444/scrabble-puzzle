@@ -35,7 +35,7 @@
       "",
       "Z",
       "",
-      "",
+      "S",
       ""
     ],
     [
@@ -53,7 +53,7 @@
       "",
       "",
       "",
-      "",
+      "A",
       ""
     ],
     [
@@ -62,7 +62,7 @@
       "",
       "",
       "",
-      "",
+      "R",
       ""
     ]
   ],
@@ -100,7 +100,7 @@
       "",
       "Z",
       "",
-      "",
+      "S",
       ""
     ],
     [
@@ -118,7 +118,7 @@
       "",
       "",
       "",
-      "",
+      "A",
       ""
     ],
     [
@@ -127,16 +127,15 @@
       "",
       "",
       "",
-      "",
+      "R",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,2": "double-word",
-    "6,6": "triple-letter",
-    "6,4": "double-letter",
-    "2,1": "triple-letter",
-    "2,6": "double-letter"
+    "6,0": "double-word",
+    "4,0": "triple-letter",
+    "6,3": "double-letter",
+    "2,1": "double-letter"
   },
   "puzzleWords": [
     {
@@ -156,6 +155,12 @@
       "row": 4,
       "col": 2,
       "direction": "horizontal"
+    },
+    {
+      "word": "SPAR",
+      "row": 3,
+      "col": 5,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -201,7 +206,7 @@
         "",
         "Z",
         "",
-        "",
+        "S",
         ""
       ],
       [
@@ -219,7 +224,7 @@
         "",
         "",
         "",
-        "",
+        "A",
         ""
       ],
       [
@@ -228,7 +233,7 @@
         "",
         "",
         "",
-        "",
+        "R",
         ""
       ]
     ],
@@ -240,7 +245,7 @@
       "1,6",
       "2,1"
     ],
-    "score": 73,
+    "score": 72,
     "completionBonus": 50,
     "words": [
       "ARIOSE",
@@ -263,7 +268,7 @@
         "row": 0,
         "col": 1,
         "direction": "vertical",
-        "score": 7
+        "score": 6
       },
       {
         "word": "AR",
@@ -361,7 +366,7 @@
         "row": 0,
         "col": 1,
         "direction": "vertical",
-        "score": 7,
+        "score": 6,
         "usedTiles": 1,
         "newKeys": [
           "2,1"
@@ -372,7 +377,7 @@
             "row": 0,
             "col": 1,
             "direction": "vertical",
-            "score": 7
+            "score": 6
           }
         ]
       }
@@ -381,6 +386,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 2088
+    "visitedCandidates": 1969
   }
 }

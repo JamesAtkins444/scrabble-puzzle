@@ -23,7 +23,7 @@
     [
       "",
       "",
-      "",
+      "M",
       "",
       "M",
       "",
@@ -41,7 +41,7 @@
     [
       "",
       "",
-      "",
+      "T",
       "",
       "X",
       "",
@@ -50,7 +50,7 @@
     [
       "",
       "",
-      "",
+      "E",
       "",
       "E",
       "",
@@ -88,7 +88,7 @@
     [
       "",
       "",
-      "",
+      "M",
       "",
       "M",
       "",
@@ -106,7 +106,7 @@
     [
       "",
       "",
-      "",
+      "T",
       "",
       "X",
       "",
@@ -115,7 +115,7 @@
     [
       "",
       "",
-      "",
+      "E",
       "",
       "E",
       "",
@@ -132,10 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "0,1": "triple-word",
-    "5,1": "double-word",
-    "0,6": "double-letter",
-    "0,4": "triple-letter"
+    "5,0": "double-word",
+    "0,6": "triple-letter",
+    "0,0": "double-letter",
+    "0,2": "triple-letter",
+    "0,4": "double-letter"
   },
   "puzzleWords": [
     {
@@ -155,6 +156,12 @@
       "row": 2,
       "col": 4,
       "direction": "vertical"
+    },
+    {
+      "word": "MUTE",
+      "row": 2,
+      "col": 2,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -169,16 +176,7 @@
     "board": [
       [
         "",
-        "M",
-        "I",
         "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "E",
         "",
         "",
         "",
@@ -186,10 +184,19 @@
         ""
       ],
       [
+        "",
+        "",
         "",
         "N",
         "",
         "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "M",
+        "E",
         "M",
         "",
         "S"
@@ -205,8 +212,8 @@
       ],
       [
         "",
-        "E",
-        "",
+        "I",
+        "T",
         "",
         "X",
         "",
@@ -214,8 +221,8 @@
       ],
       [
         "",
-        "D",
         "",
+        "E",
         "",
         "E",
         "",
@@ -224,87 +231,160 @@
       [
         "",
         "",
-        "",
-        "",
+        "D",
+        "E",
         "R",
-        "",
+        "M",
         ""
       ]
     ],
     "newKeys": [
-      "0,1",
-      "1,1",
-      "2,1",
-      "4,1",
-      "5,1",
-      "0,2"
+      "6,2",
+      "6,3",
+      "6,5",
+      "1,3",
+      "2,3",
+      "4,1"
     ],
-    "score": 116,
+    "score": 81,
     "completionBonus": 50,
     "words": [
-      "MI",
-      "MENSED"
+      "MEM",
+      "IT",
+      "DERM",
+      "SI",
+      "MUTED",
+      "NEB"
     ],
     "scoringWords": [
       {
-        "word": "MI",
-        "row": 0,
-        "col": 1,
+        "word": "MEM",
+        "row": 2,
+        "col": 2,
         "direction": "horizontal",
-        "score": 12
+        "score": 7
       },
       {
-        "word": "MENSED",
-        "row": 0,
+        "word": "IT",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "DERM",
+        "row": 6,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 7
+      },
+      {
+        "word": "SI",
+        "row": 3,
         "col": 1,
         "direction": "vertical",
-        "score": 54
+        "score": 2
+      },
+      {
+        "word": "MUTED",
+        "row": 2,
+        "col": 2,
+        "direction": "vertical",
+        "score": 8
+      },
+      {
+        "word": "NEB",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "MENSED",
-        "row": 0,
-        "col": 1,
-        "direction": "vertical",
-        "score": 54,
-        "usedTiles": 5,
+        "word": "DERM",
+        "row": 6,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 15,
+        "usedTiles": 3,
         "newKeys": [
-          "0,1",
-          "1,1",
-          "2,1",
-          "4,1",
-          "5,1"
+          "6,2",
+          "6,3",
+          "6,5"
         ],
         "scoringWords": [
           {
-            "word": "MENSED",
-            "row": 0,
-            "col": 1,
+            "word": "DERM",
+            "row": 6,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "MUTED",
+            "row": 2,
+            "col": 2,
             "direction": "vertical",
-            "score": 54
+            "score": 8
           }
         ]
       },
       {
         "turn": 2,
-        "word": "MI",
-        "row": 0,
-        "col": 1,
-        "direction": "horizontal",
+        "word": "NEB",
+        "row": 1,
+        "col": 3,
+        "direction": "vertical",
         "score": 12,
-        "usedTiles": 1,
+        "usedTiles": 2,
         "newKeys": [
-          "0,2"
+          "1,3",
+          "2,3"
         ],
         "scoringWords": [
           {
-            "word": "MI",
-            "row": 0,
+            "word": "MEM",
+            "row": 2,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "NEB",
+            "row": 1,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "IT",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "IT",
+            "row": 4,
             "col": 1,
             "direction": "horizontal",
-            "score": 12
+            "score": 2
+          },
+          {
+            "word": "SI",
+            "row": 3,
+            "col": 1,
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -313,6 +393,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 917
+    "visitedCandidates": 988
   }
 }
