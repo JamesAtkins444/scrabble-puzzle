@@ -759,6 +759,10 @@ button:focus-visible {
     text-box-edge: cap alphabetic;
 }
 
+.score-bonus:empty {
+    display: none;
+}
+
 .score-bonus {
     display: inline-flex;
     flex-wrap: nowrap;
