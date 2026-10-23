@@ -796,7 +796,7 @@ button:focus-visible {
     margin-top: 2px;
     border: 0;
     background: #264653;
-    color: var(--white);
+    color: #264653;
 }
 
 #nextPuzzleButton:hover:not(:disabled),
