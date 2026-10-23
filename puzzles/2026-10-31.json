@@ -30,11 +30,11 @@
       ""
     ],
     [
-      "T",
-      "R",
-      "A",
+      "",
+      "",
+      "",
       "I",
-      "L",
+      "",
       "",
       ""
     ],
@@ -95,11 +95,11 @@
       ""
     ],
     [
-      "T",
-      "R",
-      "A",
+      "",
+      "",
+      "",
       "I",
-      "L",
+      "",
       "",
       ""
     ],
@@ -132,9 +132,10 @@
     ]
   ],
   "bonusSquares": {
-    "6,6": "triple-word",
-    "5,0": "double-word",
-    "4,6": "double-letter"
+    "6,0": "triple-word",
+    "4,5": "double-word",
+    "6,6": "triple-letter",
+    "3,1": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -154,12 +155,6 @@
       "row": 0,
       "col": 1,
       "direction": "horizontal"
-    },
-    {
-      "word": "TRAIL",
-      "row": 3,
-      "col": 0,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -178,11 +173,11 @@
         "A",
         "T",
         "",
-        "O",
+        "W",
         ""
       ],
       [
-        "W",
+        "",
         "",
         "T",
         "I",
@@ -191,34 +186,34 @@
         ""
       ],
       [
-        "E",
+        "",
         "",
         "",
         "R",
         "",
-        "",
+        "T",
         ""
       ],
       [
-        "T",
-        "R",
-        "A",
+        "",
+        "",
+        "",
         "I",
-        "L",
         "",
+        "E",
         ""
       ],
       [
-        "T",
+        "",
         "",
         "",
         "N",
-        "",
-        "",
-        ""
+        "O",
+        "D",
+        "E"
       ],
       [
-        "E",
+        "",
         "",
         "",
         "G",
@@ -227,7 +222,7 @@
         ""
       ],
       [
-        "D",
+        "",
         "",
         "",
         "",
@@ -237,81 +232,81 @@
       ]
     ],
     "newKeys": [
-      "1,0",
-      "2,0",
-      "4,0",
-      "5,0",
-      "6,0",
-      "0,5"
+      "0,5",
+      "2,5",
+      "3,5",
+      "4,5",
+      "4,4",
+      "4,6"
     ],
-    "score": 75,
+    "score": 84,
     "completionBonus": 50,
     "words": [
-      "WETTED",
-      "OY"
+      "WYTED",
+      "NODE"
     ],
     "scoringWords": [
       {
-        "word": "WETTED",
-        "row": 1,
-        "col": 0,
-        "direction": "vertical",
-        "score": 20,
-        "move": 1
-      },
-      {
-        "word": "OY",
+        "word": "WYTED",
         "row": 0,
         "col": 5,
         "direction": "vertical",
-        "score": 5,
+        "score": 24,
+        "move": 1
+      },
+      {
+        "word": "NODE",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 10,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "WETTED",
-        "row": 1,
-        "col": 0,
+        "word": "WYTED",
+        "row": 0,
+        "col": 5,
         "direction": "vertical",
-        "score": 20,
-        "usedTiles": 5,
+        "score": 24,
+        "usedTiles": 4,
         "newKeys": [
-          "1,0",
-          "2,0",
-          "4,0",
-          "5,0",
-          "6,0"
+          "0,5",
+          "2,5",
+          "3,5",
+          "4,5"
         ],
         "scoringWords": [
           {
-            "word": "WETTED",
-            "row": 1,
-            "col": 0,
+            "word": "WYTED",
+            "row": 0,
+            "col": 5,
             "direction": "vertical",
-            "score": 20
+            "score": 24
           }
         ]
       },
       {
         "turn": 2,
-        "word": "OY",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
-        "score": 5,
-        "usedTiles": 1,
+        "word": "NODE",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 10,
+        "usedTiles": 2,
         "newKeys": [
-          "0,5"
+          "4,4",
+          "4,6"
         ],
         "scoringWords": [
           {
-            "word": "OY",
-            "row": 0,
-            "col": 5,
-            "direction": "vertical",
-            "score": 5
+            "word": "NODE",
+            "row": 4,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 10
           }
         ]
       }
@@ -320,6 +315,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1066
+    "visitedCandidates": 1166
   }
 }

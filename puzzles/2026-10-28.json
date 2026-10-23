@@ -7,7 +7,7 @@
       "",
       "",
       "",
-      "L",
+      "",
       "",
       ""
     ],
@@ -16,7 +16,7 @@
       "",
       "",
       "",
-      "A",
+      "",
       "",
       "M"
     ],
@@ -72,7 +72,7 @@
       "",
       "",
       "",
-      "L",
+      "",
       "",
       ""
     ],
@@ -81,7 +81,7 @@
       "",
       "",
       "",
-      "A",
+      "",
       "",
       "M"
     ],
@@ -132,11 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "5,0": "triple-word",
-    "0,0": "double-word",
-    "0,2": "double-letter",
-    "2,0": "triple-letter",
-    "6,3": "triple-letter"
+    "6,0": "triple-word",
+    "6,3": "double-word",
+    "3,0": "double-letter",
+    "0,3": "triple-letter",
+    "1,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -156,12 +156,6 @@
       "row": 2,
       "col": 2,
       "direction": "horizontal"
-    },
-    {
-      "word": "LAM",
-      "row": 0,
-      "col": 4,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -179,7 +173,7 @@
         "",
         "",
         "",
-        "L",
+        "",
         "",
         ""
       ],
@@ -188,7 +182,7 @@
         "",
         "",
         "",
-        "A",
+        "",
         "",
         "M"
       ],
@@ -202,7 +196,7 @@
         "Y"
       ],
       [
-        "R",
+        "",
         "",
         "",
         "",
@@ -211,7 +205,7 @@
         "T"
       ],
       [
-        "A",
+        "",
         "",
         "",
         "Y",
@@ -220,116 +214,100 @@
         "H"
       ],
       [
-        "D",
-        "U",
-        "R",
+        "",
+        "",
+        "",
         "A",
         "",
         "",
         "O"
       ],
       [
-        "",
-        "",
-        "",
-        "",
-        "",
+        "D",
+        "U",
+        "R",
+        "R",
+        "A",
         "",
         "I"
       ]
     ],
     "newKeys": [
-      "5,0",
-      "5,1",
-      "5,2",
       "5,3",
-      "3,0",
-      "4,0"
+      "6,3",
+      "6,0",
+      "6,1",
+      "6,2",
+      "6,4"
     ],
-    "score": 82,
+    "score": 98,
     "completionBonus": 50,
     "words": [
-      "DURA",
-      "YA",
-      "RAD"
+      "YAR",
+      "DURRA"
     ],
     "scoringWords": [
       {
-        "word": "DURA",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 15,
-        "move": 1
-      },
-      {
-        "word": "YA",
+        "word": "YAR",
         "row": 4,
         "col": 3,
         "direction": "vertical",
-        "score": 5,
+        "score": 12,
         "move": 1
       },
       {
-        "word": "RAD",
-        "row": 3,
+        "word": "DURRA",
+        "row": 6,
         "col": 0,
-        "direction": "vertical",
-        "score": 12,
+        "direction": "horizontal",
+        "score": 36,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DURA",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 20,
-        "usedTiles": 4,
+        "word": "YAR",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 12,
+        "usedTiles": 2,
         "newKeys": [
-          "5,0",
-          "5,1",
-          "5,2",
-          "5,3"
+          "5,3",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "DURA",
-            "row": 5,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 15
-          },
-          {
-            "word": "YA",
+            "word": "YAR",
             "row": 4,
             "col": 3,
             "direction": "vertical",
-            "score": 5
+            "score": 12
           }
         ]
       },
       {
         "turn": 2,
-        "word": "RAD",
-        "row": 3,
+        "word": "DURRA",
+        "row": 6,
         "col": 0,
-        "direction": "vertical",
-        "score": 12,
-        "usedTiles": 2,
+        "direction": "horizontal",
+        "score": 36,
+        "usedTiles": 4,
         "newKeys": [
-          "3,0",
-          "4,0"
+          "6,0",
+          "6,1",
+          "6,2",
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "RAD",
-            "row": 3,
+            "word": "DURRA",
+            "row": 6,
             "col": 0,
-            "direction": "vertical",
-            "score": 12
+            "direction": "horizontal",
+            "score": 36
           }
         ]
       }
@@ -338,6 +316,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 332
+    "visitedCandidates": 467
   }
 }

@@ -21,8 +21,8 @@
       "F"
     ],
     [
-      "C",
-      "O",
+      "",
+      "",
       "N",
       "",
       "",
@@ -86,8 +86,8 @@
       "F"
     ],
     [
-      "C",
-      "O",
+      "",
+      "",
       "N",
       "",
       "",
@@ -132,11 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "0,0": "double-word",
-    "1,4": "double-letter",
-    "6,0": "double-letter",
-    "5,4": "triple-letter",
-    "4,0": "triple-letter"
+    "6,0": "double-word",
+    "6,4": "double-letter",
+    "0,0": "triple-letter",
+    "0,4": "double-letter",
+    "3,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -156,12 +156,6 @@
       "row": 1,
       "col": 6,
       "direction": "vertical"
-    },
-    {
-      "word": "CON",
-      "row": 2,
-      "col": 0,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -178,9 +172,9 @@
         "",
         "",
         "B",
-        "A",
-        "I",
-        "T",
+        "",
+        "",
+        "",
         ""
       ],
       [
@@ -193,8 +187,8 @@
         "F"
       ],
       [
-        "C",
-        "O",
+        "",
+        "",
         "N",
         "",
         "",
@@ -221,18 +215,18 @@
       ],
       [
         "",
-        "",
+        "T",
         "E",
-        "",
+        "A",
         "",
         "",
         "A"
       ],
       [
-        "Y",
         "A",
+        "I",
         "R",
-        "",
+        "Y",
         "",
         "",
         ""
@@ -242,24 +236,26 @@
       "6,0",
       "6,1",
       "6,2",
-      "0,3",
-      "0,4",
-      "0,5"
+      "6,3",
+      "5,1",
+      "5,3"
     ],
-    "score": 76,
+    "score": 84,
     "completionBonus": 50,
     "words": [
-      "YAR",
+      "AIRY",
       "BUNDLER",
-      "BAIT"
+      "TEA",
+      "TI",
+      "AY"
     ],
     "scoringWords": [
       {
-        "word": "YAR",
+        "word": "AIRY",
         "row": 6,
         "col": 0,
         "direction": "horizontal",
-        "score": 10,
+        "score": 14,
         "move": 1
       },
       {
@@ -271,35 +267,52 @@
         "move": 1
       },
       {
-        "word": "BAIT",
-        "row": 0,
-        "col": 2,
+        "word": "TEA",
+        "row": 5,
+        "col": 1,
         "direction": "horizontal",
-        "score": 6,
+        "score": 3,
+        "move": 2
+      },
+      {
+        "word": "TI",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 2,
+        "move": 2
+      },
+      {
+        "word": "AY",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "YAR",
+        "word": "AIRY",
         "row": 6,
         "col": 0,
         "direction": "horizontal",
-        "score": 20,
-        "usedTiles": 3,
+        "score": 24,
+        "usedTiles": 4,
         "newKeys": [
           "6,0",
           "6,1",
-          "6,2"
+          "6,2",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "YAR",
+            "word": "AIRY",
             "row": 6,
             "col": 0,
             "direction": "horizontal",
-            "score": 10
+            "score": 14
           },
           {
             "word": "BUNDLER",
@@ -312,24 +325,37 @@
       },
       {
         "turn": 2,
-        "word": "BAIT",
-        "row": 0,
-        "col": 2,
+        "word": "TEA",
+        "row": 5,
+        "col": 1,
         "direction": "horizontal",
-        "score": 6,
-        "usedTiles": 3,
+        "score": 10,
+        "usedTiles": 2,
         "newKeys": [
-          "0,3",
-          "0,4",
-          "0,5"
+          "5,1",
+          "5,3"
         ],
         "scoringWords": [
           {
-            "word": "BAIT",
-            "row": 0,
-            "col": 2,
+            "word": "TEA",
+            "row": 5,
+            "col": 1,
             "direction": "horizontal",
-            "score": 6
+            "score": 3
+          },
+          {
+            "word": "TI",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "AY",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
           }
         ]
       }
@@ -338,6 +364,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1069
+    "visitedCandidates": 956
   }
 }

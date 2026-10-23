@@ -8,41 +8,41 @@
       "",
       "",
       "",
-      "",
+      "N",
       ""
     ],
     [
       "",
-      "G",
-      "",
-      "G",
-      "I",
-      "L",
-      "D"
-    ],
-    [
-      "B",
-      "E",
-      "A",
-      "R",
-      "D",
-      "",
-      ""
-    ],
-    [
-      "",
-      "E",
-      "",
-      "I",
+      "Q",
       "",
       "",
-      ""
-    ],
-    [
-      "",
-      "I",
       "",
       "O",
+      ""
+    ],
+    [
+      "",
+      "U",
+      "",
+      "",
+      "",
+      "V",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "N",
+      "T",
+      "R",
+      "A",
+      "P"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
       "",
       "",
       ""
@@ -51,14 +51,14 @@
       "",
       "N",
       "",
-      "T",
+      "",
       "",
       "",
       ""
     ],
     [
       "",
-      "G",
+      "",
       "",
       "",
       "",
@@ -73,41 +73,41 @@
       "",
       "",
       "",
-      "",
+      "N",
       ""
     ],
     [
       "",
-      "G",
-      "",
-      "G",
-      "I",
-      "L",
-      "D"
-    ],
-    [
-      "B",
-      "E",
-      "A",
-      "R",
-      "D",
-      "",
-      ""
-    ],
-    [
-      "",
-      "E",
-      "",
-      "I",
+      "Q",
       "",
       "",
-      ""
-    ],
-    [
-      "",
-      "I",
       "",
       "O",
+      ""
+    ],
+    [
+      "",
+      "U",
+      "",
+      "",
+      "",
+      "V",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "N",
+      "T",
+      "R",
+      "A",
+      "P"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
       "",
       "",
       ""
@@ -116,14 +116,14 @@
       "",
       "N",
       "",
-      "T",
+      "",
       "",
       "",
       ""
     ],
     [
       "",
-      "G",
+      "",
       "",
       "",
       "",
@@ -132,41 +132,36 @@
     ]
   ],
   "bonusSquares": {
-    "6,6": "triple-word",
-    "3,6": "double-word"
+    "6,4": "triple-word",
+    "6,6": "double-word",
+    "0,3": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "GEEING",
+      "word": "ENTRAP",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "QUEEN",
       "row": 1,
       "col": 1,
       "direction": "vertical"
     },
     {
-      "word": "BEARD",
-      "row": 2,
-      "col": 0,
-      "direction": "horizontal"
-    },
-    {
-      "word": "GRIOT",
-      "row": 1,
-      "col": 3,
+      "word": "NOVA",
+      "row": 0,
+      "col": 5,
       "direction": "vertical"
-    },
-    {
-      "word": "GILD",
-      "row": 1,
-      "col": 3,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "T",
-    "U",
+    "B",
+    "O",
+    "A",
     "E",
     "L",
-    "O",
     "N"
   ],
   "bestSolution": {
@@ -177,156 +172,140 @@
         "",
         "",
         "",
-        "",
+        "N",
         ""
       ],
       [
         "",
-        "G",
+        "Q",
         "",
-        "G",
-        "I",
-        "L",
-        "D"
+        "",
+        "",
+        "O",
+        ""
       ],
       [
-        "B",
+        "",
+        "U",
+        "",
+        "",
+        "",
+        "V",
+        ""
+      ],
+      [
+        "",
         "E",
-        "A",
+        "N",
+        "T",
         "R",
-        "D",
-        "",
-        "O"
+        "A",
+        "P"
       ],
       [
         "",
         "E",
         "",
-        "I",
-        "",
-        "",
-        "N"
-      ],
-      [
-        "",
-        "I",
         "",
         "O",
         "",
-        "",
-        "U"
+        ""
       ],
       [
         "",
         "N",
         "",
-        "T",
         "",
-        "E",
-        "T"
+        "B",
+        "",
+        ""
       ],
       [
-        "",
-        "G",
         "",
         "",
         "",
         "L",
-        ""
+        "E",
+        "A",
+        "N"
       ]
     ],
     "newKeys": [
-      "2,6",
-      "3,6",
-      "4,6",
-      "5,6",
-      "5,5",
-      "6,5"
+      "4,4",
+      "5,4",
+      "6,4",
+      "6,3",
+      "6,5",
+      "6,6"
     ],
-    "score": 66,
+    "score": 92,
     "completionBonus": 50,
     "words": [
-      "DONUT",
-      "ET",
-      "EL"
+      "ROBE",
+      "LEAN"
     ],
     "scoringWords": [
       {
-        "word": "DONUT",
-        "row": 1,
-        "col": 6,
+        "word": "ROBE",
+        "row": 3,
+        "col": 4,
         "direction": "vertical",
-        "score": 12,
+        "score": 18,
         "move": 1
       },
       {
-        "word": "ET",
-        "row": 5,
-        "col": 5,
+        "word": "LEAN",
+        "row": 6,
+        "col": 3,
         "direction": "horizontal",
-        "score": 2,
-        "move": 2
-      },
-      {
-        "word": "EL",
-        "row": 5,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
+        "score": 24,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "DONUT",
-        "row": 1,
-        "col": 6,
+        "word": "ROBE",
+        "row": 3,
+        "col": 4,
         "direction": "vertical",
-        "score": 12,
-        "usedTiles": 4,
+        "score": 18,
+        "usedTiles": 3,
         "newKeys": [
-          "2,6",
-          "3,6",
-          "4,6",
-          "5,6"
+          "4,4",
+          "5,4",
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "DONUT",
-            "row": 1,
-            "col": 6,
+            "word": "ROBE",
+            "row": 3,
+            "col": 4,
             "direction": "vertical",
-            "score": 12
+            "score": 18
           }
         ]
       },
       {
         "turn": 2,
-        "word": "EL",
-        "row": 5,
-        "col": 5,
-        "direction": "vertical",
-        "score": 4,
-        "usedTiles": 2,
+        "word": "LEAN",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 24,
+        "usedTiles": 3,
         "newKeys": [
-          "5,5",
-          "6,5"
+          "6,3",
+          "6,5",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "ET",
-            "row": 5,
-            "col": 5,
+            "word": "LEAN",
+            "row": 6,
+            "col": 3,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "EL",
-            "row": 5,
-            "col": 5,
-            "direction": "vertical",
-            "score": 2
+            "score": 24
           }
         ]
       }
@@ -335,6 +314,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1145
+    "visitedCandidates": 1887
   }
 }

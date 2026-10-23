@@ -18,7 +18,7 @@
       "",
       "S",
       "",
-      "S"
+      ""
     ],
     [
       "",
@@ -36,7 +36,7 @@
       "",
       "A",
       "",
-      "N"
+      ""
     ],
     [
       "",
@@ -83,7 +83,7 @@
       "",
       "S",
       "",
-      "S"
+      ""
     ],
     [
       "",
@@ -101,7 +101,7 @@
       "",
       "A",
       "",
-      "N"
+      ""
     ],
     [
       "",
@@ -132,10 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "0,2": "double-word",
-    "6,5": "double-letter",
-    "0,0": "triple-letter",
-    "6,3": "double-letter"
+    "6,3": "double-word",
+    "0,6": "double-letter",
+    "6,6": "triple-letter",
+    "0,1": "double-letter",
+    "4,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -154,12 +155,6 @@
       "word": "STAR",
       "row": 1,
       "col": 4,
-      "direction": "vertical"
-    },
-    {
-      "word": "SEN",
-      "row": 1,
-      "col": 6,
       "direction": "vertical"
     }
   ],
@@ -189,7 +184,7 @@
         "",
         "S",
         "",
-        "S"
+        ""
       ],
       [
         "",
@@ -207,7 +202,7 @@
         "",
         "A",
         "",
-        "N"
+        ""
       ],
       [
         "",
@@ -337,6 +332,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1629
+    "visitedCandidates": 1688
   }
 }

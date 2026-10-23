@@ -60,10 +60,10 @@
       "",
       "E",
       "",
-      "V",
+      "",
       "E",
-      "A",
-      "L"
+      "",
+      ""
     ]
   ],
   "originalBoard": [
@@ -125,16 +125,16 @@
       "",
       "E",
       "",
-      "V",
+      "",
       "E",
-      "A",
-      "L"
+      "",
+      ""
     ]
   ],
   "bonusSquares": {
     "0,4": "double-word",
-    "2,6": "double-letter",
-    "0,6": "triple-letter"
+    "1,6": "triple-letter",
+    "6,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -154,12 +154,6 @@
       "row": 2,
       "col": 4,
       "direction": "vertical"
-    },
-    {
-      "word": "VEAL",
-      "row": 6,
-      "col": 3,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -230,10 +224,10 @@
         "",
         "E",
         "",
-        "V",
+        "",
         "E",
-        "A",
-        "L"
+        "",
+        ""
       ]
     ],
     "newKeys": [
@@ -416,6 +410,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1498
+    "visitedCandidates": 1662
   }
 }

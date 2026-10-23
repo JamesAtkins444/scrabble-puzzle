@@ -42,10 +42,10 @@
       "",
       "R",
       "",
-      "T",
+      "",
       "A",
-      "L",
-      "K"
+      "",
+      ""
     ],
     [
       "",
@@ -107,10 +107,10 @@
       "",
       "R",
       "",
-      "T",
+      "",
       "A",
-      "L",
-      "K"
+      "",
+      ""
     ],
     [
       "",
@@ -132,11 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "0,6": "double-word",
-    "0,0": "triple-letter",
-    "6,6": "double-letter",
-    "0,2": "triple-letter",
-    "0,4": "double-letter"
+    "4,6": "double-word",
+    "0,0": "double-letter",
+    "0,5": "triple-letter",
+    "0,3": "double-letter",
+    "6,6": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -156,12 +156,6 @@
       "row": 2,
       "col": 1,
       "direction": "vertical"
-    },
-    {
-      "word": "TALK",
-      "row": 4,
-      "col": 3,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
@@ -190,7 +184,7 @@
         "",
         "",
         "",
-        ""
+        "S"
       ],
       [
         "",
@@ -205,19 +199,19 @@
         "",
         "Y",
         "",
-        "I",
+        "",
         "R",
-        "E",
-        "S"
+        "",
+        "O"
       ],
       [
         "",
         "R",
         "",
-        "T",
+        "",
         "A",
-        "L",
-        "K"
+        "I",
+        "R"
       ],
       [
         "",
@@ -226,142 +220,94 @@
         "",
         "N",
         "",
-        ""
+        "E"
       ],
       [
         "",
         "P",
-        "O",
-        "R",
+        "",
+        "",
         "K",
-        "S",
-        ""
+        "",
+        "S"
       ]
     ],
     "newKeys": [
-      "3,3",
-      "3,5",
+      "1,6",
       "3,6",
-      "6,2",
-      "6,3",
-      "6,5"
+      "4,6",
+      "5,6",
+      "6,6",
+      "4,5"
     ],
-    "score": 80,
+    "score": 72,
     "completionBonus": 50,
     "words": [
-      "IRES",
-      "PIT",
-      "EEL",
-      "TSK",
-      "PORKS"
+      "STORES",
+      "AIR"
     ],
     "scoringWords": [
       {
-        "word": "IRES",
-        "row": 3,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "PIT",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "EEL",
-        "row": 2,
-        "col": 5,
-        "direction": "vertical",
-        "score": 3,
-        "move": 1
-      },
-      {
-        "word": "TSK",
-        "row": 2,
+        "word": "STORES",
+        "row": 1,
         "col": 6,
         "direction": "vertical",
-        "score": 7,
+        "score": 16,
         "move": 1
       },
       {
-        "word": "PORKS",
-        "row": 6,
-        "col": 1,
+        "word": "AIR",
+        "row": 4,
+        "col": 4,
         "direction": "horizontal",
-        "score": 11,
+        "score": 6,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "IRES",
-        "row": 3,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 19,
-        "usedTiles": 3,
+        "word": "STORES",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 16,
+        "usedTiles": 5,
         "newKeys": [
-          "3,3",
-          "3,5",
-          "3,6"
+          "1,6",
+          "3,6",
+          "4,6",
+          "5,6",
+          "6,6"
         ],
         "scoringWords": [
           {
-            "word": "IRES",
-            "row": 3,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
-            "word": "PIT",
-            "row": 2,
-            "col": 3,
-            "direction": "vertical",
-            "score": 5
-          },
-          {
-            "word": "EEL",
-            "row": 2,
-            "col": 5,
-            "direction": "vertical",
-            "score": 3
-          },
-          {
-            "word": "TSK",
-            "row": 2,
+            "word": "STORES",
+            "row": 1,
             "col": 6,
             "direction": "vertical",
-            "score": 7
+            "score": 16
           }
         ]
       },
       {
         "turn": 2,
-        "word": "PORKS",
-        "row": 6,
-        "col": 1,
+        "word": "AIR",
+        "row": 4,
+        "col": 4,
         "direction": "horizontal",
-        "score": 11,
-        "usedTiles": 3,
+        "score": 6,
+        "usedTiles": 1,
         "newKeys": [
-          "6,2",
-          "6,3",
-          "6,5"
+          "4,5"
         ],
         "scoringWords": [
           {
-            "word": "PORKS",
-            "row": 6,
-            "col": 1,
+            "word": "AIR",
+            "row": 4,
+            "col": 4,
             "direction": "horizontal",
-            "score": 11
+            "score": 6
           }
         ]
       }
@@ -370,6 +316,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1131
+    "visitedCandidates": 1220
   }
 }

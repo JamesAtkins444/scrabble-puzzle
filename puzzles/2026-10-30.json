@@ -9,61 +9,61 @@
       "",
       "",
       "",
-      "B"
+      ""
     ],
     [
       "",
       "",
       "",
       "",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "",
-      "",
-      "",
-      "R",
-      "",
-      "",
-      "L"
-    ],
-    [
-      "",
-      "",
-      "",
-      "E",
-      "G",
-      "A",
-      "L"
-    ],
-    [
-      "",
-      "",
-      "",
-      "S",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "T",
-      "Y",
-      "P",
-      "E",
-      "D",
-      "",
-      "X"
-    ],
-    [
-      "",
-      "",
-      "",
-      "T",
       "",
       "",
       ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "P",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "B",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "M",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "H",
+      "O",
+      "L",
+      "O",
+      "M"
     ]
   ],
   "originalBoard": [
@@ -74,101 +74,97 @@
       "",
       "",
       "",
-      "B"
+      ""
     ],
     [
       "",
       "",
       "",
       "",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "",
-      "",
-      "",
-      "R",
-      "",
-      "",
-      "L"
-    ],
-    [
-      "",
-      "",
-      "",
-      "E",
-      "G",
-      "A",
-      "L"
-    ],
-    [
-      "",
-      "",
-      "",
-      "S",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "T",
-      "Y",
-      "P",
-      "E",
-      "D",
-      "",
-      "X"
-    ],
-    [
-      "",
-      "",
-      "",
-      "T",
       "",
       "",
       ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "P",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "B",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "M",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "S",
+      "H",
+      "O",
+      "L",
+      "O",
+      "M"
     ]
   ],
   "bonusSquares": {
-    "2,0": "triple-word",
-    "0,3": "double-word",
-    "0,0": "triple-letter"
+    "3,0": "triple-word",
+    "0,1": "double-word",
+    "0,6": "triple-letter",
+    "0,3": "triple-letter",
+    "4,6": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "BOLLOX",
-      "row": 0,
-      "col": 6,
-      "direction": "vertical"
-    },
-    {
-      "word": "EGAL",
-      "row": 3,
-      "col": 3,
+      "word": "SHOLOM",
+      "row": 6,
+      "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "RESET",
+      "word": "ABMHO",
       "row": 2,
       "col": 3,
       "direction": "vertical"
     },
     {
-      "word": "TYPED",
-      "row": 5,
-      "col": 0,
+      "word": "APE",
+      "row": 2,
+      "col": 3,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "N",
-    "E",
-    "M",
     "I",
-    "D",
-    "A"
+    "U",
+    "A",
+    "R",
+    "R",
+    "T"
   ],
   "bestSolution": {
     "board": [
@@ -179,155 +175,216 @@
         "",
         "",
         "",
-        "B"
+        ""
       ],
       [
-        "I",
         "",
         "",
         "",
         "",
-        "",
-        "O"
-      ],
-      [
-        "N",
-        "",
-        "",
-        "R",
-        "",
-        "",
-        "L"
-      ],
-      [
-        "M",
-        "",
-        "",
-        "E",
-        "G",
-        "A",
-        "L"
-      ],
-      [
-        "A",
-        "",
-        "",
-        "S",
-        "",
-        "D",
-        "O"
-      ],
-      [
-        "T",
-        "Y",
-        "P",
-        "E",
-        "D",
-        "",
-        "X"
-      ],
-      [
-        "E",
-        "",
-        "",
-        "T",
         "",
         "",
         ""
+      ],
+      [
+        "",
+        "",
+        "T",
+        "A",
+        "P",
+        "E",
+        "R"
+      ],
+      [
+        "",
+        "",
+        "A",
+        "B",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "U",
+        "M",
+        "",
+        "",
+        "R"
+      ],
+      [
+        "",
+        "",
+        "",
+        "H",
+        "",
+        "",
+        "I"
+      ],
+      [
+        "",
+        "S",
+        "H",
+        "O",
+        "L",
+        "O",
+        "M"
       ]
     ],
     "newKeys": [
-      "1,0",
-      "2,0",
-      "3,0",
-      "4,0",
-      "6,0",
-      "4,5"
+      "2,2",
+      "3,2",
+      "4,2",
+      "2,6",
+      "4,6",
+      "5,6"
     ],
     "score": 80,
     "completionBonus": 50,
     "words": [
-      "INMATE",
-      "DO",
-      "AD"
+      "TAPE",
+      "AB",
+      "UM",
+      "TAU",
+      "TAPER",
+      "RIM"
     ],
     "scoringWords": [
       {
-        "word": "INMATE",
-        "row": 1,
-        "col": 0,
-        "direction": "vertical",
-        "score": 24,
+        "word": "TAPE",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 6,
         "move": 1
       },
       {
-        "word": "DO",
-        "row": 4,
-        "col": 5,
+        "word": "AB",
+        "row": 3,
+        "col": 2,
         "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "UM",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 4,
+        "move": 1
+      },
+      {
+        "word": "TAU",
+        "row": 2,
+        "col": 2,
+        "direction": "vertical",
         "score": 3,
+        "move": 1
+      },
+      {
+        "word": "TAPER",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 7,
         "move": 2
       },
       {
-        "word": "AD",
-        "row": 3,
-        "col": 5,
+        "word": "RIM",
+        "row": 4,
+        "col": 6,
         "direction": "vertical",
-        "score": 3,
-        "move": 2
+        "score": 6,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "INMATE",
-        "row": 1,
-        "col": 0,
+        "word": "TAU",
+        "row": 2,
+        "col": 2,
         "direction": "vertical",
-        "score": 24,
-        "usedTiles": 5,
+        "score": 17,
+        "usedTiles": 3,
         "newKeys": [
-          "1,0",
-          "2,0",
-          "3,0",
-          "4,0",
-          "6,0"
+          "2,2",
+          "3,2",
+          "4,2"
         ],
         "scoringWords": [
           {
-            "word": "INMATE",
-            "row": 1,
-            "col": 0,
+            "word": "TAPE",
+            "row": 2,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "AB",
+            "row": 3,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "UM",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "TAU",
+            "row": 2,
+            "col": 2,
             "direction": "vertical",
-            "score": 24
+            "score": 3
           }
         ]
       },
       {
         "turn": 2,
-        "word": "AD",
-        "row": 3,
-        "col": 5,
-        "direction": "vertical",
-        "score": 6,
+        "word": "TAPER",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 7,
         "usedTiles": 1,
         "newKeys": [
-          "4,5"
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "DO",
-            "row": 4,
-            "col": 5,
+            "word": "TAPER",
+            "row": 2,
+            "col": 2,
             "direction": "horizontal",
-            "score": 3
-          },
+            "score": 7
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "RIM",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 6,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,6",
+          "5,6"
+        ],
+        "scoringWords": [
           {
-            "word": "AD",
-            "row": 3,
-            "col": 5,
+            "word": "RIM",
+            "row": 4,
+            "col": 6,
             "direction": "vertical",
-            "score": 3
+            "score": 6
           }
         ]
       }
@@ -336,6 +393,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1486
+    "visitedCandidates": 720
   }
 }

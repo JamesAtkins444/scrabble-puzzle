@@ -8,62 +8,62 @@
       "",
       "",
       "",
-      "",
+      "P",
       ""
     ],
     [
       "",
-      "E",
-      "N",
-      "S",
+      "",
+      "",
+      "",
+      "",
       "U",
-      "E",
       ""
     ],
     [
       "",
       "",
       "",
-      "I",
       "",
       "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "N",
-      "",
-      "",
-      "B"
-    ],
-    [
-      "",
-      "",
-      "",
-      "N",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "",
-      "",
-      "",
-      "E",
-      "",
-      "",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "F",
-      "R",
-      "E",
       "S",
-      "H"
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "G",
+      "A",
+      "T",
+      "E",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
     ]
   ],
   "originalBoard": [
@@ -73,101 +73,97 @@
       "",
       "",
       "",
-      "",
+      "P",
       ""
     ],
     [
       "",
-      "E",
-      "N",
-      "S",
+      "",
+      "",
+      "",
+      "",
       "U",
-      "E",
       ""
     ],
     [
       "",
       "",
       "",
-      "I",
       "",
       "",
-      ""
-    ],
-    [
-      "",
-      "",
-      "",
-      "N",
-      "",
-      "",
-      "B"
-    ],
-    [
-      "",
-      "",
-      "",
-      "N",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "",
-      "",
-      "",
-      "E",
-      "",
-      "",
-      "S"
-    ],
-    [
-      "",
-      "",
-      "F",
-      "R",
-      "E",
       "S",
-      "H"
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "G",
+      "A",
+      "T",
+      "E",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "Y",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
     ]
   ],
   "bonusSquares": {
-    "3,1": "double-word",
-    "5,0": "triple-letter"
+    "0,2": "triple-word",
+    "1,0": "double-word",
+    "4,0": "triple-letter",
+    "6,1": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "SINNER",
-      "row": 1,
-      "col": 3,
+      "word": "PUSLEY",
+      "row": 0,
+      "col": 5,
       "direction": "vertical"
     },
     {
-      "word": "FRESH",
-      "row": 6,
+      "word": "GATED",
+      "row": 4,
       "col": 2,
       "direction": "horizontal"
     },
     {
-      "word": "BOSH",
+      "word": "CACA",
       "row": 3,
-      "col": 6,
+      "col": 3,
       "direction": "vertical"
-    },
-    {
-      "word": "ENSUE",
-      "row": 1,
-      "col": 1,
-      "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "A",
-    "C",
+    "L",
     "E",
-    "O",
-    "T",
-    "X"
+    "E",
+    "E",
+    "R",
+    "R"
   ],
   "bestSolution": {
     "board": [
@@ -177,156 +173,185 @@
         "",
         "",
         "",
-        "",
+        "P",
         ""
       ],
       [
+        "R",
         "",
-        "E",
-        "N",
-        "S",
+        "",
+        "",
+        "",
         "U",
+        ""
+      ],
+      [
         "E",
+        "",
+        "",
+        "",
+        "",
+        "S",
         ""
       ],
       [
-        "",
-        "",
-        "",
-        "I",
-        "",
-        "",
-        ""
-      ],
-      [
+        "E",
+        "R",
         "",
         "C",
+        "",
+        "L",
+        ""
+      ],
+      [
+        "L",
         "E",
-        "N",
+        "G",
+        "A",
         "T",
-        "",
-        "B"
-      ],
-      [
-        "",
-        "O",
-        "",
-        "N",
-        "",
-        "",
-        "O"
-      ],
-      [
-        "",
-        "X",
-        "",
         "E",
-        "",
-        "",
-        "S"
+        "D"
       ],
       [
+        "",
+        "",
+        "",
+        "C",
+        "",
+        "Y",
+        ""
+      ],
+      [
+        "",
+        "",
         "",
         "A",
-        "F",
-        "R",
-        "E",
-        "S",
-        "H"
+        "",
+        "",
+        ""
       ]
     ],
     "newKeys": [
-      "3,1",
+      "4,0",
       "4,1",
-      "5,1",
-      "6,1",
-      "3,2",
-      "3,4"
+      "1,0",
+      "2,0",
+      "3,0",
+      "3,1"
     ],
-    "score": 100,
+    "score": 77,
     "completionBonus": 50,
     "words": [
-      "AFRESH",
-      "COXA",
-      "CENT"
+      "LEGATED",
+      "REEL",
+      "ER",
+      "RE"
     ],
     "scoringWords": [
       {
-        "word": "AFRESH",
-        "row": 6,
-        "col": 1,
+        "word": "LEGATED",
+        "row": 4,
+        "col": 0,
         "direction": "horizontal",
-        "score": 12,
+        "score": 11,
         "move": 1
       },
       {
-        "word": "COXA",
+        "word": "REEL",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 12,
+        "move": 2
+      },
+      {
+        "word": "ER",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2,
+        "move": 3
+      },
+      {
+        "word": "RE",
         "row": 3,
         "col": 1,
         "direction": "vertical",
-        "score": 26,
-        "move": 1
-      },
-      {
-        "word": "CENT",
-        "row": 3,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 12,
-        "move": 2
+        "score": 2,
+        "move": 3
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "COXA",
-        "row": 3,
-        "col": 1,
-        "direction": "vertical",
-        "score": 38,
-        "usedTiles": 4,
+        "word": "LEGATED",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 11,
+        "usedTiles": 2,
         "newKeys": [
-          "3,1",
-          "4,1",
-          "5,1",
-          "6,1"
+          "4,0",
+          "4,1"
         ],
         "scoringWords": [
           {
-            "word": "AFRESH",
-            "row": 6,
-            "col": 1,
+            "word": "LEGATED",
+            "row": 4,
+            "col": 0,
             "direction": "horizontal",
-            "score": 12
-          },
-          {
-            "word": "COXA",
-            "row": 3,
-            "col": 1,
-            "direction": "vertical",
-            "score": 26
+            "score": 11
           }
         ]
       },
       {
         "turn": 2,
-        "word": "CENT",
-        "row": 3,
-        "col": 1,
-        "direction": "horizontal",
+        "word": "REEL",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
         "score": 12,
-        "usedTiles": 2,
+        "usedTiles": 3,
         "newKeys": [
-          "3,2",
-          "3,4"
+          "1,0",
+          "2,0",
+          "3,0"
         ],
         "scoringWords": [
           {
-            "word": "CENT",
+            "word": "REEL",
+            "row": 1,
+            "col": 0,
+            "direction": "vertical",
+            "score": 12
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "ER",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "ER",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "RE",
             "row": 3,
             "col": 1,
-            "direction": "horizontal",
-            "score": 12
+            "direction": "vertical",
+            "score": 2
           }
         ]
       }
@@ -335,6 +360,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1041
+    "visitedCandidates": 414
   }
 }

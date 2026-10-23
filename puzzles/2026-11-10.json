@@ -33,7 +33,7 @@
       "",
       "",
       "",
-      "T",
+      "",
       "",
       "R",
       ""
@@ -42,7 +42,7 @@
       "",
       "",
       "",
-      "E",
+      "",
       "",
       "T",
       ""
@@ -60,7 +60,7 @@
       "",
       "",
       "",
-      "L",
+      "",
       "",
       "N",
       ""
@@ -98,7 +98,7 @@
       "",
       "",
       "",
-      "T",
+      "",
       "",
       "R",
       ""
@@ -107,7 +107,7 @@
       "",
       "",
       "",
-      "E",
+      "",
       "",
       "T",
       ""
@@ -125,18 +125,19 @@
       "",
       "",
       "",
-      "L",
+      "",
       "",
       "N",
       ""
     ]
   ],
   "bonusSquares": {
-    "2,0": "triple-word",
+    "0,1": "triple-word",
     "4,1": "double-word",
-    "1,2": "triple-letter",
-    "6,0": "double-letter",
-    "0,0": "double-letter"
+    "0,3": "double-letter",
+    "2,0": "triple-letter",
+    "6,1": "double-letter",
+    "2,2": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -156,12 +157,6 @@
       "row": 5,
       "col": 3,
       "direction": "horizontal"
-    },
-    {
-      "word": "TEAL",
-      "row": 3,
-      "col": 3,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -186,16 +181,16 @@
       [
         "",
         "",
-        "J",
+        "",
         "",
         "",
         "P",
         ""
       ],
       [
-        "L",
-        "E",
-        "A",
+        "",
+        "",
+        "",
         "",
         "G",
         "A",
@@ -204,24 +199,24 @@
       [
         "",
         "",
-        "U",
-        "T",
+        "",
+        "",
         "",
         "R",
         ""
       ],
       [
-        "",
-        "",
+        "J",
+        "A",
+        "U",
         "P",
-        "E",
         "",
         "T",
         ""
       ],
       [
         "",
-        "",
+        "L",
         "",
         "A",
         "L",
@@ -230,61 +225,52 @@
       ],
       [
         "",
+        "E",
         "",
         "",
-        "L",
         "",
         "N",
         ""
       ]
     ],
     "newKeys": [
-      "1,2",
-      "2,2",
-      "3,2",
+      "4,0",
+      "4,1",
       "4,2",
-      "2,0",
-      "2,1"
+      "4,3",
+      "5,1",
+      "6,1"
     ],
-    "score": 94,
+    "score": 88,
     "completionBonus": 50,
     "words": [
-      "UT",
-      "PE",
       "JAUP",
-      "LEA"
+      "PA",
+      "ALE"
     ],
     "scoringWords": [
       {
-        "word": "UT",
-        "row": 3,
-        "col": 2,
+        "word": "JAUP",
+        "row": 4,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
+        "score": 26,
         "move": 1
       },
       {
-        "word": "PE",
+        "word": "PA",
         "row": 4,
-        "col": 2,
-        "direction": "horizontal",
+        "col": 3,
+        "direction": "vertical",
         "score": 4,
         "move": 1
       },
       {
-        "word": "JAUP",
-        "row": 1,
-        "col": 2,
+        "word": "ALE",
+        "row": 4,
+        "col": 1,
         "direction": "vertical",
-        "score": 29,
-        "move": 1
-      },
-      {
-        "word": "LEA",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 9,
+        "score": 8,
         "move": 2
       }
     ],
@@ -292,60 +278,53 @@
       {
         "turn": 1,
         "word": "JAUP",
-        "row": 1,
-        "col": 2,
-        "direction": "vertical",
-        "score": 35,
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 30,
         "usedTiles": 4,
         "newKeys": [
-          "1,2",
-          "2,2",
-          "3,2",
-          "4,2"
+          "4,0",
+          "4,1",
+          "4,2",
+          "4,3"
         ],
         "scoringWords": [
           {
-            "word": "UT",
-            "row": 3,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "PE",
-            "row": 4,
-            "col": 2,
-            "direction": "horizontal",
-            "score": 4
-          },
-          {
             "word": "JAUP",
-            "row": 1,
-            "col": 2,
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 26
+          },
+          {
+            "word": "PA",
+            "row": 4,
+            "col": 3,
             "direction": "vertical",
-            "score": 29
+            "score": 4
           }
         ]
       },
       {
         "turn": 2,
-        "word": "LEA",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 9,
+        "word": "ALE",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 8,
         "usedTiles": 2,
         "newKeys": [
-          "2,0",
-          "2,1"
+          "5,1",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "LEA",
-            "row": 2,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 9
+            "word": "ALE",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 8
           }
         ]
       }
@@ -354,6 +333,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 736
+    "visitedCandidates": 777
   }
 }

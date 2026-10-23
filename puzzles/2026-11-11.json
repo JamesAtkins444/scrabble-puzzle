@@ -24,7 +24,7 @@
       "A",
       "",
       "",
-      "N",
+      "",
       "",
       "",
       ""
@@ -42,7 +42,7 @@
       "E",
       "",
       "",
-      "V",
+      "",
       "",
       "",
       ""
@@ -60,7 +60,7 @@
       "",
       "",
       "",
-      "L",
+      "",
       "",
       "",
       ""
@@ -89,7 +89,7 @@
       "A",
       "",
       "",
-      "N",
+      "",
       "",
       "",
       ""
@@ -107,7 +107,7 @@
       "E",
       "",
       "",
-      "V",
+      "",
       "",
       "",
       ""
@@ -125,17 +125,17 @@
       "",
       "",
       "",
-      "L",
+      "",
       "",
       "",
       ""
     ]
   ],
   "bonusSquares": {
-    "6,6": "triple-word",
+    "0,3": "triple-word",
     "1,5": "double-word",
-    "4,6": "triple-letter",
-    "0,3": "double-letter"
+    "3,6": "triple-letter",
+    "5,5": "double-letter"
   },
   "puzzleWords": [
     {
@@ -155,12 +155,6 @@
       "row": 3,
       "col": 0,
       "direction": "horizontal"
-    },
-    {
-      "word": "NAVEL",
-      "row": 2,
-      "col": 3,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -195,7 +189,7 @@
         "A",
         "",
         "",
-        "N",
+        "",
         "",
         "P",
         ""
@@ -213,7 +207,7 @@
         "E",
         "",
         "",
-        "V",
+        "",
         "",
         "",
         ""
@@ -231,7 +225,7 @@
         "",
         "",
         "",
-        "L",
+        "",
         "",
         "",
         ""
@@ -337,6 +331,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 688
+    "visitedCandidates": 810
   }
 }

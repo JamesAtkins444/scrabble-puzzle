@@ -17,7 +17,7 @@
       "U",
       "",
       "",
-      "S",
+      "",
       ""
     ],
     [
@@ -26,7 +26,7 @@
       "L",
       "E",
       "",
-      "K",
+      "",
       ""
     ],
     [
@@ -35,7 +35,7 @@
       "P",
       "",
       "",
-      "Y",
+      "",
       ""
     ],
     [
@@ -53,7 +53,7 @@
       "R",
       "",
       "",
-      "Y",
+      "",
       ""
     ],
     [
@@ -82,7 +82,7 @@
       "U",
       "",
       "",
-      "S",
+      "",
       ""
     ],
     [
@@ -91,7 +91,7 @@
       "L",
       "E",
       "",
-      "K",
+      "",
       ""
     ],
     [
@@ -100,7 +100,7 @@
       "P",
       "",
       "",
-      "Y",
+      "",
       ""
     ],
     [
@@ -118,7 +118,7 @@
       "R",
       "",
       "",
-      "Y",
+      "",
       ""
     ],
     [
@@ -132,8 +132,12 @@
     ]
   ],
   "bonusSquares": {
-    "0,0": "double-word",
-    "6,0": "double-letter"
+    "0,6": "triple-word",
+    "6,0": "double-word",
+    "6,6": "double-letter",
+    "0,4": "triple-letter",
+    "0,0": "double-letter",
+    "2,5": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -153,12 +157,6 @@
       "row": 2,
       "col": 0,
       "direction": "horizontal"
-    },
-    {
-      "word": "SKYEY",
-      "row": 1,
-      "col": 5,
-      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
@@ -175,10 +173,10 @@
         "",
         "",
         "P",
-        "",
-        "",
-        "",
-        ""
+        "E",
+        "L",
+        "F",
+        "S"
       ],
       [
         "",
@@ -186,8 +184,8 @@
         "U",
         "",
         "",
-        "S",
-        ""
+        "",
+        "A"
       ],
       [
         "I",
@@ -195,8 +193,8 @@
         "L",
         "E",
         "",
-        "K",
-        ""
+        "",
+        "U"
       ],
       [
         "",
@@ -204,7 +202,7 @@
         "P",
         "",
         "",
-        "Y",
+        "",
         ""
       ],
       [
@@ -221,128 +219,96 @@
         "",
         "R",
         "",
-        "A",
-        "Y",
+        "",
+        "",
         ""
       ],
       [
-        "F",
-        "U",
-        "S",
-        "E",
-        "L",
+        "",
+        "",
+        "",
+        "",
+        "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "6,0",
-      "6,1",
-      "6,2",
-      "6,3",
-      "6,4",
-      "5,4"
+      "0,3",
+      "0,4",
+      "0,5",
+      "0,6",
+      "1,6",
+      "2,6"
     ],
-    "score": 81,
+    "score": 95,
     "completionBonus": 50,
     "words": [
-      "FUSEL",
-      "PULPERS",
-      "AY",
-      "SAL"
+      "PELFS",
+      "SAU"
     ],
     "scoringWords": [
       {
-        "word": "FUSEL",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 12,
-        "move": 1
-      },
-      {
-        "word": "PULPERS",
+        "word": "PELFS",
         "row": 0,
         "col": 2,
-        "direction": "vertical",
-        "score": 11,
+        "direction": "horizontal",
+        "score": 36,
         "move": 1
       },
       {
-        "word": "AY",
-        "row": 5,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 2
-      },
-      {
-        "word": "SAL",
-        "row": 4,
-        "col": 4,
+        "word": "SAU",
+        "row": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 3,
+        "score": 9,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "FUSEL",
-        "row": 6,
-        "col": 0,
+        "word": "PELFS",
+        "row": 0,
+        "col": 2,
         "direction": "horizontal",
-        "score": 23,
-        "usedTiles": 5,
+        "score": 36,
+        "usedTiles": 4,
         "newKeys": [
-          "6,0",
-          "6,1",
-          "6,2",
-          "6,3",
-          "6,4"
+          "0,3",
+          "0,4",
+          "0,5",
+          "0,6"
         ],
         "scoringWords": [
           {
-            "word": "FUSEL",
-            "row": 6,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 12
-          },
-          {
-            "word": "PULPERS",
+            "word": "PELFS",
             "row": 0,
             "col": 2,
-            "direction": "vertical",
-            "score": 11
+            "direction": "horizontal",
+            "score": 36
           }
         ]
       },
       {
         "turn": 2,
-        "word": "SAL",
-        "row": 4,
-        "col": 4,
+        "word": "SAU",
+        "row": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 8,
-        "usedTiles": 1,
+        "score": 9,
+        "usedTiles": 2,
         "newKeys": [
-          "5,4"
+          "1,6",
+          "2,6"
         ],
         "scoringWords": [
           {
-            "word": "AY",
-            "row": 5,
-            "col": 4,
-            "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "SAL",
-            "row": 4,
-            "col": 4,
+            "word": "SAU",
+            "row": 0,
+            "col": 6,
             "direction": "vertical",
-            "score": 3
+            "score": 9
           }
         ]
       }
@@ -351,6 +317,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1315
+    "visitedCandidates": 1421
   }
 }

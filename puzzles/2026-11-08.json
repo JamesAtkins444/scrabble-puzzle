@@ -21,7 +21,7 @@
       ""
     ],
     [
-      "S",
+      "",
       "",
       "",
       "N",
@@ -30,7 +30,7 @@
       ""
     ],
     [
-      "H",
+      "",
       "",
       "",
       "O",
@@ -39,7 +39,7 @@
       ""
     ],
     [
-      "R",
+      "",
       "",
       "",
       "M",
@@ -48,7 +48,7 @@
       ""
     ],
     [
-      "U",
+      "",
       "",
       "",
       "O",
@@ -86,7 +86,7 @@
       ""
     ],
     [
-      "S",
+      "",
       "",
       "",
       "N",
@@ -95,7 +95,7 @@
       ""
     ],
     [
-      "H",
+      "",
       "",
       "",
       "O",
@@ -104,7 +104,7 @@
       ""
     ],
     [
-      "R",
+      "",
       "",
       "",
       "M",
@@ -113,7 +113,7 @@
       ""
     ],
     [
-      "U",
+      "",
       "",
       "",
       "O",
@@ -132,9 +132,11 @@
     ]
   ],
   "bonusSquares": {
-    "0,6": "triple-word",
-    "0,1": "double-word",
-    "0,4": "double-letter"
+    "2,0": "triple-word",
+    "0,4": "double-word",
+    "0,1": "double-letter",
+    "0,6": "triple-letter",
+    "4,0": "triple-letter"
   },
   "puzzleWords": [
     {
@@ -153,12 +155,6 @@
       "word": "NOMOI",
       "row": 2,
       "col": 3,
-      "direction": "vertical"
-    },
-    {
-      "word": "SHRUB",
-      "row": 2,
-      "col": 0,
       "direction": "vertical"
     }
   ],
@@ -179,7 +175,7 @@
         "",
         "",
         "",
-        "B"
+        ""
       ],
       [
         "",
@@ -188,37 +184,37 @@
         "",
         "",
         "",
-        "A"
+        ""
       ],
       [
+        "B",
+        "A",
+        "R",
+        "N",
         "S",
         "",
-        "",
-        "N",
-        "",
-        "",
-        "R"
+        ""
       ],
       [
-        "H",
         "E",
+        "",
         "",
         "O",
         "",
         "W",
-        "E"
+        ""
       ],
       [
-        "R",
+        "E",
         "",
         "",
         "M",
         "",
         "O",
-        "S"
+        ""
       ],
       [
-        "U",
+        "",
         "",
         "",
         "O",
@@ -237,113 +233,81 @@
       ]
     ],
     "newKeys": [
-      "0,6",
-      "1,6",
-      "2,6",
-      "3,6",
-      "4,6",
-      "3,1"
+      "2,0",
+      "2,1",
+      "2,2",
+      "2,4",
+      "3,0",
+      "4,0"
     ],
-    "score": 83,
+    "score": 92,
     "completionBonus": 50,
     "words": [
-      "WE",
-      "OS",
-      "BARES",
-      "HE"
+      "BARNS",
+      "BEE"
     ],
     "scoringWords": [
       {
-        "word": "WE",
-        "row": 3,
-        "col": 5,
+        "word": "BARNS",
+        "row": 2,
+        "col": 0,
         "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "OS",
-        "row": 4,
-        "col": 5,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "BARES",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
         "score": 21,
         "move": 1
       },
       {
-        "word": "HE",
-        "row": 3,
+        "word": "BEE",
+        "row": 2,
         "col": 0,
-        "direction": "horizontal",
-        "score": 5,
+        "direction": "vertical",
+        "score": 21,
         "move": 2
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "BARES",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 28,
-        "usedTiles": 5,
+        "word": "BARNS",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 21,
+        "usedTiles": 4,
         "newKeys": [
-          "0,6",
-          "1,6",
-          "2,6",
-          "3,6",
-          "4,6"
+          "2,0",
+          "2,1",
+          "2,2",
+          "2,4"
         ],
         "scoringWords": [
           {
-            "word": "WE",
-            "row": 3,
-            "col": 5,
+            "word": "BARNS",
+            "row": 2,
+            "col": 0,
             "direction": "horizontal",
-            "score": 5
-          },
-          {
-            "word": "OS",
-            "row": 4,
-            "col": 5,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "BARES",
-            "row": 0,
-            "col": 6,
-            "direction": "vertical",
             "score": 21
           }
         ]
       },
       {
         "turn": 2,
-        "word": "HE",
-        "row": 3,
+        "word": "BEE",
+        "row": 2,
         "col": 0,
-        "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 1,
+        "direction": "vertical",
+        "score": 21,
+        "usedTiles": 2,
         "newKeys": [
-          "3,1"
+          "3,0",
+          "4,0"
         ],
         "scoringWords": [
           {
-            "word": "HE",
-            "row": 3,
+            "word": "BEE",
+            "row": 2,
             "col": 0,
-            "direction": "horizontal",
-            "score": 5
+            "direction": "vertical",
+            "score": 21
           }
         ]
       }
@@ -352,6 +316,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1486
+    "visitedCandidates": 1457
   }
 }
