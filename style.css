@@ -129,6 +129,11 @@ button:focus-visible {
     height: 53%;
 }
 
+#shareResultsButton.has-share-achievement svg {
+    width: calc(53% + 4.24px);
+    height: calc(53% + 4.24px);
+}
+
 #shareResultsButton.has-share-achievement svg path {
     fill: #fbb03b;
 }
