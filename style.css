@@ -734,7 +734,7 @@ button:focus-visible {
     align-items: center;
     justify-content: center;
     gap: 7px;
-    padding: 15px 13px;
+    padding: 10px 13px;
     border: 0;
     border-radius: 999px;
     background: var(--white);
@@ -769,7 +769,7 @@ button:focus-visible {
     align-items: center;
     justify-content: center;
     gap: 7px;
-    padding: 15px 13px;
+    padding: 10px 13px;
     border: 0;
     border-radius: 999px;
     background: var(--white);
@@ -1324,7 +1324,7 @@ dialog::backdrop {
     }
 
     .word-pill {
-        padding: 15px 10px;
+        padding: 10px 10px;
         font-size: 21px;
     }
 
