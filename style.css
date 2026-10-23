@@ -331,7 +331,7 @@ button:focus-visible {
     border-radius: 0 !important;
     background: transparent !important;
     color: inherit;
-    font-size: clamp(19px, 4.2vw, 29px);
+    font-size: clamp(31px, 6.6vw, 47px);
     font-weight: 700;
     line-height: 1;
     text-box-trim: trim-both;
