@@ -100,6 +100,7 @@ let startingRackValueTotal = 0;
 // Tracks achievement changes so the share popup can react to first-time milestones.
 let previousAchievementStars = 0;
 let previousAchievementCrown = false;
+let previousAutoShareMilestone = 0;
 
 // Controls which message is shown in the share popup.
 let shareResultsMode = "normal";
@@ -3730,35 +3731,35 @@ function updateAchievementStars(
         `${earnedStars} of 3 stars earned${beatsSolver ? "; solver beaten" : ""}`
     );
 
-    // Show the share dialog automatically only for the first three-star
-    // achievement and the first crown achievement for this daily puzzle.
-    const puzzleKey =
-        typeof activeDailyDateKey === "string" && activeDailyDateKey
-            ? activeDailyDateKey
-            : (document.getElementById("dailyPuzzleNumber")?.textContent || "unknown-puzzle");
-    const starsSeenKey = `toucanagram-share-popup-three-stars-${puzzleKey}`;
-    const crownSeenKey = `toucanagram-share-popup-crown-${puzzleKey}`;
+    // Automatically show Share only when the player reaches a new personal
+    // milestone: three stars once, then the crown once if earned later.
+    // The milestone is stored across daily puzzles in this browser.
     const newlyEarnedThreeStars =
         earnedStars === 3 && previousAchievementStars < 3;
     const newlyEarnedCrown = beatsSolver && !previousAchievementCrown;
+    const shareMilestoneKey = "toucanagramsSharePopupMilestone";
+    const currentMilestone = beatsSolver ? 2 : (earnedStars === 3 ? 1 : 0);
     let shouldOpenShareDialog = false;
 
     try {
-        if (newlyEarnedThreeStars && !localStorage.getItem(starsSeenKey)) {
-            localStorage.setItem(starsSeenKey, "true");
-            shouldOpenShareDialog = true;
-        }
-
-        if (newlyEarnedCrown && !localStorage.getItem(crownSeenKey)) {
-            localStorage.setItem(crownSeenKey, "true");
+        const savedMilestone = Number(localStorage.getItem(shareMilestoneKey) || 0);
+        if (
+            ((newlyEarnedThreeStars && currentMilestone > savedMilestone) ||
+            (newlyEarnedCrown && currentMilestone > savedMilestone))
+        ) {
+            localStorage.setItem(shareMilestoneKey, String(currentMilestone));
             shouldOpenShareDialog = true;
         }
     } catch (error) {
-        // If browser storage is unavailable, keep first-time behavior for this page.
-        if (newlyEarnedThreeStars || newlyEarnedCrown) {
+        // If browser storage is unavailable, avoid repeatedly opening on score updates.
+        if (
+            (newlyEarnedThreeStars && currentMilestone > previousAutoShareMilestone) ||
+            (newlyEarnedCrown && currentMilestone > previousAutoShareMilestone)
+        ) {
             shouldOpenShareDialog = true;
         }
     }
+    previousAutoShareMilestone = Math.max(previousAutoShareMilestone, currentMilestone);
 
     // Revealing the solver answer should never trigger the share popup.
     // After revealing, the player can still open it manually with the share icon.
@@ -5488,19 +5489,23 @@ async function initialise() {
     } else {
         await loadDailyPuzzle();
 
-        // Show How to Play once per browser on the player's first visit.
+        // Show How to Play on the first visit, then again after 14 days away.
         try {
-            const rulesSeenKey = "toucanagramsHowToPlaySeen";
-            if (!localStorage.getItem(rulesSeenKey) && rulesDialog) {
+            const lastShownKey = "toucanagramsHowToPlayLastShown";
+            const lastShown = Number(localStorage.getItem(lastShownKey) || 0);
+            const fourteenDaysMs = 14 * 24 * 60 * 60 * 1000;
+            const shouldShowRules = !lastShown || (Date.now() - lastShown >= fourteenDaysMs);
+
+            if (shouldShowRules && rulesDialog) {
                 if (typeof rulesDialog.showModal === "function") {
                     rulesDialog.showModal();
                 } else {
                     rulesDialog.setAttribute("open", "");
                 }
-                localStorage.setItem(rulesSeenKey, "true");
+                localStorage.setItem(lastShownKey, String(Date.now()));
             }
         } catch (error) {
-            // If storage is unavailable, still show the first-visit help popup.
+            // If storage is unavailable, still show the help popup for this visit.
             if (rulesDialog && !rulesDialog.open) {
                 if (typeof rulesDialog.showModal === "function") {
                     rulesDialog.showModal();
