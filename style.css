@@ -1030,7 +1030,9 @@ dialog::backdrop {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
+    width: 73.33px;
+    height: 73.33px;
+    flex: 0 0 73.33px;
     aspect-ratio: 1 / 1;
     border: 0;
     border-radius: var(--round);
