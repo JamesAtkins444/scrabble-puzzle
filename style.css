@@ -400,6 +400,14 @@ button:focus-visible {
     font-weight: 700;
     line-height: .8;
 }
+
+/* Hide score values on invalid or isolated player tiles. */
+.board-tile.player-invalid .tile-value,
+.board-tile.player-isolated .tile-value,
+.cell.player-invalid .board-tile .tile-value,
+.cell.player-isolated .board-tile .tile-value {
+    display: none;
+}
 /* Existing puzzle letters are dark tiles with white lettering. */
 .board-tile.original-tile {
     background: #000000;
