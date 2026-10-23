@@ -136,6 +136,7 @@ button:focus-visible {
 }
 
 #shareResultsButton.has-share-achievement {
+    border: 4px solid #fbb03b;
     animation: share-achievement-pulse 2.4s ease-in-out infinite;
 }
 
