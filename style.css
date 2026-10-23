@@ -719,10 +719,9 @@ button:focus-visible {
     transition: background-color 120ms ease, color 120ms ease;
 }
 
-.rack-actions > button:hover:not(:disabled),
 .rack-actions > button:active:not(:disabled) {
-    background: var(--white);
-    color: var(--page);
+    background: var(--rack-slot);
+    color: var(--white);
 }
 
 .rack-actions > button:disabled {
