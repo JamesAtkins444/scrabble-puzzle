@@ -4982,45 +4982,63 @@ if (rulesHelpButton && rulesDialog) {
     const rulesPanels = Array.from(rulesDialog.querySelectorAll("[data-rules-panel]"));
 
     function syncStandardPopupHeight() {
-        if (!rulesDialog.open) return;
-
-        const activeTab = rulesTabs.find(tab => tab.classList.contains("is-active"))?.dataset.rulesTab || "general";
+        const wordListDialog = document.getElementById("wordListDialog");
         const dialogs = [
             rulesDialog,
-            document.getElementById("wordListDialog"),
+            wordListDialog,
             shareResultsDialog
         ].filter(Boolean);
         const root = document.documentElement;
         const previousHeight = root.style.getPropertyValue("--standard-popup-height");
-        root.style.removeProperty("--standard-popup-height");
+        const activeTab = rulesTabs.find(tab => tab.classList.contains("is-active"))?.dataset.rulesTab || "general";
 
-        const dialogStates = dialogs.map(dialog => ({
+        // Measure the content inside each popup, not the dialog's viewport-sized
+        // bounding box. Temporarily remove the shared height so each section can
+        // report its natural content height.
+        root.style.removeProperty("--standard-popup-height");
+        const savedStyles = dialogs.map(dialog => ({
             dialog,
-            wasOpen: dialog.open,
             height: dialog.style.height,
             maxHeight: dialog.style.maxHeight
         }));
 
-        let tallestHeight = 0;
         dialogs.forEach(dialog => {
-            if (!dialog.open) dialog.setAttribute("open", "");
             dialog.style.height = "auto";
             dialog.style.maxHeight = "none";
         });
 
+        let tallestHeight = 0;
+
         rulesTabs.forEach(tab => {
             activateRulesTab(tab.dataset.rulesTab);
-            tallestHeight = Math.max(tallestHeight, rulesDialog.getBoundingClientRect().height);
+            const header = rulesDialog.querySelector(".rules-dialog-header");
+            const content = rulesDialog.querySelector(".rules-content");
+            tallestHeight = Math.max(
+                tallestHeight,
+                header.offsetHeight + content.scrollHeight
+            );
         });
 
-        dialogs.forEach(dialog => {
-            if (dialog !== rulesDialog) {
-                tallestHeight = Math.max(tallestHeight, dialog.getBoundingClientRect().height);
-            }
-        });
+        if (wordListDialog) {
+            const header = wordListDialog.querySelector(".rules-dialog-header");
+            const content = wordListDialog.querySelector(".word-list-content");
+            tallestHeight = Math.max(
+                tallestHeight,
+                header.offsetHeight + content.scrollHeight
+            );
+        }
 
-        dialogStates.forEach(({ dialog, wasOpen, height, maxHeight }) => {
-            if (!wasOpen) dialog.removeAttribute("open");
+        if (shareResultsDialog) {
+            const header = shareResultsDialog.querySelector(".share-results-header");
+            const achievements = shareResultsDialog.querySelector(".share-results-achievements");
+            const content = shareResultsDialog.querySelector(".share-results-content");
+            tallestHeight = Math.max(
+                tallestHeight,
+                header.offsetHeight + achievements.offsetHeight + content.scrollHeight
+            );
+        }
+
+        savedStyles.forEach(({ dialog, height, maxHeight }) => {
             dialog.style.height = height;
             dialog.style.maxHeight = maxHeight;
         });
