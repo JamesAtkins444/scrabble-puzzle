@@ -4249,18 +4249,39 @@ function findBestSolution() {
     const tilesRemaining = initialRackTiles.length - tilesUsed;
     const fullSolution = tilesRemaining === 0;
 
-    // A one-turn full-rack move already includes its +50 or +100 bonus.
-    // If all rack tiles are used across multiple turns, award +50 on completion.
-    const completionBonus = fullSolution && moves.length > 1 ? 50 : 0;
-    totalScore += completionBonus;
+    // Calculate the solver's final score once, from the completed board.
+    // The per-turn scores above are only used to choose moves and explain the
+    // solution; adding them together can double-score words extended later.
+    const allPlacedKeys = new Set(allNewKeys);
+    const finalScoringWords = getAllWords(currentBoard)
+        .filter(info =>
+            getWordCells(info.word, info.row, info.col, info.direction)
+                .some(cell => allPlacedKeys.has(keyForCell(cell.row, cell.col)))
+        )
+        .map(info => ({
+            ...info,
+            score: scoreWordOnCandidateBoard(currentBoard, info, allPlacedKeys)
+        }));
+
+    totalScore = finalScoringWords.reduce((sum, info) => sum + info.score, 0);
+
+    let completionBonus = 0;
+    if (fullSolution) {
+        const usesAllTilesInOneWord = finalScoringWords.some(info =>
+            getWordCells(info.word, info.row, info.col, info.direction)
+                .filter(cell => allPlacedKeys.has(keyForCell(cell.row, cell.col))).length === initialRackTiles.length
+        );
+        completionBonus = usesAllTilesInOneWord ? 100 : 50;
+        totalScore += completionBonus;
+    }
 
     bestSolution = tilesUsed > 0 ? {
         board: cloneBoard(currentBoard),
         newKeys: allNewKeys,
         score: totalScore,
         completionBonus,
-        words: allScoringWords.map(info => info.word),
-        scoringWords: allScoringWords,
+        words: finalScoringWords.map(info => info.word),
+        scoringWords: finalScoringWords,
         moves,
         tilesUsed,
         tilesRemaining,
