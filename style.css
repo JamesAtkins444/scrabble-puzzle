@@ -121,8 +121,6 @@ button:focus-visible {
 .rules-help-glyph {
     display: block;
     line-height: .85;
-    text-align: center;
-    transform: translateY(-.08em);
 }
 
 #shareResultsButton svg {
