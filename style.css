@@ -962,7 +962,8 @@ dialog::backdrop {
 }
 
 .how-to-play-scoring-tile .tile-letter {
-    font-size: clamp(27.7px, 5.94vw, 42.6px);
+    /* Keep the example letter at 40% of the tile's 73.33px height. */
+    font-size: 29.33px;
 }
 
 .how-to-play-example {
