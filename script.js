@@ -2367,6 +2367,17 @@ function displayTileRack() {
                                 selectedRackTile = drag.index;
                                 handleBoardClick(row, col);
                             }
+                        } else if (drag.rackSlotTarget) {
+                            // Move the dragged letter into the exact empty rack slot.
+                            const fromIndex = drag.index;
+                            const toSlot = Number(drag.rackSlotTarget.dataset.slotIndex);
+                            const currentSlot = playerRackPositions[fromIndex] ?? fromIndex;
+
+                            if (Number.isInteger(toSlot) && toSlot !== currentSlot) {
+                                playerRackPositions[fromIndex] = toSlot;
+                                selectedRackTile = null;
+                                displayTileRack();
+                            }
                         } else if (drag.rackTarget) {
                             // Move the dragged letter to the chosen position in the rack.
                             const fromIndex = drag.index;
