@@ -3775,7 +3775,11 @@ function updateAchievementStars(
     }
 
     if (shareResultsButton) {
-        shareResultsButton.classList.toggle("has-share-achievement", earnedStars >= 2 || beatsSolver);
+        const bestResult = getDailyBestResult();
+        shareResultsButton.classList.toggle(
+            "has-share-achievement",
+            (bestResult.stars || 0) >= 2 || !!bestResult.crown
+        );
     }
 
     previousAchievementStars = earnedStars;
