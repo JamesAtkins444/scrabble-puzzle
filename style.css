@@ -1004,8 +1004,8 @@ dialog::backdrop {
 .how-to-play-example {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2.5px;
-    width: min(225px, 100%);
+    gap: 1.25px;
+    width: min(112.5px, 100%);
     margin: 6px auto 12px;
     padding: 0;
     background: transparent;
@@ -1376,7 +1376,7 @@ dialog::backdrop {
     }
 
     .how-to-play-example {
-        width: min(120px, 100%);
+        width: min(60px, 100%);
     }
 
     .rules-dialog,
