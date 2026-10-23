@@ -120,6 +120,7 @@ async function generatePuzzle(browser, dateKey) {
         // Playwright's 30-second default.
         await page.waitForFunction(
             () => Boolean(window.__SCRABBLE_PUZZLE_EXPORT__),
+            null,
             { timeout: 600000 }
         );
 
