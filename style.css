@@ -1376,7 +1376,7 @@ dialog::backdrop {
     }
 
     .how-to-play-example {
-        width: min(60px, 100%);
+        width: min(112.5px, 100%);
     }
 
     .rules-dialog,
