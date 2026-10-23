@@ -5013,6 +5013,7 @@ if (rulesHelpButton && rulesDialog) {
     }
 
     window.addEventListener("resize", syncStandardPopupHeight);
+    rulesDialog.addEventListener("toggle", syncStandardPopupHeight);
 
     rulesTabs.forEach((tab, index) => {
         tab.addEventListener("click", () => activateRulesTab(tab.dataset.rulesTab));
