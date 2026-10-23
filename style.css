@@ -955,15 +955,9 @@ dialog::backdrop {
 .how-to-play-scoring-tile {
     width: 73.33px;
     height: 73.33px;
-    border: 2px solid #172c33 !important;
     margin: 8px auto 12px;
     cursor: default;
     touch-action: auto;
-}
-
-.how-to-play-scoring-tile .tile-letter {
-    /* Keep the example letter at 40% of the tile's 73.33px height. */
-    font-size: 29.33px;
 }
 
 .how-to-play-example {
