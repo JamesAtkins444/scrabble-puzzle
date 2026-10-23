@@ -396,7 +396,7 @@ button:focus-visible {
     right: 7%;
     bottom: 6%;
     color: inherit;
-    font-size: clamp(10px, 1.9vw, 14px);
+    font-size: clamp(15px, 2.85vw, 21px);
     font-weight: 700;
     line-height: .8;
 }
