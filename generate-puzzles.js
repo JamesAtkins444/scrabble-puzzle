@@ -124,7 +124,15 @@ async function generatePuzzle(browser, dateKey) {
             { timeout: 600000 }
         );
 
-        return await page.evaluate(() => window.__SCRABBLE_PUZZLE_EXPORT__);
+        const puzzle = await page.evaluate(() => window.__SCRABBLE_PUZZLE_EXPORT__);
+
+        if (!Array.isArray(puzzle.puzzleWords) || puzzle.puzzleWords.length !== 4) {
+            throw new Error(
+                `Expected exactly 4 puzzle words, received ${puzzle.puzzleWords?.length ?? 0}`
+            );
+        }
+
+        return puzzle;
     } finally {
         await page.close();
     }
@@ -187,6 +195,10 @@ async function main() {
 
             if (!puzzle || puzzle.date !== dateKey) {
                 throw new Error(`Generated puzzle date mismatch for ${dateKey}`);
+            }
+
+            if (!Array.isArray(puzzle.puzzleWords) || puzzle.puzzleWords.length !== 4) {
+                throw new Error(`Puzzle ${dateKey} must contain exactly 4 puzzle words`);
             }
 
             fs.writeFileSync(
