@@ -1225,6 +1225,7 @@ dialog::backdrop {
 
 .share-results-crown {
     display: inline-flex;
+    font-size: 33.048px;
     align-items: center;
     justify-content: center;
     width: .85em;
@@ -1246,6 +1247,10 @@ dialog::backdrop {
     }
 
     .share-results-stars {
+        font-size: 28.458px;
+    }
+
+    .share-results-crown {
         font-size: 28.458px;
     }
 }
