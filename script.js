@@ -4981,6 +4981,21 @@ if (rulesHelpButton && rulesDialog) {
     const rulesTabs = Array.from(rulesDialog.querySelectorAll("[data-rules-tab]"));
     const rulesPanels = Array.from(rulesDialog.querySelectorAll("[data-rules-panel]"));
 
+    function syncStandardPopupHeight() {
+        if (!rulesDialog.open) return;
+
+        const activeTab = rulesTabs.find(tab => tab.classList.contains("is-active"))?.dataset.rulesTab || "general";
+        const referenceTab = window.matchMedia("(max-width: 600px)").matches ? "scoring" : "general";
+
+        activateRulesTab(referenceTab);
+        const referenceHeight = rulesDialog.getBoundingClientRect().height;
+        activateRulesTab(activeTab);
+
+        if (referenceHeight > 0) {
+            document.documentElement.style.setProperty("--standard-popup-height", `${referenceHeight}px`);
+        }
+    }
+
     function activateRulesTab(tabName, moveFocus = false) {
         rulesTabs.forEach(tab => {
             const isActive = tab.dataset.rulesTab === tabName;
@@ -4996,6 +5011,8 @@ if (rulesHelpButton && rulesDialog) {
             panel.classList.toggle("is-active", isActive);
         });
     }
+
+    window.addEventListener("resize", syncStandardPopupHeight);
 
     rulesTabs.forEach((tab, index) => {
         tab.addEventListener("click", () => activateRulesTab(tab.dataset.rulesTab));
@@ -5019,6 +5036,7 @@ if (rulesHelpButton && rulesDialog) {
         } else {
             rulesDialog.setAttribute("open", "");
         }
+        syncStandardPopupHeight();
     });
 
     if (closeRulesButton) {
