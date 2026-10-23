@@ -335,7 +335,7 @@ function getGeneratorSettings() {
     if (
         Number.isNaN(wordCount)
     ) {
-        wordCount = 3;
+        wordCount = 4;
     }
 
     if (
@@ -4889,7 +4889,8 @@ async function generateDailyPuzzle() {
             typeof window !== "undefined" &&
             window.__SCRABBLE_PREGENERATE__ === true &&
             solvedWithAllTiles &&
-            bestSolution
+            bestSolution &&
+            puzzleWords.length === generatorSettings.wordCount
         ) {
             window.__SCRABBLE_PUZZLE_EXPORT__ = {
                 date: activeDailyDateKey,
