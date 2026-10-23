@@ -1039,6 +1039,9 @@ dialog::backdrop {
     background: var(--cell);
     font-size: clamp(31px, 6.6vw, 47px);
     font-weight: 700;
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
     box-shadow: none;
 }
 
