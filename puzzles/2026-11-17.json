@@ -240,16 +240,15 @@
       "1,6",
       "2,1"
     ],
-    "score": 77,
+    "score": 73,
     "completionBonus": 50,
     "words": [
       "ARIOSE",
-      "MA",
+      "MAN",
       "AR",
       "MO",
       "AS",
-      "NE",
-      "MAN"
+      "NE"
     ],
     "scoringWords": [
       {
@@ -257,56 +256,42 @@
         "row": 1,
         "col": 1,
         "direction": "horizontal",
-        "score": 6,
-        "move": 1
-      },
-      {
-        "word": "MA",
-        "row": 0,
-        "col": 1,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "AR",
-        "row": 0,
-        "col": 2,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "MO",
-        "row": 0,
-        "col": 4,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "AS",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "NE",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
+        "score": 6
       },
       {
         "word": "MAN",
         "row": 0,
         "col": 1,
         "direction": "vertical",
-        "score": 7,
-        "move": 2
+        "score": 7
+      },
+      {
+        "word": "AR",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "MO",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "AS",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "NE",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 2
       }
     ],
     "moves": [

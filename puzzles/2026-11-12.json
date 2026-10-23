@@ -240,55 +240,42 @@
       "2,0",
       "2,2"
     ],
-    "score": 74,
+    "score": 72,
     "completionBonus": 50,
     "words": [
-      "ES",
+      "GREES",
       "MO",
       "EN",
-      "FEMES",
-      "GREES"
+      "FEMES"
     ],
     "scoringWords": [
       {
-        "word": "ES",
+        "word": "GREES",
         "row": 2,
-        "col": 3,
+        "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "move": 1
+        "score": 6
       },
       {
         "word": "MO",
         "row": 3,
         "col": 3,
         "direction": "horizontal",
-        "score": 4,
-        "move": 1
+        "score": 4
       },
       {
         "word": "EN",
         "row": 4,
         "col": 3,
         "direction": "horizontal",
-        "score": 2,
-        "move": 1
+        "score": 2
       },
       {
         "word": "FEMES",
         "row": 1,
         "col": 3,
         "direction": "vertical",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "GREES",
-        "row": 2,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 6,
-        "move": 2
+        "score": 10
       }
     ],
     "moves": [

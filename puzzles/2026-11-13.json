@@ -244,10 +244,10 @@
     "completionBonus": 50,
     "words": [
       "KEY",
-      "KA",
       "TO",
       "NE",
-      "TOKED"
+      "TOKED",
+      "KA"
     ],
     "scoringWords": [
       {
@@ -255,40 +255,35 @@
         "row": 1,
         "col": 4,
         "direction": "horizontal",
-        "score": 14,
-        "move": 1
-      },
-      {
-        "word": "KA",
-        "row": 1,
-        "col": 4,
-        "direction": "vertical",
-        "score": 6,
-        "move": 1
+        "score": 14
       },
       {
         "word": "TO",
         "row": 3,
         "col": 2,
         "direction": "horizontal",
-        "score": 2,
-        "move": 2
+        "score": 2
       },
       {
         "word": "NE",
         "row": 5,
         "col": 2,
         "direction": "horizontal",
-        "score": 2,
-        "move": 2
+        "score": 2
       },
       {
         "word": "TOKED",
         "row": 2,
         "col": 3,
         "direction": "vertical",
-        "score": 10,
-        "move": 2
+        "score": 10
+      },
+      {
+        "word": "KA",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 6
       }
     ],
     "moves": [

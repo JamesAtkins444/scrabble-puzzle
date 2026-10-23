@@ -242,8 +242,8 @@
     "completionBonus": 50,
     "words": [
       "SLAVER",
-      "VASA",
       "AID",
+      "VASA",
       "LI",
       "AD"
     ],
@@ -253,40 +253,35 @@
         "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "VASA",
-        "row": 0,
-        "col": 0,
-        "direction": "vertical",
-        "score": 15,
-        "move": 1
+        "score": 9
       },
       {
         "word": "AID",
         "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 4,
-        "move": 2
+        "score": 4
+      },
+      {
+        "word": "VASA",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 15
       },
       {
         "word": "LI",
         "row": 2,
         "col": 1,
         "direction": "vertical",
-        "score": 2,
-        "move": 2
+        "score": 2
       },
       {
         "word": "AD",
         "row": 2,
         "col": 2,
         "direction": "vertical",
-        "score": 3,
-        "move": 2
+        "score": 3
       }
     ],
     "moves": [

@@ -244,25 +244,23 @@
     "score": 80,
     "completionBonus": 50,
     "words": [
-      "GONAD",
-      "RIG"
+      "RIG",
+      "GONAD"
     ],
     "scoringWords": [
-      {
-        "word": "GONAD",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 22,
-        "move": 1
-      },
       {
         "word": "RIG",
         "row": 0,
         "col": 4,
         "direction": "horizontal",
-        "score": 8,
-        "move": 2
+        "score": 8
+      },
+      {
+        "word": "GONAD",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 22
       }
     ],
     "moves": [

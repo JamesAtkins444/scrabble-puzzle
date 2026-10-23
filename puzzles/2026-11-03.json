@@ -253,16 +253,14 @@
         "row": 0,
         "col": 2,
         "direction": "horizontal",
-        "score": 36,
-        "move": 1
+        "score": 36
       },
       {
         "word": "SAU",
         "row": 0,
         "col": 6,
         "direction": "vertical",
-        "score": 9,
-        "move": 2
+        "score": 9
       }
     ],
     "moves": [

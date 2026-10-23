@@ -244,8 +244,8 @@
     "words": [
       "ROUX",
       "UT",
-      "XI",
-      "PUL"
+      "PUL",
+      "XI"
     ],
     "scoringWords": [
       {
@@ -253,32 +253,28 @@
         "row": 0,
         "col": 0,
         "direction": "horizontal",
-        "score": 11,
-        "move": 1
+        "score": 11
       },
       {
         "word": "UT",
         "row": 0,
         "col": 2,
         "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "XI",
-        "row": 0,
-        "col": 3,
-        "direction": "vertical",
-        "score": 9,
-        "move": 1
+        "score": 2
       },
       {
         "word": "PUL",
         "row": 4,
         "col": 2,
         "direction": "vertical",
-        "score": 10,
-        "move": 2
+        "score": 10
+      },
+      {
+        "word": "XI",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 9
       }
     ],
     "moves": [

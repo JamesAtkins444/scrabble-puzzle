@@ -251,16 +251,14 @@
         "row": 2,
         "col": 1,
         "direction": "vertical",
-        "score": 24,
-        "move": 1
+        "score": 24
       },
       {
         "word": "YUGA",
         "row": 1,
         "col": 6,
         "direction": "vertical",
-        "score": 8,
-        "move": 2
+        "score": 8
       }
     ],
     "moves": [

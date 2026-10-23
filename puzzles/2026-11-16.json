@@ -253,16 +253,14 @@
         "row": 6,
         "col": 0,
         "direction": "horizontal",
-        "score": 21,
-        "move": 1
+        "score": 21
       },
       {
         "word": "RUE",
         "row": 4,
         "col": 1,
         "direction": "vertical",
-        "score": 3,
-        "move": 2
+        "score": 3
       }
     ],
     "moves": [

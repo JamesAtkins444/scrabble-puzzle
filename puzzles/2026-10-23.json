@@ -241,25 +241,23 @@
     "score": 92,
     "completionBonus": 50,
     "words": [
-      "ROBE",
-      "LEAN"
+      "LEAN",
+      "ROBE"
     ],
     "scoringWords": [
-      {
-        "word": "ROBE",
-        "row": 3,
-        "col": 4,
-        "direction": "vertical",
-        "score": 18,
-        "move": 1
-      },
       {
         "word": "LEAN",
         "row": 6,
         "col": 3,
         "direction": "horizontal",
-        "score": 24,
-        "move": 2
+        "score": 24
+      },
+      {
+        "word": "ROBE",
+        "row": 3,
+        "col": 4,
+        "direction": "vertical",
+        "score": 18
       }
     ],
     "moves": [

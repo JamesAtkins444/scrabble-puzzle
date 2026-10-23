@@ -252,16 +252,14 @@
         "row": 1,
         "col": 0,
         "direction": "horizontal",
-        "score": 30,
-        "move": 1
+        "score": 30
       },
       {
         "word": "DENE",
         "row": 1,
         "col": 0,
         "direction": "vertical",
-        "score": 21,
-        "move": 2
+        "score": 21
       }
     ],
     "moves": [

@@ -242,25 +242,23 @@
     "score": 84,
     "completionBonus": 50,
     "words": [
-      "WYTED",
-      "NODE"
+      "NODE",
+      "WYTED"
     ],
     "scoringWords": [
-      {
-        "word": "WYTED",
-        "row": 0,
-        "col": 5,
-        "direction": "vertical",
-        "score": 24,
-        "move": 1
-      },
       {
         "word": "NODE",
         "row": 4,
         "col": 3,
         "direction": "horizontal",
-        "score": 10,
-        "move": 2
+        "score": 10
+      },
+      {
+        "word": "WYTED",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 24
       }
     ],
     "moves": [

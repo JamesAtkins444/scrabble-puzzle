@@ -242,12 +242,12 @@
     "completionBonus": 50,
     "words": [
       "HI",
+      "IT",
       "ES",
+      "MU",
       "ATWAIN",
       "RE",
       "HEAR",
-      "IT",
-      "MU",
       "TUN"
     ],
     "scoringWords": [
@@ -256,64 +256,56 @@
         "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "ES",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "ATWAIN",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "RE",
-        "row": 5,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "HEAR",
-        "row": 2,
-        "col": 0,
-        "direction": "vertical",
-        "score": 7,
-        "move": 1
+        "score": 5
       },
       {
         "word": "IT",
         "row": 2,
         "col": 4,
         "direction": "horizontal",
-        "score": 2,
-        "move": 2
+        "score": 2
+      },
+      {
+        "word": "ES",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2
       },
       {
         "word": "MU",
         "row": 3,
         "col": 4,
         "direction": "horizontal",
-        "score": 4,
-        "move": 2
+        "score": 4
+      },
+      {
+        "word": "ATWAIN",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 9
+      },
+      {
+        "word": "RE",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "HEAR",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 7
       },
       {
         "word": "TUN",
         "row": 2,
         "col": 5,
         "direction": "vertical",
-        "score": 3,
-        "move": 2
+        "score": 3
       }
     ],
     "moves": [

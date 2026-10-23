@@ -252,16 +252,14 @@
         "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 21,
-        "move": 1
+        "score": 21
       },
       {
         "word": "BEE",
         "row": 2,
         "col": 0,
         "direction": "vertical",
-        "score": 21,
-        "move": 2
+        "score": 21
       }
     ],
     "moves": [

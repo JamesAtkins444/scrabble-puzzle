@@ -242,34 +242,31 @@
     "score": 81,
     "completionBonus": 50,
     "words": [
+      "LEE",
       "DEFATS",
-      "FOPS",
-      "LEE"
+      "FOPS"
     ],
     "scoringWords": [
+      {
+        "word": "LEE",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 3
+      },
       {
         "word": "DEFATS",
         "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 10,
-        "move": 1
+        "score": 10
       },
       {
         "word": "FOPS",
         "row": 0,
         "col": 5,
         "direction": "vertical",
-        "score": 18,
-        "move": 1
-      },
-      {
-        "word": "LEE",
-        "row": 0,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 3,
-        "move": 2
+        "score": 18
       }
     ],
     "moves": [

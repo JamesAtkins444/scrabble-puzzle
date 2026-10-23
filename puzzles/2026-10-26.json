@@ -244,8 +244,8 @@
     "completionBonus": 50,
     "words": [
       "PAWN",
-      "BUM",
-      "IS"
+      "IS",
+      "BUM"
     ],
     "scoringWords": [
       {
@@ -253,24 +253,21 @@
         "row": 4,
         "col": 3,
         "direction": "horizontal",
-        "score": 17,
-        "move": 1
-      },
-      {
-        "word": "BUM",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 10,
-        "move": 2
+        "score": 17
       },
       {
         "word": "IS",
         "row": 5,
         "col": 0,
         "direction": "vertical",
-        "score": 2,
-        "move": 3
+        "score": 2
+      },
+      {
+        "word": "BUM",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 10
       }
     ],
     "moves": [

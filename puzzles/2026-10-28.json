@@ -243,25 +243,23 @@
     "score": 98,
     "completionBonus": 50,
     "words": [
-      "YAR",
-      "DURRA"
+      "DURRA",
+      "YAR"
     ],
     "scoringWords": [
-      {
-        "word": "YAR",
-        "row": 4,
-        "col": 3,
-        "direction": "vertical",
-        "score": 12,
-        "move": 1
-      },
       {
         "word": "DURRA",
         "row": 6,
         "col": 0,
         "direction": "horizontal",
-        "score": 36,
-        "move": 2
+        "score": 36
+      },
+      {
+        "word": "YAR",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 12
       }
     ],
     "moves": [

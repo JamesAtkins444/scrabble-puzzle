@@ -240,7 +240,7 @@
       "6,0"
     ],
     "score": 136,
-    "completionBonus": 0,
+    "completionBonus": 100,
     "words": [
       "DEAFENS"
     ],
@@ -250,8 +250,7 @@
         "row": 0,
         "col": 0,
         "direction": "vertical",
-        "score": 36,
-        "move": 1
+        "score": 36
       }
     ],
     "moves": [

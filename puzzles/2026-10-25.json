@@ -240,12 +240,10 @@
       "4,4",
       "4,5"
     ],
-    "score": 84,
+    "score": 77,
     "completionBonus": 50,
     "words": [
       "SMEW",
-      "EM",
-      "DE",
       "TULE",
       "EMU",
       "DEL",
@@ -257,56 +255,35 @@
         "row": 3,
         "col": 2,
         "direction": "horizontal",
-        "score": 9,
-        "move": 1
-      },
-      {
-        "word": "EM",
-        "row": 2,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
-      },
-      {
-        "word": "DE",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
-        "score": 3,
-        "move": 1
+        "score": 9
       },
       {
         "word": "TULE",
         "row": 4,
         "col": 2,
         "direction": "horizontal",
-        "score": 4,
-        "move": 2
+        "score": 4
       },
       {
         "word": "EMU",
         "row": 2,
         "col": 3,
         "direction": "vertical",
-        "score": 5,
-        "move": 2
+        "score": 5
       },
       {
         "word": "DEL",
         "row": 2,
         "col": 4,
         "direction": "vertical",
-        "score": 4,
-        "move": 2
+        "score": 4
       },
       {
         "word": "WE",
         "row": 3,
         "col": 5,
         "direction": "vertical",
-        "score": 5,
-        "move": 2
+        "score": 5
       }
     ],
     "moves": [

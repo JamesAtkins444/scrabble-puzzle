@@ -242,43 +242,39 @@
     "score": 77,
     "completionBonus": 50,
     "words": [
+      "ER",
       "LEGATED",
       "REEL",
-      "ER",
       "RE"
     ],
     "scoringWords": [
+      {
+        "word": "ER",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2
+      },
       {
         "word": "LEGATED",
         "row": 4,
         "col": 0,
         "direction": "horizontal",
-        "score": 11,
-        "move": 1
+        "score": 11
       },
       {
         "word": "REEL",
         "row": 1,
         "col": 0,
         "direction": "vertical",
-        "score": 12,
-        "move": 2
-      },
-      {
-        "word": "ER",
-        "row": 3,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 3
+        "score": 12
       },
       {
         "word": "RE",
         "row": 3,
         "col": 1,
         "direction": "vertical",
-        "score": 2,
-        "move": 3
+        "score": 2
       }
     ],
     "moves": [

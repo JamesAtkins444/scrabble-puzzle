@@ -244,8 +244,8 @@
     "completionBonus": 50,
     "words": [
       "WAITED",
-      "START",
-      "AG"
+      "AG",
+      "START"
     ],
     "scoringWords": [
       {
@@ -253,24 +253,21 @@
         "row": 5,
         "col": 1,
         "direction": "horizontal",
-        "score": 10,
-        "move": 1
-      },
-      {
-        "word": "START",
-        "row": 1,
-        "col": 4,
-        "direction": "vertical",
-        "score": 5,
-        "move": 1
+        "score": 10
       },
       {
         "word": "AG",
         "row": 5,
         "col": 2,
         "direction": "vertical",
-        "score": 3,
-        "move": 2
+        "score": 3
+      },
+      {
+        "word": "START",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5
       }
     ],
     "moves": [

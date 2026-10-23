@@ -245,8 +245,8 @@
     "completionBonus": 50,
     "words": [
       "JAUP",
-      "PA",
-      "ALE"
+      "ALE",
+      "PA"
     ],
     "scoringWords": [
       {
@@ -254,24 +254,21 @@
         "row": 4,
         "col": 0,
         "direction": "horizontal",
-        "score": 26,
-        "move": 1
-      },
-      {
-        "word": "PA",
-        "row": 4,
-        "col": 3,
-        "direction": "vertical",
-        "score": 4,
-        "move": 1
+        "score": 26
       },
       {
         "word": "ALE",
         "row": 4,
         "col": 1,
         "direction": "vertical",
-        "score": 8,
-        "move": 2
+        "score": 8
+      },
+      {
+        "word": "PA",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4
       }
     ],
     "moves": [

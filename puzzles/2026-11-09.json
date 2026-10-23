@@ -242,25 +242,23 @@
     "score": 116,
     "completionBonus": 50,
     "words": [
-      "MENSED",
-      "MI"
+      "MI",
+      "MENSED"
     ],
     "scoringWords": [
-      {
-        "word": "MENSED",
-        "row": 0,
-        "col": 1,
-        "direction": "vertical",
-        "score": 54,
-        "move": 1
-      },
       {
         "word": "MI",
         "row": 0,
         "col": 1,
         "direction": "horizontal",
-        "score": 12,
-        "move": 2
+        "score": 12
+      },
+      {
+        "word": "MENSED",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 54
       }
     ],
     "moves": [

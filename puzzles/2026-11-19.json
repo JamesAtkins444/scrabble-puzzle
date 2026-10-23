@@ -240,16 +240,15 @@
       "6,5",
       "1,4"
     ],
-    "score": 79,
+    "score": 77,
     "completionBonus": 50,
     "words": [
       "INANE",
       "BI",
       "KA",
+      "HE",
       "EN",
-      "RE",
-      "REP",
-      "HE"
+      "REP"
     ],
     "scoringWords": [
       {
@@ -257,56 +256,42 @@
         "row": 5,
         "col": 1,
         "direction": "horizontal",
-        "score": 5,
-        "move": 1
+        "score": 5
       },
       {
         "word": "BI",
         "row": 4,
         "col": 1,
         "direction": "vertical",
-        "score": 4,
-        "move": 1
+        "score": 4
       },
       {
         "word": "KA",
         "row": 4,
         "col": 3,
         "direction": "vertical",
-        "score": 6,
-        "move": 1
-      },
-      {
-        "word": "EN",
-        "row": 4,
-        "col": 4,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "RE",
-        "row": 4,
-        "col": 5,
-        "direction": "vertical",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "REP",
-        "row": 4,
-        "col": 5,
-        "direction": "vertical",
-        "score": 5,
-        "move": 2
+        "score": 6
       },
       {
         "word": "HE",
         "row": 1,
         "col": 4,
         "direction": "vertical",
-        "score": 5,
-        "move": 3
+        "score": 5
+      },
+      {
+        "word": "EN",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "REP",
+        "row": 4,
+        "col": 5,
+        "direction": "vertical",
+        "score": 5
       }
     ],
     "moves": [

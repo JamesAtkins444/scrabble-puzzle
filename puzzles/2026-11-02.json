@@ -240,64 +240,50 @@
       "3,6",
       "2,1"
     ],
-    "score": 80,
+    "score": 75,
     "completionBonus": 50,
     "words": [
+      "UP",
       "AG",
-      "WO",
-      "RE",
-      "GODET",
       "WOW",
-      "UP"
+      "RE",
+      "GODET"
     ],
     "scoringWords": [
+      {
+        "word": "UP",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4
+      },
       {
         "word": "AG",
         "row": 2,
         "col": 4,
         "direction": "horizontal",
-        "score": 3,
-        "move": 1
-      },
-      {
-        "word": "WO",
-        "row": 3,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 5,
-        "move": 1
-      },
-      {
-        "word": "RE",
-        "row": 5,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 2,
-        "move": 1
-      },
-      {
-        "word": "GODET",
-        "row": 2,
-        "col": 5,
-        "direction": "vertical",
-        "score": 7,
-        "move": 1
+        "score": 3
       },
       {
         "word": "WOW",
         "row": 3,
         "col": 4,
         "direction": "horizontal",
-        "score": 9,
-        "move": 2
+        "score": 9
       },
       {
-        "word": "UP",
-        "row": 2,
-        "col": 1,
+        "word": "RE",
+        "row": 5,
+        "col": 4,
         "direction": "horizontal",
-        "score": 4,
-        "move": 3
+        "score": 2
+      },
+      {
+        "word": "GODET",
+        "row": 2,
+        "col": 5,
+        "direction": "vertical",
+        "score": 7
       }
     ],
     "moves": [

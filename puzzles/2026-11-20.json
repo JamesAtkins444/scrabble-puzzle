@@ -244,8 +244,8 @@
     "completionBonus": 50,
     "words": [
       "QUININS",
-      "GENES",
-      "YON"
+      "YON",
+      "GENES"
     ],
     "scoringWords": [
       {
@@ -253,24 +253,21 @@
         "row": 4,
         "col": 0,
         "direction": "horizontal",
-        "score": 16,
-        "move": 1
-      },
-      {
-        "word": "GENES",
-        "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 16,
-        "move": 1
+        "score": 16
       },
       {
         "word": "YON",
         "row": 2,
         "col": 3,
         "direction": "vertical",
-        "score": 6,
-        "move": 2
+        "score": 6
+      },
+      {
+        "word": "GENES",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 16
       }
     ],
     "moves": [

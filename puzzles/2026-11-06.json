@@ -243,52 +243,47 @@
     "score": 84,
     "completionBonus": 50,
     "words": [
-      "AIRY",
-      "BUNDLER",
       "TEA",
+      "AIRY",
       "TI",
+      "BUNDLER",
       "AY"
     ],
     "scoringWords": [
-      {
-        "word": "AIRY",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 14,
-        "move": 1
-      },
-      {
-        "word": "BUNDLER",
-        "row": 0,
-        "col": 2,
-        "direction": "vertical",
-        "score": 10,
-        "move": 1
-      },
       {
         "word": "TEA",
         "row": 5,
         "col": 1,
         "direction": "horizontal",
-        "score": 3,
-        "move": 2
+        "score": 3
+      },
+      {
+        "word": "AIRY",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 14
       },
       {
         "word": "TI",
         "row": 5,
         "col": 1,
         "direction": "vertical",
-        "score": 2,
-        "move": 2
+        "score": 2
+      },
+      {
+        "word": "BUNDLER",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 10
       },
       {
         "word": "AY",
         "row": 5,
         "col": 3,
         "direction": "vertical",
-        "score": 5,
-        "move": 2
+        "score": 5
       }
     ],
     "moves": [

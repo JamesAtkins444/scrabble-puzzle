@@ -243,52 +243,47 @@
     "score": 87,
     "completionBonus": 50,
     "words": [
-      "DEV",
-      "HARED",
       "NOTCHER",
       "OR",
-      "NO"
+      "DEV",
+      "NO",
+      "HARED"
     ],
     "scoringWords": [
-      {
-        "word": "DEV",
-        "row": 6,
-        "col": 4,
-        "direction": "horizontal",
-        "score": 11,
-        "move": 1
-      },
-      {
-        "word": "HARED",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
-        "score": 9,
-        "move": 1
-      },
       {
         "word": "NOTCHER",
         "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 13,
-        "move": 2
+        "score": 13
       },
       {
         "word": "OR",
         "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 2,
-        "move": 3
+        "score": 2
+      },
+      {
+        "word": "DEV",
+        "row": 6,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 11
       },
       {
         "word": "NO",
         "row": 2,
         "col": 0,
         "direction": "vertical",
-        "score": 2,
-        "move": 3
+        "score": 2
+      },
+      {
+        "word": "HARED",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 9
       }
     ],
     "moves": [
