@@ -355,6 +355,7 @@ button:focus-visible {
 
 .board-tile {
     position: relative;
+    container-type: size;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -390,17 +391,7 @@ button:focus-visible {
     font-weight: 700;
 }
 
-.board-tile .tile-value {
-    position: absolute;
-    z-index: 3;
-    right: 7%;
-    bottom: 6%;
-    color: inherit;
-    font-size: clamp(10px, 1.9vw, 14px);
-    font-weight: 700;
-    line-height: .8;
-}
-
+.board-tile .tile-value,
 /* Existing puzzle letters are dark tiles with white lettering. */
 .board-tile.original-tile {
     background: #000000;
@@ -558,6 +549,7 @@ button:focus-visible {
 
 .rack-tile {
     position: relative;
+    container-type: size;
     display: flex;
     align-items: center;
     justify-content: center;
