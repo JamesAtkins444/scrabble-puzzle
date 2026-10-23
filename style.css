@@ -1199,6 +1199,16 @@ dialog::backdrop {
     cursor: pointer;
 }
 
+@media (min-width: 601px) {
+    .board-tile .tile-value {
+        font-size: clamp(14.0625px, 2.671875vw, 19.6875px);
+    }
+
+    .rack-tile .tile-value {
+        font-size: clamp(7.5px, 1.425vw, 10.5px);
+    }
+}
+
 @media (max-width: 1100px) {
     #generatorPanel {
         position: static;
