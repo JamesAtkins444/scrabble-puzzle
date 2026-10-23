@@ -795,8 +795,8 @@ button:focus-visible {
     min-height: 44px;
     margin-top: 2px;
     border: 0;
-    background: var(--white);
-    color: var(--page);
+    background: #264653;
+    color: var(--white);
 }
 
 #nextPuzzleButton:hover:not(:disabled),
