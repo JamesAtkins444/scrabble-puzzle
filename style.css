@@ -1156,18 +1156,6 @@ dialog::backdrop {
     cursor: pointer;
 }
 
-#wordListDialog[open] {
-    display: flex;
-    flex-direction: column;
-}
-
-#wordListDialog .word-list-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .word-list-attribution {
     color: #777;
     font-size: 18px !important;
