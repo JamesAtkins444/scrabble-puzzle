@@ -395,12 +395,16 @@ button:focus-visible {
 .rack-tile .tile-value {
     position: absolute;
     z-index: 3;
+    display: block;
     right: 0;
     bottom: 0;
+    margin: 0;
+    padding: 0;
     color: inherit;
     font-size: 15cqh;
     font-weight: 700;
     line-height: 1;
+    text-align: right;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
 }
