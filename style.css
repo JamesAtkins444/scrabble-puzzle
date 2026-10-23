@@ -120,9 +120,7 @@ button:focus-visible {
 
 .rules-help-glyph {
     display: block;
-    line-height: 1;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+    line-height: .85;
 }
 
 #shareResultsButton svg {
