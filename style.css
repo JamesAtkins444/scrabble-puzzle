@@ -1495,6 +1495,14 @@ dialog::backdrop {
 }
 
 
+
+/* Ensure the Next Puzzle button text uses the requested teal colour. */
+#nextPuzzleButton,
+#nextPuzzleButton:hover:not(:disabled),
+#nextPuzzleButton:active:not(:disabled) {
+    color: #264653;
+}
+
 /* Align the score and achievement stars over the centre of board column one. */
 .board-top-row {
     display: block;
