@@ -5527,22 +5527,12 @@ async function initialise() {
             const shouldShowRules = !lastShown || (Date.now() - lastShown >= fourteenDaysMs);
 
             if (shouldShowRules && rulesDialog) {
-                if (typeof rulesDialog.showModal === "function") {
-                    rulesDialog.showModal();
-                } else {
-                    rulesDialog.setAttribute("open", "");
-                }
+                showRulesAfterLoading();
                 localStorage.setItem(lastShownKey, String(Date.now()));
             }
         } catch (error) {
             // If storage is unavailable, still show the help popup for this visit.
-            if (rulesDialog && !rulesDialog.open) {
-                if (typeof rulesDialog.showModal === "function") {
-                    rulesDialog.showModal();
-                } else {
-                    rulesDialog.setAttribute("open", "");
-                }
-            }
+            showRulesAfterLoading();
         }
     }
 }
@@ -5561,6 +5551,25 @@ function centerLoadingLogoOnBoard() {
 }
 centerLoadingLogoOnBoard();
 window.addEventListener("resize", centerLoadingLogoOnBoard);
+
+// Defer first-visit help until the loading screen is removed: native modal
+// dialogs render above ordinary elements regardless of their z-index.
+function showRulesAfterLoading() {
+    if (!rulesDialog) return;
+    const openRules = () => {
+        if (rulesDialog.open) return;
+        if (typeof rulesDialog.showModal === "function") {
+            rulesDialog.showModal();
+        } else {
+            rulesDialog.setAttribute("open", "");
+        }
+    };
+    if (document.getElementById("gameLoadingScreen")) {
+        window.addEventListener("toucanagrams:loading-finished", openRules, { once: true });
+    } else {
+        openRules();
+    }
+}
 
 // Keep the loading artwork visible until the puzzle and initial UI are ready.
 initialise()
@@ -5584,9 +5593,14 @@ initialise()
                 const loadingScreen = document.getElementById("gameLoadingScreen");
                 if (!loadingScreen) return;
                 loadingScreen.classList.add("is-hidden");
-                loadingScreen.addEventListener("transitionend", () => loadingScreen.remove(), { once: true });
+                const finishLoading = () => {
+                    if (!loadingScreen.isConnected) return;
+                    loadingScreen.remove();
+                    window.dispatchEvent(new Event("toucanagrams:loading-finished"));
+                };
+                loadingScreen.addEventListener("transitionend", finishLoading, { once: true });
                 // Fallback for reduced-motion browsers where no transition fires.
-                setTimeout(() => loadingScreen.remove(), 400);
+                setTimeout(finishLoading, 400);
             });
         });
     });
