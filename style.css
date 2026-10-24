@@ -1831,3 +1831,11 @@ dialog::backdrop {
     .game-loading-logo { animation: none; }
     .game-loading-screen { transition: none; }
 }
+
+/* Position the logo over the board center, not the viewport center. */
+.game-loading-logo {
+    position: absolute;
+    left: var(--loading-board-center-x, 50%);
+    top: var(--loading-board-center-y, 50%);
+    translate: -50% -50%;
+}
