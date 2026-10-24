@@ -5548,6 +5548,20 @@ async function initialise() {
 }
 
 
+// Measure the board even while the loading cover hides the game.
+const gameLoadingStartedAt = performance.now();
+function centerLoadingLogoOnBoard() {
+    const board = document.getElementById("board");
+    const cover = document.getElementById("gameLoadingScreen");
+    if (!board || !cover) return;
+    const rect = board.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    cover.style.setProperty("--loading-board-center-x", `${rect.left + rect.width / 2}px`);
+    cover.style.setProperty("--loading-board-center-y", `${rect.top + rect.height / 2}px`);
+}
+centerLoadingLogoOnBoard();
+window.addEventListener("resize", centerLoadingLogoOnBoard);
+
 // Keep the loading artwork visible until the puzzle and initial UI are ready.
 initialise()
     .catch(error => {
@@ -5561,6 +5575,10 @@ initialise()
         } catch (error) {
             // Font loading should never prevent the game from appearing.
         }
+        // Never show the loading screen for less than 1.5 seconds.
+        const remaining = Math.max(0, 1500 - (performance.now() - gameLoadingStartedAt));
+        await new Promise(resolve => setTimeout(resolve, remaining));
+        centerLoadingLogoOnBoard();
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 const loadingScreen = document.getElementById("gameLoadingScreen");
