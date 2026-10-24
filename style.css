@@ -1787,3 +1787,47 @@ dialog::backdrop {
         transition: none !important;
     }
 }
+
+/* Full-screen loading cover: gameplay and layout initialize underneath it. */
+.game-loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--page, #264653);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 280ms ease, visibility 280ms ease;
+}
+.game-loading-logo {
+    display: block;
+    width: clamp(104px, 25vw, 150px);
+    height: auto;
+    animation: toucan-loading-breathe 1.8s ease-in-out infinite;
+    transform-origin: center;
+}
+.game-loading-accessible-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+.game-loading-screen.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+@keyframes toucan-loading-breathe {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.045); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .game-loading-logo { animation: none; }
+    .game-loading-screen { transition: none; }
+}
