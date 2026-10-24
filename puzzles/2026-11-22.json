@@ -1,0 +1,324 @@
+{
+  "date": "2026-11-22",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "R",
+      "E",
+      "I",
+      "V",
+      "E"
+    ],
+    [
+      "D",
+      "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "U",
+      "",
+      "L",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "G",
+      "",
+      "I",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "O",
+      "U",
+      "T",
+      "E",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "U",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "T",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "R",
+      "E",
+      "I",
+      "V",
+      "E"
+    ],
+    [
+      "D",
+      "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "U",
+      "",
+      "L",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "G",
+      "",
+      "I",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "O",
+      "U",
+      "T",
+      "E",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "U",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "T",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,5": "double-word",
+    "6,3": "triple-letter",
+    "2,5": "triple-letter",
+    "4,6": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "DUGOUT",
+      "row": 1,
+      "col": 0,
+      "direction": "vertical"
+    },
+    {
+      "word": "OUTER",
+      "row": 4,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RELIT",
+      "row": 0,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "REIVE",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "P",
+    "I",
+    "G",
+    "O",
+    "I",
+    "R"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "R",
+        "E",
+        "I",
+        "V",
+        "E"
+      ],
+      [
+        "D",
+        "",
+        "E",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "U",
+        "",
+        "L",
+        "",
+        "G",
+        "",
+        ""
+      ],
+      [
+        "G",
+        "",
+        "I",
+        "",
+        "I",
+        "",
+        ""
+      ],
+      [
+        "O",
+        "U",
+        "T",
+        "E",
+        "R",
+        "",
+        ""
+      ],
+      [
+        "U",
+        "",
+        "",
+        "",
+        "O",
+        "",
+        ""
+      ],
+      [
+        "T",
+        "R",
+        "I",
+        "P",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "6,1",
+      "6,2",
+      "6,3",
+      "2,4",
+      "3,4",
+      "5,4"
+    ],
+    "score": 67,
+    "completionBonus": 50,
+    "words": [
+      "TRIP",
+      "GIRO"
+    ],
+    "scoringWords": [
+      {
+        "word": "TRIP",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 12
+      },
+      {
+        "word": "GIRO",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "TRIP",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 12,
+        "usedTiles": 3,
+        "newKeys": [
+          "6,1",
+          "6,2",
+          "6,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "TRIP",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 12
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "GIRO",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,4",
+          "3,4",
+          "5,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "GIRO",
+            "row": 2,
+            "col": 4,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 512
+  }
+}
