@@ -5548,4 +5548,27 @@ async function initialise() {
 }
 
 
-initialise();
+// Keep the loading artwork visible until the puzzle and initial UI are ready.
+initialise()
+    .catch(error => {
+        console.error("Could not initialise Toucanagrams:", error);
+    })
+    .finally(async () => {
+        try {
+            if (document.fonts && document.fonts.ready) {
+                await document.fonts.ready;
+            }
+        } catch (error) {
+            // Font loading should never prevent the game from appearing.
+        }
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                const loadingScreen = document.getElementById("gameLoadingScreen");
+                if (!loadingScreen) return;
+                loadingScreen.classList.add("is-hidden");
+                loadingScreen.addEventListener("transitionend", () => loadingScreen.remove(), { once: true });
+                // Fallback for reduced-motion browsers where no transition fires.
+                setTimeout(() => loadingScreen.remove(), 400);
+            });
+        });
+    });
