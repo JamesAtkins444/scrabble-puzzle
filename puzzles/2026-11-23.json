@@ -1,0 +1,369 @@
+{
+  "date": "2026-11-23",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "L",
+      "A",
+      "P",
+      "E",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "L",
+      "A",
+      "S",
+      "E",
+      "D",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "U",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "L",
+      "A",
+      "P",
+      "E",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "L",
+      "A",
+      "S",
+      "E",
+      "D",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "U",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "5,1": "triple-word",
+    "6,6": "double-word",
+    "4,6": "triple-letter",
+    "0,0": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "PLENUM",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "LAPEL",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "LASED",
+      "row": 2,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "LAPEL",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "D",
+    "T",
+    "O",
+    "A",
+    "H",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "L",
+        "A",
+        "P",
+        "E",
+        "L"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "L",
+        "",
+        ""
+      ],
+      [
+        "",
+        "L",
+        "A",
+        "S",
+        "E",
+        "D",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "N",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "U",
+        "",
+        ""
+      ],
+      [
+        "",
+        "A",
+        "H",
+        "E",
+        "M",
+        "",
+        ""
+      ],
+      [
+        "",
+        "D",
+        "O",
+        "T",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "5,1",
+      "5,2",
+      "5,3",
+      "6,1",
+      "6,2",
+      "6,3"
+    ],
+    "score": 97,
+    "completionBonus": 50,
+    "words": [
+      "AHEM",
+      "DOT",
+      "AD",
+      "HO",
+      "ET"
+    ],
+    "scoringWords": [
+      {
+        "word": "AHEM",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 27
+      },
+      {
+        "word": "DOT",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "AD",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 9
+      },
+      {
+        "word": "HO",
+        "row": 5,
+        "col": 2,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "ET",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "AHEM",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 27,
+        "usedTiles": 3,
+        "newKeys": [
+          "5,1",
+          "5,2",
+          "5,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "AHEM",
+            "row": 5,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 27
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "DOT",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 3,
+        "newKeys": [
+          "6,1",
+          "6,2",
+          "6,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "DOT",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "AD",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
+            "score": 9
+          },
+          {
+            "word": "HO",
+            "row": 5,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "ET",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1984
+  }
+}
