@@ -5335,7 +5335,7 @@ function refreshShareResultsSummary() {
         };
     } else if (result.stars === 2) {
         popupMessage = {
-            title: "This close",
+            title: "Close, but no cigar",
             subtitle: "You're hot on the heels, within reach, down in extra time, this is your moment. They will make a plucky, underdog movie about this one day "
         };
     } else if (result.stars === 1) {
