@@ -132,9 +132,6 @@ const tileRackElement =
 const revealPuzzleButton =
     document.getElementById("revealPuzzleButton");
 
-const nextPuzzleButton =
-    document.getElementById("nextPuzzleButton");
-
 const shuffleRackButton =
     document.getElementById("shuffleRackButton");
 
@@ -4376,7 +4373,7 @@ function revealBestAnswer() {
         rackActionsElement.hidden = false;
         rackActionsElement.classList.add("solver-revealed");
     }
-    [shuffleRackButton, clearBoardButton, revealPuzzleButton, nextPuzzleButton].forEach(button => {
+    [shuffleRackButton, clearBoardButton, revealPuzzleButton].forEach(button => {
         if (button) {
             button.hidden = true;
             button.disabled = true;
@@ -4763,7 +4760,7 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
             rackActionsElement.hidden = false;
             rackActionsElement.classList.remove("solver-revealed");
         }
-        [shuffleRackButton, clearBoardButton, revealPuzzleButton, nextPuzzleButton].forEach(button => {
+        [shuffleRackButton, clearBoardButton, revealPuzzleButton].forEach(button => {
             if (button) {
                 button.hidden = false;
                 button.disabled = false;
@@ -4935,10 +4932,6 @@ async function generateDailyPuzzle() {
 if (generateButton) {
     generateButton.textContent = "Daily Puzzle";
     generateButton.addEventListener("click", loadDailyPuzzle);
-}
-
-if (nextPuzzleButton) {
-    nextPuzzleButton.addEventListener("click", loadNextPuzzle);
 }
 
 
