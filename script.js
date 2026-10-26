@@ -3728,32 +3728,37 @@ function updateAchievementStars(
         `${earnedStars} of 3 stars earned${beatsSolver ? "; solver beaten" : ""}`
     );
 
-    // Automatically show Share only when the player reaches a new personal
-    // milestone: three stars once, then the crown once if earned later.
-    // The milestone is stored across daily puzzles in this browser.
-    const newlyEarnedThreeStars =
-        earnedStars === 3 && previousAchievementStars < 3;
-    const newlyEarnedCrown = beatsSolver && !previousAchievementCrown;
+    // Automatically show Share when the player first reaches each new
+    // achievement tier (1, 2, 3 stars, then crown) for this daily puzzle.
+    // Repeating the same tier, or dropping below it, does not reopen it.
     const shareMilestoneKey = "toucanagramsSharePopupMilestone";
-    const currentMilestone = beatsSolver ? 2 : (earnedStars === 3 ? 1 : 0);
+    const currentMilestone = beatsSolver ? 4 : earnedStars;
+    const previousMilestone = previousAchievementCrown ? 4 : previousAchievementStars;
     let shouldOpenShareDialog = false;
 
-    try {
-        const savedMilestone = Number(localStorage.getItem(shareMilestoneKey) || 0);
-        if (
-            ((newlyEarnedThreeStars && currentMilestone > savedMilestone) ||
-            (newlyEarnedCrown && currentMilestone > savedMilestone))
-        ) {
-            localStorage.setItem(shareMilestoneKey, String(currentMilestone));
-            shouldOpenShareDialog = true;
+    if (!answerRevealed && currentMilestone > previousMilestone) {
+        let savedMilestone = previousAutoShareMilestone;
+        try {
+            const saved = JSON.parse(localStorage.getItem(shareMilestoneKey) || "null");
+            if (saved && saved.date === activeDailyDateKey) {
+                savedMilestone = Math.max(savedMilestone, Number(saved.milestone) || 0);
+            }
+            // Earlier versions saved a single global number; ignore that legacy
+            // value so it cannot suppress today's first 1- or 2-star milestone.
+        } catch (error) {
+            // Browser storage may be disabled; use in-memory tracking instead.
         }
-    } catch (error) {
-        // If browser storage is unavailable, avoid repeatedly opening on score updates.
-        if (
-            (newlyEarnedThreeStars && currentMilestone > previousAutoShareMilestone) ||
-            (newlyEarnedCrown && currentMilestone > previousAutoShareMilestone)
-        ) {
+
+        if (currentMilestone > savedMilestone) {
             shouldOpenShareDialog = true;
+            try {
+                localStorage.setItem(shareMilestoneKey, JSON.stringify({
+                    date: activeDailyDateKey,
+                    milestone: currentMilestone
+                }));
+            } catch (error) {
+                // In-memory milestone tracking still prevents repeat popups.
+            }
         }
     }
     previousAutoShareMilestone = Math.max(previousAutoShareMilestone, currentMilestone);
