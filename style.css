@@ -1839,3 +1839,13 @@ dialog::backdrop {
     top: var(--loading-board-center-y, 50%);
     translate: -50% -50%;
 }
+
+/* Hide the scrollbar in How to Play tabs while preserving touch and wheel scrolling. */
+.rules-dialog {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-gutter: auto;
+}
+.rules-dialog::-webkit-scrollbar {
+    display: none;
+}
