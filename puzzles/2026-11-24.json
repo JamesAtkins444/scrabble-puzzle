@@ -1,0 +1,369 @@
+{
+  "date": "2026-11-24",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "P",
+      ""
+    ],
+    [
+      "",
+      "",
+      "H",
+      "E",
+      "R",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "E",
+      "E",
+      "B",
+      "E",
+      "E"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "S",
+      "",
+      "P",
+      ""
+    ],
+    [
+      "",
+      "",
+      "H",
+      "E",
+      "R",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "B",
+      "E",
+      "E",
+      "B",
+      "E",
+      "E"
+    ]
+  ],
+  "bonusSquares": {
+    "0,0": "triple-word",
+    "1,6": "double-word",
+    "2,1": "triple-letter",
+    "4,0": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "BEEBEE",
+      "row": 6,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "PELE",
+      "row": 3,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "HERE",
+      "row": 4,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "LASE",
+      "row": 1,
+      "col": 3,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "F",
+    "N",
+    "A",
+    "A",
+    "W"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "L",
+        "",
+        "",
+        ""
+      ],
+      [
+        "O",
+        "N",
+        "",
+        "A",
+        "",
+        "",
+        ""
+      ],
+      [
+        "F",
+        "A",
+        "",
+        "S",
+        "",
+        "P",
+        ""
+      ],
+      [
+        "",
+        "W",
+        "H",
+        "E",
+        "R",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "A",
+        "",
+        "",
+        "",
+        "L",
+        ""
+      ],
+      [
+        "",
+        "B",
+        "E",
+        "E",
+        "B",
+        "E",
+        "E"
+      ]
+    ],
+    "newKeys": [
+      "2,1",
+      "3,1",
+      "4,1",
+      "5,1",
+      "2,0",
+      "3,0"
+    ],
+    "score": 87,
+    "completionBonus": 50,
+    "words": [
+      "ON",
+      "FA",
+      "WHERE",
+      "OF",
+      "NAWAB"
+    ],
+    "scoringWords": [
+      {
+        "word": "ON",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "FA",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5
+      },
+      {
+        "word": "WHERE",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 11
+      },
+      {
+        "word": "OF",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "NAWAB",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 12
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "NAWAB",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 23,
+        "usedTiles": 4,
+        "newKeys": [
+          "2,1",
+          "3,1",
+          "4,1",
+          "5,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "WHERE",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 11
+          },
+          {
+            "word": "NAWAB",
+            "row": 2,
+            "col": 1,
+            "direction": "vertical",
+            "score": 12
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "OF",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 14,
+        "usedTiles": 2,
+        "newKeys": [
+          "2,0",
+          "3,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "ON",
+            "row": 2,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "FA",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "OF",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 777
+  }
+}
