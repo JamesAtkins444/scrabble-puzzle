@@ -1,0 +1,353 @@
+{
+  "date": "2026-11-25",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "S",
+      "C",
+      "A",
+      "T",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "V",
+      "",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "T",
+      "R",
+      "E",
+      "E",
+      "K",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "S",
+      "C",
+      "A",
+      "T",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "V",
+      "",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "T",
+      "R",
+      "E",
+      "E",
+      "K",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,4": "triple-word",
+    "1,0": "double-word",
+    "6,6": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "STREEK",
+      "row": 3,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "TOD",
+      "row": 3,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "COVE",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "SCATT",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "I",
+    "R",
+    "T",
+    "O",
+    "G"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "E",
+        "",
+        "S",
+        "C",
+        "A",
+        "T",
+        "T"
+      ],
+      [
+        "G",
+        "R",
+        "I",
+        "O",
+        "T",
+        "",
+        ""
+      ],
+      [
+        "O",
+        "",
+        "",
+        "V",
+        "",
+        "",
+        ""
+      ],
+      [
+        "S",
+        "T",
+        "R",
+        "E",
+        "E",
+        "K",
+        ""
+      ],
+      [
+        "",
+        "O",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "D",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "1,0",
+      "1,1",
+      "1,2",
+      "1,4",
+      "0,0",
+      "2,0"
+    ],
+    "score": 76,
+    "completionBonus": 50,
+    "words": [
+      "GRIOT",
+      "EGOS",
+      "SI",
+      "AT"
+    ],
+    "scoringWords": [
+      {
+        "word": "GRIOT",
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 12
+      },
+      {
+        "word": "EGOS",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 10
+      },
+      {
+        "word": "SI",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "AT",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "GRIOT",
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 16,
+        "usedTiles": 4,
+        "newKeys": [
+          "1,0",
+          "1,1",
+          "1,2",
+          "1,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "GRIOT",
+            "row": 1,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 12
+          },
+          {
+            "word": "SI",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "AT",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "EGOS",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 10,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,0",
+          "2,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "EGOS",
+            "row": 0,
+            "col": 0,
+            "direction": "vertical",
+            "score": 10
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1355
+  }
+}
