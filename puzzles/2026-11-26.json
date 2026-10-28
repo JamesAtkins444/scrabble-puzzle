@@ -1,0 +1,369 @@
+{
+  "date": "2026-11-26",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Q",
+      "U",
+      "O",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "C",
+      "E",
+      "N",
+      "S",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "U",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "B",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Q",
+      "U",
+      "O",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "S",
+      "",
+      ""
+    ],
+    [
+      "C",
+      "E",
+      "N",
+      "S",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "U",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "B",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "1,0": "triple-word",
+    "0,2": "double-word",
+    "6,0": "double-letter",
+    "6,4": "double-letter",
+    "6,6": "triple-letter",
+    "0,6": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "CENSER",
+      "row": 4,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "NUB",
+      "row": 4,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "RUSE",
+      "row": 1,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "QUOD",
+      "row": 2,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "N",
+    "E",
+    "E",
+    "W",
+    "O",
+    "V"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "W"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "R",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "E",
+        "",
+        "Q",
+        "U",
+        "O",
+        "D"
+      ],
+      [
+        "",
+        "V",
+        "",
+        "",
+        "S",
+        "",
+        ""
+      ],
+      [
+        "C",
+        "E",
+        "N",
+        "S",
+        "E",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "N",
+        "U",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "B",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,6",
+      "1,6",
+      "0,5",
+      "2,1",
+      "3,1",
+      "5,1"
+    ],
+    "score": 87,
+    "completionBonus": 50,
+    "words": [
+      "OW",
+      "NU",
+      "EVEN",
+      "WED"
+    ],
+    "scoringWords": [
+      {
+        "word": "OW",
+        "row": 0,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 13
+      },
+      {
+        "word": "NU",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "EVEN",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 7
+      },
+      {
+        "word": "WED",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 15
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "WED",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 15,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,6",
+          "1,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "WED",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 15
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "OW",
+        "row": 0,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 13,
+        "usedTiles": 1,
+        "newKeys": [
+          "0,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "OW",
+            "row": 0,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 13
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "EVEN",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 9,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,1",
+          "3,1",
+          "5,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "NU",
+            "row": 5,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "EVEN",
+            "row": 2,
+            "col": 1,
+            "direction": "vertical",
+            "score": 7
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1169
+  }
+}
