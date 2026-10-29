@@ -1902,9 +1902,10 @@ body {
     text-decoration: none;
 }
 
-.site-footer-links a:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+.site-footer-links a:hover,
+.site-footer-links a:focus,
+.site-footer-links a:active {
+    text-decoration: none;
 }
 
 .site-footer-support {
