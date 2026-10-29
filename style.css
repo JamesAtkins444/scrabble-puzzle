@@ -1726,6 +1726,15 @@ dialog::backdrop {
     overflow-wrap: anywhere;
 }
 
+/* Keep the player's best result below the explanation when the solver is revealed. */
+.share-results-dialog.is-reveal-mode .share-results-subtitle {
+    margin-bottom: 8px;
+}
+
+.share-results-dialog.is-reveal-mode .share-results-achievements {
+    margin: 0 0 6px;
+}
+
 .share-results-status {
     overflow-wrap: anywhere;
 }
