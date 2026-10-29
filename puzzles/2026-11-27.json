@@ -1,0 +1,340 @@
+{
+  "date": "2026-11-27",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "U",
+      "M",
+      "",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "U",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "U",
+      "N",
+      "T",
+      "R",
+      "I",
+      "M"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "U",
+      "M",
+      "",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "U",
+      "",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "U",
+      "N",
+      "T",
+      "R",
+      "I",
+      "M"
+    ]
+  ],
+  "bonusSquares": {
+    "0,1": "triple-word",
+    "0,4": "double-word",
+    "1,6": "double-letter",
+    "2,0": "triple-letter",
+    "2,3": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "UNTRIM",
+      "row": 6,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "MUT",
+      "row": 4,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "SOLI",
+      "row": 3,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "MUM",
+      "row": 4,
+      "col": 1,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "G",
+    "I",
+    "E",
+    "P",
+    "H"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "G",
+        "H",
+        "I",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "P",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "E",
+        "S",
+        ""
+      ],
+      [
+        "",
+        "M",
+        "U",
+        "M",
+        "",
+        "O",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "U",
+        "",
+        "L",
+        ""
+      ],
+      [
+        "",
+        "U",
+        "N",
+        "T",
+        "R",
+        "I",
+        "M"
+      ]
+    ],
+    "newKeys": [
+      "0,4",
+      "1,4",
+      "2,4",
+      "3,4",
+      "0,3",
+      "0,5"
+    ],
+    "score": 84,
+    "completionBonus": 50,
+    "words": [
+      "GHI",
+      "ES",
+      "HOPE"
+    ],
+    "scoringWords": [
+      {
+        "word": "GHI",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 14
+      },
+      {
+        "word": "ES",
+        "row": 3,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "HOPE",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 18
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "HOPE",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 20,
+        "usedTiles": 4,
+        "newKeys": [
+          "0,4",
+          "1,4",
+          "2,4",
+          "3,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "ES",
+            "row": 3,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "HOPE",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 18
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "GHI",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 14,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,3",
+          "0,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "GHI",
+            "row": 0,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 14
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 759
+  }
+}
