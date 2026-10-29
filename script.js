@@ -3689,6 +3689,29 @@ function updateScoreDisplay(
 ) {
     updateShareButtonPulse();
 
+    // Once the solver has been used, replace the score and achievement stars
+    // with a clear label. This also applies when the locked state is restored.
+    if (answerRevealed) {
+        if (scoreValueElement) {
+            scoreValueElement.textContent = "Solver used";
+        }
+
+        const starsElement = document.getElementById("achievementStars");
+        if (starsElement) {
+            starsElement.hidden = true;
+        }
+
+        if (scoreBonusElement) {
+            scoreBonusElement.textContent = "";
+        }
+        return;
+    }
+
+    const existingStarsElement = document.getElementById("achievementStars");
+    if (existingStarsElement) {
+        existingStarsElement.hidden = false;
+    }
+
     if (scoreValueElement) {
         // Show the player's score and the verified solver target together.
         // The solver target stays hidden until the solver has a result.
