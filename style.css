@@ -1863,3 +1863,103 @@ dialog::backdrop {
 .rules-dialog::-webkit-scrollbar {
     display: none;
 }
+
+
+/* Fixed footer links and Ko-fi support button. */
+body {
+    padding-bottom: 116px;
+}
+
+.site-footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px 10px;
+    background: var(--page, #264653);
+    color: #ffffff;
+    text-align: center;
+}
+
+.site-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-family: var(--font, 'Dongle', sans-serif);
+    font-size: 22px;
+    line-height: 1;
+}
+
+.site-footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.site-footer-links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.site-footer-support {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30px;
+}
+
+.update-log-page {
+    width: min(500px, 100%);
+    margin: 0 auto;
+    padding: 26px 8px 24px;
+    color: #ffffff;
+    font-family: var(--font, 'Dongle', sans-serif);
+}
+
+.update-log-page h1 {
+    margin: 0 0 20px;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: .95;
+    text-align: center;
+}
+
+.update-log-entry-date {
+    margin: 0 0 6px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.update-log-entry ul {
+    margin: 0 0 22px;
+    padding-left: 28px;
+    font-size: 25px;
+    line-height: 1.05;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding-bottom: 112px;
+    }
+
+    .site-footer {
+        gap: 6px;
+        padding: 7px 8px 9px;
+    }
+
+    .site-footer-links {
+        gap: 6px;
+        font-size: 21px;
+    }
+
+    .update-log-page {
+        padding-top: 20px;
+    }
+}
