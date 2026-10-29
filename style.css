@@ -1727,7 +1727,12 @@ dialog::backdrop {
 }
 
 /* Keep the player's best result below the explanation when the solver is revealed. */
+.share-results-dialog.is-reveal-mode .share-results-content {
+    padding-top: 0;
+}
+
 .share-results-dialog.is-reveal-mode .share-results-subtitle {
+    margin-top: 0;
     margin-bottom: 8px;
 }
 
