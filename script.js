@@ -294,6 +294,68 @@ function cloneBoard(source) {
 }
 
 
+function getDailyBoardStateKey(dateKey = activeDailyDateKey) {
+    return `toucanagrams-board-state-${dateKey}`;
+}
+
+
+function saveDailyBoardState() {
+    if (!activeDailyDateKey || !board.length || !initialRackTiles.length) return;
+
+    try {
+        localStorage.setItem(getDailyBoardStateKey(), JSON.stringify({
+            date: activeDailyDateKey,
+            board,
+            playerPlacedTiles,
+            playerTiles,
+            playerRackPositions,
+            answerRevealed
+        }));
+    } catch (error) {
+        // The game remains playable if browser storage is unavailable or full.
+    }
+}
+
+
+function restoreDailyBoardState() {
+    try {
+        const saved = JSON.parse(
+            localStorage.getItem(getDailyBoardStateKey()) || "null"
+        );
+
+        if (
+            !saved ||
+            saved.date !== activeDailyDateKey ||
+            !Array.isArray(saved.board) ||
+            saved.board.length !== boardSize ||
+            !Array.isArray(saved.playerTiles) ||
+            !Array.isArray(saved.playerRackPositions) ||
+            !saved.playerPlacedTiles ||
+            typeof saved.playerPlacedTiles !== "object"
+        ) {
+            return false;
+        }
+
+        const validBoard = saved.board.every(
+            row => Array.isArray(row) && row.length === boardSize
+        );
+        if (!validBoard) return false;
+
+        board = cloneBoard(saved.board);
+        playerPlacedTiles = saved.playerPlacedTiles;
+        playerTiles = [...saved.playerTiles];
+        playerRackPositions = [...saved.playerRackPositions];
+        answerRevealed = saved.answerRevealed === true;
+        selectedRackTile = null;
+        selectedBoardCell = null;
+        return true;
+    } catch (error) {
+        // Ignore malformed or unavailable saved state and start a fresh board.
+        return false;
+    }
+}
+
+
 /* ==================================================
 GENERATOR SETTINGS
 ================================================== */
@@ -3403,6 +3465,7 @@ function calculatePlayerScore() {
         // own score, which is used by the share popup and personal-best tracking.
         updateScoreDisplay(bestSolution.score, "");
         displayScoringWords(bestSolution.scoringWords || []);
+        saveDailyBoardState();
         return bestSolution.score;
     }
 
@@ -3529,6 +3592,7 @@ function calculatePlayerScore() {
 
     saveDailyBestScore();
     updateShareButtonPulse();
+    saveDailyBoardState();
 
 
     return score;
@@ -4443,6 +4507,7 @@ if (shuffleRackButton) {
 
         selectedRackTile = null;
         displayTileRack();
+        saveDailyBoardState();
     });
 }
 
@@ -4725,6 +4790,9 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
         score = 0;
         answerRevealed = false;
 
+        // Restore this day's board, rack and solver-lock state after a refresh.
+        restoreDailyBoardState();
+
         if (revealAnswerButton) {
             revealAnswerButton.textContent = bestSolution.fullSolution
                 ? "Reveal Full Answer"
@@ -4782,6 +4850,26 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
         }
         if (shareResultsButton) {
             shareResultsButton.disabled = false;
+        }
+
+        if (answerRevealed) {
+            const rackActionsElement = document.getElementById("rackActions");
+            if (rackActionsElement) {
+                rackActionsElement.classList.add("solver-revealed");
+            }
+            [shuffleRackButton, clearBoardButton, revealPuzzleButton].forEach(button => {
+                if (button) {
+                    button.hidden = true;
+                    button.disabled = true;
+                }
+            });
+            if (revealPuzzleButton) {
+                revealPuzzleButton.textContent = bestSolution.fullSolution
+                    ? "Full Answer Revealed"
+                    : "Solver Answer Revealed";
+                revealPuzzleButton.setAttribute("aria-expanded", "true");
+            }
+            shareResultsMode = "reveal";
         }
 
         displayBoard();
