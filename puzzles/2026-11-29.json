@@ -1,0 +1,402 @@
+{
+  "date": "2026-11-29",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B"
+    ],
+    [
+      "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "C",
+      "H",
+      "E",
+      "D",
+      "E",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      "T"
+    ],
+    [
+      "M",
+      "Y",
+      "N",
+      "A",
+      "",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "B",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "B"
+    ],
+    [
+      "",
+      "",
+      "",
+      "R",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "C",
+      "H",
+      "E",
+      "D",
+      "E",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      "T"
+    ],
+    [
+      "M",
+      "Y",
+      "N",
+      "A",
+      "",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "B",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,0": "triple-word",
+    "0,4": "double-word",
+    "0,2": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "CHEDER",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "BIRTH",
+      "row": 1,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "REHAB",
+      "row": 2,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "MYNA",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "A",
+    "D",
+    "T",
+    "U",
+    "I",
+    "R"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "T",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "D",
+        "I",
+        "B"
+      ],
+      [
+        "",
+        "",
+        "U",
+        "R",
+        "A",
+        "R",
+        "I"
+      ],
+      [
+        "",
+        "C",
+        "H",
+        "E",
+        "D",
+        "E",
+        "R"
+      ],
+      [
+        "",
+        "",
+        "",
+        "H",
+        "",
+        "",
+        "T"
+      ],
+      [
+        "M",
+        "Y",
+        "N",
+        "A",
+        "",
+        "",
+        "H"
+      ],
+      [
+        "",
+        "",
+        "",
+        "B",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "2,2",
+      "2,4",
+      "2,5",
+      "1,4",
+      "1,5",
+      "0,5"
+    ],
+    "score": 75,
+    "completionBonus": 50,
+    "words": [
+      "DIB",
+      "URARI",
+      "UH",
+      "DAD",
+      "TIRE"
+    ],
+    "scoringWords": [
+      {
+        "word": "DIB",
+        "row": 1,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 6
+      },
+      {
+        "word": "URARI",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 5
+      },
+      {
+        "word": "UH",
+        "row": 2,
+        "col": 2,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "DAD",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "TIRE",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 4
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "URARI",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 15,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,2",
+          "2,4",
+          "2,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "URARI",
+            "row": 2,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "UH",
+            "row": 2,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "AD",
+            "row": 2,
+            "col": 4,
+            "direction": "vertical",
+            "score": 3
+          },
+          {
+            "word": "RE",
+            "row": 2,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "DIB",
+        "row": 1,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 14,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,4",
+          "1,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "DIB",
+            "row": 1,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "DAD",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "IRE",
+            "row": 1,
+            "col": 5,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "TIRE",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 4,
+        "usedTiles": 1,
+        "newKeys": [
+          "0,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "TIRE",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1061
+  }
+}
