@@ -5419,7 +5419,7 @@ function getShareResultsText() {
     const result = getShareResultDetails();
     const scoreLine = `${result.playerScore}/${result.solverScore === null ? "—" : result.solverScore}`;
     const starLine = "⭐".repeat(result.stars) + (result.crown ? " 👑" : "");
-    return `Toucanagram #${result.puzzleNumber}\n\n${scoreLine}\n\n${starLine}\n\nPlay now at https://scrabble-puzzle.onrender.com/`;
+    return `Toucanagram #${result.puzzleNumber}\n\n${scoreLine}\n\n${starLine}\n\nPlay now at https://www.toucanagrams.com/`;
 }
 
 function refreshShareResultsSummary() {
@@ -5564,7 +5564,7 @@ if (shareResultsButton && shareResultsDialog) {
 if (copyShareResultsButton) {
     copyShareResultsButton.addEventListener("click", async () => {
         const textToCopy = shareResultsMode === "reveal"
-            ? `Toucanagram #${getShareResultDetails().puzzleNumber}\nI didn't get it, but you might!\nTry at https://scrabble-puzzle.onrender.com/`
+            ? `Toucanagram #${getShareResultDetails().puzzleNumber}\nI didn't get it, but you might!\nTry at https://www.toucanagrams.com/`
             : getShareResultsText();
 
         try {
