@@ -5563,9 +5563,7 @@ if (shareResultsButton && shareResultsDialog) {
 
 if (copyShareResultsButton) {
     copyShareResultsButton.addEventListener("click", async () => {
-        const textToCopy = shareResultsMode === "reveal"
-            ? `Toucanagram #${getShareResultDetails().puzzleNumber}\nI didn't get it, but you might!\nTry at https://www.toucanagrams.com/`
-            : getShareResultsText();
+        const textToCopy = getShareResultsText();
 
         try {
             if (navigator.clipboard && window.isSecureContext) {
