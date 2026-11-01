@@ -5382,14 +5382,26 @@ function saveDailyBestScore() {
 }
 
 function getShareResultDetails() {
-    const currentScore = Number.isFinite(score) ? score : 0;
     const solverScore =
         bestSolution && Number.isFinite(bestSolution.score)
             ? bestSolution.score
             : null;
     const savedBest = getDailyBestResult();
-    const playerScore = Math.max(currentScore, savedBest.score);
 
+    // Once the solver is revealed, use only the player's saved pre-reveal
+    // best. The solver's completed board must not create player achievements.
+    if (answerRevealed) {
+        return {
+            playerScore: savedBest.score,
+            solverScore,
+            stars: savedBest.stars || 0,
+            crown: !!savedBest.crown,
+            puzzleNumber: getDailyPuzzleNumber()
+        };
+    }
+
+    const currentScore = Number.isFinite(score) ? score : 0;
+    const playerScore = Math.max(currentScore, savedBest.score);
     const allTilesUsed =
         playerTiles.length === 0 &&
         Object.keys(playerPlacedTiles).length === initialRackTiles.length;
@@ -5404,14 +5416,13 @@ function getShareResultDetails() {
     stars = Math.max(stars, savedBest.stars || 0);
 
     const crown = (solverScore !== null && playerScore > solverScore) || !!savedBest.crown;
-    const puzzleNumber = getDailyPuzzleNumber();
 
     return {
         playerScore,
         solverScore,
         stars,
         crown,
-        puzzleNumber
+        puzzleNumber: getDailyPuzzleNumber()
     };
 }
 
