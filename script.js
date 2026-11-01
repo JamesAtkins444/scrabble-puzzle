@@ -5473,18 +5473,9 @@ function refreshShareResultsSummary() {
     const shareResultsContent = document.querySelector(".share-results-content");
     if (shareResultsAchievements && shareResultsContent && shareResultsSubtitle) {
         shareResultsAchievements.hidden = false;
-
-        // In the "Solver used" popup, show the player's best result after the
-        // explanatory copy. In the normal results popup, keep achievements at the top.
-        if (isRevealMode) {
-            shareResultsContent.insertBefore(shareResultsAchievements, shareResultsSubtitle.nextSibling);
-        } else {
-            shareResultsContent.parentNode.insertBefore(
-                shareResultsAchievements,
-                shareResultsContent
-            );
-        }
-        shareResultsDialog?.classList.toggle("is-reveal-mode", isRevealMode);
+        // Keep the score, stars and crown directly below the popup text in every mode.
+        shareResultsContent.insertBefore(shareResultsAchievements, shareResultsSubtitle.nextSibling);
+        shareResultsDialog?.classList.remove("is-reveal-mode");
     }
 
     const continuePlayingButton = document.getElementById("continuePlayingButton");
