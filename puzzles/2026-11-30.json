@@ -1,0 +1,368 @@
+{
+  "date": "2026-11-30",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "R",
+      "",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "N",
+      "T",
+      "R",
+      "U",
+      "M"
+    ],
+    [
+      "",
+      "K",
+      "",
+      "A",
+      "",
+      "",
+      "O"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "N",
+      "",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "R",
+      "",
+      "D",
+      "",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "R",
+      "",
+      "S",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "N",
+      "T",
+      "R",
+      "U",
+      "M"
+    ],
+    [
+      "",
+      "K",
+      "",
+      "A",
+      "",
+      "",
+      "O"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "N",
+      "",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "R",
+      "",
+      "D",
+      "",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,2": "double-word",
+    "6,4": "triple-letter",
+    "6,0": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "ANTRUM",
+      "row": 1,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RAKER",
+      "row": 0,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "STAND",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "MOSSO",
+      "row": 1,
+      "col": 6,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "J",
+    "O",
+    "B",
+    "E",
+    "E",
+    "N"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "R",
+        "",
+        "S",
+        "",
+        "J",
+        ""
+      ],
+      [
+        "",
+        "A",
+        "N",
+        "T",
+        "R",
+        "U",
+        "M"
+      ],
+      [
+        "",
+        "K",
+        "",
+        "A",
+        "",
+        "B",
+        "O"
+      ],
+      [
+        "",
+        "E",
+        "",
+        "N",
+        "",
+        "E",
+        "S"
+      ],
+      [
+        "",
+        "R",
+        "E",
+        "D",
+        "",
+        "",
+        "S"
+      ],
+      [
+        "",
+        "",
+        "O",
+        "",
+        "",
+        "",
+        "O"
+      ],
+      [
+        "",
+        "",
+        "N",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,5",
+      "2,5",
+      "3,5",
+      "4,2",
+      "5,2",
+      "6,2"
+    ],
+    "score": 79,
+    "completionBonus": 50,
+    "words": [
+      "BO",
+      "ES",
+      "RED",
+      "EON",
+      "JUBE"
+    ],
+    "scoringWords": [
+      {
+        "word": "BO",
+        "row": 2,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "ES",
+        "row": 3,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "RED",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "EON",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 6
+      },
+      {
+        "word": "JUBE",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 13
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "JUBE",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 19,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,5",
+          "2,5",
+          "3,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "BO",
+            "row": 2,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "ES",
+            "row": 3,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "JUBE",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 13
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "EON",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 10,
+        "usedTiles": 3,
+        "newKeys": [
+          "4,2",
+          "5,2",
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "RED",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "EON",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 960
+  }
+}
