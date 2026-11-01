@@ -1726,17 +1726,17 @@ dialog::backdrop {
     overflow-wrap: anywhere;
 }
 
-/* Keep the player's best result below the explanation when the solver is revealed. */
-.share-results-dialog.is-reveal-mode .share-results-content {
+/* Keep every Share popup in the same layout as the Solver Used popup. */
+.share-results-content {
     padding-top: 0;
 }
 
-.share-results-dialog.is-reveal-mode .share-results-subtitle {
+.share-results-subtitle {
     margin-top: 0;
     margin-bottom: 8px;
 }
 
-.share-results-dialog.is-reveal-mode .share-results-achievements {
+.share-results-achievements {
     margin: 0 0 6px;
 }
 
