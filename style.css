@@ -1964,3 +1964,10 @@ body {
         padding-top: 20px;
     }
 }
+
+/* Match an 80% browser-zoom appearance on desktop only. */
+@media (min-width: 601px) {
+    body {
+        zoom: 0.8;
+    }
+}
