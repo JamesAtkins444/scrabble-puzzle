@@ -5471,7 +5471,7 @@ function refreshShareResultsSummary() {
     } else {
         popupMessage = {
             title: "Keep going",
-            subtitle: "Coldplay was going to write a song about this. But a song about grey stars had less commercial potential than yellow. Don't be put off though, I believe in you."
+            subtitle: "Coldplay was going to write a song about this. But a song about no stars had less commercial potential than yellow ones. Don't be put off though, me and Chris believe in you"
         };
     }
 
