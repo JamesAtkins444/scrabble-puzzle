@@ -2342,8 +2342,11 @@ function displayTileRack() {
                     }
 
                     const visual = rackTileDrag.visual;
-                    visual.style.left = `${moveEvent.clientX - visual.offsetWidth / 2}px`;
-                    visual.style.top = `${moveEvent.clientY - visual.offsetHeight / 2}px`;
+                    // CSS zoom scales the page, but pointer coordinates are viewport-based.
+                    // Convert the floating tile position back into the scaled body's CSS space.
+                    const desktopZoom = window.matchMedia("(min-width: 601px)").matches ? 0.8 : 1;
+                    visual.style.left = `${moveEvent.clientX / desktopZoom - visual.offsetWidth / 2}px`;
+                    visual.style.top = `${moveEvent.clientY / desktopZoom - visual.offsetHeight / 2}px`;
 
                     const element = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY);
                     const cell = element && element.closest ? element.closest(".cell") : null;
@@ -5668,8 +5671,11 @@ function centerLoadingLogoOnBoard() {
     if (!board || !cover) return;
     const rect = board.getBoundingClientRect();
     if (!rect.width || !rect.height) return;
-    cover.style.setProperty("--loading-board-center-x", `${rect.left + rect.width / 2}px`);
-    cover.style.setProperty("--loading-board-center-y", `${rect.top + rect.height / 2}px`);
+    // The loading cover is inside the 80%-scaled body on desktop, so
+    // convert viewport coordinates into that scaled coordinate space.
+    const desktopZoom = window.matchMedia("(min-width: 601px)").matches ? 0.8 : 1;
+    cover.style.setProperty("--loading-board-center-x", `${(rect.left + rect.width / 2) / desktopZoom}px`);
+    cover.style.setProperty("--loading-board-center-y", `${(rect.top + rect.height / 2) / desktopZoom}px`);
 }
 centerLoadingLogoOnBoard();
 window.addEventListener("resize", centerLoadingLogoOnBoard);
