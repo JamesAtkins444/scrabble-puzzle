@@ -1970,4 +1970,12 @@ body {
     body {
         zoom: 0.8;
     }
+
+    /* Fixed overlays need to compensate for the scaled body dimensions. */
+    .game-loading-screen {
+        width: 125vw;
+        height: 125vh;
+        right: auto;
+        bottom: auto;
+    }
 }
