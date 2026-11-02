@@ -1,0 +1,352 @@
+{
+  "date": "2026-12-01",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "T",
+      "O",
+      "L",
+      "A",
+      "N"
+    ],
+    [
+      "",
+      "G",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "I",
+      "N",
+      "G",
+      "E",
+      "Y"
+    ],
+    [
+      "",
+      "I",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "T",
+      "O",
+      "L",
+      "A",
+      "N"
+    ],
+    [
+      "",
+      "G",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "A",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "I",
+      "N",
+      "G",
+      "E",
+      "Y"
+    ],
+    [
+      "",
+      "I",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,5": "double-word",
+    "0,0": "triple-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "DINGEY",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "GADI",
+      "row": 3,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "HONAN",
+      "row": 1,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "TOLAN",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "F",
+    "W",
+    "A",
+    "D",
+    "O"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "W",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "H",
+        "",
+        "O",
+        ""
+      ],
+      [
+        "O",
+        "",
+        "T",
+        "O",
+        "L",
+        "A",
+        "N"
+      ],
+      [
+        "A",
+        "G",
+        "",
+        "N",
+        "",
+        "D",
+        ""
+      ],
+      [
+        "F",
+        "A",
+        "",
+        "A",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "D",
+        "I",
+        "N",
+        "G",
+        "E",
+        "Y"
+      ],
+      [
+        "",
+        "I",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,5",
+      "1,5",
+      "3,5",
+      "2,0",
+      "3,0",
+      "4,0"
+    ],
+    "score": 80,
+    "completionBonus": 50,
+    "words": [
+      "AG",
+      "FA",
+      "OAF",
+      "WOAD"
+    ],
+    "scoringWords": [
+      {
+        "word": "AG",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 3
+      },
+      {
+        "word": "FA",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5
+      },
+      {
+        "word": "OAF",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 6
+      },
+      {
+        "word": "WOAD",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 16
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "WOAD",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 16,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,5",
+          "1,5",
+          "3,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "WOAD",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "OAF",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 14,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,0",
+          "3,0",
+          "4,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "AG",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "FA",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "OAF",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 728
+  }
+}
