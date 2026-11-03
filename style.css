@@ -1438,6 +1438,11 @@ dialog::backdrop {
         margin-top: 5px;
     }
 
+    /* When the solver is revealed, align the word pills with the normal button row. */
+    .rack-actions.solver-revealed .played-words-summary {
+        margin-top: 0;
+    }
+
     .rack-actions > button {
         min-height: 57px;
         padding: 11px 4px 7px;
