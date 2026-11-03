@@ -1,0 +1,322 @@
+{
+  "date": "2026-12-02",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "T",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "J",
+      "U",
+      "S",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "G",
+      "",
+      "",
+      "",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "Y",
+      "I",
+      "N",
+      "C",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "T",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "J",
+      "U",
+      "S",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "G",
+      "",
+      "",
+      "",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "",
+      "",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "Y",
+      "I",
+      "N",
+      "C",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,6": "triple-word",
+    "0,3": "double-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "TOUGHY",
+      "row": 0,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "YINCE",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "JUST",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "BEET",
+      "row": 3,
+      "col": 5,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "U",
+    "W",
+    "E",
+    "R",
+    "N",
+    "I"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "T",
+        "W",
+        "I",
+        "N",
+        "E",
+        "R"
+      ],
+      [
+        "",
+        "O",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "J",
+        "U",
+        "S",
+        "T",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "G",
+        "",
+        "",
+        "",
+        "B",
+        ""
+      ],
+      [
+        "U",
+        "H",
+        "",
+        "",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "Y",
+        "I",
+        "N",
+        "C",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "T",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,2",
+      "0,3",
+      "0,4",
+      "0,5",
+      "0,6",
+      "4,0"
+    ],
+    "score": 109,
+    "completionBonus": 50,
+    "words": [
+      "TWINER",
+      "UH"
+    ],
+    "scoringWords": [
+      {
+        "word": "TWINER",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 54
+      },
+      {
+        "word": "UH",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "TWINER",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 54,
+        "usedTiles": 5,
+        "newKeys": [
+          "0,2",
+          "0,3",
+          "0,4",
+          "0,5",
+          "0,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "TWINER",
+            "row": 0,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 54
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "UH",
+        "row": 4,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "UH",
+            "row": 4,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 5
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 824
+  }
+}
