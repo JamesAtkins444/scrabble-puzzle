@@ -1,5 +1,18 @@
 let boardSize = 7;
 
+/* ==================================================
+GOOGLE ANALYTICS
+================================================== */
+
+function trackAnalyticsEvent(eventName, parameters = {}) {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", eventName, {
+        puzzle_number: getDailyPuzzleNumber(),
+        ...parameters
+    });
+}
+
+
 let dictionary = new Set();
 let solverDictionary = new Set();
 
@@ -2766,6 +2779,10 @@ function handleBoardClick(
         1
     );
 
+    trackAnalyticsEvent("tile_placed", {
+        tiles_remaining: playerTiles.length
+    });
+
 
     selectedRackTile =
         null;
@@ -4429,6 +4446,8 @@ function findBestSolution() {
 function revealBestAnswer() {
     if (!bestSolution || !bestSolution.newKeys.length) return;
 
+    trackAnalyticsEvent("solver_used");
+
     answerRevealed = true;
     board = cloneBoard(bestSolution.board);
     playerPlacedTiles = {};
@@ -5234,6 +5253,7 @@ if (rulesHelpButton && rulesDialog) {
     });
 
     rulesHelpButton.addEventListener("click", () => {
+        trackAnalyticsEvent("how_to_opened");
         if (typeof rulesDialog.showModal === "function") {
             rulesDialog.showModal();
         } else {
@@ -5524,6 +5544,7 @@ function refreshShareResultsSummary() {
 if (shareResultsButton && shareResultsDialog) {
     shareResultsButton.addEventListener("click", () => {
         shareResultsButton.classList.remove("needs-sharing");
+        trackAnalyticsEvent("share_clicked");
         shareResultsMode = answerRevealed ? "reveal" : "normal";
         refreshShareResultsSummary();
         if (typeof shareResultsDialog.showModal === "function") {
@@ -5586,6 +5607,7 @@ if (copyShareResultsButton) {
                 if (!copied) throw new Error("Clipboard copy failed");
             }
 
+            trackAnalyticsEvent("share_copied");
             if (shareResultsStatus) {
                 shareResultsStatus.textContent = "Results copied to clipboard!";
             }
@@ -5643,6 +5665,7 @@ async function initialise() {
         await generateDailyPuzzle();
     } else {
         await loadDailyPuzzle();
+        trackAnalyticsEvent("puzzle_started");
 
         // Show How to Play on the first visit, then again after 14 days away.
         try {
