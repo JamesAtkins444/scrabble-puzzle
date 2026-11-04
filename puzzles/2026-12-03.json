@@ -1,0 +1,351 @@
+{
+  "date": "2026-12-03",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "",
+      "I",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "U",
+      "T",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "I",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "E",
+      "C",
+      "A",
+      "F",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "",
+      "I",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "M",
+      "U",
+      "T",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "I",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "E",
+      "C",
+      "A",
+      "F",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,6": "triple-word"
+  },
+  "puzzleWords": [
+    {
+      "word": "HEMOID",
+      "row": 1,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "MUTER",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "LAITH",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "DECAF",
+      "row": 6,
+      "col": 1,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "P",
+    "K",
+    "M",
+    "O",
+    "E",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "L",
+        "E",
+        "E",
+        "K"
+      ],
+      [
+        "",
+        "H",
+        "",
+        "A",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "E",
+        "",
+        "I",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "M",
+        "U",
+        "T",
+        "E",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "O",
+        "",
+        "H",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "I",
+        "",
+        "",
+        "M",
+        "O",
+        "P"
+      ],
+      [
+        "",
+        "D",
+        "E",
+        "C",
+        "A",
+        "F",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,4",
+      "0,5",
+      "0,6",
+      "5,4",
+      "5,5",
+      "5,6"
+    ],
+    "score": 90,
+    "completionBonus": 50,
+    "words": [
+      "LEEK",
+      "MOP",
+      "MA",
+      "OF"
+    ],
+    "scoringWords": [
+      {
+        "word": "LEEK",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 24
+      },
+      {
+        "word": "MOP",
+        "row": 5,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 7
+      },
+      {
+        "word": "MA",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "OF",
+        "row": 5,
+        "col": 5,
+        "direction": "vertical",
+        "score": 5
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "LEEK",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 24,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,4",
+          "0,5",
+          "0,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "LEEK",
+            "row": 0,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 24
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "MOP",
+        "row": 5,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 16,
+        "usedTiles": 3,
+        "newKeys": [
+          "5,4",
+          "5,5",
+          "5,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "MOP",
+            "row": 5,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "MA",
+            "row": 5,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "OF",
+            "row": 5,
+            "col": 5,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 890
+  }
+}
