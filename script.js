@@ -4985,7 +4985,7 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
 
         if (generateButton) {
             generateButton.disabled = false;
-            generateButton.textContent = "Restart Daily Puzzle";
+            generateButton.textContent = "New Puzzle";
         }
 
         updateDailyChallengeClock();
@@ -5093,15 +5093,15 @@ async function generateDailyPuzzle() {
         isGenerating = false;
         if (generateButton) {
             generateButton.disabled = false;
-            generateButton.textContent = "Restart Daily Puzzle";
+            generateButton.textContent = "New Puzzle";
         }
         updateDailyChallengeClock();
     }
 }
 
 if (generateButton) {
-    generateButton.textContent = "Daily Puzzle";
-    generateButton.addEventListener("click", loadDailyPuzzle);
+    generateButton.textContent = "New Puzzle";
+    generateButton.addEventListener("click", loadNextPuzzle);
 }
 
 
