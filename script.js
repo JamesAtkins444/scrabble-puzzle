@@ -28,6 +28,8 @@ let bestSolution = null;
 let answerRevealed = false;
 
 let bonusSquares = {};
+// Random value assigned to each Flat Bonus square for this puzzle.
+let flatBonusValues = {};
 
 // Pointer-drag state for placing rack tiles directly onto the board.
 let rackTileDrag = null;
@@ -1629,6 +1631,7 @@ function getWeightedBonusType(allowedTypes = bonusTypes) {
 function generateBonusSquares() {
 
     bonusSquares = {};
+    flatBonusValues = {};
 
     const emptyCells = [];
     const occupiedCells = [];
@@ -1719,6 +1722,17 @@ function generateBonusSquares() {
     for (const type of letterBonusTypes) {
         placeBonus(type, 1);
     }
+
+    // Add one Flat Bonus square. Its value is fixed for this puzzle
+    // and randomly chosen from +2, +3 or +4.
+    if (placeBonus("flat-bonus", 1)) {
+        const flatBonusKey = Object.keys(bonusSquares).find(
+            key => bonusSquares[key] === "flat-bonus"
+        );
+        if (flatBonusKey) {
+            flatBonusValues[flatBonusKey] = randomInt(2, 4);
+        }
+    }
 }
 
 function getBonusSquare(
@@ -1735,6 +1749,10 @@ function getBonusSquare(
         ] ||
         null
     );
+}
+
+function getFlatBonusValue(row, col) {
+    return flatBonusValues[keyForCell(row, col)] || 0;
 }
 
 
@@ -1858,6 +1876,10 @@ function displayBoard() {
 
                     if (bonus === "triple-word") {
                         bonusBadge.textContent = "3W";
+                    }
+
+                    if (bonus === "flat-bonus") {
+                        bonusBadge.textContent = `+${getFlatBonusValue(row, col)}`;
                     }
 
                     cell.appendChild(
@@ -2055,6 +2077,10 @@ function displayBoard() {
                     }[getBonusSquare(row, col)] || 1;
 
                     displayedTileValue *= premiumMultiplier;
+                }
+
+                if (playerPlacedTiles[key] && getBonusSquare(row, col) === "flat-bonus") {
+                    displayedTileValue += getFlatBonusValue(row, col);
                 }
 
                 valueElement.textContent =
@@ -3265,7 +3291,7 @@ function calculateWordScoreAtPosition(
             ];
 
 
-        const value =
+        let value =
             letterValues[
                 letter
             ] ?? 0;
@@ -3289,6 +3315,10 @@ function calculateWordScoreAtPosition(
                     cell.row,
                     cell.col
                 );
+
+            if (bonus === "flat-bonus") {
+                value += getFlatBonusValue(cell.row, cell.col);
+            }
 
 
             if (
@@ -3997,11 +4027,13 @@ function scoreWordOnCandidateBoard(candidateBoard, wordInfo, newlyPlacedKeys) {
         // Custom puzzle rule: premium squares remain active when a later
         // word crosses them, including squares covered on an earlier turn.
         const bonus = getBonusSquare(cell.row, cell.col);
+        let adjustedValue = value;
+        if (bonus === "flat-bonus") adjustedValue += getFlatBonusValue(cell.row, cell.col);
         if (bonus === "double-letter") letterMultiplier = 2;
         if (bonus === "triple-letter") letterMultiplier = 3;
         if (bonus === "double-word") wordMultiplier *= 2;
         if (bonus === "triple-word") wordMultiplier *= 3;
-        letterTotal += value * letterMultiplier;
+        letterTotal += adjustedValue * letterMultiplier;
     }
     return letterTotal * wordMultiplier;
 }
