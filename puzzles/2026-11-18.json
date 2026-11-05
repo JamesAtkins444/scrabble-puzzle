@@ -133,9 +133,12 @@
   ],
   "bonusSquares": {
     "0,2": "double-word",
-    "6,5": "double-letter",
+    "5,6": "flat-bonus",
     "0,0": "triple-letter",
-    "6,3": "double-letter"
+    "6,4": "triple-letter"
+  },
+  "flatBonusValues": {
+    "5,6": 4
   },
   "puzzleWords": [
     {
@@ -245,7 +248,7 @@
       "5,6",
       "6,2"
     ],
-    "score": 68,
+    "score": 72,
     "completionBonus": 50,
     "words": [
       "WAITED",
@@ -258,7 +261,7 @@
         "row": 5,
         "col": 1,
         "direction": "horizontal",
-        "score": 10
+        "score": 14
       },
       {
         "word": "AG",
@@ -282,7 +285,7 @@
         "row": 5,
         "col": 1,
         "direction": "horizontal",
-        "score": 15,
+        "score": 19,
         "usedTiles": 5,
         "newKeys": [
           "5,2",
@@ -297,7 +300,7 @@
             "row": 5,
             "col": 1,
             "direction": "horizontal",
-            "score": 10
+            "score": 14
           },
           {
             "word": "START",

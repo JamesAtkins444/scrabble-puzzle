@@ -133,7 +133,10 @@
   ],
   "bonusSquares": {
     "0,6": "double-word",
-    "0,0": "triple-letter"
+    "0,0": "flat-bonus"
+  },
+  "flatBonusValues": {
+    "0,0": 3
   },
   "puzzleWords": [
     {
@@ -172,40 +175,40 @@
   "bestSolution": {
     "board": [
       [
-        "V",
         "",
         "",
         "",
         "",
         "",
-        ""
+        "",
+        "V"
       ],
       [
-        "A",
+        "",
         "",
         "B",
         "",
         "D",
         "",
-        ""
+        "A"
       ],
       [
-        "S",
+        "",
         "L",
         "A",
         "V",
         "E",
         "R",
-        ""
+        "S"
       ],
       [
-        "A",
+        "D",
         "I",
         "N",
         "",
         "L",
         "",
-        ""
+        "A"
       ],
       [
         "",
@@ -230,49 +233,41 @@
         "",
         "",
         "",
-        "D",
+        "",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "0,0",
-      "1,0",
-      "2,0",
+      "0,6",
+      "1,6",
+      "2,6",
+      "3,6",
       "3,0",
-      "6,4",
       "3,1"
     ],
-    "score": 90,
+    "score": 79,
     "completionBonus": 50,
     "words": [
-      "SLAVER",
-      "AIN",
-      "VASA",
+      "LAVERS",
+      "DIN",
       "LI",
-      "DELVED"
+      "VASA"
     ],
     "scoringWords": [
       {
-        "word": "SLAVER",
+        "word": "LAVERS",
         "row": 2,
-        "col": 0,
+        "col": 1,
         "direction": "horizontal",
         "score": 9
       },
       {
-        "word": "AIN",
+        "word": "DIN",
         "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 3
-      },
-      {
-        "word": "VASA",
-        "row": 0,
-        "col": 0,
-        "direction": "vertical",
-        "score": 15
+        "score": 4
       },
       {
         "word": "LI",
@@ -282,11 +277,11 @@
         "score": 2
       },
       {
-        "word": "DELVED",
-        "row": 1,
-        "col": 4,
+        "word": "VASA",
+        "row": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 11
+        "score": 14
       }
     ],
     "moves": [
@@ -294,72 +289,52 @@
         "turn": 1,
         "word": "VASA",
         "row": 0,
-        "col": 0,
+        "col": 6,
         "direction": "vertical",
-        "score": 24,
+        "score": 23,
         "usedTiles": 4,
         "newKeys": [
-          "0,0",
-          "1,0",
-          "2,0",
-          "3,0"
+          "0,6",
+          "1,6",
+          "2,6",
+          "3,6"
         ],
         "scoringWords": [
           {
-            "word": "SLAVER",
+            "word": "LAVERS",
             "row": 2,
-            "col": 0,
+            "col": 1,
             "direction": "horizontal",
             "score": 9
           },
           {
             "word": "VASA",
             "row": 0,
-            "col": 0,
+            "col": 6,
             "direction": "vertical",
-            "score": 15
+            "score": 14
           }
         ]
       },
       {
         "turn": 2,
-        "word": "DELVED",
-        "row": 1,
-        "col": 4,
-        "direction": "vertical",
-        "score": 11,
-        "usedTiles": 1,
-        "newKeys": [
-          "6,4"
-        ],
-        "scoringWords": [
-          {
-            "word": "DELVED",
-            "row": 1,
-            "col": 4,
-            "direction": "vertical",
-            "score": 11
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "AIN",
+        "word": "DIN",
         "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 5,
-        "usedTiles": 1,
+        "score": 6,
+        "usedTiles": 2,
         "newKeys": [
+          "3,0",
           "3,1"
         ],
         "scoringWords": [
           {
-            "word": "AIN",
+            "word": "DIN",
             "row": 3,
             "col": 0,
             "direction": "horizontal",
-            "score": 3
+            "score": 4
           },
           {
             "word": "LI",
@@ -375,6 +350,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 833
+    "visitedCandidates": 804
   }
 }
