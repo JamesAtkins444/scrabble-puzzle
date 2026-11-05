@@ -341,6 +341,16 @@ button:focus-visible {
     color: #ff4085;
 }
 
+.cell.flat-bonus {
+    background: var(--cell);
+    color: #d24aff;
+}
+
+/* A player tile on Flat Bonus keeps the Flat Bonus text colour. */
+.board-tile.player-on-flat-bonus {
+    color: #d24aff;
+}
+
 .bonus-badge {
     position: absolute;
     z-index: 2;
@@ -1119,6 +1129,8 @@ dialog::backdrop {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
     width: 73.33px;
     height: 73.33px;
     flex: 0 0 73.33px;
@@ -1135,6 +1147,7 @@ dialog::backdrop {
 .how-to-play-triple-letter { color: #03916f; }
 .how-to-play-double-word { color: #e0196a; }
 .how-to-play-triple-word { color: #ff4085; }
+.how-to-play-flat-bonus { color: #d24aff; }
 
 .how-to-play-score-example {
     display: flex;
