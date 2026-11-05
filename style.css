@@ -461,22 +461,43 @@ button:focus-visible {
 .board-tile.player-valid.player-valid-colour-5 { background: #fe6549; }
 .board-tile.player-valid.player-valid-colour-6 { background: #ff594b; }
 
-/* Flat Bonus uses its colour as the tile background only when the word is valid. */
+/* Flat Bonus changes the text colour of the tile placed on it. */
 .board-tile.player-valid.player-on-flat-bonus,
-.cell.player-valid .board-tile.player-on-flat-bonus {
-    background: #d24aff;
-    color: #172c33;
+.board-tile.player-invalid.player-on-flat-bonus,
+.board-tile.player-isolated.player-on-flat-bonus {
+    color: #d24aff;
 }
 
-/* Invalid and isolated tiles on Flat Bonus keep the standard invalid styling. */
-.board-tile.player-invalid.player-on-flat-bonus,
-.board-tile.player-isolated.player-on-flat-bonus,
-.cell.player-invalid .board-tile.player-on-flat-bonus,
-.cell.player-isolated .board-tile.player-on-flat-bonus {
+.board-tile.player-invalid,
+.cell.player-invalid .board-tile,
+.board-tile.player-isolated,
+.cell.player-isolated .board-tile {
     background: var(--white);
     color: #ff0000;
+}
+
+/* Invalid and isolated player tiles have a matching red outline. */
+.board-tile.player-invalid,
+.board-tile.player-isolated,
+.cell.player-invalid .board-tile,
+.cell.player-isolated .board-tile {
     outline: 4px solid #ff0000 !important;
     outline-offset: -4px;
+}
+
+.cell.player-valid,
+.cell.player-invalid,
+.cell.player-isolated {
+    background: var(--cell);
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.board-tile.player-on-double-letter,
+.board-tile.player-on-triple-letter,
+.board-tile.player-on-double-word,
+.board-tile.player-on-triple-word {
+    background: inherit;
 }
 
 /* Invalid player tiles stay white with red lettering, including on premium cells. */
@@ -509,8 +530,6 @@ button:focus-visible {
 .cell.player-valid .board-tile.player-on-double-word { background: #e0196a; color: #172c33; }
 .board-tile.player-valid.player-on-triple-word,
 .cell.player-valid .board-tile.player-on-triple-word { background: #ff4085; color: #172c33; }
-.board-tile.player-valid.player-on-flat-bonus,
-.cell.player-valid .board-tile.player-on-flat-bonus { background: #d24aff; color: #172c33; }
 
 /* Highlight the individual target cell while a tile is being placed. */
 .cell.drag-over,

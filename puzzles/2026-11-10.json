@@ -134,12 +134,9 @@
   "bonusSquares": {
     "2,0": "triple-word",
     "4,1": "double-word",
-    "0,2": "flat-bonus",
-    "6,1": "triple-letter",
+    "1,2": "triple-letter",
+    "6,0": "double-letter",
     "0,0": "double-letter"
-  },
-  "flatBonusValues": {
-    "0,2": 2
   },
   "puzzleWords": [
     {
@@ -189,16 +186,16 @@
       [
         "",
         "",
-        "",
+        "J",
         "",
         "",
         "P",
         ""
       ],
       [
-        "",
-        "",
-        "",
+        "L",
+        "E",
+        "A",
         "",
         "G",
         "A",
@@ -207,15 +204,15 @@
       [
         "",
         "",
-        "",
+        "U",
         "T",
         "",
         "R",
         ""
       ],
       [
-        "J",
-        "A",
+        "",
+        "",
         "P",
         "E",
         "",
@@ -223,8 +220,8 @@
         ""
       ],
       [
-        "E",
-        "L",
+        "",
+        "",
         "",
         "A",
         "L",
@@ -232,7 +229,7 @@
         ""
       ],
       [
-        "U",
+        "",
         "",
         "",
         "L",
@@ -242,122 +239,109 @@
       ]
     ],
     "newKeys": [
-      "4,0",
-      "4,1",
+      "1,2",
+      "2,2",
+      "3,2",
       "4,2",
-      "5,0",
-      "6,0",
-      "5,1"
+      "2,0",
+      "2,1"
     ],
-    "score": 92,
+    "score": 94,
     "completionBonus": 50,
     "words": [
-      "JAPE",
-      "EL",
-      "JEU",
-      "AL"
+      "LEA",
+      "UT",
+      "PE",
+      "JAUP"
     ],
     "scoringWords": [
       {
-        "word": "JAPE",
-        "row": 4,
+        "word": "LEA",
+        "row": 2,
         "col": 0,
         "direction": "horizontal",
-        "score": 26
+        "score": 9
       },
       {
-        "word": "EL",
-        "row": 5,
-        "col": 0,
+        "word": "UT",
+        "row": 3,
+        "col": 2,
         "direction": "horizontal",
         "score": 2
       },
       {
-        "word": "JEU",
+        "word": "PE",
         "row": 4,
-        "col": 0,
-        "direction": "vertical",
-        "score": 10
+        "col": 2,
+        "direction": "horizontal",
+        "score": 4
       },
       {
-        "word": "AL",
-        "row": 4,
-        "col": 1,
+        "word": "JAUP",
+        "row": 1,
+        "col": 2,
         "direction": "vertical",
-        "score": 4
+        "score": 29
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "JAPE",
-        "row": 4,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 26,
-        "usedTiles": 3,
+        "word": "JAUP",
+        "row": 1,
+        "col": 2,
+        "direction": "vertical",
+        "score": 35,
+        "usedTiles": 4,
         "newKeys": [
-          "4,0",
-          "4,1",
+          "1,2",
+          "2,2",
+          "3,2",
           "4,2"
         ],
         "scoringWords": [
           {
-            "word": "JAPE",
-            "row": 4,
-            "col": 0,
+            "word": "UT",
+            "row": 3,
+            "col": 2,
             "direction": "horizontal",
-            "score": 26
+            "score": 2
+          },
+          {
+            "word": "PE",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "JAUP",
+            "row": 1,
+            "col": 2,
+            "direction": "vertical",
+            "score": 29
           }
         ]
       },
       {
         "turn": 2,
-        "word": "JEU",
-        "row": 4,
+        "word": "LEA",
+        "row": 2,
         "col": 0,
-        "direction": "vertical",
-        "score": 10,
+        "direction": "horizontal",
+        "score": 9,
         "usedTiles": 2,
         "newKeys": [
-          "5,0",
-          "6,0"
+          "2,0",
+          "2,1"
         ],
         "scoringWords": [
           {
-            "word": "JEU",
-            "row": 4,
-            "col": 0,
-            "direction": "vertical",
-            "score": 10
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "AL",
-        "row": 4,
-        "col": 1,
-        "direction": "vertical",
-        "score": 6,
-        "usedTiles": 1,
-        "newKeys": [
-          "5,1"
-        ],
-        "scoringWords": [
-          {
-            "word": "EL",
-            "row": 5,
+            "word": "LEA",
+            "row": 2,
             "col": 0,
             "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "AL",
-            "row": 4,
-            "col": 1,
-            "direction": "vertical",
-            "score": 4
+            "score": 9
           }
         ]
       }
@@ -366,6 +350,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 779
+    "visitedCandidates": 736
   }
 }

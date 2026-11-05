@@ -5,59 +5,59 @@
     [
       "",
       "",
-      "S",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "B",
-      "I",
-      "K",
-      "I",
-      "E",
-      ""
-    ],
-    [
-      "",
-      "",
-      "Z",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "F",
-      "I",
-      "L",
       "O",
       "",
+      "",
+      "",
       ""
     ],
     [
+      "U",
+      "",
+      "U",
       "",
       "",
+      "",
+      ""
+    ],
+    [
       "N",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "D",
-      "O",
-      "G",
+      "I",
+      "P",
+      "P",
       "Y",
       "",
+      ""
+    ],
+    [
+      "R",
+      "",
+      "H",
+      "",
+      "",
       "",
       ""
     ],
     [
+      "E",
       "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "E",
+      "R",
+      "S",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
       "",
       "",
       "",
@@ -70,59 +70,59 @@
     [
       "",
       "",
-      "S",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "B",
-      "I",
-      "K",
-      "I",
-      "E",
-      ""
-    ],
-    [
-      "",
-      "",
-      "Z",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "",
-      "F",
-      "I",
-      "L",
       "O",
       "",
+      "",
+      "",
       ""
     ],
     [
+      "U",
+      "",
+      "U",
       "",
       "",
+      "",
+      ""
+    ],
+    [
       "N",
-      "",
-      "",
-      "",
-      ""
-    ],
-    [
-      "D",
-      "O",
-      "G",
+      "I",
+      "P",
+      "P",
       "Y",
       "",
+      ""
+    ],
+    [
+      "R",
+      "",
+      "H",
+      "",
+      "",
       "",
       ""
     ],
     [
+      "E",
       "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "E",
+      "R",
+      "S",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
       "",
       "",
       "",
@@ -132,175 +132,191 @@
     ]
   ],
   "bonusSquares": {
-    "6,6": "triple-word",
-    "3,6": "double-word"
+    "5,6": "triple-word",
+    "0,4": "double-word",
+    "1,6": "double-letter",
+    "3,6": "double-letter"
   },
-  "flatBonusValues": {},
   "puzzleWords": [
     {
-      "word": "SIZING",
-      "row": 0,
-      "col": 2,
+      "word": "UNREEL",
+      "row": 1,
+      "col": 0,
       "direction": "vertical"
     },
     {
-      "word": "DOGY",
+      "word": "ERST",
       "row": 5,
       "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "BIKIE",
-      "row": 1,
-      "col": 1,
+      "word": "NIPPY",
+      "row": 2,
+      "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "FILO",
-      "row": 3,
-      "col": 1,
-      "direction": "horizontal"
+      "word": "OUPHE",
+      "row": 0,
+      "col": 2,
+      "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "E",
+    "A",
+    "S",
     "P",
-    "L",
     "G",
-    "I",
+    "E",
     "O"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "",
-        "S",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "B",
-        "I",
-        "K",
-        "I",
-        "E",
-        ""
-      ],
-      [
-        "",
-        "",
-        "Z",
-        "",
-        "",
-        "",
-        ""
-      ],
-      [
-        "",
-        "F",
-        "I",
-        "L",
-        "O",
-        "",
-        ""
-      ],
-      [
-        "",
-        "",
-        "N",
-        "",
-        "",
-        "",
-        "P"
-      ],
-      [
-        "D",
-        "O",
         "G",
+        "O",
+        "O",
+        "",
+        "",
+        ""
+      ],
+      [
+        "U",
+        "",
+        "U",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "N",
+        "I",
+        "P",
+        "P",
         "Y",
         "",
-        "",
-        "I"
+        ""
       ],
       [
+        "R",
+        "",
+        "H",
+        "E",
+        "A",
+        "P",
+        "S"
+      ],
+      [
+        "E",
+        "",
+        "E",
         "",
         "",
         "",
-        "O",
-        "G",
+        ""
+      ],
+      [
+        "E",
+        "R",
+        "S",
+        "T",
+        "",
+        "",
+        ""
+      ],
+      [
         "L",
-        "E"
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
       ]
     ],
     "newKeys": [
-      "6,3",
-      "6,4",
-      "6,5",
-      "6,6",
-      "4,6",
-      "5,6"
+      "3,3",
+      "3,4",
+      "3,5",
+      "3,6",
+      "0,1",
+      "0,3"
     ],
-    "score": 85,
+    "score": 74,
     "completionBonus": 50,
     "words": [
-      "OGLE",
-      "YO",
-      "PIE"
+      "GOO",
+      "HEAPS",
+      "PE",
+      "YA"
     ],
     "scoringWords": [
       {
-        "word": "OGLE",
-        "row": 6,
-        "col": 3,
+        "word": "GOO",
+        "row": 0,
+        "col": 1,
         "direction": "horizontal",
-        "score": 15
+        "score": 4
       },
       {
-        "word": "YO",
-        "row": 5,
+        "word": "HEAPS",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 11
+      },
+      {
+        "word": "PE",
+        "row": 2,
         "col": 3,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "YA",
+        "row": 2,
+        "col": 4,
         "direction": "vertical",
         "score": 5
-      },
-      {
-        "word": "PIE",
-        "row": 4,
-        "col": 6,
-        "direction": "vertical",
-        "score": 15
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "OGLE",
-        "row": 6,
-        "col": 3,
+        "word": "HEAPS",
+        "row": 3,
+        "col": 2,
         "direction": "horizontal",
         "score": 20,
         "usedTiles": 4,
         "newKeys": [
-          "6,3",
-          "6,4",
-          "6,5",
-          "6,6"
+          "3,3",
+          "3,4",
+          "3,5",
+          "3,6"
         ],
         "scoringWords": [
           {
-            "word": "OGLE",
-            "row": 6,
-            "col": 3,
+            "word": "HEAPS",
+            "row": 3,
+            "col": 2,
             "direction": "horizontal",
-            "score": 15
+            "score": 11
           },
           {
-            "word": "YO",
-            "row": 5,
+            "word": "PE",
+            "row": 2,
             "col": 3,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "YA",
+            "row": 2,
+            "col": 4,
             "direction": "vertical",
             "score": 5
           }
@@ -308,23 +324,23 @@
       },
       {
         "turn": 2,
-        "word": "PIE",
-        "row": 4,
-        "col": 6,
-        "direction": "vertical",
-        "score": 15,
+        "word": "GOO",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
         "usedTiles": 2,
         "newKeys": [
-          "4,6",
-          "5,6"
+          "0,1",
+          "0,3"
         ],
         "scoringWords": [
           {
-            "word": "PIE",
-            "row": 4,
-            "col": 6,
-            "direction": "vertical",
-            "score": 15
+            "word": "GOO",
+            "row": 0,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
           }
         ]
       }
@@ -333,6 +349,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 952
+    "visitedCandidates": 1312
   }
 }

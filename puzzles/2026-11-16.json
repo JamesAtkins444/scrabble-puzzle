@@ -7,54 +7,36 @@
       "",
       "",
       "",
-      "S",
+      "W",
       "",
       ""
     ],
     [
       "",
-      "",
-      "M",
-      "",
-      "O",
-      "",
-      "P"
-    ],
-    [
-      "",
-      "",
-      "O",
-      "",
-      "O",
-      "",
-      "I"
-    ],
-    [
-      "",
-      "S",
-      "U",
-      "I",
-      "T",
-      "E",
-      "R"
-    ],
-    [
       "",
       "",
       "C",
-      "",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "",
-      "",
       "H",
+      "I",
+      "D"
+    ],
+    [
       "",
       "",
       "",
-      "G"
+      "",
+      "E",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "M"
     ],
     [
       "",
@@ -63,7 +45,25 @@
       "",
       "",
       "",
-      ""
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "S",
+      "T",
+      "O",
+      "A",
+      "T"
     ]
   ],
   "originalBoard": [
@@ -72,54 +72,36 @@
       "",
       "",
       "",
-      "S",
+      "W",
       "",
       ""
     ],
     [
       "",
-      "",
-      "M",
-      "",
-      "O",
-      "",
-      "P"
-    ],
-    [
-      "",
-      "",
-      "O",
-      "",
-      "O",
-      "",
-      "I"
-    ],
-    [
-      "",
-      "S",
-      "U",
-      "I",
-      "T",
-      "E",
-      "R"
-    ],
-    [
       "",
       "",
       "C",
-      "",
-      "",
-      "",
-      "O"
-    ],
-    [
-      "",
-      "",
       "H",
+      "I",
+      "D"
+    ],
+    [
       "",
       "",
       "",
-      "G"
+      "",
+      "E",
+      "",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "M"
     ],
     [
       "",
@@ -128,106 +110,112 @@
       "",
       "",
       "",
-      ""
+      "A"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "S",
+      "T",
+      "O",
+      "A",
+      "T"
     ]
   ],
   "bonusSquares": {
-    "0,0": "double-word",
-    "5,0": "flat-bonus",
-    "5,4": "double-letter"
-  },
-  "flatBonusValues": {
-    "5,0": 4
+    "0,0": "triple-word",
+    "3,1": "double-word",
+    "5,0": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "SUITER",
-      "row": 3,
-      "col": 1,
-      "direction": "horizontal"
-    },
-    {
-      "word": "MOUCH",
-      "row": 1,
-      "col": 2,
-      "direction": "vertical"
-    },
-    {
-      "word": "PIROG",
+      "word": "DEMAST",
       "row": 1,
       "col": 6,
       "direction": "vertical"
     },
     {
-      "word": "SOOT",
+      "word": "CHID",
+      "row": 1,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "STOAT",
+      "row": 6,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "WHEN",
       "row": 0,
       "col": 4,
       "direction": "vertical"
     }
   ],
   "initialRackTiles": [
+    "I",
+    "D",
     "T",
-    "N",
-    "W",
-    "O",
-    "O",
+    "A",
+    "P",
     "O"
   ],
   "bestSolution": {
     "board": [
       [
         "",
-        "T",
         "",
         "",
-        "S",
+        "",
+        "W",
         "",
         ""
       ],
       [
         "",
-        "O",
-        "M",
-        "",
-        "O",
-        "",
-        "P"
-      ],
-      [
-        "",
-        "",
-        "O",
-        "",
-        "O",
-        "",
-        "I"
-      ],
-      [
-        "",
-        "S",
-        "U",
-        "I",
-        "T",
-        "E",
-        "R"
-      ],
-      [
         "",
         "",
         "C",
-        "",
-        "",
-        "",
-        "O"
-      ],
-      [
-        "N",
-        "O",
         "H",
-        "O",
-        "W",
+        "I",
+        "D"
+      ],
+      [
         "",
-        "G"
+        "",
+        "",
+        "",
+        "E",
+        "",
+        "E"
+      ],
+      [
+        "P",
+        "A",
+        "T",
+        "I",
+        "N",
+        "",
+        "M"
+      ],
+      [
+        "",
+        "D",
+        "O",
+        "",
+        "",
+        "",
+        "A"
       ],
       [
         "",
@@ -236,43 +224,60 @@
         "",
         "",
         "",
-        ""
+        "S"
+      ],
+      [
+        "",
+        "",
+        "S",
+        "T",
+        "O",
+        "A",
+        "T"
       ]
     ],
     "newKeys": [
-      "5,0",
-      "5,1",
-      "5,3",
-      "5,4",
-      "0,1",
-      "1,1"
+      "3,0",
+      "3,1",
+      "3,2",
+      "3,3",
+      "4,1",
+      "4,2"
     ],
     "score": 75,
     "completionBonus": 50,
     "words": [
-      "OM",
-      "NOHOW",
+      "PATIN",
+      "DO",
+      "AD",
       "TO"
     ],
     "scoringWords": [
       {
-        "word": "OM",
-        "row": 1,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 4
-      },
-      {
-        "word": "NOHOW",
-        "row": 5,
+        "word": "PATIN",
+        "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 19
+        "score": 14
+      },
+      {
+        "word": "DO",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 3
+      },
+      {
+        "word": "AD",
+        "row": 3,
+        "col": 1,
+        "direction": "vertical",
+        "score": 6
       },
       {
         "word": "TO",
-        "row": 0,
-        "col": 1,
+        "row": 3,
+        "col": 2,
         "direction": "vertical",
         "score": 2
       }
@@ -280,52 +285,59 @@
     "moves": [
       {
         "turn": 1,
-        "word": "NOHOW",
-        "row": 5,
+        "word": "PATIN",
+        "row": 3,
         "col": 0,
         "direction": "horizontal",
-        "score": 19,
+        "score": 14,
         "usedTiles": 4,
         "newKeys": [
-          "5,0",
-          "5,1",
-          "5,3",
-          "5,4"
+          "3,0",
+          "3,1",
+          "3,2",
+          "3,3"
         ],
         "scoringWords": [
           {
-            "word": "NOHOW",
-            "row": 5,
+            "word": "PATIN",
+            "row": 3,
             "col": 0,
             "direction": "horizontal",
-            "score": 19
+            "score": 14
           }
         ]
       },
       {
         "turn": 2,
-        "word": "TO",
-        "row": 0,
+        "word": "DO",
+        "row": 4,
         "col": 1,
-        "direction": "vertical",
-        "score": 6,
+        "direction": "horizontal",
+        "score": 11,
         "usedTiles": 2,
         "newKeys": [
-          "0,1",
-          "1,1"
+          "4,1",
+          "4,2"
         ],
         "scoringWords": [
           {
-            "word": "OM",
-            "row": 1,
+            "word": "DO",
+            "row": 4,
             "col": 1,
             "direction": "horizontal",
-            "score": 4
+            "score": 3
+          },
+          {
+            "word": "AD",
+            "row": 3,
+            "col": 1,
+            "direction": "vertical",
+            "score": 6
           },
           {
             "word": "TO",
-            "row": 0,
-            "col": 1,
+            "row": 3,
+            "col": 2,
             "direction": "vertical",
             "score": 2
           }
@@ -336,6 +348,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 667
+    "visitedCandidates": 1391
   }
 }

@@ -133,12 +133,10 @@
   ],
   "bonusSquares": {
     "0,6": "double-word",
-    "0,0": "flat-bonus",
-    "6,6": "triple-letter",
-    "0,3": "triple-letter"
-  },
-  "flatBonusValues": {
-    "0,0": 3
+    "0,0": "triple-letter",
+    "6,6": "double-letter",
+    "0,2": "triple-letter",
+    "0,4": "double-letter"
   },
   "puzzleWords": [
     {

@@ -134,11 +134,8 @@
   "bonusSquares": {
     "6,6": "triple-word",
     "1,5": "double-word",
-    "0,2": "flat-bonus",
-    "4,6": "triple-letter"
-  },
-  "flatBonusValues": {
-    "0,2": 3
+    "4,6": "triple-letter",
+    "0,3": "double-letter"
   },
   "puzzleWords": [
     {
@@ -248,7 +245,7 @@
       "0,1",
       "0,2"
     ],
-    "score": 84,
+    "score": 81,
     "completionBonus": 50,
     "words": [
       "LEE",
@@ -261,7 +258,7 @@
         "row": 0,
         "col": 0,
         "direction": "horizontal",
-        "score": 6
+        "score": 3
       },
       {
         "word": "DEFATS",
@@ -316,7 +313,7 @@
         "row": 0,
         "col": 0,
         "direction": "horizontal",
-        "score": 6,
+        "score": 3,
         "usedTiles": 2,
         "newKeys": [
           "0,1",
@@ -328,7 +325,7 @@
             "row": 0,
             "col": 0,
             "direction": "horizontal",
-            "score": 6
+            "score": 3
           }
         ]
       }

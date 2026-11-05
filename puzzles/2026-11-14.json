@@ -13,57 +13,57 @@
     ],
     [
       "",
-      "",
-      "L",
-      "",
-      "",
-      "",
-      "Y"
+      "E",
+      "N",
+      "S",
+      "U",
+      "E",
+      ""
     ],
     [
+      "",
       "",
       "",
       "I",
       "",
       "",
-      "",
-      "A"
-    ],
-    [
-      "V",
-      "E",
-      "T",
-      "",
-      "",
-      "",
-      "P"
+      ""
     ],
     [
       "",
       "",
-      "R",
       "",
-      "",
-      "",
-      "P"
-    ],
-    [
-      "",
-      "",
-      "E",
       "N",
-      "S",
-      "U",
-      "E"
+      "",
+      "",
+      "B"
     ],
     [
       "",
       "",
       "",
+      "N",
+      "",
+      "",
+      "O"
+    ],
+    [
       "",
       "",
       "",
-      "R"
+      "E",
+      "",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "F",
+      "R",
+      "E",
+      "S",
+      "H"
     ]
   ],
   "originalBoard": [
@@ -78,101 +78,96 @@
     ],
     [
       "",
-      "",
-      "L",
-      "",
-      "",
-      "",
-      "Y"
+      "E",
+      "N",
+      "S",
+      "U",
+      "E",
+      ""
     ],
     [
+      "",
       "",
       "",
       "I",
       "",
       "",
-      "",
-      "A"
-    ],
-    [
-      "V",
-      "E",
-      "T",
-      "",
-      "",
-      "",
-      "P"
+      ""
     ],
     [
       "",
       "",
-      "R",
       "",
-      "",
-      "",
-      "P"
-    ],
-    [
-      "",
-      "",
-      "E",
       "N",
-      "S",
-      "U",
-      "E"
+      "",
+      "",
+      "B"
     ],
     [
       "",
       "",
       "",
+      "N",
+      "",
+      "",
+      "O"
+    ],
+    [
       "",
       "",
       "",
-      "R"
+      "E",
+      "",
+      "",
+      "S"
+    ],
+    [
+      "",
+      "",
+      "F",
+      "R",
+      "E",
+      "S",
+      "H"
     ]
   ],
   "bonusSquares": {
-    "1,4": "double-word",
-    "6,0": "flat-bonus",
-    "0,0": "double-letter",
-    "3,4": "triple-letter"
-  },
-  "flatBonusValues": {
-    "6,0": 3
+    "3,1": "double-word",
+    "5,0": "triple-letter"
   },
   "puzzleWords": [
     {
-      "word": "YAPPER",
+      "word": "SINNER",
       "row": 1,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "FRESH",
+      "row": 6,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "BOSH",
+      "row": 3,
       "col": 6,
       "direction": "vertical"
     },
     {
       "word": "ENSUE",
-      "row": 5,
-      "col": 2,
-      "direction": "horizontal"
-    },
-    {
-      "word": "LITRE",
       "row": 1,
-      "col": 2,
-      "direction": "vertical"
-    },
-    {
-      "word": "VET",
-      "row": 3,
-      "col": 0,
+      "col": 1,
       "direction": "horizontal"
     }
   ],
   "initialRackTiles": [
-    "E",
-    "N",
-    "I",
-    "U",
+    "A",
     "C",
-    "T"
+    "E",
+    "O",
+    "T",
+    "X"
   ],
   "bestSolution": {
     "board": [
@@ -187,133 +182,148 @@
       ],
       [
         "",
-        "",
-        "L",
-        "",
-        "I",
-        "",
-        "Y"
-      ],
-      [
-        "",
-        "",
-        "I",
-        "",
-        "N",
-        "",
-        "A"
-      ],
-      [
-        "V",
-        "E",
-        "T",
-        "",
-        "C",
-        "U",
-        "P"
-      ],
-      [
-        "",
-        "",
-        "R",
-        "",
-        "E",
-        "",
-        "P"
-      ],
-      [
-        "",
-        "",
         "E",
         "N",
         "S",
         "U",
-        "E"
+        "E",
+        ""
       ],
       [
         "",
         "",
         "",
+        "I",
         "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "C",
+        "E",
+        "N",
         "T",
         "",
-        "R"
+        "B"
+      ],
+      [
+        "",
+        "O",
+        "",
+        "N",
+        "",
+        "",
+        "O"
+      ],
+      [
+        "",
+        "X",
+        "",
+        "E",
+        "",
+        "",
+        "S"
+      ],
+      [
+        "",
+        "A",
+        "F",
+        "R",
+        "E",
+        "S",
+        "H"
       ]
     ],
     "newKeys": [
-      "1,4",
-      "2,4",
-      "3,4",
-      "4,4",
-      "6,4",
-      "3,5"
+      "3,1",
+      "4,1",
+      "5,1",
+      "6,1",
+      "3,2",
+      "3,4"
     ],
-    "score": 91,
+    "score": 100,
     "completionBonus": 50,
     "words": [
-      "CUP",
-      "INCEST"
+      "CENT",
+      "AFRESH",
+      "COXA"
     ],
     "scoringWords": [
       {
-        "word": "CUP",
+        "word": "CENT",
         "row": 3,
-        "col": 4,
+        "col": 1,
         "direction": "horizontal",
-        "score": 13
+        "score": 12
       },
       {
-        "word": "INCEST",
-        "row": 1,
-        "col": 4,
+        "word": "AFRESH",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 12
+      },
+      {
+        "word": "COXA",
+        "row": 3,
+        "col": 1,
         "direction": "vertical",
-        "score": 28
+        "score": 26
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "INCEST",
-        "row": 1,
-        "col": 4,
+        "word": "COXA",
+        "row": 3,
+        "col": 1,
         "direction": "vertical",
-        "score": 28,
-        "usedTiles": 5,
+        "score": 38,
+        "usedTiles": 4,
         "newKeys": [
-          "1,4",
-          "2,4",
-          "3,4",
-          "4,4",
-          "6,4"
+          "3,1",
+          "4,1",
+          "5,1",
+          "6,1"
         ],
         "scoringWords": [
           {
-            "word": "INCEST",
-            "row": 1,
-            "col": 4,
+            "word": "AFRESH",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 12
+          },
+          {
+            "word": "COXA",
+            "row": 3,
+            "col": 1,
             "direction": "vertical",
-            "score": 28
+            "score": 26
           }
         ]
       },
       {
         "turn": 2,
-        "word": "CUP",
+        "word": "CENT",
         "row": 3,
-        "col": 4,
+        "col": 1,
         "direction": "horizontal",
-        "score": 13,
-        "usedTiles": 1,
+        "score": 12,
+        "usedTiles": 2,
         "newKeys": [
-          "3,5"
+          "3,2",
+          "3,4"
         ],
         "scoringWords": [
           {
-            "word": "CUP",
+            "word": "CENT",
             "row": 3,
-            "col": 4,
+            "col": 1,
             "direction": "horizontal",
-            "score": 13
+            "score": 12
           }
         ]
       }
@@ -322,6 +332,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1095
+    "visitedCandidates": 1041
   }
 }

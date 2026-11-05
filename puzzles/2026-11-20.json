@@ -13,56 +13,56 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "L",
+      "O",
+      "O",
+      "P",
+      "Y",
       ""
     ],
     [
-      "",
       "",
       "",
       "P",
       "",
       "",
+      "",
       ""
     ],
     [
       "",
       "",
-      "C",
-      "O",
       "I",
+      "",
       "G",
-      "N"
+      "",
+      ""
     ],
     [
-      "",
-      "",
-      "",
-      "G",
-      "",
-      "H",
+      "B",
+      "A",
+      "N",
+      "Y",
+      "A",
+      "N",
       ""
     ],
     [
       "",
+      "",
       "G",
-      "E",
-      "Y",
-      "S",
-      "E",
-      "R"
+      "",
+      "M",
+      "",
+      ""
     ],
     [
       "",
       "",
       "",
       "",
+      "A",
       "",
-      "E",
       ""
     ]
   ],
@@ -78,243 +78,267 @@
     ],
     [
       "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "L",
+      "O",
+      "O",
+      "P",
+      "Y",
       ""
     ],
     [
-      "",
       "",
       "",
       "P",
       "",
       "",
+      "",
       ""
     ],
     [
       "",
       "",
-      "C",
-      "O",
       "I",
+      "",
       "G",
-      "N"
+      "",
+      ""
     ],
     [
-      "",
-      "",
-      "",
-      "G",
-      "",
-      "H",
+      "B",
+      "A",
+      "N",
+      "Y",
+      "A",
+      "N",
       ""
     ],
     [
       "",
+      "",
       "G",
-      "E",
-      "Y",
-      "S",
-      "E",
-      "R"
+      "",
+      "M",
+      "",
+      ""
     ],
     [
       "",
       "",
       "",
       "",
+      "A",
       "",
-      "E",
       ""
     ]
   ],
   "bonusSquares": {
-    "0,6": "triple-word",
-    "0,0": "double-word",
-    "0,2": "flat-bonus",
-    "3,0": "triple-letter",
-    "0,4": "triple-letter"
-  },
-  "flatBonusValues": {
-    "0,2": 4
+    "6,6": "double-word",
+    "6,0": "double-letter"
   },
   "puzzleWords": [
     {
-      "word": "GEYSER",
-      "row": 5,
+      "word": "BANYAN",
+      "row": 4,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "OPING",
+      "row": 1,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "LOOPY",
+      "row": 1,
       "col": 1,
       "direction": "horizontal"
     },
     {
-      "word": "GHEE",
+      "word": "GAMA",
       "row": 3,
-      "col": 5,
-      "direction": "vertical"
-    },
-    {
-      "word": "COIGN",
-      "row": 3,
-      "col": 2,
-      "direction": "horizontal"
-    },
-    {
-      "word": "POGY",
-      "row": 2,
-      "col": 3,
+      "col": 4,
       "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "P",
-    "T",
     "O",
-    "A",
     "R",
-    "A"
+    "A",
+    "C",
+    "E",
+    "P"
   ],
   "bestSolution": {
     "board": [
       [
-        "",
-        "",
-        "",
+        "P",
         "A",
-        "T",
-        "A",
-        "P"
+        "C",
+        "",
+        "",
+        "",
+        ""
       ],
       [
         "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "O"
+        "L",
+        "O",
+        "O",
+        "P",
+        "Y",
+        ""
       ],
       [
-        "",
-        "",
+        "R",
         "",
         "P",
         "",
         "",
-        "R"
+        "",
+        ""
       ],
       [
-        "",
-        "",
-        "C",
         "O",
+        "",
         "I",
+        "",
         "G",
-        "N"
+        "",
+        ""
       ],
       [
-        "",
-        "",
+        "B",
+        "A",
+        "N",
+        "Y",
+        "A",
+        "N",
+        ""
+      ],
+      [
+        "E",
         "",
         "G",
         "",
-        "H",
+        "M",
+        "",
         ""
       ],
       [
         "",
-        "G",
-        "E",
-        "Y",
-        "S",
-        "E",
-        "R"
-      ],
-      [
         "",
         "",
         "",
+        "A",
         "",
-        "",
-        "E",
         ""
       ]
     ],
     "newKeys": [
-      "0,6",
-      "1,6",
-      "2,6",
-      "0,3",
-      "0,4",
-      "0,5"
+      "0,0",
+      "0,1",
+      "0,2",
+      "2,0",
+      "3,0",
+      "5,0"
     ],
-    "score": 92,
+    "score": 76,
     "completionBonus": 50,
     "words": [
-      "ATAP",
-      "PORN"
+      "PAC",
+      "ROBE",
+      "AL",
+      "COPING"
     ],
     "scoringWords": [
       {
-        "word": "ATAP",
+        "word": "PAC",
         "row": 0,
-        "col": 3,
+        "col": 0,
         "direction": "horizontal",
-        "score": 24
+        "score": 7
       },
       {
-        "word": "PORN",
-        "row": 0,
-        "col": 6,
+        "word": "ROBE",
+        "row": 2,
+        "col": 0,
         "direction": "vertical",
-        "score": 18
+        "score": 6
+      },
+      {
+        "word": "AL",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "COPING",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 11
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "PORN",
+        "word": "PAC",
         "row": 0,
-        "col": 6,
-        "direction": "vertical",
-        "score": 18,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
         "usedTiles": 3,
         "newKeys": [
-          "0,6",
-          "1,6",
-          "2,6"
+          "0,0",
+          "0,1",
+          "0,2"
         ],
         "scoringWords": [
           {
-            "word": "PORN",
+            "word": "PAC",
             "row": 0,
-            "col": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "AL",
+            "row": 0,
+            "col": 1,
             "direction": "vertical",
-            "score": 18
+            "score": 2
+          },
+          {
+            "word": "COPING",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 11
           }
         ]
       },
       {
         "turn": 2,
-        "word": "ATAP",
-        "row": 0,
-        "col": 3,
-        "direction": "horizontal",
-        "score": 24,
+        "word": "ROBE",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 6,
         "usedTiles": 3,
         "newKeys": [
-          "0,3",
-          "0,4",
-          "0,5"
+          "2,0",
+          "3,0",
+          "5,0"
         ],
         "scoringWords": [
           {
-            "word": "ATAP",
-            "row": 0,
-            "col": 3,
-            "direction": "horizontal",
-            "score": 24
+            "word": "ROBE",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 6
           }
         ]
       }
@@ -323,6 +347,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 1025
+    "visitedCandidates": 1655
   }
 }
