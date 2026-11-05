@@ -530,6 +530,8 @@ button:focus-visible {
 .cell.player-valid .board-tile.player-on-double-word { background: #e0196a; color: #172c33; }
 .board-tile.player-valid.player-on-triple-word,
 .cell.player-valid .board-tile.player-on-triple-word { background: #ff4085; color: #172c33; }
+.board-tile.player-valid.player-on-flat-bonus,
+.cell.player-valid .board-tile.player-on-flat-bonus { background: #d24aff; color: #172c33; }
 
 /* Highlight the individual target cell while a tile is being placed. */
 .cell.drag-over,
