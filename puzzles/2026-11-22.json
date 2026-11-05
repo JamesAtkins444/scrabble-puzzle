@@ -133,9 +133,13 @@
   ],
   "bonusSquares": {
     "6,5": "double-word",
-    "6,3": "triple-letter",
-    "2,5": "triple-letter",
-    "4,6": "double-letter"
+    "6,3": "flat-bonus",
+    "2,6": "double-letter",
+    "4,6": "triple-letter",
+    "2,4": "triple-letter"
+  },
+  "flatBonusValues": {
+    "6,3": 4
   },
   "puzzleWords": [
     {
@@ -196,7 +200,7 @@
         "",
         "L",
         "",
-        "G",
+        "P",
         "",
         ""
       ],
@@ -229,88 +233,88 @@
       ],
       [
         "T",
+        "",
         "R",
         "I",
-        "P",
-        "",
+        "G",
         "",
         ""
       ]
     ],
     "newKeys": [
-      "6,1",
-      "6,2",
-      "6,3",
       "2,4",
       "3,4",
-      "5,4"
+      "5,4",
+      "6,4",
+      "6,2",
+      "6,3"
     ],
-    "score": 67,
+    "score": 72,
     "completionBonus": 50,
     "words": [
-      "TRIP",
-      "GIRO"
+      "RIG",
+      "PIROG"
     ],
     "scoringWords": [
       {
-        "word": "TRIP",
+        "word": "RIG",
         "row": 6,
-        "col": 0,
+        "col": 2,
         "direction": "horizontal",
-        "score": 12
+        "score": 8
       },
       {
-        "word": "GIRO",
+        "word": "PIROG",
         "row": 2,
         "col": 4,
         "direction": "vertical",
-        "score": 5
+        "score": 14
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "TRIP",
-        "row": 6,
-        "col": 0,
-        "direction": "horizontal",
-        "score": 12,
-        "usedTiles": 3,
+        "word": "PIROG",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 14,
+        "usedTiles": 4,
         "newKeys": [
-          "6,1",
-          "6,2",
-          "6,3"
+          "2,4",
+          "3,4",
+          "5,4",
+          "6,4"
         ],
         "scoringWords": [
           {
-            "word": "TRIP",
-            "row": 6,
-            "col": 0,
-            "direction": "horizontal",
-            "score": 12
+            "word": "PIROG",
+            "row": 2,
+            "col": 4,
+            "direction": "vertical",
+            "score": 14
           }
         ]
       },
       {
         "turn": 2,
-        "word": "GIRO",
-        "row": 2,
-        "col": 4,
-        "direction": "vertical",
-        "score": 5,
-        "usedTiles": 3,
+        "word": "RIG",
+        "row": 6,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 8,
+        "usedTiles": 2,
         "newKeys": [
-          "2,4",
-          "3,4",
-          "5,4"
+          "6,2",
+          "6,3"
         ],
         "scoringWords": [
           {
-            "word": "GIRO",
-            "row": 2,
-            "col": 4,
-            "direction": "vertical",
-            "score": 5
+            "word": "RIG",
+            "row": 6,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 8
           }
         ]
       }
@@ -319,6 +323,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 512
+    "visitedCandidates": 471
   }
 }

@@ -3,63 +3,63 @@
   "boardSize": 7,
   "board": [
     [
+      "M",
       "",
       "",
       "",
+      "D",
       "",
-      "",
+      ""
+    ],
+    [
+      "U",
       "R",
-      ""
-    ],
-    [
-      "",
-      "",
-      "F",
+      "S",
       "A",
-      "Z",
       "E",
+      "",
       ""
     ],
     [
+      "G",
       "",
+      "A",
       "",
+      "E",
       "",
-      "",
-      "",
-      "P",
       ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "L",
-      ""
-    ],
-    [
-      "",
+      "G",
       "",
       "S",
-      "N",
-      "O",
-      "O",
-      "K"
+      "",
+      "D",
+      "",
+      ""
     ],
     [
-      "",
-      "",
       "E",
       "",
+      "I",
       "",
-      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "R",
+      "",
+      "N",
+      "",
+      "",
+      "",
       ""
     ],
     [
       "",
       "",
-      "A",
+      "",
       "",
       "",
       "",
@@ -68,63 +68,63 @@
   ],
   "originalBoard": [
     [
+      "M",
       "",
       "",
       "",
+      "D",
       "",
-      "",
+      ""
+    ],
+    [
+      "U",
       "R",
-      ""
-    ],
-    [
-      "",
-      "",
-      "F",
+      "S",
       "A",
-      "Z",
       "E",
+      "",
       ""
     ],
     [
+      "G",
       "",
+      "A",
       "",
+      "E",
       "",
-      "",
-      "",
-      "P",
       ""
     ],
     [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "L",
-      ""
-    ],
-    [
-      "",
+      "G",
       "",
       "S",
-      "N",
-      "O",
-      "O",
-      "K"
+      "",
+      "D",
+      "",
+      ""
     ],
     [
-      "",
-      "",
       "E",
       "",
+      "I",
       "",
-      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "R",
+      "",
+      "N",
+      "",
+      "",
+      "",
       ""
     ],
     [
       "",
       "",
-      "A",
+      "",
       "",
       "",
       "",
@@ -132,228 +132,202 @@
     ]
   ],
   "bonusSquares": {
-    "4,0": "double-word",
-    "0,0": "triple-letter",
-    "6,0": "double-letter",
-    "2,0": "double-letter"
+    "6,5": "triple-word",
+    "3,6": "double-word",
+    "1,6": "flat-bonus"
+  },
+  "flatBonusValues": {
+    "1,6": 2
   },
   "puzzleWords": [
     {
-      "word": "REPLOT",
+      "word": "MUGGER",
       "row": 0,
-      "col": 5,
+      "col": 0,
       "direction": "vertical"
     },
     {
-      "word": "FAZE",
+      "word": "URSAE",
       "row": 1,
-      "col": 2,
+      "col": 0,
       "direction": "horizontal"
     },
     {
-      "word": "SNOOK",
-      "row": 4,
-      "col": 2,
-      "direction": "horizontal"
+      "word": "DEED",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
     },
     {
-      "word": "SEA",
-      "row": 4,
+      "word": "SASIN",
+      "row": 1,
       "col": 2,
       "direction": "vertical"
     }
   ],
   "initialRackTiles": [
-    "Q",
-    "Y",
-    "T",
-    "U",
-    "U",
-    "O"
+    "I",
+    "N",
+    "O",
+    "S",
+    "A",
+    "G"
   ],
   "bestSolution": {
     "board": [
       [
-        "",
-        "T",
-        "O",
+        "M",
         "",
         "",
-        "R",
+        "",
+        "D",
+        "",
         ""
       ],
       [
-        "",
-        "",
-        "F",
-        "A",
-        "Z",
-        "E",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "P",
-        ""
-      ],
-      [
-        "",
-        "",
-        "",
         "U",
+        "R",
+        "S",
+        "A",
+        "E",
         "",
-        "L",
+        ""
+      ],
+      [
+        "G",
+        "",
+        "A",
+        "",
+        "E",
+        "",
+        ""
+      ],
+      [
+        "G",
+        "",
+        "S",
+        "",
+        "D",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "",
+        "I",
+        "",
+        "I",
+        "",
+        ""
+      ],
+      [
+        "R",
+        "",
+        "N",
+        "",
+        "N",
+        "",
         ""
       ],
       [
         "",
         "",
         "S",
-        "N",
-        "O",
-        "O",
-        "K"
-      ],
-      [
-        "",
-        "",
-        "E",
-        "",
-        "",
-        "T",
-        ""
-      ],
-      [
-        "Q",
-        "U",
         "A",
-        "Y",
-        "",
-        "",
+        "G",
+        "O",
         ""
       ]
     ],
     "newKeys": [
-      "6,0",
-      "6,1",
+      "6,2",
       "6,3",
-      "0,1",
-      "0,2",
-      "3,3"
+      "6,4",
+      "6,5",
+      "4,4",
+      "5,4"
     ],
-    "score": 85,
+    "score": 81,
     "completionBonus": 50,
     "words": [
-      "TO",
-      "QUAY",
-      "OF",
-      "UN"
+      "SAGO",
+      "SASINS",
+      "DEEDING"
     ],
     "scoringWords": [
       {
-        "word": "TO",
-        "row": 0,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 2
-      },
-      {
-        "word": "QUAY",
+        "word": "SAGO",
         "row": 6,
-        "col": 0,
+        "col": 2,
         "direction": "horizontal",
-        "score": 26
+        "score": 15
       },
       {
-        "word": "OF",
-        "row": 0,
+        "word": "SASINS",
+        "row": 1,
         "col": 2,
         "direction": "vertical",
-        "score": 5
+        "score": 6
       },
       {
-        "word": "UN",
-        "row": 3,
-        "col": 3,
+        "word": "DEEDING",
+        "row": 0,
+        "col": 4,
         "direction": "vertical",
-        "score": 2
+        "score": 10
       }
     ],
     "moves": [
       {
         "turn": 1,
-        "word": "QUAY",
+        "word": "SAGO",
         "row": 6,
-        "col": 0,
+        "col": 2,
         "direction": "horizontal",
-        "score": 26,
-        "usedTiles": 3,
+        "score": 21,
+        "usedTiles": 4,
         "newKeys": [
-          "6,0",
-          "6,1",
-          "6,3"
+          "6,2",
+          "6,3",
+          "6,4",
+          "6,5"
         ],
         "scoringWords": [
           {
-            "word": "QUAY",
+            "word": "SAGO",
             "row": 6,
-            "col": 0,
+            "col": 2,
             "direction": "horizontal",
-            "score": 26
+            "score": 15
+          },
+          {
+            "word": "SASINS",
+            "row": 1,
+            "col": 2,
+            "direction": "vertical",
+            "score": 6
           }
         ]
       },
       {
         "turn": 2,
-        "word": "TO",
+        "word": "DEEDING",
         "row": 0,
-        "col": 1,
-        "direction": "horizontal",
-        "score": 7,
+        "col": 4,
+        "direction": "vertical",
+        "score": 10,
         "usedTiles": 2,
         "newKeys": [
-          "0,1",
-          "0,2"
+          "4,4",
+          "5,4"
         ],
         "scoringWords": [
           {
-            "word": "TO",
+            "word": "DEEDING",
             "row": 0,
-            "col": 1,
-            "direction": "horizontal",
-            "score": 2
-          },
-          {
-            "word": "OF",
-            "row": 0,
-            "col": 2,
+            "col": 4,
             "direction": "vertical",
-            "score": 5
-          }
-        ]
-      },
-      {
-        "turn": 3,
-        "word": "UN",
-        "row": 3,
-        "col": 3,
-        "direction": "vertical",
-        "score": 2,
-        "usedTiles": 1,
-        "newKeys": [
-          "3,3"
-        ],
-        "scoringWords": [
-          {
-            "word": "UN",
-            "row": 3,
-            "col": 3,
-            "direction": "vertical",
-            "score": 2
+            "score": 10
           }
         ]
       }
@@ -362,6 +336,6 @@
     "tilesRemaining": 0,
     "fullSolution": true,
     "searchLimitReached": false,
-    "visitedCandidates": 411
+    "visitedCandidates": 1332
   }
 }
