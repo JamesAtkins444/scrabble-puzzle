@@ -1,0 +1,354 @@
+{
+  "date": "2026-12-04",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "U",
+      "",
+      "U",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "N",
+      "I",
+      "P",
+      "P",
+      "Y",
+      "",
+      ""
+    ],
+    [
+      "R",
+      "",
+      "H",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "E",
+      "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "E",
+      "R",
+      "S",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "U",
+      "",
+      "U",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "N",
+      "I",
+      "P",
+      "P",
+      "Y",
+      "",
+      ""
+    ],
+    [
+      "R",
+      "",
+      "H",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "E",
+      "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "E",
+      "R",
+      "S",
+      "T",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "5,6": "triple-word",
+    "0,4": "double-word",
+    "1,6": "double-letter",
+    "3,6": "double-letter"
+  },
+  "puzzleWords": [
+    {
+      "word": "UNREEL",
+      "row": 1,
+      "col": 0,
+      "direction": "vertical"
+    },
+    {
+      "word": "ERST",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "NIPPY",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "OUPHE",
+      "row": 0,
+      "col": 2,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "A",
+    "S",
+    "P",
+    "G",
+    "E",
+    "O"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "G",
+        "O",
+        "O",
+        "",
+        "",
+        ""
+      ],
+      [
+        "U",
+        "",
+        "U",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "N",
+        "I",
+        "P",
+        "P",
+        "Y",
+        "",
+        ""
+      ],
+      [
+        "R",
+        "",
+        "H",
+        "E",
+        "A",
+        "P",
+        "S"
+      ],
+      [
+        "E",
+        "",
+        "E",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "R",
+        "S",
+        "T",
+        "",
+        "",
+        ""
+      ],
+      [
+        "L",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "3,3",
+      "3,4",
+      "3,5",
+      "3,6",
+      "0,1",
+      "0,3"
+    ],
+    "score": 74,
+    "completionBonus": 50,
+    "words": [
+      "GOO",
+      "HEAPS",
+      "PE",
+      "YA"
+    ],
+    "scoringWords": [
+      {
+        "word": "GOO",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "HEAPS",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 11
+      },
+      {
+        "word": "PE",
+        "row": 2,
+        "col": 3,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "YA",
+        "row": 2,
+        "col": 4,
+        "direction": "vertical",
+        "score": 5
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "HEAPS",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 4,
+        "newKeys": [
+          "3,3",
+          "3,4",
+          "3,5",
+          "3,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "HEAPS",
+            "row": 3,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 11
+          },
+          {
+            "word": "PE",
+            "row": 2,
+            "col": 3,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "YA",
+            "row": 2,
+            "col": 4,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "GOO",
+        "row": 0,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,1",
+          "0,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "GOO",
+            "row": 0,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1312
+  }
+}
