@@ -1711,6 +1711,17 @@ function generateBonusSquares() {
     placeBonus("triple-word", 2);
     placeBonus("double-word", 1);
 
+    // Place the Flat Bonus before the letter bonuses so it gets the same
+    // opportunity to appear in every generated puzzle.
+    if (placeBonus("flat-bonus", 1)) {
+        const flatBonusKey = Object.keys(bonusSquares).find(
+            key => bonusSquares[key] === "flat-bonus"
+        );
+        if (flatBonusKey) {
+            flatBonusValues[flatBonusKey] = randomInt(2, 4);
+        }
+    }
+
     // Then add up to two of each letter bonus.
     const letterBonusTypes = shuffle([
         "triple-letter",
@@ -1721,17 +1732,6 @@ function generateBonusSquares() {
 
     for (const type of letterBonusTypes) {
         placeBonus(type, 1);
-    }
-
-    // Add one Flat Bonus square. Its value is fixed for this puzzle
-    // and randomly chosen from +2, +3 or +4.
-    if (placeBonus("flat-bonus", 1)) {
-        const flatBonusKey = Object.keys(bonusSquares).find(
-            key => bonusSquares[key] === "flat-bonus"
-        );
-        if (flatBonusKey) {
-            flatBonusValues[flatBonusKey] = randomInt(2, 4);
-        }
     }
 }
 
@@ -4835,6 +4835,7 @@ async function loadPuzzleForDate(dateKey, allowDailyFallback = false) {
         board = cloneBoard(puzzle.board);
         originalBoard = cloneBoard(puzzle.originalBoard);
         bonusSquares = { ...(puzzle.bonusSquares || {}) };
+        flatBonusValues = { ...(puzzle.flatBonusValues || {}) };
         puzzleWords = Array.isArray(puzzle.puzzleWords)
             ? puzzle.puzzleWords.map(word => ({ ...word }))
             : [];
@@ -5073,6 +5074,7 @@ async function generateDailyPuzzle() {
                 board: cloneBoard(originalBoard),
                 originalBoard: cloneBoard(originalBoard),
                 bonusSquares: { ...bonusSquares },
+                flatBonusValues: { ...flatBonusValues },
                 puzzleWords: puzzleWords.map(word => ({ ...word })),
                 initialRackTiles: [...initialRackTiles],
                 bestSolution: {
