@@ -4714,28 +4714,8 @@ function seedDailyRandom(dateKey) {
 }
 
 function ensureDailyChallengeInfo() {
-    if (!dailyChallengeInfoElement) {
-        dailyChallengeInfoElement = document.getElementById("dailyChallengeInfo");
-    }
-
-    if (!dailyChallengeInfoElement && generateButton && generateButton.parentNode) {
-        dailyChallengeInfoElement = document.createElement("div");
-        dailyChallengeInfoElement.id = "dailyChallengeInfo";
-        generateButton.parentNode.insertBefore(dailyChallengeInfoElement, generateButton);
-
-        const style = document.createElement("style");
-        style.textContent = `
-            #dailyChallengeInfo {
-                margin: 0 auto 10px;
-                max-width: 100%;
-                color: #64748b;
-                font: 600 13px/1.5 Arial, Helvetica, sans-serif;
-                text-align: center;
-            }
-            #generateButton { min-width: 190px; }
-        `;
-        document.head.appendChild(style);
-    }
+    // The daily challenge heading and New Puzzle button are no longer displayed.
+    dailyChallengeInfoElement = null;
 }
 
 function updateDailyChallengeClock() {
@@ -4757,12 +4737,6 @@ function updateDailyChallengeClock() {
     const minutes = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, "0");
     const seconds = String(remainingSeconds % 60).padStart(2, "0");
 
-    ensureDailyChallengeInfo();
-    if (dailyChallengeInfoElement) {
-        dailyChallengeInfoElement.textContent =
-            `DAILY CHALLENGE · ${activeDailyDateKey}`;
-        // `DAILY CHALLENGE · ${activeDailyDateKey} · New puzzle in ${hours}:${minutes}:${seconds}`;
-    }
 }
 
 function updateDailyPuzzleNumber(dateKey) {
@@ -5027,11 +5001,6 @@ async function generateDailyPuzzle() {
 
     try {
         for (let attempt = 1; attempt <= maxPuzzleAttempts; attempt++) {
-            if (dailyChallengeInfoElement) {
-                dailyChallengeInfoElement.textContent =
-                    `Preparing today's shared puzzle… (attempt ${attempt})`;
-            }
-
             generateBoard();
 
             const hasFourLetterSolverWord =
