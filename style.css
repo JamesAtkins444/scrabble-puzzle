@@ -346,6 +346,11 @@ button:focus-visible {
     color: #d24aff;
 }
 
+/* Nudge the Flat Bonus label 1px left within its square. */
+.cell.flat-bonus .bonus-badge {
+    left: calc(50% - 1px) !important;
+}
+
 .bonus-badge {
     position: absolute;
     z-index: 2;
