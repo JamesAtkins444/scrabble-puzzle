@@ -468,6 +468,17 @@ button:focus-visible {
     color: #172c33;
 }
 
+/* Invalid and isolated tiles on Flat Bonus keep the standard invalid styling. */
+.board-tile.player-invalid.player-on-flat-bonus,
+.board-tile.player-isolated.player-on-flat-bonus,
+.cell.player-invalid .board-tile.player-on-flat-bonus,
+.cell.player-isolated .board-tile.player-on-flat-bonus {
+    background: var(--white);
+    color: #ff0000;
+    outline: 4px solid #ff0000 !important;
+    outline-offset: -4px;
+}
+
 /* Invalid player tiles stay white with red lettering, including on premium cells. */
 .board-tile.player-invalid.player-on-double-letter,
 .board-tile.player-invalid.player-on-triple-letter,
