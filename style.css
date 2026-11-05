@@ -461,6 +461,13 @@ button:focus-visible {
 .board-tile.player-valid.player-valid-colour-5 { background: #fe6549; }
 .board-tile.player-valid.player-valid-colour-6 { background: #ff594b; }
 
+/* Flat Bonus changes the text colour of the tile placed on it. */
+.board-tile.player-valid.player-on-flat-bonus,
+.board-tile.player-invalid.player-on-flat-bonus,
+.board-tile.player-isolated.player-on-flat-bonus {
+    color: #d24aff;
+}
+
 .board-tile.player-invalid,
 .cell.player-invalid .board-tile,
 .board-tile.player-isolated,
@@ -1280,6 +1287,17 @@ dialog::backdrop {
 }
 
 @media (max-width: 600px) {
+    /* Keep all five How to Play bonus examples on one row on small screens. */
+    .how-to-play-bonus-tiles {
+        gap: 6px;
+    }
+
+    .how-to-play-bonus-tile {
+        width: clamp(54px, 16vw, 73.33px);
+        height: clamp(54px, 16vw, 73.33px);
+        flex-basis: clamp(54px, 16vw, 73.33px);
+    }
+
     .share-results-score {
         font-size: clamp(42px, 10.8vw, 52.8px);
     }
