@@ -830,25 +830,31 @@ button:focus-visible {
     text-box-edge: cap alphabetic;
 }
 
-#nextPuzzleButton {
-    grid-column: 1 / -1;
-    justify-self: center;
+#generateButton {
+    align-self: center;
     width: min(100%, 260px);
     min-height: 44px;
-    margin-top: 2px;
+    margin: 2px auto 0;
+    padding: 8px 16px;
     border: 0;
-    background: #264653;
-    color: #264653;
-}
-
-#nextPuzzleButton:hover:not(:disabled),
-#nextPuzzleButton:active:not(:disabled) {
-    background: #fbb03b;
-    color: var(--page);
-}
-
-#nextPuzzleButton:disabled {
-    display: none;
+    border-radius: 999px;
+    background: var(--rack-slot);
+    color: var(--white);
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    text-align: center;
+    cursor: pointer;
+    -webkit-mask-image: url("/button-shape.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 100% 100%;
+    mask-image: url("/button-shape.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100% 100%;
 }
 
 /* Optional solver panel remains available with the same game behavior. */
