@@ -1356,7 +1356,6 @@ dialog::backdrop {
     text-box-edge: cap alphabetic;
     text-align: center;
     cursor: pointer;
-    transform: translateY(2px);
 }
 
 .continue-playing-button {
@@ -1758,10 +1757,10 @@ dialog::backdrop {
     line-height: 1.12;
 }
 
-.copy-share-results-button,
+ .copy-share-results-button,
 .continue-playing-button {
     min-height: 46px;
-    padding: 8px 16px;
+    padding: 10px 16px 6px;
     transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
 }
 
