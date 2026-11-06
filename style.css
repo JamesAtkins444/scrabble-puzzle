@@ -1143,7 +1143,7 @@ dialog::backdrop {
  .how-to-play-bonus-tiles {
     display: flex;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
     margin: 12px auto;
 }
 
@@ -1153,9 +1153,9 @@ dialog::backdrop {
     justify-content: center;
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
-    width: clamp(54px, 16vw, 73.33px);
-    height: clamp(54px, 16vw, 73.33px);
-    flex: 0 0 clamp(54px, 16vw, 73.33px);
+    width: 73.33px;
+    height: 73.33px;
+    flex: 0 0 73.33px;
     aspect-ratio: 1 / 1;
     border: 0;
     border-radius: var(--round);
@@ -1186,7 +1186,7 @@ dialog::backdrop {
 
  .how-to-play-score-number {
     color: #264653;
-    font-size: clamp(42px, 10.8vw, 52.8px);
+    font-size: clamp(46.8px, 9.6vw, 62.4px);
     font-weight: 700;
     line-height: .9;
     white-space: nowrap;
@@ -1199,7 +1199,7 @@ dialog::backdrop {
     gap: 3px;
     min-height: 0;
     margin: 0;
-    font-size: 28.458px;
+    font-size: 33.048px;
     line-height: 1;
     white-space: nowrap;
     transform: translateY(calc(0.08em + 2px));
@@ -1246,7 +1246,7 @@ dialog::backdrop {
 
  .share-results-score {
     margin: 0;
-    font-size: clamp(42px, 10.8vw, 52.8px);
+    font-size: clamp(46.8px, 9.6vw, 62.4px);
     font-weight: 700;
     line-height: .9;
     white-space: nowrap;
@@ -1258,7 +1258,7 @@ dialog::backdrop {
     justify-content: center;
     gap: 3px;
     margin: 0;
-    font-size: 28.458px;
+    font-size: 33.048px;
     line-height: 1;
     white-space: nowrap;
 }
@@ -1285,7 +1285,7 @@ dialog::backdrop {
 
  .share-results-crown {
     display: inline-flex;
-    font-size: 28.458px;
+    font-size: 33.048px;
     align-items: center;
     justify-content: center;
     width: .85em;
@@ -1644,14 +1644,14 @@ dialog::backdrop {
 /* Shared popup polish: consistent surfaces, spacing, and responsive scrolling. */
 .rules-dialog,
 .share-results-dialog {
-    width: calc(100vw - 24px);
+    width: min(500px, calc(100vw - 32px));
     max-width: 500px;
-    max-height: 88dvh;
+    max-height: min(85dvh, 760px);
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
     border: 1px solid rgba(38, 70, 83, .10);
-    border-radius: 16px;
+    border-radius: 18px;
     background: #ffffff;
     box-shadow: 0 18px 54px rgba(10, 27, 32, .22);
     scrollbar-gutter: stable;
@@ -1689,20 +1689,19 @@ dialog::backdrop {
 
  .rules-dialog-header,
 .share-results-header {
-    min-height: 58px;
-    padding: 12px 52px 8px;
+    min-height: 64px;
+    padding: 14px 54px 9px;
 }
 
  .rules-dialog-header h2,
 .share-results-header h2 {
-    font-size: 34px;
     line-height: .98;
     text-wrap: balance;
 }
 
  .rules-close-button {
-    top: 7px;
-    right: 7px;
+    top: 10px;
+    right: 10px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -1720,24 +1719,24 @@ dialog::backdrop {
 
  .rules-content,
 .share-results-content {
-    padding: 7px 16px 16px;
+    padding: 8px 24px 20px;
 }
 
  .rules-tabs {
-    gap: 3px;
-    padding: 3px;
-    margin-bottom: 11px;
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: 14px;
     border: 0;
     border-radius: 12px;
     background: #edf1f2;
 }
 
  .rules-tab {
-    min-height: 42px;
-    padding: 6px 4px;
+    min-height: 44px;
+    padding: 8px 10px;
     border: 0;
     border-radius: 8px;
-    font-size: 22px;
+    font-size: 24px;
     transition: background-color 120ms ease, color 120ms ease;
 }
 
@@ -1755,8 +1754,7 @@ dialog::backdrop {
  .rules-tab-panel p,
 .word-list-content p {
     overflow-wrap: anywhere;
-    font-size: 20px;
-    line-height: 1.1;
+    line-height: 1.12;
 }
 
  .copy-share-results-button,
