@@ -1340,7 +1340,9 @@ dialog::backdrop {
 
 .copy-share-results-button,
 .continue-playing-button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     margin: 8px 0 0;
     padding: 6px 16px 7px;
@@ -1349,7 +1351,10 @@ dialog::backdrop {
     background: #264653;
     color: #ffffff;
     font-size: 23px;
-    line-height: .9;
+    line-height: 1;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    text-align: center;
     cursor: pointer;
 }
 
