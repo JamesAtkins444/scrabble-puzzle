@@ -1,0 +1,341 @@
+{
+  "date": "2026-12-05",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Y",
+      "A",
+      "R",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "",
+      "Z",
+      "",
+      "",
+      "V",
+      ""
+    ],
+    [
+      "G",
+      "O",
+      "O",
+      "D",
+      "I",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "N",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Y",
+      "A",
+      "R",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "",
+      "Z",
+      "",
+      "",
+      "V",
+      ""
+    ],
+    [
+      "G",
+      "O",
+      "O",
+      "D",
+      "I",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "O",
+      "",
+      "",
+      "N",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,0": "triple-word",
+    "6,0": "double-word",
+    "2,0": "flat-bonus"
+  },
+  "flatBonusValues": {
+    "2,0": 2
+  },
+  "puzzleWords": [
+    {
+      "word": "GOODIE",
+      "row": 4,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "ZOO",
+      "row": 3,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "ROVEN",
+      "row": 1,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "YARE",
+      "row": 1,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "O",
+    "R",
+    "G",
+    "I",
+    "W",
+    "I"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "G",
+        "I",
+        "R",
+        "O",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "Y",
+        "A",
+        "R",
+        "E"
+      ],
+      [
+        "W",
+        "",
+        "",
+        "",
+        "",
+        "O",
+        ""
+      ],
+      [
+        "I",
+        "",
+        "Z",
+        "",
+        "",
+        "V",
+        ""
+      ],
+      [
+        "G",
+        "O",
+        "O",
+        "D",
+        "I",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "O",
+        "",
+        "",
+        "N",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,0",
+      "0,1",
+      "0,2",
+      "0,3",
+      "2,0",
+      "3,0"
+    ],
+    "score": 79,
+    "completionBonus": 50,
+    "words": [
+      "GIRO",
+      "WIG",
+      "OY"
+    ],
+    "scoringWords": [
+      {
+        "word": "GIRO",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 15
+      },
+      {
+        "word": "WIG",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 9
+      },
+      {
+        "word": "OY",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "GIRO",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 4,
+        "newKeys": [
+          "0,0",
+          "0,1",
+          "0,2",
+          "0,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "GIRO",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 15
+          },
+          {
+            "word": "OY",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "WIG",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 9,
+        "usedTiles": 2,
+        "newKeys": [
+          "2,0",
+          "3,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "WIG",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 9
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 385
+  }
+}
