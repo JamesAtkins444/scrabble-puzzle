@@ -1356,6 +1356,7 @@ dialog::backdrop {
     text-box-edge: cap alphabetic;
     text-align: center;
     cursor: pointer;
+    transform: translateY(2px);
 }
 
 .continue-playing-button {
