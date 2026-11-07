@@ -1,0 +1,323 @@
+{
+  "date": "2026-12-06",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "K",
+      "I",
+      "L",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      "U"
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "K",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "M",
+      "I",
+      "D",
+      "I",
+      "",
+      "",
+      "C"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "K",
+      "I",
+      "L",
+      "T"
+    ],
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      "U"
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "",
+      "N"
+    ],
+    [
+      "",
+      "",
+      "",
+      "K",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "M",
+      "I",
+      "D",
+      "I",
+      "",
+      "",
+      "C"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "A"
+    ]
+  ],
+  "bonusSquares": {
+    "2,0": "triple-word",
+    "0,0": "double-word"
+  },
+  "flatBonusValues": {},
+  "puzzleWords": [
+    {
+      "word": "TUNICA",
+      "row": 1,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "KILT",
+      "row": 1,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "KHAKI",
+      "row": 1,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "MIDI",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "Y",
+    "E",
+    "A",
+    "E",
+    "T",
+    "R"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "R",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "E",
+        "",
+        "",
+        "K",
+        "I",
+        "L",
+        "T"
+      ],
+      [
+        "T",
+        "",
+        "",
+        "H",
+        "",
+        "",
+        "U"
+      ],
+      [
+        "E",
+        "",
+        "",
+        "A",
+        "Y",
+        "",
+        "N"
+      ],
+      [
+        "A",
+        "",
+        "",
+        "K",
+        "",
+        "",
+        "I"
+      ],
+      [
+        "M",
+        "I",
+        "D",
+        "I",
+        "",
+        "",
+        "C"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "A"
+      ]
+    ],
+    "newKeys": [
+      "0,0",
+      "1,0",
+      "2,0",
+      "3,0",
+      "4,0",
+      "3,4"
+    ],
+    "score": 103,
+    "completionBonus": 50,
+    "words": [
+      "AY",
+      "RETEAM"
+    ],
+    "scoringWords": [
+      {
+        "word": "AY",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5
+      },
+      {
+        "word": "RETEAM",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 48
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "RETEAM",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 48,
+        "usedTiles": 5,
+        "newKeys": [
+          "0,0",
+          "1,0",
+          "2,0",
+          "3,0",
+          "4,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "RETEAM",
+            "row": 0,
+            "col": 0,
+            "direction": "vertical",
+            "score": 48
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "AY",
+        "row": 3,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "3,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "AY",
+            "row": 3,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 5
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1446
+  }
+}
