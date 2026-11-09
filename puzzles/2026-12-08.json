@@ -1,0 +1,372 @@
+{
+  "date": "2026-12-08",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "F",
+      "",
+      "",
+      ""
+    ],
+    [
+      "T",
+      "H",
+      "A",
+      "R",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "N",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "Y",
+      "O",
+      "K",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Y",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "F",
+      "",
+      "",
+      ""
+    ],
+    [
+      "T",
+      "H",
+      "A",
+      "R",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "E",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "N",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "Y",
+      "O",
+      "K",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "Y",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,5": "double-word",
+    "0,6": "flat-bonus",
+    "2,6": "double-letter",
+    "0,0": "triple-letter"
+  },
+  "flatBonusValues": {
+    "0,6": 4
+  },
+  "puzzleWords": [
+    {
+      "word": "FREAKY",
+      "row": 1,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "ANT",
+      "row": 4,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "YOK",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "THARM",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "Z",
+    "O",
+    "B",
+    "E",
+    "E",
+    "D"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "F",
+        "",
+        "",
+        ""
+      ],
+      [
+        "T",
+        "H",
+        "A",
+        "R",
+        "M",
+        "",
+        "Z"
+      ],
+      [
+        "",
+        "",
+        "",
+        "E",
+        "",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "A",
+        "N",
+        "T",
+        "E"
+      ],
+      [
+        "",
+        "Y",
+        "O",
+        "K",
+        "",
+        "",
+        ""
+      ],
+      [
+        "B",
+        "O",
+        "D",
+        "Y",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "2,6",
+      "3,6",
+      "4,6",
+      "6,0",
+      "6,1",
+      "6,2"
+    ],
+    "score": 94,
+    "completionBonus": 50,
+    "words": [
+      "ANTE",
+      "BODY",
+      "YO",
+      "OD",
+      "ZEE"
+    ],
+    "scoringWords": [
+      {
+        "word": "ANTE",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "BODY",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 10
+      },
+      {
+        "word": "YO",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "OD",
+        "row": 5,
+        "col": 2,
+        "direction": "vertical",
+        "score": 3
+      },
+      {
+        "word": "ZEE",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 22
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "ZEE",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 26,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,6",
+          "3,6",
+          "4,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "ANTE",
+            "row": 4,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "ZEE",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 22
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "BODY",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 18,
+        "usedTiles": 3,
+        "newKeys": [
+          "6,0",
+          "6,1",
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "BODY",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "YO",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "OD",
+            "row": 5,
+            "col": 2,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 776
+  }
+}
