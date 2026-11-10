@@ -1,0 +1,342 @@
+{
+  "date": "2026-12-09",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "C",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "L",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "M",
+      "B",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "N",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "C",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "T",
+      "H",
+      "O",
+      "N",
+      "G",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "C",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "L",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "E",
+      "M",
+      "B",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "N",
+      "",
+      "R",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "C",
+      "",
+      "A",
+      "",
+      "",
+      ""
+    ],
+    [
+      "T",
+      "H",
+      "O",
+      "N",
+      "G",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,6": "double-word",
+    "0,6": "flat-bonus",
+    "0,3": "triple-letter",
+    "4,6": "double-letter"
+  },
+  "flatBonusValues": {
+    "0,6": 4
+  },
+  "puzzleWords": [
+    {
+      "word": "CLENCH",
+      "row": 0,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "EMBER",
+      "row": 2,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "THONG",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "BRA",
+      "row": 2,
+      "col": 3,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "T",
+    "U",
+    "S",
+    "P",
+    "E"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "C",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "L",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "E",
+        "M",
+        "B",
+        "E",
+        "R",
+        "S"
+      ],
+      [
+        "",
+        "N",
+        "",
+        "R",
+        "",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "C",
+        "",
+        "A",
+        "",
+        "E",
+        "T"
+      ],
+      [
+        "T",
+        "H",
+        "O",
+        "N",
+        "G",
+        "",
+        "U"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "P"
+      ]
+    ],
+    "newKeys": [
+      "2,6",
+      "3,6",
+      "4,6",
+      "5,6",
+      "6,6",
+      "4,5"
+    ],
+    "score": 79,
+    "completionBonus": 50,
+    "words": [
+      "EMBERS",
+      "ET",
+      "SETUP"
+    ],
+    "scoringWords": [
+      {
+        "word": "EMBERS",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 10
+      },
+      {
+        "word": "ET",
+        "row": 4,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3
+      },
+      {
+        "word": "SETUP",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 16
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "SETUP",
+        "row": 2,
+        "col": 6,
+        "direction": "vertical",
+        "score": 26,
+        "usedTiles": 5,
+        "newKeys": [
+          "2,6",
+          "3,6",
+          "4,6",
+          "5,6",
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "EMBERS",
+            "row": 2,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 10
+          },
+          {
+            "word": "SETUP",
+            "row": 2,
+            "col": 6,
+            "direction": "vertical",
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ET",
+        "row": 4,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 3,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "ET",
+            "row": 4,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 953
+  }
+}
