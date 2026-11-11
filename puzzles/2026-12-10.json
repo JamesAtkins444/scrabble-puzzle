@@ -1,0 +1,327 @@
+{
+  "date": "2026-12-10",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "S",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "H",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "G",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "L",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "O",
+      "U",
+      "T",
+      "F",
+      "O",
+      "X",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "V",
+      "",
+      ""
+    ],
+    [
+      "M",
+      "A",
+      "C",
+      "H",
+      "E",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "S",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "H",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "G",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "L",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "O",
+      "U",
+      "T",
+      "F",
+      "O",
+      "X",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "V",
+      "",
+      ""
+    ],
+    [
+      "M",
+      "A",
+      "C",
+      "H",
+      "E",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "1,0": "double-word",
+    "1,6": "flat-bonus",
+    "0,4": "double-letter",
+    "6,6": "triple-letter"
+  },
+  "flatBonusValues": {
+    "1,6": 2
+  },
+  "puzzleWords": [
+    {
+      "word": "OUTFOX",
+      "row": 4,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "GLOVE",
+      "row": 2,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "MACHE",
+      "row": 6,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SHALT",
+      "row": 0,
+      "col": 2,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "T",
+    "E",
+    "N",
+    "O",
+    "R"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "S",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "H",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "O",
+        "R",
+        "A",
+        "N",
+        "G",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "L",
+        "",
+        "L",
+        "",
+        ""
+      ],
+      [
+        "O",
+        "U",
+        "T",
+        "F",
+        "O",
+        "X",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "V",
+        "",
+        ""
+      ],
+      [
+        "M",
+        "A",
+        "C",
+        "H",
+        "E",
+        "T",
+        "E"
+      ]
+    ],
+    "newKeys": [
+      "6,5",
+      "6,6",
+      "2,0",
+      "2,1",
+      "2,3",
+      "2,5"
+    ],
+    "score": 73,
+    "completionBonus": 50,
+    "words": [
+      "ORANGE",
+      "MACHETE"
+    ],
+    "scoringWords": [
+      {
+        "word": "ORANGE",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 7
+      },
+      {
+        "word": "MACHETE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 16
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "MACHETE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 16,
+        "usedTiles": 2,
+        "newKeys": [
+          "6,5",
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "MACHETE",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ORANGE",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 7,
+        "usedTiles": 4,
+        "newKeys": [
+          "2,0",
+          "2,1",
+          "2,3",
+          "2,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "ORANGE",
+            "row": 2,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 7
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1353
+  }
+}
