@@ -1,0 +1,337 @@
+{
+  "date": "2026-12-11",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "T",
+      "R",
+      "I",
+      "C",
+      "E",
+      "D"
+    ],
+    [
+      "",
+      "A",
+      "",
+      "",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "K",
+      "",
+      "H",
+      "O",
+      "L",
+      "T"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "",
+      "",
+      "U"
+    ],
+    [
+      "",
+      "N",
+      "",
+      "",
+      "",
+      "",
+      "M"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "T",
+      "R",
+      "I",
+      "C",
+      "E",
+      "D"
+    ],
+    [
+      "",
+      "A",
+      "",
+      "",
+      "",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "K",
+      "",
+      "H",
+      "O",
+      "L",
+      "T"
+    ],
+    [
+      "",
+      "E",
+      "",
+      "",
+      "",
+      "",
+      "U"
+    ],
+    [
+      "",
+      "N",
+      "",
+      "",
+      "",
+      "",
+      "M"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "5,4": "double-word"
+  },
+  "flatBonusValues": {},
+  "puzzleWords": [
+    {
+      "word": "TRICED",
+      "row": 1,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "DATUM",
+      "row": 1,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "TAKEN",
+      "row": 1,
+      "col": 1,
+      "direction": "vertical"
+    },
+    {
+      "word": "HOLT",
+      "row": 3,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "G",
+    "L",
+    "E",
+    "R",
+    "E",
+    "O"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "E",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "T",
+        "R",
+        "I",
+        "C",
+        "E",
+        "D"
+      ],
+      [
+        "",
+        "A",
+        "G",
+        "",
+        "O",
+        "",
+        "A"
+      ],
+      [
+        "",
+        "K",
+        "",
+        "H",
+        "O",
+        "L",
+        "T"
+      ],
+      [
+        "",
+        "E",
+        "",
+        "",
+        "L",
+        "",
+        "U"
+      ],
+      [
+        "",
+        "N",
+        "",
+        "",
+        "E",
+        "",
+        "M"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "R",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "2,4",
+      "4,4",
+      "5,4",
+      "6,4",
+      "0,2",
+      "2,2"
+    ],
+    "score": 73,
+    "completionBonus": 50,
+    "words": [
+      "AG",
+      "ERG",
+      "COOLER"
+    ],
+    "scoringWords": [
+      {
+        "word": "AG",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 3
+      },
+      {
+        "word": "ERG",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "COOLER",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 16
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "COOLER",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 16,
+        "usedTiles": 4,
+        "newKeys": [
+          "2,4",
+          "4,4",
+          "5,4",
+          "6,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "COOLER",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ERG",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 7,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,2",
+          "2,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "AG",
+            "row": 2,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "ERG",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1097
+  }
+}
