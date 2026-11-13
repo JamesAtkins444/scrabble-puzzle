@@ -1,0 +1,372 @@
+{
+  "date": "2026-12-12",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "C",
+      "",
+      "S",
+      "E",
+      "D",
+      "G",
+      "Y"
+    ],
+    [
+      "I",
+      "",
+      "",
+      "",
+      "O",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "",
+      "",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "T",
+      "H",
+      "Y",
+      "M",
+      "I",
+      "C",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "C",
+      "",
+      "S",
+      "E",
+      "D",
+      "G",
+      "Y"
+    ],
+    [
+      "I",
+      "",
+      "",
+      "",
+      "O",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "",
+      "",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "T",
+      "H",
+      "Y",
+      "M",
+      "I",
+      "C",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "C",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,2": "double-word",
+    "0,4": "flat-bonus",
+    "0,6": "double-letter",
+    "0,0": "triple-letter"
+  },
+  "flatBonusValues": {
+    "0,4": 3
+  },
+  "puzzleWords": [
+    {
+      "word": "THYMIC",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "CIST",
+      "row": 2,
+      "col": 0,
+      "direction": "vertical"
+    },
+    {
+      "word": "DOMIC",
+      "row": 2,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "SEDGY",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "S",
+    "D",
+    "O",
+    "E",
+    "A",
+    "L"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "O"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "D"
+      ],
+      [
+        "C",
+        "",
+        "S",
+        "E",
+        "D",
+        "G",
+        "Y"
+      ],
+      [
+        "I",
+        "",
+        "",
+        "",
+        "O",
+        "",
+        "L"
+      ],
+      [
+        "S",
+        "",
+        "",
+        "",
+        "M",
+        "",
+        ""
+      ],
+      [
+        "T",
+        "H",
+        "Y",
+        "M",
+        "I",
+        "C",
+        ""
+      ],
+      [
+        "S",
+        "A",
+        "E",
+        "",
+        "C",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "6,0",
+      "6,1",
+      "6,2",
+      "0,6",
+      "1,6",
+      "3,6"
+    ],
+    "score": 79,
+    "completionBonus": 50,
+    "words": [
+      "SAE",
+      "CISTS",
+      "HA",
+      "YE",
+      "ODYL"
+    ],
+    "scoringWords": [
+      {
+        "word": "SAE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 3
+      },
+      {
+        "word": "CISTS",
+        "row": 2,
+        "col": 0,
+        "direction": "vertical",
+        "score": 7
+      },
+      {
+        "word": "HA",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "YE",
+        "row": 5,
+        "col": 2,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "ODYL",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 9
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "SAE",
+        "row": 6,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 3,
+        "newKeys": [
+          "6,0",
+          "6,1",
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "SAE",
+            "row": 6,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "CISTS",
+            "row": 2,
+            "col": 0,
+            "direction": "vertical",
+            "score": 7
+          },
+          {
+            "word": "HA",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "YE",
+            "row": 5,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ODYL",
+        "row": 0,
+        "col": 6,
+        "direction": "vertical",
+        "score": 9,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,6",
+          "1,6",
+          "3,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "ODYL",
+            "row": 0,
+            "col": 6,
+            "direction": "vertical",
+            "score": 9
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1809
+  }
+}
