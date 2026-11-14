@@ -1,0 +1,363 @@
+{
+  "date": "2026-12-13",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "C",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "A",
+      "P",
+      "S",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "X",
+      "",
+      "",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "T",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "C",
+      "L",
+      "A",
+      "S",
+      "P"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "C",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "O",
+      "",
+      "",
+      "M",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "A",
+      "P",
+      "S",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "X",
+      "",
+      "",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "T",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "C",
+      "L",
+      "A",
+      "S",
+      "P"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "2,6": "double-word",
+    "5,0": "flat-bonus",
+    "0,6": "triple-letter"
+  },
+  "flatBonusValues": {
+    "5,0": 2
+  },
+  "puzzleWords": [
+    {
+      "word": "MENTAL",
+      "row": 1,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "CLASP",
+      "row": 5,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "LAPSE",
+      "row": 2,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "COAX",
+      "row": 0,
+      "col": 1,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "S",
+    "T",
+    "A",
+    "A",
+    "N"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "A",
+        "C",
+        "E",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "S",
+        "O",
+        "",
+        "",
+        "M",
+        "",
+        ""
+      ],
+      [
+        "L",
+        "A",
+        "P",
+        "S",
+        "E",
+        "",
+        ""
+      ],
+      [
+        "A",
+        "X",
+        "",
+        "",
+        "N",
+        "",
+        ""
+      ],
+      [
+        "N",
+        "",
+        "",
+        "",
+        "T",
+        "",
+        ""
+      ],
+      [
+        "T",
+        "",
+        "C",
+        "L",
+        "A",
+        "S",
+        "P"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "L",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "1,0",
+      "3,0",
+      "4,0",
+      "5,0",
+      "0,0",
+      "0,2"
+    ],
+    "score": 74,
+    "completionBonus": 50,
+    "words": [
+      "ACE",
+      "SO",
+      "AX",
+      "ASLANT"
+    ],
+    "scoringWords": [
+      {
+        "word": "ACE",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 5
+      },
+      {
+        "word": "SO",
+        "row": 1,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "AX",
+        "row": 3,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 9
+      },
+      {
+        "word": "ASLANT",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 8
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "SLANT",
+        "row": 1,
+        "col": 0,
+        "direction": "vertical",
+        "score": 18,
+        "usedTiles": 4,
+        "newKeys": [
+          "1,0",
+          "3,0",
+          "4,0",
+          "5,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "SO",
+            "row": 1,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "AX",
+            "row": 3,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 9
+          },
+          {
+            "word": "SLANT",
+            "row": 1,
+            "col": 0,
+            "direction": "vertical",
+            "score": 7
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ACE",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 13,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,0",
+          "0,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "ACE",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 5
+          },
+          {
+            "word": "ASLANT",
+            "row": 0,
+            "col": 0,
+            "direction": "vertical",
+            "score": 8
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1359
+  }
+}
