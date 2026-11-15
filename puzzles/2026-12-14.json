@@ -1,0 +1,384 @@
+{
+  "date": "2026-12-14",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "O",
+      "W",
+      "F",
+      "F",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "C",
+      "R",
+      "A",
+      "B"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "Y",
+      "T",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "H",
+      "O",
+      "W",
+      "F",
+      "F",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "A",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "C",
+      "R",
+      "A",
+      "B"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "Y",
+      "T",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "L",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,6": "double-word",
+    "3,1": "flat-bonus"
+  },
+  "flatBonusValues": {
+    "3,1": 2
+  },
+  "puzzleWords": [
+    {
+      "word": "FARDEL",
+      "row": 1,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "CRAB",
+      "row": 3,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "WYTE",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "HOWFF",
+      "row": 1,
+      "col": 1,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "A",
+    "S",
+    "M",
+    "J",
+    "O"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "S",
+        "O",
+        "J",
+        "A",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "H",
+        "O",
+        "W",
+        "F",
+        "F",
+        ""
+      ],
+      [
+        "",
+        "M",
+        "E",
+        "",
+        "A",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "C",
+        "R",
+        "A",
+        "B"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "D",
+        "",
+        ""
+      ],
+      [
+        "",
+        "W",
+        "Y",
+        "T",
+        "E",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "L",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,0",
+      "0,1",
+      "0,2",
+      "0,3",
+      "2,1",
+      "2,2"
+    ],
+    "score": 88,
+    "completionBonus": 50,
+    "words": [
+      "SOJA",
+      "ME",
+      "OHM",
+      "JOE",
+      "AW"
+    ],
+    "scoringWords": [
+      {
+        "word": "SOJA",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 11
+      },
+      {
+        "word": "ME",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "OHM",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 8
+      },
+      {
+        "word": "JOE",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 10
+      },
+      {
+        "word": "AW",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "SOJA",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 30,
+        "usedTiles": 4,
+        "newKeys": [
+          "0,0",
+          "0,1",
+          "0,2",
+          "0,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "SOJA",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 11
+          },
+          {
+            "word": "OH",
+            "row": 0,
+            "col": 1,
+            "direction": "vertical",
+            "score": 5
+          },
+          {
+            "word": "JO",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 9
+          },
+          {
+            "word": "AW",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "ME",
+        "row": 2,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 22,
+        "usedTiles": 2,
+        "newKeys": [
+          "2,1",
+          "2,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "ME",
+            "row": 2,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "OHM",
+            "row": 0,
+            "col": 1,
+            "direction": "vertical",
+            "score": 8
+          },
+          {
+            "word": "JOE",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 10
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1208
+  }
+}
