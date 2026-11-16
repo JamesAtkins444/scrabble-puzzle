@@ -2374,6 +2374,10 @@ function displayTileRack() {
                         visual.classList.remove("selected");
                         visual.classList.add("rack-tile-drag-visual");
                         visual.setAttribute("aria-hidden", "true");
+                        // Safari can briefly paint a newly appended fixed element at the
+                        // document origin before its pointer position is applied. Keep the
+                        // drag visual hidden until its first position has been calculated.
+                        visual.style.visibility = "hidden";
                         document.body.appendChild(visual);
                         // Hide the rack tile while its larger floating copy is being dragged.
                         tile.classList.add("rack-tile-drag-source");
@@ -2386,6 +2390,7 @@ function displayTileRack() {
                     const desktopZoom = window.matchMedia("(min-width: 601px)").matches ? 0.8 : 1;
                     visual.style.left = `${moveEvent.clientX / desktopZoom - visual.offsetWidth / 2}px`;
                     visual.style.top = `${moveEvent.clientY / desktopZoom - visual.offsetHeight / 2}px`;
+                    visual.style.visibility = "visible";
 
                     const element = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY);
                     const cell = element && element.closest ? element.closest(".cell") : null;
