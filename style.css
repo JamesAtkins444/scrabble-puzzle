@@ -605,15 +605,6 @@ button:focus-visible {
     box-shadow: none !important;
 }
 
-/* Fill rack slots explicitly so Safari/WebKit does not collapse percentage-height
-   rack tiles to their content size. */
-#tileRack .rack-tile {
-    position: absolute;
-    inset: 0;
-    width: auto;
-    height: auto;
-}
-
 .rack-slot::before,
 .rack-slot::after {
     content: none !important;
@@ -646,6 +637,20 @@ button:focus-visible {
 .rack-tile::after {
     content: none !important;
     display: none !important;
+}
+
+/* Keep the player tile itself locked to the full rack slot.
+   This is deliberately placed after .rack-tile so Safari/WebKit cannot
+   override the positioning with the base tile rule. */
+#tileRack .rack-slot > .rack-tile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    background: var(--white);
 }
 
 .rack-tile .tile-value {
