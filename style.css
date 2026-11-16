@@ -595,7 +595,9 @@ button:focus-visible {
 
 .rack-slot {
     position: relative;
-    display: grid;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
     min-width: 0;
     aspect-ratio: 1 / 1;
     overflow: visible;
@@ -616,9 +618,12 @@ button:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: stretch;
+    flex: 1 1 auto;
     width: 100%;
-    height: 100%;
+    height: auto;
     min-width: 0;
+    min-height: 0;
     padding: 0;
     border: 0 !important;
     border-radius: var(--round);
@@ -637,18 +642,6 @@ button:focus-visible {
 .rack-tile::after {
     content: none !important;
     display: none !important;
-}
-
-/* Use the rack slot's grid area to size the player tile.
-   This avoids percentage-height/aspect-ratio sizing issues in Safari/WebKit. */
-#tileRack .rack-slot > .rack-tile {
-    position: relative;
-    grid-area: 1 / 1;
-    align-self: stretch;
-    justify-self: stretch;
-    width: 100%;
-    height: 100%;
-    background: var(--white);
 }
 
 .rack-tile .tile-value {
