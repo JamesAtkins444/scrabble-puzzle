@@ -1,0 +1,372 @@
+{
+  "date": "2026-12-15",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "R",
+      "R",
+      "A",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "U",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "M",
+      "O",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "S",
+      "A",
+      "G",
+      "E"
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "R",
+      "R",
+      "A",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "U",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "M",
+      "O",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "O",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "S",
+      "A",
+      "G",
+      "E"
+    ]
+  ],
+  "bonusSquares": {
+    "5,0": "triple-word",
+    "2,0": "double-word",
+    "0,2": "flat-bonus",
+    "0,0": "triple-letter"
+  },
+  "flatBonusValues": {
+    "0,2": 4
+  },
+  "puzzleWords": [
+    {
+      "word": "TAUTOG",
+      "row": 1,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "MOT",
+      "row": 4,
+      "col": 3,
+      "direction": "horizontal"
+    },
+    {
+      "word": "ARRAY",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SAGE",
+      "row": 6,
+      "col": 3,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "O",
+    "I",
+    "R",
+    "S",
+    "T"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "T",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "R",
+        "R",
+        "A",
+        "Y"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "U",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "M",
+        "O",
+        "T",
+        "S"
+      ],
+      [
+        "R",
+        "O",
+        "T",
+        "I",
+        "",
+        "O",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "",
+        "S",
+        "A",
+        "G",
+        "E"
+      ]
+    ],
+    "newKeys": [
+      "5,0",
+      "5,1",
+      "5,2",
+      "5,3",
+      "4,6",
+      "5,6"
+    ],
+    "score": 78,
+    "completionBonus": 50,
+    "words": [
+      "MOTS",
+      "ROTI",
+      "OE",
+      "MIS",
+      "SEE"
+    ],
+    "scoringWords": [
+      {
+        "word": "MOTS",
+        "row": 4,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 6
+      },
+      {
+        "word": "ROTI",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 12
+      },
+      {
+        "word": "OE",
+        "row": 5,
+        "col": 5,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "MIS",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "SEE",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "ROTI",
+        "row": 5,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 17,
+        "usedTiles": 4,
+        "newKeys": [
+          "5,0",
+          "5,1",
+          "5,2",
+          "5,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "ROTI",
+            "row": 5,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 12
+          },
+          {
+            "word": "MIS",
+            "row": 4,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "SEE",
+        "row": 4,
+        "col": 6,
+        "direction": "vertical",
+        "score": 11,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,6",
+          "5,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "MOTS",
+            "row": 4,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "OE",
+            "row": 5,
+            "col": 5,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "SEE",
+            "row": 4,
+            "col": 6,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1736
+  }
+}
