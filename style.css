@@ -595,9 +595,7 @@ button:focus-visible {
 
 .rack-slot {
     position: relative;
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
+    display: block;
     min-width: 0;
     aspect-ratio: 1 / 1;
     overflow: visible;
@@ -605,6 +603,15 @@ button:focus-visible {
     border-radius: var(--round);
     background: var(--rack-slot);
     box-shadow: none !important;
+}
+
+/* Fill rack slots explicitly so Safari/WebKit does not collapse percentage-height
+   rack tiles to their content size. */
+#tileRack .rack-tile {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
 }
 
 .rack-slot::before,
