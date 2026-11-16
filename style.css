@@ -599,8 +599,7 @@ button:focus-visible {
     align-items: stretch;
     justify-content: stretch;
     min-width: 0;
-    width: 100%;
-    height: calc((min(var(--board-size), calc(100vw - 32px)) - (6 * var(--gap))) / 7);
+    aspect-ratio: 1 / 1;
     overflow: visible;
     border: 0 !important;
     border-radius: var(--round);
@@ -615,15 +614,13 @@ button:focus-visible {
 }
 
 .rack-tile {
-    position: absolute;
-    inset: 0;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
     min-width: 0;
-    min-height: 0;
     padding: 0;
     border: 0 !important;
     border-radius: var(--round);
@@ -2036,5 +2033,23 @@ body {
         height: 125vh;
         right: auto;
         bottom: auto;
+    }
+}
+
+
+/* Safari/WebKit-only rack sizing fix.
+   Keep the normal rack, popups and drag behavior unchanged in other browsers. */
+@supports (-webkit-touch-callout: none) {
+    #tileRack .rack-slot {
+        width: 100%;
+        height: calc((min(var(--board-size), calc(100vw - 32px)) - (6 * var(--gap))) / 7);
+    }
+
+    #tileRack .rack-slot > .rack-tile {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
     }
 }
