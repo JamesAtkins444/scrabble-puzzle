@@ -599,7 +599,8 @@ button:focus-visible {
     align-items: stretch;
     justify-content: stretch;
     min-width: 0;
-    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: calc((min(var(--board-size), calc(100vw - 32px)) - (6 * var(--gap))) / 7);
     overflow: visible;
     border: 0 !important;
     border-radius: var(--round);
@@ -615,8 +616,7 @@ button:focus-visible {
 
 .rack-tile {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
