@@ -1,0 +1,393 @@
+{
+  "date": "2026-12-16",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "N",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "O",
+      "",
+      "A",
+      "L",
+      "G",
+      "A",
+      ""
+    ],
+    [
+      "V",
+      "",
+      "R",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "A",
+      "",
+      "I",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "E",
+      "C",
+      "H",
+      "W",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "N",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "O",
+      "",
+      "A",
+      "L",
+      "G",
+      "A",
+      ""
+    ],
+    [
+      "V",
+      "",
+      "R",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "A",
+      "",
+      "I",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "L",
+      "E",
+      "C",
+      "H",
+      "W",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,4": "double-word",
+    "0,0": "flat-bonus",
+    "0,6": "double-letter"
+  },
+  "flatBonusValues": {
+    "0,0": 3
+  },
+  "puzzleWords": [
+    {
+      "word": "LECHWE",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "NARIC",
+      "row": 1,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "OVAL",
+      "row": 2,
+      "col": 0,
+      "direction": "vertical"
+    },
+    {
+      "word": "ALGA",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "N",
+    "E",
+    "T",
+    "A",
+    "D",
+    "A"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "D",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "N",
+        "A",
+        "A",
+        "N",
+        ""
+      ],
+      [
+        "O",
+        "",
+        "A",
+        "L",
+        "G",
+        "A",
+        ""
+      ],
+      [
+        "V",
+        "",
+        "R",
+        "E",
+        "",
+        "",
+        ""
+      ],
+      [
+        "A",
+        "",
+        "I",
+        "T",
+        "",
+        "",
+        ""
+      ],
+      [
+        "L",
+        "E",
+        "C",
+        "H",
+        "W",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,3",
+      "1,3",
+      "3,3",
+      "4,3",
+      "1,4",
+      "1,5"
+    ],
+    "score": 73,
+    "completionBonus": 50,
+    "words": [
+      "NAAN",
+      "RE",
+      "IT",
+      "DALETH",
+      "AG",
+      "NA"
+    ],
+    "scoringWords": [
+      {
+        "word": "NAAN",
+        "row": 1,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "RE",
+        "row": 3,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "IT",
+        "row": 4,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "DALETH",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 10
+      },
+      {
+        "word": "AG",
+        "row": 1,
+        "col": 4,
+        "direction": "vertical",
+        "score": 3
+      },
+      {
+        "word": "NA",
+        "row": 1,
+        "col": 5,
+        "direction": "vertical",
+        "score": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "DALETH",
+        "row": 0,
+        "col": 3,
+        "direction": "vertical",
+        "score": 16,
+        "usedTiles": 4,
+        "newKeys": [
+          "0,3",
+          "1,3",
+          "3,3",
+          "4,3"
+        ],
+        "scoringWords": [
+          {
+            "word": "NA",
+            "row": 1,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "RE",
+            "row": 3,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "IT",
+            "row": 4,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "DALETH",
+            "row": 0,
+            "col": 3,
+            "direction": "vertical",
+            "score": 10
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "NAAN",
+        "row": 1,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 9,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,4",
+          "1,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "NAAN",
+            "row": 1,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "AG",
+            "row": 1,
+            "col": 4,
+            "direction": "vertical",
+            "score": 3
+          },
+          {
+            "word": "NA",
+            "row": 1,
+            "col": 5,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1383
+  }
+}
