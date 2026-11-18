@@ -1,3 +1,13 @@
+/* Safari 26+ rack compatibility only. Other browsers and Safari 18.x keep the normal rack CSS. */
+(function applySafari26RackClass() {
+    const userAgent = navigator.userAgent;
+    const safariMatch = userAgent.match(/Version\\/(\\d+)(?:\\.\\d+)?(?:\\.\\d+)? Safari\\//);
+    const isSafari = safariMatch && !/Chrome|Chromium|CriOS|FxiOS|EdgiOS|Edg\\//.test(userAgent);
+    if (isSafari && Number(safariMatch[1]) >= 26) {
+        document.documentElement.classList.add("safari-26-plus");
+    }
+})();
+
 let boardSize = 7;
 
 /* ==================================================
