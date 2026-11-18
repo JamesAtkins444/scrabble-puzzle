@@ -2357,9 +2357,18 @@ function displayTileRack() {
                     pointerId: event.pointerId,
                     moved: false,
                     target: null,
-                    rackTarget: null
+                    rackTarget: null,
+                    rackSlotTarget: null
                 };
                 suppressNextRackTileClick = false;
+
+                if (tile.setPointerCapture) {
+                    try {
+                        tile.setPointerCapture(event.pointerId);
+                    } catch (error) {
+                        // Pointer capture is a performance enhancement; dragging still works without it.
+                    }
+                }
 
                 const onMove = moveEvent => {
                     if (!rackTileDrag || moveEvent.pointerId !== rackTileDrag.pointerId) return;
@@ -2385,7 +2394,8 @@ function displayTileRack() {
 
                     const visual = rackTileDrag.visual;
                     // CSS zoom scales the page, but pointer coordinates are viewport-based.
-                    // Convert the floating tile position back into the scaled body's CSS space.
+                    // Position the floating tile directly under the pointer without a transition
+                    // so Safari does not visually lag behind fast pointer movement.
                     const desktopZoom = window.matchMedia("(min-width: 601px)").matches ? 0.8 : 1;
                     visual.style.left = `${moveEvent.clientX / desktopZoom - visual.offsetWidth / 2}px`;
                     visual.style.top = `${moveEvent.clientY / desktopZoom - visual.offsetHeight / 2}px`;
@@ -2451,6 +2461,16 @@ function displayTileRack() {
                     if (drag.rackSlotTarget) drag.rackSlotTarget.classList.remove("drag-over");
                     if (drag.visual) drag.visual.remove();
                     tile.classList.remove("rack-tile-drag-source");
+
+                    if (tile.releasePointerCapture) {
+                        try {
+                            if (tile.hasPointerCapture?.(upEvent.pointerId)) {
+                                tile.releasePointerCapture(upEvent.pointerId);
+                            }
+                        } catch (error) {
+                            // Pointer capture cleanup is optional.
+                        }
+                    }
 
                     document.removeEventListener("pointermove", onMove);
                     document.removeEventListener("pointerup", onUp);
@@ -2554,6 +2574,17 @@ function displayTileRack() {
                     if (rackTileDrag.rackSlotTarget) rackTileDrag.rackSlotTarget.classList.remove("drag-over");
                     if (rackTileDrag.visual) rackTileDrag.visual.remove();
                     tile.classList.remove("rack-tile-drag-source");
+
+                    if (tile.releasePointerCapture) {
+                        try {
+                            if (tile.hasPointerCapture?.(cancelEvent.pointerId)) {
+                                tile.releasePointerCapture(cancelEvent.pointerId);
+                            }
+                        } catch (error) {
+                            // Pointer capture cleanup is optional.
+                        }
+                    }
+
                     rackTileDrag = null;
                     document.removeEventListener("pointermove", onMove);
                     document.removeEventListener("pointerup", onUp);
