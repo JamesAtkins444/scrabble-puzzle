@@ -1,0 +1,383 @@
+{
+  "date": "2026-12-17",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "F",
+      "",
+      "U",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "I",
+      "V",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "C",
+      "E",
+      "R",
+      "U",
+      "S",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "F",
+      "",
+      "U",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "R",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "W",
+      "I",
+      "V",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "A",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "C",
+      "E",
+      "R",
+      "U",
+      "S",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,0": "double-word",
+    "1,6": "flat-bonus"
+  },
+  "flatBonusValues": {
+    "1,6": 4
+  },
+  "puzzleWords": [
+    {
+      "word": "CERUSE",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "FRIAR",
+      "row": 1,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "WIVER",
+      "row": 3,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RULER",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "I",
+    "O",
+    "T",
+    "F",
+    "E",
+    "Z"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "F",
+        "R",
+        "I",
+        "Z"
+      ],
+      [
+        "",
+        "",
+        "F",
+        "",
+        "U",
+        "",
+        ""
+      ],
+      [
+        "T",
+        "O",
+        "R",
+        "",
+        "L",
+        "",
+        ""
+      ],
+      [
+        "",
+        "W",
+        "I",
+        "V",
+        "E",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "",
+        "A",
+        "",
+        "R",
+        "E",
+        ""
+      ],
+      [
+        "C",
+        "E",
+        "R",
+        "U",
+        "S",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,3",
+      "0,5",
+      "0,6",
+      "2,0",
+      "2,1",
+      "4,5"
+    ],
+    "score": 79,
+    "completionBonus": 50,
+    "words": [
+      "FRIZ",
+      "TOR",
+      "RE",
+      "OW",
+      "REE"
+    ],
+    "scoringWords": [
+      {
+        "word": "FRIZ",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 16
+      },
+      {
+        "word": "TOR",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 3
+      },
+      {
+        "word": "RE",
+        "row": 4,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "OW",
+        "row": 2,
+        "col": 1,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "REE",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "FRIZ",
+        "row": 0,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 16,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,3",
+          "0,5",
+          "0,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "FRIZ",
+            "row": 0,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 16
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "TOR",
+        "row": 2,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 8,
+        "usedTiles": 2,
+        "newKeys": [
+          "2,0",
+          "2,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "TOR",
+            "row": 2,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 3
+          },
+          {
+            "word": "OW",
+            "row": 2,
+            "col": 1,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "REE",
+        "row": 3,
+        "col": 5,
+        "direction": "vertical",
+        "score": 5,
+        "usedTiles": 1,
+        "newKeys": [
+          "4,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "RE",
+            "row": 4,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "REE",
+            "row": 3,
+            "col": 5,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 813
+  }
+}
