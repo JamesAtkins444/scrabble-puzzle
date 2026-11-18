@@ -2270,7 +2270,10 @@ function displayTileRack() {
     const rackSlots = [];
     for (let slotIndex = 0; slotIndex < 7; slotIndex += 1) {
         const slot = document.createElement("div");
-        slot.className = "rack-slot";
+        // Rack cells use the exact same .cell element as the game board.
+        slot.className = "cell rack-slot";
+        slot.dataset.row = 0;
+        slot.dataset.col = slotIndex;
         slot.dataset.slotIndex = slotIndex;
         rackSlots.push(slot);
         tileRackElement.appendChild(slot);
