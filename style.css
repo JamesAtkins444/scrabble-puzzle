@@ -583,80 +583,28 @@ button:focus-visible {
     font-weight: 700;
 }
 
+/* Rack: the same 7-column cell grid as the board, but one row. */
 #tileRack {
     order: 5;
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
-    align-items: stretch;
+    grid-template-rows: minmax(0, 1fr);
     gap: var(--gap);
     width: 100%;
+    height: calc((min(var(--board-size), calc(100vw - 32px)) - (6 * var(--gap))) / 7);
     margin: 14px auto 0;
 }
 
 .rack-slot {
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    justify-content: stretch;
-    min-width: 0;
-    aspect-ratio: 1 / 1;
-    overflow: visible;
-    border: 0 !important;
-    border-radius: var(--round);
     background: var(--rack-slot);
-    box-shadow: none !important;
-}
-
-.rack-slot::before,
-.rack-slot::after {
-    content: none !important;
-    display: none !important;
 }
 
 .rack-tile {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    min-width: 0;
-    padding: 0;
-    border: 0 !important;
-    border-radius: var(--round);
-    outline: 0 !important;
-    background: var(--white);
-    color: #172c33;
-    box-shadow: none !important;
-    filter: none !important;
     cursor: grab;
     touch-action: none;
     user-select: none;
     -webkit-user-select: none;
 }
-
-.rack-tile::before,
-.rack-tile::after {
-    content: none !important;
-    display: none !important;
-}
-
-.rack-tile .tile-value {
-    position: absolute;
-    right: 9%;
-    bottom: 6%;
-    color: #172c33;
-    font-size: clamp(18.75px, 3.5625vw, 26.25px);
-    font-weight: 700;
-    line-height: .8;
-}
-
-.rack-tile .tile-letter {
-    color: #172c33;
-    font-size: clamp(31px, 6.6vw, 47px);
-    font-weight: 700;
-}
-
 
 /* Selected rack tiles lift slightly instead of showing a green outline. */
 .rack-tile.selected {
