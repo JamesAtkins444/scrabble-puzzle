@@ -2041,6 +2041,7 @@ body {
    Keep the normal rack, popups and drag behavior unchanged in other browsers. */
 @supports (-webkit-touch-callout: none) {
     #tileRack .rack-slot {
+        display: block;
         width: 100%;
         height: calc((min(var(--board-size), calc(100vw - 32px)) - (6 * var(--gap))) / 7);
     }
