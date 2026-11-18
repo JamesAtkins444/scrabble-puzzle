@@ -600,6 +600,8 @@ button:focus-visible {
 }
 
 .rack-tile {
+    background: var(--white);
+    color: #172c33;
     cursor: grab;
     touch-action: none;
     user-select: none;
