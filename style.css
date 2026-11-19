@@ -1045,6 +1045,7 @@ dialog::backdrop {
 .how-to-play-example .how-to-play-example-white-tile {
     background: var(--white);
     color: #172c33;
+    border: 1px solid #172c33 !important;
     cursor: default;
     touch-action: auto;
 }
