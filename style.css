@@ -1042,13 +1042,11 @@ dialog::backdrop {
 }
 
 /* The rack tiles in the example are for display, not dragging. */
-.how-to-play-example .rack-tile {
+.how-to-play-example .how-to-play-example-white-tile {
+    background: var(--white);
+    color: #172c33;
     cursor: default;
     touch-action: auto;
-}
-
-.how-to-play-example .how-to-play-example-white-tile {
-    border: 2px solid #172c33 !important;
 }
 
 
