@@ -1,0 +1,369 @@
+{
+  "date": "2026-12-18",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T"
+    ],
+    [
+      "",
+      "S",
+      "A",
+      "B",
+      "E",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "K",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "T",
+      "I",
+      "C",
+      "A",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "T"
+    ],
+    [
+      "",
+      "S",
+      "A",
+      "B",
+      "E",
+      "",
+      "H"
+    ],
+    [
+      "",
+      "",
+      "",
+      "I",
+      "",
+      "",
+      "I"
+    ],
+    [
+      "",
+      "",
+      "",
+      "K",
+      "",
+      "",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "T",
+      "I",
+      "C",
+      "A",
+      "L"
+    ],
+    [
+      "",
+      "",
+      "",
+      "N",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "G",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,5": "double-word",
+    "4,0": "flat-bonus",
+    "6,0": "double-letter"
+  },
+  "flatBonusValues": {
+    "4,0": 4
+  },
+  "puzzleWords": [
+    {
+      "word": "BIKING",
+      "row": 1,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "TICAL",
+      "row": 4,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SABE",
+      "row": 1,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "THIRL",
+      "row": 0,
+      "col": 6,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "E",
+    "U",
+    "N",
+    "K",
+    "D",
+    "O"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "E",
+        "",
+        "",
+        "D",
+        "O",
+        "T"
+      ],
+      [
+        "",
+        "S",
+        "A",
+        "B",
+        "E",
+        "",
+        "H"
+      ],
+      [
+        "",
+        "",
+        "",
+        "I",
+        "",
+        "",
+        "I"
+      ],
+      [
+        "",
+        "",
+        "",
+        "K",
+        "",
+        "",
+        "R"
+      ],
+      [
+        "",
+        "",
+        "T",
+        "I",
+        "C",
+        "A",
+        "L"
+      ],
+      [
+        "",
+        "",
+        "",
+        "N",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "G",
+        "U",
+        "N",
+        "K"
+      ]
+    ],
+    "newKeys": [
+      "6,4",
+      "6,5",
+      "6,6",
+      "0,4",
+      "0,5",
+      "0,1"
+    ],
+    "score": 77,
+    "completionBonus": 50,
+    "words": [
+      "DOT",
+      "GUNK",
+      "ES",
+      "DE"
+    ],
+    "scoringWords": [
+      {
+        "word": "DOT",
+        "row": 0,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "GUNK",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 18
+      },
+      {
+        "word": "ES",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "DE",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 3
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "GUNK",
+        "row": 6,
+        "col": 3,
+        "direction": "horizontal",
+        "score": 18,
+        "usedTiles": 3,
+        "newKeys": [
+          "6,4",
+          "6,5",
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "GUNK",
+            "row": 6,
+            "col": 3,
+            "direction": "horizontal",
+            "score": 18
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "DOT",
+        "row": 0,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 7,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,4",
+          "0,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "DOT",
+            "row": 0,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "DE",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "ES",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 2,
+        "usedTiles": 1,
+        "newKeys": [
+          "0,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "ES",
+            "row": 0,
+            "col": 1,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1230
+  }
+}
