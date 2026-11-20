@@ -1,0 +1,342 @@
+{
+  "date": "2026-12-19",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "B",
+      "",
+      "I",
+      "",
+      ""
+    ],
+    [
+      "P",
+      "R",
+      "O",
+      "W",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "S",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "M",
+      "O",
+      "O",
+      "T",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "B",
+      "",
+      "I",
+      "",
+      ""
+    ],
+    [
+      "P",
+      "R",
+      "O",
+      "W",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "S",
+      "",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "M",
+      "O",
+      "O",
+      "T",
+      "E",
+      "R",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,6": "double-word",
+    "1,0": "flat-bonus",
+    "0,2": "double-letter",
+    "2,6": "double-letter"
+  },
+  "flatBonusValues": {
+    "1,0": 4
+  },
+  "puzzleWords": [
+    {
+      "word": "MOOTER",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RILLE",
+      "row": 1,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "PROWL",
+      "row": 3,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "BOSOM",
+      "row": 2,
+      "col": 2,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "H",
+    "E",
+    "Z",
+    "C",
+    "A",
+    "A"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "R",
+        "",
+        "E"
+      ],
+      [
+        "",
+        "",
+        "B",
+        "A",
+        "I",
+        "Z",
+        "A"
+      ],
+      [
+        "P",
+        "R",
+        "O",
+        "W",
+        "L",
+        "",
+        "C"
+      ],
+      [
+        "",
+        "",
+        "S",
+        "",
+        "L",
+        "",
+        "H"
+      ],
+      [
+        "M",
+        "O",
+        "O",
+        "T",
+        "E",
+        "R",
+        ""
+      ],
+      [
+        "",
+        "",
+        "M",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "2,3",
+      "2,5",
+      "2,6",
+      "1,6",
+      "3,6",
+      "4,6"
+    ],
+    "score": 82,
+    "completionBonus": 50,
+    "words": [
+      "BAIZA",
+      "AW",
+      "EACH"
+    ],
+    "scoringWords": [
+      {
+        "word": "BAIZA",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 17
+      },
+      {
+        "word": "AW",
+        "row": 2,
+        "col": 3,
+        "direction": "vertical",
+        "score": 5
+      },
+      {
+        "word": "EACH",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 10
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "BAIZA",
+        "row": 2,
+        "col": 2,
+        "direction": "horizontal",
+        "score": 22,
+        "usedTiles": 3,
+        "newKeys": [
+          "2,3",
+          "2,5",
+          "2,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "BAIZA",
+            "row": 2,
+            "col": 2,
+            "direction": "horizontal",
+            "score": 17
+          },
+          {
+            "word": "AW",
+            "row": 2,
+            "col": 3,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "EACH",
+        "row": 1,
+        "col": 6,
+        "direction": "vertical",
+        "score": 10,
+        "usedTiles": 3,
+        "newKeys": [
+          "1,6",
+          "3,6",
+          "4,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "EACH",
+            "row": 1,
+            "col": 6,
+            "direction": "vertical",
+            "score": 10
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 521
+  }
+}
