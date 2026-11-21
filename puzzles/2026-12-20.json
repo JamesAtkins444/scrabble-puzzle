@@ -1,0 +1,354 @@
+{
+  "date": "2026-12-20",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "P",
+      ""
+    ],
+    [
+      "H",
+      "O",
+      "W",
+      "L",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "K",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "U",
+      "P",
+      "L",
+      "E",
+      "X"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "P",
+      ""
+    ],
+    [
+      "H",
+      "O",
+      "W",
+      "L",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "A",
+      "",
+      "K",
+      ""
+    ],
+    [
+      "",
+      "D",
+      "U",
+      "P",
+      "L",
+      "E",
+      "X"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,1": "triple-word",
+    "0,5": "double-word",
+    "0,3": "flat-bonus"
+  },
+  "flatBonusValues": {
+    "0,3": 4
+  },
+  "puzzleWords": [
+    {
+      "word": "DUPLEX",
+      "row": 5,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "PEKE",
+      "row": 2,
+      "col": 5,
+      "direction": "vertical"
+    },
+    {
+      "word": "LAP",
+      "row": 3,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "HOWL",
+      "row": 3,
+      "col": 0,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "G",
+    "I",
+    "A",
+    "I",
+    "G",
+    "P"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "G",
+        "A",
+        "P",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "G",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "I",
+        "",
+        "",
+        "",
+        "P",
+        ""
+      ],
+      [
+        "H",
+        "O",
+        "W",
+        "L",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "A",
+        "",
+        "K",
+        ""
+      ],
+      [
+        "",
+        "D",
+        "U",
+        "P",
+        "L",
+        "E",
+        "X"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "I"
+      ]
+    ],
+    "newKeys": [
+      "0,1",
+      "1,1",
+      "2,1",
+      "0,0",
+      "0,2",
+      "6,6"
+    ],
+    "score": 92,
+    "completionBonus": 50,
+    "words": [
+      "GAP",
+      "AGIO",
+      "XI"
+    ],
+    "scoringWords": [
+      {
+        "word": "GAP",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 18
+      },
+      {
+        "word": "AGIO",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 15
+      },
+      {
+        "word": "XI",
+        "row": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 9
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "AGIO",
+        "row": 0,
+        "col": 1,
+        "direction": "vertical",
+        "score": 15,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,1",
+          "1,1",
+          "2,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "AGIO",
+            "row": 0,
+            "col": 1,
+            "direction": "vertical",
+            "score": 15
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "GAP",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 18,
+        "usedTiles": 2,
+        "newKeys": [
+          "0,0",
+          "0,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "GAP",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 18
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "XI",
+        "row": 5,
+        "col": 6,
+        "direction": "vertical",
+        "score": 9,
+        "usedTiles": 1,
+        "newKeys": [
+          "6,6"
+        ],
+        "scoringWords": [
+          {
+            "word": "XI",
+            "row": 5,
+            "col": 6,
+            "direction": "vertical",
+            "score": 9
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 460
+  }
+}
