@@ -1,0 +1,356 @@
+{
+  "date": "2026-12-21",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "W",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "O",
+      "T",
+      "E",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "S",
+      "A",
+      "T",
+      "Y",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "C",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "L",
+      "",
+      "W",
+      ""
+    ],
+    [
+      "",
+      "",
+      "M",
+      "O",
+      "T",
+      "E",
+      "Y"
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "E",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "",
+      "T",
+      ""
+    ],
+    [
+      "S",
+      "A",
+      "T",
+      "Y",
+      "R",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "0,0": "double-word",
+    "6,6": "flat-bonus",
+    "3,0": "triple-letter"
+  },
+  "flatBonusValues": {
+    "6,6": 3
+  },
+  "puzzleWords": [
+    {
+      "word": "CLODDY",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    },
+    {
+      "word": "SATYR",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "MOTEY",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "TWEET",
+      "row": 0,
+      "col": 5,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "M",
+    "O",
+    "B",
+    "E",
+    "A",
+    "T"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "T",
+        "O",
+        "M",
+        "C",
+        "A",
+        "T",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "L",
+        "",
+        "W",
+        ""
+      ],
+      [
+        "",
+        "",
+        "M",
+        "O",
+        "T",
+        "E",
+        "Y"
+      ],
+      [
+        "",
+        "",
+        "",
+        "D",
+        "",
+        "E",
+        ""
+      ],
+      [
+        "",
+        "B",
+        "E",
+        "D",
+        "",
+        "T",
+        ""
+      ],
+      [
+        "S",
+        "A",
+        "T",
+        "Y",
+        "R",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,0",
+      "0,1",
+      "0,2",
+      "0,4",
+      "4,1",
+      "4,2"
+    ],
+    "score": 82,
+    "completionBonus": 50,
+    "words": [
+      "TOMCAT",
+      "BED",
+      "BA",
+      "ET"
+    ],
+    "scoringWords": [
+      {
+        "word": "TOMCAT",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20
+      },
+      {
+        "word": "BED",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 6
+      },
+      {
+        "word": "BA",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "ET",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 2
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "TOMCAT",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 20,
+        "usedTiles": 4,
+        "newKeys": [
+          "0,0",
+          "0,1",
+          "0,2",
+          "0,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "TOMCAT",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 20
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "BED",
+        "row": 4,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 12,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,1",
+          "4,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "BED",
+            "row": 4,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 6
+          },
+          {
+            "word": "BA",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "ET",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1470
+  }
+}
