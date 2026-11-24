@@ -1,0 +1,417 @@
+{
+  "date": "2026-12-23",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "S",
+      "O",
+      "R",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "",
+      "L",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "L",
+      "A",
+      "I",
+      "D",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "V",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "I",
+      "R",
+      "E",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "S",
+      "O",
+      "R",
+      "B",
+      ""
+    ],
+    [
+      "",
+      "",
+      "L",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "L",
+      "A",
+      "I",
+      "D",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "V",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "E",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "S",
+      "I",
+      "R",
+      "E",
+      "N",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "4,6": "double-word",
+    "0,0": "flat-bonus",
+    "2,6": "triple-letter",
+    "6,6": "double-letter"
+  },
+  "flatBonusValues": {
+    "0,0": 2
+  },
+  "puzzleWords": [
+    {
+      "word": "SLAVER",
+      "row": 0,
+      "col": 2,
+      "direction": "vertical"
+    },
+    {
+      "word": "LAID",
+      "row": 2,
+      "col": 1,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SIREN",
+      "row": 5,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "SORB",
+      "row": 0,
+      "col": 2,
+      "direction": "horizontal"
+    }
+  ],
+  "initialRackTiles": [
+    "N",
+    "A",
+    "T",
+    "A",
+    "E",
+    "Y"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "S",
+        "O",
+        "R",
+        "B",
+        ""
+      ],
+      [
+        "",
+        "",
+        "L",
+        "",
+        "A",
+        "A",
+        ""
+      ],
+      [
+        "",
+        "L",
+        "A",
+        "I",
+        "D",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "V",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "E",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "S",
+        "I",
+        "R",
+        "E",
+        "N",
+        "",
+        ""
+      ],
+      [
+        "",
+        "T",
+        "Y",
+        "N",
+        "E",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "6,1",
+      "6,2",
+      "6,3",
+      "6,4",
+      "1,4",
+      "1,5"
+    ],
+    "score": 86,
+    "completionBonus": 50,
+    "words": [
+      "AA",
+      "TYNE",
+      "IT",
+      "SLAVERY",
+      "EN",
+      "RAD",
+      "NE",
+      "BA"
+    ],
+    "scoringWords": [
+      {
+        "word": "AA",
+        "row": 1,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 2
+      },
+      {
+        "word": "TYNE",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 7
+      },
+      {
+        "word": "IT",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "SLAVERY",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 13
+      },
+      {
+        "word": "EN",
+        "row": 5,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "RAD",
+        "row": 0,
+        "col": 4,
+        "direction": "vertical",
+        "score": 4
+      },
+      {
+        "word": "NE",
+        "row": 5,
+        "col": 4,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "BA",
+        "row": 0,
+        "col": 5,
+        "direction": "vertical",
+        "score": 4
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "TYNE",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 26,
+        "usedTiles": 4,
+        "newKeys": [
+          "6,1",
+          "6,2",
+          "6,3",
+          "6,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "TYNE",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 7
+          },
+          {
+            "word": "IT",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "SLAVERY",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 13
+          },
+          {
+            "word": "EN",
+            "row": 5,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "NE",
+            "row": 5,
+            "col": 4,
+            "direction": "vertical",
+            "score": 2
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "AA",
+        "row": 1,
+        "col": 4,
+        "direction": "horizontal",
+        "score": 10,
+        "usedTiles": 2,
+        "newKeys": [
+          "1,4",
+          "1,5"
+        ],
+        "scoringWords": [
+          {
+            "word": "AA",
+            "row": 1,
+            "col": 4,
+            "direction": "horizontal",
+            "score": 2
+          },
+          {
+            "word": "RAD",
+            "row": 0,
+            "col": 4,
+            "direction": "vertical",
+            "score": 4
+          },
+          {
+            "word": "BA",
+            "row": 0,
+            "col": 5,
+            "direction": "vertical",
+            "score": 4
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 1148
+  }
+}
