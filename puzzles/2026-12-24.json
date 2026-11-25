@@ -1,0 +1,396 @@
+{
+  "date": "2026-12-24",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "F",
+      "",
+      "P"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "U",
+      "P",
+      "P",
+      "E",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "K"
+    ],
+    [
+      "",
+      "",
+      "R",
+      "A",
+      "M",
+      "I",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "F",
+      "",
+      "P"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "O",
+      "",
+      "A"
+    ],
+    [
+      "",
+      "",
+      "U",
+      "P",
+      "P",
+      "E",
+      "R"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "K"
+    ],
+    [
+      "",
+      "",
+      "R",
+      "A",
+      "M",
+      "I",
+      "E"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "D"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "6,1": "double-word",
+    "0,0": "flat-bonus",
+    "6,4": "triple-letter",
+    "4,0": "double-letter",
+    "2,0": "double-letter",
+    "0,2": "triple-letter"
+  },
+  "flatBonusValues": {
+    "0,0": 2
+  },
+  "puzzleWords": [
+    {
+      "word": "PARKED",
+      "row": 0,
+      "col": 6,
+      "direction": "vertical"
+    },
+    {
+      "word": "UPPER",
+      "row": 2,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "RAMIE",
+      "row": 4,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "FOP",
+      "row": 0,
+      "col": 4,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "M",
+    "B",
+    "R",
+    "E",
+    "E",
+    "O"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "",
+        "",
+        "",
+        "",
+        "F",
+        "",
+        "P"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "O",
+        "",
+        "A"
+      ],
+      [
+        "",
+        "",
+        "U",
+        "P",
+        "P",
+        "E",
+        "R"
+      ],
+      [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "K"
+      ],
+      [
+        "",
+        "",
+        "R",
+        "A",
+        "M",
+        "I",
+        "E"
+      ],
+      [
+        "",
+        "B",
+        "E",
+        "R",
+        "M",
+        "",
+        "D"
+      ],
+      [
+        "",
+        "O",
+        "E",
+        "",
+        "",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "5,1",
+      "5,2",
+      "5,3",
+      "5,4",
+      "6,1",
+      "6,2"
+    ],
+    "score": 81,
+    "completionBonus": 50,
+    "words": [
+      "BERM",
+      "OE",
+      "BO",
+      "REE",
+      "AR",
+      "MM"
+    ],
+    "scoringWords": [
+      {
+        "word": "BERM",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 8
+      },
+      {
+        "word": "OE",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 4
+      },
+      {
+        "word": "BO",
+        "row": 5,
+        "col": 1,
+        "direction": "vertical",
+        "score": 8
+      },
+      {
+        "word": "REE",
+        "row": 4,
+        "col": 2,
+        "direction": "vertical",
+        "score": 3
+      },
+      {
+        "word": "AR",
+        "row": 4,
+        "col": 3,
+        "direction": "vertical",
+        "score": 2
+      },
+      {
+        "word": "MM",
+        "row": 4,
+        "col": 4,
+        "direction": "vertical",
+        "score": 6
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "BERM",
+        "row": 5,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 18,
+        "usedTiles": 4,
+        "newKeys": [
+          "5,1",
+          "5,2",
+          "5,3",
+          "5,4"
+        ],
+        "scoringWords": [
+          {
+            "word": "BERM",
+            "row": 5,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 8
+          },
+          {
+            "word": "RE",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "AR",
+            "row": 4,
+            "col": 3,
+            "direction": "vertical",
+            "score": 2
+          },
+          {
+            "word": "MM",
+            "row": 4,
+            "col": 4,
+            "direction": "vertical",
+            "score": 6
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "OE",
+        "row": 6,
+        "col": 1,
+        "direction": "horizontal",
+        "score": 15,
+        "usedTiles": 2,
+        "newKeys": [
+          "6,1",
+          "6,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "OE",
+            "row": 6,
+            "col": 1,
+            "direction": "horizontal",
+            "score": 4
+          },
+          {
+            "word": "BO",
+            "row": 5,
+            "col": 1,
+            "direction": "vertical",
+            "score": 8
+          },
+          {
+            "word": "REE",
+            "row": 4,
+            "col": 2,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 909
+  }
+}
