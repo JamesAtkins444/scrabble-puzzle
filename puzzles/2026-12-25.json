@@ -1,0 +1,371 @@
+{
+  "date": "2026-12-25",
+  "boardSize": 7,
+  "board": [
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "Y",
+      "A",
+      "W",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "E",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "F",
+      "A",
+      "R",
+      "E",
+      "D",
+      "",
+      ""
+    ]
+  ],
+  "originalBoard": [
+    [
+      "",
+      "",
+      "",
+      "H",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "Y",
+      "A",
+      "W",
+      "L",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "D",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "E",
+      "L",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "D",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "E",
+      "",
+      ""
+    ],
+    [
+      "F",
+      "A",
+      "R",
+      "E",
+      "D",
+      "",
+      ""
+    ]
+  ],
+  "bonusSquares": {
+    "4,0": "double-word",
+    "0,0": "flat-bonus",
+    "5,6": "double-letter",
+    "2,0": "triple-letter",
+    "3,6": "triple-letter"
+  },
+  "flatBonusValues": {
+    "0,0": 3
+  },
+  "puzzleWords": [
+    {
+      "word": "WELDED",
+      "row": 1,
+      "col": 4,
+      "direction": "vertical"
+    },
+    {
+      "word": "YAWL",
+      "row": 1,
+      "col": 2,
+      "direction": "horizontal"
+    },
+    {
+      "word": "FARED",
+      "row": 6,
+      "col": 0,
+      "direction": "horizontal"
+    },
+    {
+      "word": "HADE",
+      "row": 0,
+      "col": 3,
+      "direction": "vertical"
+    }
+  ],
+  "initialRackTiles": [
+    "Y",
+    "X",
+    "A",
+    "U",
+    "A",
+    "T"
+  ],
+  "bestSolution": {
+    "board": [
+      [
+        "A",
+        "Y",
+        "A",
+        "H",
+        "",
+        "",
+        ""
+      ],
+      [
+        "X",
+        "",
+        "Y",
+        "A",
+        "W",
+        "L",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "D",
+        "E",
+        "",
+        ""
+      ],
+      [
+        "",
+        "",
+        "",
+        "E",
+        "L",
+        "",
+        ""
+      ],
+      [
+        "",
+        "U",
+        "",
+        "",
+        "D",
+        "",
+        ""
+      ],
+      [
+        "",
+        "T",
+        "",
+        "",
+        "E",
+        "",
+        ""
+      ],
+      [
+        "F",
+        "A",
+        "R",
+        "E",
+        "D",
+        "",
+        ""
+      ]
+    ],
+    "newKeys": [
+      "0,0",
+      "0,1",
+      "0,2",
+      "1,0",
+      "4,1",
+      "5,1"
+    ],
+    "score": 83,
+    "completionBonus": 50,
+    "words": [
+      "AYAH",
+      "AX",
+      "UTA",
+      "AY"
+    ],
+    "scoringWords": [
+      {
+        "word": "AYAH",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 13
+      },
+      {
+        "word": "AX",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 12
+      },
+      {
+        "word": "UTA",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 3
+      },
+      {
+        "word": "AY",
+        "row": 0,
+        "col": 2,
+        "direction": "vertical",
+        "score": 5
+      }
+    ],
+    "moves": [
+      {
+        "turn": 1,
+        "word": "AYAH",
+        "row": 0,
+        "col": 0,
+        "direction": "horizontal",
+        "score": 18,
+        "usedTiles": 3,
+        "newKeys": [
+          "0,0",
+          "0,1",
+          "0,2"
+        ],
+        "scoringWords": [
+          {
+            "word": "AYAH",
+            "row": 0,
+            "col": 0,
+            "direction": "horizontal",
+            "score": 13
+          },
+          {
+            "word": "AY",
+            "row": 0,
+            "col": 2,
+            "direction": "vertical",
+            "score": 5
+          }
+        ]
+      },
+      {
+        "turn": 2,
+        "word": "AX",
+        "row": 0,
+        "col": 0,
+        "direction": "vertical",
+        "score": 12,
+        "usedTiles": 1,
+        "newKeys": [
+          "1,0"
+        ],
+        "scoringWords": [
+          {
+            "word": "AX",
+            "row": 0,
+            "col": 0,
+            "direction": "vertical",
+            "score": 12
+          }
+        ]
+      },
+      {
+        "turn": 3,
+        "word": "UTA",
+        "row": 4,
+        "col": 1,
+        "direction": "vertical",
+        "score": 3,
+        "usedTiles": 2,
+        "newKeys": [
+          "4,1",
+          "5,1"
+        ],
+        "scoringWords": [
+          {
+            "word": "UTA",
+            "row": 4,
+            "col": 1,
+            "direction": "vertical",
+            "score": 3
+          }
+        ]
+      }
+    ],
+    "tilesUsed": 6,
+    "tilesRemaining": 0,
+    "fullSolution": true,
+    "searchLimitReached": false,
+    "visitedCandidates": 548
+  }
+}
